@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samosaman - Burlington Menu</title>
+    <link rel="icon" type="image/svg+xml" href="assets/m_logo.svg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-init.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                    oswald: ['Oswald', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        brand: {
+                            500: '#ea580c',
+                            600: '#c2410c',
+                            700: '#9a3412',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #d4d4d8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a1a1aa; }
+
+        .burlington-heading {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Define the drawing animation for underline */
+        @keyframes drawUnderline {
+            0% { clip-path: inset(0 100% 0 0); }
+            100% { clip-path: inset(0 0 0 0); }
+        }
+
+        .burlington-heading::after {
+            content: '';
+            position: absolute;
+            left: 0; 
+            bottom: -12px;
+            width: 100%; 
+            height: 20px; 
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none' fill='none' stroke='%23e11d48' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2,8 C60,4 120,4 198,18' /%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            pointer-events: none;
+            
+            /* Animation Logic: Added 1s delay before the 1s drawing starts */
+            clip-path: inset(0 100% 0 0);
+            animation: drawUnderline 1s ease-out 1s forwards;
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Animation for the badge when it updates */
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.5); }
+            100% { transform: scale(1); }
+        }
+        .animate-pop {
+            animation: pop 0.2s ease-out;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white">
+
+    <div id="navbar-placeholder"></div>
+    <script src="js/navbar.js"></script>
+
+    <main class="w-full max-w-[1400px] mx-auto px-4 md:px-6 pt-28 pb-20">
+        
+        <div class="mb-12">
+    <h1 class="burlington-heading font-oswald text-4xl md:text-5xl font-bold uppercase tracking-tight mb-2">Burlington Menu</h1>
+    
+    <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 text-slate-600 font-medium mt-3 text-sm md:text-base">
+        <div class="flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-600"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>100 Church St, Burlington, VT 05401</span>
+        </div>
+        
+        <div class="hidden md:block w-1 h-1 bg-slate-300 rounded-full"></div>
+        
+        <button onclick="openHoursModal()" class="flex items-center gap-1.5 hover:text-brand-600 transition-colors group text-left w-fit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-600"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span id="hours-status-text" class="underline decoration-slate-300 underline-offset-4 group-hover:decoration-brand-600">Loading hours...</span>
+        </button>
+    </div>
+    </div>
+
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <h2 class="font-oswald text-2xl md:text-3xl font-bold uppercase text-red-600 tracking-wide">Best Sellers</h2>
+                <div class="h-[2px] bg-slate-100 flex-grow"></div>
+                <div class="hidden md:flex text-slate-400 text-sm gap-1 items-center">
+                    <span>Scroll</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </div>
+            </div>
+
+            <div class="flex overflow-x-auto gap-4 pb-6 snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide">
+                
+                <div class="min-w-[280px] md:min-w-[300px] snap-center group cursor-pointer">
+                    <div class="bg-slate-50 rounded-lg overflow-hidden mb-4 relative aspect-[4/3]">
+                        <img src="assets/chicken_curry.webp" alt="Chicken Curry Meal" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <h3 class="font-oswald text-lg md:text-xl font-bold uppercase text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">Chicken Curry</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2">Tender aromatic golden Chicken pieces cooked in exotic creamy curry sauce.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-sm font-bold text-slate-900">$13.95</span>
+                        <button class="add-to-bag-btn flex items-center justify-center w-8 h-8 bg-brand-500 text-white rounded-full shadow-sm hover:scale-110 transition-transform duration-200" aria-label="Add to bag" data-id="chicken-curry-meal" data-name="Chicken Curry Meal" data-price="13.95">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="min-w-[280px] md:min-w-[300px] snap-center group cursor-pointer">
+                    <div class="bg-slate-50 rounded-lg overflow-hidden mb-4 relative aspect-[4/3]">
+                        <img src="assets/samosas/traditional_punjabi_samosa.webp" alt="Traditional Punjabi Samosa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute top-2 left-2 bg-green-100 text-green-800 text-[10px] md:text-xs font-bold px-2 py-1 rounded">VEG</div>
+                    </div>
+                    <h3 class="font-oswald text-lg md:text-xl font-bold uppercase text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">Punjabi Samosa</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2">A hearty blend of delicately spiced potatoes, green peas, and herbs.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-sm font-bold text-slate-900">$3.75</span>
+                        <button class="add-to-bag-btn flex items-center justify-center w-8 h-8 bg-brand-500 text-white rounded-full shadow-sm hover:scale-110 transition-transform duration-200" aria-label="Add to bag" data-id="punjabi-samosa" data-name="Traditional Punjabi Samosa" data-price="3.75">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="min-w-[280px] md:min-w-[300px] snap-center group cursor-pointer">
+                    <div class="bg-slate-50 rounded-lg overflow-hidden mb-4 relative aspect-[4/3]">
+                        <img src="assets/samosas/steakandcheese.webp" alt="Steak and Cheese Samosa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <h3 class="font-oswald text-lg md:text-xl font-bold uppercase text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">Steak & Cheese</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2">Tender minced beef, sharp cheese, onion, and spices.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-sm font-bold text-slate-900">$3.75</span>
+                        <button class="add-to-bag-btn flex items-center justify-center w-8 h-8 bg-brand-500 text-white rounded-full shadow-sm hover:scale-110 transition-transform duration-200" aria-label="Add to bag" data-id="steak-cheese" data-name="Steak & Cheese Samosa" data-price="3.75">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="min-w-[280px] md:min-w-[300px] snap-center group cursor-pointer">
+                    <div class="bg-slate-50 rounded-lg overflow-hidden mb-4 relative aspect-[4/3]">
+                        <img src="assets/samosas/spicy_chicken2.webp" alt="Spicy Chicken Samosa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <h3 class="font-oswald text-lg md:text-xl font-bold uppercase text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">Spicy Chicken</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2">Roasted chicken with a hint of rich chili flavor.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-sm font-bold text-slate-900">$3.75</span>
+                        <button class="add-to-bag-btn flex items-center justify-center w-8 h-8 bg-brand-500 text-white rounded-full shadow-sm hover:scale-110 transition-transform duration-200" aria-label="Add to bag" data-id="spicy-chicken" data-name="Spicy Chicken Samosa" data-price="3.75">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="min-w-[280px] md:min-w-[300px] snap-center group cursor-pointer">
+                    <div class="bg-slate-50 rounded-lg overflow-hidden mb-4 relative aspect-[4/3]">
+                        <img src="assets/samosas/chicken_cheese3.webp" alt="Chicken and Cheese Samosa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <h3 class="font-oswald text-lg md:text-xl font-bold uppercase text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">Chicken & Cheese</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2">Tender minced chicken, sharp cheese, aromatic spices and herbs.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-sm font-bold text-slate-900">$3.75</span>
+                        <button class="add-to-bag-btn flex items-center justify-center w-8 h-8 bg-brand-500 text-white rounded-full shadow-sm hover:scale-110 transition-transform duration-200" aria-label="Add to bag" data-id="chicken-cheese" data-name="Chicken & Cheese Samosa" data-price="3.75">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-8">
+                <h2 class="font-oswald text-2xl md:text-3xl font-bold uppercase text-slate-600 tracking-wide">Meat Samosas</h2>
+                <div class="h-[2px] bg-slate-100 flex-grow"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-8 md:gap-x-6 md:gap-y-10">
+                <div class="group cursor-pointer reveal-on-scroll">
+                    <div class="bg-slate-50 rounded-lg overflow-hidden mb-4 relative aspect-[4/3]">
+                        <img src="assets/samosas/steakandcheese.webp" alt="Steak and Cheese Samosa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <h3 class="font-oswald text-lg md:text-xl font-bold uppercase text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">Steak & Cheese</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2 md:line-clamp-none">Tender minced beef, sharp cheese, onion, and spices.</p>
+                    
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-sm font-bold text-slate-900">$3.75</span>
+                        <button 
+                            class="add-to-bag-btn flex items-center justify-center w-8 h-8 bg-brand-500 text-white rounded-full shadow-sm hover:scale-110 transition-transform duration-200" 
+                            aria-label="Add to bag"
+                            data-id="steak-cheese"
+                            data-name="Steak & Cheese Samosa"
+                            data-price="3.75"
+                        >
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer reveal-on-scroll">
+                    <div class="bg-slate-50 rounded-lg overflow-hidden mb-4 relative aspect-[4/3]">
+                        <img src="assets/samosas/chicken_cheese3.webp" alt="Chicken and Cheese Samosa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <h3 class="font-oswald text-lg md:text-xl font-bold uppercase text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">Chicken & Cheese</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2 md:line-clamp-none">Tender minced chicken, sharp cheese, aromatic spices and herbs.</p>
+                    
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-sm font-bold text-slate-900">$3.75</span>
+                        <button 
+                            class="add-to-bag-btn flex items-center justify-center w-8 h-8 bg-brand-500 text-white rounded-full shadow-sm hover:scale-110 transition-transform duration-200" 
+                            aria-label="Add to bag"
+                            data-id="chicken-cheese"
+                            data-name="Chicken & Cheese Samosa"
+                            data-price="3.75"
+                        >
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer reveal-on-scroll">
+                    <div class="bg-slate-50 rounded-lg overflow-hidden mb-4 relative aspect-[4/3]">
+                        <img src="assets/samosas/spicy_chicken2.webp" alt="Spicy Chicken Samosa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <h3 class="font-oswald text-lg md:text-xl font-bold uppercase text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">Spicy Chicken</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2 md:line-clamp-none">Roasted chicken with a hint of rich chili flavor.</p>
+                    
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-sm font-bold text-slate-900">$3.75</span>
+                        <button 
+                            class="add-to-bag-btn flex items-center justify-center w-8 h-8 bg-brand-500 text-white rounded-full shadow-sm hover:scale-110 transition-transform duration-200" 
+                            aria-label="Add to bag"
+                            data-id="spicy-chicken"
+                            data-name="Spicy Chicken Samosa"
+                            data-price="3.75"
+                        >
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer reveal-on-scroll">
+                    <div class="bg-slate-50 rounded-lg overflow-hidden mb-4 relative aspect-[4/3]">
+                        <img src="assets/samosas/steak_and_potato.webp" alt="Steak and Potato Samosa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <h3 class="font-oswald text-lg md:text-xl font-bold uppercase text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">Steak & Potato</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2 md:line-clamp-none">Our classic steak mixed with savory potatoes.</p>
+                    
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-sm font-bold text-slate-900">$3.75</span>
+                        <button 
+                            class="add-to-bag-btn flex items-center justify-center w-8 h-8 bg-brand-500 text-white rounded-full shadow-sm hover:scale-110 transition-transform duration-200" 
+                            aria-label="Add to bag"
+                            data-id="steak-potato"
+                            data-name="Steak & Potato Samosa"
+                            data-price="3.75"
+                        >
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-8">
+                <h2 class="font-oswald text-2xl md:text-3xl font-bold uppercase text-green-700 tracking-wide">Vegetarian Samosas</h2>
+                <div class="h-[2px] bg-slate-100 flex-grow"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-8 md:gap-x-6 md:gap-y-10">
+                <div class="group cursor-pointer reveal-on-scroll">
+                    <div class="bg-slate-50 rounded-lg overflow-hidden mb-4 relative aspect-[4/3]">
+                        <img src="assets/samosas/spicy_potato_samosa.webp" alt="Spicy Potato Samosa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute top-2 left-2 bg-green-100 text-green-800 text-[10px] md:text-xs font-bold px-2 py-1 rounded">VEG</div>
+                    </div>
+                    <h3 class="font-oswald text-lg md:text-xl font-bold uppercase text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">Spicy Potato</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2 md:line-clamp-none">Spiced potatoes, green onion, hot peppers, and fresh herbs.</p>
+                    
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-sm font-bold text-slate-900">$3.75</span>
+                        <button 
+                            class="add-to-bag-btn flex items-center justify-center w-8 h-8 bg-brand-500 text-white rounded-full shadow-sm hover:scale-110 transition-transform duration-200" 
+                            aria-label="Add to bag"
+                            data-id="spicy-potato"
+                            data-name="Spicy Potato Samosa"
+                            data-price="3.75"
+                        >
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer reveal-on-scroll">
+                    <div class="bg-slate-50 rounded-lg overflow-hidden mb-4 relative aspect-[4/3]">
+                        <img src="assets/samosas/traditional_punjabi_samosa.webp" alt="Traditional Punjabi Samosa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                         <div class="absolute top-2 left-2 bg-green-100 text-green-800 text-[10px] md:text-xs font-bold px-2 py-1 rounded">VEG</div>
+                    </div>
+                    <h3 class="font-oswald text-lg md:text-xl font-bold uppercase text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">Punjabi Samosa</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2 md:line-clamp-none">A hearty blend of delicately spiced potatoes, green peas, and herbs.</p>
+                    
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-sm font-bold text-slate-900">$3.75</span>
+                        <button 
+                            class="add-to-bag-btn flex items-center justify-center w-8 h-8 bg-brand-500 text-white rounded-full shadow-sm hover:scale-110 transition-transform duration-200" 
+                            aria-label="Add to bag"
+                            data-id="punjabi-samosa"
+                            data-name="Traditional Punjabi Samosa"
+                            data-price="3.75"
+                        >
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer reveal-on-scroll">
+                    <div class="bg-slate-50 rounded-lg overflow-hidden mb-4 relative aspect-[4/3]">
+                        <img src="assets/samosas/veggie_samosa3.webp" alt="Vegetarian Samosa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                         <div class="absolute top-2 left-2 bg-green-100 text-green-800 text-[10px] md:text-xs font-bold px-2 py-1 rounded">VEG</div>
+                    </div>
+                    <h3 class="font-oswald text-lg md:text-xl font-bold uppercase text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">Vegetarian</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2 md:line-clamp-none">The classic samosa. Potatoes, sweet peas, carrots, celery, and mild spices.</p>
+                    
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-sm font-bold text-slate-900">$3.75</span>
+                        <button 
+                            class="add-to-bag-btn flex items-center justify-center w-8 h-8 bg-brand-500 text-white rounded-full shadow-sm hover:scale-110 transition-transform duration-200" 
+                            aria-label="Add to bag"
+                            data-id="veggie-samosa"
+                            data-name="Vegetarian Samosa"
+                            data-price="3.75"
+                        >
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer reveal-on-scroll">
+                    <div class="bg-slate-50 rounded-lg overflow-hidden mb-4 relative aspect-[4/3]">
+                        <img src="assets/samosas/apple_samosa3.webp" alt="Apple Pie Samosa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                         <div class="absolute top-2 left-2 bg-green-100 text-green-800 text-[10px] md:text-xs font-bold px-2 py-1 rounded">VEG</div>
+                    </div>
+                    <h3 class="font-oswald text-lg md:text-xl font-bold uppercase text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">Apple Pie</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2 md:line-clamp-none">Warm blend of apples, nutmeg, brown sugar, and cinnamon spice.</p>
+                    
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-sm font-bold text-slate-900">$3.75</span>
+                        <button 
+                            class="add-to-bag-btn flex items-center justify-center w-8 h-8 bg-brand-500 text-white rounded-full shadow-sm hover:scale-110 transition-transform duration-200" 
+                            aria-label="Add to bag"
+                            data-id="apple-samosa"
+                            data-name="Apple Pie Samosa"
+                            data-price="3.75"
+                        >
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="flex items-center gap-4 mb-8">
+                <h2 class="font-oswald text-2xl md:text-3xl font-bold uppercase text-brand-600 tracking-wide">Meals</h2>
+                <div class="h-[2px] bg-slate-100 flex-grow"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-8 md:gap-x-6 md:gap-y-10">
+                <div class="group cursor-pointer reveal-on-scroll">
+                    <div class="bg-slate-50 rounded-lg overflow-hidden mb-4 relative aspect-[4/3]">
+                        <img src="assets/chicken_curry.webp" alt="Chicken Curry Meal" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute top-2 left-2 bg-brand-500 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded">BEST SELLER</div>
+                    </div>
+                    <h3 class="font-oswald text-lg md:text-xl font-bold uppercase text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">Chicken Curry</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2 md:line-clamp-none">Tender aromatic golden Chicken pieces cooked in exotic creamy curry sauce.</p>
+                    
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-sm font-bold text-slate-900">$13.95</span>
+                        <button 
+                            class="add-to-bag-btn flex items-center justify-center w-8 h-8 bg-brand-500 text-white rounded-full shadow-sm hover:scale-110 transition-transform duration-200" 
+                            aria-label="Add to bag"
+                            data-id="chicken-curry-meal"
+                            data-name="Chicken Curry Meal"
+                            data-price="13.95"
+                        >
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer reveal-on-scroll">
+                    <div class="bg-slate-50 rounded-lg overflow-hidden mb-4 relative aspect-[4/3]">
+                        <img src="assets/chickpea_masala.webp" alt="Chickpea Masala" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <h3 class="font-oswald text-lg md:text-xl font-bold uppercase text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">Chickpea Masala</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-4 line-clamp-2 md:line-clamp-none">A hearty and flavorful chickpea masala, slow cooked with a blend of spices.</p>
+
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-sm font-bold text-slate-900">$12.95</span>
+                        <button 
+                            class="add-to-bag-btn flex items-center justify-center w-8 h-8 bg-brand-500 text-white rounded-full shadow-sm hover:scale-110 transition-transform duration-200" 
+                            aria-label="Add to bag"
+                            data-id="chickpea-masala"
+                            data-name="Chickpea Masala"
+                            data-price="12.95"
+                        >
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <script src="js/cart.js"></script>
+    <script src="js/auth.js"></script>
+
+    <script>
+        lucide.createIcons();
+
+        // Intersection Observer for Reveal Animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1 // Trigger when 10% of the item is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Stop observing once revealed
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+
+<div id="hours-modal" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true">
+    <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity opacity-0" id="hours-backdrop" onclick="closeHoursModal()"></div>
+    <div class="relative flex min-h-full items-center justify-center p-4">
+        <div class="relative w-full max-w-sm transform overflow-hidden rounded-2xl bg-white p-6 text-left shadow-xl transition-all opacity-0 translate-y-4" id="hours-panel">
+            <button onclick="closeHoursModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="M6 6 18 18"/></svg>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 bg-orange-50 mx-auto rounded-full flex items-center justify-center mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-600"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <h3 class="font-oswald text-2xl font-bold text-slate-900 uppercase">Opening Hours</h3>
+                <p class="text-sm text-slate-500 mt-1">Burlington Location</p>
+            </div>
+
+            <div class="space-y-3 text-sm">
+                <div class="flex justify-between items-center py-2 border-b border-slate-100">
+                    <span class="font-medium text-slate-600">Mon - Wed</span>
+                    <span class="font-bold text-slate-900">11:00 AM - 11:00 PM</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-slate-100">
+                    <span class="font-medium text-slate-600">Thu - Sat</span>
+                    <span class="font-bold text-slate-900">11:00 AM - 3:00 AM</span>
+                </div>
+                <div class="flex justify-between items-center py-2">
+                    <span class="font-medium text-slate-600">Sunday</span>
+                    <span class="font-bold text-slate-900">11:00 AM - 12:00 AM</span>
+                </div>
+            </div>
+
+            <div class="mt-6 p-3 rounded-lg flex items-center justify-center gap-2" id="modal-status-badge">
+                <span class="relative flex h-2.5 w-2.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" id="status-ping"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5" id="status-dot"></span>
+                </span>
+                <span class="text-sm font-bold" id="modal-status-text">Checking...</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // --- CONFIGURATION ---
+    // Hours uses 24h format. For 3AM next day, use 27 (24 + 3).
+    // Days: 0=Sun, 1=Mon, ..., 6=Sat
+    const branchConfig = {
+        hours: [
+            { days: [1, 2, 3], open: 11, close: 23 }, // Mon-Wed: 11am-11pm
+            { days: [4, 5, 6], open: 11, close: 27 }, // Thu-Sat: 11am-3am
+            { days: [0], open: 11, close: 24 }        // Sun: 11am-12am
+        ]
+    };
+
+    function updateHoursStatus() {
+        const now = new Date();
+        const currentDay = now.getDay();
+        const currentHour = now.getHours() + (now.getMinutes() / 60);
+
+        let isOpen = false;
+        let closingTime = null;
+        let nextOpenTime = null;
+        let nextOpenDay = null;
+
+        // 1. Check if currently open
+        // We check "Yesterday's" shift first (e.g. it's Sat 1AM, but that's Fri night shift)
+        const prevDay = (currentDay + 6) % 7;
+        const prevRule = branchConfig.hours.find(r => r.days.includes(prevDay));
+        if (prevRule && prevRule.close > 24) {
+            // If yesterday's shift goes past midnight
+            const closeHourNextDay = prevRule.close - 24;
+            if (currentHour < closeHourNextDay) {
+                isOpen = true;
+                closingTime = formatTime(closeHourNextDay);
+            }
+        }
+
+        // Check "Today's" shift
+        if (!isOpen) {
+            const todayRule = branchConfig.hours.find(r => r.days.includes(currentDay));
+            if (todayRule) {
+                if (currentHour >= todayRule.open && currentHour < todayRule.close) {
+                    isOpen = true;
+                    // Format closing time (handle > 24)
+                    const closeH = todayRule.close > 24 ? todayRule.close - 24 : todayRule.close;
+                    closingTime = formatTime(closeH);
+                }
+            }
+        }
+
+        // 2. If Closed, find next open time
+        if (!isOpen) {
+            // Simple lookahead for next 7 days
+            for (let i = 0; i < 8; i++) {
+                const checkDay = (currentDay + i) % 7;
+                const rule = branchConfig.hours.find(r => r.days.includes(checkDay));
+                if (rule) {
+                    // If it's today, make sure open time is in future
+                    if (i === 0 && currentHour >= rule.open) continue;
+                    
+                    nextOpenTime = formatTime(rule.open);
+                    nextOpenDay = i === 0 ? "" : (i === 1 ? "Tomorrow" : getDayName(checkDay));
+                    break;
+                }
+            }
+        }
+
+        // 3. Update DOM
+        const statusText = document.getElementById('hours-status-text');
+        const modalBadge = document.getElementById('modal-status-badge');
+        const modalText = document.getElementById('modal-status-text');
+        const ping = document.getElementById('status-ping');
+        const dot = document.getElementById('status-dot');
+
+        if (isOpen) {
+            statusText.innerText = `Open until ${closingTime}`;
+            
+            // Modal Green Style
+            modalBadge.className = "mt-6 p-3 rounded-lg bg-green-50 border border-green-100 flex items-center justify-center gap-2";
+            modalText.className = "text-sm font-bold text-green-700";
+            modalText.innerText = `Open until ${closingTime}`;
+            ping.className = "animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75";
+            dot.className = "relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500";
+        } else {
+            const dayStr = nextOpenDay ? ` ${nextOpenDay}` : "";
+            statusText.innerText = `Opens ${nextOpenTime}${dayStr}`;
+
+            // Modal Red/Gray Style
+            modalBadge.className = "mt-6 p-3 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center gap-2";
+            modalText.className = "text-sm font-bold text-slate-600";
+            modalText.innerText = `Closed • Opens ${nextOpenTime}${dayStr}`;
+            ping.className = "hidden"; // No ping when closed
+            dot.className = "relative inline-flex rounded-full h-2.5 w-2.5 bg-slate-400";
+        }
+    }
+
+    // Helper: Format decimal hour (14.5 -> 2:30 PM)
+    function formatTime(decimalTime) {
+        const hrs = Math.floor(decimalTime);
+        const mins = Math.round((decimalTime - hrs) * 60);
+        const ampm = hrs >= 12 ? 'PM' : 'AM';
+        const formattedHrs = hrs % 12 || 12;
+        const formattedMins = mins < 10 ? '0' + mins : mins;
+        return `${formattedHrs}:${formattedMins} ${ampm}`;
+    }
+
+    function getDayName(dayIndex) {
+        return ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][dayIndex];
+    }
+
+    // Modal Functions
+    function openHoursModal() {
+        const modal = document.getElementById('hours-modal');
+        const backdrop = document.getElementById('hours-backdrop');
+        const panel = document.getElementById('hours-panel');
+        
+        modal.classList.remove('hidden');
+        // Small delay for animation
+        setTimeout(() => {
+            backdrop.classList.remove('opacity-0');
+            panel.classList.remove('opacity-0', 'translate-y-4');
+        }, 10);
+    }
+
+    function closeHoursModal() {
+        const modal = document.getElementById('hours-modal');
+        const backdrop = document.getElementById('hours-backdrop');
+        const panel = document.getElementById('hours-panel');
+
+        backdrop.classList.add('opacity-0');
+        panel.classList.add('opacity-0', 'translate-y-4');
+        
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', updateHoursStatus);
+    // Update every minute
+    setInterval(updateHoursStatus, 60000);
+</script>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/footer.js"></script>
+
+</body>
+
+</html>

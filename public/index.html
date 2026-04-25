@@ -1,0 +1,682 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>SamosaMan - Authentic exotic Samosas | Burlington VT, Boston MA, Hanover NH</title>
+    <meta name="title" content="SamosaMan - Authentic exotic Samosas | Burlington VT, Boston MA, Hanover NH">
+    <meta name="description" content="Craving authentic exotic samosas? SamosaMan serves crispy, flavorful samosas with delivery & pickup in Burlington VT, Boston MA, and Hanover NH. Order online now!">
+    <meta name="keywords" content="samosas, exotic food, Burlington VT, Boston MA, Hanover NH, food delivery, exotic restaurant, catering, authentic samosas, crispy samosas">
+    <meta name="author" content="SamosaMan">
+    <link rel="canonical" href="https://samosamanvt.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://samosamanvt.com/">
+    <meta property="og:title" content="SamosaMan - Authentic exotic Samosas | Burlington VT, Boston MA, Hanover NH">
+    <meta property="og:description" content="Craving authentic exotic samosas? SamosaMan serves crispy, flavorful samosas with delivery & pickup in Burlington VT, Boston MA, and Hanover NH. Order online now!">
+    <meta property="og:image" content="https://samosamanvt.com/assets/og-image.jpg">
+    <meta property="og:site_name" content="SamosaMan">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://samosamanvt.com/">
+    <meta property="twitter:title" content="SamosaMan - Authentic exotic Samosas">
+    <meta property="twitter:description" content="Craving authentic exotic samosas? Order online for delivery & pickup!">
+    <meta property="twitter:image" content="https://samosamanvt.com/assets/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/m_logo.svg">
+    <link rel="apple-touch-icon" href="assets/m_logo.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-init.js"></script>
+
+    <script src="js/cart.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        brand: {
+                            500: '#ea580c', // Burnt Orange for Samosa branding
+                            600: '#c2410c',
+                            700: '#9a3412',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Parallax Utilities */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        @media (max-width: 768px) {
+            .parallax-bg {
+                background-attachment: scroll;
+            }
+        }
+
+        /* Custom scrollbar to match Vercel/Stripe vibe */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d4d4d8;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a1a1aa;
+        }
+
+        #cart-sidebar.translate-x-full {
+            transform: translateX(100%) !important;
+        }
+    </style>
+
+    <link id="all-fonts-link-font-geist" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-geist">
+        .font-geist {
+            font-family: 'Geist', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-roboto" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-roboto">
+        .font-roboto {
+            font-family: 'Roboto', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-montserrat" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-montserrat">
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-poppins" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-poppins">
+        .font-poppins {
+            font-family: 'Poppins', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-playfair" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap">
+    <style id="all-fonts-style-font-playfair">
+        .font-playfair {
+            font-family: 'Playfair Display', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-instrument-serif" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-instrument-serif">
+        .font-instrument-serif {
+            font-family: 'Instrument Serif', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-merriweather" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap">
+    <style id="all-fonts-style-font-merriweather">
+        .font-merriweather {
+            font-family: 'Merriweather', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-bricolage" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-bricolage">
+        .font-bricolage {
+            font-family: 'Bricolage Grotesque', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-jakarta" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap">
+    <style id="all-fonts-style-font-jakarta">
+        .font-jakarta {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-manrope" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap">
+    <style id="all-fonts-style-font-manrope">
+        .font-manrope {
+            font-family: 'Manrope', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-space-grotesk" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-space-grotesk">
+        .font-space-grotesk {
+            font-family: 'Space Grotesk', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-work-sans" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap">
+    <style id="all-fonts-style-font-work-sans">
+        .font-work-sans {
+            font-family: 'Work Sans', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-pt-serif" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap">
+    <style id="all-fonts-style-font-pt-serif">
+        .font-pt-serif {
+            font-family: 'PT Serif', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-geist-mono" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-geist-mono">
+        .font-geist-mono {
+            font-family: 'Geist Mono', monospace !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-space-mono" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap">
+    <style id="all-fonts-style-font-space-mono">
+        .font-space-mono {
+            font-family: 'Space Mono', monospace !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-quicksand" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-quicksand">
+        .font-quicksand {
+            font-family: 'Quicksand', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-nunito" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap">
+    <style id="all-fonts-style-font-nunito">
+        .font-nunito {
+            font-family: 'Nunito', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-newsreader" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&amp;display=swap">
+    <style id="all-fonts-style-font-newsreader">
+        .font-newsreader {
+            font-family: 'Newsreader', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-google-sans-flex" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-google-sans-flex">
+        .font-google-sans-flex {
+            font-family: 'Google Sans Flex', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-oswald" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-oswald">
+        .font-oswald {
+            font-family: 'Oswald', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-dm-sans" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-dm-sans">
+        .font-dm-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-cormorant" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-cormorant">
+        .font-cormorant {
+            font-family: 'Cormorant Garamond', serif !important;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-slate-800 bg-white selection:bg-brand-500 selection:text-white">
+
+    <div id="landing-splash"
+        class="fixed inset-0 z-[9999] bg-white flex items-center justify-center transition-opacity duration-[400ms]">
+        <img src="assets/yellow_heart.png" alt="Samosaman" class="w-80 h-auto">
+    </div>
+    <script>
+            (function () {
+                // Check session storage immediately to avoid flash
+                const splash = document.getElementById('landing-splash');
+                const hasSeenSplash = sessionStorage.getItem('samosa_splash_seen');
+
+                if (hasSeenSplash) {
+                    // If already seen in this session, hide immediately
+                    if (splash) splash.style.display = 'none';
+                } else {
+                    // If not seen, play animation and then set flag
+                    document.addEventListener('DOMContentLoaded', () => {
+                        setTimeout(() => {
+                            if (splash) {
+                                splash.classList.add('opacity-0', 'pointer-events-none');
+                                setTimeout(() => {
+                                    splash.remove();
+                                    sessionStorage.setItem('samosa_splash_seen', 'true');
+                                }, 400);
+                            }
+                        }, 2000);
+                    });
+                }
+            })();
+    </script>
+    <div id="navbar-placeholder"></div>
+    <script src="js/navbar.js"></script>
+
+    <main class="relative w-full h-[100vh] min-h-[600px] flex items-center">
+
+        <div class="absolute inset-0 z-0 parallax-bg" style="background-image: url('assets/kaia_eating_samosa.PNG');">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/20"></div>
+        </div>
+
+        <div class="md:px-6 w-full max-w-[1400px] z-10 mr-auto ml-auto pr-4 pl-4 relative">
+            <div class="max-w-xl flex flex-col gap-5 pt-10">
+
+                <h1
+                    class="leading-[1.0] uppercase lg:text-6xl md:text-5xl text-4xl font-bold text-white tracking-tight drop-shadow-lg">
+                    The bite <br> You Know You Need
+                </h1>
+
+                <p class="md:text-lg text-base font-medium text-slate-200 max-w-md drop-shadow-md leading-normal">
+                    One bite and it’s a done deal. Crispy Samosas, our Chicken Curry Meal, and our signature Garlic
+                    Tomato Salsa are here.
+                </p>
+
+                <div class="flex flex-row gap-4 mt-2">
+                    <a href="burlington.html"
+                        class="group relative flex items-center justify-center bg-brand-600 hover:bg-brand-500 text-white font-bold py-3 px-8 rounded-md transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 uppercase tracking-wider text-sm">
+                        Order Now
+                    </a>
+
+                    <a href="catering.html"
+                        class="group flex items-center justify-center bg-white text-slate-900 hover:bg-slate-100 font-bold py-3 px-8 rounded-md transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 uppercase tracking-wider text-sm">
+                        Catering
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div
+            class="absolute bottom-0 left-0 w-full z-20 bg-gradient-to-t from-black via-black/80 to-transparent pb-6 pt-20">
+            <div class="max-w-[1400px] mx-auto px-4 md:px-6">
+                <p class="text-xs text-slate-400 font-medium leading-relaxed max-w-4xl text-center md:text-left">
+                    At limited participating U.S. Samosaman® locations for a limited time only, while supplies last.
+                    Check store for price &amp; participation, which vary. Other exclusions apply. Tax extra.
+                    <a href="#" class="underline hover:text-white transition-colors">Terms of Service</a> applied.
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <section class="relative w-full h-[90vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+
+        <div class="absolute inset-0 z-0 parallax-bg"
+            style="background-image: url('assets/samoa_salsa_vertical.webp');">
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+
+        <div id="salsa-reveal"
+            class="relative z-10 text-center px-4 max-w-4xl opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+            <h2
+                class="font-oswald text-4xl md:text-6xl font-bold text-white mb-6 uppercase tracking-wide drop-shadow-xl leading-tight">
+                Home of the signature <br>
+                <span class="text-brand-500">SamosaMan Salsa</span>.
+            </h2>
+            <p class="font-sans text-xl md:text-2xl text-slate-200 font-medium drop-shadow-md tracking-wide">
+                Yes, you can ask for extra.
+            </p>
+        </div>
+
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            const target = document.getElementById('salsa-reveal');
+            if (target) observer.observe(target);
+        });
+    </script>
+
+    <script>
+        lucide.createIcons();
+        window.addEventListener('scroll', function () {
+            const scrollPosition = window.pageYOffset;
+            const hero = document.querySelector('.parallax-bg');
+            if (hero) {
+            }
+        });
+    </script>
+
+    <div id="auth-modal" class="fixed inset-0 z-[100] hidden">
+        <div id="auth-backdrop"
+            class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity opacity-0 duration-300"
+            onclick="toggleAuthModal(false)"></div>
+
+        <div class="relative flex min-h-full items-center justify-center p-4">
+            <div id="auth-panel"
+                class="relative w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-8 text-left shadow-2xl transition-all opacity-0 translate-y-4 duration-300 max-h-[90vh] overflow-y-auto scrollbar-hide">
+
+                <button onclick="toggleAuthModal(false)"
+                    class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1 z-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" x2="6" y1="6" y2="18" />
+                        <line x1="6" x2="18" y1="6" y2="18" />
+                    </svg>
+                </button>
+
+                <div class="text-center mb-6">
+                    <img src="assets/m_logo.svg" alt="Samosaman" class="h-12 w-auto mx-auto mb-4">
+                    <h2 id="auth-modal-title"
+                        class="font-oswald text-3xl font-bold text-slate-900 uppercase tracking-wide">Welcome Back</h2>
+                    <p class="text-slate-500 text-sm mt-2">Sign in to your SamosaMan Clan® account so you can get
+                        rewards and order your favorites even faster.</p>
+                </div>
+
+                <div id="auth-error-message"
+                    class="hidden mb-4 p-3 bg-red-50 text-red-600 text-sm rounded-md font-medium text-center border border-red-100">
+                </div>
+
+                <form id="auth-form" class="space-y-5">
+
+                    <div class="signup-only hidden space-y-4">
+                        <div class="relative">
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">First Name</label>
+                            <input type="text" id="signup-fname"
+                                class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 bg-slate-50 border">
+                        </div>
+                        <div class="relative">
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Last Name</label>
+                            <input type="text" id="signup-lname"
+                                class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 bg-slate-50 border">
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Email Address</label>
+                        <input type="email" id="auth-email" required
+                            class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 bg-slate-50 border">
+                    </div>
+
+                    <div class="relative">
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Password</label>
+                        <input type="password" id="auth-password" required minlength="8"
+                            class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 bg-slate-50 border">
+
+                        <div id="password-requirements-container" class="hidden mt-3 pt-2 text-center">
+                            <p class="text-[10px] text-slate-400 mb-2 uppercase tracking-wide font-semibold">Create a
+                                password with these requirements:</p>
+                            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-slate-400">
+
+                                <div id="req-upper" class="flex flex-col items-center transition-colors duration-200">
+                                    <span>ABC</span>
+                                    <svg class="req-icon w-3 h-3 text-green-600 mt-1 opacity-0 transform scale-0 transition-all duration-300"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+
+                                <div id="req-lower" class="flex flex-col items-center transition-colors duration-200">
+                                    <span>abc</span>
+                                    <svg class="req-icon w-3 h-3 text-green-600 mt-1 opacity-0 transform scale-0 transition-all duration-300"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+
+                                <div id="req-num" class="flex flex-col items-center transition-colors duration-200">
+                                    <span>123</span>
+                                    <svg class="req-icon w-3 h-3 text-green-600 mt-1 opacity-0 transform scale-0 transition-all duration-300"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+
+                                <div id="req-spec" class="flex flex-col items-center transition-colors duration-200">
+                                    <span>!@%</span>
+                                    <svg class="req-icon w-3 h-3 text-green-600 mt-1 opacity-0 transform scale-0 transition-all duration-300"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+
+                                <div id="req-len" class="flex flex-col items-center transition-colors duration-200">
+                                    <span>8 characters</span>
+                                    <svg class="req-icon w-3 h-3 text-green-600 mt-1 opacity-0 transform scale-0 transition-all duration-300"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="signup-only hidden relative">
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Mobile Number</label>
+                        <input type="tel" id="signup-mobile"
+                            class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 bg-slate-50 border">
+                        <p class="text-[10px] text-slate-400 mt-1 leading-tight">Enter a valid mobile number that can
+                            accept SMS messages. This will be used for two-step verification for account access, and for
+                            order-related notifications.</p>
+                    </div>
+
+                    <div class="signup-only hidden relative">
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Birthday MM/DD/YYYY</label>
+                        <input type="text" id="signup-birthday" placeholder="MM/DD/YYYY" maxlength="10"
+                            class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 bg-slate-50 border">
+                        <p class="text-[10px] text-slate-400 mt-1 leading-tight">Double check your birthday is entered
+                            correctly, you won't be able to change it later.</p>
+                    </div>
+
+                    <div class="signup-only hidden relative">
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Receive text offers and
+                            promotions?*</label>
+                        <div class="flex items-center gap-6">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="signup-promo" value="yes"
+                                    class="w-4 h-4 text-brand-600 border-slate-300 focus:ring-brand-500">
+                                <span class="text-sm text-slate-700">Yes</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="signup-promo" value="no"
+                                    class="w-4 h-4 text-brand-600 border-slate-300 focus:ring-brand-500">
+                                <span class="text-sm text-slate-700">No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="auth-submit-btn"
+                        class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3.5 rounded-full shadow-lg shadow-brand-500/30 transition-all transform active:scale-95 uppercase tracking-wide mt-2">
+                        Sign In
+                    </button>
+                </form>
+
+                <div class="relative my-6">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-slate-200"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm"><span class="bg-white px-2 text-slate-500">Or
+                            continue with</span></div>
+                </div>
+
+                <button onclick="handleGoogleLogin()"
+                    class="w-full flex items-center justify-center gap-3 bg-white border border-slate-200 text-slate-700 font-bold py-3 rounded-full hover:bg-slate-50 transition-colors">
+                    <svg class="h-5 w-5" viewBox="0 0 24 24">
+                        <path
+                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                            fill="#4285F4" />
+                        <path
+                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                            fill="#34A853" />
+                        <path
+                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                            fill="#FBBC05" />
+                        <path
+                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                            fill="#EA4335" />
+                    </svg>
+                    Google
+                </button>
+
+                <p id="auth-toggle-text" class="text-center text-slate-500 text-sm mt-8">
+                    New to the SamosaMan Clan®? <button type="button" onclick="switchAuthMode()"
+                        class="text-brand-600 font-bold hover:underline">Create Account</button>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+
+    <script src="js/auth.js"></script>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/footer.js"></script>
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "SamosaMan",
+      "image": "https://samosamanvt.com/assets/m_logo.svg",
+      "description": "Authentic exotic samosas served fresh with delivery and pickup options in Burlington VT, Boston MA, and Hanover NH.",
+      "url": "https://samosamanvt.com",
+      "telephone": "+1-802-555-0123",
+      "priceRange": "$$",
+      "servesCuisine": "exotic",
+      "acceptsReservations": "False",
+      "hasMenu": "https://samosamanvt.com/burlington.html",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Main St",
+          "addressLocality": "Burlington",
+          "addressRegion": "VT",
+          "postalCode": "05401",
+          "addressCountry": "US"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "456 Mass Ave",
+          "addressLocality": "Boston",
+          "addressRegion": "MA",
+          "postalCode": "02115",
+          "addressCountry": "US"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "789 Hanover St",
+          "addressLocality": "Hanover",
+          "addressRegion": "NH",
+          "postalCode": "03755",
+          "addressCountry": "US"
+        }
+      ],
+      "geo": [
+        {
+          "@type": "GeoCoordinates",
+          "latitude": "44.4759",
+          "longitude": "-73.2121"
+        },
+        {
+          "@type": "GeoCoordinates",
+          "latitude": "42.3601",
+          "longitude": "-71.0589"
+        },
+        {
+          "@type": "GeoCoordinates",
+          "latitude": "43.7022",
+          "longitude": "-72.2887"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday", "Sunday"],
+          "opens": "11:00",
+          "closes": "20:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/samosamanvt",
+        "https://www.instagram.com/samosamanvt"
+      ]
+    }
+    </script>
+
+</body>
+
+</html>

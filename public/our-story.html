@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Our Story - Authentic exotic Samosas Since Day One | SamosaMan</title>
+    <meta name="title" content="Our Story - Authentic exotic Samosas Since Day One | SamosaMan">
+    <meta name="description" content="Learn about SamosaMan's journey bringing authentic exotic samosas to Vermont, Massachusetts, and New Hampshire. Discover our passion for quality and tradition.">
+    <meta name="keywords" content="about samosaman, exotic restaurant story, authentic samosas, Burlington VT restaurant, family business, exotic food tradition">
+    <link rel="canonical" href="https://samosamanvt.com/our-story.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://samosamanvt.com/our-story.html">
+    <meta property="og:title" content="Our Story - Authentic exotic Samosas Since Day One">
+    <meta property="og:description" content="Learn about SamosaMan's journey bringing authentic exotic samosas to New England.">
+    <meta property="og:image" content="https://samosamanvt.com/assets/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://samosamanvt.com/our-story.html">
+    <meta property="twitter:title" content="Our Story - Authentic exotic Samosas">
+    <meta property="twitter:description" content="Learn about SamosaMan's journey bringing authentic exotic samosas to New England.">
+    <meta property="twitter:image" content="https://samosamanvt.com/assets/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/m_logo.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-init.js"></script>
+
+    <script src="js/cart.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                    serif: ['Playfair Display', 'serif'],
+                    display: ['Oswald', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        brand: {
+                            500: '#ea580c',
+                            600: '#c2410c',
+                            700: '#9a3412',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation Classes */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Parallax Utility */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-slate-800 bg-white">
+
+    <div id="navbar-placeholder"></div>
+    <script src="js/navbar.js"></script>
+
+    <main class="pt-20">
+
+        <section class="relative py-24 bg-slate-50 border-b border-slate-100">
+            <div class="max-w-4xl mx-auto px-6 text-center reveal-on-scroll">
+                <span class="text-brand-600 font-bold tracking-widest uppercase text-xs mb-4 block">EST. 2001</span>
+                <h1 class="font-serif text-5xl md:text-6xl font-bold text-slate-900 mb-6">Samosaman. Our story.</h1>
+                <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+                    It started in a new country with a big idea: that being in a new place doesn't mean we have to
+                    sacrifice tradition, flavor, or culture; This is how Samosaman came to be.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-24 max-w-[1400px] mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative h-[500px] w-full bg-slate-200 rounded-xl overflow-hidden reveal-on-scroll">
+                    <img src="assets/our-team.PNG" alt="Kitchen Prep"
+                        class="object-cover object-[50%_10%] w-full h-full hover:scale-105 transition-transform duration-700">
+                </div>
+
+                <div class="reveal-on-scroll">
+                    <h2 class="font-serif text-4xl font-bold text-slate-900 mb-6">2001, <br>New Territory</h2>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        We never could have imagined that SamosaMan would become such a huge success when we started out in a summer street back in 2001. Today, we remain true to the original values of our business, with ethical trading & natural organic products. Our aim continues to be the creation of the whole meal - products that give a taste experience like no other. We believe every new creation has to be the best of it’s kind that we’ve ever tasted and, we’ve taken the time & care to bring out the intense flavor that has now become our trademark!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative h-[80vh] min-h-[600px] flex items-center justify-center parallax-bg my-12"
+            style="background-image: url('assets/festival-photo.webp');">
+
+            <div class="absolute inset-0 bg-black/40"></div>
+
+            <div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white reveal-on-scroll">
+                <h3 class="font-display text-2xl md:text-3xl uppercase tracking-widest mb-4 opacity-90">Always Natural.
+                </h3>
+
+                <h2 class="font-display text-6xl md:text-8xl font-bold uppercase leading-none mb-8 drop-shadow-lg">
+                    Always <br> <span class="text-brand-500">Fresh.</span>
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-8 text-left mt-12 max-w-4xl mx-auto">
+                    <div class="bg-black/20 backdrop-blur-md p-8 rounded-lg border border-white/10">
+                        <h4 class="font-bold text-xl mb-3">Local & Organic Produce</h4>
+                        <p class="text-slate-200 text-sm leading-relaxed">
+                            We commit to our goals on local and organic produce. We partner directly with farmers who
+                            care about the soil as much as we care about the crunch.
+                        </p>
+                    </div>
+
+                    <div class="bg-black/20 backdrop-blur-md p-8 rounded-lg border border-white/10">
+                        <h4 class="font-bold text-xl mb-3">Responsibly Raised</h4>
+                        <p class="text-slate-200 text-sm leading-relaxed">
+                            Only responsibly raised meat with some of the highest animal welfare standards. No added
+                            hormones. Ever.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 max-w-[1400px] mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+
+                <div class="order-2 md:order-1 reveal-on-scroll">
+                    <h2 class="font-serif text-4xl font-bold text-slate-900 mb-6">First Bites Of Success</h2>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Samosaman was a hit from the jump. Word spread quickly about the delicious, handcrafted samosas
+                        made with fresh ingredients and traditional recipes. What started as a small kitchen operation
+                        soon grew into a beloved local eatery, with customers lining up for a taste of the authentic
+                        flavors of home.
+                    </p>
+                    <ul class="space-y-4 mt-8">
+                        <li class="flex items-center gap-3 text-slate-700 font-medium">
+                            <div class="w-2 h-2 rounded-full bg-brand-500"></div>
+                            Hand-folded daily
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700 font-medium">
+                            <div class="w-2 h-2 rounded-full bg-brand-500"></div>
+                            Spices ground in-house
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700 font-medium">
+                            <div class="w-2 h-2 rounded-full bg-brand-500"></div>
+                            Sauces made from scratch
+                        </li>
+                    </ul>
+                </div>
+
+                <div
+                    class="order-1 md:order-2 relative h-[500px] w-full bg-slate-200 rounded-xl overflow-hidden reveal-on-scroll">
+                    <img src="assets/fuad_ndibalema.webp" alt="Dining Experience"
+                        class="object-cover w-full h-full hover:scale-105 transition-transform duration-700">
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-[#faeec8] border-t border-brand-900/10">
+            <div class="max-w-[1400px] mx-auto px-6 reveal-on-scroll">
+                <div class="grid md:grid-cols-3 gap-12 text-center">
+
+                    <a href="#" class="group block hover:-translate-y-1 transition-transform duration-300">
+                        <h3
+                            class="font-display text-4xl font-bold text-brand-700 mb-4 uppercase tracking-tight group-hover:text-brand-600 transition-colors">
+                            Connect With Us</h3>
+                        <p class="text-slate-800 text-lg leading-relaxed">
+                            Visit us on our social media for the <br> latest SamosaMan news.
+                        </p>
+                    </a>
+
+                    <a href="catering.html" class="group block hover:-translate-y-1 transition-transform duration-300">
+                        <h3
+                            class="font-display text-4xl font-bold text-brand-700 mb-4 uppercase tracking-tight group-hover:text-brand-600 transition-colors">
+                            Catering</h3>
+                        <p class="text-slate-800 text-lg leading-relaxed">
+                            Contact us about your event.
+                        </p>
+                    </a>
+
+                    <a href="burlington.html" class="group block hover:-translate-y-1 transition-transform duration-300">
+                        <h3
+                            class="font-display text-4xl font-bold text-brand-700 mb-4 uppercase tracking-tight group-hover:text-brand-600 transition-colors">
+                            Order Now</h3>
+                        <p class="text-slate-800 text-lg leading-relaxed">
+                            Join us at your nearest location <br>and experience the crunch that started it all.
+                        </p>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/footer.js"></script>
+
+
+    <script src="js/auth.js"></script>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Intersection Observer for "Fade In on Scroll"
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.15 // trigger when 15% of element is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // stop observing once visible
+                    }
+                });
+            }, observerOptions);
+
+            const elements = document.querySelectorAll('.reveal-on-scroll');
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+
+</body>
+
+</html>

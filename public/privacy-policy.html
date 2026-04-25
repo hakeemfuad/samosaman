@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Samosaman</title>
+    <link rel="icon" type="image/svg+xml" href="assets/m_logo.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-init.js"></script>
+    <script src="js/cart.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                    oswald: ['Oswald', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        brand: {
+                            500: '#ea580c',
+                            600: '#c2410c',
+                            700: '#9a3412',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
+
+    <div id="navbar-placeholder"></div>
+    <script src="js/navbar.js"></script>
+
+    <main class="flex-grow pt-20">
+        <div class="max-w-4xl mx-auto px-4 py-16">
+            <h1 class="font-oswald text-4xl font-bold text-slate-900 mb-8">Privacy Policy</h1>
+
+            <div class="prose prose-slate max-w-none space-y-8 text-slate-700 leading-relaxed">
+
+                <p class="text-sm text-slate-500">Last Updated: February 2026</p>
+
+                <section>
+                    <h2 class="font-oswald text-2xl font-bold text-slate-900 mt-8 mb-4">1. Introduction</h2>
+                    <p>SamosaMan Properties, Inc. ("SamosaMan," "we," "us," or "our") respects your privacy and is
+                        committed to protecting the personal information you share with us. This Privacy Policy explains
+                        how we collect, use, disclose, and safeguard your information when you visit our website, use
+                        our mobile application, or interact with our services.</p>
+                </section>
+
+                <section>
+                    <h2 class="font-oswald text-2xl font-bold text-slate-900 mt-8 mb-4">2. Information We Collect</h2>
+                    <h3 class="font-bold text-lg text-slate-800 mt-4 mb-2">Personal Information</h3>
+                    <p>We may collect the following personal information when you create an account, place an order, or
+                        interact with our services:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Name (first and last)</li>
+                        <li>Email address</li>
+                        <li>Phone number</li>
+                        <li>Delivery address</li>
+                        <li>Payment information (processed securely through Square)</li>
+                        <li>Date of birth (for rewards program)</li>
+                        <li>Order history and preferences</li>
+                    </ul>
+
+                    <h3 class="font-bold text-lg text-slate-800 mt-4 mb-2">Automatically Collected Information</h3>
+                    <p>When you access our website, we may automatically collect:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Device type and browser information</li>
+                        <li>IP address</li>
+                        <li>Pages visited and time spent</li>
+                        <li>Referring website or application</li>
+                        <li>Location data (with your permission, for delivery services)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="font-oswald text-2xl font-bold text-slate-900 mt-8 mb-4">3. How We Use Your Information
+                    </h2>
+                    <p>We use the information we collect to:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Process and fulfill your food orders</li>
+                        <li>Send order confirmations and delivery updates</li>
+                        <li>Manage your SamosaMan Rewards account</li>
+                        <li>Communicate promotions and special offers (with your consent)</li>
+                        <li>Improve our menu, services, and user experience</li>
+                        <li>Ensure the security of our platform</li>
+                        <li>Comply with legal obligations</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="font-oswald text-2xl font-bold text-slate-900 mt-8 mb-4">4. Payment Processing</h2>
+                    <p>All payment transactions are processed through Square, Inc. We do not store your full credit card
+                        number on our servers. Square's privacy policy and security measures apply to payment
+                        processing. For more information, visit Square's privacy policy.</p>
+                </section>
+
+                <section>
+                    <h2 class="font-oswald text-2xl font-bold text-slate-900 mt-8 mb-4">5. Information Sharing</h2>
+                    <p>We do not sell your personal information. We may share your information with:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Service Providers:</strong> Third-party companies that help us operate our business
+                            (payment processing, email delivery, analytics)</li>
+                        <li><strong>Delivery Partners:</strong> When necessary to fulfill delivery orders</li>
+                        <li><strong>Legal Requirements:</strong> When required by law, court order, or governmental
+                            authority</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="font-oswald text-2xl font-bold text-slate-900 mt-8 mb-4">6. Data Security</h2>
+                    <p>We implement appropriate technical and organizational measures to protect your personal
+                        information against unauthorized access, alteration, disclosure, or destruction. However, no
+                        method of transmission over the internet is 100% secure.</p>
+                </section>
+
+                <section>
+                    <h2 class="font-oswald text-2xl font-bold text-slate-900 mt-8 mb-4">7. Your Rights</h2>
+                    <p>You have the right to:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Access the personal information we hold about you</li>
+                        <li>Request correction of inaccurate information</li>
+                        <li>Request deletion of your account and associated data</li>
+                        <li>Opt out of marketing communications</li>
+                        <li>Withdraw consent for data processing</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="font-oswald text-2xl font-bold text-slate-900 mt-8 mb-4">8. Cookies</h2>
+                    <p>Our website uses cookies and similar technologies to enhance your browsing experience, remember
+                        your preferences, and analyze site traffic. You can manage cookie preferences through your
+                        browser settings.</p>
+                </section>
+
+                <section>
+                    <h2 class="font-oswald text-2xl font-bold text-slate-900 mt-8 mb-4">9. Children's Privacy</h2>
+                    <p>Our services are not directed to individuals under the age of 13. We do not knowingly collect
+                        personal information from children under 13.</p>
+                </section>
+
+                <section>
+                    <h2 class="font-oswald text-2xl font-bold text-slate-900 mt-8 mb-4">10. Changes to This Policy</h2>
+                    <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting
+                        the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+                </section>
+
+                <section>
+                    <h2 class="font-oswald text-2xl font-bold text-slate-900 mt-8 mb-4">11. Contact Us</h2>
+                    <p>If you have any questions about this Privacy Policy or our data practices, please contact us at:
+                    </p>
+                    <div class="bg-slate-50 rounded-lg p-6 border border-slate-200 mt-4">
+                        <p class="font-bold text-slate-900">SamosaMan Exotic Foods, Inc.</p>
+                        <p>Email: info@samosamanvt.com</p>
+                        <p>Phone: (802)-233-7783</p>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/footer.js"></script>
+
+
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

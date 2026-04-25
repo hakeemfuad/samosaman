@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samosaman - My Rewards</title>
+    <link rel="icon" type="image/svg+xml" href="assets/m_logo.svg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-init.js"></script>
+    <script src="js/cart.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                    oswald: ['Oswald', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        brand: {
+                            500: '#ea580c',
+                            600: '#c2410c',
+                            700: '#9a3412',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #d4d4d8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a1a1aa; }
+    </style>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
+
+    <div id="navbar-placeholder"></div>
+    <script src="js/navbar.js"></script>
+
+    <main class="flex-grow pt-20 bg-slate-50">
+        
+        <div class="bg-white border-b border-slate-200">
+            <div class="max-w-[1200px] mx-auto px-4 md:px-6 py-10 md:py-16">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+                    
+                    <div class="flex items-start gap-4 max-w-2xl">
+                        <img 
+                            src="assets/rewards.svg" 
+                            alt="Rewards Logo" 
+                            class="h-24 w-auto flex-shrink-0 -mt-2 drop-shadow-md">
+                        <div>
+                            <h1 class="font-oswald text-4xl md:text-5xl font-bold uppercase text-slate-900 leading-none mb-3">
+                                My Rewards (<span id="reward-count-header">0</span>)
+                            </h1>
+                            <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">
+                                Earn points with every order. Then cash in those points at anytime for free items in the Rewards Exchange.
+                            </p>
+                            <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-wide">
+                                <button id="view-history-btn" class="text-slate-900 underline underline-offset-4 decoration-slate-300 hover:text-brand-600 hover:decoration-brand-600 transition-all">View Points History</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-3 w-full md:w-auto">
+                        <button id="sign-out-btn" class="w-full md:w-auto px-8 py-3 border border-slate-200 text-slate-600 hover:text-red-600 hover:border-red-200 font-oswald text-lg font-bold uppercase tracking-wide hover:bg-red-50 transition-colors bg-white">
+                            Sign Out
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-[1200px] mx-auto px-4 md:px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
+                
+                <div class="bg-white p-10 shadow-sm border border-slate-200 flex flex-col items-center text-center justify-between min-h-[320px]">
+                    <div class="flex gap-4 mb-6">
+                        <div class="w-10 h-10 rounded-full bg-brand-600 flex items-center justify-center text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-brand-600 flex items-center justify-center text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-brand-600 flex items-center justify-center text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <span class="font-oswald text-slate-500 uppercase tracking-widest text-sm font-bold">You've Got</span>
+                        <h2 class="font-oswald text-6xl font-bold text-slate-900 mt-2 mb-6 uppercase">
+                            <span id="points-display">--</span> Points
+                        </h2>
+                    </div>
+
+                    <button class="w-full bg-brand-700 text-white font-oswald text-lg font-bold uppercase tracking-wide py-3 hover:bg-brand-800 transition-colors shadow-sm">
+                        View Rewards Exchange
+                    </button>
+                </div>
+
+                <div class="border-2 border-dashed border-slate-300 bg-transparent p-10 flex flex-col items-center justify-center text-center min-h-[320px]">
+                     <p class="text-slate-300 font-medium italic">No active rewards</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="bg-white py-16 border-t border-slate-100 mt-auto">
+            <div class="max-w-[1200px] mx-auto px-4 md:px-6">
+                <div class="flex justify-center text-center">
+                    
+                    <div class="flex flex-col items-center">
+                        <h3 class="font-oswald text-xl font-bold uppercase text-slate-900 mb-4">Need help with Samosaman Rewards?</h3>
+                        <button id="how-it-works-btn" class="bg-brand-700 text-white font-oswald font-bold uppercase tracking-wide py-2.5 px-8 text-sm hover:bg-brand-800 transition-colors shadow-sm">
+                            How Rewards Works
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+    
+    <div id="auth-modal-container"></div>
+
+    <div id="history-modal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onclick="toggleHistoryModal(false)"></div>
+        <div class="relative flex min-h-full items-center justify-center p-4">
+            <div class="relative w-full max-w-md bg-white rounded-xl p-8 shadow-2xl transform transition-all">
+                
+                <div class="flex justify-between items-center mb-6 border-b border-slate-100 pb-4">
+                    <h3 class="font-oswald text-2xl font-bold uppercase text-slate-900">Points History</h3>
+                    <button onclick="toggleHistoryModal(false)" class="text-slate-400 hover:text-slate-600 bg-slate-50 p-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="M6 6 18 18"/></svg>
+                    </button>
+                </div>
+
+                <div class="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
+                    <div class="flex items-center justify-between p-4 bg-slate-50 rounded-lg border border-slate-100">
+                        <div>
+                            <p class="font-bold text-slate-800">Welcome Bonus</p>
+                            <p class="text-xs text-slate-500">Joined the SamosaMan Clan®</p>
+                        </div>
+                        <span class="font-bold text-green-600">+100 pts</span>
+                    </div>
+                    
+                    <div class="text-center py-8">
+                        <p class="text-slate-400 text-sm">No other recent activity.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="how-it-works-modal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onclick="toggleHowItWorks(false)"></div>
+        <div class="relative flex min-h-full items-center justify-center p-4">
+            <div class="relative w-full max-w-lg bg-white rounded-xl p-0 shadow-2xl transform transition-all overflow-hidden">
+                
+                <div class="bg-brand-600 p-8 text-center">
+                    <h3 class="font-oswald text-3xl font-bold uppercase text-white mb-2">Samosa Math 101</h3>
+                    <p class="text-brand-100 font-medium">Class is in session. Don't worry, it's tasty.</p>
+                </div>
+
+                <div class="p-8 space-y-8">
+                    
+                    <div class="flex gap-5">
+                        <div class="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-2xl">👋</div>
+                        <div>
+                            <h4 class="font-oswald text-xl font-bold text-slate-900 uppercase">1. The Welcome High-Five</h4>
+                            <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                                Join the Clan, get <span class="font-bold text-brand-600">100 points</span> instantly. That equates to <span class="font-bold text-brand-600">1 Free Samosa</span>. Instant gratification is kinda our thing.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-5">
+                        <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-2xl">🔄</div>
+                        <div>
+                            <h4 class="font-oswald text-xl font-bold text-slate-900 uppercase">2. The Crunch Cycle</h4>
+                            <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                                Every time you spend about <span class="font-bold text-brand-600">$24</span> (that's roughly 6 samosas), you earn enough points for <span class="font-bold text-brand-600">another free one</span>. It’s the circle of life, but crunchier.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-5">
+                        <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-2xl">💎</div>
+                        <div>
+                            <h4 class="font-oswald text-xl font-bold text-slate-900 uppercase">3. The Infinite Glitch</h4>
+                            <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                                Redeem 100 points. Get free food. Eat. Repeat. Basically, if you try hard enough, you can unlock an infinite samosa glitch.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="toggleHowItWorks(false)" class="w-full bg-slate-900 text-white font-oswald font-bold uppercase tracking-wide py-3 rounded hover:bg-slate-800 transition-colors">
+                            Got It. Let's Eat.
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // 1. Check Auth & Fetch Points
+        auth.onAuthStateChanged(async (user) => {
+            if (user) {
+                // Fetch User Data from Firestore
+                try {
+                    const doc = await db.collection('users').doc(user.uid).get();
+                    if (doc.exists) {
+                        const data = doc.data();
+                        const points = data.rewardPoints || 0;
+                        
+                        // Update UI
+                        const headerCount = document.getElementById('reward-count-header');
+                        const displayCount = document.getElementById('points-display');
+                        
+                        if (headerCount) headerCount.innerText = points;
+                        if (displayCount) displayCount.innerText = points;
+                    }
+                } catch (error) {
+                    console.error("Error fetching rewards:", error);
+                }
+            } else {
+                // No user - Redirect to Home
+                window.location.href = 'index.html';
+            }
+        });
+
+        // 2. Sign Out Logic
+        document.getElementById('sign-out-btn').addEventListener('click', () => {
+            auth.signOut().then(() => {
+                // The onAuthStateChanged listener will handle the redirect
+                console.log('User signed out');
+            });
+        });
+
+        // 3. History Modal Logic
+        function toggleHistoryModal(show) {
+            const modal = document.getElementById('history-modal');
+            if(show) {
+                modal.classList.remove('hidden');
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+        
+        document.getElementById('view-history-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            toggleHistoryModal(true);
+        });
+
+        // 4. How It Works Modal Logic
+        function toggleHowItWorks(show) {
+            const modal = document.getElementById('how-it-works-modal');
+            if(show) {
+                modal.classList.remove('hidden');
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+
+        document.getElementById('how-it-works-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            toggleHowItWorks(true);
+        });
+    </script>
+    <script src="js/auth.js"></script>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/footer.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+/.DS_Store
+**/.DS_Store
+
+# Local content outside the website project
+/Assets/
+/Merch/
+/Trailer/
+/documents/
+/videos/
+/Website/
+
+# Editor and tool state
+/.agent/
+/.claude/
+/.firebase/
+/.vscode/
+**/.vscode/
+firebase-debug.log*
+firebase-debug.*.log*
+*.log
+
+# Dependency and local config files
+/node_modules/
+/functions/node_modules/
+/public/js/app-config.js
+*.local

@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samosaman - Guest Checkout</title>
+    <link rel="icon" type="image/svg+xml" href="assets/m_logo.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-init.js"></script>
+    <script src="js/branch-config.js"></script>
+    <script src="js/store-hours.js"></script>
+    <script src="js/cart.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                    oswald: ['Oswald', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        brand: {
+                            500: '#ea580c',
+                            600: '#c2410c',
+                            700: '#9a3412',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Radio Styling */
+        .payment-radio-option {
+            transition: all 0.2s ease;
+        }
+
+        .payment-radio-option:hover {
+            background-color: #f8fafc;
+        }
+
+        .payment-radio-option.selected {
+            border-color: #ea580c;
+            background-color: #fff7ed;
+        }
+
+        .custom-radio {
+            appearance: none;
+            background-color: #fff;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.25em;
+            height: 1.25em;
+            border: 2px solid #cbd5e1;
+            border-radius: 50%;
+            display: grid;
+            place-content: center;
+        }
+
+        .custom-radio::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em #ea580c;
+        }
+
+        .custom-radio:checked {
+            border-color: #ea580c;
+        }
+
+        .custom-radio:checked::before {
+            transform: scale(1);
+        }
+
+        .order-type-label {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .order-type-radio:checked+div {
+            background-color: #0f172a;
+            color: white;
+            border-color: #0f172a;
+        }
+
+        .order-type-radio:not(:checked)+div {
+            background-color: white;
+            color: #64748b;
+            border-color: #e2e8f0;
+        }
+
+        .tip-btn {
+            transition: all 0.2s;
+        }
+
+        .tip-btn.selected {
+            background-color: #ea580c;
+            color: white;
+            border-color: #ea580c;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-slate-800 bg-white flex flex-col min-h-screen">
+
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+            <a href="checkout-options.html"
+                class="flex items-center text-sm font-medium text-brand-600 hover:text-brand-700 transition-colors w-20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1">
+                    <path d="m15 18-6-6 6-6" />
+                </svg>
+                Back
+            </a>
+            <h1 class="font-oswald text-xl font-bold uppercase tracking-wide text-slate-900">Checkout</h1>
+            <a href="burlington.html"
+                class="text-sm font-medium text-brand-600 hover:text-brand-700 transition-colors w-20 text-right">Cancel</a>
+        </div>
+    </header>
+
+    <main class="flex-grow w-full max-w-2xl mx-auto px-4 py-8">
+
+        <div class="mb-12 text-center">
+            <h2 class="font-oswald text-2xl font-bold text-[#000000] mb-2">Guest Checkout</h2>
+            <p class="text-sm text-slate-500">Review your details and complete your purchase.</p>
+        </div>
+
+        <form id="checkout-form" class="space-y-6 text-left">
+
+            <!-- Delivery/Pickup Selector -->
+            <div class="mb-8">
+                <div class="inline-flex rounded-full bg-slate-200 p-1 w-full max-w-md mx-auto">
+                    <label class="flex-1 cursor-pointer">
+                        <input type="radio" name="orderType" value="delivery" class="peer hidden">
+                        <div
+                            class="peer-checked:bg-slate-900 peer-checked:text-white bg-transparent text-slate-600 py-3 px-6 rounded-full text-center font-bold transition-all duration-200 flex items-center justify-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+                                <circle cx="7" cy="17" r="2" />
+                                <path d="M9 17h6" />
+                                <circle cx="17" cy="17" r="2" />
+                            </svg>
+                            Delivery
+                        </div>
+                    </label>
+                    <label class="flex-1 cursor-pointer">
+                        <input type="radio" name="orderType" value="pickup" class="peer hidden" checked>
+                        <div
+                            class="peer-checked:bg-slate-900 peer-checked:text-white bg-transparent text-slate-600 py-3 px-6 rounded-full text-center font-bold transition-all duration-200 flex items-center justify-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7" />
+                                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                                <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4" />
+                                <path d="M2 7h20" />
+                                <path
+                                    d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7" />
+                            </svg>
+                            Pickup
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Minimum Order Warning -->
+            <div id="minimum-order-warning" class="hidden mb-6 text-center">
+                <p class="text-red-600 text-sm font-medium">Minimum order of $30 required. Add <span id="amount-needed"
+                        class="font-bold"></span> more to your order.</p>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="space-y-4">
+                <div>
+                    <h3 class="font-oswald text-xl font-bold text-[#000000]">Contact Information</h3>
+                    <p class="text-xs text-slate-500 mt-1">*All fields must be filled out</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="contact-field-wrapper relative border border-slate-300 rounded-md px-3 py-2 focus-within:ring-1 focus-within:ring-slate-800 bg-white transition-colors"
+                        data-field="fname">
+                        <label for="fname" class="block text-xs font-medium text-slate-500 mb-0.5">First Name</label>
+                        <input type="text" id="fname"
+                            class="block w-full border-0 p-0 text-slate-900 focus:ring-0 sm:text-base font-medium outline-none"
+                            data-required="true">
+                    </div>
+                    <div class="contact-field-wrapper relative border border-slate-300 rounded-md px-3 py-2 focus-within:ring-1 focus-within:ring-slate-800 bg-white transition-colors"
+                        data-field="lname">
+                        <label for="lname" class="block text-xs font-medium text-slate-500 mb-0.5">Last Name</label>
+                        <input type="text" id="lname"
+                            class="block w-full border-0 p-0 text-slate-900 focus:ring-0 sm:text-base font-medium outline-none"
+                            data-required="true">
+                    </div>
+                </div>
+
+                <div class="contact-field-wrapper relative border border-slate-300 rounded-md px-3 py-2 focus-within:ring-1 focus-within:ring-slate-800 bg-white transition-colors"
+                    data-field="email">
+                    <label for="email" class="block text-xs font-medium text-slate-500 mb-0.5">Email</label>
+                    <input type="email" id="email"
+                        class="block w-full border-0 p-0 text-slate-900 focus:ring-0 sm:text-base font-medium outline-none"
+                        data-required="true">
+                </div>
+
+                <div class="contact-field-wrapper relative border border-slate-300 rounded-md px-3 py-2 focus-within:ring-1 focus-within:ring-slate-800 bg-white transition-colors"
+                    data-field="phone">
+                    <label for="phone" class="block text-xs font-medium text-slate-500 mb-0.5">Mobile Phone</label>
+                    <input type="tel" id="phone"
+                        class="block w-full border-0 p-0 text-slate-900 focus:ring-0 sm:text-base font-medium outline-none"
+                        data-required="true">
+                </div>
+            </div>
+
+            <!-- Order Details Section -->
+            <div class="border-t border-slate-200 pt-6 mt-6">
+                <h3 class="font-oswald text-xl font-bold text-[#000000] mb-4">Order Details</h3>
+                <div id="order-summary" class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+                </div>
+            </div>
+
+            <!-- Special Instructions -->
+            <div class="mt-4">
+                <div
+                    class="relative border border-slate-300 rounded-md px-3 py-2 focus-within:ring-1 focus-within:ring-slate-800 bg-white">
+                    <label for="special-instructions" class="block text-xs font-medium text-slate-500 mb-0.5">Special
+                        Instructions</label>
+                    <textarea id="special-instructions" rows="3" maxlength="500"
+                        class="block w-full border-0 p-0 text-slate-900 focus:ring-0 sm:text-base font-medium outline-none resize-none"
+                        placeholder="Any special requests or dietary restrictions?"></textarea>
+                    <p class="text-xs text-slate-400 mt-1 text-right"><span id="instructions-count">0</span>/500</p>
+                </div>
+            </div>
+
+            <div id="delivery-details-section"
+                class="hidden border-t border-slate-200 pt-6 mt-6 transition-all duration-300">
+                <div class="mb-4">
+                    <h3 class="font-oswald text-xl font-bold text-[#000000]">Delivery Details</h3>
+                    <p class="text-xs text-slate-500 mt-1">*All fields must be filled out</p>
+                </div>
+
+                <div class="space-y-4 mb-6">
+                    <div class="delivery-field-wrapper relative border border-slate-300 rounded-md px-3 py-2 bg-white focus-within:ring-1 focus-within:ring-slate-800 transition-colors"
+                        data-field="del-address">
+                        <label class="block text-xs font-medium text-slate-500 mb-0.5">Street Address</label>
+                        <input type="text" id="del-address"
+                            class="block w-full border-0 p-0 text-slate-900 focus:ring-0 font-medium outline-none"
+                            data-required="true">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="delivery-field-wrapper relative border border-slate-300 rounded-md px-3 py-2 bg-white focus-within:ring-1 focus-within:ring-slate-800 transition-colors"
+                            data-field="del-city">
+                            <label class="block text-xs font-medium text-slate-500 mb-0.5">City/Town</label>
+                            <input type="text" id="del-city"
+                                class="block w-full border-0 p-0 text-slate-900 focus:ring-0 font-medium outline-none"
+                                data-required="true">
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="delivery-field-wrapper relative border border-slate-300 rounded-md px-3 py-2 bg-white focus-within:ring-1 focus-within:ring-slate-800 transition-colors"
+                                data-field="del-state">
+                                <label class="block text-xs font-medium text-slate-500 mb-0.5">State</label>
+                                <div class="relative">
+                                    <select id="del-state" maxlength="2"
+                                        class="block w-full border-0 p-0 text-slate-900 focus:ring-0 font-medium outline-none bg-transparent appearance-none"
+                                        data-required="true">
+                                        <option value="">Select</option>
+                                        <option value="AL">AL</option>
+                                        <option value="AK">AK</option>
+                                        <option value="AZ">AZ</option>
+                                        <option value="AR">AR</option>
+                                        <option value="CA">CA</option>
+                                        <option value="CO">CO</option>
+                                        <option value="CT">CT</option>
+                                        <option value="DE">DE</option>
+                                        <option value="FL">FL</option>
+                                        <option value="GA">GA</option>
+                                        <option value="HI">HI</option>
+                                        <option value="ID">ID</option>
+                                        <option value="IL">IL</option>
+                                        <option value="IN">IN</option>
+                                        <option value="IA">IA</option>
+                                        <option value="KS">KS</option>
+                                        <option value="KY">KY</option>
+                                        <option value="LA">LA</option>
+                                        <option value="ME">ME</option>
+                                        <option value="MD">MD</option>
+                                        <option value="MA">MA</option>
+                                        <option value="MI">MI</option>
+                                        <option value="MN">MN</option>
+                                        <option value="MS">MS</option>
+                                        <option value="MO">MO</option>
+                                        <option value="MT">MT</option>
+                                        <option value="NE">NE</option>
+                                        <option value="NV">NV</option>
+                                        <option value="NH">NH</option>
+                                        <option value="NJ">NJ</option>
+                                        <option value="NM">NM</option>
+                                        <option value="NY">NY</option>
+                                        <option value="NC">NC</option>
+                                        <option value="ND">ND</option>
+                                        <option value="OH">OH</option>
+                                        <option value="OK">OK</option>
+                                        <option value="OR">OR</option>
+                                        <option value="PA">PA</option>
+                                        <option value="RI">RI</option>
+                                        <option value="SC">SC</option>
+                                        <option value="SD">SD</option>
+                                        <option value="TN">TN</option>
+                                        <option value="TX">TX</option>
+                                        <option value="UT">UT</option>
+                                        <option value="VT">VT</option>
+                                        <option value="VA">VA</option>
+                                        <option value="WA">WA</option>
+                                        <option value="WV">WV</option>
+                                        <option value="WI">WI</option>
+                                        <option value="WY">WY</option>
+                                    </select>
+                                    <div
+                                        class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-700">
+                                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="delivery-field-wrapper relative border border-slate-300 rounded-md px-3 py-2 bg-white focus-within:ring-1 focus-within:ring-slate-800 transition-colors"
+                                data-field="del-zip">
+                                <label class="block text-xs font-medium text-slate-500 mb-0.5">Zip</label>
+                                <input type="text" id="del-zip"
+                                    class="block w-full border-0 p-0 text-slate-900 focus:ring-0 font-medium outline-none"
+                                    data-required="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="delivery-field-wrapper relative border border-slate-300 rounded-md px-3 py-2 bg-white focus-within:ring-1 focus-within:ring-slate-800 mb-2 transition-colors"
+                    data-field="delivery-branch">
+                    <label for="delivery-branch" class="block text-xs font-medium text-slate-500 mb-0.5">Ordering
+                        Branch</label>
+                    <div class="relative">
+                        <select id="delivery-branch"
+                            class="block w-full border-0 p-0 text-slate-900 focus:ring-0 font-medium outline-none bg-transparent appearance-none"
+                            data-required="true">
+                            <option value="Burlington">Burlington, VT</option>
+                            <option value="Boston">Boston, MA</option>
+                            <option value="Hanover">Hanover, NH</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-700">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div id="proximity-status-container" class="hidden mb-6 rounded-md transition-all duration-300"
+                    role="status" aria-live="polite" aria-atomic="true">
+                    <!-- Status content will be dynamically injected here -->
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Is this delivery for now or
+                        later?</label>
+                    <div class="flex items-center gap-6 mb-3">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="del-timing" value="now" checked
+                                class="w-4 h-4 text-brand-600 focus:ring-brand-500">
+                            <span class="text-slate-900 font-medium">Now</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="del-timing" value="later"
+                                class="w-4 h-4 text-brand-600 focus:ring-brand-500">
+                            <span class="text-slate-900 font-medium">Later</span>
+                        </label>
+                    </div>
+                    <div id="del-time-input-container" class="hidden">
+                        <label class="block text-xs font-medium text-slate-500 mb-1">Select Time</label>
+                        <select id="del-scheduled-time"
+                            class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 border bg-white">
+                            <option value="" disabled selected>Select a time</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="10:30 AM">10:30 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="11:30 AM">11:30 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="12:30 PM">12:30 PM</option>
+                            <option value="1:00 PM">01:00 PM</option>
+                            <option value="1:30 PM">01:30 PM</option>
+                            <option value="2:00 PM">02:00 PM</option>
+                            <option value="2:30 PM">02:30 PM</option>
+                            <option value="3:00 PM">03:00 PM</option>
+                            <option value="3:30 PM">03:30 PM</option>
+                            <option value="4:00 PM">04:00 PM</option>
+                            <option value="4:30 PM">04:30 PM</option>
+                            <option value="5:00 PM">05:00 PM</option>
+                            <option value="5:30 PM">05:30 PM</option>
+                            <option value="6:00 PM">06:00 PM</option>
+                            <option value="6:30 PM">06:30 PM</option>
+                            <option value="7:00 PM">07:00 PM</option>
+                            <option value="7:30 PM">07:30 PM</option>
+                            <option value="8:00 PM">08:00 PM</option>
+                            <option value="8:30 PM">08:30 PM</option>
+                            <option value="9:00 PM">09:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pickup-details-section"
+                class="hidden border-t border-slate-200 pt-6 mt-6 transition-all duration-300">
+                <h3 class="font-oswald text-xl font-bold text-[#000000] mb-4">Pickup Details</h3>
+
+                <div
+                    class="relative border border-slate-300 rounded-md px-3 py-2 bg-white focus-within:ring-1 focus-within:ring-slate-800 mb-6">
+                    <label for="pickup-branch" class="block text-xs font-medium text-slate-500 mb-0.5">Pickup
+                        Location</label>
+                    <div class="relative">
+                        <select id="pickup-branch"
+                            class="block w-full border-0 p-0 text-slate-900 focus:ring-0 font-medium outline-none bg-transparent appearance-none">
+                            <option value="Burlington">Burlington, VT</option>
+                            <option value="Boston">Boston, MA</option>
+                            <option value="Hanover">Hanover, NH</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-700">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Is this pickup for now or
+                        later?</label>
+                    <div class="flex items-center gap-6 mb-3">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="pickup-timing" value="now" checked
+                                class="w-4 h-4 text-brand-600 focus:ring-brand-500">
+                            <span class="text-slate-900 font-medium">Now</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="pickup-timing" value="later"
+                                class="w-4 h-4 text-brand-600 focus:ring-brand-500">
+                            <span class="text-slate-900 font-medium">Later</span>
+                        </label>
+                    </div>
+                    <div id="pickup-time-input-container" class="hidden">
+                        <label class="block text-xs font-medium text-slate-500 mb-1">Select Time</label>
+                        <select id="pickup-scheduled-time"
+                            class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 border bg-white">
+                            <option value="" disabled selected>Select a time</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="10:30 AM">10:30 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="11:30 AM">11:30 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="12:30 PM">12:30 PM</option>
+                            <option value="1:00 PM">01:00 PM</option>
+                            <option value="1:30 PM">01:30 PM</option>
+                            <option value="2:00 PM">02:00 PM</option>
+                            <option value="2:30 PM">02:30 PM</option>
+                            <option value="3:00 PM">03:00 PM</option>
+                            <option value="3:30 PM">03:30 PM</option>
+                            <option value="4:00 PM">04:00 PM</option>
+                            <option value="4:30 PM">04:30 PM</option>
+                            <option value="5:00 PM">05:00 PM</option>
+                            <option value="5:30 PM">05:30 PM</option>
+                            <option value="6:00 PM">06:00 PM</option>
+                            <option value="6:30 PM">06:30 PM</option>
+                            <option value="7:00 PM">07:00 PM</option>
+                            <option value="7:30 PM">07:30 PM</option>
+                            <option value="8:00 PM">08:00 PM</option>
+                            <option value="8:30 PM">08:30 PM</option>
+                            <option value="9:00 PM">09:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="font-oswald text-xl font-bold text-[#000000] mb-2">Give a little extra love to the Samosa
+                    Team</h3>
+                <div class="grid grid-cols-4 gap-2 mb-3">
+                    <button type="button"
+                        class="tip-btn border border-slate-300 rounded py-2 font-bold text-sm text-slate-600 hover:border-brand-500 hover:text-brand-600 transition-colors"
+                        data-pct="0.10">10%</button>
+                    <button type="button"
+                        class="tip-btn border border-slate-300 rounded py-2 font-bold text-sm text-slate-600 hover:border-brand-500 hover:text-brand-600 transition-colors"
+                        data-pct="0.20">20%</button>
+                    <button type="button"
+                        class="tip-btn border border-slate-300 rounded py-2 font-bold text-sm text-slate-600 hover:border-brand-500 hover:text-brand-600 transition-colors"
+                        data-pct="0.25">25%</button>
+                    <button type="button" id="tip-other-btn"
+                        class="tip-btn border border-slate-300 rounded py-2 font-bold text-sm text-slate-600 hover:border-brand-500 hover:text-brand-600 transition-colors"
+                        data-pct="other">Other</button>
+                </div>
+
+                <div id="tip-custom-container"
+                    class="hidden relative border border-slate-300 rounded-md px-3 py-2 bg-white mb-3">
+                    <label class="block text-xs font-medium text-slate-500 mb-0.5">Custom Amount ($)</label>
+                    <input type="number" id="tip-custom-val" step="0.01" min="0"
+                        class="block w-full border-0 p-0 text-slate-900 focus:ring-0 font-medium outline-none">
+                </div>
+
+                <div class="bg-slate-50 rounded p-4 flex justify-between items-center border border-slate-200 mt-4">
+                    <div class="flex flex-col">
+                        <span class="font-bold text-slate-700">Order Total</span>
+                        <span class="text-xs text-slate-500">(Includes Tax & Tip)</span>
+                    </div>
+                    <span id="final-total-display" class="font-oswald text-xl font-bold text-brand-600">$0.00</span>
+                </div>
+            </div>
+
+            <div class="pt-6">
+                <h3 class="font-oswald text-xl font-bold text-[#000000] mb-4">Payment Details</h3>
+
+                <div class="flex flex-col gap-0 border border-slate-200 rounded-xl overflow-hidden divide-y divide-slate-100"
+                    id="payment-methods-container">
+
+                    <label class="payment-radio-option relative flex items-center p-4 cursor-pointer hidden"
+                        id="option-google-pay">
+                        <input type="radio" name="paymentMethod" value="googlePay" class="custom-radio mr-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-12 h-8 border border-slate-200 rounded bg-white flex items-center justify-center">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg"
+                                    alt="Google Pay" class="h-4 w-auto">
+                            </div>
+                            <span class="font-medium text-slate-900">Google Pay</span>
+                        </div>
+                    </label>
+
+                    <label class="payment-radio-option relative flex items-center p-4 cursor-pointer hidden"
+                        id="option-apple-pay">
+                        <input type="radio" name="paymentMethod" value="applePay" class="custom-radio mr-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-12 h-8 border border-slate-200 rounded bg-white flex items-center justify-center">
+                                <svg class="h-4 w-auto" viewBox="0 0 38 16" fill="black">
+                                    <path
+                                        d="M5.4,6.9c0.7-0.9,1.2-2.1,1-3.2c-1,0-2.3,0.7-3,1.5C2.6,6,2.1,7.3,2.3,8.4C3.4,8.5,4.7,7.8,5.4,6.9z M13.3,7.9c0,2.3,2,3,2.1,3.1c-0.1,0.5-0.6,1.7-1.3,2.7c-0.6,0.9-1.3,1.8-2.3,1.8c-1,0-1.4-0.6-2.6-0.6c-1.3,0-1.7,0.6-2.6,0.6c-1,0-1.7-1-2.4-2c-1.3-1.9-2.3-5.3-1-7.5c0.6-1.1,1.8-1.8,3-1.8c0.9,0,1.8,0.6,2.4,0.6c0.6,0,1.7-0.7,2.8-0.7c0.5,0,2.3,0.1,3.3,1.6C14.7,5.4,13.3,6.3,13.3,7.9z">
+                                    </path>
+                                    <path
+                                        d="M21.1,14.6h-1.6V4.4h1.5v3.4c0.5-0.7,1.2-1.1,2-1.1c1.8,0,3.2,1.5,3.2,4c0,2.5-1.4,4-3.2,4c-0.8,0-1.6-0.4-2-1.1V14.6z M21.1,10.7c0,1.7,0.9,2.7,2,2.7c1.2,0,2-1.1,2-2.7c0-1.6-0.9-2.7-2-2.7C21.9,8,21.1,9.1,21.1,10.7z">
+                                    </path>
+                                    <path
+                                        d="M33,12.7c0,1.3-1,1.9-2.6,1.9c-0.7,0-1.8-0.2-2.3-0.5l0.3-1.2c0.5,0.2,1.3,0.5,2,0.5c0.7,0,1.1-0.3,1.1-0.8c0-0.5-0.3-0.7-1.3-1c-1.3-0.4-2.2-1-2.2-2.3c0-1.3,1.1-2.2,2.7-2.2c0.8,0,1.5,0.2,2,0.4l-0.3,1.1c-0.4-0.2-1-0.4-1.7-0.4c-0.7,0-1.1,0.3-1.1,0.8c0,0.5,0.3,0.7,1.3,1C32.4,10.5,33,11.2,33,12.7z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span class="font-medium text-slate-900">Apple Pay</span>
+                        </div>
+                    </label>
+
+                    <label class="payment-radio-option relative flex items-center p-4 cursor-pointer"
+                        id="option-new-card">
+                        <input type="radio" name="paymentMethod" value="newCard" class="custom-radio mr-4" checked>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-12 h-8 border border-slate-200 rounded bg-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-slate-500">
+                                    <rect width="20" height="14" x="2" y="5" rx="2" />
+                                    <line x1="2" x2="22" y1="10" y2="10" />
+                                </svg>
+                            </div>
+                            <span class="font-medium text-slate-900">Add new card</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div id="new-card-section" class="mt-4 transition-all duration-300">
+                    <div class="p-4 border border-slate-300 rounded-md bg-white">
+                        <div id="card-container"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="payment-status-container" class="hidden p-4 rounded-md text-sm text-center font-bold"></div>
+
+            <div class="pt-6 text-center">
+                <button id="card-button" type="button"
+                    class="w-auto px-12 py-3 bg-brand-600 hover:bg-brand-700 border border-transparent rounded-full font-bold text-white shadow-lg transition-all duration-200 active:scale-95 shadow-brand-500/30">
+                    Place Order
+                </button>
+            </div>
+
+        </form>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/footer.js"></script>
+
+
+    <!-- Closed Store Modal -->
+    <div id="closed-store-modal" class="hidden fixed inset-0 z-[200] overflow-y-auto">
+        <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"></div>
+        <div class="relative flex min-h-full items-center justify-center p-4">
+            <div
+                class="relative w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-8 shadow-2xl transition-all">
+                <div class="text-center mb-6">
+                    <div class="mx-auto w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="font-oswald text-2xl font-bold text-slate-900 mb-2">We're Closed Right Now</h2>
+                    <p class="text-slate-600">We still wanna get you your Samosas though. Place your order ahead now and
+                        you're scoring <span class="font-bold text-brand-600">10% off your order</span>.</p>
+                </div>
+                <div class="mb-6">
+                    <h3 class="font-semibold text-sm text-slate-700 mb-3">Choose an available window for your order</h3>
+                    <div id="date-selector" class="grid grid-cols-3 gap-2 mb-4"></div>
+                    <div id="time-selector-container" class="hidden">
+                        <h4 class="font-semibold text-xs text-slate-500 mb-2">Select a time</h4>
+                        <div id="time-selector"
+                            class="max-h-48 overflow-y-auto space-y-1 border border-slate-200 rounded-lg p-2"></div>
+                    </div>
+                </div>
+                <button id="confirm-schedule-btn"
+                    class="hidden w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 rounded-full transition-all">
+                    Confirm Schedule
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="hidden fixed inset-0 z-[200] overflow-y-auto">
+        <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm"></div>
+        <div class="relative flex min-h-full items-center justify-center p-4">
+            <div class="relative w-full max-w-md transform rounded-2xl bg-white p-8 shadow-2xl text-center">
+                <div class="mx-auto w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+                <h2 class="font-oswald text-3xl font-bold text-slate-900 mb-4">
+                    Deliciousness is headed your way, <span id="success-customer-name" class="text-brand-600"></span>!
+                </h2>
+                <p class="text-slate-600 text-lg mb-6">
+                    Check your email for order confirmation and details.
+                </p>
+                <button onclick="window.location.href='index.html'"
+                    class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 rounded-full transition-all">
+                    Back to Home
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay"
+        class="hidden fixed inset-0 z-[300] bg-slate-900/90 backdrop-blur-sm flex items-center justify-center">
+        <div class="text-center">
+            <div class="inline-block animate-spin rounded-full h-16 w-16 border-4 border-white border-t-transparent">
+            </div>
+            <p class="text-white mt-4 font-medium">Processing your order...</p>
+        </div>
+    </div>
+
+    <script src="js/sq-payment.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            if (window.lucide) lucide.createIcons();
+
+            // --- UI ELEMENTS ---
+            const deliverySection = document.getElementById('delivery-details-section');
+            const pickupSection = document.getElementById('pickup-details-section');
+            const delTimeContainer = document.getElementById('del-time-input-container');
+            const pickupTimeContainer = document.getElementById('pickup-time-input-container');
+
+            const otherTipContainer = document.getElementById('tip-custom-container');
+            const customTipInput = document.getElementById('tip-custom-val');
+            const totalDisplay = document.getElementById('final-total-display');
+
+            let currentTipAmount = 0;
+
+            // --- RENDER ORDER SUMMARY ---
+            function renderOrderSummary() {
+                const cart = JSON.parse(localStorage.getItem('samosaman_cart') || '[]');
+                const container = document.getElementById('order-summary');
+                if (!container) return;
+
+                if (cart.length === 0) {
+                    container.innerHTML = '<p class="text-slate-500 text-center py-4">Your cart is empty</p>';
+                    return;
+                }
+
+                const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                container.innerHTML = `
+                    <div class="space-y-3 mb-4">
+                        ${cart.map(item => `
+                            <div class="flex items-center gap-3 py-2">
+                                ${item.image ? `<img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-cover rounded">` : ''}
+                                <div class="flex-1">
+                                    <p class="font-medium text-slate-900">${item.name}</p>
+                                    <p class="text-sm text-slate-500">Qty: ${item.quantity}</p>
+                                </div>
+                                <p class="font-semibold text-slate-900">$${(item.price * item.quantity).toFixed(2)}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="border-t border-slate-200 pt-3 space-y-2">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-600">Subtotal</span>
+                            <span class="font-medium text-slate-900">$${subtotal.toFixed(2)}</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-600">Tax (7%)</span>
+                            <span class="font-medium text-slate-900">$${(subtotal * 0.07).toFixed(2)}</span>
+                        </div>
+                        <div class="flex justify-between text-base font-bold border-t border-slate-200 pt-2">
+                            <span class="text-slate-900">Total</span>
+                            <span class="text-brand-600">$${(subtotal * 1.07).toFixed(2)}</span>
+                        </div>
+                    </div>
+                `;
+            }
+            renderOrderSummary();
+
+            // --- CHECK MINIMUM ORDER ---
+            function checkMinimumOrder() {
+                const cart = JSON.parse(localStorage.getItem('samosaman_cart') || '[]');
+                const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const minOrder = 30;
+                const warning = document.getElementById('minimum-order-warning');
+                const amountNeeded = document.getElementById('amount-needed');
+                const submitBtn = document.getElementById('card-button');
+
+                if (subtotal < minOrder) {
+                    const needed = minOrder - subtotal;
+                    if (warning) warning.classList.remove('hidden');
+                    if (amountNeeded) amountNeeded.textContent = `$${needed.toFixed(2)}`;
+                    if (submitBtn) { submitBtn.disabled = true; submitBtn.classList.add('opacity-50', 'cursor-not-allowed'); }
+                    return false;
+                } else {
+                    if (warning) warning.classList.add('hidden');
+                    if (submitBtn) { submitBtn.disabled = false; submitBtn.classList.remove('opacity-50', 'cursor-not-allowed'); }
+                    return true;
+                }
+            }
+            checkMinimumOrder();
+
+            // --- SPECIAL INSTRUCTIONS COUNTER ---
+            const instructionsField = document.getElementById('special-instructions');
+            const countDisplay = document.getElementById('instructions-count');
+            if (instructionsField && countDisplay) {
+                instructionsField.addEventListener('input', (e) => {
+                    countDisplay.textContent = e.target.value.length;
+                });
+            }
+
+            // --- STORE HOURS CHECK ---
+            const urlParams = new URLSearchParams(window.location.search);
+            const initialBranch = urlParams.get('branch') || 'Burlington';
+
+            if (window.isStoreOpen && !window.isStoreOpen(initialBranch)) {
+                showClosedModal(initialBranch);
+            }
+
+            // --- CHECK ORDER CUTOFF ---
+            function checkOrderCutoff() {
+                const branch = document.getElementById('delivery-branch')?.value || document.getElementById('pickup-branch')?.value || 'Burlington';
+                const hours = window.getStoreHoursForToday ? window.getStoreHoursForToday(branch) : null;
+                if (!hours || hours.closed) return;
+
+                const now = new Date();
+                const [closeHour, closeMin] = hours.close.split(':').map(Number);
+                const closingTime = new Date(now);
+                closingTime.setHours(closeHour, closeMin, 0, 0);
+
+                const cutoffTime = new Date(closingTime.getTime() - (20 * 60 * 1000));
+
+                let cutoffWarning = document.getElementById('cutoff-warning');
+                if (!cutoffWarning) {
+                    cutoffWarning = document.createElement('div');
+                    cutoffWarning.id = 'cutoff-warning';
+                    cutoffWarning.className = 'hidden mt-2';
+                    cutoffWarning.innerHTML = '<p class="text-red-600 text-sm font-medium">Orders close 20 minutes before we do. Please schedule your order for later.</p>';
+                    const timingSection = document.querySelector('input[name="del-timing"]')?.closest('.mb-6') || document.querySelector('input[name="pickup-timing"]')?.closest('.mb-6');
+                    if (timingSection) timingSection.after(cutoffWarning);
+                }
+
+                if (now >= cutoffTime) {
+                    cutoffWarning.classList.remove('hidden');
+                    const nowRadios = document.querySelectorAll('input[name="del-timing"][value="now"], input[name="pickup-timing"][value="now"]');
+                    nowRadios.forEach(r => r.disabled = true);
+                } else {
+                    cutoffWarning.classList.add('hidden');
+                }
+            }
+            checkOrderCutoff();
+
+            // --- 1. HANDLE ORDER TYPE (Delivery vs Pickup) ---
+            function updateOrderTypeUI() {
+                const selected = document.querySelector('input[name="orderType"]:checked');
+                if (selected && selected.value === 'delivery') {
+                    deliverySection.classList.remove('hidden');
+                    pickupSection.classList.add('hidden');
+                    calculateTotal();
+                } else {
+                    deliverySection.classList.add('hidden');
+                    pickupSection.classList.remove('hidden');
+                }
+            }
+
+            const typeRadios = document.querySelectorAll('input[name="orderType"]');
+            typeRadios.forEach(radio => radio.addEventListener('change', updateOrderTypeUI));
+
+            // Initialize based on URL or default
+            const initialType = urlParams.get('type') || 'pickup';
+            const matchingRadio = document.querySelector(`input[name="orderType"][value="${initialType}"]`);
+            if (matchingRadio) matchingRadio.checked = true;
+            updateOrderTypeUI();
+
+            // --- 2. HANDLE TIMING LOGIC ---
+            const delTimeRadios = document.querySelectorAll('input[name="del-timing"]');
+            delTimeRadios.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    if (radio.value === 'later') {
+                        delTimeContainer.classList.remove('hidden');
+                    } else {
+                        delTimeContainer.classList.add('hidden');
+                    }
+                });
+            });
+
+            // --- 2A. ADDRESS VALIDATION & DISTANCE CHECKING ---
+            const addressInput = document.getElementById('del-address');
+            const cityInput = document.getElementById('del-city');
+            const stateInput = document.getElementById('del-state');
+            const zipInput = document.getElementById('del-zip');
+            const branchSelect = document.getElementById('delivery-branch');
+            const statusContainer = document.getElementById('proximity-status-container');
+
+            // Validation state tracker
+            const proximityValidator = {
+                isValidating: false,
+                lastValidationTimestamp: null,
+                currentValidationController: null,
+
+                canValidate() {
+                    return !this.isValidating;
+                },
+
+                cancel() {
+                    if (this.currentValidationController) {
+                        this.currentValidationController.abort();
+                    }
+                }
+            };
+
+            // Calculate distance between two coordinates (Haversine formula)
+            function calculateDistance(lat1, lon1, lat2, lon2) {
+                const R = 3959; // Earth's radius in miles
+                const dLat = (lat2 - lat1) * Math.PI / 180;
+                const dLon = (lon2 - lon1) * Math.PI / 180;
+                const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+                const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                return R * c;
+            }
+
+            // Check if all address fields are filled
+            function checkAddressComplete() {
+                const address = addressInput?.value.trim();
+                const city = cityInput?.value.trim();
+                const state = stateInput?.value.trim();
+                const zip = zipInput?.value.trim();
+
+                return address && city && state && zip;
+            }
+
+            // Show validation status with visual feedback
+            function showProximityStatus(state, data = {}) {
+                if (!statusContainer) return;
+
+                statusContainer.classList.remove('hidden');
+
+                switch (state) {
+                    case 'validating':
+                        statusContainer.innerHTML = `
+                            <div class="p-3 bg-blue-50 border-2 border-blue-400 rounded-md flex items-center gap-3">
+                                <svg class="animate-spin h-5 w-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                <p class="text-blue-700 text-sm font-semibold">Checking delivery range...</p>
+                            </div>
+                        `;
+                        break;
+
+                    case 'success':
+                        statusContainer.innerHTML = `
+                            <div class="p-3 bg-green-50 border-2 border-green-500 rounded-md flex items-center gap-3">
+                                <svg class="h-5 w-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <p class="text-green-700 text-sm font-semibold">Great! You're within our delivery range</p>
+                                    <p class="text-green-600 text-xs">Distance from ${data.branch}: ${data.distance.toFixed(2)} miles</p>
+                                </div>
+                            </div>
+                        `;
+                        setTimeout(() => {
+                            statusContainer.classList.add('hidden');
+                        }, 5000);
+                        break;
+
+                    case 'error':
+                        statusContainer.innerHTML = `
+                            <div class="p-3 bg-red-50 border-2 border-red-500 rounded-md flex items-center gap-3">
+                                <svg class="h-5 w-5 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                                </svg>
+                                <p class="text-red-600 text-sm font-semibold">${data.message}</p>
+                            </div>
+                        `;
+                        break;
+
+                    case 'info':
+                        statusContainer.innerHTML = `
+                            <div class="p-3 bg-slate-50 border-2 border-slate-300 rounded-md flex items-center gap-3">
+                                <svg class="h-5 w-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <p class="text-slate-600 text-sm font-medium">${data.message}</p>
+                            </div>
+                        `;
+                        if (data.autoHide) {
+                            setTimeout(() => {
+                                statusContainer.classList.add('hidden');
+                            }, 3000);
+                        }
+                        break;
+
+                    case 'hide':
+                        statusContainer.classList.add('hidden');
+                        break;
+                }
+            }
+
+            // Enhanced validation with full feedback
+            async function validateAddress() {
+                if (!checkAddressComplete()) {
+                    showProximityStatus('hide');
+                    return { valid: true, reason: 'incomplete' };
+                }
+
+                if (!proximityValidator.canValidate()) {
+                    console.log('Validation already in progress');
+                    return { valid: null, reason: 'validating' };
+                }
+
+                proximityValidator.isValidating = true;
+                showProximityStatus('validating');
+
+                const address = addressInput.value.trim();
+                const city = cityInput.value.trim();
+                const state = stateInput.value.trim();
+                const zip = zipInput.value.trim();
+                const branch = branchSelect?.value;
+
+                const fullAddress = `${address}, ${city}, ${state} ${zip}`;
+
+                try {
+                    const controller = new AbortController();
+                    proximityValidator.currentValidationController = controller;
+
+                    if (!window.GOOGLE_MAPS_API_KEY) {
+                        showProximityStatus('error', {
+                            message: 'Google Maps configuration is missing. Create public/js/app-config.js and reload the page.'
+                        });
+                        return { valid: false, reason: 'missing_maps_config' };
+                    }
+
+                    // Use Google Maps Geocoding API
+                    const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(fullAddress)}&key=${window.GOOGLE_MAPS_API_KEY}`;
+
+                    const response = await fetch(geocodeUrl, {
+                        signal: controller.signal
+                    });
+
+                    const data = await response.json();
+
+                    if (!data || data.status !== 'OK' || !data.results || data.results.length === 0) {
+                        const errorMessage = data.status === 'REQUEST_DENIED'
+                            ? 'Google Maps API key is invalid or restricted incorrectly.'
+                            : 'Unable to verify address. Please check your address and try again.';
+
+                        showProximityStatus('error', {
+                            message: errorMessage
+                        });
+                        return { valid: false, reason: 'geocode_failed' };
+                    }
+
+                    const location = data.results[0].geometry.location;
+                    const branchConfig = window.BRANCH_CONFIG[branch];
+                    const distance = calculateDistance(
+                        branchConfig.lat, branchConfig.lng,
+                        location.lat, location.lng
+                    );
+
+                    console.log(`Distance from ${branch}: ${distance.toFixed(2)} miles`);
+
+                    if (distance > window.DELIVERY_RADIUS_MILES) {
+                        showProximityStatus('error', {
+                            message: `Your delivery address is outside our ${window.DELIVERY_RADIUS_MILES} mile delivery radius. Don't fret though! Call us at ${branchConfig.phone} and we'll happily arrange a delivery for you!`
+                        });
+                        return { valid: false, reason: 'out_of_range', distance };
+                    } else {
+                        showProximityStatus('success', {
+                            branch: branchConfig.displayName,
+                            distance
+                        });
+                        return { valid: true, reason: 'in_range', distance };
+                    }
+
+                } catch (error) {
+                    if (error.name === 'AbortError') {
+                        console.log('Validation cancelled');
+                        return { valid: null, reason: 'cancelled' };
+                    }
+
+                    console.error('Error validating address:', error);
+                    showProximityStatus('error', {
+                        message: 'Connection error. Please check your internet and try again.'
+                    });
+                    return { valid: false, reason: 'network_error' };
+
+                } finally {
+                    proximityValidator.isValidating = false;
+                    proximityValidator.currentValidationController = null;
+                    proximityValidator.lastValidationTimestamp = Date.now();
+                }
+            }
+
+            // Smart branch change handler
+            async function handleBranchChange() {
+                const branch = branchSelect?.value;
+                console.log(`Branch changed to: ${branch}`);
+
+                proximityValidator.cancel();
+
+                if (!checkAddressComplete()) {
+                    showProximityStatus('info', {
+                        message: `Selected ${window.BRANCH_CONFIG[branch].displayName}. Enter your delivery address to check availability.`,
+                        autoHide: true
+                    });
+                    return;
+                }
+
+                await validateAddress();
+            }
+
+            // Add event listeners for address validation
+            if (addressInput) addressInput.addEventListener('blur', validateAddress);
+            if (cityInput) cityInput.addEventListener('blur', validateAddress);
+            if (stateInput) stateInput.addEventListener('change', validateAddress);
+            if (zipInput) zipInput.addEventListener('blur', validateAddress);
+            if (branchSelect) branchSelect.addEventListener('change', handleBranchChange);
+
+            const pickupTimeRadios = document.querySelectorAll('input[name="pickup-timing"]');
+            pickupTimeRadios.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    if (radio.value === 'later') {
+                        pickupTimeContainer.classList.remove('hidden');
+                    } else {
+                        pickupTimeContainer.classList.add('hidden');
+                    }
+                });
+            });
+
+            // --- 3. HANDLE TIPS & TOTALS ---
+            function getSafeCartSubtotal() {
+                try {
+                    const cart = JSON.parse(localStorage.getItem('samosaman_cart') || '[]');
+                    if (!Array.isArray(cart)) return 0;
+                    return cart.reduce((sum, item) => {
+                        const price = parseFloat(item.price) || 0;
+                        const qty = parseInt(item.quantity) || 0;
+                        return sum + (price * qty);
+                    }, 0);
+                } catch (e) {
+                    return 0;
+                }
+            }
+
+            function calculateTotal() {
+                const subtotal = getSafeCartSubtotal();
+                const tax = subtotal * 0.07;
+                const total = subtotal + tax + currentTipAmount;
+
+                if (totalDisplay) {
+                    totalDisplay.innerText = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(total);
+                }
+
+                window.checkoutTipAmount = currentTipAmount;
+            }
+
+            const tipButtons = document.querySelectorAll('.tip-btn');
+            tipButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    tipButtons.forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+
+                    const pct = btn.dataset.pct;
+                    if (pct === 'other') {
+                        otherTipContainer.classList.remove('hidden');
+                        customTipInput.focus();
+                        currentTipAmount = parseFloat(customTipInput.value) || 0;
+                    } else {
+                        otherTipContainer.classList.add('hidden');
+                        customTipInput.value = '';
+                        const subtotal = getSafeCartSubtotal();
+                        currentTipAmount = subtotal * parseFloat(pct);
+                    }
+                    calculateTotal();
+                });
+            });
+
+            if (customTipInput) {
+                customTipInput.addEventListener('input', (e) => {
+                    currentTipAmount = parseFloat(e.target.value) || 0;
+                    calculateTotal();
+                });
+            }
+
+            // --- 4. PAYMENT UI LOGIC ---
+            const paymentRadios = document.querySelectorAll('input[name="paymentMethod"]');
+            const newCardSection = document.getElementById('new-card-section');
+
+            function updatePaymentUI() {
+                const selectedInput = document.querySelector('input[name="paymentMethod"]:checked');
+                if (!selectedInput) return;
+
+                const selectedVal = selectedInput.value;
+                document.querySelectorAll('.payment-radio-option').forEach(el => el.classList.remove('selected'));
+                selectedInput.closest('label').classList.add('selected');
+
+                if (selectedVal === 'newCard') {
+                    newCardSection.classList.remove('hidden');
+                } else {
+                    newCardSection.classList.add('hidden');
+                }
+            }
+
+            paymentRadios.forEach(radio => radio.addEventListener('change', updatePaymentUI));
+            updatePaymentUI();
+
+            // --- 5. APPLE/GOOGLE PAY ---
+            const isApple = /Mac|iPhone|iPad|iPod/.test(navigator.userAgent);
+            const appleOption = document.getElementById('option-apple-pay');
+            const googleOption = document.getElementById('option-google-pay');
+
+            if (isApple && window.ApplePaySession && appleOption) {
+                appleOption.classList.remove('hidden');
+            } else if (googleOption) {
+                googleOption.classList.remove('hidden');
+            }
+
+            calculateTotal();
+        });
+
+        // --- CLOSED STORE MODAL LOGIC ---
+        function showClosedModal(branch) {
+            const modal = document.getElementById('closed-store-modal');
+            const dateSelector = document.getElementById('date-selector');
+            const timeSelector = document.getElementById('time-selector');
+            const timeSelectorContainer = document.getElementById('time-selector-container');
+            const confirmBtn = document.getElementById('confirm-schedule-btn');
+
+            if (!modal) return;
+            modal.classList.remove('hidden');
+
+            let selectedDate = null;
+            let selectedTime = null;
+
+            const dates = window.getNextAvailableDates ? window.getNextAvailableDates(branch) : [];
+            dateSelector.innerHTML = dates.map((d, i) => {
+                const dateObj = d.date;
+                const formattedDate = dateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                const isTomorrow = d.label === 'Tomorrow';
+
+                let topLabel, bottomLabel;
+                if (isTomorrow) {
+                    topLabel = 'Tomorrow';
+                    bottomLabel = formattedDate;
+                } else {
+                    const parts = d.label.split(', ');
+                    topLabel = parts[0];
+                    bottomLabel = parts[1] || '';
+                }
+
+                return `
+                    <button type="button" class="date-btn p-3 border-2 border-slate-200 rounded-lg text-center hover:border-brand-500 transition-colors" data-index="${i}">
+                        <div class="text-xs text-slate-500">${topLabel}</div>
+                        <div class="font-bold text-slate-900">${bottomLabel}</div>
+                    </button>
+                `;
+            }).join('');
+
+
+            dateSelector.addEventListener('click', (e) => {
+                const btn = e.target.closest('.date-btn');
+                if (!btn) return;
+                document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('border-brand-500', 'bg-brand-50'));
+                btn.classList.add('border-brand-500', 'bg-brand-50');
+                selectedDate = dates[btn.dataset.index];
+                selectedTime = null;
+                renderTimeSlots(selectedDate.hours);
+                timeSelectorContainer.classList.remove('hidden');
+                confirmBtn.classList.add('hidden');
+            });
+
+            timeSelector.addEventListener('click', (e) => {
+                const btn = e.target.closest('.time-btn');
+                if (!btn) return;
+                document.querySelectorAll('.time-btn').forEach(b => { b.classList.remove('bg-brand-500', 'text-white'); b.classList.add('bg-white', 'text-slate-700'); });
+                btn.classList.remove('bg-white', 'text-slate-700');
+                btn.classList.add('bg-brand-500', 'text-white');
+                selectedTime = btn.dataset.time;
+                confirmBtn.classList.remove('hidden');
+            });
+
+            confirmBtn.addEventListener('click', () => {
+                const laterRadio = document.querySelector('input[name="del-timing"][value="later"], input[name="pickup-timing"][value="later"]');
+                if (laterRadio) laterRadio.click();
+                const timeSelect = document.getElementById('del-scheduled-time') || document.getElementById('pickup-scheduled-time');
+                if (timeSelect && selectedTime) {
+                    let option = Array.from(timeSelect.options).find(opt => opt.value === selectedTime);
+                    if (!option) { option = new Option(selectedTime, selectedTime); timeSelect.add(option); }
+                    timeSelect.value = selectedTime;
+                }
+                window.scheduledOrderDiscount = 0.10;
+                modal.classList.add('hidden');
+            });
+
+            function renderTimeSlots(hours) {
+                const [openHour] = hours.open.split(':').map(Number);
+                const [closeHour] = hours.close.split(':').map(Number);
+                const slots = [];
+                for (let h = openHour; h < closeHour; h++) {
+                    for (let m of [0, 30]) {
+                        const time = `${h % 12 || 12}:${m.toString().padStart(2, '0')} ${h >= 12 ? 'PM' : 'AM'}`;
+                        slots.push(time);
+                    }
+                }
+                timeSelector.innerHTML = slots.map(time => `
+                    <button type="button" class="time-btn w-full p-2 rounded text-sm font-medium bg-white text-slate-700 hover:bg-slate-50 transition-colors" data-time="${time}">
+                        ${time}
+                    </button>
+                `).join('');
+            }
+        }
+
+        // Required field validation
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactFields = {
+                fname: { wrapper: '[data-field="fname"]', input: '#fname' },
+                lname: { wrapper: '[data-field="lname"]', input: '#lname' },
+                email: { wrapper: '[data-field="email"]', input: '#email' },
+                phone: { wrapper: '[data-field="phone"]', input: '#phone' }
+            };
+
+            const deliveryFields = {
+                'del-address': { wrapper: '[data-field="del-address"]', input: '#del-address' },
+                'del-city': { wrapper: '[data-field="del-city"]', input: '#del-city' },
+                'del-state': { wrapper: '[data-field="del-state"]', input: '#del-state' },
+                'del-zip': { wrapper: '[data-field="del-zip"]', input: '#del-zip' },
+                'delivery-branch': { wrapper: '[data-field="delivery-branch"]', input: '#delivery-branch' }
+            };
+
+            const allFields = Object.assign({}, contactFields, deliveryFields);
+
+            // Add input listeners to clear error styling
+            Object.entries(allFields).forEach(([fieldKey, fieldConfig]) => {
+                const input = document.querySelector(fieldConfig.input);
+                if (input) {
+                    const clearError = () => {
+                        const wrapper = document.querySelector(fieldConfig.wrapper);
+                        if (wrapper) {
+                            wrapper.classList.remove('border-red-500', 'border-2');
+                            wrapper.classList.add('border-slate-300', 'border');
+                        }
+                    };
+                    input.addEventListener('input', clearError);
+                    input.addEventListener('change', clearError);
+                }
+            });
+
+            // Validate on form submission
+            const cardButton = document.getElementById('card-button');
+            if (cardButton) {
+                cardButton.addEventListener('click', (e) => {
+                    const isDelivery = document.querySelector('input[name="orderType"][value="delivery"]:checked');
+                    const fieldsToCheck = isDelivery ? allFields : contactFields;
+
+                    const invalidFields = [];
+                    const sectionPositions = {};
+
+                    Object.entries(fieldsToCheck).forEach(([fieldKey, fieldConfig]) => {
+                        const input = document.querySelector(fieldConfig.input);
+                        if (input && !input.value.trim()) {
+                            invalidFields.push(fieldKey);
+                            const wrapper = document.querySelector(fieldConfig.wrapper);
+
+                            if (wrapper) {
+                                wrapper.classList.remove('border-slate-300', 'border');
+                                wrapper.classList.add('border-red-500', 'border-2');
+                            }
+
+                            // Track section position
+                            const isSectionDelivery = fieldKey.startsWith('del-') || fieldKey === 'delivery-branch';
+                            const sectionKey = isSectionDelivery ? 'delivery' : 'contact';
+
+                            if (!(sectionKey in sectionPositions)) {
+                                const sectionEl = isSectionDelivery
+                                    ? document.getElementById('delivery-details-section')
+                                    : document.querySelector('[data-field="fname"]').closest('.space-y-4');
+                                if (sectionEl) {
+                                    sectionPositions[sectionKey] = sectionEl.getBoundingClientRect().top + window.scrollY;
+                                }
+                            }
+                        }
+                    });
+
+                    // If invalid fields exist, scroll to highest positioned section
+                    if (invalidFields.length > 0) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        let topPosition = Infinity;
+                        let topSection = null;
+
+                        Object.entries(sectionPositions).forEach(([sectionName, position]) => {
+                            if (position < topPosition) {
+                                topPosition = position;
+                                topSection = sectionName;
+                            }
+                        });
+
+                        if (topSection) {
+                            const sectionEl = topSection === 'delivery'
+                                ? document.getElementById('delivery-details-section')
+                                : document.querySelector('[data-field="fname"]').closest('.space-y-4');
+
+                            if (sectionEl) {
+                                sectionEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                        }
+
+                        return false;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+# robots.txt for SamosaMan
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Disallow checkout and account pages from search results
+Disallow: /checkout.html
+Disallow: /guest-checkout.html
+Disallow: /myaccount.html
+Disallow: /checkout-options.html
+
+# Disallow admin and private directories
+Disallow: /functions/
+Disallow: /node_modules/
+Disallow: /.firebase/
+Disallow: /firebase.json
+
+# Sitemap location
+Sitemap: https://samosamanvt.com/sitemap.xml

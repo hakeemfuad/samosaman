@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samosaman Delivery - Get Your Cravings Delivered</title>
+    <link rel="icon" type="image/svg+xml" href="assets/m_logo.svg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-init.js"></script>
+
+    <script src="js/cart.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                    oswald: ['Oswald', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        brand: {
+                            500: '#ea580c', // Burnt Orange
+                            600: '#c2410c',
+                            700: '#9a3412',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #d4d4d8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a1a1aa; }
+    </style>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white">
+
+    <div id="navbar-placeholder"></div>
+    <script src="js/navbar.js"></script>
+
+    <main class="w-full min-h-screen flex flex-col lg:flex-row-reverse pt-20">
+        
+        <div class="w-full lg:w-1/2 h-[50vh] lg:h-auto relative bg-slate-100">
+            <img 
+                src="assets/delivery_mastered.png" 
+                alt="Samosaman Delivery App and Food" 
+                class="absolute inset-0 w-full h-full object-cover"
+            >
+        </div>
+
+        <div class="w-full lg:w-1/2 bg-brand-600 relative overflow-hidden flex items-center justify-center p-8 lg:p-16">
+            
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;"></div>
+            
+            <div class="relative z-10 max-w-xl w-full flex flex-col items-start gap-8">
+                
+                <h1 class="font-oswald text-5xl md:text-6xl lg:text-7xl font-bold text-white uppercase leading-[0.95] tracking-tight">
+                    Get Your Cravings <br> To Your Doorstep
+                </h1>
+
+                <p class="text-white text-lg md:text-xl font-medium leading-relaxed max-w-md">
+                    It's so easy to order Samosaman Delivery on our app. Just place your order in a few taps and we're on the way.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 w-full mt-2">
+                    
+                    <a href="#" class="inline-flex items-center gap-3 bg-[#1f2937] hover:bg-[#111827] text-white font-oswald text-xl uppercase tracking-wider font-bold py-4 px-8 rounded-full shadow-lg transition-transform hover:-translate-y-1 active:scale-95 text-center min-w-[200px] whitespace-nowrap">
+                        <img src="assets/white_m_logo.svg" alt="Mini Logo" class="h-10 w-auto rounded-full">
+                        <span>Get The App</span>
+                    </a>
+
+                    <div class="bg-white p-2 rounded shadow-md hidden sm:block">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=SamosamanApp" alt="Download App QR" class="h-20 w-20">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+<script src="js/auth.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/footer.js"></script>
+
+</body>
+
+</html>

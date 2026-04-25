@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samosaman Rewards - Join the Clan</title>
+    <link rel="icon" type="image/svg+xml" href="assets/m_logo.svg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-init.js"></script>
+    <script src="js/cart.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                    oswald: ['Oswald', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        brand: {
+                            500: '#ea580c',
+                            600: '#c2410c',
+                            700: '#9a3412',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-slate-800 bg-white flex flex-col min-h-screen">
+
+    <div id="navbar-placeholder"></div>
+    <script src="js/navbar.js"></script>
+
+    <main class="flex-grow flex flex-col items-center justify-center text-center px-4 pt-20 pb-12 relative overflow-hidden">
+        
+        <div class="absolute inset-0 opacity-40 z-0 pointer-events-none" style="background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 24px 24px;"></div>
+
+        <div class="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center">
+            
+            <div class="mb-6 w-full flex justify-center">
+                <img 
+                    src="assets/rewards.svg" 
+                    alt="SamosaMan Clan® Rewards" 
+                    class="h-52 md:h-72 w-auto object-contain drop-shadow-xl hover:scale-105 transition-transform duration-500"
+                >
+            </div>
+
+            <h1 class="font-oswald text-4xl md:text-6xl font-bold uppercase text-slate-900 tracking-tight leading-[0.9] mb-4">
+                Eat. Earn. <br> <span class="text-brand-600">Get Rewarded.</span>
+            </h1>
+            
+            <p class="text-base md:text-xl text-slate-500 font-medium max-w-lg mx-auto mb-8 leading-relaxed">
+                Join SamosaMan Clan® Rewards and unlock exclusive perks. Get a free Samosa <b>instantly</b> with your first order.
+            </p>
+
+            <button id="join-rewards-btn" class="bg-brand-600 hover:bg-brand-700 text-white font-oswald text-lg font-bold uppercase tracking-wider py-3.5 px-14 rounded-full shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-1 active:scale-95">
+                Join Now
+            </button>
+
+            <p class="mt-6 text-sm text-slate-400 font-medium">
+                Already have an account? <button onclick="toggleAuthModal(true)" class="underline hover:text-brand-600 font-bold decoration-2 underline-offset-4">Sign In</button>
+            </p>
+
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+
+    <script>
+        lucide.createIcons();
+
+        // 1. Redirect if already logged in
+        // If the user is authenticated, we send them straight to the Dashboard.
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                window.location.replace('myaccount.html');
+            }
+        });
+
+        // 2. Handle "Join Now" Click
+        document.getElementById('join-rewards-btn').addEventListener('click', () => {
+            // Open the modal
+            toggleAuthModal(true);
+            
+            // Force "Sign Up" mode immediately
+            // 'isLoginMode' is a global variable from auth.js. 
+            // If it is true (Sign In), we switch it to false (Create Account).
+            if (typeof isLoginMode !== 'undefined' && isLoginMode) {
+                switchAuthMode();
+            }
+        });
+    </script>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/footer.js"></script>
+
+</body>
+
+</html>
