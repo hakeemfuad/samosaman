@@ -1,0 +1,14 @@
+/.DS_Store
+**/.DS_Store
+
+# Local content not meant for source control
+/Assets/
+/Merch/
+/Trailer/
+/documents/
+/videos/
+
+# Editor and runtime noise
+/.vscode/
+**/.vscode/
+*.log

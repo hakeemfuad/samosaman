@@ -1,0 +1,9 @@
+{
+  "name": "samosaman-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SamosaMan Website and Cloud Functions",
+  "engines": {
+    "node": "22"
+  }
+}
