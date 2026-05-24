@@ -83,7 +83,7 @@
                     <div class="flex flex-col md:flex-row gap-6 md:gap-12 flex-1">
                         <!-- Column 1: Core Links -->
                         <div class="flex flex-col gap-3">
-                            <a href="#" class="text-sm font-extrabold uppercase tracking-wide hover:underline">Contact Support</a>
+                            <a href="https://www.instagram.com/samosamanvt/" target="_blank" rel="noopener noreferrer" class="text-sm font-extrabold uppercase tracking-wide hover:underline">Connect with us</a>
                             <a href="#" class="text-sm font-extrabold uppercase tracking-wide hover:underline">Careers</a>
                         </div>
 
@@ -129,18 +129,7 @@
                 </div>
             </div>
 
-            <div class="max-w-[1200px] mx-auto mt-16 pt-6 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6">
-
-                <div class="flex gap-3">
-                    <a href="#"
-                        class="h-9 px-3 border border-gray-300 rounded flex items-center justify-center text-[11px] font-bold hover:bg-gray-50 transition-colors">
-                        Download on the App Store
-                    </a>
-                    <a href="#"
-                        class="h-9 px-3 border border-gray-300 rounded flex items-center justify-center text-[11px] font-bold hover:bg-gray-50 transition-colors">
-                        Get it on Google Play
-                    </a>
-                </div>
+            <div class="max-w-[1200px] mx-auto mt-16 pt-6 border-t border-gray-100 flex flex-col md:flex-row justify-end items-center gap-6">
 
                 <div class="text-center md:text-right">
                     <div class="flex justify-center md:justify-end gap-5 mb-3 text-lg">
@@ -158,8 +147,8 @@
                     <p class="text-[10px] text-gray-500 mb-2">© 2026 Samosaman. All rights reserved.</p>
                     <div class="flex justify-center md:justify-end gap-4">
                         <a href="privacy-policy.html" class="text-[10px] text-gray-500 hover:underline">Privacy Policy</a>
-                        <a href="#" class="text-[10px] text-gray-500 hover:underline">Terms of Use</a>
-                        <a href="#" class="text-[10px] text-gray-500 hover:underline">Accessibility</a>
+                        <a href="privacy-policy.html" class="text-[10px] text-gray-500 hover:underline">Terms of Use</a>
+                        <a href="privacy-policy.html" class="text-[10px] text-gray-500 hover:underline">Accessibility</a>
                     </div>
                 </div>
             </div>
