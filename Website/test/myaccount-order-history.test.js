@@ -32,3 +32,10 @@ test('Firebase config tracks Firestore rules that allow users to read their orde
     assert.match(rules, /request\.auth != null/);
     assert.match(rules, /resource\.data\.uid == request\.auth\.uid/);
 });
+
+test('Firebase Auth uses the public website domain for Google sign-in', () => {
+    const firebaseInit = readProjectFile('public', 'js', 'firebase-init.js');
+
+    assert.match(firebaseInit, /authDomain:\s*"samosamanvt\.com"/);
+    assert.doesNotMatch(firebaseInit, /authDomain:\s*"samosaman-6895e\.firebaseapp\.com"/);
+});

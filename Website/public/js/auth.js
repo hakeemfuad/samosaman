@@ -409,19 +409,7 @@ authForm.addEventListener('submit', async (e) => {
     } catch (error) {
         console.error(error);
         if (!error.message.includes("requirements")) {
-            const friendlyErrors = {
-                'auth/invalid-credential': 'Incorrect email or password. Please try again.',
-                'auth/user-not-found': 'No account found with that email.',
-                'auth/wrong-password': 'Incorrect password. Please try again.',
-                'auth/too-many-requests': 'Too many failed attempts. Please try again later.',
-                'auth/email-already-in-use': 'An account with this email already exists.',
-            };
-            const rawMsg = error.message || '';
-            errorMsg.innerText = friendlyErrors[error.code]
-                || (rawMsg.includes('invalid-credential') ? 'Incorrect email or password. Please try again.' : null)
-                || (rawMsg.includes('too-many-requests') ? 'Too many failed attempts. Please try again later.' : null)
-                || rawMsg.replace("Firebase: ", "").replace(/ \(auth\/[^)]+\)\.?$/, '');
-            errorMsg.classList.remove('hidden');
+            window.SamosamanErrors.show(errorMsg, error);
         }
     } finally {
         submitBtn.disabled = false;
@@ -460,8 +448,7 @@ async function handleGoogleLogin() {
         toggleAuthModal(false);
     } catch (error) {
         console.error(error);
-        errorMsg.innerText = error.message;
-        errorMsg.classList.remove('hidden');
+        window.SamosamanErrors.show(errorMsg, error);
     }
 }
 

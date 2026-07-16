@@ -1,11 +1,91 @@
-const SQUARE_CONFIG_FUNCTION = 'https://us-central1-samosaman-6895e.cloudfunctions.net/getSquarePaymentConfig';
-const SQUARE_PROCESS_PAYMENT_FUNCTION = 'https://us-central1-samosaman-6895e.cloudfunctions.net/processPayment';
+const CLOUD_FUNCTIONS_BASE_URL = 'https://us-central1-samosaman-6895e.cloudfunctions.net';
+const CHECKOUT_ENVIRONMENTS = {
+    production: {
+        name: 'production',
+        label: 'Production',
+        squareConfigFunction: `${CLOUD_FUNCTIONS_BASE_URL}/getSquarePaymentConfig`,
+        processPaymentFunction: `${CLOUD_FUNCTIONS_BASE_URL}/processPayment`
+    },
+    sandbox: {
+        name: 'sandbox',
+        label: 'Sandbox',
+        squareConfigFunction: `${CLOUD_FUNCTIONS_BASE_URL}/getSquarePaymentConfigSandbox`,
+        processPaymentFunction: `${CLOUD_FUNCTIONS_BASE_URL}/processPaymentSandbox`
+    }
+};
+const CHECKOUT_ENVIRONMENT_STORAGE_KEY = 'samosaman_checkout_environment';
+const CHECKOUT_ENVIRONMENT = resolveCheckoutEnvironment();
+window.SAMOSAMAN_MINIMUM_ORDER_SUBTOTAL = window.SAMOSAMAN_MINIMUM_ORDER_SUBTOTAL || 30;
+const SQUARE_CARD_STYLE = {
+    '.input-container': {
+        borderColor: '#cbd5e1',
+        borderRadius: '8px',
+        borderWidth: '1px'
+    },
+    '.input-container.is-focus': {
+        borderColor: '#0f172a'
+    },
+    '.input-container.is-error': {
+        borderColor: '#dc2626'
+    },
+    '.message-icon': {
+        color: '#64748b'
+    },
+    '.message-icon.is-error': {
+        color: '#dc2626'
+    },
+    '.message-text': {
+        color: '#64748b'
+    },
+    '.message-text.is-error': {
+        color: '#b91c1c'
+    },
+    input: {
+        backgroundColor: '#ffffff',
+        color: '#0f172a'
+    },
+    'input::placeholder': {
+        color: '#64748b'
+    },
+    'input.is-error': {
+        color: '#b91c1c'
+    }
+};
 
 let squareCard = null;
 let pendingPayload = null;
 let checkoutInProgress = false;
 let squareReady = false;
 let checkoutButton = null;
+
+function resolveCheckoutEnvironment() {
+    const params = new URLSearchParams(window.location.search);
+    const requested = (params.get('checkoutEnv') || params.get('env') || '').toLowerCase();
+
+    if (CHECKOUT_ENVIRONMENTS[requested]) {
+        localStorage.setItem(CHECKOUT_ENVIRONMENT_STORAGE_KEY, requested);
+        return CHECKOUT_ENVIRONMENTS[requested];
+    }
+
+    const stored = (localStorage.getItem(CHECKOUT_ENVIRONMENT_STORAGE_KEY) || '').toLowerCase();
+    return CHECKOUT_ENVIRONMENTS[stored] || CHECKOUT_ENVIRONMENTS.production;
+}
+
+function showCheckoutEnvironmentBanner() {
+    if (CHECKOUT_ENVIRONMENT.name !== 'sandbox' || document.getElementById('sandbox-checkout-banner')) return;
+
+    const banner = document.createElement('div');
+    banner.id = 'sandbox-checkout-banner';
+    banner.className = 'bg-amber-100 border-b border-amber-300 text-amber-950 px-4 py-3 text-center text-sm font-bold';
+    banner.textContent = 'Sandbox checkout: use Square test cards. DoorDash will not dispatch a real Dasher.';
+
+    const header = document.querySelector('header');
+    if (header?.parentNode) {
+        header.parentNode.insertBefore(banner, header.nextSibling);
+    } else {
+        document.body.prepend(banner);
+    }
+}
 
 function haversineDistanceMiles(lat1, lon1, lat2, lon2) {
     const R = 3958.8;
@@ -67,6 +147,74 @@ function getCart() {
     }
 }
 
+function formatCheckoutMoney(amount) {
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount);
+}
+
+function getCheckoutPaidSubtotal(cart) {
+    if (window.SamosamanRewards) return window.SamosamanRewards.getPaidSubtotal(cart);
+    return cart
+        .filter(item => item?.isReward !== true)
+        .reduce((sum, item) => {
+            const price = parseFloat(item.price) || 0;
+            const quantity = parseInt(item.quantity, 10) || 0;
+            return sum + (price * quantity);
+        }, 0);
+}
+
+function getCheckoutMinimumOrderState(cart = getCart()) {
+    const minimum = Number(window.SAMOSAMAN_MINIMUM_ORDER_SUBTOTAL) || 30;
+    const subtotal = Math.round(getCheckoutPaidSubtotal(cart) * 100) / 100;
+    const shortfall = Math.max(0, Math.round((minimum - subtotal) * 100) / 100);
+    return {
+        minimum,
+        subtotal,
+        shortfall,
+        meetsMinimum: shortfall <= 0
+    };
+}
+
+function getCheckoutMinimumOrderMessage(state = getCheckoutMinimumOrderState()) {
+    return `Delivery and pickup orders require a ${formatCheckoutMoney(state.minimum)} minimum before tax, tip, or discounts. Add ${formatCheckoutMoney(state.shortfall)} more to continue.`;
+}
+
+function validateCheckoutMinimumOrder(cart) {
+    const state = getCheckoutMinimumOrderState(cart);
+    if (!state.meetsMinimum) {
+        throw new Error(getCheckoutMinimumOrderMessage(state));
+    }
+    return state;
+}
+
+function buildServerCartPayload(cart) {
+    return cart.map((item) => {
+        const payload = {
+            id: item.id,
+            quantity: item.quantity
+        };
+
+        if (item.isReward === true && item.reward) {
+            payload.isReward = true;
+            payload.reward = {
+                id: item.reward.id,
+                itemId: item.reward.itemId
+            };
+        }
+
+        return payload;
+    });
+}
+
+function getSpecialInstructions(orderType) {
+    const activeFieldId = orderType === 'delivery'
+        ? 'delivery-special-instructions'
+        : 'pickup-special-instructions';
+
+    return document.getElementById(activeFieldId)?.value
+        || document.getElementById('special-instructions')?.value
+        || '';
+}
+
 function showPaymentStatus(message, isError = true) {
     const statusDiv = document.getElementById('payment-status-container');
     if (!statusDiv) return;
@@ -77,8 +225,21 @@ function showPaymentStatus(message, isError = true) {
         return;
     }
 
-    statusDiv.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
-    statusDiv.classList.add(isError ? 'bg-red-100' : 'bg-green-100', isError ? 'text-red-800' : 'text-green-800');
+    statusDiv.classList.remove(
+        'hidden',
+        'bg-green-50',
+        'text-green-800',
+        'border-green-200',
+        'bg-red-50',
+        'text-red-800',
+        'border-red-200'
+    );
+    statusDiv.classList.add(
+        'border',
+        isError ? 'bg-red-50' : 'bg-green-50',
+        isError ? 'text-red-800' : 'text-green-800',
+        isError ? 'border-red-200' : 'border-green-200'
+    );
     statusDiv.innerText = message;
 }
 
@@ -90,8 +251,14 @@ function showLoadingOverlay(show) {
 
 function setCheckoutButtonState({ disabled, label }) {
     if (!checkoutButton) return;
-    checkoutButton.disabled = disabled;
-    checkoutButton.innerText = label;
+
+    const minimumState = getCheckoutMinimumOrderState();
+    const blockedByMinimum = !disabled && !minimumState.meetsMinimum;
+    checkoutButton.disabled = disabled || blockedByMinimum;
+    checkoutButton.innerText = blockedByMinimum ? `Add ${formatCheckoutMoney(minimumState.shortfall)} More` : label;
+    checkoutButton.title = blockedByMinimum ? getCheckoutMinimumOrderMessage(minimumState) : '';
+    checkoutButton.classList.toggle('opacity-50', blockedByMinimum);
+    checkoutButton.classList.toggle('cursor-not-allowed', blockedByMinimum);
 }
 
 function requireValue(selector, message) {
@@ -128,11 +295,17 @@ function finalizeSuccessfulCheckout() {
     }, 5000);
 }
 
+function codedError(code, message) {
+    const err = new Error(message);
+    err.code = code;
+    return err;
+}
+
 async function fetchJson(url, options) {
     const response = await fetch(url, options);
     const result = await response.json().catch(() => ({}));
     if (!response.ok || result.success === false) {
-        throw new Error(result.error || `Request failed (${response.status}).`);
+        throw codedError(result.code || null, result.error || `Request failed (${response.status}).`);
     }
     return result;
 }
@@ -146,7 +319,7 @@ function loadSquareSdk(sdkUrl) {
                 return;
             }
             existing.addEventListener('load', () => resolve(), { once: true });
-            existing.addEventListener('error', () => reject(new Error('Unable to load the Square payment SDK.')), { once: true });
+            existing.addEventListener('error', () => reject(codedError('SQUARE_SDK_LOAD', 'Unable to load the Square payment SDK.')), { once: true });
             return;
         }
 
@@ -155,7 +328,7 @@ function loadSquareSdk(sdkUrl) {
         script.async = true;
         script.dataset.squarePaymentsSdk = 'true';
         script.onload = () => resolve();
-        script.onerror = () => reject(new Error('Unable to load the Square payment SDK.'));
+        script.onerror = () => reject(codedError('SQUARE_SDK_LOAD', 'Unable to load the Square payment SDK.'));
         document.head.appendChild(script);
     });
 }
@@ -168,6 +341,9 @@ async function buildCheckoutPayload() {
     if (cart.length === 0) {
         throw new Error('Your cart is empty.');
     }
+
+    const minimumState = validateCheckoutMinimumOrder(cart);
+    const subtotal = minimumState.subtotal;
 
     const firstName = requireValue('#fname', 'Please enter your first name.');
     const lastName = requireValue('#lname', 'Please enter your last name.');
@@ -190,11 +366,17 @@ async function buildCheckoutPayload() {
             zip: requireValue('#del-zip', 'Please enter your delivery zip code.'),
             branch: finalBranch,
             timing: document.querySelector('input[name="del-timing"]:checked')?.value || 'now',
-            scheduledTime: document.getElementById('del-scheduled-time')?.value || ''
+            scheduledTime: document.getElementById('del-scheduled-time')?.value || '',
+            scheduledDate: window.scheduledOrderDate || null
         };
 
         if (deliveryDetails.timing === 'later' && !deliveryDetails.scheduledTime) {
             throw new Error('Please select a time for your scheduled delivery.');
+        }
+        if (deliveryDetails.timing === 'later' && !deliveryDetails.scheduledDate) {
+            deliveryDetails.scheduledDate = new Date().toLocaleDateString('en-CA', {
+                timeZone: 'America/New_York'
+            });
         }
 
         await checkDeliveryDistance(
@@ -209,7 +391,8 @@ async function buildCheckoutPayload() {
         pickupDetails = {
             branch: finalBranch,
             timing: document.querySelector('input[name="pickup-timing"]:checked')?.value || 'now',
-            scheduledTime: document.getElementById('pickup-scheduled-time')?.value || ''
+            scheduledTime: document.getElementById('pickup-scheduled-time')?.value || '',
+            scheduledDate: window.scheduledOrderDate || null
         };
 
         if (pickupDetails.timing === 'later' && !pickupDetails.scheduledTime) {
@@ -217,9 +400,6 @@ async function buildCheckoutPayload() {
         }
     }
 
-    const subtotal = window.SamosamanRewards
-        ? window.SamosamanRewards.getPaidSubtotal(cart)
-        : cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     const discount = window.scheduledOrderDiscount ? subtotal * window.scheduledOrderDiscount : 0;
     const taxableAmount = Math.max(0, subtotal - discount);
     const tax = taxableAmount * 0.07;
@@ -237,17 +417,18 @@ async function buildCheckoutPayload() {
         pickupDetails,
         email,
         uid,
-        items: cart,
+        items: buildServerCartPayload(cart),
         subtotal: subtotal.toFixed(2),
         tax: tax.toFixed(2),
         discount: discount.toFixed(2),
         firstName,
         lastName,
         phone,
-        specialInstructions: document.getElementById('special-instructions')?.value || '',
+        specialInstructions: getSpecialInstructions(orderType),
         scheduledTime: (orderType === 'delivery'
             ? document.getElementById('del-scheduled-time')?.value
             : document.getElementById('pickup-scheduled-time')?.value) || null,
+        scheduledDate: (orderType === 'delivery' ? deliveryDetails?.scheduledDate : pickupDetails?.scheduledDate) || null,
         selectedReward
     };
 }
@@ -289,13 +470,14 @@ async function tokenizeSquareCard() {
 }
 
 async function submitTokenToBackend(sourceId) {
-    const result = await fetchJson(SQUARE_PROCESS_PAYMENT_FUNCTION, {
+    const result = await fetchJson(CHECKOUT_ENVIRONMENT.processPaymentFunction, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             ...pendingPayload,
+            checkoutEnvironment: CHECKOUT_ENVIRONMENT.name,
             sourceId
         })
     });
@@ -308,25 +490,29 @@ async function submitTokenToBackend(sourceId) {
 }
 
 async function initializeSquare() {
-    const config = await fetchJson(SQUARE_CONFIG_FUNCTION, { method: 'GET' });
+    const config = await fetchJson(CHECKOUT_ENVIRONMENT.squareConfigFunction, { method: 'GET' });
     await loadSquareSdk(config.sdkUrl);
 
     if (!window.Square) {
-        throw new Error('Square payment SDK did not initialize.');
+        throw codedError('SQUARE_SDK_INIT', 'Square payment SDK did not initialize.');
     }
 
     const payments = window.Square.payments(config.appId, config.locationId);
-    squareCard = await payments.card();
+    squareCard = await payments.card({ style: SQUARE_CARD_STYLE });
     await squareCard.attach('#card-container');
+    document.getElementById('card-container')?.classList.add('square-ready');
     squareReady = true;
-    setCheckoutButtonState({ disabled: false, label: 'Place Order' });
+    setCheckoutButtonState({
+        disabled: false,
+        label: CHECKOUT_ENVIRONMENT.name === 'sandbox' ? 'Place Sandbox Order' : 'Place Order'
+    });
 }
 
 async function handleCheckoutClick(event) {
     event.preventDefault();
     if (checkoutInProgress) return;
     if (!squareReady || !squareCard) {
-        showPaymentStatus('Secure payment is still loading. Please wait a moment.');
+        showPaymentStatus(window.SamosamanErrors.MESSAGES.PAYMENT_STILL_LOADING);
         return;
     }
 
@@ -343,14 +529,18 @@ async function handleCheckoutClick(event) {
         checkoutInProgress = false;
         pendingPayload = null;
         showLoadingOverlay(false);
-        setCheckoutButtonState({ disabled: false, label: 'Place Order' });
-        showPaymentStatus(error.message || 'Unable to process payment.');
+        setCheckoutButtonState({
+            disabled: false,
+            label: CHECKOUT_ENVIRONMENT.name === 'sandbox' ? 'Place Sandbox Order' : 'Place Order'
+        });
+        showPaymentStatus(window.SamosamanErrors.resolve(error).message);
     }
 }
 
 document.addEventListener('DOMContentLoaded', async function () {
     checkoutButton = document.getElementById('card-button');
     if (!checkoutButton || !document.getElementById('card-container')) return;
+    showCheckoutEnvironmentBanner();
 
     try {
         await initializeSquare();
@@ -358,6 +548,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     } catch (error) {
         console.error(error);
         setCheckoutButtonState({ disabled: true, label: 'Payment Unavailable' });
-        showPaymentStatus(error.message || 'Unable to initialize Square payment.');
+        showPaymentStatus(window.SamosamanErrors.resolve(error).message);
     }
 });

@@ -97,6 +97,7 @@
                 <div class="flex justify-between text-slate-600 text-lg"><span>Subtotal</span><span id="cart-subtotal" class="font-medium">$0.00</span></div>
                 <div class="flex justify-between text-slate-600 text-lg"><span>Estimated Tax</span><span id="cart-tax" class="font-medium">$0.00</span></div>
                 <div class="flex justify-between text-xl font-bold text-slate-900 pt-4 border-t border-slate-100 mt-4"><span>Total</span><span id="cart-total">$0.00</span></div>
+                <p id="cart-minimum-message" class="hidden rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm font-bold text-red-700"></p>
             </div>
             
             <div class="grid grid-cols-2 gap-4">

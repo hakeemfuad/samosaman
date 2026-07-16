@@ -336,7 +336,7 @@
 
     const result = api.addRewardToCart(activeTier.id, selectedItemIds);
     if (!result.ok) {
-      alert(result.error || 'Unable to add reward.');
+      alert(window.SamosamanErrors.resolve(result.error || 'Unable to add reward.').message);
       return;
     }
 
@@ -376,8 +376,11 @@
       <div id="reward-exit-confirmation" class="fixed inset-0 z-[120] hidden">
         <div class="absolute inset-0 bg-slate-950/70 backdrop-blur-sm"></div>
         <div class="relative flex min-h-full items-center justify-center p-4">
-          <div class="w-full max-w-sm rounded-xl bg-white p-6 shadow-2xl text-center">
-            <h3 class="font-oswald text-2xl font-bold uppercase text-slate-900 leading-tight">Are you sure?</h3>
+          <div class="relative w-full max-w-sm rounded-xl bg-white p-6 shadow-2xl text-center">
+            <button type="button" data-reward-confirm-close class="absolute top-3 right-3 p-1 text-slate-400 hover:text-slate-700 transition-colors" aria-label="Close confirmation modal">
+              <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <h3 class="font-oswald text-2xl font-bold uppercase text-slate-900 leading-tight px-8">Are you sure?</h3>
             <p class="text-slate-600 mt-3">Are you sure you want to exit without redeeming your deal?</p>
             <div class="mt-6 space-y-3">
               <button id="reward-keep-redeeming-btn" type="button" class="w-full rounded-md bg-brand-600 hover:bg-brand-700 text-white font-oswald font-bold uppercase tracking-wide py-3 transition-colors">Keep Redeeming</button>
@@ -398,6 +401,11 @@
     });
     document.getElementById('reward-keep-redeeming-btn')?.addEventListener('click', () => {
       document.getElementById('reward-exit-confirmation')?.classList.add('hidden');
+    });
+    document.querySelectorAll('[data-reward-confirm-close]').forEach((el) => {
+      el.addEventListener('click', () => {
+        document.getElementById('reward-exit-confirmation')?.classList.add('hidden');
+      });
     });
     document.getElementById('reward-exit-without-btn')?.addEventListener('click', () => closeRewardModal(true));
     document.getElementById('reward-modal-items')?.addEventListener('click', (event) => {

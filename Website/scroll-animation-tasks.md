@@ -4,7 +4,7 @@
 
 ---
 
-## Completed Tasks ✅
+## Completed Tasks
 
 - [x] Identified root causes of jumpiness (race conditions, timing, offset issues)
 - [x] Moved `history.scrollRestoration = 'manual'` to execute earlier
@@ -37,7 +37,7 @@
 
 ---
 
-## Known Issues / To Revisit 🔄
+## Known Issues / To Revisit
 
 ### 1. Animation feels "decent" but not perfect
 - [ ] Fine-tune the exponential easing curve
@@ -65,7 +65,7 @@
 
 ---
 
-## Potential Improvements 💡
+## Potential Improvements
 
 ### Animation refinements
 - [ ] Add subtle overshoot/bounce at the end (spring animation)

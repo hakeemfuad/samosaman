@@ -28,6 +28,8 @@
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
 
     <script src="js/firebase-init.js"></script>
+
+    <script src="js/errors.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/rewards-config.js"></script>
     <script src="js/rewards-ui.js"></script>
@@ -185,7 +187,17 @@
         <div class="relative flex min-h-full items-center justify-center p-4">
             <div class="relative w-full max-w-lg bg-white rounded-xl p-0 shadow-2xl transform transition-all overflow-hidden">
                 
-                <div class="bg-brand-600 p-5 sm:p-8 text-center">
+                <div class="bg-brand-600 p-5 sm:p-8 text-center relative">
+                    <button onclick="toggleHowItWorks(false)"
+                        class="absolute top-3 right-3 text-white/80 hover:text-white p-1"
+                        aria-label="Close how it works modal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M18 6 6 18" />
+                            <path d="M6 6 18 18" />
+                        </svg>
+                    </button>
                     <h3 class="font-oswald text-xl sm:text-3xl font-bold uppercase text-white mb-2">Samosa Math 101</h3>
                     <p class="text-brand-100 font-medium">Class is in session. Don't worry, it's tasty.</p>
                 </div>
@@ -193,7 +205,7 @@
                 <div class="p-8 space-y-8">
                     
                     <div class="flex gap-5">
-                        <div class="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-2xl">👋</div>
+                        <div aria-hidden="true" class="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center font-oswald text-lg font-bold text-yellow-800">1</div>
                         <div>
                             <h4 class="font-oswald text-xl font-bold text-slate-900 uppercase">1. The Welcome High-Five</h4>
                             <p class="text-slate-600 text-sm mt-1 leading-relaxed">
@@ -203,7 +215,7 @@
                     </div>
 
                     <div class="flex gap-5">
-                        <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-2xl">🔄</div>
+                        <div aria-hidden="true" class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center font-oswald text-lg font-bold text-orange-800">2</div>
                         <div>
                             <h4 class="font-oswald text-xl font-bold text-slate-900 uppercase">2. The Crunch Cycle</h4>
                             <p class="text-slate-600 text-sm mt-1 leading-relaxed">
@@ -213,7 +225,7 @@
                     </div>
 
                     <div class="flex gap-5">
-                        <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-2xl">💎</div>
+                        <div aria-hidden="true" class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center font-oswald text-lg font-bold text-green-800">3</div>
                         <div>
                             <h4 class="font-oswald text-xl font-bold text-slate-900 uppercase">3. The Infinite Glitch</h4>
                             <p class="text-slate-600 text-sm mt-1 leading-relaxed">

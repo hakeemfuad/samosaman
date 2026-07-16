@@ -2,6 +2,16 @@
 
 Running log of updates and refinements to the Samosaman website.
 
+## 2026-05-24
+
+### Delivery Fulfillment
+- **DoorDash Drive Integration**: Added DoorDash Drive delivery creation to the Firebase `processPayment` Cloud Function for delivery orders after Square payment completes.
+- **Secure Credentials**: DoorDash JWT signing now happens server-side with Firebase secrets: `DOORDASH_DEVELOPER_ID`, `DOORDASH_KEY_ID`, and `DOORDASH_SIGNING_SECRET`.
+- **Order Tracking Metadata**: Delivery orders now store DoorDash creation status, external delivery ID, tracking URL, estimates, fees, and failure/skipped reason under the order's `doordash` field.
+- **Scheduled Delivery Support**: Checkout now carries scheduled delivery dates to the backend so DoorDash `dropoff_time` can be sent for later deliveries.
+- **Restaurant Alerts**: Restaurant order emails now include a DoorDash status block for delivery orders.
+- **Sandbox Checkout**: Added `getSquarePaymentConfigSandbox` and `processPaymentSandbox` Cloud Functions with separate Square and DoorDash sandbox secrets. Visiting checkout with `?checkoutEnv=sandbox` routes payment and delivery calls to sandbox endpoints and marks orders as sandbox records.
+
 ## 2026-02-15
 
 ### Bug Fixes

@@ -17,9 +17,9 @@
                 <div class="p-8 space-y-8">
 
                     <div class="flex gap-5">
-                        <div
-                            class="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-2xl">
-                            &#x1F44B;</div>
+                        <div aria-hidden="true"
+                            class="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center font-oswald text-lg font-bold text-yellow-800">
+                            1</div>
                         <div>
                             <h4 class="font-oswald text-xl font-bold text-slate-900 uppercase">1. The Welcome High-Five
                             </h4>
@@ -32,9 +32,9 @@
                     </div>
 
                     <div class="flex gap-5">
-                        <div
-                            class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-2xl">
-                            &#x1F504;</div>
+                        <div aria-hidden="true"
+                            class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center font-oswald text-lg font-bold text-orange-800">
+                            2</div>
                         <div>
                             <h4 class="font-oswald text-xl font-bold text-slate-900 uppercase">2. The Crunch Cycle</h4>
                             <p class="text-slate-600 text-sm mt-1 leading-relaxed">
@@ -46,9 +46,9 @@
                     </div>
 
                     <div class="flex gap-5">
-                        <div
-                            class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-2xl">
-                            &#x1F48E;</div>
+                        <div aria-hidden="true"
+                            class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center font-oswald text-lg font-bold text-green-800">
+                            3</div>
                         <div>
                             <h4 class="font-oswald text-xl font-bold text-slate-900 uppercase">3. The Infinite Glitch
                             </h4>

@@ -30,6 +30,8 @@
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
 
     <script src="js/firebase-init.js"></script>
+
+    <script src="js/errors.js"></script>
     <script src="js/branch-config.js"></script>
     <script src="js/store-hours.js"></script>
     <script src="js/cart.js"></script>
@@ -126,6 +128,11 @@
             color: white;
             border-color: #ea580c;
         }
+
+        .time-btn.selected {
+            background-color: #9a3412 !important;
+            color: white !important;
+        }
     </style>
 </head>
 
@@ -157,8 +164,8 @@
         <form id="checkout-form" class="space-y-6 text-left">
 
             <!-- Delivery/Pickup Selector -->
-            <div class="mb-8">
-                <div class="inline-flex rounded-full bg-slate-200 p-1 w-full max-w-md mx-auto">
+            <div class="mb-8 flex justify-center">
+                <div class="grid w-full max-w-md grid-cols-2 rounded-full bg-slate-200 p-1">
                     <label class="flex-1 cursor-pointer">
                         <input type="radio" name="orderType" value="delivery" class="peer hidden">
                         <div
@@ -233,26 +240,6 @@
                     <input type="tel" id="phone"
                         class="block w-full border-0 p-0 text-slate-900 focus:ring-0 sm:text-base font-medium outline-none"
                         data-required="true">
-                </div>
-            </div>
-
-            <!-- Order Details Section -->
-            <div class="border-t border-slate-200 pt-6 mt-6">
-                <h3 class="font-oswald text-xl font-bold text-[#000000] mb-4">Order Details</h3>
-                <div id="order-summary" class="bg-slate-50 rounded-lg p-4 border border-slate-200">
-                </div>
-            </div>
-
-            <!-- Special Instructions -->
-            <div class="mt-4">
-                <div
-                    class="relative border border-slate-300 rounded-md px-3 py-2 focus-within:ring-1 focus-within:ring-slate-800 bg-white">
-                    <label for="special-instructions" class="block text-xs font-medium text-slate-500 mb-0.5">Special
-                        Instructions</label>
-                    <textarea id="special-instructions" rows="3" maxlength="500"
-                        class="block w-full border-0 p-0 text-slate-900 focus:ring-0 sm:text-base font-medium outline-none resize-none"
-                        placeholder="Any special requests or dietary restrictions?"></textarea>
-                    <p class="text-xs text-slate-400 mt-1 text-right"><span id="instructions-count">0</span>/500</p>
                 </div>
             </div>
 
@@ -357,27 +344,18 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="delivery-field-wrapper relative border border-slate-300 rounded-md px-3 py-2 bg-white focus-within:ring-1 focus-within:ring-slate-800 mb-2 transition-colors"
-                    data-field="delivery-branch">
-                    <label for="delivery-branch" class="block text-xs font-medium text-slate-500 mb-0.5">Ordering
-                        Branch</label>
-                    <div class="relative">
-                        <select id="delivery-branch"
-                            class="block w-full border-0 p-0 text-slate-900 focus:ring-0 font-medium outline-none bg-transparent appearance-none"
-                            data-required="true">
-                            <option value="Burlington">Burlington, VT</option>
-                        </select>
-                        <div
-                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-700">
-                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </div>
+                    <div
+                        class="special-instructions-wrapper relative border border-slate-300 rounded-md px-3 py-2 focus-within:ring-1 focus-within:ring-slate-800 bg-white">
+                        <label for="delivery-special-instructions"
+                            class="block text-xs font-medium text-slate-500 mb-0.5">Special Instructions</label>
+                        <textarea id="delivery-special-instructions" rows="3" maxlength="500"
+                            class="special-instructions-input block w-full border-0 p-0 text-slate-900 focus:ring-0 sm:text-base font-medium outline-none resize-none"
+                            placeholder="Any special requests or dietary restrictions?"></textarea>
+                        <p class="text-xs text-slate-400 mt-1 text-right"><span class="instructions-count">0</span>/500</p>
                     </div>
                 </div>
+
+                <input type="hidden" id="delivery-branch" value="Burlington">
                 <div id="proximity-status-container" class="hidden mb-6 rounded-md transition-all duration-300"
                     role="status" aria-live="polite" aria-atomic="true">
                     <!-- Status content will be dynamically injected here -->
@@ -435,23 +413,16 @@
                 class="hidden border-t border-slate-200 pt-6 mt-6 transition-all duration-300">
                 <h3 class="font-oswald text-xl font-bold text-[#000000] mb-4">Pickup Details</h3>
 
+                <input type="hidden" id="pickup-branch" value="Burlington">
+
                 <div
-                    class="relative border border-slate-300 rounded-md px-3 py-2 bg-white focus-within:ring-1 focus-within:ring-slate-800 mb-6">
-                    <label for="pickup-branch" class="block text-xs font-medium text-slate-500 mb-0.5">Pickup
-                        Location</label>
-                    <div class="relative">
-                        <select id="pickup-branch"
-                            class="block w-full border-0 p-0 text-slate-900 focus:ring-0 font-medium outline-none bg-transparent appearance-none">
-                            <option value="Burlington">Burlington, VT</option>
-                        </select>
-                        <div
-                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-700">
-                            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </div>
-                    </div>
+                    class="special-instructions-wrapper relative border border-slate-300 rounded-md px-3 py-2 focus-within:ring-1 focus-within:ring-slate-800 bg-white mb-6">
+                    <label for="pickup-special-instructions"
+                        class="block text-xs font-medium text-slate-500 mb-0.5">Special Instructions</label>
+                    <textarea id="pickup-special-instructions" rows="3" maxlength="500"
+                        class="special-instructions-input block w-full border-0 p-0 text-slate-900 focus:ring-0 sm:text-base font-medium outline-none resize-none"
+                        placeholder="Any special requests or dietary restrictions?"></textarea>
+                    <p class="text-xs text-slate-400 mt-1 text-right"><span class="instructions-count">0</span>/500</p>
                 </div>
 
                 <div class="mb-6">
@@ -502,61 +473,58 @@
                 </div>
             </div>
 
-            <div class="mb-6">
-                <h3 class="font-oswald text-xl font-bold text-[#000000] mb-2">Give a little extra love to the Samosa
-                    Team</h3>
-                <div class="grid grid-cols-4 gap-2 mb-3">
-                    <button type="button"
-                        class="tip-btn border border-slate-300 rounded py-2 font-bold text-sm text-slate-600 hover:border-brand-500 hover:text-brand-600 transition-colors"
-                        data-pct="0.10">10%</button>
-                    <button type="button"
-                        class="tip-btn border border-slate-300 rounded py-2 font-bold text-sm text-slate-600 hover:border-brand-500 hover:text-brand-600 transition-colors"
-                        data-pct="0.20">20%</button>
-                    <button type="button"
-                        class="tip-btn border border-slate-300 rounded py-2 font-bold text-sm text-slate-600 hover:border-brand-500 hover:text-brand-600 transition-colors"
-                        data-pct="0.25">25%</button>
-                    <button type="button" id="tip-other-btn"
-                        class="tip-btn border border-slate-300 rounded py-2 font-bold text-sm text-slate-600 hover:border-brand-500 hover:text-brand-600 transition-colors"
-                        data-pct="other">Other</button>
-                </div>
+            <!-- Order Details Section -->
+            <div class="border-t border-slate-200 pt-6 mt-6">
+                <h3 class="font-oswald text-xl font-bold text-[#000000] mb-4">Order Details</h3>
+                <div id="order-summary" class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+                    <div id="order-summary-details"></div>
+                    <div class="mt-4">
+                        <p class="text-sm font-bold text-slate-700 mb-2">Give a little extra love to the Samosa Team</p>
+                        <div class="grid grid-cols-4 gap-2 mb-3">
+                            <button type="button"
+                                class="tip-btn border border-slate-300 rounded py-2 font-bold text-sm text-slate-600 hover:border-brand-500 hover:text-brand-600 transition-colors"
+                                data-pct="0.10">10%</button>
+                            <button type="button"
+                                class="tip-btn border border-slate-300 rounded py-2 font-bold text-sm text-slate-600 hover:border-brand-500 hover:text-brand-600 transition-colors"
+                                data-pct="0.20">20%</button>
+                            <button type="button"
+                                class="tip-btn border border-slate-300 rounded py-2 font-bold text-sm text-slate-600 hover:border-brand-500 hover:text-brand-600 transition-colors"
+                                data-pct="0.25">25%</button>
+                            <button type="button" id="tip-other-btn"
+                                class="tip-btn border border-slate-300 rounded py-2 font-bold text-sm text-slate-600 hover:border-brand-500 hover:text-brand-600 transition-colors"
+                                data-pct="other">Other</button>
+                        </div>
 
-                <div id="tip-custom-container"
-                    class="hidden relative border border-slate-300 rounded-md px-3 py-2 bg-white mb-3">
-                    <label class="block text-xs font-medium text-slate-500 mb-0.5">Custom Amount ($)</label>
-                    <input type="number" id="tip-custom-val" step="0.01" min="0"
-                        class="block w-full border-0 p-0 text-slate-900 focus:ring-0 font-medium outline-none">
-                </div>
+                        <div id="tip-custom-container"
+                            class="hidden relative border border-slate-300 rounded-md px-3 py-2 bg-white mb-3">
+                            <label class="block text-xs font-medium text-slate-500 mb-0.5">Custom Amount ($)</label>
+                            <input type="number" id="tip-custom-val" step="0.01" min="0"
+                                class="block w-full border-0 p-0 text-slate-900 focus:ring-0 font-medium outline-none">
+                        </div>
 
-                <div class="bg-slate-50 rounded p-4 flex justify-between items-center border border-slate-200 mt-4">
-                    <div class="flex flex-col">
-                        <span class="font-bold text-slate-700">Order Total</span>
-                        <span class="text-xs text-slate-500">(Includes Tax & Tip)</span>
+                        <div class="mt-4 flex justify-between items-center">
+                            <div class="flex flex-col">
+                                <span class="font-bold text-slate-700">Order Total</span>
+                                <span class="text-xs text-slate-500">(Includes Tax & Tip)</span>
+                            </div>
+                            <span id="final-total-display" class="font-oswald text-xl font-bold text-brand-600">$0.00</span>
+                        </div>
                     </div>
-                    <span id="final-total-display" class="font-oswald text-xl font-bold text-brand-600">$0.00</span>
                 </div>
             </div>
 
             <div class="pt-6">
                 <h3 class="font-oswald text-xl font-bold text-[#000000] mb-4">Payment Details</h3>
-                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50 space-y-4">
-                    <div class="flex items-start gap-3">
-                        <div class="w-12 h-8 border border-slate-200 rounded bg-white flex items-center justify-center shrink-0">
-                            <i data-lucide="shield-check" class="w-5 h-5 text-slate-600"></i>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-slate-900">Secure Square payment form</p>
-                            <p class="text-sm text-slate-600 mt-1">Card details stay inside Square-hosted fields while the rest of checkout stays on this page.</p>
-                        </div>
-                    </div>
-                    <div id="card-container" class="min-h-[96px] rounded-xl border border-slate-200 bg-white p-3"></div>
-                </div>
+                <div id="card-container" class="w-full max-w-[360px]"
+                    aria-label="Secure card payment fields"></div>
             </div>
 
-            <div id="payment-status-container" class="hidden p-4 rounded-md text-sm text-center font-bold"></div>
+            <div id="payment-status-container" class="hidden rounded-lg p-4 text-center text-sm font-bold" role="status"
+                aria-live="polite"></div>
 
             <div class="pt-6 text-center">
                 <button id="card-button" type="button" disabled
-                    class="w-auto px-12 py-3 bg-brand-600 hover:bg-brand-700 border border-transparent rounded-full font-bold text-white shadow-lg transition-all duration-200 active:scale-95 shadow-brand-500/30">
+                    class="w-full min-w-[220px] px-8 py-3 bg-brand-600 hover:bg-brand-700 border border-transparent rounded-full font-bold text-white shadow-lg transition-all duration-200 active:scale-95 shadow-brand-500/30 sm:w-auto sm:px-12">
                     Loading Secure Payment...
                 </button>
             </div>
@@ -569,35 +537,40 @@
 
 
     <!-- Closed Store Modal -->
-    <div id="closed-store-modal" class="hidden fixed inset-0 z-[200] overflow-y-auto">
+    <div id="closed-store-modal" class="hidden fixed inset-0 z-[200]">
         <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"></div>
-        <div class="relative flex min-h-full items-center justify-center p-4">
+        <div class="relative flex min-h-[100dvh] items-center justify-center p-3 sm:p-4">
             <div
-                class="relative w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-8 shadow-2xl transition-all">
-                <div class="text-center mb-6">
-                    <div class="mx-auto w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-8 h-8 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h2 class="font-oswald text-2xl font-bold text-slate-900 mb-2">We're Closed Right Now</h2>
-                    <p class="text-slate-600">We still wanna get you your Samosas though. Place your order ahead now and
-                        you're scoring <span class="font-bold text-brand-600">10% off your order</span>.</p>
+                class="relative flex max-h-[calc(100dvh-1.5rem)] w-full max-w-md transform flex-col overflow-hidden rounded-2xl bg-white shadow-2xl transition-all">
+                <button type="button" onclick="document.getElementById('closed-store-modal').classList.add('hidden')"
+                    class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors z-10"
+                    aria-label="Close closed store modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <div class="shrink-0 px-6 pb-3 pt-6 text-center">
+                    <h2 class="font-oswald text-2xl font-bold text-slate-900 mb-2 pr-8">We're Closed Right Now</h2>
+                    <p class="text-sm text-slate-600">Schedule ahead and get
+                        <span class="font-bold text-brand-600">10% off your order</span>.</p>
                 </div>
-                <div class="mb-6">
+                <div class="flex-1 overflow-y-auto px-6 pb-4">
                     <h3 class="font-semibold text-sm text-slate-700 mb-3">Choose an available window for your order</h3>
-                    <div id="date-selector" class="grid grid-cols-3 gap-2 mb-4"></div>
+                    <div id="date-selector" class="flex gap-2 overflow-x-auto pb-2 mb-4 scrollbar-hide snap-x"></div>
                     <div id="time-selector-container" class="hidden">
                         <h4 class="font-semibold text-xs text-slate-500 mb-2">Select a time</h4>
                         <div id="time-selector"
-                            class="max-h-48 overflow-y-auto space-y-1 border border-slate-200 rounded-lg p-2"></div>
+                            class="max-h-40 sm:max-h-48 overflow-y-auto space-y-1 border border-slate-200 rounded-lg p-2"></div>
                     </div>
                 </div>
-                <button id="confirm-schedule-btn"
-                    class="hidden w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 rounded-full transition-all">
-                    Confirm Schedule
-                </button>
+                <div class="shrink-0 border-t border-slate-100 bg-white px-6 py-4">
+                    <button id="confirm-schedule-btn" disabled
+                        class="w-full bg-slate-300 text-slate-500 font-bold py-3 rounded-full transition-all cursor-not-allowed">
+                        Confirm Schedule
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -607,6 +580,15 @@
         <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm"></div>
         <div class="relative flex min-h-full items-center justify-center p-4">
             <div class="relative w-full max-w-md transform rounded-2xl bg-white p-8 shadow-2xl text-center">
+                <button type="button" onclick="window.location.href='index.html'"
+                    class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors"
+                    aria-label="Close success modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
                 <div class="mx-auto w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
                     <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -655,10 +637,65 @@
 
             let currentTipAmount = 0;
 
+            function setNowTimingOptionsDisabled(disabled) {
+                const nowRadios = document.querySelectorAll('input[name="del-timing"][value="now"], input[name="pickup-timing"][value="now"]');
+                nowRadios.forEach((radio) => {
+                    radio.disabled = disabled;
+                    const label = radio.closest('label');
+                    const labelText = label?.querySelector('span');
+                    label?.classList.toggle('cursor-not-allowed', disabled);
+                    label?.classList.toggle('cursor-pointer', !disabled);
+                    label?.classList.toggle('opacity-50', disabled);
+                    labelText?.classList.toggle('text-slate-900', !disabled);
+                    labelText?.classList.toggle('text-slate-400', disabled);
+                    if (disabled) {
+                        labelText?.classList.remove('text-slate-900');
+                    } else {
+                        labelText?.classList.remove('text-slate-400');
+                    }
+
+                    if (disabled && radio.checked) {
+                        const laterRadio = document.querySelector(`input[name="${radio.name}"][value="later"]`);
+                        if (laterRadio) laterRadio.checked = true;
+                    }
+                });
+
+                if (disabled) {
+                    delTimeContainer?.classList.remove('hidden');
+                    pickupTimeContainer?.classList.remove('hidden');
+                }
+            }
+
+            function readCheckoutCart() {
+                try {
+                    const cart = JSON.parse(localStorage.getItem('samosaman_cart') || '[]');
+                    return Array.isArray(cart) ? cart : [];
+                } catch (error) {
+                    console.warn("Error reading cart:", error);
+                    return [];
+                }
+            }
+
+            function getPaidSubtotalFromCart(cart) {
+                return cart.filter(item => item?.isReward !== true).reduce((sum, item) => {
+                    const price = parseFloat(item.price) || 0;
+                    const qty = parseInt(item.quantity, 10) || 0;
+                    return sum + (price * qty);
+                }, 0);
+            }
+
+            function getMinimumOrderSubtotal() {
+                return Number(window.SAMOSAMAN_MINIMUM_ORDER_SUBTOTAL) || 30;
+            }
+
+            function formatCheckoutCurrency(amount) {
+                return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount);
+            }
+
             // --- RENDER ORDER SUMMARY ---
             function renderOrderSummary() {
-                const cart = JSON.parse(localStorage.getItem('samosaman_cart') || '[]');
-                const container = document.getElementById('order-summary');
+                const cart = readCheckoutCart();
+                const container = document.getElementById('order-summary-details') || document.getElementById('order-summary');
                 if (!container) return;
 
                 if (cart.length === 0) {
@@ -666,12 +703,20 @@
                     return;
                 }
 
-                const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const subtotal = getPaidSubtotalFromCart(cart);
+                const scheduledDiscount = window.scheduledOrderDiscount ? subtotal * window.scheduledOrderDiscount : 0;
+                const discountRows = scheduledDiscount > 0
+                    ? [{ label: 'Scheduled order discount', amount: scheduledDiscount }]
+                    : [];
+                const totalDiscount = discountRows.reduce((sum, discount) => sum + discount.amount, 0);
+                const taxableAmount = Math.max(0, subtotal - totalDiscount);
+                const tax = taxableAmount * 0.07;
+                const minimum = getMinimumOrderSubtotal();
+                const minimumShortfall = Math.max(0, Math.round((minimum - subtotal) * 100) / 100);
                 container.innerHTML = `
-                    <div class="space-y-3 mb-4">
+                    <div class="space-y-3">
                         ${cart.map(item => `
                             <div class="flex items-center gap-3 py-2">
-                                ${item.image ? `<img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-cover rounded">` : ''}
                                 <div class="flex-1">
                                     <p class="font-medium text-slate-900">${item.name}</p>
                                     <p class="text-sm text-slate-500">Qty: ${item.quantity}</p>
@@ -680,38 +725,49 @@
                             </div>
                         `).join('')}
                     </div>
-                    <div class="border-t border-slate-200 pt-3 space-y-2">
-                        <div class="flex justify-between text-sm">
-                            <span class="text-slate-600">Subtotal</span>
-                            <span class="font-medium text-slate-900">$${subtotal.toFixed(2)}</span>
+                    <div class="mt-3 space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-slate-600">Food subtotal</span>
+                            <span class="font-medium text-slate-900">${formatCheckoutCurrency(subtotal)}</span>
                         </div>
-                        <div class="flex justify-between text-sm">
+                        ${discountRows.map(discount => `
+                            <div class="flex justify-between">
+                                <span class="text-green-700">${discount.label}</span>
+                                <span class="font-medium text-green-700">-$${discount.amount.toFixed(2)}</span>
+                            </div>
+                        `).join('')}
+                        <div class="flex justify-between">
                             <span class="text-slate-600">Tax (7%)</span>
-                            <span class="font-medium text-slate-900">$${(subtotal * 0.07).toFixed(2)}</span>
+                            <span class="font-medium text-slate-900">$${tax.toFixed(2)}</span>
                         </div>
-                        <div class="flex justify-between text-base font-bold border-t border-slate-200 pt-2">
-                            <span class="text-slate-900">Total</span>
-                            <span class="text-brand-600">$${(subtotal * 1.07).toFixed(2)}</span>
-                        </div>
+                        ${minimumShortfall > 0 ? `
+                            <div class="rounded-md border border-red-200 bg-red-50 px-3 py-2 text-red-700 font-bold">
+                                Add ${formatCheckoutCurrency(minimumShortfall)} more to reach the ${formatCheckoutCurrency(minimum)} minimum for delivery or pickup.
+                            </div>
+                        ` : ''}
                     </div>
                 `;
             }
             renderOrderSummary();
 
             // --- SPECIAL INSTRUCTIONS COUNTER ---
-            const instructionsField = document.getElementById('special-instructions');
-            const countDisplay = document.getElementById('instructions-count');
-            if (instructionsField && countDisplay) {
-                instructionsField.addEventListener('input', (e) => {
-                    countDisplay.textContent = e.target.value.length;
-                });
-            }
+            document.querySelectorAll('.special-instructions-input').forEach((instructionsField) => {
+                const countDisplay = instructionsField
+                    .closest('.special-instructions-wrapper')
+                    ?.querySelector('.instructions-count');
+                if (countDisplay) {
+                    instructionsField.addEventListener('input', (e) => {
+                        countDisplay.textContent = e.target.value.length;
+                    });
+                }
+            });
 
             // --- STORE HOURS CHECK ---
             const urlParams = new URLSearchParams(window.location.search);
             const initialBranch = urlParams.get('branch') || 'Burlington';
 
             if (window.isStoreOpen && !window.isStoreOpen(initialBranch)) {
+                setNowTimingOptionsDisabled(true);
                 showClosedModal(initialBranch);
             }
 
@@ -719,7 +775,11 @@
             function checkOrderCutoff() {
                 const branch = document.getElementById('delivery-branch')?.value || document.getElementById('pickup-branch')?.value || 'Burlington';
                 const hours = window.getStoreHoursForToday ? window.getStoreHoursForToday(branch) : null;
-                if (!hours || hours.closed) return;
+                if (!hours) return;
+                if (hours.closed || (window.isStoreOpen && !window.isStoreOpen(branch))) {
+                    setNowTimingOptionsDisabled(true);
+                    return;
+                }
 
                 const now = new Date();
                 const [closeHour, closeMin] = hours.close.split(':').map(Number);
@@ -740,10 +800,10 @@
 
                 if (now >= cutoffTime) {
                     cutoffWarning.classList.remove('hidden');
-                    const nowRadios = document.querySelectorAll('input[name="del-timing"][value="now"], input[name="pickup-timing"][value="now"]');
-                    nowRadios.forEach(r => r.disabled = true);
+                    setNowTimingOptionsDisabled(true);
                 } else {
                     cutoffWarning.classList.add('hidden');
+                    setNowTimingOptionsDisabled(false);
                 }
             }
             checkOrderCutoff();
@@ -860,9 +920,6 @@
                                 </div>
                             </div>
                         `;
-                        setTimeout(() => {
-                            statusContainer.classList.add('hidden');
-                        }, 5000);
                         break;
 
                     case 'error':
@@ -1011,6 +1068,11 @@
             if (zipInput) zipInput.addEventListener('blur', validateAddress);
             if (branchSelect) branchSelect.addEventListener('change', handleBranchChange);
 
+            const hideStatusOnEdit = () => showProximityStatus('hide');
+            if (addressInput) addressInput.addEventListener('input', hideStatusOnEdit);
+            if (cityInput) cityInput.addEventListener('input', hideStatusOnEdit);
+            if (zipInput) zipInput.addEventListener('input', hideStatusOnEdit);
+
             const pickupTimeRadios = document.querySelectorAll('input[name="pickup-timing"]');
             pickupTimeRadios.forEach(radio => {
                 radio.addEventListener('change', () => {
@@ -1024,30 +1086,24 @@
 
             // --- 3. HANDLE TIPS & TOTALS ---
             function getSafeCartSubtotal() {
-                try {
-                    const cart = JSON.parse(localStorage.getItem('samosaman_cart') || '[]');
-                    if (!Array.isArray(cart)) return 0;
-                    return cart.reduce((sum, item) => {
-                        const price = parseFloat(item.price) || 0;
-                        const qty = parseInt(item.quantity) || 0;
-                        return sum + (price * qty);
-                    }, 0);
-                } catch (e) {
-                    return 0;
-                }
+                return getPaidSubtotalFromCart(readCheckoutCart());
             }
 
             function calculateTotal() {
                 const subtotal = getSafeCartSubtotal();
-                const tax = subtotal * 0.07;
-                const total = subtotal + tax + currentTipAmount;
+                const scheduledDiscount = window.scheduledOrderDiscount ? subtotal * window.scheduledOrderDiscount : 0;
+                const taxableAmount = Math.max(0, subtotal - scheduledDiscount);
+                const tax = taxableAmount * 0.07;
+                const total = taxableAmount + tax + currentTipAmount;
 
                 if (totalDisplay) {
                     totalDisplay.innerText = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(total);
                 }
 
+                renderOrderSummary();
                 window.checkoutTipAmount = currentTipAmount;
             }
+            window.refreshCheckoutTotals = calculateTotal;
 
             const tipButtons = document.querySelectorAll('.tip-btn');
             tipButtons.forEach(btn => {
@@ -1112,7 +1168,7 @@
                 }
 
                 return `
-                    <button type="button" class="date-btn p-3 border-2 border-slate-200 rounded-lg text-center hover:border-brand-500 transition-colors" data-index="${i}">
+                    <button type="button" class="date-btn flex-shrink-0 min-w-[100px] snap-start p-3 border-2 border-slate-200 rounded-lg text-center hover:border-brand-500 transition-colors" data-index="${i}">
                         <div class="text-xs text-slate-500">${topLabel}</div>
                         <div class="font-bold text-slate-900">${bottomLabel}</div>
                     </button>
@@ -1129,29 +1185,45 @@
                 selectedTime = null;
                 renderTimeSlots(selectedDate.hours);
                 timeSelectorContainer.classList.remove('hidden');
-                confirmBtn.classList.add('hidden');
+                confirmBtn.disabled = true;
+                confirmBtn.classList.remove('bg-brand-600', 'hover:bg-brand-700', 'text-white', 'cursor-pointer');
+                confirmBtn.classList.add('bg-slate-300', 'text-slate-500', 'cursor-not-allowed');
             });
 
             timeSelector.addEventListener('click', (e) => {
                 const btn = e.target.closest('.time-btn');
                 if (!btn) return;
-                document.querySelectorAll('.time-btn').forEach(b => { b.classList.remove('bg-brand-500', 'text-white'); b.classList.add('bg-white', 'text-slate-700'); });
-                btn.classList.remove('bg-white', 'text-slate-700');
-                btn.classList.add('bg-brand-500', 'text-white');
+                document.querySelectorAll('.time-btn').forEach(b => {
+                    b.classList.remove('selected');
+                });
+                btn.classList.add('selected');
                 selectedTime = btn.dataset.time;
-                confirmBtn.classList.remove('hidden');
+                confirmBtn.disabled = false;
+                confirmBtn.classList.remove('bg-slate-300', 'text-slate-500', 'cursor-not-allowed');
+                confirmBtn.classList.add('bg-brand-600', 'hover:bg-brand-700', 'text-white', 'cursor-pointer');
             });
 
             confirmBtn.addEventListener('click', () => {
-                const laterRadio = document.querySelector('input[name="del-timing"][value="later"], input[name="pickup-timing"][value="later"]');
+                if (confirmBtn.disabled) return;
+
+                const selectedOrderType = document.querySelector('input[name="orderType"]:checked')?.value || 'pickup';
+                const timingName = selectedOrderType === 'delivery' ? 'del-timing' : 'pickup-timing';
+                const timeSelectId = selectedOrderType === 'delivery' ? 'del-scheduled-time' : 'pickup-scheduled-time';
+                const laterRadio = document.querySelector(`input[name="${timingName}"][value="later"]`);
                 if (laterRadio) laterRadio.click();
-                const timeSelect = document.getElementById('del-scheduled-time') || document.getElementById('pickup-scheduled-time');
+                const timeSelect = document.getElementById(timeSelectId);
                 if (timeSelect && selectedTime) {
                     let option = Array.from(timeSelect.options).find(opt => opt.value === selectedTime);
                     if (!option) { option = new Option(selectedTime, selectedTime); timeSelect.add(option); }
                     timeSelect.value = selectedTime;
                 }
+                if (selectedDate?.date) {
+                    window.scheduledOrderDate = selectedDate.date.toLocaleDateString('en-CA', {
+                        timeZone: 'America/New_York'
+                    });
+                }
                 window.scheduledOrderDiscount = 0.10;
+                if (typeof window.refreshCheckoutTotals === 'function') window.refreshCheckoutTotals();
                 modal.classList.add('hidden');
             });
 
@@ -1186,8 +1258,7 @@
                 'del-address': { wrapper: '[data-field="del-address"]', input: '#del-address' },
                 'del-city': { wrapper: '[data-field="del-city"]', input: '#del-city' },
                 'del-state': { wrapper: '[data-field="del-state"]', input: '#del-state' },
-                'del-zip': { wrapper: '[data-field="del-zip"]', input: '#del-zip' },
-                'delivery-branch': { wrapper: '[data-field="delivery-branch"]', input: '#delivery-branch' }
+                'del-zip': { wrapper: '[data-field="del-zip"]', input: '#del-zip' }
             };
 
             const allFields = Object.assign({}, contactFields, deliveryFields);
@@ -1230,7 +1301,7 @@
                             }
 
                             // Track section position
-                            const isSectionDelivery = fieldKey.startsWith('del-') || fieldKey === 'delivery-branch';
+                            const isSectionDelivery = fieldKey.startsWith('del-');
                             const sectionKey = isSectionDelivery ? 'delivery' : 'contact';
 
                             if (!(sectionKey in sectionPositions)) {

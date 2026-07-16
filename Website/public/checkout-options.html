@@ -31,6 +31,8 @@
 
     <script src="js/firebase-init.js"></script>
 
+    <script src="js/errors.js"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -85,27 +87,26 @@
             How would you like to check out today?
         </h1>
 
-        <div class="grid md:grid-cols-2 gap-6 w-full max-w-5xl">
+        <div class="grid grid-cols-2 gap-3 md:gap-6 w-full max-w-5xl">
 
-            <div class="bg-slate-50 rounded-xl p-10 md:p-14 text-center flex flex-col items-center justify-center">
-                <h2 class="font-oswald text-3xl font-bold text-[#000000] mb-6">SamosaMan Clan®</h2>
-                <p class="text-slate-600 mb-10 leading-relaxed max-w-sm">
+            <div class="bg-slate-50 rounded-xl p-4 sm:p-8 md:p-14 text-center flex flex-col items-center justify-center">
+                <h2 class="font-oswald text-xl sm:text-2xl md:text-3xl font-bold text-[#000000] mb-4 md:mb-6">SamosaMan Clan®</h2>
+                <p class="text-slate-600 mb-6 md:mb-10 leading-relaxed max-w-sm text-xs sm:text-sm md:text-base">
                     Sign in to access your stored payment methods and receive points for every qualifying purchase.
                 </p>
                 <button onclick="toggleAuthModal(true)"
-                    class="bg-brand-600 text-white font-bold py-3.5 px-12 rounded-full min-w-[240px] shadow-sm hover:bg-brand-700 hover:shadow-md transition-all duration-200 active:scale-95">
+                    class="w-full md:w-auto bg-brand-600 text-white font-bold py-3 px-3 md:px-12 rounded-full md:min-w-[240px] shadow-sm hover:bg-brand-700 hover:shadow-md transition-all duration-200 active:scale-95 text-sm md:text-base">
                     Sign in
                 </button>
             </div>
 
-            <div class="bg-slate-50 rounded-xl p-10 md:p-14 text-center flex flex-col items-center justify-center">
-                <h2 class="font-oswald text-3xl font-bold text-[#000000] mb-6">Guest Checkout</h2>
-                <p class="text-slate-600 mb-10 leading-relaxed max-w-sm">
-                    Guests can still receive points for today's purchase by signing up or logging in to their SamosaMan
-                    Clan® account after ordering.
+            <div class="bg-slate-50 rounded-xl p-4 sm:p-8 md:p-14 text-center flex flex-col items-center justify-center">
+                <h2 class="font-oswald text-xl sm:text-2xl md:text-3xl font-bold text-[#000000] mb-4 md:mb-6">Guest Checkout</h2>
+                <p class="text-slate-600 mb-6 md:mb-10 leading-relaxed max-w-sm text-xs sm:text-sm md:text-base">
+                    Guests can still receive points by signing up or logging in after ordering.
                 </p>
                 <button id="guest-checkout-btn"
-                    class="bg-white text-slate-800 border border-slate-300 font-bold py-3.5 px-12 rounded-full min-w-[240px] hover:bg-slate-50 hover:border-slate-400 transition-all duration-200 active:scale-95">
+                    class="w-full md:w-auto bg-white text-slate-800 border border-slate-300 font-bold py-3 px-3 md:px-12 rounded-full md:min-w-[240px] hover:bg-slate-50 hover:border-slate-400 transition-all duration-200 active:scale-95 text-sm md:text-base">
                     Guest checkout
                 </button>
             </div>
@@ -127,10 +128,17 @@
             <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
                 <div id="modal-panel"
                     class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg opacity-0 translate-y-4 duration-300 ease-out">
+                    <button type="button" id="close-order-type-modal-btn"
+                        class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1 z-10"
+                        aria-label="Close order type modal">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                     <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                         <div class="sm:flex sm:items-start">
                             <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left w-full">
-                                <h3 class="text-xl font-oswald font-bold leading-6 text-slate-900 text-center mb-8"
+                                <h3 class="text-xl font-oswald font-bold leading-6 text-slate-900 text-center mb-8 px-8"
                                     id="modal-title">How would you like to receive your order?</h3>
 
                                 <div class="grid grid-cols-2 gap-4">
@@ -230,20 +238,20 @@
 
                                     <div id="password-requirements-container"
                                         class="signup-only hidden text-xs text-slate-500 space-y-1 pl-1 text-left">
-                                        <p id="req-len" class="flex items-center gap-1.5 transition-colors"><span
-                                                class="req-icon scale-0 opacity-0 transition-all text-green-600">✓</span>
+                                        <p id="req-len" class="flex items-center gap-1.5 transition-colors"><svg
+                                                aria-hidden="true" class="req-icon w-3.5 h-3.5 flex-shrink-0 scale-0 opacity-0 transition-all text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                             At least 8 characters</p>
-                                        <p id="req-upper" class="flex items-center gap-1.5 transition-colors"><span
-                                                class="req-icon scale-0 opacity-0 transition-all text-green-600">✓</span>
+                                        <p id="req-upper" class="flex items-center gap-1.5 transition-colors"><svg
+                                                aria-hidden="true" class="req-icon w-3.5 h-3.5 flex-shrink-0 scale-0 opacity-0 transition-all text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                             One uppercase letter</p>
-                                        <p id="req-lower" class="flex items-center gap-1.5 transition-colors"><span
-                                                class="req-icon scale-0 opacity-0 transition-all text-green-600">✓</span>
+                                        <p id="req-lower" class="flex items-center gap-1.5 transition-colors"><svg
+                                                aria-hidden="true" class="req-icon w-3.5 h-3.5 flex-shrink-0 scale-0 opacity-0 transition-all text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                             One lowercase letter</p>
-                                        <p id="req-num" class="flex items-center gap-1.5 transition-colors"><span
-                                                class="req-icon scale-0 opacity-0 transition-all text-green-600">✓</span>
+                                        <p id="req-num" class="flex items-center gap-1.5 transition-colors"><svg
+                                                aria-hidden="true" class="req-icon w-3.5 h-3.5 flex-shrink-0 scale-0 opacity-0 transition-all text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                             One number</p>
-                                        <p id="req-spec" class="flex items-center gap-1.5 transition-colors"><span
-                                                class="req-icon scale-0 opacity-0 transition-all text-green-600">✓</span>
+                                        <p id="req-spec" class="flex items-center gap-1.5 transition-colors"><svg
+                                                aria-hidden="true" class="req-icon w-3.5 h-3.5 flex-shrink-0 scale-0 opacity-0 transition-all text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                             One special character (!@#...)</p>
                                     </div>
 
@@ -309,6 +317,7 @@
 
     <script>
         lucide.createIcons();
+        window.SAMOSAMAN_MINIMUM_ORDER_SUBTOTAL = window.SAMOSAMAN_MINIMUM_ORDER_SUBTOTAL || 30;
 
         const guestBtn = document.getElementById('guest-checkout-btn');
         const modal = document.getElementById('order-type-modal');
@@ -316,9 +325,57 @@
         const panel = document.getElementById('modal-panel');
         const pickupBtn = document.getElementById('pickup-option-btn');
         const deliveryBtn = document.getElementById('delivery-option-btn');
+        const closeOrderTypeBtn = document.getElementById('close-order-type-modal-btn');
+        const minimumNotice = document.createElement('p');
+        minimumNotice.id = 'checkout-minimum-notice';
+        minimumNotice.className = 'hidden mt-3 text-xs sm:text-sm font-bold text-red-700';
+        guestBtn.insertAdjacentElement('afterend', minimumNotice);
+
+        function formatCheckoutOptionsMoney(amount) {
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount);
+        }
+
+        function readCheckoutOptionsCart() {
+            try {
+                const cart = JSON.parse(localStorage.getItem('samosaman_cart') || '[]');
+                return Array.isArray(cart) ? cart : [];
+            } catch (error) {
+                console.warn('Error reading cart:', error);
+                return [];
+            }
+        }
+
+        function getCheckoutOptionsPaidSubtotal(cart) {
+            return cart.filter(item => item?.isReward !== true).reduce((sum, item) => {
+                const price = parseFloat(item.price) || 0;
+                const quantity = parseInt(item.quantity, 10) || 0;
+                return sum + (price * quantity);
+            }, 0);
+        }
+
+        function getCheckoutOptionsMinimumState() {
+            const minimum = Number(window.SAMOSAMAN_MINIMUM_ORDER_SUBTOTAL) || 30;
+            const subtotal = getCheckoutOptionsPaidSubtotal(readCheckoutOptionsCart());
+            const shortfall = Math.max(0, Math.round((minimum - subtotal) * 100) / 100);
+            return { minimum, subtotal, shortfall };
+        }
+
+        function ensureCheckoutMinimum() {
+            const state = getCheckoutOptionsMinimumState();
+            if (state.shortfall <= 0) {
+                minimumNotice.classList.add('hidden');
+                minimumNotice.textContent = '';
+                return true;
+            }
+
+            minimumNotice.textContent = `Add ${formatCheckoutOptionsMoney(state.shortfall)} more to reach the ${formatCheckoutOptionsMoney(state.minimum)} minimum for delivery or pickup.`;
+            minimumNotice.classList.remove('hidden');
+            return false;
+        }
 
         // Open Order Type Modal
         guestBtn.addEventListener('click', () => {
+            if (!ensureCheckoutMinimum()) return;
             modal.classList.remove('hidden');
             setTimeout(() => {
                 backdrop.classList.remove('opacity-0');
@@ -327,20 +384,25 @@
             }, 10);
         });
 
-        // Close Order Type Modal
-        backdrop.addEventListener('click', () => {
+        function closeOrderTypeModal() {
             backdrop.classList.add('opacity-0');
             panel.classList.remove('translate-y-0');
             panel.classList.add('opacity-0', 'translate-y-4');
             setTimeout(() => { modal.classList.add('hidden'); }, 300);
-        });
+        }
+
+        // Close Order Type Modal
+        backdrop.addEventListener('click', closeOrderTypeModal);
+        closeOrderTypeBtn.addEventListener('click', closeOrderTypeModal);
 
         // Navigate to Guest Checkout with Type
         pickupBtn.addEventListener('click', () => {
+            if (!ensureCheckoutMinimum()) return;
             window.location.href = 'guest-checkout.html?type=pickup';
         });
 
         deliveryBtn.addEventListener('click', () => {
+            if (!ensureCheckoutMinimum()) return;
             window.location.href = 'guest-checkout.html?type=delivery';
         });
 

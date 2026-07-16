@@ -1,6 +1,6 @@
 const firebaseConfig = {
   apiKey: "AIzaSyAjPJFT1abNvZf7GWUYk3rAVQHTSAC-mSw",
-  authDomain: "samosaman-6895e.firebaseapp.com",
+  authDomain: "samosamanvt.com",
   projectId: "samosaman-6895e",
   storageBucket: "samosaman-6895e.firebasestorage.app",
   messagingSenderId: "315563373437",

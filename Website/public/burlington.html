@@ -30,6 +30,8 @@
 
     <script src="js/firebase-init.js"></script>
 
+    <script src="js/errors.js"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -494,16 +496,16 @@
 
             <div class="space-y-3 text-sm">
                 <div class="flex justify-between items-center py-2 border-b border-slate-100">
-                    <span class="font-medium text-slate-600">Mon - Wed</span>
-                    <span class="font-bold text-slate-900">11:00 AM - 11:00 PM</span>
+                    <span class="font-medium text-slate-600">Mon - Thu</span>
+                    <span class="font-bold text-slate-900">10:00 AM - 9:00 PM</span>
                 </div>
                 <div class="flex justify-between items-center py-2 border-b border-slate-100">
-                    <span class="font-medium text-slate-600">Thu - Sat</span>
-                    <span class="font-bold text-slate-900">11:00 AM - 3:00 AM</span>
+                    <span class="font-medium text-slate-600">Fri - Sat</span>
+                    <span class="font-bold text-slate-900">10:00 AM - 10:00 PM</span>
                 </div>
                 <div class="flex justify-between items-center py-2">
                     <span class="font-medium text-slate-600">Sunday</span>
-                    <span class="font-bold text-slate-900">11:00 AM - 12:00 AM</span>
+                    <span class="font-bold text-slate-900">10:00 AM - 8:00 PM</span>
                 </div>
             </div>
 
@@ -520,20 +522,50 @@
 
 <script>
     // --- CONFIGURATION ---
-    // Hours uses 24h format. For 3AM next day, use 27 (24 + 3).
+    // Hours use 24h format in America/New_York.
     // Days: 0=Sun, 1=Mon, ..., 6=Sat
+    const BURLINGTON_TIME_ZONE = 'America/New_York';
+    const BURLINGTON_DATE_FORMATTER = new Intl.DateTimeFormat('en-US', {
+        timeZone: BURLINGTON_TIME_ZONE,
+        weekday: 'short',
+        hour: '2-digit',
+        minute: '2-digit',
+        hourCycle: 'h23'
+    });
+    const DAY_INDEXES = {
+        Sun: 0,
+        Mon: 1,
+        Tue: 2,
+        Wed: 3,
+        Thu: 4,
+        Fri: 5,
+        Sat: 6
+    };
     const branchConfig = {
         hours: [
-            { days: [1, 2, 3], open: 11, close: 23 }, // Mon-Wed: 11am-11pm
-            { days: [4, 5, 6], open: 11, close: 27 }, // Thu-Sat: 11am-3am
-            { days: [0], open: 11, close: 24 }        // Sun: 11am-12am
+            { days: [1, 2, 3, 4], open: 10, close: 21 }, // Mon-Thu: 10am-9pm
+            { days: [5, 6], open: 10, close: 22 },       // Fri-Sat: 10am-10pm
+            { days: [0], open: 10, close: 20 }           // Sun: 10am-8pm
         ]
     };
 
+    function getStoreTimeParts(date = new Date()) {
+        const parts = Object.fromEntries(
+            BURLINGTON_DATE_FORMATTER.formatToParts(date)
+                .filter(part => part.type !== 'literal')
+                .map(part => [part.type, part.value])
+        );
+
+        return {
+            day: DAY_INDEXES[parts.weekday],
+            hour: Number(parts.hour) + (Number(parts.minute) / 60)
+        };
+    }
+
     function updateHoursStatus() {
-        const now = new Date();
-        const currentDay = now.getDay();
-        const currentHour = now.getHours() + (now.getMinutes() / 60);
+        const storeTime = getStoreTimeParts();
+        const currentDay = storeTime.day;
+        const currentHour = storeTime.hour;
 
         let isOpen = false;
         let closingTime = null;

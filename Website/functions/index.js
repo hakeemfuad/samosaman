@@ -65,6 +65,65 @@ const REWARD_ITEM_CATALOG = {
   'reward-small-chickpea-masala': { name: 'Small Chickpea Masala Reward Meal', kind: 'meal' }
 };
 
+const MENU_CATALOG_BY_BRANCH = {
+  Burlington: {
+    'apple-samosa': {
+      id: 'apple-samosa',
+      name: 'Apple Pie Samosa',
+      price: 3.75,
+      image: 'assets/samosas/apple_samosa3.webp'
+    },
+    'punjabi-samosa': {
+      id: 'punjabi-samosa',
+      name: 'Traditional Punjabi Samosa',
+      price: 3.75,
+      image: 'assets/samosas/traditional_punjabi_samosa.webp'
+    },
+    'steak-cheese': {
+      id: 'steak-cheese',
+      name: 'Steak & Cheese Samosa',
+      price: 3.75,
+      image: 'assets/samosas/steakandcheese.webp'
+    },
+    'spicy-chicken': {
+      id: 'spicy-chicken',
+      name: 'Spicy Chicken Samosa',
+      price: 3.75,
+      image: 'assets/samosas/spicy_chicken2.webp'
+    },
+    'chicken-cheese': {
+      id: 'chicken-cheese',
+      name: 'Chicken & Cheese Samosa',
+      price: 3.75,
+      image: 'assets/samosas/chicken_cheese3.webp'
+    },
+    'spicy-potato': {
+      id: 'spicy-potato',
+      name: 'Spicy Potato Samosa',
+      price: 3.75,
+      image: 'assets/samosas/spicy_potato_samosa.webp'
+    },
+    'veggie-samosa': {
+      id: 'veggie-samosa',
+      name: 'Vegetarian Samosa',
+      price: 3.75,
+      image: 'assets/samosas/veggie_samosa3.webp'
+    },
+    'chicken-curry-meal': {
+      id: 'chicken-curry-meal',
+      name: 'Chicken Curry Meal',
+      price: 13.95,
+      image: 'assets/chicken_curry.webp'
+    },
+    'chickpea-masala': {
+      id: 'chickpea-masala',
+      name: 'Chickpea Masala',
+      price: 12.95,
+      image: 'assets/chickpea_masala.webp'
+    }
+  }
+};
+
 const REWARD_TIERS = {
   'apple-pie-samosa': {
     id: 'apple-pie-samosa',
@@ -98,9 +157,17 @@ const REWARD_TIERS = {
   }
 };
 
+const TAX_RATE = 0.07;
+const SCHEDULED_ORDER_DISCOUNT_RATE = 0.10;
+const MINIMUM_ORDER_SUBTOTAL = 30;
+
 function toMoney(value) {
   const parsed = Number.parseFloat(value);
   return Number.isFinite(parsed) ? Math.round(parsed * 100) / 100 : 0;
+}
+
+function isSandboxEnvironment(environment) {
+  return String(environment || '').toLowerCase() === 'sandbox';
 }
 
 function escapeHtml(value = '') {
@@ -117,13 +184,152 @@ function isRewardItem(item) {
   return Boolean(item && item.isReward === true && item.reward && item.reward.id);
 }
 
-function normalizeCartItems(items) {
+function getCartItemId(item) {
+  return String(item?.id || item?.itemId || '').trim();
+}
+
+/**
+ * Error carrying a stable, machine-readable code alongside the user-facing
+ * message. Request handlers echo `code` back to the client so the UI can key
+ * off it instead of matching on message text.
+ */
+class AppError extends Error {
+  constructor(code, message) {
+    super(message);
+    this.name = 'AppError';
+    this.code = code;
+  }
+}
+
+function normalizeBranch(value) {
+  const branch = String(value || 'Burlington').trim() || 'Burlington';
+  if (!MENU_CATALOG_BY_BRANCH[branch]) {
+    throw new AppError('LOCATION_UNAVAILABLE', "Selected ordering location is unavailable.");
+  }
+  return branch;
+}
+
+function normalizeOrderType(value) {
+  return String(value || '').toLowerCase() === 'delivery' ? 'delivery' : 'pickup';
+}
+
+function normalizeCartQuantity(value) {
+  const quantity = Number.parseInt(value, 10) || 0;
+  if (quantity < 1) return 0;
+  if (quantity > 99) throw new AppError('ITEM_QTY_TOO_HIGH', "Item quantity is too high.");
+  return quantity;
+}
+
+function normalizePaidCartItem(item, branch) {
+  const id = getCartItemId(item);
+  const catalogItem = MENU_CATALOG_BY_BRANCH[branch]?.[id];
+
+  if (!catalogItem) {
+    throw new AppError('ITEM_UNAVAILABLE', "Cart contains an unavailable menu item.");
+  }
+
+  const quantity = normalizeCartQuantity(item.quantity);
+  if (quantity < 1) return null;
+
+  return {
+    id: catalogItem.id,
+    name: catalogItem.name,
+    price: toMoney(catalogItem.price),
+    quantity,
+    image: catalogItem.image || ''
+  };
+}
+
+function normalizeRewardCartItem(item) {
+  const rewardId = String(item?.reward?.id || '').trim();
+  const rewardItemId = String(item?.reward?.itemId || '').trim();
+  const tier = REWARD_TIERS[rewardId];
+  const catalogItem = REWARD_ITEM_CATALOG[rewardItemId];
+
+  if (!tier || !catalogItem || !tier.allowedItemIds.includes(rewardItemId)) {
+    throw new AppError('REWARD_INVALID_ITEM', "Cart contains an invalid reward item.");
+  }
+
+  const quantity = normalizeCartQuantity(item.quantity);
+  if (quantity < 1) return null;
+
+  return {
+    id: `reward-${tier.id}-${rewardItemId}`,
+    name: catalogItem.name,
+    price: 0,
+    quantity,
+    isReward: true,
+    reward: {
+      id: tier.id,
+      title: tier.title,
+      itemId: rewardItemId,
+      pointCost: tier.points,
+      itemType: tier.itemType || catalogItem.kind
+    }
+  };
+}
+
+function normalizeCartItems(items, branch = 'Burlington') {
   if (!Array.isArray(items)) return [];
-  return items.map((item) => ({
-    ...item,
-    price: toMoney(item.price),
-    quantity: Number.parseInt(item.quantity, 10) || 0
-  })).filter((item) => item.quantity > 0);
+  return items
+    .map((item) => isRewardItem(item)
+      ? normalizeRewardCartItem(item)
+      : normalizePaidCartItem(item, branch))
+    .filter(Boolean);
+}
+
+function calculatePaidSubtotal(items) {
+  return toMoney(items
+    .filter((item) => !isRewardItem(item))
+    .reduce((sum, item) => sum + (item.price * item.quantity), 0));
+}
+
+function normalizeFulfillmentDetails({ orderType, branch, deliveryDetails, pickupDetails, scheduledDate }) {
+  if (orderType === 'delivery') {
+    return {
+      deliveryDetails: deliveryDetails
+        ? {
+          ...deliveryDetails,
+          branch,
+          scheduledDate: deliveryDetails.scheduledDate || scheduledDate || null
+        }
+        : null,
+      pickupDetails: null
+    };
+  }
+
+  return {
+    deliveryDetails: null,
+    pickupDetails: {
+      ...(pickupDetails || {}),
+      branch,
+      scheduledDate: pickupDetails?.scheduledDate || scheduledDate || null
+    }
+  };
+}
+
+function getScheduledOrderDate(orderType, deliveryDetails, pickupDetails, fallbackScheduledDate) {
+  const details = orderType === 'delivery' ? deliveryDetails : pickupDetails;
+  return String(details?.scheduledDate || fallbackScheduledDate || '').trim();
+}
+
+function getScheduledOrderTime(orderType, deliveryDetails, pickupDetails, fallbackScheduledTime) {
+  const details = orderType === 'delivery' ? deliveryDetails : pickupDetails;
+  return String(details?.scheduledTime || fallbackScheduledTime || '').trim();
+}
+
+function isIsoDateString(value) {
+  return /^\d{4}-\d{2}-\d{2}$/.test(String(value || ''));
+}
+
+function calculateScheduledOrderDiscount(subtotal, orderType, deliveryDetails, pickupDetails, scheduledDate, scheduledTime) {
+  const date = getScheduledOrderDate(orderType, deliveryDetails, pickupDetails, scheduledDate);
+  const time = getScheduledOrderTime(orderType, deliveryDetails, pickupDetails, scheduledTime);
+
+  if (!isIsoDateString(date) || !parseTimeLabel(time)) return 0;
+  if (date <= todayInDoorDashTimeZone()) return 0;
+
+  return toMoney(subtotal * SCHEDULED_ORDER_DISCOUNT_RATE);
 }
 
 function addCount(counts, itemId, quantity) {
@@ -144,22 +350,22 @@ function validateRewardSelection(selectedReward, items, uid) {
 
   if (!selectedReward) {
     if (rewardItems.length > 0) {
-      throw new Error("Reward items require a selected reward.");
+      throw new AppError('REWARD_REQUIRED', "Reward items require a selected reward.");
     }
     return null;
   }
 
   if (!uid) {
-    throw new Error("Please sign in to redeem rewards.");
+    throw new AppError('REWARD_SIGN_IN', "Please sign in to redeem rewards.");
   }
 
   const tier = REWARD_TIERS[selectedReward.rewardId];
   if (!tier) {
-    throw new Error("Unknown reward selected.");
+    throw new AppError('REWARD_UNKNOWN', "Unknown reward selected.");
   }
 
   if (!Array.isArray(selectedReward.items) || selectedReward.items.length === 0) {
-    throw new Error("Reward selections are missing.");
+    throw new AppError('REWARD_MISSING', "Reward selections are missing.");
   }
 
   const selectedCounts = selectedReward.items.reduce((counts, item) => {
@@ -170,27 +376,27 @@ function validateRewardSelection(selectedReward, items, uid) {
 
   const cartCounts = rewardItems.reduce((counts, item) => {
     if (item.reward.id !== tier.id) {
-      throw new Error("Only one reward can be redeemed per order.");
+      throw new AppError('REWARD_ONE_PER_ORDER', "Only one reward can be redeemed per order.");
     }
     if (toMoney(item.price) !== 0) {
-      throw new Error("Reward items must be free.");
+      throw new AppError('REWARD_MUST_BE_FREE', "Reward items must be free.");
     }
     return addCount(counts, item.reward.itemId, item.quantity);
   }, {});
 
   if (!compareCounts(selectedCounts, cartCounts)) {
-    throw new Error("Reward cart items do not match the selected reward.");
+    throw new AppError('REWARD_MISMATCH', "Reward cart items do not match the selected reward.");
   }
 
   const totalQuantity = Object.entries(selectedCounts).reduce((sum, [itemId, quantity]) => {
     if (!tier.allowedItemIds.includes(itemId) || !REWARD_ITEM_CATALOG[itemId]) {
-      throw new Error("This item is not eligible for the selected reward.");
+      throw new AppError('REWARD_INELIGIBLE_ITEM', "This item is not eligible for the selected reward.");
     }
     return sum + quantity;
   }, 0);
 
   if (totalQuantity !== tier.selectionLimit) {
-    throw new Error(`This reward requires ${tier.selectionLimit} item(s).`);
+    throw new AppError('REWARD_SELECTION_COUNT', `This reward requires ${tier.selectionLimit} item(s).`);
   }
 
   return {
@@ -215,8 +421,54 @@ function parseJsonSafely(text) {
 }
 
 const SQUARE_API_VERSION = '2026-04-21';
+const DOORDASH_API_BASE_URL = 'https://openapi.doordash.com';
+const DOORDASH_JWT_TTL_SECONDS = 300;
+const DOORDASH_TIME_ZONE = 'America/New_York';
+const DOORDASH_STORE_CONFIG = {
+  Burlington: {
+    pickupAddress: '100 Church St, Burlington, VT 05401',
+    pickupBusinessName: 'SamosaMan Burlington',
+    pickupPhoneNumber: '+18028817607',
+    pickupInstructions: 'Please pick up at the counter. Use the order number as the pickup reference.'
+  }
+};
 
-function getSquareEnvironment(applicationId = '') {
+function getSquareCredentials(environment = 'production') {
+  if (isSandboxEnvironment(environment)) {
+    return {
+      accessToken: process.env.SQUARE_SANDBOX_ACCESS_TOKEN,
+      applicationId: process.env.SQUARE_SANDBOX_APPLICATION_ID,
+      locationId: process.env.SQUARE_SANDBOX_LOCATION_ID
+    };
+  }
+
+  return {
+    accessToken: process.env.SQUARE_ACCESS_TOKEN,
+    applicationId: process.env.SQUARE_APPLICATION_ID,
+    locationId: process.env.SQUARE_LOCATION_ID
+  };
+}
+
+function getDoorDashCredentials(environment = 'production') {
+  if (isSandboxEnvironment(environment)) {
+    return {
+      developerId: process.env.DOORDASH_SANDBOX_DEVELOPER_ID,
+      keyId: process.env.DOORDASH_SANDBOX_KEY_ID,
+      signingSecret: process.env.DOORDASH_SANDBOX_SIGNING_SECRET
+    };
+  }
+
+  return {
+    developerId: process.env.DOORDASH_DEVELOPER_ID,
+    keyId: process.env.DOORDASH_KEY_ID,
+    signingSecret: process.env.DOORDASH_SIGNING_SECRET
+  };
+}
+
+function getSquareEnvironment(applicationId = '', forcedEnvironment = '') {
+  if (isSandboxEnvironment(forcedEnvironment)) return 'sandbox';
+  if (String(forcedEnvironment || '').toLowerCase() === 'production') return 'production';
+
   const configured = String(process.env.SQUARE_ENVIRONMENT || '').toLowerCase();
   if (configured === 'sandbox' || configured === 'production') return configured;
   return String(applicationId).startsWith('sandbox-') ? 'sandbox' : 'production';
@@ -263,10 +515,313 @@ async function callSquare(path, accessToken, payload, environment) {
       status: response.status,
       body: data || raw
     });
-    throw new Error(formatSquareError(data, `Square request failed (${response.status}).`));
+    throw new AppError('SQUARE_API', formatSquareError(data, `Square request failed (${response.status}).`));
   }
 
   return data;
+}
+
+function base64UrlEncode(value) {
+  return Buffer.from(value)
+    .toString('base64')
+    .replace(/=/g, '')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_');
+}
+
+function base64UrlDecodeToBuffer(value) {
+  const normalized = String(value || '').replace(/-/g, '+').replace(/_/g, '/');
+  const padded = normalized.padEnd(Math.ceil(normalized.length / 4) * 4, '=');
+  return Buffer.from(padded, 'base64');
+}
+
+function hasDoorDashConfig(credentials = {}) {
+  return Boolean(
+    credentials.developerId &&
+    credentials.keyId &&
+    credentials.signingSecret
+  );
+}
+
+function buildDoorDashJwt(credentials) {
+  const now = Math.floor(Date.now() / 1000);
+  const header = {
+    alg: 'HS256',
+    typ: 'JWT',
+    'dd-ver': 'DD-JWT-V1'
+  };
+  const payload = {
+    aud: 'doordash',
+    iss: credentials.developerId,
+    kid: credentials.keyId,
+    exp: now + DOORDASH_JWT_TTL_SECONDS,
+    iat: now
+  };
+  const encodedHeader = base64UrlEncode(JSON.stringify(header));
+  const encodedPayload = base64UrlEncode(JSON.stringify(payload));
+  const signature = crypto
+    .createHmac('sha256', base64UrlDecodeToBuffer(credentials.signingSecret))
+    .update(`${encodedHeader}.${encodedPayload}`)
+    .digest();
+
+  return `${encodedHeader}.${encodedPayload}.${base64UrlEncode(signature)}`;
+}
+
+function formatDoorDashError(data, fallback) {
+  if (data?.message) return data.message;
+  if (data?.error) return data.error;
+
+  const firstError = Array.isArray(data?.errors) ? data.errors[0] : null;
+  if (typeof firstError === 'string') return firstError;
+  if (firstError?.message) return firstError.message;
+
+  const firstFieldError = Array.isArray(data?.field_errors) ? data.field_errors[0] : null;
+  if (firstFieldError?.error) {
+    return `${firstFieldError.field || 'DoorDash field'}: ${firstFieldError.error}`;
+  }
+
+  return fallback;
+}
+
+async function callDoorDash(path, method, payload, credentials) {
+  const response = await fetch(`${DOORDASH_API_BASE_URL}${path}`, {
+    method,
+    headers: {
+      Authorization: `Bearer ${buildDoorDashJwt(credentials)}`,
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: payload ? JSON.stringify(payload) : undefined
+  });
+  const raw = await response.text();
+  const data = parseJsonSafely(raw);
+
+  if (!response.ok) {
+    logger.error("DoorDash API error", {
+      path,
+      status: response.status,
+      body: data || raw
+    });
+    throw new AppError('DOORDASH_API', formatDoorDashError(data, `DoorDash request failed (${response.status}).`));
+  }
+
+  return data;
+}
+
+function normalizeUsPhoneToE164(value) {
+  const raw = String(value || '').trim();
+  if (/^\+\d{10,15}$/.test(raw)) return raw;
+
+  const digits = raw.replace(/\D/g, '');
+  if (digits.length === 10) return `+1${digits}`;
+  if (digits.length === 11 && digits.startsWith('1')) return `+${digits}`;
+  return null;
+}
+
+function sanitizeDoorDashId(value, fallback) {
+  const sanitized = String(value || '').replace(/[^a-zA-Z0-9-._~]/g, '-');
+  return (sanitized || fallback).slice(0, 64);
+}
+
+function sanitizeDoorDashText(value, maxLength = 500) {
+  return String(value || '').trim().slice(0, maxLength);
+}
+
+function formatDoorDashAddress(deliveryDetails = {}) {
+  return [
+    deliveryDetails.address,
+    deliveryDetails.city,
+    [deliveryDetails.state, deliveryDetails.zip].filter(Boolean).join(' ')
+  ].filter(Boolean).join(', ');
+}
+
+function parseTimeLabel(timeLabel) {
+  const match = String(timeLabel || '').trim().match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+  if (!match) return null;
+
+  let hours = Number.parseInt(match[1], 10);
+  const minutes = Number.parseInt(match[2], 10);
+  const period = match[3].toUpperCase();
+
+  if (hours < 1 || hours > 12 || minutes < 0 || minutes > 59) return null;
+  if (period === 'PM' && hours !== 12) hours += 12;
+  if (period === 'AM' && hours === 12) hours = 0;
+
+  return { hours, minutes };
+}
+
+function getTimeZoneOffsetMs(timeZone, date) {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false
+  }).formatToParts(date).reduce((acc, part) => {
+    if (part.type !== 'literal') acc[part.type] = part.value;
+    return acc;
+  }, {});
+
+  const localAsUtc = Date.UTC(
+    Number(parts.year),
+    Number(parts.month) - 1,
+    Number(parts.day),
+    Number(parts.hour),
+    Number(parts.minute),
+    Number(parts.second)
+  );
+
+  return localAsUtc - date.getTime();
+}
+
+function zonedDateTimeToUtcIso(dateIso, timeLabel, timeZone = DOORDASH_TIME_ZONE) {
+  const dateMatch = String(dateIso || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  const time = parseTimeLabel(timeLabel);
+  if (!dateMatch || !time) return null;
+
+  const year = Number(dateMatch[1]);
+  const month = Number(dateMatch[2]);
+  const day = Number(dateMatch[3]);
+  const localAsUtc = new Date(Date.UTC(year, month - 1, day, time.hours, time.minutes, 0));
+  let offset = getTimeZoneOffsetMs(timeZone, localAsUtc);
+  let utc = new Date(localAsUtc.getTime() - offset);
+
+  offset = getTimeZoneOffsetMs(timeZone, utc);
+  utc = new Date(localAsUtc.getTime() - offset);
+  return utc.toISOString();
+}
+
+function todayInDoorDashTimeZone() {
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: DOORDASH_TIME_ZONE,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).formatToParts(new Date()).reduce((acc, part) => {
+    if (part.type !== 'literal') acc[part.type] = part.value;
+    return acc;
+  }, {});
+
+  return `${parts.year}-${parts.month}-${parts.day}`;
+}
+
+function buildDoorDashItems(items = []) {
+  return items.map((item, index) => ({
+    name: sanitizeDoorDashText(item.name || `Item ${index + 1}`, 100),
+    quantity: Number.parseInt(item.quantity, 10) || 1,
+    external_id: sanitizeDoorDashId(item.id || item.itemId || `item-${index + 1}`, `item-${index + 1}`),
+    price: Math.max(0, Math.round(toMoney(item.price) * 100))
+  }));
+}
+
+function buildDoorDashDeliveryRequest(order) {
+  if (order.orderType !== 'delivery' || !order.deliveryDetails) return null;
+
+  const store = DOORDASH_STORE_CONFIG[order.branch] || DOORDASH_STORE_CONFIG.Burlington;
+  const customerPhone = normalizeUsPhoneToE164(order.customerPhone);
+  const dropoffAddress = formatDoorDashAddress(order.deliveryDetails);
+
+  if (!customerPhone) {
+    throw new AppError('DELIVERY_PHONE_INVALID', "Please enter a valid U.S. mobile phone number for delivery updates.");
+  }
+  if (!dropoffAddress) {
+    throw new AppError('DELIVERY_ADDRESS_INCOMPLETE', "Please enter a complete delivery address.");
+  }
+
+  const externalDeliveryId = sanitizeDoorDashId(`SM-${order.orderId}`, `SM-${Date.now()}`);
+  const shortOrderId = (order.orderId || '').substring(0, 8).toUpperCase();
+  const request = {
+    external_delivery_id: externalDeliveryId,
+    locale: 'en-US',
+    pickup_address: store.pickupAddress,
+    pickup_business_name: store.pickupBusinessName,
+    pickup_phone_number: store.pickupPhoneNumber,
+    pickup_instructions: store.pickupInstructions,
+    pickup_reference_tag: `Order ${shortOrderId}`,
+    dropoff_address: dropoffAddress,
+    dropoff_phone_number: customerPhone,
+    dropoff_contact_given_name: sanitizeDoorDashText((order.customerName || '').split(' ')[0], 50) || undefined,
+    dropoff_contact_family_name: sanitizeDoorDashText((order.customerName || '').split(' ').slice(1).join(' '), 50) || undefined,
+    dropoff_contact_send_notifications: true,
+    dropoff_email_address: order.customerEmail || undefined,
+    dropoff_instructions: sanitizeDoorDashText(order.specialInstructions, 500) || undefined,
+    contactless_dropoff: true,
+    order_value: Math.max(0, Math.round(toMoney(order.subtotal - order.discount) * 100)),
+    items: buildDoorDashItems(order.items),
+    action_if_undeliverable: 'return_to_pickup',
+    order_contains: {
+      alcohol: false,
+      pharmacy_items: false,
+      age_restricted_pharmacy_items: false,
+      tobacco: false,
+      hemp: false,
+      otc: false
+    }
+  };
+
+  if (order.deliveryDetails.timing === 'later') {
+    const scheduledDate = order.deliveryDetails.scheduledDate || todayInDoorDashTimeZone();
+    const dropoffIso = zonedDateTimeToUtcIso(scheduledDate, order.deliveryDetails.scheduledTime);
+    if (!dropoffIso) {
+      throw new AppError('DELIVERY_TIME_INVALID', "Please select a valid scheduled delivery time.");
+    }
+    if (new Date(dropoffIso).getTime() <= Date.now() + 15 * 60 * 1000) {
+      throw new AppError('DELIVERY_TIME_TOO_SOON', "Please select a scheduled delivery time at least 15 minutes from now.");
+    }
+    request.dropoff_time = dropoffIso;
+  }
+
+  return request;
+}
+
+function summarizeDoorDashResponse(response = {}) {
+  return {
+    status: 'created',
+    externalDeliveryId: response.external_delivery_id || null,
+    deliveryStatus: response.delivery_status || null,
+    trackingUrl: response.tracking_url || null,
+    fee: Number.isFinite(response.fee) ? response.fee : null,
+    tax: Number.isFinite(response.tax) ? response.tax : null,
+    supportReference: response.support_reference || null,
+    pickupTimeEstimated: response.pickup_time_estimated || null,
+    dropoffTimeEstimated: response.dropoff_time_estimated || null,
+    createdAt: new Date().toISOString()
+  };
+}
+
+async function createDoorDashDelivery(order, request, credentials) {
+  if (order.orderType !== 'delivery') return null;
+
+  if (!request) {
+    return {
+      status: 'failed',
+      error: 'DoorDash delivery request could not be built.',
+      attemptedAt: new Date().toISOString()
+    };
+  }
+
+  if (!hasDoorDashConfig(credentials)) {
+    return {
+      status: 'skipped',
+      reason: 'not_configured',
+      message: 'DoorDash credentials are not configured for this Cloud Function.',
+      attemptedAt: new Date().toISOString()
+    };
+  }
+
+  try {
+    const response = await callDoorDash('/drive/v2/deliveries', 'POST', request, credentials);
+    return summarizeDoorDashResponse(response);
+  } catch (error) {
+    return {
+      status: 'failed',
+      error: error.message || 'DoorDash delivery creation failed.',
+      attemptedAt: new Date().toISOString()
+    };
+  }
 }
 
 function isCompletedSquarePayment(payment) {
@@ -284,22 +839,23 @@ function buildSquareCardSummary(payment) {
   };
 }
 
-exports.getSquarePaymentConfig = onRequest({
-  secrets: ["SQUARE_APPLICATION_ID", "SQUARE_LOCATION_ID"]
-}, (req, res) => {
+function handleSquarePaymentConfig(req, res, checkoutEnvironment = 'production') {
   cors(req, res, async () => {
     if (req.method !== 'GET') {
       return res.status(405).send('Method Not Allowed');
     }
 
-    const applicationId = process.env.SQUARE_APPLICATION_ID;
-    const locationId = process.env.SQUARE_LOCATION_ID;
+    const { applicationId, locationId } = getSquareCredentials(checkoutEnvironment);
 
     if (!applicationId || !locationId) {
-      return res.status(500).json({ success: false, error: "Square Payments is not configured." });
+      return res.status(500).json({
+        success: false,
+        error: `Square Payments is not configured for ${checkoutEnvironment}.`,
+        code: 'PAYMENT_NOT_CONFIGURED'
+      });
     }
 
-    const environment = getSquareEnvironment(applicationId);
+    const environment = getSquareEnvironment(applicationId, checkoutEnvironment);
     res.status(200).json({
       success: true,
       appId: applicationId,
@@ -308,79 +864,112 @@ exports.getSquarePaymentConfig = onRequest({
       sdkUrl: getSquareSdkUrl(environment)
     });
   });
+}
+
+exports.getSquarePaymentConfig = onRequest({
+  secrets: ["SQUARE_APPLICATION_ID", "SQUARE_LOCATION_ID"]
+}, (req, res) => {
+  handleSquarePaymentConfig(req, res, 'production');
 });
 
-// --- SQUARE EMBEDDED PAYMENT FUNCTION (v2) ---
-exports.processPayment = onRequest({
-  secrets: [
-    "SQUARE_ACCESS_TOKEN",
-    "SQUARE_APPLICATION_ID",
-    "SQUARE_LOCATION_ID"
-  ]
+exports.getSquarePaymentConfigSandbox = onRequest({
+  secrets: ["SQUARE_SANDBOX_APPLICATION_ID", "SQUARE_SANDBOX_LOCATION_ID"]
 }, (req, res) => {
+  handleSquarePaymentConfig(req, res, 'sandbox');
+});
+
+function handleProcessPayment(req, res, checkoutEnvironment = 'production') {
   cors(req, res, async () => {
     if (req.method !== 'POST') {
       return res.status(405).send('Method Not Allowed');
     }
 
-    const { sourceId, amount, email, uid, tipAmount, orderType, branch, deliveryDetails, pickupDetails, items, subtotal, tax, discount, firstName, lastName, phone, specialInstructions, scheduledTime, selectedReward } = req.body;
-    const normalizedItems = normalizeCartItems(items);
+    const { sourceId, amount, email, uid, tipAmount, orderType, branch, deliveryDetails, pickupDetails, items, subtotal, tax, discount, firstName, lastName, phone, specialInstructions, scheduledTime, scheduledDate, selectedReward } = req.body;
     let rewardValidation = null;
     const submittedSubtotal = toMoney(subtotal);
     const submittedDiscount = toMoney(discount);
-    const submittedTip = toMoney(tipAmount);
+    const submittedTip = Math.max(0, toMoney(tipAmount));
     const submittedTax = toMoney(tax);
     const submittedAmount = toMoney(amount);
-    const paidSubtotal = normalizedItems
-      .filter((item) => !isRewardItem(item))
-      .reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    const roundedPaidSubtotal = toMoney(paidSubtotal);
-    const netFoodSubtotal = Math.max(0, toMoney(submittedSubtotal - submittedDiscount));
-    const expectedTax = toMoney(netFoodSubtotal * 0.07);
-    const expectedAmount = toMoney(netFoodSubtotal + expectedTax + submittedTip);
-    const accessToken = process.env.SQUARE_ACCESS_TOKEN;
-    const applicationId = process.env.SQUARE_APPLICATION_ID;
-    const locationId = process.env.SQUARE_LOCATION_ID;
-    const environment = getSquareEnvironment(applicationId);
+    const isSandboxCheckout = isSandboxEnvironment(checkoutEnvironment);
+    const { accessToken, applicationId, locationId } = getSquareCredentials(checkoutEnvironment);
+    const doorDashCredentials = getDoorDashCredentials(checkoutEnvironment);
+    const environment = getSquareEnvironment(applicationId, checkoutEnvironment);
     let rewardDebit = null;
     let paymentSucceeded = false;
+    let doorDashDeliveryRequest = null;
 
     try {
       if (!sourceId) {
-        throw new Error("Missing Square payment token.");
+        throw new AppError('PAYMENT_TOKEN_MISSING', "Missing Square payment token.");
       }
       if (!accessToken || !applicationId || !locationId) {
-        throw new Error("Square Payments is not configured.");
+        throw new AppError('PAYMENT_NOT_CONFIGURED', "Square Payments is not configured.");
+      }
+
+      const normalizedOrderType = normalizeOrderType(orderType);
+      const normalizedBranch = normalizeBranch(branch || deliveryDetails?.branch || pickupDetails?.branch);
+      const fulfillmentDetails = normalizeFulfillmentDetails({
+        orderType: normalizedOrderType,
+        branch: normalizedBranch,
+        deliveryDetails,
+        pickupDetails,
+        scheduledDate
+      });
+      const normalizedItems = normalizeCartItems(items, normalizedBranch);
+      const catalogSubtotal = calculatePaidSubtotal(normalizedItems);
+      const expectedDiscount = calculateScheduledOrderDiscount(
+        catalogSubtotal,
+        normalizedOrderType,
+        fulfillmentDetails.deliveryDetails,
+        fulfillmentDetails.pickupDetails,
+        scheduledDate,
+        scheduledTime
+      );
+      const netFoodSubtotal = Math.max(0, toMoney(catalogSubtotal - expectedDiscount));
+      const expectedTax = toMoney(netFoodSubtotal * TAX_RATE);
+      const expectedAmount = toMoney(netFoodSubtotal + expectedTax + submittedTip);
+
+      if (normalizedItems.length === 0) {
+        throw new AppError('CART_EMPTY', "Cart is empty.");
+      }
+
+      if (catalogSubtotal < MINIMUM_ORDER_SUBTOTAL) {
+        throw new AppError('ORDER_MINIMUM', `Delivery and pickup orders require a $${MINIMUM_ORDER_SUBTOTAL.toFixed(2)} minimum before tax, tip, or discounts.`);
       }
 
       rewardValidation = validateRewardSelection(selectedReward, normalizedItems, uid);
 
-      if (Math.abs(submittedSubtotal - roundedPaidSubtotal) > 0.02) {
-        throw new Error("Order subtotal does not match cart items.");
+      if (Math.abs(submittedSubtotal - catalogSubtotal) > 0.02) {
+        throw new AppError('ORDER_SUBTOTAL_MISMATCH', "Order subtotal does not match cart items.");
+      }
+
+      if (Math.abs(submittedDiscount - expectedDiscount) > 0.02) {
+        throw new AppError('ORDER_DISCOUNT_MISMATCH', "Order discount does not match checkout details.");
       }
 
       if (Math.abs(submittedTax - expectedTax) > 0.05 || Math.abs(submittedAmount - expectedAmount) > 0.05) {
-        throw new Error("Order total does not match cart items.");
+        throw new AppError('ORDER_TOTAL_MISMATCH', "Order total does not match cart items.");
       }
 
-      const baseChargeCents = Math.round(toMoney(submittedAmount - submittedTip) * 100);
+      const baseChargeCents = Math.round(toMoney(expectedAmount - submittedTip) * 100);
       const tipCents = Math.round(submittedTip * 100);
 
       if (baseChargeCents + tipCents < 1) {
-        throw new Error("Order total must be at least $0.01 to pay online.");
+        throw new AppError('ORDER_TOTAL_TOO_LOW', "Order total must be at least $0.01 to pay online.");
       }
       if (baseChargeCents < 1) {
-        throw new Error("Order total before tip must be at least $0.01 to pay online.");
+        throw new AppError('ORDER_TOTAL_TIP_TOO_LOW', "Order total before tip must be at least $0.01 to pay online.");
       }
 
-      if (rewardValidation && uid) {
+      if (rewardValidation && uid && !isSandboxCheckout) {
         const userRef = db.collection('users').doc(uid);
         await db.runTransaction(async (transaction) => {
           const userDoc = await transaction.get(userRef);
           const currentPoints = userDoc.exists ? userDoc.data().rewardPoints || 0 : 0;
 
           if (currentPoints < rewardValidation.pointCost) {
-            throw new Error("Insufficient points for redemption.");
+            throw new AppError('REWARD_INSUFFICIENT_POINTS', "Insufficient points for redemption.");
           }
 
           transaction.set(userRef, {
@@ -396,6 +985,32 @@ exports.processPayment = onRequest({
       }
 
       const orderId = crypto.randomUUID();
+      const customerName = `${firstName || ''} ${lastName || ''}`.trim();
+      const orderDraft = {
+        orderId,
+        checkoutEnvironment,
+        uid: uid || null,
+        customerName,
+        customerEmail: email,
+        customerPhone: phone || '',
+        orderType: normalizedOrderType,
+        branch: normalizedBranch,
+        deliveryDetails: fulfillmentDetails.deliveryDetails,
+        pickupDetails: fulfillmentDetails.pickupDetails,
+        items: normalizedItems,
+        subtotal: catalogSubtotal,
+        tax: expectedTax,
+        tip: submittedTip,
+        discount: expectedDiscount,
+        total: expectedAmount,
+        specialInstructions: specialInstructions || '',
+        scheduledFor: scheduledTime || null
+      };
+
+      if (orderDraft.orderType === 'delivery') {
+        doorDashDeliveryRequest = buildDoorDashDeliveryRequest(orderDraft);
+      }
+
       const paymentPayload = {
         source_id: sourceId,
         idempotency_key: orderId,
@@ -425,12 +1040,12 @@ exports.processPayment = onRequest({
       const payment = squareResponse.payment;
 
       if (!payment || !isCompletedSquarePayment(payment)) {
-        throw new Error(`Square payment was not completed${payment?.status ? ` (${payment.status})` : ''}.`);
+        throw new AppError('PAYMENT_NOT_COMPLETED', `Square payment was not completed${payment?.status ? ` (${payment.status})` : ''}.`);
       }
 
       paymentSucceeded = true;
 
-      if (uid) {
+      if (uid && !isSandboxCheckout) {
         const pointsEarned = Math.floor(netFoodSubtotal * 100);
         const userRef = db.collection('users').doc(uid);
 
@@ -462,39 +1077,48 @@ exports.processPayment = onRequest({
 
       const orderData = {
         orderId,
+        checkoutEnvironment,
         uid: uid || null,
-        customerName: `${firstName || ''} ${lastName || ''}`.trim(),
+        customerName,
         customerEmail: email,
         customerPhone: phone || '',
-        orderType: orderType || 'pickup',
-        branch: branch || 'Burlington',
-        deliveryDetails: deliveryDetails || null,
-        pickupDetails: pickupDetails || null,
+        orderType: normalizedOrderType,
+        branch: normalizedBranch,
+        deliveryDetails: fulfillmentDetails.deliveryDetails,
+        pickupDetails: fulfillmentDetails.pickupDetails,
         items: normalizedItems,
         reward: rewardValidation,
-        subtotal: submittedSubtotal,
-        tax: submittedTax,
+        subtotal: catalogSubtotal,
+        tax: expectedTax,
         tip: submittedTip,
-        discount: submittedDiscount,
-        total: submittedAmount,
+        discount: expectedDiscount,
+        total: expectedAmount,
         specialInstructions: specialInstructions || '',
         scheduledFor: scheduledTime || null,
-        status: 'pending',
-        paymentStatus: 'paid',
+        status: isSandboxCheckout ? 'sandbox_pending' : 'pending',
+        paymentStatus: isSandboxCheckout ? 'sandbox_paid' : 'paid',
         paymentProvider: 'square',
         squarePaymentId: payment.id || null,
         squarePaymentStatus: payment.status || null,
         squareReceiptUrl: payment.receipt_url || null,
         squareCard: buildSquareCardSummary(payment),
+        doordash: null,
+        notifications: isSandboxCheckout ? { skipped: true, reason: 'sandbox_checkout' } : null,
         createdAt: FieldValue.serverTimestamp()
       };
 
+      if (orderData.orderType === 'delivery') {
+        orderData.doordash = await createDoorDashDelivery(orderData, doorDashDeliveryRequest, doorDashCredentials);
+      }
+
       await db.collection('orders').doc(orderId).set(orderData);
 
-      try {
-        await sendOrderConfirmationEmails(orderData);
-      } catch (emailErr) {
-        logger.error("Failed to send confirmation emails", emailErr);
+      if (!isSandboxCheckout) {
+        try {
+          await sendOrderConfirmationEmails(orderData);
+        } catch (emailErr) {
+          logger.error("Failed to send confirmation emails", emailErr);
+        }
       }
 
       res.status(200).json({
@@ -504,7 +1128,8 @@ exports.processPayment = onRequest({
           id: payment.id || null,
           status: payment.status || null,
           receiptUrl: payment.receipt_url || null
-        }
+        },
+        delivery: orderData.doordash
       });
 
     } catch (error) {
@@ -519,9 +1144,36 @@ exports.processPayment = onRequest({
       }
 
       logger.error("Square Payment Error:", error);
-      res.status(500).json({ success: false, error: error.message || "Internal Server Error" });
+      res.status(500).json({ success: false, error: error.message || "Internal Server Error", code: error.code || 'INTERNAL' });
     }
   });
+}
+
+// --- SQUARE EMBEDDED PAYMENT FUNCTION (v2) ---
+exports.processPayment = onRequest({
+  secrets: [
+    "SQUARE_ACCESS_TOKEN",
+    "SQUARE_APPLICATION_ID",
+    "SQUARE_LOCATION_ID",
+    "DOORDASH_DEVELOPER_ID",
+    "DOORDASH_KEY_ID",
+    "DOORDASH_SIGNING_SECRET"
+  ]
+}, (req, res) => {
+  handleProcessPayment(req, res, 'production');
+});
+
+exports.processPaymentSandbox = onRequest({
+  secrets: [
+    "SQUARE_SANDBOX_ACCESS_TOKEN",
+    "SQUARE_SANDBOX_APPLICATION_ID",
+    "SQUARE_SANDBOX_LOCATION_ID",
+    "DOORDASH_SANDBOX_DEVELOPER_ID",
+    "DOORDASH_SANDBOX_KEY_ID",
+    "DOORDASH_SANDBOX_SIGNING_SECRET"
+  ]
+}, (req, res) => {
+  handleProcessPayment(req, res, 'sandbox');
 });
 
 // --- [UPDATED] WELCOME EMAIL FUNCTION (v2) ---
@@ -729,6 +1381,40 @@ function getCustomerEmailTemplate(order) {
   `;
 }
 
+function getDoorDashRestaurantSummary(order) {
+  if (order.orderType !== 'delivery') return '';
+
+  const delivery = order.doordash;
+  if (!delivery) {
+    return `--- DOORDASH ---
+Status: Not attempted
+`;
+  }
+
+  if (delivery.status === 'created') {
+    return `--- DOORDASH ---
+Status: Created${delivery.deliveryStatus ? ` (${delivery.deliveryStatus})` : ''}
+External ID: ${delivery.externalDeliveryId || 'N/A'}
+Tracking: ${delivery.trackingUrl || 'N/A'}
+Estimated pickup: ${delivery.pickupTimeEstimated || 'N/A'}
+Estimated dropoff: ${delivery.dropoffTimeEstimated || 'N/A'}
+Support reference: ${delivery.supportReference || 'N/A'}
+`;
+  }
+
+  if (delivery.status === 'skipped') {
+    return `--- DOORDASH ---
+Status: Skipped
+Reason: ${delivery.message || delivery.reason || 'N/A'}
+`;
+  }
+
+  return `--- DOORDASH ---
+Status: Failed
+Error: ${delivery.error || 'N/A'}
+`;
+}
+
 function getRestaurantEmailTemplate(order) {
   const orderTypeText = order.orderType === 'delivery' ? 'DELIVERY' : 'PICKUP';
   const itemsList = (order.items || []).map(item =>
@@ -753,6 +1439,7 @@ ${order.orderType === 'delivery' && order.deliveryDetails ? `--- DELIVERY ADDRES
 ${order.deliveryDetails.address || ''}
 ${order.deliveryDetails.city || ''}, ${order.deliveryDetails.state || ''} ${order.deliveryDetails.zip || ''}
 ` : ''}
+${getDoorDashRestaurantSummary(order)}
 --- ORDER ITEMS ---
 ${itemsList}
 
@@ -844,7 +1531,7 @@ exports.submitCateringInquiry = onRequest(async (req, res) => {
 
     } catch (error) {
       logger.error("Catering inquiry error:", error);
-      res.status(500).json({ success: false, error: error.message || "Internal Server Error" });
+      res.status(500).json({ success: false, error: error.message || "Internal Server Error", code: error.code || 'INTERNAL' });
     }
   });
 });

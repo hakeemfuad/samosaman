@@ -1,5 +1,6 @@
 const CART_KEY = 'samosaman_cart';
 const TAX_RATE = 0.07; // Estimated 7% tax
+window.SAMOSAMAN_MINIMUM_ORDER_SUBTOTAL = window.SAMOSAMAN_MINIMUM_ORDER_SUBTOTAL || 30;
 
 // --- NEW: Order Type Modal HTML (Copied from checkout-options.html style) ---
 const ORDER_TYPE_MODAL_HTML = `
@@ -8,10 +9,15 @@ const ORDER_TYPE_MODAL_HTML = `
     <div class="fixed inset-0 z-10 overflow-y-auto">
         <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
             <div id="type-modal-panel" class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg opacity-0 translate-y-4 duration-300 ease-out">
+                <button type="button" id="close-order-type-modal-btn" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1 z-10" aria-label="Close order type modal">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
                 <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                     <div class="sm:flex sm:items-start">
                         <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left w-full">
-                            <h3 class="text-xl font-oswald font-bold leading-6 text-slate-900 text-center mb-8" id="modal-title">How would you like to receive your order?</h3>
+                            <h3 class="text-xl font-oswald font-bold leading-6 text-slate-900 text-center mb-8 px-8" id="modal-title">How would you like to receive your order?</h3>
                             
                             <div class="grid grid-cols-2 gap-4">
                                 <button onclick="proceedToCheckout('delivery')" class="flex flex-col items-center justify-center gap-3 p-6 rounded-xl border border-slate-200 hover:border-brand-500 hover:bg-brand-50 hover:text-brand-700 transition-all group">
@@ -132,6 +138,27 @@ function formatMoney(amount) {
     return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount);
 }
 
+function getPaidCartSubtotal(cart) {
+    return cart
+        .filter(item => item?.isReward !== true)
+        .reduce((sum, item) => {
+            const price = parseFloat(item.price) || 0;
+            const quantity = parseInt(item.quantity, 10) || 0;
+            return sum + (price * quantity);
+        }, 0);
+}
+
+function getMinimumOrderShortfall(subtotal) {
+    const minimum = Number(window.SAMOSAMAN_MINIMUM_ORDER_SUBTOTAL) || 30;
+    return Math.max(0, Math.round((minimum - subtotal) * 100) / 100);
+}
+
+function getMinimumOrderMessage(subtotal) {
+    const minimum = Number(window.SAMOSAMAN_MINIMUM_ORDER_SUBTOTAL) || 30;
+    const shortfall = getMinimumOrderShortfall(subtotal);
+    return `Add ${formatMoney(shortfall)} more to reach the ${formatMoney(minimum)} minimum for delivery or pickup.`;
+}
+
 /**
  * Renders the Cart Drawer contents
  */
@@ -141,6 +168,7 @@ function renderCartDrawer() {
     const subtotalEl = document.getElementById('cart-subtotal');
     const taxEl = document.getElementById('cart-tax');
     const totalEl = document.getElementById('cart-total');
+    const minimumMessageEl = document.getElementById('cart-minimum-message');
     const emptyMsg = document.getElementById('cart-empty-state');
     const footer = document.getElementById('cart-footer');
 
@@ -199,17 +227,47 @@ function renderCartDrawer() {
     subtotalEl.innerText = formatMoney(subtotal);
     taxEl.innerText = formatMoney(tax);
     totalEl.innerText = formatMoney(total);
+
+    const minimumShortfall = getMinimumOrderShortfall(getPaidCartSubtotal(cart));
+    if (minimumMessageEl) {
+        minimumMessageEl.classList.toggle('hidden', minimumShortfall <= 0);
+        minimumMessageEl.textContent = minimumShortfall > 0 ? getMinimumOrderMessage(getPaidCartSubtotal(cart)) : '';
+    }
     
     // --- UPDATED CHECKOUT BUTTON LOGIC ---
     const checkoutBtn = document.querySelector('#cart-footer button:last-child');
     if (checkoutBtn) {
-        checkoutBtn.onclick = handleCheckoutClick;
+        const blockedByMinimum = minimumShortfall > 0;
+        checkoutBtn.disabled = blockedByMinimum;
+        checkoutBtn.classList.toggle('opacity-50', blockedByMinimum);
+        checkoutBtn.classList.toggle('cursor-not-allowed', blockedByMinimum);
+        checkoutBtn.title = blockedByMinimum ? getMinimumOrderMessage(getPaidCartSubtotal(cart)) : '';
+        checkoutBtn.onclick = blockedByMinimum ? (event) => event.preventDefault() : handleCheckoutClick;
     }
+}
+
+function closeOrderTypeModal() {
+    const modal = document.getElementById('order-type-modal');
+    const backdrop = document.getElementById('type-modal-backdrop');
+    const panel = document.getElementById('type-modal-panel');
+
+    if (!modal || !backdrop || !panel) return;
+
+    backdrop.classList.add('opacity-0');
+    panel.classList.remove('translate-y-0');
+    panel.classList.add('opacity-0', 'translate-y-4');
+    setTimeout(() => modal.classList.add('hidden'), 300);
 }
 
 // --- NEW HELPER: Handle checkout click dependent on auth state ---
 function handleCheckoutClick(e) {
     if(e) e.preventDefault();
+
+    const subtotal = getPaidCartSubtotal(getCart());
+    if (getMinimumOrderShortfall(subtotal) > 0) {
+        renderCartDrawer();
+        return;
+    }
     
     const user = firebase.auth().currentUser;
     
@@ -222,6 +280,7 @@ function handleCheckoutClick(e) {
         const modal = document.getElementById('order-type-modal');
         const backdrop = document.getElementById('type-modal-backdrop');
         const panel = document.getElementById('type-modal-panel');
+        const closeBtn = document.getElementById('close-order-type-modal-btn');
         
         if (modal) {
             modal.classList.remove('hidden');
@@ -232,12 +291,9 @@ function handleCheckoutClick(e) {
                 panel.classList.add('translate-y-0');
             }, 10);
             
-            // Allow closing by clicking backdrop
-            backdrop.onclick = () => {
-                backdrop.classList.add('opacity-0');
-                panel.classList.add('opacity-0', 'translate-y-4');
-                setTimeout(() => modal.classList.add('hidden'), 300);
-            };
+            // Allow closing by clicking backdrop or X button
+            backdrop.onclick = closeOrderTypeModal;
+            if (closeBtn) closeBtn.onclick = closeOrderTypeModal;
         }
     } else {
         // SCENARIO: Guest. Redirect to options page.
@@ -247,6 +303,13 @@ function handleCheckoutClick(e) {
 
 // --- NEW HELPER: Redirect from modal to checkout.html ---
 window.proceedToCheckout = function(type) {
+    const subtotal = getPaidCartSubtotal(getCart());
+    if (getMinimumOrderShortfall(subtotal) > 0) {
+        renderCartDrawer();
+        closeOrderTypeModal();
+        return;
+    }
+
     // Redirects to the new checkout page with the selected type
     window.location.href = `checkout.html?type=${type}`;
 };
