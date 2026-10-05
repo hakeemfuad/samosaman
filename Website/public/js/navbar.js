@@ -29,20 +29,21 @@
                 </div>
             </div>
             <div class="flex items-center gap-4 md:gap-6">
-                <div class="hidden xl:flex flex-col items-end text-right leading-tight border-r border-slate-200 pr-6 mr-2">
+                <div class="nav-location-summary hidden xl:flex flex-col items-end text-right leading-tight border-r border-slate-200 pr-6 mr-2">
                     <span id="location-label" class="text-xs font-semibold text-slate-400 uppercase tracking-wide">Ordering Pickup?</span>
                     <a href="burlington.html" id="location-trigger" class="text-sm font-medium text-slate-900 hover:underline decoration-brand-500 underline-offset-4 flex items-center gap-1">
                         Select your location
                     </a>
                 </div>
 
-                <a href="burlington.html" class="hidden md:flex bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold py-3 px-6 rounded-md shadow-sm transition-all duration-200 transform active:scale-95 uppercase tracking-wide">Start Your Order</a>
+                <a href="burlington.html" class="nav-order-cta hidden md:flex bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold py-3 px-6 rounded-md shadow-sm transition-all duration-200 transform active:scale-95 uppercase tracking-wide">Start Your Order</a>
                 <div class="flex items-center gap-4 border-l border-slate-200 pl-6 h-8">
                     <button id="nav-user-btn" class="text-slate-500 hover:text-brand-600 transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-6 h-6"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                     </button>
-                    <button id="open-cart-btn" class="relative text-slate-500 hover:text-brand-600 transition-colors group">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <button id="open-cart-btn" aria-label="Open shopping bag" class="relative text-slate-500 hover:text-brand-600 transition-colors group">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-3.5 10 24 24" fill="currentColor" aria-hidden="true" focusable="false" class="block lg:hidden"><path d="m13.4575 16.9268h-1.1353a3.8394 3.8394 0 0 0 -7.6444 0h-1.1353a2.6032 2.6032 0 0 0 -2.6 2.6v8.9232a2.6032 2.6032 0 0 0 2.6 2.6h9.915a2.6032 2.6032 0 0 0 2.6-2.6v-8.9231a2.6032 2.6032 0 0 0 -2.6-2.6001zm-4.9575-2.2768a2.658 2.658 0 0 1 2.6221 2.2764h-5.2442a2.658 2.658 0 0 1 2.6221-2.2764zm6.3574 13.8a1.4014 1.4014 0 0 1 -1.4 1.4h-9.9149a1.4014 1.4014 0 0 1 -1.4-1.4v-8.9231a1.4014 1.4014 0 0 1 1.4-1.4h9.915a1.4014 1.4014 0 0 1 1.4 1.4z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="lucide lucide-shopping-bag hidden lg:block"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
                         <span id="cart-badge" class="absolute -top-1 -right-1 bg-brand-500 text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center transition-all duration-300 ${badgeOpacity} ${badgePop}">${cartCount}</span>
                     </button>
                     <button id="mobile-menu-btn" class="lg:hidden text-slate-900 transition-colors hover:text-brand-600">
@@ -62,7 +63,7 @@
             </div>
             
             <div class="mt-8 flex flex-col gap-4">
-                <a href="burlington.html" class="w-full bg-brand-600 text-white text-center font-bold py-4 rounded-md uppercase tracking-wide shadow-lg">Start Your Order</a>
+                <a href="burlington.html" class="nav-order-cta w-full bg-brand-600 text-white text-center font-bold py-4 rounded-md uppercase tracking-wide shadow-lg">Start Your Order</a>
                 <button onclick="document.getElementById('nav-user-btn')?.click()" class="w-full bg-slate-100 text-slate-900 text-center font-bold py-4 rounded-md uppercase tracking-wide">My Account</button>
             </div>
         </div>

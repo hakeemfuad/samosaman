@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -26,7 +27,7 @@
     <meta property="og:url" content="https://samosamanvt.com/">
     <meta property="og:title" content="SamosaMan - Authentic exotic Samosas | Burlington VT">
     <meta property="og:description" content="Craving authentic exotic samosas? SamosaMan serves crispy, flavorful samosas with delivery & pickup in Burlington VT. Order online now!">
-    <meta property="og:image" content="https://samosamanvt.com/assets/og-image.jpg">
+    <meta property="og:image" content="https://samosamanvt.com/assets/home/samosa_hero.webp?v=e7ad12fd">
     <meta property="og:site_name" content="SamosaMan">
     <meta property="og:locale" content="en_US">
 
@@ -35,378 +36,131 @@
     <meta property="twitter:url" content="https://samosamanvt.com/">
     <meta property="twitter:title" content="SamosaMan - Authentic exotic Samosas">
     <meta property="twitter:description" content="Craving authentic exotic samosas? Order online for delivery & pickup!">
-    <meta property="twitter:image" content="https://samosamanvt.com/assets/og-image.jpg">
+    <meta property="twitter:image" content="https://samosamanvt.com/assets/home/samosa_hero.webp?v=e7ad12fd">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/m_logo.svg">
     <link rel="apple-touch-icon" href="assets/m_logo.svg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/global.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="assets/home/samosa_hero.webp?v=e7ad12fd" fetchpriority="high">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-
-    <script src="js/firebase-init.js"></script>
-
-    <script src="js/errors.js"></script>
-
-    <script src="js/cart.js"></script>
-
     <script>
         tailwind.config = {
             theme: {
-                fontFamily: {
-                    sans: ['Inter', 'sans-serif'],
-                },
-                extend: {
-                    colors: {
-                        brand: {
-                            500: '#ea580c', // Burnt Orange for Samosa branding
-                            600: '#c2410c',
-                            700: '#9a3412',
-                        }
-                    }
-                }
+                fontFamily: { sans: ['Inter', 'sans-serif'] },
+                extend: { colors: { brand: {
+                    500: '#ea580c', 600: '#c2410c', 700: '#9a3412'
+                } } }
             }
-        }
+        };
     </script>
-    <style>
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Parallax Utilities */
-        .parallax-bg {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        @media (max-width: 768px) {
-            .parallax-bg {
-                background-attachment: scroll;
-            }
-        }
-
-        /* Custom scrollbar to match Vercel/Stripe vibe */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #d4d4d8;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #a1a1aa;
-        }
-
-        #cart-sidebar.translate-x-full {
-            transform: translateX(100%) !important;
-        }
-    </style>
-
-    <link id="all-fonts-link-font-geist" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-geist">
-        .font-geist {
-            font-family: 'Geist', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-roboto" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-roboto">
-        .font-roboto {
-            font-family: 'Roboto', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-montserrat" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-montserrat">
-        .font-montserrat {
-            font-family: 'Montserrat', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-poppins" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-poppins">
-        .font-poppins {
-            font-family: 'Poppins', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-playfair" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap">
-    <style id="all-fonts-style-font-playfair">
-        .font-playfair {
-            font-family: 'Playfair Display', serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-instrument-serif" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-instrument-serif">
-        .font-instrument-serif {
-            font-family: 'Instrument Serif', serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-merriweather" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap">
-    <style id="all-fonts-style-font-merriweather">
-        .font-merriweather {
-            font-family: 'Merriweather', serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-bricolage" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-bricolage">
-        .font-bricolage {
-            font-family: 'Bricolage Grotesque', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-jakarta" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap">
-    <style id="all-fonts-style-font-jakarta">
-        .font-jakarta {
-            font-family: 'Plus Jakarta Sans', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-manrope" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap">
-    <style id="all-fonts-style-font-manrope">
-        .font-manrope {
-            font-family: 'Manrope', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-space-grotesk" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-space-grotesk">
-        .font-space-grotesk {
-            font-family: 'Space Grotesk', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-work-sans" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap">
-    <style id="all-fonts-style-font-work-sans">
-        .font-work-sans {
-            font-family: 'Work Sans', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-pt-serif" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap">
-    <style id="all-fonts-style-font-pt-serif">
-        .font-pt-serif {
-            font-family: 'PT Serif', serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-geist-mono" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-geist-mono">
-        .font-geist-mono {
-            font-family: 'Geist Mono', monospace !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-space-mono" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap">
-    <style id="all-fonts-style-font-space-mono">
-        .font-space-mono {
-            font-family: 'Space Mono', monospace !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-quicksand" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-quicksand">
-        .font-quicksand {
-            font-family: 'Quicksand', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-nunito" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap">
-    <style id="all-fonts-style-font-nunito">
-        .font-nunito {
-            font-family: 'Nunito', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-newsreader" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&amp;display=swap">
-    <style id="all-fonts-style-font-newsreader">
-        .font-newsreader {
-            font-family: 'Newsreader', serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-google-sans-flex" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-google-sans-flex">
-        .font-google-sans-flex {
-            font-family: 'Google Sans Flex', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-oswald" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-oswald">
-        .font-oswald {
-            font-family: 'Oswald', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-dm-sans" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-dm-sans">
-        .font-dm-sans {
-            font-family: 'DM Sans', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-cormorant" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-cormorant">
-        .font-cormorant {
-            font-family: 'Cormorant Garamond', serif !important;
-        }
-    </style>
+    <link rel="stylesheet" href="css/home.css?v=20261004-centered-crew">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-init.js"></script>
+    <script src="js/errors.js"></script>
+    <script src="js/cart.js"></script>
 </head>
 
-<body class="font-sans antialiased text-slate-800 bg-white selection:bg-brand-500 selection:text-white">
-
-    <div id="landing-splash"
-        class="fixed inset-0 z-[9999] bg-white flex items-center justify-center transition-opacity duration-[400ms]">
-        <img src="assets/yellow_heart.png" alt="Samosaman" class="w-80 h-auto">
-    </div>
-    <script>
-            (function () {
-                // Check session storage immediately to avoid flash
-                const splash = document.getElementById('landing-splash');
-                const hasSeenSplash = sessionStorage.getItem('samosa_splash_seen');
-
-                if (hasSeenSplash) {
-                    // If already seen in this session, hide immediately
-                    if (splash) splash.style.display = 'none';
-                } else {
-                    // If not seen, play animation and then set flag
-                    document.addEventListener('DOMContentLoaded', () => {
-                        setTimeout(() => {
-                            if (splash) {
-                                splash.classList.add('opacity-0', 'pointer-events-none');
-                                setTimeout(() => {
-                                    splash.remove();
-                                    sessionStorage.setItem('samosa_splash_seen', 'true');
-                                }, 400);
-                            }
-                        }, 2000);
-                    });
-                }
-            })();
-    </script>
+<body class="home-page">
+    <a class="skip-link" href="#main">Skip to content</a>
     <div id="navbar-placeholder"></div>
-    <script src="js/navbar.js"></script>
 
-    <main class="relative w-full h-[100vh] min-h-[600px] flex items-center">
-
-        <div class="absolute inset-0 z-0 parallax-bg" style="background-image: url('assets/kaia_eating_samosa.PNG');">
-            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/20"></div>
-        </div>
-
-        <div class="md:px-6 w-full max-w-[1400px] z-10 mr-auto ml-auto pr-4 pl-4 relative">
-            <div class="max-w-xl flex flex-col gap-5 pt-10">
-
-                <h1
-                    class="leading-[1.0] uppercase lg:text-6xl md:text-5xl text-4xl font-bold text-white tracking-tight drop-shadow-lg">
-                    The bite <br> You Know You Need
-                </h1>
-
-                <p class="md:text-lg text-base font-medium text-slate-200 max-w-md drop-shadow-md leading-normal">
-                    One bite and it’s a done deal. Crispy Samosas, our Chicken Curry Meal, and our signature Garlic
-                    Tomato Salsa are here.
-                </p>
-
-                <div class="flex flex-row gap-4 mt-2">
-                    <a href="burlington.html"
-                        class="group relative flex items-center justify-center bg-brand-600 hover:bg-brand-500 text-white font-bold py-3 px-8 rounded-md transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 uppercase tracking-wider text-sm">
-                        Order Now
-                    </a>
-
-                    <a href="catering.html"
-                        class="group flex items-center justify-center bg-white text-slate-900 hover:bg-slate-100 font-bold py-3 px-8 rounded-md transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 uppercase tracking-wider text-sm">
-                        Catering
-                    </a>
-                </div>
-
+    <main id="main" class="home-frame" tabindex="-1">
+        <section class="home-hero" aria-labelledby="hero-heading">
+            <h1 id="hero-heading">Samosas and Salsa</h1>
+            <p class="home-hero-copy">The combo of dreams.</p>
+            <div class="home-actions">
+                <a class="home-button" href="burlington.html">Order Now</a>
+                <a class="home-button home-button-secondary" href="catering.html">Catering</a>
             </div>
-        </div>
+            <img class="home-hero-art" src="assets/home/samosa_hero.webp?v=e7ad12fd"
+                width="1254" height="1254" alt="A golden, crispy samosa with a bowl of Garlic Tomato Salsa"
+                fetchpriority="high">
+        </section>
 
-        <div
-            class="absolute bottom-0 left-0 w-full z-20 bg-gradient-to-t from-black via-black/80 to-transparent pb-6 pt-20">
-            <div class="max-w-[1400px] mx-auto px-4 md:px-6">
-                <p class="text-xs text-slate-400 font-medium leading-relaxed max-w-4xl text-center md:text-left">
-                    At limited participating U.S. Samosaman® locations for a limited time only, while supplies last.
-                    Check store for price &amp; participation, which vary. Other exclusions apply. Tax extra.
-                    <a href="#" class="underline hover:text-white transition-colors">Terms of Service</a> applied.
-                </p>
+        <section class="home-section home-catering" aria-labelledby="catering-heading">
+            <div class="home-catering-copy">
+                <h2 id="catering-heading">Samosas are best shared.</h2>
+                <p>Bring the crunch. Feed the crowd.</p>
+                <a class="home-button" href="catering.html">Plan your catering</a>
             </div>
-        </div>
+            <figure class="home-catering-media">
+                <img src="assets/home/tray_of_samosas.webp"
+                    width="1536" height="1024" alt="A tray filled with golden, crispy samosas" loading="lazy" decoding="async">
+            </figure>
+        </section>
 
+        <section class="home-section home-team" aria-labelledby="team-heading">
+            <div class="home-section-heading">
+                <h2 id="team-heading">Meet the crew.</h2>
+                <p class="home-team-intro">Good food starts with good people. These are ours.</p>
+            </div>
+            <ul class="home-team-grid">
+                <li>
+                    <figure>
+                        <img src="assets/headshots/karim_headshot.webp"
+                            width="800" height="1200" alt="Portrait of Karim" loading="lazy" decoding="async">
+                        <figcaption>Karim</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="assets/headshots/hakeem_headshot.webp"
+                            width="800" height="1200" alt="Portrait of Hakeem" loading="lazy" decoding="async">
+                        <figcaption>Hakeem</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="assets/headshots/Will_headshot.webp"
+                            width="800" height="1200" alt="Portrait of Will" loading="lazy" decoding="async">
+                        <figcaption>Will</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="assets/headshots/hope_headshot.webp"
+                            width="800" height="1200" alt="Portrait of Hope" loading="lazy" decoding="async">
+                        <figcaption>Hope</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="assets/headshots/Rishi_headshot.webp"
+                            width="800" height="1200" alt="Portrait of Rishi" loading="lazy" decoding="async">
+                        <figcaption>Rishi</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="assets/headshots/jordain_headshot.webp"
+                            width="800" height="1200" alt="Portrait of Jordain" loading="lazy" decoding="async">
+                        <figcaption>Jordain</figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </section>
+
+        <section class="home-section home-invitation" aria-labelledby="invitation-heading">
+            <div>
+                <p class="home-eyebrow">For you. For your whole crew.</p>
+                <h2 id="invitation-heading">Let’s eat.</h2>
+            </div>
+            <div class="home-actions">
+                <a class="home-button" href="burlington.html">Order Now <span aria-hidden="true">→</span></a>
+                <a class="home-link" href="catering.html">Plan your catering <span aria-hidden="true">↗</span></a>
+            </div>
+        </section>
     </main>
 
-    <section class="relative w-full h-[90vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-
-        <div class="absolute inset-0 z-0 parallax-bg"
-            style="background-image: url('assets/samoa_salsa_vertical.webp');">
-            <div class="absolute inset-0 bg-black/60"></div>
-        </div>
-
-        <div id="salsa-reveal"
-            class="relative z-10 text-center px-4 max-w-4xl opacity-0 translate-y-10 transition-all duration-1000 ease-out">
-            <h2
-                class="font-oswald text-4xl md:text-6xl font-bold text-white mb-6 uppercase tracking-wide drop-shadow-xl leading-tight">
-                Home of the signature <br>
-                <span class="text-brand-500">SamosaMan Salsa</span>.
-            </h2>
-            <p class="font-sans text-xl md:text-2xl text-slate-200 font-medium drop-shadow-md tracking-wide">
-                Yes, you can ask for extra.
-            </p>
-        </div>
-
-    </section>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.remove('opacity-0', 'translate-y-10');
-                        entry.target.classList.add('opacity-100', 'translate-y-0');
-                    }
-                });
-            }, { threshold: 0.3 });
-
-            const target = document.getElementById('salsa-reveal');
-            if (target) observer.observe(target);
-        });
-    </script>
-
-    <script>
-        lucide.createIcons();
-        window.addEventListener('scroll', function () {
-            const scrollPosition = window.pageYOffset;
-            const hero = document.querySelector('.parallax-bg');
-            if (hero) {
-            }
-        });
-    </script>
-
-    <div id="auth-modal" class="fixed inset-0 z-[100] hidden">
+    <div id="auth-modal" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
         <div id="auth-backdrop"
             class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity opacity-0 duration-300"
             onclick="toggleAuthModal(false)"></div>
@@ -415,7 +169,7 @@
             <div id="auth-panel"
                 class="relative w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-8 text-left shadow-2xl transition-all opacity-0 translate-y-4 duration-300 max-h-[90vh] overflow-y-auto scrollbar-hide">
 
-                <button onclick="toggleAuthModal(false)"
+                <button onclick="toggleAuthModal(false)" aria-label="Close sign in"
                     class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1 z-10">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -607,7 +361,9 @@
         }
     </style>
 
+    <script src="js/navbar.js?v=20261004-home-order-cta"></script>
     <script src="js/auth.js"></script>
+    <script src="js/home.js"></script>
 
     <div id="footer-placeholder"></div>
     <script src="js/footer.js"></script>
