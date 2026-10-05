@@ -8,7 +8,19 @@
 /documents/
 /videos/
 
-# Editor and runtime noise
+# Editor and tool state
+/.agent/
+/.claude/
+/.firebase/
 /.vscode/
 **/.vscode/
+firebase-debug.log*
+firebase-debug.*.log*
 *.log
+
+# Dependency and local config files
+/node_modules/
+/functions/node_modules/
+/public/js/app-config.js
+/Website/public/js/app-config.js
+*.local
