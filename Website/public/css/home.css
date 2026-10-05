@@ -148,7 +148,7 @@
     line-height: 1.75;
 }
 .home-catering {
-    padding: 56px 32px 40px;
+    padding: 48px 24px 24px;
     background: #000;
     /* Extend only the background beyond the centered page frame. */
     box-shadow: 0 0 0 100vmax #000;
@@ -162,8 +162,9 @@
 .home-catering-copy p { margin: 18px auto 0; color: #fff; font-size: 18px; line-height: 1.55; }
 .home-catering-copy p + p { margin-top: 12px; font-size: 16px; }
 .home-catering .home-button { margin-top: 24px; }
-.home-catering-media { max-width: 800px; margin: 32px auto 0; }
-.home-catering-media img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: contain; }
+/* Match the hero media bounds so the catering panel follows the same scale. */
+.home-catering-media { max-width: 620px; margin: 24px auto 0; }
+.home-catering-media img { display: block; width: 100%; height: clamp(260px, calc(100svh - 370px), 460px); object-fit: contain; }
 .home-story { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; padding: 80px 64px; }
 .home-story-copy p { margin: 0 0 16px; }
 .home-story h2 { max-width: 420px; }
@@ -188,7 +189,9 @@
     /* Leave a subtle glimpse of the next headline without shrinking the hero image. */
     .home-hero { padding-top: 36px; padding-bottom: 8px; }
     .home-hero-art { margin-bottom: -24px; }
-    .home-catering { padding-top: 32px; }
+    .home-catering { padding-top: 36px; padding-bottom: 8px; }
+    /* The hero overlaps its last 24px; keep the tray inside the same visible height. */
+    .home-catering-media img { height: calc(clamp(260px, calc(100svh - 370px), 460px) - 24px); }
     .home-team-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 }
 
@@ -225,6 +228,7 @@
     .home-catering-copy p + p { font-size: 15px; }
     .home-catering .home-button { margin-top: 20px; }
     .home-catering-media { margin-top: 28px; }
+    .home-catering-media img { height: auto; aspect-ratio: 3 / 2; }
     .home-story-copy p { font-size: 15px; line-height: 1.7; }
     .home-story { grid-template-columns: 1fr; gap: 24px; padding: 44px 24px; }
     .home-team { padding: 44px 24px; }
