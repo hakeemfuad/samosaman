@@ -45,7 +45,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="assets/home/samosa_hero.webp?v=e7ad12fd" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/home/holding_samosa.webp" fetchpriority="high">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -57,7 +57,7 @@
             }
         };
     </script>
-    <link rel="stylesheet" href="css/home.css?v=20261005-section-sizing">
+    <link rel="stylesheet" href="css/home.css?v=20261005-no-side-borders">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
     <script src="https://unpkg.com/lucide@latest" defer></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
@@ -73,8 +73,18 @@
     <div id="navbar-placeholder"></div>
 
     <main id="main" class="home-frame" tabindex="-1">
+        <section class="home-fresh" aria-labelledby="fresh-heading">
+            <img class="home-fresh-photo" src="assets/home/holding_samosa.webp"
+                width="1536" height="1024" alt="A freshly cooked golden samosa held in serving tongs"
+                loading="eager" fetchpriority="high" decoding="async">
+            <div class="home-fresh-copy">
+                <h1 id="fresh-heading">Served Fresh.</h1>
+                <p class="home-hero-copy">There's a science behind this crunch.</p>
+            </div>
+        </section>
+
         <section class="home-hero" aria-labelledby="hero-heading">
-            <h1 id="hero-heading">Samosas and Salsa</h1>
+            <h2 id="hero-heading">Samosas and Salsa</h2>
             <p class="home-hero-copy">The combo of dreams.</p>
             <div class="home-actions">
                 <a class="home-button" href="burlington.html">Order Now</a>
@@ -82,7 +92,7 @@
             </div>
             <img class="home-hero-art" src="assets/home/samosa_hero.webp?v=e7ad12fd"
                 width="1254" height="1254" alt="A golden, crispy samosa with a bowl of Garlic Tomato Salsa"
-                fetchpriority="high">
+                loading="lazy" decoding="async">
         </section>
 
         <section class="home-section home-catering" aria-labelledby="catering-heading">
@@ -146,17 +156,6 @@
                     </figure>
                 </li>
             </ul>
-        </section>
-
-        <section class="home-section home-invitation" aria-labelledby="invitation-heading">
-            <div>
-                <p class="home-eyebrow">For you. For your whole crew.</p>
-                <h2 id="invitation-heading">Let’s eat.</h2>
-            </div>
-            <div class="home-actions">
-                <a class="home-button" href="burlington.html">Order Now <span aria-hidden="true">→</span></a>
-                <a class="home-link" href="catering.html">Plan your catering <span aria-hidden="true">↗</span></a>
-            </div>
         </section>
     </main>
 
@@ -361,7 +360,7 @@
         }
     </style>
 
-    <script src="js/navbar.js?v=20261005-icon-strokes-1-2"></script>
+    <script src="js/navbar.js?v=20261005-cream-header"></script>
     <script src="js/auth.js?v=20261005-icon-strokes-1-2"></script>
     <script src="js/home.js"></script>
 

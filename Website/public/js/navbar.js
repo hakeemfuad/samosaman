@@ -11,7 +11,7 @@
 
     // 2. DEFINE NAVBAR HTML
     const navbarHTML = `
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#f7f3ea]/95 backdrop-blur-sm border-b border-slate-200">
         <div class="md:px-6 flex h-20 max-w-[1400px] mr-auto ml-auto pr-4 pl-4 items-center justify-between relative z-50">
             <div class="flex items-center gap-10">
                 <a href="index.html" class="flex items-center gap-2 group">

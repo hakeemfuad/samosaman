@@ -37,21 +37,16 @@
 }
 .home-page .skip-link:focus { transform: translateY(0); }
 
-/* Use the shared header's sizing and spacing with the homepage palette. */
-.home-page #navbar-placeholder nav {
-    background: var(--home-paper);
-    border-color: var(--home-line);
-    backdrop-filter: none;
-}
-.home-page #navbar-placeholder .nav-link { color: var(--home-ink); }
-.home-page #navbar-placeholder .nav-order-cta { display: none; }
-.home-page #navbar-placeholder .nav-location-summary { border-right: 0; padding-right: 0; margin-right: 0; }
-.home-page #mobile-menu-overlay { background: var(--home-paper); }
-
 .home-frame {
-    max-width: 1280px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1280px) minmax(0, 1fr);
+    /* Match the opening photo and samosas panels; multirow crew portraits size naturally. */
+    grid-template-rows: 1fr 1fr auto auto;
     margin: 80px auto 0;
-    border-inline: 1px solid var(--home-line);
+}
+.home-frame > section {
+    grid-column: 2;
+    min-width: 0;
 }
 .home-hero {
     padding: 48px 24px 24px;
@@ -79,7 +74,7 @@
     letter-spacing: .12em;
     text-transform: uppercase;
 }
-.home-hero h1 {
+.home-hero h2, .home-fresh h1 {
     margin: 0;
     font-size: clamp(40px, 4.5vw, 64px);
     font-weight: 600;
@@ -181,13 +176,41 @@
 .home-team-grid figure { margin: 0; }
 .home-team-grid img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 0%; background: #d2d0c9; }
 .home-team-grid figcaption { margin-top: 12px; font-size: 20px; font-weight: 400; letter-spacing: -.03em; }
-.home-invitation { padding: 80px 64px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
-.home-invitation .home-eyebrow { color: var(--home-orange); }
+.home-frame > .home-fresh {
+    grid-column: 1 / -1;
+    position: relative;
+    overflow: hidden;
+    padding: 48px 24px 24px;
+    border: 0;
+    background: #263746;
+    color: #fff;
+    text-align: center;
+}
+.home-fresh-photo {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+}
+.home-fresh::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgb(0 0 0 / 45%), transparent 48%);
+    pointer-events: none;
+}
+.home-fresh-copy { position: relative; z-index: 1; text-shadow: 0 2px 8px rgb(0 0 0 / 35%); }
+.home-fresh .home-hero-copy { color: inherit; }
 .home-page #footer-placeholder footer { background: var(--home-paper); border-top: 0; color: var(--home-ink); }
 
 @media (min-width: 1024px) {
+    /* Add room below the single-row crew portraits to match the hero and photo panels. */
+    .home-frame { grid-template-rows: 1fr 1fr auto 1fr; }
     /* Leave a subtle glimpse of the next headline without shrinking the hero image. */
-    .home-hero { padding-top: 36px; padding-bottom: 8px; }
+    .home-hero, .home-frame > .home-fresh { padding-top: 36px; padding-bottom: 8px; }
     .home-hero-art { margin-bottom: -24px; }
     .home-catering { padding-top: 36px; padding-bottom: 8px; }
     /* The hero overlaps its last 24px; keep the tray inside the same visible height. */
@@ -210,14 +233,14 @@
     }
 }
 @media (max-width: 1100px) {
-    .home-frame { margin-inline: 24px; }
-    .home-story, .home-team, .home-invitation { padding: 56px 40px; }
+    .home-frame { grid-template-columns: 24px minmax(0, 1fr) 24px; }
+    .home-story, .home-team { padding: 56px 40px; }
 }
 @media (max-width: 767px) {
-    .home-frame { margin: 80px 16px 0; }
-    .home-hero { padding: 32px 16px 24px; }
+    .home-frame { grid-template-columns: 16px minmax(0, 1fr) 16px; }
+    .home-hero, .home-frame > .home-fresh { padding: 32px 16px 24px; }
     .home-hero-art { height: clamp(180px, calc(100svh - 340px), 360px); width: 100%; margin-top: 20px; }
-    .home-hero h1 { font-size: clamp(28px, 7.5vw, 40px); }
+    .home-hero h2, .home-fresh h1 { font-size: clamp(28px, 7.5vw, 40px); }
     .home-hero-copy { font-size: 20px; margin-top: 8px; }
     .home-hero .home-actions { margin-top: 20px; }
     .home-button { gap: 24px; padding-inline: 20px; }
@@ -236,10 +259,9 @@
     .home-team-intro { font-size: 16px; }
     .home-team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
     .home-team-grid figcaption { font-size: 17px; margin-top: 10px; }
-    .home-invitation { flex-direction: column; align-items: flex-start; gap: 24px; padding: 44px 24px; }
 }
 @media (max-width: 374px) {
-    .home-frame { margin-inline: 10px; }
+    .home-frame { grid-template-columns: 10px minmax(0, 1fr) 10px; }
     .home-hero { padding-inline: 12px; }
     .home-hero .home-button { padding-inline: 16px; }
     .home-team { padding-inline: 16px; }
