@@ -7,7 +7,7 @@
     const parts = [
         { id: 'fold', title: 'A personal touch.', description: 'Folded by hand. One samosa at a time.' },
         { id: 'filling', title: 'Goodness inside.', description: 'Our Punjabi filling: spiced potatoes, green peas, and herbs.' },
-        { id: 'salsa', title: 'Better together.', description: 'Garlic Tomato Salsa. A little tang for all that crunch.' },
+        { id: 'salsa', title: 'Better together.', description: 'Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.' },
     ];
     const stage = diagram.querySelector('.samosa-diagram__stage');
     const hotspots = diagram.querySelector('[data-diagram-hotspots]');
@@ -47,9 +47,9 @@
         if (detailOpen) toggle.focus({ preventScroll: true });
     };
 
-    const leaveDetail = () => {
+    const leaveDetail = ({ restoreFocus = true } = {}) => {
         selectPart(null);
-        returnFocus.focus({ preventScroll: true });
+        if (restoreFocus) returnFocus.focus({ preventScroll: true });
     };
 
     points.forEach((point, index) => {
@@ -80,6 +80,12 @@
         event.preventDefault();
         leaveDetail();
     });
+    // Capture checks the state before an opening control handles its click.
+    // The return button keeps its own click and focus behavior.
+    document.addEventListener('click', (event) => {
+        if (!selected || toggle.contains(event.target)) return;
+        leaveDetail({ restoreFocus: false });
+    }, { capture: true });
 
     const fallback = document.querySelector('[data-diagram-fallback]');
     if (fallback) fallback.hidden = true;
