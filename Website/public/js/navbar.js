@@ -30,7 +30,7 @@
             </div>
             <div class="flex items-center gap-4 md:gap-6">
                 <div class="nav-location-summary hidden xl:flex flex-col items-end text-right leading-tight border-r border-slate-200 pr-6 mr-2">
-                    <span id="location-label" class="text-xs font-semibold text-slate-400 uppercase tracking-wide">Ordering Pickup?</span>
+                    <span id="location-label" class="text-xs font-semibold text-slate-600 uppercase tracking-wide">Ordering Pickup?</span>
                     <a href="burlington.html" id="location-trigger" class="text-sm font-medium text-slate-900 hover:underline decoration-brand-500 underline-offset-4 flex items-center gap-1">
                         Select your location
                     </a>
@@ -38,15 +38,16 @@
 
                 <a href="burlington.html" class="nav-order-cta hidden md:flex bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold py-3 px-6 rounded-md shadow-sm transition-all duration-200 transform active:scale-95 uppercase tracking-wide">Start Your Order</a>
                 <div class="flex items-center gap-4 border-l border-slate-200 pl-6 h-8">
-                    <button id="nav-user-btn" class="text-slate-500 hover:text-brand-600 transition-colors">
+                    <button id="nav-user-btn" aria-label="Open account" class="text-slate-500 hover:text-brand-600 transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-6 h-6"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                     </button>
-                    <button id="open-cart-btn" aria-label="Open shopping bag" class="relative text-slate-500 hover:text-brand-600 transition-colors group">
+                    <button id="open-cart-btn" class="relative text-slate-500 hover:text-brand-600 transition-colors group">
+                        <span class="sr-only">Open shopping bag, </span>
                         <!-- Keep the original 1.2px Apple outline and align its bottom with the 1.2px avatar. -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-3.5 9.45 24 24" fill="currentColor" aria-hidden="true" focusable="false" class="block"><path d="m13.4575 16.9268h-1.1353a3.8394 3.8394 0 0 0 -7.6444 0h-1.1353a2.6032 2.6032 0 0 0 -2.6 2.6v8.9232a2.6032 2.6032 0 0 0 2.6 2.6h9.915a2.6032 2.6032 0 0 0 2.6-2.6v-8.9231a2.6032 2.6032 0 0 0 -2.6-2.6001zm-4.9575-2.2768a2.658 2.658 0 0 1 2.6221 2.2764h-5.2442a2.658 2.658 0 0 1 2.6221-2.2764zm6.3574 13.8a1.4014 1.4014 0 0 1 -1.4 1.4h-9.9149a1.4014 1.4014 0 0 1 -1.4-1.4v-8.9231a1.4014 1.4014 0 0 1 1.4-1.4h9.915a1.4014 1.4014 0 0 1 1.4 1.4z"></path></svg>
-                        <span id="cart-badge" class="absolute -top-1 -right-1 bg-brand-500 text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center transition-all duration-300 ${badgeOpacity} ${badgePop}">${cartCount}</span>
+                        <span id="cart-badge" class="absolute -top-1 -right-1 bg-brand-500 text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center transition-all duration-300 ${badgeOpacity} ${badgePop}">${cartCount}</span><span class="sr-only"> items</span>
                     </button>
-                    <button id="mobile-menu-btn" class="lg:hidden text-slate-900 transition-colors hover:text-brand-600">
+                    <button id="mobile-menu-btn" aria-label="Toggle navigation menu" class="lg:hidden text-slate-900 transition-colors hover:text-brand-600">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-6 h-6"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
                     </button>
                 </div>
@@ -76,7 +77,7 @@
     <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-full sm:w-[500px] bg-[#fdfbf7] z-[70] shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
         <div class="p-6 border-b border-slate-200 flex items-center justify-between bg-white">
             <h2 class="font-oswald text-3xl font-bold uppercase text-slate-900">Your Order</h2>
-            <button id="close-cart-btn" class="text-slate-400 hover:text-slate-800 hover:bg-slate-100 p-2 rounded-full transition-colors">
+            <button id="close-cart-btn" aria-label="Close shopping bag" class="text-slate-400 hover:text-slate-800 hover:bg-slate-100 p-2 rounded-full transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="M6 6 18 18"/></svg>
             </button>
         </div>
@@ -272,6 +273,10 @@
     const mobileMenu = document.getElementById('mobile-menu-overlay');
 
     if (mobileBtn && mobileMenu) {
+        const navigation = mobileBtn.closest('nav');
+        let previousBodyPaddingRight = '';
+        let previousNavigationPaddingRight = '';
+
         mobileBtn.addEventListener('click', (e) => {
             e.preventDefault();
             
@@ -279,6 +284,18 @@
             const isClosed = mobileMenu.classList.contains('translate-x-full');
 
             if (isClosed) {
+                // Keep the page and header width stable when scroll locking removes
+                // a classic scrollbar. Overlay scrollbars need no compensation.
+                const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+                previousBodyPaddingRight = document.body.style.paddingRight;
+                previousNavigationPaddingRight = navigation.style.paddingRight;
+                if (scrollbarWidth > 0) {
+                    const bodyPadding = parseFloat(getComputedStyle(document.body).paddingRight) || 0;
+                    const navigationPadding = parseFloat(getComputedStyle(navigation).paddingRight) || 0;
+                    document.body.style.paddingRight = `${bodyPadding + scrollbarWidth}px`;
+                    navigation.style.paddingRight = `${navigationPadding + scrollbarWidth}px`;
+                }
+
                 // Open Menu
                 mobileMenu.classList.remove('translate-x-full');
                 document.body.style.overflow = 'hidden'; // Prevent background scrolling
@@ -288,6 +305,8 @@
                 // Close Menu
                 mobileMenu.classList.add('translate-x-full');
                 document.body.style.overflow = '';
+                document.body.style.paddingRight = previousBodyPaddingRight;
+                navigation.style.paddingRight = previousNavigationPaddingRight;
                 // Switch icon back to Menu
                 mobileBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-6 h-6"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>`;
             }

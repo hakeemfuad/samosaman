@@ -106,7 +106,7 @@
                             class="inline-block bg-[#451400] text-white font-bold text-[10px] uppercase px-4 py-2 rounded-full hover:bg-[#6d2000] transition-colors mb-1">
                             Join Now
                         </a>
-                        <button onclick="toggleHowItWorks(true)" class="block text-[10px] font-semibold underline hover:text-gray-600 bg-transparent border-0 cursor-pointer mx-auto">
+                        <button onclick="toggleHowItWorks(true)" class="block min-h-[34px] text-[10px] font-semibold underline hover:text-gray-600 bg-transparent border-0 cursor-pointer mx-auto">
                             Learn More
                         </button>
                     </div>
@@ -122,7 +122,7 @@
                             class="inline-block bg-[#451400] text-white font-bold text-xs uppercase px-6 py-2.5 rounded-full hover:bg-[#6d2000] transition-colors mb-2">
                             Join Now
                         </a>
-                        <button onclick="toggleHowItWorks(true)" class="block text-[11px] font-semibold underline hover:text-gray-600 bg-transparent border-0 cursor-pointer mx-auto">
+                        <button onclick="toggleHowItWorks(true)" class="block min-h-[34px] text-[11px] font-semibold underline hover:text-gray-600 bg-transparent border-0 cursor-pointer mx-auto">
                             Learn More
                         </button>
                     </div>
@@ -134,13 +134,13 @@
                 <div class="text-center md:text-right">
                     <div class="flex justify-center md:justify-end gap-5 mb-3 text-lg">
                         <a href="https://www.instagram.com/samosamanvt/" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-gray-600 transition-colors">
+                            class="hover:text-gray-600 transition-colors" aria-label="Instagram">
                             <iconify-icon icon="mdi:instagram"></iconify-icon>
                         </a>
-                        <a href="#" class="hover:text-gray-600 transition-colors">
+                        <a href="#" class="hover:text-gray-600 transition-colors" aria-label="Twitter">
                             <iconify-icon icon="mdi:twitter"></iconify-icon>
                         </a>
-                        <a href="#" class="hover:text-gray-600 transition-colors">
+                        <a href="#" class="hover:text-gray-600 transition-colors" aria-label="Facebook">
                             <iconify-icon icon="mdi:facebook"></iconify-icon>
                         </a>
                     </div>
