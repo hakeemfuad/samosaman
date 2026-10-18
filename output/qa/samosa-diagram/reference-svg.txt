@@ -1,0 +1,45 @@
+<svg class="samosa-diagram__art" viewBox="0 0 1000 650" aria-hidden="true" focusable="false">
+                                <defs>
+                                    <path id="diagram-samosa-outline" d="M156 42 C143 45 137 61 132 88 C122 102 115 117 111 130 C110 146 123 165 136 181 C140 210 149 249 152 279 C150 344 143 401 144 456 C142 486 128 520 123 558 C115 582 111 617 115 652 C115 680 117 703 114 730 C99 740 93 763 91 789 C74 811 62 838 52 861 C44 878 49 893 65 900 C100 913 145 907 177 899 C227 887 272 868 317 846 C390 814 448 783 509 748 C584 709 646 673 705 641 C727 630 739 632 758 644 C789 653 801 670 836 680 C868 689 902 684 916 668 C932 649 925 622 909 608 C881 589 851 577 823 561 C786 538 751 514 719 486 C682 461 658 432 624 413 C595 391 571 367 537 350 C503 332 476 309 447 292 C421 275 395 254 369 240 C347 221 333 217 310 211 C288 193 270 164 251 143 C232 118 217 90 201 67 C188 46 172 41 156 42 Z"></path>
+                                    <clipPath id="diagram-samosa-clip"><use href="#diagram-samosa-outline"></use></clipPath>
+                                    <!-- These two masks divide the existing photograph along its folded seam. -->
+                                    <clipPath id="diagram-shell-clip">
+                                        <path d="M0 0 H960 V640 L730 625 C530 654 370 691 220 700 C180 525 139 280 138 145 Z"></path>
+                                    </clipPath>
+                                    <clipPath id="diagram-fold-clip">
+                                        <path d="M0 0 H960 V960 H0 Z M0 0 H960 V640 L730 625 C530 654 370 691 220 700 C180 525 139 280 138 145 Z" clip-rule="evenodd"></path>
+                                    </clipPath>
+                                    <clipPath id="diagram-salsa-clip">
+                                        <path d="M746 786 C744 759 796 739 866 726 C952 710 1069 713 1143 733 C1186 745 1215 761 1217 782 C1218 804 1206 834 1199 860 L1160 994 C1150 1023 1118 1036 1070 1044 C1008 1055 925 1054 872 1040 C839 1032 820 1017 812 994 L762 849 C753 826 745 805 746 786 Z"></path>
+                                    </clipPath>
+                                    <radialGradient id="diagram-shadow">
+                                        <stop stop-color="#69563c" stop-opacity=".18"></stop>
+                                        <stop offset="1" stop-color="#69563c" stop-opacity="0"></stop>
+                                    </radialGradient>
+                                </defs>
+                                <ellipse class="samosa-diagram__shadow" cx="475" cy="574" rx="320" ry="42" fill="url(#diagram-shadow)"></ellipse>
+                                <path class="samosa-diagram__guides" d="M320 210 L590 300 M320 350 L580 410 M320 480 L580 410"></path>
+                                <g class="samosa-diagram__piece samosa-diagram__fold" data-art-part="fold">
+                                    <svg x="170" y="45" width="530" height="530" viewBox="0 0 960 960">
+                                        <g clip-path="url(#diagram-samosa-clip)">
+                                            <image href="assets/home/samosa_header.webp" width="960" height="960" clip-path="url(#diagram-fold-clip)"></image>
+                                        </g>
+                                    </svg>
+                                </g>
+                                <g class="samosa-diagram__piece samosa-diagram__filling" data-art-part="filling">
+                                    <image href="assets/home/samosa-filling-v1.webp" x="205" y="90" width="425" height="425"></image>
+                                </g>
+                                <g class="samosa-diagram__piece samosa-diagram__shell" data-art-part="crust">
+                                    <svg x="170" y="45" width="530" height="530" viewBox="0 0 960 960">
+                                        <g clip-path="url(#diagram-samosa-clip)">
+                                            <image href="assets/home/samosa_header.webp" width="960" height="960" clip-path="url(#diagram-shell-clip)"></image>
+                                        </g>
+                                    </svg>
+                                </g>
+                                <g class="samosa-diagram__piece samosa-diagram__salsa is-highlighted" data-art-part="salsa">
+                                    <ellipse cx="691" cy="554" rx="132" ry="26" fill="url(#diagram-shadow)"></ellipse>
+                                    <svg x="575" y="378" width="240" height="175" viewBox="736 711 492 358">
+                                        <image href="assets/home/samosa_hero.webp?v=e7ad12fd" width="1254" height="1254" clip-path="url(#diagram-salsa-clip)"></image>
+                                    </svg>
+                                </g>
+                            </svg>

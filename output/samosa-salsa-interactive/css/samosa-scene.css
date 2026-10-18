@@ -1,0 +1,51 @@
+/* This tableau uses the original samosa and salsa photographs in separate layers. */
+#samosas-and-salsa { scroll-margin-top: 88px; }
+.samosa-scene {
+    --scene-x: 0px;
+    --scene-y: 0px;
+    display: block;
+    width: min(100%, 820px);
+    aspect-ratio: 1000 / 560;
+    margin: 20px auto 0;
+    padding: 0;
+    border: 0;
+    border-radius: 24px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: pan-y pinch-zoom;
+}
+.samosa-scene:disabled { cursor: default; }
+.samosa-scene__art { display: block; width: 100%; height: auto; overflow: visible; }
+.samosa-scene__piece {
+    transform: translate(calc(var(--scene-x) * var(--depth)), calc(var(--scene-y) * var(--depth)));
+    transition: transform 250ms ease-out;
+}
+.samosa-scene__motion {
+    transform-box: fill-box;
+    transform-origin: 50% 80%;
+    transition: transform 550ms cubic-bezier(.22, 1.3, .35, 1);
+}
+.samosa-scene[aria-pressed="true"] .samosa-scene__motion {
+    transform: translate(var(--nudge-x), var(--nudge-y)) rotate(var(--nudge-turn));
+}
+.samosa-scene__salsa .samosa-scene__motion { transform-origin: 50% 100%; }
+.samosa-scene-hint {
+    margin: -4px 0 16px;
+    color: var(--home-muted);
+    font-size: 11px;
+    line-height: 1.5;
+    letter-spacing: .02em;
+}
+.samosa-scene-hint[hidden] { display: none; }
+@media (max-width: 767px) {
+    /* Use the available section width so all five remain legible on phones. */
+    .samosa-scene { width: calc(100% + 16px); max-width: none; margin: 32px -8px 12px; }
+    .samosa-scene-hint { margin-bottom: 12px; font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .samosa-scene__piece { transform: none; }
+    .samosa-scene__piece, .samosa-scene__motion { transition: none; }
+}

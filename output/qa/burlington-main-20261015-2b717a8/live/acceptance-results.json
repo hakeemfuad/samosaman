@@ -1,0 +1,252 @@
+{
+  "url": "https://samosamanvt.com/burlington.html",
+  "time": "2026-10-16T12:52:54.376Z",
+  "passed": 20,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Static menu preserves all 9 items and exact descriptions",
+      "pass": true,
+      "evidence": {
+        "uniqueItems": 9,
+        "buttons": 14
+      }
+    },
+    {
+      "name": "Every Add button stores the right item, name, price and thumbnail",
+      "pass": true,
+      "evidence": {
+        "added": 14,
+        "distinct": 9,
+        "subtotal": "$82.10",
+        "drawerImages": [
+          {
+            "src": "assets/chicken_curry.webp",
+            "alt": "Chicken Curry Meal",
+            "loaded": true
+          },
+          {
+            "src": "assets/samosas/traditional_punjabi_samosa.webp",
+            "alt": "Traditional Punjabi Samosa",
+            "loaded": true
+          },
+          {
+            "src": "assets/samosas/steakandcheese.webp",
+            "alt": "Steak & Cheese Samosa",
+            "loaded": true
+          },
+          {
+            "src": "assets/samosas/spicy_chicken2.webp",
+            "alt": "Spicy Chicken Samosa",
+            "loaded": true
+          },
+          {
+            "src": "assets/samosas/chicken_cheese3.webp",
+            "alt": "Chicken & Cheese Samosa",
+            "loaded": true
+          },
+          {
+            "src": "assets/samosas/spicy_potato_samosa.webp",
+            "alt": "Spicy Potato Samosa",
+            "loaded": true
+          },
+          {
+            "src": "assets/samosas/veggie_samosa3.webp",
+            "alt": "Vegetarian Samosa",
+            "loaded": true
+          },
+          {
+            "src": "assets/samosas/apple_samosa3.webp",
+            "alt": "Apple Pie Samosa",
+            "loaded": true
+          },
+          {
+            "src": "assets/chickpea_masala.webp",
+            "alt": "Chickpea Masala",
+            "loaded": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "Phone bag persists and follows deletion and emptied cart",
+      "pass": true,
+      "evidence": {
+        "reload": true,
+        "delete": true,
+        "empty": true,
+        "crossTab": true
+      }
+    },
+    {
+      "name": "Pickup / Delivery survives reload and does not change checkout",
+      "pass": true,
+      "evidence": {
+        "delivery": true,
+        "pickup": true
+      }
+    },
+    {
+      "name": "Order preference remains usable when storage throws",
+      "pass": true,
+      "evidence": {
+        "default": "pickup",
+        "selectionWorks": true
+      }
+    },
+    {
+      "name": "New York opening boundaries, weekday/weekend and DST are correct in another browser timezone",
+      "pass": true,
+      "evidence": {
+        "cases": 11,
+        "browserTimezone": "Asia/Tokyo"
+      }
+    },
+    {
+      "name": "Hours modal opens, contains keyboard focus, closes on Escape and restores focus",
+      "pass": true,
+      "evidence": {
+        "focusTrap": true,
+        "escape": true,
+        "restored": true
+      }
+    },
+    {
+      "name": "Responsive layout, category jumps and scroll-spy at 375px",
+      "pass": true,
+      "evidence": {
+        "width": 375,
+        "noOverflow": true,
+        "minimumControlHeight": 34,
+        "activeSections": 4,
+        "keyboardCarousel": true
+      }
+    },
+    {
+      "name": "Responsive layout, category jumps and scroll-spy at 430px",
+      "pass": true,
+      "evidence": {
+        "width": 430,
+        "noOverflow": true,
+        "minimumControlHeight": 34,
+        "activeSections": 4,
+        "keyboardCarousel": true
+      }
+    },
+    {
+      "name": "Responsive layout, category jumps and scroll-spy at 768px",
+      "pass": true,
+      "evidence": {
+        "width": 768,
+        "noOverflow": true,
+        "minimumControlHeight": 34,
+        "activeSections": 4,
+        "keyboardCarousel": true
+      }
+    },
+    {
+      "name": "Responsive layout, category jumps and scroll-spy at 1024px",
+      "pass": true,
+      "evidence": {
+        "width": 1024,
+        "noOverflow": true,
+        "minimumControlHeight": 34,
+        "activeSections": 4,
+        "keyboardCarousel": true
+      }
+    },
+    {
+      "name": "Responsive layout, category jumps and scroll-spy at 1100px",
+      "pass": true,
+      "evidence": {
+        "width": 1100,
+        "noOverflow": true,
+        "minimumControlHeight": 34,
+        "activeSections": 4,
+        "keyboardCarousel": true
+      }
+    },
+    {
+      "name": "Responsive layout, category jumps and scroll-spy at 1440px",
+      "pass": true,
+      "evidence": {
+        "width": 1440,
+        "noOverflow": true,
+        "minimumControlHeight": 34,
+        "activeSections": 4,
+        "keyboardCarousel": true
+      }
+    },
+    {
+      "name": "Responsive layout, category jumps and scroll-spy at 1920px",
+      "pass": true,
+      "evidence": {
+        "width": 1920,
+        "noOverflow": true,
+        "minimumControlHeight": 34,
+        "activeSections": 4,
+        "keyboardCarousel": true
+      }
+    },
+    {
+      "name": "Counter clears the photo hand-off across tablet and desktop widths",
+      "pass": true,
+      "evidence": {
+        "samples": 43,
+        "minimumHorizontalClearance": 10.893750000000011,
+        "sourceHandoffBounds": [
+          940,
+          950,
+          1310,
+          1210
+        ]
+      }
+    },
+    {
+      "name": "Reduced motion removes transitions and category jumps are immediate",
+      "pass": true,
+      "evidence": {
+        "top": 141.203125,
+        "offset": 141,
+        "duration": "0s"
+      }
+    },
+    {
+      "name": "Menu keyboard focus has the required orange 2px ring",
+      "pass": true,
+      "evidence": {
+        "control": "delivery",
+        "width": "2px",
+        "color": "rgb(185, 67, 22)",
+        "visible": true
+      }
+    },
+    {
+      "name": "Hero priority, lazy menu images, pinned-free icons and catering destination",
+      "pass": true,
+      "evidence": {
+        "hero": {
+          "loading": "eager",
+          "priority": "high"
+        },
+        "lazy": true,
+        "unversioned": false,
+        "catering": "catering.html"
+      }
+    },
+    {
+      "name": "Automated accessibility audit of redesigned menu has no violations",
+      "pass": true,
+      "evidence": {
+        "violations": 0
+      }
+    },
+    {
+      "name": "No browser runtime errors",
+      "pass": true,
+      "evidence": {
+        "errors": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+            <button class="samosa-scene" type="button" data-samosa-scene disabled
+                aria-label="Give five golden samosas and a bowl of Garlic Tomato Salsa a nudge"
+                aria-pressed="false" aria-describedby="samosa-scene-hint">
+                <svg class="samosa-scene__art" viewBox="0 0 1000 560" aria-hidden="true" focusable="false">
+                    <defs>
+                        <!-- Clip the original photographs without repainting or changing the food. -->
+                        <clipPath id="samosa-photo-outline">
+                            <path d="M156 42 C143 45 137 61 132 88 C122 102 115 117 111 130
+                                C110 146 123 165 136 181 C140 210 149 249 152 279
+                                C150 344 143 401 144 456 C142 486 128 520 123 558
+                                C115 582 111 617 115 652 C115 680 117 703 114 730
+                                C99 740 93 763 91 789 C74 811 62 838 52 861
+                                C44 878 49 893 65 900 C100 913 145 907 177 899
+                                C227 887 272 868 317 846 C390 814 448 783 509 748
+                                C584 709 646 673 705 641 C727 630 739 632 758 644
+                                C789 653 801 670 836 680 C868 689 902 684 916 668
+                                C932 649 925 622 909 608 C881 589 851 577 823 561
+                                C786 538 751 514 719 486 C682 461 658 432 624 413
+                                C595 391 571 367 537 350 C503 332 476 309 447 292
+                                C421 275 395 254 369 240 C347 221 333 217 310 211
+                                C288 193 270 164 251 143 C232 118 217 90 201 67
+                                C188 46 172 41 156 42 Z"/>
+                        </clipPath>
+                        <clipPath id="salsa-photo-outline">
+                            <path d="M746 786 C744 759 796 739 866 726
+                                C952 710 1069 713 1143 733 C1186 745 1215 761 1217 782
+                                C1218 804 1206 834 1199 860 L1160 994
+                                C1150 1023 1118 1036 1070 1044 C1008 1055 925 1054 872 1040
+                                C839 1032 820 1017 812 994 L762 849 C753 826 745 805 746 786 Z"/>
+                        </clipPath>
+                        <radialGradient id="food-ground-shadow">
+                            <stop offset="0" stop-color="#615441" stop-opacity=".24"/>
+                            <stop offset="1" stop-color="#615441" stop-opacity="0"/>
+                        </radialGradient>
+                        <symbol id="samosa-original-photo" viewBox="0 0 960 960">
+                            <image href="assets/home/samosa_header.webp" width="960" height="960"
+                                clip-path="url(#samosa-photo-outline)"/>
+                        </symbol>
+                    </defs>
+
+                    <!-- Five in the back row, with the salsa centered in the foreground. -->
+                    <g class="samosa-scene__shadow" fill="url(#food-ground-shadow)">
+                        <ellipse cx="142" cy="362" rx="137" ry="28"/>
+                        <ellipse cx="307" cy="335" rx="144" ry="27"/>
+                        <ellipse cx="493" cy="360" rx="146" ry="29"/>
+                        <ellipse cx="683" cy="335" rx="144" ry="28"/>
+                        <ellipse cx="864" cy="342" rx="135" ry="27"/>
+                    </g>
+                    <g class="samosa-scene__piece" style="--depth: .55; --nudge-x: -9px; --nudge-y: -8px; --nudge-turn: -5deg">
+                        <g class="samosa-scene__motion">
+                            <use href="#samosa-original-photo" x="-3" y="89" width="279" height="279"
+                                transform="rotate(-8 137 349)"/>
+                        </g>
+                    </g>
+                    <g class="samosa-scene__piece" style="--depth: .85; --nudge-x: -6px; --nudge-y: -21px; --nudge-turn: -3deg">
+                        <g class="samosa-scene__motion">
+                            <use href="#samosa-original-photo" x="166" y="34" width="307" height="307"
+                                transform="rotate(-4 319 326)"/>
+                        </g>
+                    </g>
+                    <g class="samosa-scene__piece" style="--depth: .7; --nudge-x: 0px; --nudge-y: -13px; --nudge-turn: 2deg">
+                        <g class="samosa-scene__motion">
+                            <use href="#samosa-original-photo" x="348" y="64" width="298" height="298"/>
+                        </g>
+                    </g>
+                    <g class="samosa-scene__piece" style="--depth: 1; --nudge-x: 6px; --nudge-y: -23px; --nudge-turn: 4deg">
+                        <g class="samosa-scene__motion">
+                            <use href="#samosa-original-photo" x="536" y="35" width="302" height="302"
+                                transform="rotate(3 687 322)"/>
+                        </g>
+                    </g>
+                    <g class="samosa-scene__piece" style="--depth: .6; --nudge-x: 9px; --nudge-y: -11px; --nudge-turn: 5deg">
+                        <g class="samosa-scene__motion">
+                            <use href="#samosa-original-photo" x="714" y="42" width="292" height="292"
+                                transform="rotate(7 860 319)"/>
+                        </g>
+                    </g>
+                    <ellipse class="samosa-scene__salsa-shadow" cx="510" cy="494" rx="167" ry="34"
+                        fill="url(#food-ground-shadow)"/>
+                    <g class="samosa-scene__piece samosa-scene__salsa" style="--depth: 1.4; --nudge-x: 0px; --nudge-y: -8px; --nudge-turn: -2deg">
+                        <g class="samosa-scene__motion">
+                            <svg x="354" y="284" width="312" height="227" viewBox="736 711 492 358" overflow="visible">
+                                <image href="assets/home/samosa_hero.webp?v=e7ad12fd" width="1254" height="1254"
+                                    clip-path="url(#salsa-photo-outline)"/>
+                            </svg>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <p class="samosa-scene-hint" id="samosa-scene-hint" hidden>
+                Tap or click to give it a nudge.
+            </p>

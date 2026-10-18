@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PB6QFY8Z8D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PB6QFY8Z8D');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Our Story - Authentic exotic Samosas Since Day One | SamosaMan</title>
+    <meta name="title" content="Our Story - Authentic exotic Samosas Since Day One | SamosaMan">
+    <meta name="description" content="Learn about SamosaMan's journey bringing authentic exotic samosas to Vermont, Massachusetts, and New Hampshire. Discover our passion for quality and tradition.">
+    <meta name="keywords" content="about samosaman, exotic restaurant story, authentic samosas, Burlington VT restaurant, family business, exotic food tradition">
+    <link rel="canonical" href="https://samosamanvt.com/our-story.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://samosamanvt.com/our-story.html">
+    <meta property="og:title" content="Our Story - Authentic exotic Samosas Since Day One">
+    <meta property="og:description" content="Learn about SamosaMan's journey bringing authentic exotic samosas to New England.">
+    <meta property="og:image" content="https://samosamanvt.com/assets/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://samosamanvt.com/our-story.html">
+    <meta property="twitter:title" content="Our Story - Authentic exotic Samosas">
+    <meta property="twitter:description" content="Learn about SamosaMan's journey bringing authentic exotic samosas to New England.">
+    <meta property="twitter:image" content="https://samosamanvt.com/assets/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/m_logo.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+    <script src="js/firebase-init.js"></script>
+
+    <script src="js/errors.js"></script>
+
+    <script src="js/cart.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                    serif: ['Playfair Display', 'serif'],
+                    display: ['Oswald', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        brand: {
+                            500: '#ea580c',
+                            600: '#c2410c',
+                            700: '#9a3412',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll reveal — only animates when the user allows motion.
+           Under prefers-reduced-motion, content stays fully visible (no transform/opacity tricks). */
+        @media (prefers-reduced-motion: no-preference) {
+            .reveal {
+                opacity: 0;
+                transform: translateY(24px);
+                transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+                will-change: opacity, transform;
+            }
+
+            .reveal.is-visible {
+                opacity: 1;
+                transform: none;
+            }
+
+            .reveal-delay-1 { transition-delay: 0.08s; }
+            .reveal-delay-2 { transition-delay: 0.16s; }
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-slate-800 bg-white overflow-x-hidden">
+
+    <div id="navbar-placeholder"></div>
+    <script src="js/navbar.js?v=20261005-cream-header"></script>
+
+    <main class="pt-20">
+
+        <!-- ============ HERO (image-led, cinematic on mobile) ============ -->
+        <section class="relative w-full h-[80svh] min-h-[560px] max-h-[860px] overflow-hidden">
+            <img src="assets/fuad_ndibalema.webp"
+                alt="SamosaMan founder Fuad Ndibalema smiling at a festival stall, holding a plate of freshly fried samosas alongside his crew"
+                class="absolute inset-0 w-full h-full object-cover" style="object-position: 50% 28%;"
+                fetchpriority="high" decoding="async">
+            <!-- Legibility gradient: dark at the bottom where the copy sits -->
+            <div class="absolute inset-0"
+                style="background: linear-gradient(to top, rgba(15,23,42,0.88) 0%, rgba(15,23,42,0.45) 38%, rgba(15,23,42,0.05) 70%, rgba(15,23,42,0.15) 100%);"></div>
+
+            <div class="absolute inset-0 flex items-end">
+                <div class="w-full max-w-[1400px] mx-auto px-6 pb-12 sm:pb-16">
+                    <div class="max-w-2xl reveal">
+                        <span class="inline-block text-brand-500 font-display font-bold tracking-[0.25em] uppercase text-xs sm:text-sm mb-4">
+                            Est. 2001 &middot; Made in Vermont
+                        </span>
+                        <h1 class="font-display font-bold uppercase text-white leading-[0.95] text-5xl sm:text-6xl lg:text-7xl mb-5 drop-shadow-md">
+                            Built by hand,<br><span class="text-brand-500">shared by the plateful.</span>
+                        </h1>
+                        <p class="text-slate-100/90 text-base sm:text-lg leading-relaxed max-w-md">
+                            What started on a summer sidewalk in 2001 is still folded fresh every morning. This is the SamosaMan story.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ THREE BRAND PILLARS ============ -->
+        <section class="bg-[#faeec8] border-b border-brand-900/10">
+            <div class="max-w-[1200px] mx-auto px-6 py-16 sm:py-24">
+                <div class="reveal mb-10 sm:mb-14 max-w-xl">
+                    <span class="text-brand-700 font-display font-bold tracking-[0.2em] uppercase text-xs mb-3 block">What we stand on</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
+                        Three things we&rsquo;ve never cut corners on.
+                    </h2>
+                </div>
+
+                <div class="grid sm:grid-cols-3 gap-8 sm:gap-10">
+                    <div class="reveal">
+                        <div class="font-display text-5xl font-bold text-brand-500/40 leading-none mb-4">01</div>
+                        <h3 class="font-display text-xl font-bold uppercase tracking-wide text-slate-900 mb-3">Folded fresh daily</h3>
+                        <p class="text-slate-700 leading-relaxed">
+                            Every samosa is hand-folded that morning &mdash; spices ground in-house, sauces made from scratch.
+                        </p>
+                    </div>
+                    <div class="reveal reveal-delay-1">
+                        <div class="font-display text-5xl font-bold text-brand-500/40 leading-none mb-4">02</div>
+                        <h3 class="font-display text-xl font-bold uppercase tracking-wide text-slate-900 mb-3">Real ingredients</h3>
+                        <p class="text-slate-700 leading-relaxed">
+                            Local, organic produce and responsibly raised meat. No added hormones, ever.
+                        </p>
+                    </div>
+                    <div class="reveal reveal-delay-2">
+                        <div class="font-display text-5xl font-bold text-brand-500/40 leading-none mb-4">03</div>
+                        <h3 class="font-display text-xl font-bold uppercase tracking-wide text-slate-900 mb-3">Made to be shared</h3>
+                        <p class="text-slate-700 leading-relaxed">
+                            From festival lines to family tables, our food was always meant for a crowd.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ STORY CHAPTERS ============ -->
+        <section class="max-w-[1400px] mx-auto px-6">
+
+            <!-- Chapter 01 — Origin / family -->
+            <article class="py-16 sm:py-24 grid md:grid-cols-2 gap-8 md:gap-14 items-center">
+                <div class="reveal order-1 md:order-2 w-full aspect-[4/5] sm:aspect-[5/6] md:aspect-[4/5] rounded-2xl overflow-hidden bg-slate-200">
+                    <img src="assets/hakeem_karim.webp"
+                        alt="SamosaMan's founders standing behind a tray of freshly folded raw samosas in their Vermont commercial kitchen"
+                        class="w-full h-full object-cover" style="object-position: 50% 22%;" loading="lazy" decoding="async">
+                </div>
+                <div class="reveal order-2 md:order-1">
+                    <span class="text-brand-600 font-display font-bold tracking-[0.2em] uppercase text-xs mb-3 block">Chapter 01 &middot; The beginning</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-5">
+                        A new country,<br>a big idea.
+                    </h2>
+                    <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+                        In 2001, founder Fuad Ndibalema set up a small cart with one belief: a new home shouldn&rsquo;t mean leaving your flavors behind. The first samosas were folded by hand, one tray at a time &mdash; and that&rsquo;s never changed.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Chapter 02 — Craft / process -->
+            <article class="py-16 sm:py-24 grid md:grid-cols-2 gap-8 md:gap-14 items-center border-t border-slate-100">
+                <div class="reveal order-1 flex flex-col gap-5">
+                    <div class="w-full aspect-[16/10] rounded-2xl overflow-hidden bg-slate-200">
+                        <img src="assets/samosas_frying.jpeg"
+                            alt="Golden samosas frying and bubbling in hot oil, being lifted out with a wire strainer"
+                            class="w-full h-full object-cover" style="object-position: 50% 50%;" loading="lazy" decoding="async">
+                    </div>
+                    <div class="w-full aspect-[16/10] rounded-2xl overflow-hidden bg-slate-200">
+                        <img src="assets/hakeem_karim.webp"
+                            alt="Three members of the SamosaMan family harvesting fresh green onions together in a Vermont field"
+                            class="w-full h-full object-cover" style="object-position: 50% 35%;" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-1 order-2">
+                    <span class="text-brand-600 font-display font-bold tracking-[0.2em] uppercase text-xs mb-3 block">Chapter 02 &middot; The craft</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-5">
+                        From the soil<br>to the fryer.
+                    </h2>
+                    <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
+                        We start where the food does &mdash; with farmers who care about the soil as much as we care about the crunch. Everything is spiced, folded, and fried to order.
+                    </p>
+                    <ul class="flex flex-col gap-3">
+                        <li class="flex items-center gap-3 text-slate-700 font-medium">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-500 flex-shrink-0"></span>
+                            Hand-folded daily
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700 font-medium">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-500 flex-shrink-0"></span>
+                            Spices ground in-house
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700 font-medium">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-500 flex-shrink-0"></span>
+                            Sauces made from scratch
+                        </li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Chapter 03 — Community / team -->
+            <article class="py-16 sm:py-24 grid md:grid-cols-2 gap-8 md:gap-14 items-center border-t border-slate-100">
+                <div class="reveal order-1 md:order-2 flex flex-col gap-5">
+                    <div class="w-full aspect-[16/10] rounded-2xl overflow-hidden bg-slate-200">
+                        <img src="assets/festival-photo.webp"
+                            alt="A large festival crowd gathered around the bright SamosaMan stall in Vermont on a sunny day"
+                            class="w-full h-full object-cover" style="object-position: 50% 32%;" loading="lazy" decoding="async">
+                    </div>
+                    <div class="w-full aspect-[16/10] rounded-2xl overflow-hidden bg-slate-200">
+                        <img src="assets/our-team.PNG"
+                            alt="The SamosaMan team in branded black caps and aprons smiling together on the serving line"
+                            class="w-full h-full object-cover" style="object-position: 50% 40%;" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="reveal order-2 md:order-1">
+                    <span class="text-brand-600 font-display font-bold tracking-[0.2em] uppercase text-xs mb-3 block">Chapter 03 &middot; The community</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-5">
+                        The crunch that<br>brought us together.
+                    </h2>
+                    <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+                        Word spread fast. Festival lines grew, the team grew, and a street cart became a Vermont institution &mdash; still serving the flavors of home, one crunch at a time.
+                    </p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- ============ CLOSING CTA ============ -->
+        <section class="bg-brand-700 text-white">
+            <div class="max-w-[900px] mx-auto px-6 py-16 sm:py-24 text-center reveal">
+                <span class="font-display font-bold tracking-[0.25em] uppercase text-xs text-brand-500 mb-4 block">Come say hi</span>
+                <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold uppercase leading-[0.95] mb-5">
+                    Come get the crunch.
+                </h2>
+                <p class="text-orange-100/90 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-10">
+                    Order ahead, plan your event, or join the rewards clan and earn free samosas while you&rsquo;re at it.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto sm:justify-center">
+                    <a href="burlington.html"
+                        class="flex items-center justify-center gap-2 bg-white text-brand-700 hover:bg-orange-50 font-display font-bold uppercase tracking-wide text-base px-8 py-4 rounded-lg shadow-lg transition-all duration-200 active:scale-95 min-h-[56px]">
+                        Order Now
+                    </a>
+                    <a href="catering.html"
+                        class="flex items-center justify-center gap-2 bg-transparent text-white border-2 border-white/40 hover:border-white hover:bg-white/10 font-display font-bold uppercase tracking-wide text-base px-8 py-4 rounded-lg transition-all duration-200 active:scale-95 min-h-[56px]">
+                        Catering
+                    </a>
+                    <a href="rewards-signup.html"
+                        class="flex items-center justify-center gap-2 bg-transparent text-white border-2 border-white/40 hover:border-white hover:bg-white/10 font-display font-bold uppercase tracking-wide text-base px-8 py-4 rounded-lg transition-all duration-200 active:scale-95 min-h-[56px]">
+                        Rewards
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/footer.js"></script>
+
+
+    <script src="js/auth.js"></script>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Scroll reveal — respects prefers-reduced-motion (no observer needed if motion is reduced)
+        document.addEventListener('DOMContentLoaded', () => {
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const elements = document.querySelectorAll('.reveal');
+
+            if (reduceMotion || !('IntersectionObserver' in window)) {
+                elements.forEach(el => el.classList.add('is-visible'));
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+
+</body>
+
+</html>

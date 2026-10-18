@@ -1,37 +1,8 @@
-/* A quiet, product-first presentation, scoped to the interactive homepage. */
-.home-frame:has(.samosa-diagram:not([hidden])) { grid-template-rows: auto; }
-.home-frame:has(.samosa-diagram:not([hidden])) > .home-fresh {
-    min-height: clamp(460px, calc(100svh - 154px), 680px);
-}
-.home-hero:has(.samosa-diagram:not([hidden])) {
-    padding: 60px 24px 64px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
-}
-#samosas-and-salsa { scroll-margin-top: 80px; }
-#samosas-and-salsa .home-hero-copy { color: var(--home-muted); font-size: clamp(18px, 2vw, 24px); }
-#samosas-and-salsa .home-actions { gap: 28px; margin-top: 12px; }
-#samosas-and-salsa .home-button {
-    min-height: 44px;
-    padding: 8px 0;
-    gap: 6px;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    color: var(--home-orange);
-    font-size: 16px;
-    font-weight: 400;
-}
-#samosas-and-salsa .home-button::after { content: '\203A'; font-size: 23px; line-height: 1; }
-#samosas-and-salsa .home-button:hover { text-decoration: underline; text-underline-offset: 4px; }
-.samosa-diagram {
-    --spread: 0;
-    width: 100%;
-    margin: 12px auto 0;
-    text-align: center;
-}
-.samosa-diagram[hidden], [data-diagram-fallback][hidden] { display: none !important; }
-.samosa-diagram button { font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
-.samosa-diagram__stage {
+/* The original photograph layers and close-up camera are unchanged. */
+.home-page .samosa-diagram { --spread: 0; width: 100%; margin: 36px auto 0; text-align: center; }
+.home-page .samosa-diagram[hidden], .home-page [data-diagram-fallback][hidden] { display: none !important; }
+.home-page .samosa-diagram button { font-family: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.home-page .samosa-diagram__stage {
     position: relative;
     width: min(100%, 640px);
     aspect-ratio: 800 / 650;
@@ -40,32 +11,31 @@
     overflow: hidden;
     border-radius: 24px;
 }
-.samosa-diagram__art { display: block; width: 100%; height: 100%; overflow: visible; }
-.samosa-diagram__camera {
+.home-page .samosa-diagram__art { display: block; width: 100%; height: 100%; overflow: visible; }
+.home-page .samosa-diagram__camera {
     /* A fixed origin keeps both close-ups smooth when returning to the full view. */
     transform-origin: 340px 435px;
     transform: translate(0, 0) scale(1);
     transition: transform 1000ms cubic-bezier(.22,.75,.18,1);
 }
-.samosa-diagram[data-closeup="fold"] .samosa-diagram__camera { transform: translate(160px, -110px) scale(2.8); }
-.samosa-diagram[data-closeup="salsa"] .samosa-diagram__camera { transform: translate(-834px, -194px) scale(2.8); }
-.samosa-diagram__shadow { transition: opacity 400ms; }
-.samosa-diagram[data-closeup="fold"] .samosa-diagram__shadow,
-.samosa-diagram[data-closeup="fold"] .samosa-diagram__salsa,
-.samosa-diagram[data-closeup="salsa"] .samosa-diagram__shadow,
-.samosa-diagram[data-closeup="salsa"] .samosa-diagram__shell,
-.samosa-diagram[data-closeup="salsa"] .samosa-diagram__fold { opacity: 0; }
-.samosa-diagram__piece {
+.home-page .samosa-diagram[data-closeup="fold"] .samosa-diagram__camera { transform: translate(160px, -110px) scale(2.8); }
+.home-page .samosa-diagram[data-closeup="salsa"] .samosa-diagram__camera { transform: translate(-834px, -194px) scale(2.8); }
+.home-page .samosa-diagram__shadow { transition: opacity 400ms; }
+.home-page .samosa-diagram[data-closeup="fold"] .samosa-diagram__shadow,
+.home-page .samosa-diagram[data-closeup="fold"] .samosa-diagram__salsa,
+.home-page .samosa-diagram[data-closeup="salsa"] .samosa-diagram__shadow,
+.home-page .samosa-diagram[data-closeup="salsa"] .samosa-diagram__shell,
+.home-page .samosa-diagram[data-closeup="salsa"] .samosa-diagram__fold { opacity: 0; }
+.home-page .samosa-diagram__piece {
     transform-origin: 435px 310px;
     transition: transform 850ms cubic-bezier(.22,.75,.18,1), opacity 600ms;
 }
-.samosa-diagram__shell { transform: translate(calc(var(--spread) * -140px), calc(var(--spread) * -45px)) scale(calc(1 - var(--spread) * .16)); }
-.samosa-diagram__fold { transform: translate(calc(var(--spread) * 10px), calc(var(--spread) * 65px)); }
-.samosa-diagram__filling { opacity: var(--spread); transform: translate(calc(var(--spread) * 170px), calc(var(--spread) * 35px)); }
-.samosa-diagram__salsa { transform: translate(calc(var(--spread) * 80px), calc(var(--spread) * 45px)); }
-.samosa-diagram__hotspots { position: absolute; inset: 0; transition: opacity 250ms; }
-.samosa-diagram[data-detail-open="true"] .samosa-diagram__hotspots { opacity: 0; pointer-events: none; }
-.samosa-diagram__point {
+.home-page .samosa-diagram__shell { transform: translate(calc(var(--spread) * -140px), calc(var(--spread) * -45px)) scale(calc(1 - var(--spread) * .16)); }
+.home-page .samosa-diagram__fold { transform: translate(calc(var(--spread) * 10px), calc(var(--spread) * 65px)); }
+.home-page .samosa-diagram__filling { opacity: var(--spread); transform: translate(calc(var(--spread) * 170px), calc(var(--spread) * 35px)); }
+.home-page .samosa-diagram__salsa { transform: translate(calc(var(--spread) * 80px), calc(var(--spread) * 45px)); }
+.home-page .samosa-diagram__hotspots { position: absolute; inset: 0; }
+.home-page .samosa-diagram__point {
     position: absolute;
     left: calc(var(--point-x) + var(--spread) * var(--point-dx));
     top: calc(var(--point-y) + var(--spread) * var(--point-dy));
@@ -74,83 +44,98 @@
     width: 44px;
     height: 44px;
     padding: 0;
-    border: 0;
+    border: 1px solid var(--edge);
     border-radius: 50%;
-    background: transparent;
-    transform: translate(-50%, -50%);
-    transition: left 850ms cubic-bezier(.22,.75,.18,1), top 850ms cubic-bezier(.22,.75,.18,1);
+    background: rgba(255,255,255,.92);
+    box-shadow: var(--bevel), var(--lift);
+    color: var(--ink);
+    transform: translate(-50%,-50%);
+    animation: diagram-hot-in 520ms var(--spring) backwards;
+    transition: left 850ms cubic-bezier(.22,.75,.18,1), top 850ms cubic-bezier(.22,.75,.18,1), transform 340ms var(--spring), background-color 200ms ease;
 }
-.samosa-diagram__point span {
-    display: grid;
-    place-items: center;
-    width: 28px;
-    height: 28px;
-    border: 1px solid #ffffffb3;
-    border-radius: 50%;
-    background: rgb(255 255 255 / .92);
-    color: #34332e;
-    box-shadow: 0 2px 12px #32210e1a;
-    backdrop-filter: blur(8px);
-    transition: color 200ms, background 200ms, transform 300ms;
+.home-page .samosa-diagram__point:nth-child(2) { animation-delay: 70ms; }
+.home-page .samosa-diagram__point:nth-child(3) { animation-delay: 140ms; }
+.home-page .samosa-diagram__point span { display: grid; place-items: center; }
+.home-page .samosa-diagram__point svg { width: 16px; height: 16px; transition: transform 340ms var(--spring); }
+.home-page .samosa-diagram__point::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.85); animation: diagram-ring 2.4s ease-out infinite; pointer-events: none; }
+.home-page .samosa-diagram__point:hover { transform: translate(-50%,-50%) scale(1.08); }
+.home-page .samosa-diagram__point:active { transform: translate(-50%,-50%) scale(.9); transition-duration: 120ms; transition-timing-function: ease-out; }
+.home-page .samosa-diagram__point[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: rgba(255,255,255,.25); }
+.home-page .samosa-diagram__point[aria-pressed="true"] svg { transform: rotate(45deg); }
+.home-page .samosa-diagram__point[aria-pressed="true"]::after { display: none; }
+/* In a close-up only the photographed part's control remains on the image. */
+.home-page .samosa-diagram[data-closeup="fold"] .samosa-diagram__point[aria-pressed="true"] { left: 29%; top: 50%; }
+.home-page .samosa-diagram[data-closeup="salsa"] .samosa-diagram__point[aria-pressed="true"] { left: 52%; top: 51%; }
+.home-page .samosa-diagram__toggle {
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 8px;
+    padding: 4px;
+    border-radius: 999px;
+    background: rgba(12,10,9,.06);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
 }
-.samosa-diagram__point svg { width: 12px; height: 12px; transition: transform 300ms; }
-.samosa-diagram__point:hover span { transform: scale(1.12); background: #fff; }
-.samosa-diagram__point[aria-pressed="true"] span { background: #27261f; color: #fff; border-color: #27261f; }
-.samosa-diagram__point[aria-pressed="true"] svg { transform: rotate(45deg); }
-.samosa-diagram__caption {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    min-height: 76px;
-    max-width: 430px;
-    margin: 4px auto 14px;
-}
-.samosa-diagram__caption h3 { margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -.025em; line-height: 1.25; }
-.samosa-diagram__caption h3[hidden] { display: none; }
-.samosa-diagram__caption p { margin: 0; color: var(--home-muted); font-size: 14px; line-height: 1.5; text-wrap: balance; }
-.samosa-diagram__caption.is-idle p { color: #77736b; font-size: 13px; }
-.samosa-diagram__toggle {
+.home-page .samosa-diagram__lens { position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); border-radius: 999px; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 4px 12px rgba(12,10,9,.1); transition: transform 420ms var(--spring); }
+.home-page .samosa-diagram__toggle[data-state="inside"] .samosa-diagram__lens { transform: translateX(100%); }
+.home-page .samosa-diagram__toggle button {
+    position: relative;
+    z-index: 1;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    min-width: 160px;
-    min-height: 46px;
-    padding: 12px 21px;
+    gap: 7px;
+    min-height: 44px;
+    padding: 0 20px;
     border: 0;
     border-radius: 999px;
-    background: #27261f;
-    color: #fff;
-    font-size: 14px !important;
-    font-weight: 500 !important;
-    transition: background 200ms, transform 200ms;
+    background: transparent;
+    color: var(--ink-62);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    transition: color 200ms ease, transform 340ms var(--spring);
 }
-.samosa-diagram__toggle:hover { background: #46453f; }
-.samosa-diagram__toggle:active { transform: scale(.97); }
-.samosa-diagram__toggle svg { width: 17px; height: 17px; opacity: .85; }
-.samosa-diagram__toggle .samosa-diagram__back-icon { display: none; order: -1; }
-.samosa-diagram[data-detail-open="true"] .samosa-diagram__toggle-icon { display: none; }
-.samosa-diagram[data-detail-open="true"] .samosa-diagram__back-icon { display: block; }
-.samosa-diagram button:focus-visible { outline: 2px solid var(--home-orange); outline-offset: 4px; }
-@media (min-width: 768px) and (max-height: 850px) {
-    .home-hero:has(.samosa-diagram:not([hidden])) { padding-top: 40px; padding-bottom: 44px; }
-    .samosa-diagram__stage { width: min(100%, 520px); }
+.home-page .samosa-diagram__toggle button[aria-pressed="true"] { color: var(--ink); }
+.home-page .samosa-diagram__toggle button:active { transform: scale(.96); transition-duration: 120ms; transition-timing-function: ease-out; }
+.home-page .samosa-diagram__toggle svg { width: 16px; height: 16px; }
+.home-page .samosa-diagram__caption { min-height: 56px; max-width: 460px; margin: 16px auto 0; }
+.home-page .samosa-diagram__caption h3 { margin: 0; font-size: 17px; font-weight: 600; letter-spacing: -.2px; line-height: 1.25; }
+.home-page .samosa-diagram__caption p { margin: 4px 0 0; color: var(--ink-62); font-size: 15px; line-height: 1.45; text-wrap: balance; }
+.home-page .samosa-diagram__caption.is-idle p { color: var(--ink-55); }
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+    .home-page .samosa-diagram__point { background: var(--glass); -webkit-backdrop-filter: blur(var(--blur)) saturate(180%); backdrop-filter: blur(var(--blur)) saturate(180%); }
+    .home-page .samosa-diagram__point:hover { background: var(--glass-hi); }
+    .home-page .samosa-diagram__point[aria-pressed="true"] { background: var(--ink); }
 }
-@media (max-width: 767px) {
-    .home-frame:has(.samosa-diagram:not([hidden])) > .home-fresh { min-height: clamp(420px, calc(100svh - 200px), 620px); }
-    .home-hero:has(.samosa-diagram:not([hidden])) { padding: 44px 0 48px; }
-    #samosas-and-salsa .home-actions { gap: 24px; margin-top: 8px; }
-    #samosas-and-salsa .home-button { font-size: 15px; }
-    .samosa-diagram { margin-top: 22px; }
-    .samosa-diagram__stage { width: min(100%, 480px); }
-    .samosa-diagram__point span { width: 26px; height: 26px; }
-    .samosa-diagram__caption { min-height: 88px; max-width: 340px; padding-inline: 10px; margin-top: 12px; margin-bottom: 12px; }
-    .samosa-diagram__caption h3 { font-size: 18px; }
-    .samosa-diagram__caption p { font-size: 13px; }
-    .samosa-diagram__toggle { min-height: 46px; }
+@keyframes diagram-hot-in { from { opacity: 0; transform: translate(-50%,-50%) scale(.3); } to { opacity: 1; transform: translate(-50%,-50%) scale(1); } }
+@keyframes diagram-ring { 0% { transform: scale(.85); opacity: .9; } 70%,100% { transform: scale(1.45); opacity: 0; } }
+@media (max-width: 640px) {
+    .home-page .samosa-diagram { margin-top: 18px; }
+}
+@media (min-width: 1024px) {
+    .home-page .samosa-diagram {
+        flex: 1;
+        min-height: 0;
+        max-width: 1240px;
+        margin-top: 12px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        grid-template-rows: minmax(0, 1fr);
+        gap: 24px;
+        container-type: size;
+    }
+    .home-page .samosa-diagram__stage {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: center;
+        /* Side controls free the full available height for the photograph. */
+        width: min(640px, calc(100cqw - 560px), calc(100cqh * 800 / 650));
+        height: auto;
+    }
+    .home-page .samosa-diagram__toggle { grid-column: 1; grid-row: 1; align-self: end; justify-self: end; margin: 0 0 20px; }
+    .home-page .samosa-diagram__caption { grid-column: 3; grid-row: 1; align-self: end; margin: 0 0 20px; min-height: 0; text-align: left; }
 }
 @media (prefers-reduced-motion: reduce) {
-    .samosa-diagram *, .samosa-diagram *::before, .samosa-diagram *::after { transition: none !important; animation: none !important; }
+    .home-page .samosa-diagram *, .home-page .samosa-diagram *::before, .home-page .samosa-diagram *::after { transition: none !important; animation: none !important; }
 }

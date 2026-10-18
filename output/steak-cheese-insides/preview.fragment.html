@@ -1,0 +1,238 @@
+<section id="steak-insides-preview" data-view="inside" data-detail="" aria-labelledby="sc-heading">
+  <style>
+    #steak-insides-preview {
+      --sc-paper: light-dark(#f6f4ee, #211e19);
+      --sc-ink: light-dark(#27261f, #f7f3ea);
+      --sc-muted: light-dark(#69655c, #beb5a6);
+      --sc-glass: light-dark(rgba(255,255,255,.84), rgba(49,44,37,.92));
+      --sc-edge: light-dark(rgba(255,255,255,.95), rgba(255,255,255,.15));
+      --sc-track: light-dark(rgba(39,38,31,.07), rgba(255,255,255,.09));
+      --sc-focus: light-dark(#9e3c18, #f5ae77);
+      --sc-motion: cubic-bezier(.22,.75,.18,1);
+      width: 100%; max-width: 1040px; margin: 0 auto; padding: 32px 20px 24px;
+      overflow: hidden; isolation: isolate; border-radius: 28px;
+      color: var(--sc-ink); background: var(--sc-paper);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Helvetica Neue", sans-serif;
+      -webkit-font-smoothing: antialiased; text-align: center;
+    }
+    #steak-insides-preview *, #steak-insides-preview *::before, #steak-insides-preview *::after { box-sizing: border-box; }
+    #steak-insides-preview [hidden] { display: none !important; }
+    #steak-insides-preview button { font: inherit; -webkit-tap-highlight-color: transparent; }
+    #steak-insides-preview button:focus-visible { outline: 3px solid var(--sc-focus); outline-offset: 5px; }
+    #steak-insides-preview h2 { margin: 0; font-size: clamp(30px, 5.6vw, 54px); font-weight: 650; line-height: 1.08; letter-spacing: -.045em; text-wrap: balance; }
+    #steak-insides-preview .sc-subtitle { margin: 12px 0 0; font-size: clamp(16px, 2.7vw, 22px); font-weight: 400; line-height: 1.4; letter-spacing: -.02em; color: var(--sc-muted); }
+    #steak-insides-preview .sc-stage { position: relative; width: 100%; max-width: 760px; aspect-ratio: 1000 / 680; margin: 14px auto 0; overflow: hidden; border-radius: 20px; }
+    #steak-insides-preview .sc-art { display: block; width: 100%; height: 100%; overflow: visible; }
+    #steak-insides-preview .sc-camera { transform-origin: 500px 340px; transform: translate(0,0) scale(1); transition: transform 850ms var(--sc-motion); }
+    #steak-insides-preview .sc-piece { transform-origin: 525px 340px; transition: transform 850ms var(--sc-motion), opacity 480ms ease; }
+    #steak-insides-preview .sc-shell, #steak-insides-preview .sc-fold { transform: translate(0,0) scale(1); }
+    #steak-insides-preview .sc-filling { opacity: 0; transform: translate(0,0) scale(.96); }
+    #steak-insides-preview .sc-shadow { opacity: .72; transform-origin: 500px 610px; transition: opacity 500ms ease, transform 850ms var(--sc-motion); }
+    #steak-insides-preview[data-view="inside"] .sc-shell { transform: translate(-190px,-30px) scale(.87); }
+    #steak-insides-preview[data-view="inside"] .sc-fold { transform: translate(175px,20px) scale(.94); }
+    #steak-insides-preview[data-view="inside"] .sc-filling { opacity: 1; transform: translate(190px,20px) scale(1); }
+    #steak-insides-preview[data-view="inside"] .sc-shadow { opacity: .4; transform: scaleX(1.15); }
+    #steak-insides-preview[data-detail="crust"] .sc-camera { transform: translate(335px,48px) scale(1.7); }
+    #steak-insides-preview[data-detail="beef"] .sc-camera { transform: translate(-245px,-4px) scale(1.7); }
+    #steak-insides-preview[data-detail="cheese"] .sc-camera { transform: translate(-450px,-180px) scale(1.8); }
+    #steak-insides-preview[data-detail]:not([data-detail=""]) .sc-shadow { opacity: 0; }
+    #steak-insides-preview[data-detail="crust"] .sc-filling,
+    #steak-insides-preview[data-detail="crust"] .sc-fold,
+    #steak-insides-preview[data-detail="beef"] .sc-shell,
+    #steak-insides-preview[data-detail="beef"] .sc-fold,
+    #steak-insides-preview[data-detail="cheese"] .sc-shell,
+    #steak-insides-preview[data-detail="cheese"] .sc-fold { opacity: 0; }
+    #steak-insides-preview .sc-hotspots { position: absolute; inset: 0; pointer-events: none; }
+    #steak-insides-preview .sc-point {
+      position: absolute; left: var(--sc-x); top: var(--sc-y); transform: translate(-50%,-50%);
+      display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 1px solid var(--sc-edge); border-radius: 50%;
+      pointer-events: auto; color: var(--sc-ink); background: var(--sc-glass);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 3px 12px rgba(30,20,5,.16);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      transition: transform 250ms ease, background 200ms ease;
+    }
+    #steak-insides-preview .sc-point:hover { transform: translate(-50%,-50%) scale(1.08); }
+    #steak-insides-preview .sc-point:active { transform: translate(-50%,-50%) scale(.96); }
+    #steak-insides-preview .sc-plus { position: relative; width: 14px; height: 14px; }
+    #steak-insides-preview .sc-plus::before, #steak-insides-preview .sc-plus::after { content: ""; position: absolute; top: 6px; left: 0; width: 14px; height: 1.5px; border-radius: 2px; background: currentColor; }
+    #steak-insides-preview .sc-plus::after { transform: rotate(90deg); }
+    #steak-insides-preview .sc-return {
+      position: absolute; left: 18px; top: 18px; min-height: 44px; display: inline-flex; align-items: center; gap: 9px;
+      padding: 0 15px; border: 1px solid var(--sc-edge); border-radius: 24px; color: var(--sc-ink); background: var(--sc-glass);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); font-size: 14px; font-weight: 500;
+      box-shadow: 0 2px 12px rgba(30,20,5,.07);
+    }
+    #steak-insides-preview .sc-back { width: 7px; height: 7px; border-left: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); }
+    #steak-insides-preview .sc-views { position: relative; display: inline-grid; grid-template-columns: 100px 152px; padding: 4px; margin-top: 0; border-radius: 999px; background: var(--sc-track); }
+    #steak-insides-preview .sc-lens { position: absolute; inset: 4px auto 4px 4px; width: 100px; border-radius: 999px; background: var(--sc-glass); box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 3px 12px rgba(0,0,0,.06); transition: width 400ms var(--sc-motion), transform 400ms var(--sc-motion); }
+    #steak-insides-preview[data-view="inside"] .sc-lens { width: 152px; transform: translateX(100px); }
+    #steak-insides-preview .sc-view { position: relative; z-index: 1; min-height: 44px; padding: 0 16px; border: 0; border-radius: 999px; background: transparent; color: var(--sc-muted); font-size: 14px; font-weight: 550; }
+    #steak-insides-preview .sc-view[aria-pressed="true"] { color: var(--sc-ink); }
+    #steak-insides-preview .sc-caption { min-height: 106px; max-width: 440px; margin: 23px auto 0; padding: 0 8px; }
+    #steak-insides-preview .sc-caption h3 { margin: 0; color: var(--sc-ink); font-size: 19px; font-weight: 600; line-height: 1.3; letter-spacing: -.025em; }
+    #steak-insides-preview .sc-caption p { margin: 7px 0 0; color: var(--sc-muted); font-size: 15px; line-height: 1.5; text-wrap: balance; }
+    #steak-insides-preview .sc-hint { display: block; margin-top: 12px; color: var(--sc-muted); font-size: 12px; line-height: 1.4; }
+    #steak-insides-preview .sc-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+    @media (max-width: 600px) {
+      #steak-insides-preview { padding: 30px 10px 21px; border-radius: 22px; }
+      #steak-insides-preview .sc-stage { margin-top: 17px; aspect-ratio: 1000 / 740; }
+      #steak-insides-preview .sc-art { position: absolute; top: 0; height: auto; aspect-ratio: 1000 / 680; }
+      #steak-insides-preview .sc-hotspots { bottom: auto; height: calc(100% * 680 / 740); }
+      #steak-insides-preview .sc-caption { margin-top: 21px; min-height: 114px; }
+      #steak-insides-preview .sc-return { top: 3px; left: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #steak-insides-preview *, #steak-insides-preview *::before, #steak-insides-preview *::after { transition: none !important; animation: none !important; }
+    }
+  </style>
+
+  <h2 id="sc-heading">Steak and Cheese.</h2>
+  <p class="sc-subtitle">The holy grail of Samosas.</p>
+
+  <div class="sc-stage" id="sc-stage" role="group" aria-label="Exploded view of a Steak and Cheese samosa">
+    <svg class="sc-art" viewBox="0 0 1000 680" aria-hidden="true" focusable="false">
+      <defs>
+        <!-- Original site photograph and seam masks; no redrawing of the crust. -->
+        <path id="sc-outline" d="M156 42 C143 45 137 61 132 88 C122 102 115 117 111 130 C110 146 123 165 136 181 C140 210 149 249 152 279 C150 344 143 401 144 456 C142 486 128 520 123 558 C115 582 111 617 115 652 C115 680 117 703 114 730 C99 740 93 763 91 789 C74 811 62 838 52 861 C44 878 49 893 65 900 C100 913 145 907 177 899 C227 887 272 868 317 846 C390 814 448 783 509 748 C584 709 646 673 705 641 C727 630 739 632 758 644 C789 653 801 670 836 680 C868 689 902 684 916 668 C932 649 925 622 909 608 C881 589 851 577 823 561 C786 538 751 514 719 486 C682 461 658 432 624 413 C595 391 571 367 537 350 C503 332 476 309 447 292 C421 275 395 254 369 240 C347 221 333 217 310 211 C288 193 270 164 251 143 C232 118 217 90 201 67 C188 46 172 41 156 42 Z"/>
+        <clipPath id="sc-outline-clip"><use href="#sc-outline"/></clipPath>
+        <clipPath id="sc-shell-clip"><path d="M0 0 H960 V640 L730 625 C530 654 370 691 220 700 C180 525 139 280 138 145 Z"/></clipPath>
+        <clipPath id="sc-fold-clip"><path d="M0 0 H960 V960 H0 Z M0 0 H960 V640 L730 625 C530 654 370 691 220 700 C180 525 139 280 138 145 Z" clip-rule="evenodd"/></clipPath>
+        <image id="sc-shell-photo" href="assets/samosa-shell.webp" width="960" height="960"/>
+        <radialGradient id="sc-ground"><stop stop-color="#6b5130" stop-opacity=".22"/><stop offset="1" stop-color="#6b5130" stop-opacity="0"/></radialGradient>
+      </defs>
+      <g class="sc-camera">
+        <ellipse class="sc-shadow" cx="515" cy="610" rx="340" ry="38" fill="url(#sc-ground)"/>
+        <g class="sc-piece sc-fold">
+          <svg x="250" y="65" width="550" height="550" viewBox="0 0 960 960">
+            <g clip-path="url(#sc-outline-clip)"><use href="#sc-shell-photo" clip-path="url(#sc-fold-clip)"/></g>
+          </svg>
+        </g>
+        <g class="sc-piece sc-filling">
+          <image href="assets/steak-cheese-filling.webp" x="280" y="92" width="480" height="480"/>
+        </g>
+        <g class="sc-piece sc-shell">
+          <svg x="250" y="65" width="550" height="550" viewBox="0 0 960 960">
+            <g clip-path="url(#sc-outline-clip)"><use href="#sc-shell-photo" clip-path="url(#sc-shell-clip)"/></g>
+          </svg>
+        </g>
+      </g>
+    </svg>
+    <div class="sc-hotspots" aria-label="Explore the ingredients">
+      <button class="sc-point cursor-interaction" type="button" data-part="crust" aria-label="Explore the hand-folded crust" aria-controls="sc-detail" aria-expanded="false" style="--sc-x: 27%; --sc-y: 43%"><span class="sc-plus" aria-hidden="true"></span></button>
+      <button class="sc-point cursor-interaction" type="button" data-part="beef" aria-label="Explore the minced beef" aria-controls="sc-detail" aria-expanded="false" style="--sc-x: 63%; --sc-y: 46%"><span class="sc-plus" aria-hidden="true"></span></button>
+      <button class="sc-point cursor-interaction" type="button" data-part="cheese" aria-label="Explore the sharp cheese" aria-controls="sc-detail" aria-expanded="false" style="--sc-x: 76%; --sc-y: 67%"><span class="sc-plus" aria-hidden="true"></span></button>
+    </div>
+    <button class="sc-return cursor-interaction" type="button" hidden><span class="sc-back" aria-hidden="true"></span>All ingredients</button>
+  </div>
+
+  <div class="sc-views" role="group" aria-label="Samosa view">
+    <span class="sc-lens" aria-hidden="true"></span>
+    <button class="sc-view cursor-interaction" type="button" data-mode="whole" aria-pressed="false" aria-controls="sc-stage">Whole</button>
+    <button class="sc-view cursor-interaction" type="button" data-mode="inside" aria-pressed="true" aria-controls="sc-stage">See insides</button>
+  </div>
+  <div class="sc-caption" id="sc-detail" aria-live="polite" aria-atomic="true">
+    <h3>Goodness inside.</h3>
+    <p>Tender minced beef, sharp cheese, onion, and spices.</p>
+    <span class="sc-hint">Select + for a closer look.</span>
+  </div>
+  <span class="sc-sr-only">Use Whole and See insides to open or close the samosa. Ingredient buttons reveal close-ups. Escape returns to the previous view.</span>
+
+  <script>
+    (() => {
+      const root = document.getElementById('steak-insides-preview');
+      const stage = root.querySelector('.sc-stage');
+      const hotspots = root.querySelector('.sc-hotspots');
+      const points = [...root.querySelectorAll('[data-part]')];
+      const modes = [...root.querySelectorAll('[data-mode]')];
+      const back = root.querySelector('.sc-return');
+      const caption = root.querySelector('.sc-caption');
+      const heading = caption.querySelector('h3');
+      const description = caption.querySelector('p');
+      const hint = caption.querySelector('.sc-hint');
+      const details = {
+        crust: { title: 'Folded by hand.', description: 'The golden shell that holds it all together.', label: 'Close-up of the original photographed hand-folded crust' },
+        beef: { title: 'Tender minced beef.', description: 'Minced beef with onion and spices.', label: 'Close-up of minced beef, onion, and spices in the filling' },
+        cheese: { title: 'Sharp cheese.', description: 'Melted through the minced beef.', label: 'Close-up of melted sharp cheese in the filling' }
+      };
+      let mode = 'inside';
+      let detail = null;
+
+      function render() {
+        const inside = mode === 'inside';
+        root.dataset.view = mode;
+        root.dataset.detail = detail || '';
+        hotspots.hidden = !inside || !!detail;
+        hotspots.inert = hotspots.hidden;
+        back.hidden = !detail;
+        modes.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.mode === mode)));
+        points.forEach(button => button.setAttribute('aria-expanded', String(button.dataset.part === detail)));
+        const selected = details[detail];
+        heading.textContent = selected?.title || (inside ? 'Goodness inside.' : 'Steak and Cheese.');
+        description.textContent = selected?.description || 'Tender minced beef, sharp cheese, onion, and spices.';
+        hint.textContent = detail ? 'Select the image or press Escape to return.' : inside ? 'Select + for a closer look.' : 'Select See insides to open it up.';
+        stage.setAttribute('aria-label', selected?.label || (inside ? 'Exploded view of a Steak and Cheese samosa' : 'Whole samosa with its original golden crust'));
+      }
+
+      function saveState() {
+        if (window.openai?.setWidgetState) {
+          window.openai.setWidgetState({ modelContent: { product: 'Steak and Cheese', view: mode, ingredient: detail }, privateContent: null }).catch(() => {});
+        }
+      }
+
+      function restoreState(snapshot) {
+        const saved = snapshot?.modelContent;
+        if (saved?.product !== 'Steak and Cheese') return;
+        mode = saved.view === 'whole' ? 'whole' : 'inside';
+        detail = mode === 'inside' && Object.hasOwn(details, saved.ingredient) ? saved.ingredient : null;
+        render();
+      }
+
+      function closeDetail() {
+        const previous = detail;
+        detail = null;
+        render();
+        if (previous) points.find(button => button.dataset.part === previous).focus({ preventScroll: true });
+        saveState();
+      }
+
+      modes.forEach(button => button.addEventListener('click', () => {
+        mode = button.dataset.mode;
+        detail = null;
+        render();
+        saveState();
+      }));
+      points.forEach((button, index) => {
+        button.addEventListener('click', () => {
+          detail = button.dataset.part;
+          render();
+          back.focus({ preventScroll: true });
+          saveState();
+        });
+        button.addEventListener('keydown', event => {
+          const offset = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[event.key];
+          if (!offset) return;
+          event.preventDefault();
+          points[(index + offset + points.length) % points.length].focus();
+        });
+      });
+      back.addEventListener('click', closeDetail);
+      stage.addEventListener('click', event => {
+        if (detail && !event.target.closest('button')) closeDetail();
+      });
+      root.addEventListener('keydown', event => {
+        if (event.key !== 'Escape') return;
+        if (detail) { event.preventDefault(); closeDetail(); }
+        else if (mode === 'inside') {
+          event.preventDefault();
+          mode = 'whole';
+          render();
+          modes.find(button => button.dataset.mode === 'inside').focus({ preventScroll: true });
+          saveState();
+        }
+      });
+      window.addEventListener('openai:set_globals', event => restoreState(event.detail?.globals?.widgetState));
+      render();
+      restoreState(window.openai?.widgetState);
+    })();
+  </script>
+</section>

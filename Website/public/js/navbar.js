@@ -6,69 +6,47 @@
         cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
     } catch (e) { console.error(e); }
 
-    const badgeOpacity = 'opacity-100';
     const badgePop = cartCount > 0 ? 'animate-pop' : '';
 
-    // 2. DEFINE NAVBAR HTML
+    // 2. SHARED GLASS NAVBAR
+    const isHome = document.body.classList.contains('home-page');
+    const orderControl = (classes) => isHome
+        ? `<button class="${classes}" type="button" data-open-order>Start your order</button>`
+        : `<a class="${classes}" href="burlington.html">Start your order</a>`;
     const navbarHTML = `
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#f7f3ea]/95 backdrop-blur-sm border-b border-slate-200">
-        <div class="md:px-6 flex h-20 max-w-[1400px] mr-auto ml-auto pr-4 pl-4 items-center justify-between relative z-50">
-            <div class="flex items-center gap-10">
-                <a href="index.html" class="flex items-center gap-2 group">
-                    <img src="assets/yellow_heart.png" alt="Samosaman Logo" class="h-16 w-auto transition-transform duration-300 group-hover:scale-110">
-                </a>
-                <div class="hidden lg:flex items-center gap-8">
-                    <a href="burlington.html" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Menu</a>
-                    <a href="delivery.html" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Delivery</a>
-                    <a href="rewards-signup.html" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Rewards</a>
-                    <a href="catering.html" class="nav-link text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Catering</a>
-                    <a href="our-story.html" class="nav-link flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
-                        Our Story
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down w-4 h-4"><path d="m6 9 6 6 6-6"></path></svg>
-                    </a>
-                </div>
-            </div>
-            <div class="flex items-center gap-4 md:gap-6">
-                <div class="nav-location-summary hidden xl:flex flex-col items-end text-right leading-tight border-r border-slate-200 pr-6 mr-2">
-                    <span id="location-label" class="text-xs font-semibold text-slate-600 uppercase tracking-wide">Ordering Pickup?</span>
-                    <a href="burlington.html" id="location-trigger" class="text-sm font-medium text-slate-900 hover:underline decoration-brand-500 underline-offset-4 flex items-center gap-1">
-                        Select your location
-                    </a>
-                </div>
-
-                <a href="burlington.html" class="nav-order-cta hidden md:flex bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold py-3 px-6 rounded-md shadow-sm transition-all duration-200 transform active:scale-95 uppercase tracking-wide">Start Your Order</a>
-                <div class="flex items-center gap-4 border-l border-slate-200 pl-6 h-8">
-                    <button id="nav-user-btn" aria-label="Open account" class="text-slate-500 hover:text-brand-600 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-6 h-6"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    </button>
-                    <button id="open-cart-btn" class="relative text-slate-500 hover:text-brand-600 transition-colors group">
-                        <span class="sr-only">Open shopping bag, </span>
-                        <!-- Keep the original 1.2px Apple outline and align its bottom with the 1.2px avatar. -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-3.5 9.45 24 24" fill="currentColor" aria-hidden="true" focusable="false" class="block"><path d="m13.4575 16.9268h-1.1353a3.8394 3.8394 0 0 0 -7.6444 0h-1.1353a2.6032 2.6032 0 0 0 -2.6 2.6v8.9232a2.6032 2.6032 0 0 0 2.6 2.6h9.915a2.6032 2.6032 0 0 0 2.6-2.6v-8.9231a2.6032 2.6032 0 0 0 -2.6-2.6001zm-4.9575-2.2768a2.658 2.658 0 0 1 2.6221 2.2764h-5.2442a2.658 2.658 0 0 1 2.6221-2.2764zm6.3574 13.8a1.4014 1.4014 0 0 1 -1.4 1.4h-9.9149a1.4014 1.4014 0 0 1 -1.4-1.4v-8.9231a1.4014 1.4014 0 0 1 1.4-1.4h9.915a1.4014 1.4014 0 0 1 1.4 1.4z"></path></svg>
-                        <span id="cart-badge" class="absolute -top-1 -right-1 bg-brand-500 text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center transition-all duration-300 ${badgeOpacity} ${badgePop}">${cartCount}</span><span class="sr-only"> items</span>
-                    </button>
-                    <button id="mobile-menu-btn" aria-label="Toggle navigation menu" class="lg:hidden text-slate-900 transition-colors hover:text-brand-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-6 h-6"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div id="mobile-menu-overlay" class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 lg:hidden pt-24 px-6 flex flex-col h-screen overflow-y-auto">
-            <div class="flex flex-col gap-6">
-                <a href="burlington.html" class="text-3xl font-oswald font-bold uppercase text-slate-900 border-b border-slate-100 pb-4 hover:text-brand-600 transition-colors">Menu</a>
-                <a href="delivery.html" class="text-3xl font-oswald font-bold uppercase text-slate-900 border-b border-slate-100 pb-4 hover:text-brand-600 transition-colors">Delivery</a>
-                <a href="rewards-signup.html" class="text-3xl font-oswald font-bold uppercase text-slate-900 border-b border-slate-100 pb-4 hover:text-brand-600 transition-colors">Rewards</a>
-                <a href="catering.html" class="text-3xl font-oswald font-bold uppercase text-slate-900 border-b border-slate-100 pb-4 hover:text-brand-600 transition-colors">Catering</a>
-                <a href="our-story.html" class="text-3xl font-oswald font-bold uppercase text-slate-900 border-b border-slate-100 pb-4 hover:text-brand-600 transition-colors">Our Story</a>
-            </div>
-            
-            <div class="mt-8 flex flex-col gap-4">
-                <a href="burlington.html" class="nav-order-cta w-full bg-brand-600 text-white text-center font-bold py-4 rounded-md uppercase tracking-wide shadow-lg">Start Your Order</a>
-                <button onclick="document.getElementById('nav-user-btn')?.click()" class="w-full bg-slate-100 text-slate-900 text-center font-bold py-4 rounded-md uppercase tracking-wide">My Account</button>
-            </div>
-        </div>
-    </nav>`;
+<div class="nav-pad">
+    <nav class="nav" id="glass-nav" aria-label="Main">
+      <a class="nav-logo" href="index.html" aria-label="SamosaMan home"><img src="assets/samosaman-wordmark.webp?v=20261015-liquid-glass" alt="SamosaMan" width="960" height="423"></a>
+      <div class="nav-links">
+        <a class="nav-link" href="burlington.html">Menu</a>
+        <a class="nav-link" href="delivery.html">Delivery</a>
+        <a class="nav-link" href="rewards-signup.html">Rewards</a>
+        <a class="nav-link" href="catering.html">Catering</a>
+        <a class="nav-link" href="our-story.html">Our Story</a>
+      </div>
+      <span class="nav-spacer"></span>
+      <button class="btn btn-glass circle circle-quiet" id="nav-user-btn" type="button" aria-label="My account">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>
+      </button>
+      <button class="btn btn-glass circle circle-quiet" id="open-cart-btn" type="button" aria-label="Open shopping bag">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 12.5h-11L5.5 8Z"/><path d="M9 8V6.8a3 3 0 0 1 6 0V8"/></svg>
+        <span class="badge ${badgePop}" id="cart-badge" aria-hidden="true" ${cartCount === 0 ? 'hidden' : ''}>${cartCount}</span>
+      </button>
+      ${orderControl('btn btn-tint nav-cta')}
+      <button class="btn btn-glass circle circle-quiet menu-btn" id="mobile-menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu-overlay">
+        <svg class="i-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16"/><path d="M4 16h16"/></svg>
+        <svg class="i-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" hidden><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <div class="dropdown shelf" id="mobile-menu-overlay" hidden>
+        <a href="burlington.html">Menu</a>
+        <a href="delivery.html">Delivery</a>
+        <a href="rewards-signup.html">Rewards</a>
+        <a href="catering.html">Catering</a>
+        <a href="our-story.html">Our Story</a>
+        ${orderControl('btn btn-tint')}
+      </div>
+    </nav>
+  </div>`;
 
     // 3. DEFINE CART DRAWER HTML
     const cartDrawerHTML = `
@@ -226,92 +204,83 @@
         document.body.insertAdjacentHTML('beforeend', cartDrawerHTML);
     }
 
-    // 6. UPDATE LOCATION IF SELECTED
-    try {
-        const storedLoc = localStorage.getItem('samosaman_location');
-        if (storedLoc) {
-            const locData = JSON.parse(storedLoc);
-            const trigger = document.getElementById('location-trigger');
-            const label = document.getElementById('location-label');
-            
-            if (trigger && label) {
-                label.innerText = "Ordering From";
-                trigger.classList.add('font-bold', 'text-brand-600', 'flex', 'items-center', 'gap-1');
-                trigger.classList.remove('text-slate-900');
-                
-                trigger.innerHTML = `
-                    ${locData.city}, ${locData.state} 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
-                `;
-            }
-        }
-    } catch (e) {
-        console.error("Error parsing location:", e);
-    }
-
-    // 7. HIGHLIGHT ACTIVE LINK
+    // Keep the same active section on the location and signed-in rewards pages.
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    const links = placeholder ? placeholder.querySelectorAll('.nav-link') : [];
-    links.forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
-            link.classList.remove('font-medium', 'text-slate-600', 'hover:text-slate-900');
-            link.classList.add('font-bold', 'text-brand-600');
-        }
+    const currentSection = {
+        'menu.html': 'burlington.html',
+        'rewards.html': 'rewards-signup.html',
+        'myaccount.html': 'rewards-signup.html',
+    }[currentPath] || currentPath;
+    placeholder?.querySelectorAll('.nav-links a, .dropdown a:not(.btn)').forEach(link => {
+        if (link.getAttribute('href') === currentSection) link.setAttribute('aria-current', 'page');
     });
 
-    // 8. INITIALIZE ICONS
     if (window.lucide) window.lucide.createIcons();
 
-    // 9. HOOK EVENTS
     const cartBtn = document.getElementById('open-cart-btn');
     if (cartBtn && typeof openCart === 'function') {
-        cartBtn.addEventListener('click', (e) => { e.preventDefault(); openCart(); });
+        cartBtn.addEventListener('click', (event) => { event.preventDefault(); openCart(); });
+    }
+    const cart = document.getElementById('cart-sidebar');
+    if (cart) {
+        // An offscreen transform alone leaves the closed drawer in the tab order.
+        const syncCart = () => { cart.inert = cart.classList.contains('translate-x-full'); };
+        syncCart();
+        new MutationObserver(syncCart).observe(cart, { attributes: true, attributeFilter: ['class'] });
     }
 
-    // NEW: Mobile Menu Logic
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu-overlay');
-
     if (mobileBtn && mobileMenu) {
-        const navigation = mobileBtn.closest('nav');
-        let previousBodyPaddingRight = '';
-        let previousNavigationPaddingRight = '';
-
-        mobileBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            // Check if menu is currently hidden (has translate-x-full)
-            const isClosed = mobileMenu.classList.contains('translate-x-full');
-
-            if (isClosed) {
-                // Keep the page and header width stable when scroll locking removes
-                // a classic scrollbar. Overlay scrollbars need no compensation.
-                const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-                previousBodyPaddingRight = document.body.style.paddingRight;
-                previousNavigationPaddingRight = navigation.style.paddingRight;
-                if (scrollbarWidth > 0) {
-                    const bodyPadding = parseFloat(getComputedStyle(document.body).paddingRight) || 0;
-                    const navigationPadding = parseFloat(getComputedStyle(navigation).paddingRight) || 0;
-                    document.body.style.paddingRight = `${bodyPadding + scrollbarWidth}px`;
-                    navigation.style.paddingRight = `${navigationPadding + scrollbarWidth}px`;
-                }
-
-                // Open Menu
-                mobileMenu.classList.remove('translate-x-full');
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
-                // Switch icon to X
-                mobileBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="M6 6 18 18"/></svg>`;
-            } else {
-                // Close Menu
-                mobileMenu.classList.add('translate-x-full');
-                document.body.style.overflow = '';
-                document.body.style.paddingRight = previousBodyPaddingRight;
-                navigation.style.paddingRight = previousNavigationPaddingRight;
-                // Switch icon back to Menu
-                mobileBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-6 h-6"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>`;
+        const syncMenu = () => {
+            const closed = mobileMenu.hidden;
+            mobileBtn.setAttribute('aria-expanded', String(!closed));
+            mobileBtn.setAttribute('aria-label', closed ? 'Open menu' : 'Close menu');
+            mobileBtn.querySelector('.i-open').toggleAttribute('hidden', !closed);
+            mobileBtn.querySelector('.i-close').toggleAttribute('hidden', closed);
+            mobileMenu.inert = closed;
+        };
+        const closeMenu = () => { mobileMenu.hidden = true; syncMenu(); };
+        syncMenu();
+        // The homepage order sheet can hide/restore its originating menu.
+        new MutationObserver(syncMenu).observe(mobileMenu, { attributes: true, attributeFilter: ['hidden'] });
+        mobileBtn.addEventListener('click', () => { mobileMenu.hidden = !mobileMenu.hidden; syncMenu(); });
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.hidden && !mobileMenu.contains(event.target) && !mobileBtn.contains(event.target)) closeMenu();
+        });
+        document.addEventListener('focusin', (event) => {
+            if (!mobileMenu.hidden && !mobileMenu.contains(event.target) && !mobileBtn.contains(event.target)) closeMenu();
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !mobileMenu.hidden) {
+                event.preventDefault();
+                closeMenu();
+                mobileBtn.focus({ preventScroll: true });
             }
         });
+        window.matchMedia('(min-width: 981px)').addEventListener('change', (event) => {
+            if (event.matches) closeMenu();
+        });
     }
+
+    const nav = document.getElementById('glass-nav');
+    let previousScrollY = Math.max(0, window.scrollY);
+    const condenseNav = () => {
+        // The homepage order sheet fixes the body while preserving its scroll offset.
+        const scrollY = Math.max(0, document.body.style.position === 'fixed'
+            ? -(parseFloat(document.body.style.top) || 0)
+            : window.scrollY);
+        if (scrollY <= 48) {
+            nav?.classList.remove('is-compact');
+        } else if (scrollY !== previousScrollY) {
+            // Keep the current state while stationary or while a modal locks scrolling.
+            nav?.classList.toggle('is-compact', scrollY > previousScrollY);
+        }
+        previousScrollY = scrollY;
+    };
+    window.addEventListener('scroll', condenseNav, { passive: true });
+    condenseNav();
 
     firebase.auth().onAuthStateChanged((user) => {
     const rewardsLinks = document.querySelectorAll('a[href="rewards-signup.html"], a[href="rewards.html"], a[href="myaccount.html"]');

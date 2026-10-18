@@ -1,0 +1,238 @@
+/* Burlington menu only; shared navigation, cart, and footer keep their own styles. */
+.menu-page {
+    --paper: #f7f3ea;
+    --paper-tint: #efe1d5;
+    --ink: #27261f;
+    --ink-muted: #68645b;
+    --line: #d9d3c7;
+    --line-strong: #a69d8d;
+    --orange: #b94316;
+    --orange-deep: #92320e;
+    --veg: #15803d;
+    --night: #000;
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-display: "Oswald", "Arial Narrow", sans-serif;
+    --radius-md: 8px;
+    --radius-pill: 999px;
+    --menu-scroll-offset: 141px;
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+}
+
+.menu-page *, .menu-page *::before, .menu-page *::after { box-sizing: border-box; }
+.menu-page :focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+.menu-page ::selection { background: var(--paper-tint); color: var(--ink); }
+.menu-page::-webkit-scrollbar { width: 8px; }
+.menu-page::-webkit-scrollbar-track { background: var(--paper); }
+.menu-page::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 4px; }
+.menu-page .menu-main { padding-top: 80px; padding-bottom: 48px; }
+.menu-page .menu-main img { display: block; }
+.menu-page .menu-main button { font-family: inherit; cursor: pointer; }
+/* Keep drawers visible through their slide-out, then hide their shadow and tab stops. */
+.menu-page #cart-sidebar,
+.menu-page #mobile-menu-overlay {
+    transition-property: transform, visibility;
+    transition-duration: 300ms, 0s;
+    transition-delay: 0s, 0s;
+}
+.menu-page #cart-sidebar.translate-x-full,
+.menu-page #mobile-menu-overlay.translate-x-full {
+    visibility: hidden;
+    transition-delay: 0s, 300ms;
+}
+.menu-page .menu-skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 110;
+    transform: translateY(-180%);
+    padding: 12px 20px;
+    border-radius: var(--radius-md);
+    background: var(--ink);
+    color: var(--paper);
+}
+.menu-page .menu-skip-link:focus { transform: translateY(0); }
+
+.menu-page .menu-hero { position: relative; }
+.menu-page .menu-hero figure { margin: 0; background: var(--ink); }
+.menu-page .menu-hero img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    object-position: 46% 30%;
+}
+.menu-page .menu-hero figcaption { display: none; }
+.menu-page .menu-counter {
+    position: relative;
+    z-index: 2;
+    margin: -28px 12px 0;
+    padding: 20px 18px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: var(--paper);
+    box-shadow: 0 10px 30px rgba(39, 38, 31, .12);
+}
+.menu-page .menu-counter h1 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -.01em;
+    text-transform: uppercase;
+}
+.menu-page .menu-address { margin: 10px 0 0; color: var(--ink-muted); font-size: 14px; line-height: 1.5; }
+.menu-page .menu-hours-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 34px;
+    padding: 4px 0;
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: left;
+}
+.menu-page .menu-status-dot { flex: 0 0 8px; height: 8px; border-radius: 50%; background: var(--line-strong); }
+.menu-page .menu-hours-trigger[data-open="true"] .menu-status-dot { background: var(--veg); }
+.menu-page .menu-order-type { display: grid; grid-template-columns: 1fr 1fr; margin-top: 16px; padding: 4px; border-radius: var(--radius-pill); background: var(--paper-tint); }
+.menu-page .menu-order-type button { min-height: 40px; border: 0; border-radius: var(--radius-pill); background: transparent; color: var(--ink); font-size: 14px; font-weight: 500; }
+.menu-page .menu-order-type button[aria-pressed="true"] { background: #fff; box-shadow: 0 1px 3px rgba(39, 38, 31, .15); }
+
+.menu-page .menu-body { max-width: 1400px; margin: 0 auto; padding-bottom: 24px; }
+.menu-page .menu-sidebar { position: sticky; top: 80px; z-index: 20; margin-top: 20px; border-bottom: 1px solid var(--line); background: var(--paper); }
+.menu-page .menu-categories { display: flex; gap: 8px; overflow-x: auto; margin: 0; padding: 12px 16px; list-style: none; scrollbar-width: none; }
+.menu-page .menu-categories::-webkit-scrollbar, .menu-page .menu-carousel::-webkit-scrollbar { display: none; }
+.menu-page .menu-categories li { flex: none; }
+.menu-page .menu-category {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 36px;
+    padding: 0 14px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-pill);
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 160ms ease, color 160ms ease;
+}
+.menu-page .menu-category small { color: var(--ink-muted); font-size: 11px; }
+.menu-page .menu-category:hover { background: var(--paper-tint); }
+.menu-page .menu-category[aria-current="true"] { border-color: var(--orange); background: var(--orange); color: #fff; }
+.menu-page .menu-category[aria-current="true"] small { color: #fff; }
+.menu-page .menu-info { display: none; }
+.menu-page .menu-sections { min-width: 0; padding: 0 16px; }
+.menu-page .menu-section { padding-top: 32px; scroll-margin-top: var(--menu-scroll-offset); }
+.menu-page .menu-section-heading { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+.menu-page .menu-section-heading::after { content: ""; flex: 1; border-top: 1px solid var(--line); }
+.menu-page .menu-section h2 { margin: 0; font-family: var(--font-display); font-size: 26px; font-weight: 700; line-height: 1.3; letter-spacing: .025em; text-transform: uppercase; }
+.menu-page .menu-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 12px; margin: 0; padding: 0; list-style: none; }
+.menu-page .menu-carousel {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    margin: 0 -16px;
+    padding: 0 16px 8px;
+    list-style: none;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
+    scrollbar-width: none;
+}
+.menu-page .menu-carousel .menu-card { flex: 0 0 70%; scroll-snap-align: start; }
+.menu-page .menu-card { display: flex; min-width: 0; flex-direction: column; }
+.menu-page .menu-image { position: relative; overflow: hidden; border-radius: var(--radius-md); background: var(--ink); }
+.menu-page .menu-card img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; transition: transform 400ms ease; }
+.menu-page .menu-card:hover img { transform: scale(1.04); }
+.menu-page .menu-vegetarian { position: absolute; top: 8px; left: 8px; padding: 3px 8px; border-radius: var(--radius-pill); background: var(--paper); color: var(--veg); font-size: 10px; font-weight: 600; line-height: 1.5; letter-spacing: .08em; text-transform: uppercase; }
+.menu-page .menu-card h3 { margin: 12px 0 4px; font-family: var(--font-display); font-size: 18px; font-weight: 700; line-height: 1.2; text-transform: uppercase; }
+.menu-page .menu-description { display: -webkit-box; min-height: 3.1em; margin: 0 0 10px; overflow: hidden; color: var(--ink-muted); font-size: 13px; line-height: 1.55; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.menu-page .menu-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-top: auto; }
+.menu-page .menu-price { font-size: 14px; font-weight: 700; }
+.menu-page .menu-add { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; gap: 6px; min-height: 34px; padding: 0 12px 0 10px; border: 0; border-radius: var(--radius-pill); background: var(--orange); color: #fff; font-size: 13px; font-weight: 500; transition: background-color 160ms ease; }
+.menu-page .menu-add:hover { background: var(--orange-deep); }
+.menu-page .menu-add svg { flex: none; }
+
+.menu-page .menu-catering-wrap { max-width: 1400px; margin: 0 auto; }
+.menu-page .menu-catering { display: grid; grid-template-columns: minmax(0, 1fr); margin: 48px 16px 0; overflow: hidden; border-radius: var(--radius-md); background: var(--night); color: #fff; }
+.menu-page .menu-catering img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: 48% 32%; opacity: .9; }
+.menu-page .menu-catering-copy { padding: 24px 20px 28px; }
+.menu-page .menu-catering h2 { margin: 0; font-size: 28px; font-weight: 600; line-height: 1.1; letter-spacing: -.045em; }
+.menu-page .menu-catering p { margin: 8px 0 0; color: var(--line); font-size: 15px; }
+.menu-page .menu-catering-link { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 48px; margin-top: 18px; padding: 12px 22px; border-radius: var(--radius-pill); background: var(--orange); color: #fff; font-size: 14px; font-weight: 500; text-decoration: none; transition: background-color 160ms ease; }
+.menu-page .menu-catering-link:hover { background: var(--orange-deep); }
+.menu-page .menu-bag-bar {
+    position: fixed;
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    left: 16px;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 52px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(39, 38, 31, .25);
+}
+.menu-page .menu-bag-bar strong { color: #fff; font-weight: 700; }
+.menu-page .menu-bag-bar[hidden] { display: none; }
+.menu-page.menu-has-items { padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
+.menu-page #hours-close-btn { min-width: 34px; min-height: 34px; display: grid; place-items: center; }
+.menu-page #hours-modal { overflow-y: auto; }
+
+@media (min-width: 768px) {
+    .menu-page { --menu-scroll-offset: 104px; }
+    .menu-page .menu-main { padding-bottom: 64px; }
+    .menu-page .menu-hero img { height: clamp(480px, 42vw, 640px); aspect-ratio: auto; object-position: 50% 18%; }
+    .menu-page .menu-hero figcaption { display: block; position: absolute; left: 32px; bottom: 16px; padding: 6px 12px; border-radius: var(--radius-pill); background: rgba(0, 0, 0, .55); color: #fff; font-size: 12px; }
+    /* Keep the card to the right of the hand-off, including narrow tablets. */
+    .menu-page .menu-counter { position: absolute; right: 32px; bottom: -64px; width: min(400px, calc(44vw - 32px)); margin: 0; padding: 28px; }
+    .menu-page .menu-counter h1 { font-size: 44px; }
+    .menu-page .menu-body { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; align-items: start; padding: 96px 32px 24px; }
+    .menu-page .menu-sidebar { top: 104px; margin: 0; border: 0; background: transparent; }
+    .menu-page .menu-categories { flex-direction: column; gap: 2px; overflow: visible; padding: 0; }
+    .menu-page .menu-category { justify-content: space-between; min-height: 44px; border: 0; border-radius: var(--radius-md); font-size: 14px; }
+    .menu-page .menu-info { display: block; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--ink-muted); font-size: 13px; line-height: 1.6; }
+    .menu-page .menu-info h2 { margin: 0 0 6px; color: var(--ink); font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+    .menu-page .menu-info dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; margin: 0 0 16px; }
+    .menu-page .menu-info dd { margin: 0; color: var(--ink); text-align: right; }
+    .menu-page .menu-info a { display: inline-flex; align-items: center; min-height: 34px; color: inherit; text-decoration: none; }
+    .menu-page .menu-info a:hover { color: var(--orange); text-decoration: underline; }
+    .menu-page .menu-sections { padding: 0; }
+    .menu-page .menu-section:first-child { padding-top: 0; }
+    /* Keep the rail docked when the final section is shorter than the rail. */
+    .menu-page .menu-section:last-child { min-height: var(--menu-sidebar-height, 400px); }
+    .menu-page .menu-section h2 { font-size: 30px; }
+    .menu-page .menu-carousel { margin: 0; padding: 0 0 8px; scroll-padding-inline: 0; }
+    .menu-page .menu-carousel .menu-card { flex-basis: calc((100% - 24px) / 3); }
+    .menu-page .menu-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 20px; }
+    .menu-page .menu-catering { grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 64px 32px 0; }
+    .menu-page .menu-catering img { height: 100%; min-height: 260px; aspect-ratio: auto; }
+    .menu-page .menu-catering-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 40px; }
+    .menu-page .menu-catering h2 { font-size: 40px; }
+    .menu-page .menu-bag-bar { display: none; }
+    .menu-page.menu-has-items { padding-bottom: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .menu-page *, .menu-page *::before, .menu-page *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    .menu-page .menu-card:hover img { transform: none; }
+}

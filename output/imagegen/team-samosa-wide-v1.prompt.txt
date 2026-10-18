@@ -1,0 +1,12 @@
+Mode: Built-in image_gen tool
+Source: User-supplied team photograph
+Output: Website/public/assets/team-samosa-wide-v1.png
+
+Use case: identity-preserve
+Asset type: full-width website section background photograph.
+Input image 1 is the edit target: the supplied real SamosaMan team photograph.
+Primary request: extend/outpaint the existing gray studio background upward and horizontally so the photograph becomes a wide edge-to-edge website section with ample uninterrupted gray space above the team for live HTML copy.
+Output: high-resolution landscape 16:9 canvas, ideally 3840 by 2160 pixels.
+Composition: anchor the original team scene at the bottom center. The top approximately 40 percent of the entire canvas must be empty gray background, above every person's head, with enough calm negative space for a large centered heading, a short paragraph, and a button. Extend the gray background broadly on both sides. Keep the six people as one coherent group in the lower 60 percent. Keep the raised samosas and the hands holding them clearly visible near the lower center; keep all six people and their existing faces visible. Preserve the original photographic perspective and relative positions and proportions; the whole original image can be uniformly scaled down to fit. Continue the outer foreground silhouettes only as necessary to blend into the expanded scene.
+Background: seamlessly continue the same cool neutral gray studio backdrop, same soft tonal variation, subtle grain, realistic light and texture. The upper copy area should be visually quiet and evenly lit, suitable for dark text. No seams, rectangles, obvious filler, banding, clouds, or artificial blur.
+Strict invariants: preserve the real identities, faces, facial expressions, hairstyles, skin tones, clothing, existing shirt logos, jewelry, watch, poses, hands, samosas, lighting, and arrangement of every original person. This is background extension, not a reimagined photo or a new group. Do not remove, duplicate, rearrange, or add people. Do not add props, studio equipment, furniture, architectural features, or decorations. No overlaid text, headings, buttons, borders, graphics, or watermark. Preserve the candid realistic photographic character.

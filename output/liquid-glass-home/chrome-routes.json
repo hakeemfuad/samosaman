@@ -1,0 +1,54 @@
+[
+  {
+    "width": 1440,
+    "mode": "delivery",
+    "remembered": "true",
+    "targetState": {
+      "hasGlassNav": false,
+      "navBackground": "rgba(247, 243, 234, 0.95)",
+      "url": "http://127.0.0.1:4186/public/delivery.html"
+    }
+  },
+  {
+    "width": 1440,
+    "mode": "pickup",
+    "remembered": "true",
+    "targetState": {
+      "hasGlassNav": false,
+      "navBackground": "rgba(247, 243, 234, 0.95)",
+      "url": "http://127.0.0.1:4186/public/burlington.html"
+    }
+  },
+  {
+    "width": 820,
+    "mode": "delivery",
+    "remembered": "true",
+    "targetState": {
+      "hasGlassNav": false,
+      "navBackground": "rgba(247, 243, 234, 0.95)",
+      "url": "http://127.0.0.1:4186/public/delivery.html"
+    }
+  },
+  {
+    "width": 820,
+    "mode": "pickup",
+    "remembered": "true",
+    "targetState": {
+      "hasGlassNav": false,
+      "navBackground": "rgba(247, 243, 234, 0.95)",
+      "url": "http://127.0.0.1:4186/public/burlington.html"
+    }
+  },
+  {
+    "width": 390,
+    "mode": "delivery",
+    "remembered": "true",
+    "destination": "delivery.html"
+  },
+  {
+    "width": 390,
+    "mode": "pickup",
+    "rememberedAfterReload": "true",
+    "destination": "burlington.html"
+  }
+]

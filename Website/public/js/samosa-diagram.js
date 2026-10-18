@@ -16,7 +16,9 @@
     const title = caption.querySelector('h3');
     const description = caption.querySelector('p');
     const toggle = diagram.querySelector('[data-diagram-toggle]');
-    const toggleLabel = toggle.querySelector('[data-toggle-label]');
+    const whole = diagram.querySelector('[data-diagram-whole]');
+    const controls = diagram.querySelector('[data-diagram-controls]');
+    let inside = false;
     let selected = null;
     let returnFocus = toggle;
 
@@ -29,22 +31,28 @@
         diagram.dataset.detailOpen = String(detailOpen);
         diagram.dataset.closeup = closeup ? id : '';
         diagram.style.setProperty('--spread', Number(expanded));
-        hotspots.inert = detailOpen;
-        hotspots.setAttribute('aria-hidden', String(detailOpen));
+        hotspots.hidden = !inside;
+        hotspots.inert = !inside;
+        hotspots.setAttribute('aria-hidden', String(!inside));
         stage.setAttribute('aria-label', id === 'fold'
             ? 'A closer look at the samosa’s hand-folded edge'
             : id === 'salsa'
                 ? 'A closer look at the Garlic Tomato Salsa'
                 : 'Explore the parts of a samosa');
-        toggleLabel.textContent = detailOpen ? 'Back to full view' : 'See inside';
+        controls.dataset.state = inside ? 'inside' : 'whole';
+        toggle.setAttribute('aria-pressed', String(inside));
+        whole.setAttribute('aria-pressed', String(!inside));
 
         const part = parts.find((item) => item.id === id);
-        points.forEach((point) => point.setAttribute('aria-pressed', String(point.dataset.diagramPart === id)));
+        points.forEach((point) => {
+            point.setAttribute('aria-pressed', String(point.dataset.diagramPart === id));
+            point.hidden = closeup && point.dataset.diagramPart !== id;
+        });
         caption.classList.toggle('is-idle', !part);
         title.hidden = !part;
         title.textContent = part?.title || '';
         description.textContent = part?.description || 'Select + for a closer look.';
-        if (detailOpen) toggle.focus({ preventScroll: true });
+        description.hidden = !inside;
     };
 
     const leaveDetail = ({ restoreFocus = true } = {}) => {
@@ -55,25 +63,26 @@
     points.forEach((point, index) => {
         point.addEventListener('click', () => {
             returnFocus = point;
-            selectPart(point.dataset.diagramPart);
+            selectPart(selected === point.dataset.diagramPart ? null : point.dataset.diagramPart);
         });
         point.addEventListener('keydown', (event) => {
             const offsets = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
             if (!(event.key in offsets)) return;
             event.preventDefault();
             const next = points[(index + offsets[event.key] + points.length) % points.length];
-            next.focus();
             returnFocus = next;
             selectPart(next.dataset.diagramPart);
+            next.focus({ preventScroll: true });
         });
     });
     toggle.addEventListener('click', () => {
-        if (selected) {
-            leaveDetail();
-            return;
-        }
+        inside = true;
         returnFocus = toggle;
         selectPart('filling');
+    });
+    whole.addEventListener('click', () => {
+        inside = false;
+        leaveDetail({ restoreFocus: false });
     });
     diagram.addEventListener('keydown', (event) => {
         if (event.key !== 'Escape' || !selected) return;
@@ -83,11 +92,12 @@
     // Capture checks the state before an opening control handles its click.
     // The return button keeps its own click and focus behavior.
     document.addEventListener('click', (event) => {
-        if (!selected || toggle.contains(event.target)) return;
+        if (!selected || diagram.contains(event.target)) return;
         leaveDetail({ restoreFocus: false });
     }, { capture: true });
 
     const fallback = document.querySelector('[data-diagram-fallback]');
+    selectPart(null);
     if (fallback) fallback.hidden = true;
     diagram.hidden = false;
 })();

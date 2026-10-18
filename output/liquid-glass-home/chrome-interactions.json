@@ -1,0 +1,161 @@
+[
+  {
+    "width": 1440,
+    "selector": ".home-fresh [data-open-order]",
+    "opened": {
+      "focus": "Close order options",
+      "locked": true,
+      "open": true
+    },
+    "closed": {
+      "closed": true,
+      "focusReturned": true,
+      "unlocked": true
+    }
+  },
+  {
+    "width": 1440,
+    "selector": ".home-hero [data-open-order]",
+    "opened": {
+      "focus": "Close order options",
+      "locked": true,
+      "open": true
+    },
+    "closed": {
+      "closed": true,
+      "focusReturned": true,
+      "unlocked": true
+    }
+  },
+  {
+    "width": 1440,
+    "diagram": {
+      "caption": "Goodness inside.\n                    Our Punjabi filling: spiced potatoes, green peas, and herbs.",
+      "navCompact": true,
+      "pressed": "true",
+      "selected": "true",
+      "spread": "1"
+    }
+  },
+  {
+    "width": 1440,
+    "arrow": {
+      "closeup": "salsa",
+      "focus": "salsa"
+    }
+  },
+  {
+    "width": 1440,
+    "whole": {
+      "hotspotsHidden": true,
+      "spread": "0",
+      "wholePressed": "true"
+    }
+  },
+  {
+    "width": 820,
+    "selector": ".home-fresh [data-open-order]",
+    "opened": {
+      "focus": "Close order options",
+      "locked": true,
+      "open": true
+    },
+    "closed": {
+      "closed": true,
+      "focusReturned": true,
+      "unlocked": true
+    }
+  },
+  {
+    "width": 820,
+    "selector": ".home-hero [data-open-order]",
+    "opened": {
+      "focus": "Close order options",
+      "locked": true,
+      "open": true
+    },
+    "closed": {
+      "closed": true,
+      "focusReturned": true,
+      "unlocked": true
+    }
+  },
+  {
+    "width": 820,
+    "diagram": {
+      "caption": "Goodness inside.\n                    Our Punjabi filling: spiced potatoes, green peas, and herbs.",
+      "navCompact": true,
+      "pressed": "true",
+      "selected": "true",
+      "spread": "1"
+    }
+  },
+  {
+    "width": 820,
+    "arrow": {
+      "closeup": "salsa",
+      "focus": "salsa"
+    }
+  },
+  {
+    "width": 820,
+    "whole": {
+      "hotspotsHidden": true,
+      "spread": "0",
+      "wholePressed": "true"
+    }
+  },
+  {
+    "width": 390,
+    "selector": ".home-fresh [data-open-order]",
+    "opened": {
+      "focus": "Close order options",
+      "locked": true,
+      "open": true
+    },
+    "closed": {
+      "closed": true,
+      "focusReturned": true,
+      "unlocked": true
+    }
+  },
+  {
+    "width": 390,
+    "selector": ".home-hero [data-open-order]",
+    "opened": {
+      "focus": "Close order options",
+      "locked": true,
+      "open": true
+    },
+    "closed": {
+      "closed": true,
+      "focusReturned": true,
+      "unlocked": true
+    }
+  },
+  {
+    "width": 390,
+    "diagram": {
+      "caption": "Goodness inside.\n                    Our Punjabi filling: spiced potatoes, green peas, and herbs.",
+      "navCompact": true,
+      "pressed": "true",
+      "selected": "true",
+      "spread": "1"
+    }
+  },
+  {
+    "width": 390,
+    "arrow": {
+      "closeup": "salsa",
+      "focus": "salsa"
+    }
+  },
+  {
+    "width": 390,
+    "whole": {
+      "hotspotsHidden": true,
+      "spread": "0",
+      "wholePressed": "true"
+    }
+  }
+]

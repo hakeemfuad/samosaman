@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PB6QFY8Z8D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PB6QFY8Z8D');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>SamosaMan - Authentic exotic Samosas | Burlington VT</title>
+    <meta name="title" content="SamosaMan - Authentic exotic Samosas | Burlington VT">
+    <meta name="description" content="Craving authentic exotic samosas? SamosaMan serves crispy, flavorful samosas with delivery & pickup in Burlington VT. Order online now!">
+    <meta name="keywords" content="samosas, exotic food, Burlington VT, food delivery, exotic restaurant, catering, authentic samosas, crispy samosas">
+    <meta name="author" content="SamosaMan">
+    <link rel="canonical" href="https://samosamanvt.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://samosamanvt.com/">
+    <meta property="og:title" content="SamosaMan - Authentic exotic Samosas | Burlington VT">
+    <meta property="og:description" content="Craving authentic exotic samosas? SamosaMan serves crispy, flavorful samosas with delivery & pickup in Burlington VT. Order online now!">
+    <meta property="og:image" content="https://samosamanvt.com/assets/home/samosa_hero.webp?v=e7ad12fd">
+    <meta property="og:site_name" content="SamosaMan">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://samosamanvt.com/">
+    <meta property="twitter:title" content="SamosaMan - Authentic exotic Samosas">
+    <meta property="twitter:description" content="Craving authentic exotic samosas? Order online for delivery & pickup!">
+    <meta property="twitter:image" content="https://samosamanvt.com/assets/home/samosa_hero.webp?v=e7ad12fd">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/m_logo.svg">
+    <link rel="apple-touch-icon" href="assets/m_logo.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="assets/home/holding_samosa.webp" fetchpriority="high">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: { sans: ['Inter', 'sans-serif'] },
+                extend: { colors: { brand: {
+                    500: '#ea580c', 600: '#c2410c', 700: '#9a3412'
+                } } }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="css/home.css?v=20261005-no-side-borders">
+    <link rel="stylesheet" href="css/samosa-scene.css?v=20261007">
+    <script src="js/samosa-scene.js?v=20261007" defer></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-init.js"></script>
+    <script src="js/errors.js"></script>
+    <script src="js/cart.js"></script>
+</head>
+
+<body class="home-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="navbar-placeholder"></div>
+
+    <main id="main" class="home-frame" tabindex="-1">
+        <section class="home-fresh" aria-labelledby="fresh-heading">
+            <img class="home-fresh-photo" src="assets/home/holding_samosa.webp"
+                width="1536" height="1024" alt="A freshly cooked golden samosa held in serving tongs"
+                loading="eager" fetchpriority="high" decoding="async">
+            <div class="home-fresh-copy">
+                <h1 id="fresh-heading">Served Fresh.</h1>
+                <p class="home-hero-copy">There's a science behind this crunch.</p>
+            </div>
+        </section>
+
+        <section class="home-hero" id="samosas-and-salsa" aria-labelledby="hero-heading">
+            <h2 id="hero-heading">Samosas and Salsa</h2>
+            <p class="home-hero-copy">The combo of dreams.</p>
+            <div class="home-actions">
+                <a class="home-button" href="burlington.html">Order Now</a>
+                <a class="home-button home-button-secondary" href="catering.html">Catering</a>
+            </div>
+            <button class="samosa-scene" type="button" data-samosa-scene disabled
+                aria-label="Give five golden samosas and a bowl of Garlic Tomato Salsa a nudge"
+                aria-pressed="false" aria-describedby="samosa-scene-hint">
+                <svg class="samosa-scene__art" viewBox="0 0 1000 560" aria-hidden="true" focusable="false">
+                    <defs>
+                        <!-- Clip the original photographs without repainting or changing the food. -->
+                        <clipPath id="samosa-photo-outline">
+                            <path d="M156 42 C143 45 137 61 132 88 C122 102 115 117 111 130
+                                C110 146 123 165 136 181 C140 210 149 249 152 279
+                                C150 344 143 401 144 456 C142 486 128 520 123 558
+                                C115 582 111 617 115 652 C115 680 117 703 114 730
+                                C99 740 93 763 91 789 C74 811 62 838 52 861
+                                C44 878 49 893 65 900 C100 913 145 907 177 899
+                                C227 887 272 868 317 846 C390 814 448 783 509 748
+                                C584 709 646 673 705 641 C727 630 739 632 758 644
+                                C789 653 801 670 836 680 C868 689 902 684 916 668
+                                C932 649 925 622 909 608 C881 589 851 577 823 561
+                                C786 538 751 514 719 486 C682 461 658 432 624 413
+                                C595 391 571 367 537 350 C503 332 476 309 447 292
+                                C421 275 395 254 369 240 C347 221 333 217 310 211
+                                C288 193 270 164 251 143 C232 118 217 90 201 67
+                                C188 46 172 41 156 42 Z"/>
+                        </clipPath>
+                        <clipPath id="salsa-photo-outline">
+                            <path d="M746 786 C744 759 796 739 866 726
+                                C952 710 1069 713 1143 733 C1186 745 1215 761 1217 782
+                                C1218 804 1206 834 1199 860 L1160 994
+                                C1150 1023 1118 1036 1070 1044 C1008 1055 925 1054 872 1040
+                                C839 1032 820 1017 812 994 L762 849 C753 826 745 805 746 786 Z"/>
+                        </clipPath>
+                        <radialGradient id="food-ground-shadow">
+                            <stop offset="0" stop-color="#615441" stop-opacity=".24"/>
+                            <stop offset="1" stop-color="#615441" stop-opacity="0"/>
+                        </radialGradient>
+                        <symbol id="samosa-original-photo" viewBox="0 0 960 960">
+                            <image href="assets/home/samosa_header.webp" width="960" height="960"
+                                clip-path="url(#samosa-photo-outline)"/>
+                        </symbol>
+                    </defs>
+
+                    <!-- Five in the back row, with the salsa centered in the foreground. -->
+                    <g class="samosa-scene__shadow" fill="url(#food-ground-shadow)">
+                        <ellipse cx="142" cy="362" rx="137" ry="28"/>
+                        <ellipse cx="307" cy="335" rx="144" ry="27"/>
+                        <ellipse cx="493" cy="360" rx="146" ry="29"/>
+                        <ellipse cx="683" cy="335" rx="144" ry="28"/>
+                        <ellipse cx="864" cy="342" rx="135" ry="27"/>
+                    </g>
+                    <g class="samosa-scene__piece" style="--depth: .55; --nudge-x: -9px; --nudge-y: -8px; --nudge-turn: -5deg">
+                        <g class="samosa-scene__motion">
+                            <use href="#samosa-original-photo" x="-3" y="89" width="279" height="279"
+                                transform="rotate(-8 137 349)"/>
+                        </g>
+                    </g>
+                    <g class="samosa-scene__piece" style="--depth: .85; --nudge-x: -6px; --nudge-y: -21px; --nudge-turn: -3deg">
+                        <g class="samosa-scene__motion">
+                            <use href="#samosa-original-photo" x="166" y="34" width="307" height="307"
+                                transform="rotate(-4 319 326)"/>
+                        </g>
+                    </g>
+                    <g class="samosa-scene__piece" style="--depth: .7; --nudge-x: 0px; --nudge-y: -13px; --nudge-turn: 2deg">
+                        <g class="samosa-scene__motion">
+                            <use href="#samosa-original-photo" x="348" y="64" width="298" height="298"/>
+                        </g>
+                    </g>
+                    <g class="samosa-scene__piece" style="--depth: 1; --nudge-x: 6px; --nudge-y: -23px; --nudge-turn: 4deg">
+                        <g class="samosa-scene__motion">
+                            <use href="#samosa-original-photo" x="536" y="35" width="302" height="302"
+                                transform="rotate(3 687 322)"/>
+                        </g>
+                    </g>
+                    <g class="samosa-scene__piece" style="--depth: .6; --nudge-x: 9px; --nudge-y: -11px; --nudge-turn: 5deg">
+                        <g class="samosa-scene__motion">
+                            <use href="#samosa-original-photo" x="714" y="42" width="292" height="292"
+                                transform="rotate(7 860 319)"/>
+                        </g>
+                    </g>
+                    <ellipse class="samosa-scene__salsa-shadow" cx="510" cy="494" rx="167" ry="34"
+                        fill="url(#food-ground-shadow)"/>
+                    <g class="samosa-scene__piece samosa-scene__salsa" style="--depth: 1.4; --nudge-x: 0px; --nudge-y: -8px; --nudge-turn: -2deg">
+                        <g class="samosa-scene__motion">
+                            <svg x="354" y="284" width="312" height="227" viewBox="736 711 492 358" overflow="visible">
+                                <image href="assets/home/samosa_hero.webp?v=e7ad12fd" width="1254" height="1254"
+                                    clip-path="url(#salsa-photo-outline)"/>
+                            </svg>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+            <p class="samosa-scene-hint" id="samosa-scene-hint" hidden>
+                Tap or click to give it a nudge.
+            </p>
+        </section>
+
+        <section class="home-section home-catering" aria-labelledby="catering-heading">
+            <div class="home-catering-copy">
+                <h2 id="catering-heading">Samosas are best shared.</h2>
+                <p>Bring the crunch. Feed the crowd.</p>
+                <a class="home-button" href="catering.html">Plan your catering</a>
+            </div>
+            <figure class="home-catering-media">
+                <img src="assets/home/tray_of_samosas.webp"
+                    width="1536" height="1024" alt="A tray filled with golden, crispy samosas" loading="lazy" decoding="async">
+            </figure>
+        </section>
+
+        <section class="home-section home-team" aria-labelledby="team-heading">
+            <div class="home-section-heading">
+                <h2 id="team-heading">Meet the crew.</h2>
+                <p class="home-team-intro">Good food starts with good people. These are ours.</p>
+            </div>
+            <ul class="home-team-grid">
+                <li>
+                    <figure>
+                        <img src="assets/headshots/karim_headshot.webp"
+                            width="800" height="1200" alt="Portrait of Karim" loading="lazy" decoding="async">
+                        <figcaption>Karim</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="assets/headshots/hakeem_headshot.webp"
+                            width="800" height="1200" alt="Portrait of Hakeem" loading="lazy" decoding="async">
+                        <figcaption>Hakeem</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="assets/headshots/Will_headshot.webp"
+                            width="800" height="1200" alt="Portrait of Will" loading="lazy" decoding="async">
+                        <figcaption>Will</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="assets/headshots/hope_headshot.webp"
+                            width="800" height="1200" alt="Portrait of Hope" loading="lazy" decoding="async">
+                        <figcaption>Hope</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="assets/headshots/Rishi_headshot.webp"
+                            width="800" height="1200" alt="Portrait of Rishi" loading="lazy" decoding="async">
+                        <figcaption>Rishi</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="assets/headshots/jordain_headshot.webp"
+                            width="800" height="1200" alt="Portrait of Jordain" loading="lazy" decoding="async">
+                        <figcaption>Jordain</figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <div id="auth-modal" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
+        <div id="auth-backdrop"
+            class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity opacity-0 duration-300"
+            onclick="toggleAuthModal(false)"></div>
+
+        <div class="relative flex min-h-full items-center justify-center p-4">
+            <div id="auth-panel"
+                class="relative w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-8 text-left shadow-2xl transition-all opacity-0 translate-y-4 duration-300 max-h-[90vh] overflow-y-auto scrollbar-hide">
+
+                <button onclick="toggleAuthModal(false)" aria-label="Close sign in"
+                    class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1 z-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" x2="6" y1="6" y2="18" />
+                        <line x1="6" x2="18" y1="6" y2="18" />
+                    </svg>
+                </button>
+
+                <div class="text-center mb-6">
+                    <img src="assets/m_logo.svg" alt="Samosaman" class="h-12 w-auto mx-auto mb-4">
+                    <h2 id="auth-modal-title"
+                        class="font-oswald text-3xl font-bold text-slate-900 uppercase tracking-wide">Welcome Back</h2>
+                    <p class="text-slate-500 text-sm mt-2">Sign in to your SamosaMan Clan® account so you can get
+                        rewards and order your favorites even faster.</p>
+                </div>
+
+                <div id="auth-error-message"
+                    class="hidden mb-4 p-3 bg-red-50 text-red-600 text-sm rounded-md font-medium text-center border border-red-100">
+                </div>
+
+                <form id="auth-form" class="space-y-5">
+
+                    <div class="signup-only hidden space-y-4">
+                        <div class="relative">
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">First Name</label>
+                            <input type="text" id="signup-fname"
+                                class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 bg-slate-50 border">
+                        </div>
+                        <div class="relative">
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Last Name</label>
+                            <input type="text" id="signup-lname"
+                                class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 bg-slate-50 border">
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Email Address</label>
+                        <input type="email" id="auth-email" required
+                            class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 bg-slate-50 border">
+                    </div>
+
+                    <div class="relative">
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Password</label>
+                        <input type="password" id="auth-password" required minlength="8"
+                            class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 bg-slate-50 border">
+
+                        <div id="password-requirements-container" class="hidden mt-3 pt-2 text-center">
+                            <p class="text-[10px] text-slate-400 mb-2 uppercase tracking-wide font-semibold">Create a
+                                password with these requirements:</p>
+                            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-slate-400">
+
+                                <div id="req-upper" class="flex flex-col items-center transition-colors duration-200">
+                                    <span>ABC</span>
+                                    <svg class="req-icon w-3 h-3 text-green-600 mt-1 opacity-0 transform scale-0 transition-all duration-300"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+
+                                <div id="req-lower" class="flex flex-col items-center transition-colors duration-200">
+                                    <span>abc</span>
+                                    <svg class="req-icon w-3 h-3 text-green-600 mt-1 opacity-0 transform scale-0 transition-all duration-300"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+
+                                <div id="req-num" class="flex flex-col items-center transition-colors duration-200">
+                                    <span>123</span>
+                                    <svg class="req-icon w-3 h-3 text-green-600 mt-1 opacity-0 transform scale-0 transition-all duration-300"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+
+                                <div id="req-spec" class="flex flex-col items-center transition-colors duration-200">
+                                    <span>!@%</span>
+                                    <svg class="req-icon w-3 h-3 text-green-600 mt-1 opacity-0 transform scale-0 transition-all duration-300"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+
+                                <div id="req-len" class="flex flex-col items-center transition-colors duration-200">
+                                    <span>8 characters</span>
+                                    <svg class="req-icon w-3 h-3 text-green-600 mt-1 opacity-0 transform scale-0 transition-all duration-300"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="signup-only hidden relative">
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Mobile Number</label>
+                        <input type="tel" id="signup-mobile"
+                            class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 bg-slate-50 border">
+                        <p class="text-[10px] text-slate-400 mt-1 leading-tight">Enter a valid mobile number that can
+                            accept SMS messages. This will be used for two-step verification for account access, and for
+                            order-related notifications.</p>
+                    </div>
+
+                    <div class="signup-only hidden relative">
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Birthday MM/DD/YYYY</label>
+                        <input type="text" id="signup-birthday" placeholder="MM/DD/YYYY" maxlength="10"
+                            class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 bg-slate-50 border">
+                        <p class="text-[10px] text-slate-400 mt-1 leading-tight">Double check your birthday is entered
+                            correctly, you won't be able to change it later.</p>
+                    </div>
+
+                    <div class="signup-only hidden relative">
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Receive text offers and
+                            promotions?*</label>
+                        <div class="flex items-center gap-6">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="signup-promo" value="yes"
+                                    class="w-4 h-4 text-brand-600 border-slate-300 focus:ring-brand-500">
+                                <span class="text-sm text-slate-700">Yes</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="signup-promo" value="no"
+                                    class="w-4 h-4 text-brand-600 border-slate-300 focus:ring-brand-500">
+                                <span class="text-sm text-slate-700">No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="auth-submit-btn"
+                        class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3.5 rounded-full shadow-lg shadow-brand-500/30 transition-all transform active:scale-95 uppercase tracking-wide mt-2">
+                        Sign In
+                    </button>
+                </form>
+
+                <div class="relative my-6">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-slate-200"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm"><span class="bg-white px-2 text-slate-500">Or
+                            continue with</span></div>
+                </div>
+
+                <button onclick="handleGoogleLogin()"
+                    class="w-full flex items-center justify-center gap-3 bg-white border border-slate-200 text-slate-700 font-bold py-3 rounded-full hover:bg-slate-50 transition-colors">
+                    <svg class="h-5 w-5" viewBox="0 0 24 24">
+                        <path
+                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                            fill="#4285F4" />
+                        <path
+                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                            fill="#34A853" />
+                        <path
+                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                            fill="#FBBC05" />
+                        <path
+                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                            fill="#EA4335" />
+                    </svg>
+                    Google
+                </button>
+
+                <p id="auth-toggle-text" class="text-center text-slate-500 text-sm mt-8">
+                    New to the SamosaMan Clan®? <button type="button" onclick="switchAuthMode()"
+                        class="text-brand-600 font-bold hover:underline">Create Account</button>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+
+    <script src="js/navbar.js?v=20261005-cream-header"></script>
+    <script src="js/auth.js?v=20261005-icon-strokes-1-2"></script>
+    <script src="js/home.js"></script>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/footer.js"></script>
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "SamosaMan",
+      "image": "https://samosamanvt.com/assets/m_logo.svg",
+      "description": "Authentic exotic samosas served fresh with delivery and pickup options in Burlington VT.",
+      "url": "https://samosamanvt.com",
+      "telephone": "+1-802-555-0123",
+      "priceRange": "$$",
+      "servesCuisine": "exotic",
+      "acceptsReservations": "False",
+      "hasMenu": "https://samosamanvt.com/burlington.html",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Main St",
+        "addressLocality": "Burlington",
+        "addressRegion": "VT",
+        "postalCode": "05401",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "44.4759",
+        "longitude": "-73.2121"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday", "Sunday"],
+          "opens": "11:00",
+          "closes": "20:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/samosamanvt",
+        "https://www.instagram.com/samosamanvt"
+      ]
+    }
+    </script>
+
+</body>
+
+</html>

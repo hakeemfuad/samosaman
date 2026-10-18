@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Burlington Menu — Option C · Crew Table (prototype)</title>
+<!--
+  DESIGN PROTOTYPE — reference only, not production code.
+  Open this file directly in a browser from design-handoff/menu-crew/ (images load from ../../public/assets/).
+  Resize the window: below 760px it switches to the phone layout.
+  The header here is a stand-in; production keeps the shared navbar injected by js/navbar.js.
+  Spec: ../../menu-crew-redesign-handoff.md
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* design tokens (SamosaMan design system) */
+:root, [data-theme="light"] {
+  --paper: #f7f3ea;
+  --paper-tint: #efe1d5;
+  --gold: #eed2a9;
+  --line: #d9d3c7;
+  --line-strong: #a69d8d;
+  --ink: #27261f;
+  --ink-muted: #68645b;
+  --orange: #b94316;
+  --orange-deep: #92320e;
+  --brand-500: #ea580c;
+  --brand-600: #c2410c;
+  --brand-700: #9a3412;
+  --night: #000000;
+  --harbor: #263746;
+  --veg: #15803d;
+  --white: #ffffff;
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --radius-xs: 2px;
+  --radius-md: 8px;
+  --radius-pill: 999px;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Oswald", "Arial Narrow", sans-serif;
+}
+html, body { margin: 0; }
+[data-view] { position: relative; height: 100vh; overflow-y: auto; container-type: inline-size; }
+[data-view] *, [data-view] *::before, [data-view] *::after { box-sizing: border-box; }
+[data-view] button { font-family: inherit; cursor: pointer; }
+[data-view] img { display: block; }
+[data-view] :focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { [data-view] * { transition: none !important; } }
+/* Option C · Crew Table — the photo as a wide establishing shot, a counter card, an ordering rail */
+.pc { background: var(--paper); color: var(--ink); font-family: var(--font-sans); min-height: 100%; -webkit-font-smoothing: antialiased; }
+.pc-head { position: sticky; top: 0; z-index: 6; height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 16px; background: var(--paper); border-bottom: 1px solid var(--line); }
+.pc-head img { height: 34px; width: auto; }
+.pc-nav { display: none; gap: 28px; font-size: 14px; }
+.pc-nav a { color: var(--ink); text-decoration: none; }
+.pc-nav a[aria-current] { color: var(--orange); font-weight: 600; }
+.pc-bag { display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 8px 0 14px; border-radius: var(--radius-pill); border: 0; background: var(--ink); color: var(--paper); font-size: 13px; font-weight: 500; }
+.pc-bag b { min-width: 22px; height: 22px; padding: 0 6px; border-radius: var(--radius-pill); background: var(--orange); color: var(--white); font-size: 11px; display: grid; place-items: center; }
+
+.pc-hero { position: relative; }
+.pc-hero figure { margin: 0; background: var(--ink); }
+.pc-hero img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: 46% 30%; }
+.pc-hero figcaption { display: none; }
+.pc-counter { position: relative; z-index: 2; margin: -28px 12px 0; padding: 20px 18px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); box-shadow: 0 10px 30px rgba(39, 38, 31, .12); }
+.pc-counter h1 { margin: 0; font-family: var(--font-display); font-size: 36px; font-weight: 700; line-height: 1.05; letter-spacing: -.01em; text-transform: uppercase; }
+.pc-addr { margin: 10px 0 0; font-size: 14px; line-height: 1.5; color: var(--ink-muted); }
+.pc-open { display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 14px; font-weight: 500; color: var(--ink); }
+.pc-open i { width: 8px; height: 8px; border-radius: 50%; background: var(--veg); }
+.pc-open.closed i { background: var(--line-strong); }
+.pc-seg { display: grid; grid-template-columns: 1fr 1fr; margin-top: 16px; padding: 4px; border-radius: var(--radius-pill); background: var(--paper-tint); }
+.pc-seg button { height: 40px; border: 0; border-radius: var(--radius-pill); background: transparent; color: var(--ink); font-size: 14px; font-weight: 500; }
+.pc-seg button[aria-pressed="true"] { background: var(--white); box-shadow: 0 1px 3px rgba(39, 38, 31, .15); }
+
+.pc-body { display: block; padding: 0 0 24px; }
+.pc-side { position: sticky; top: 60px; z-index: 5; background: var(--paper); border-bottom: 1px solid var(--line); margin-top: 20px; }
+.pc-cats { display: flex; gap: 8px; overflow-x: auto; padding: 12px 16px; margin: 0; list-style: none; scrollbar-width: none; }
+.pc-cats::-webkit-scrollbar { display: none; }
+.pc-cat { flex: none; display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px; border-radius: var(--radius-pill); border: 1px solid var(--line-strong); background: transparent; color: var(--ink); font-size: 13px; font-weight: 500; white-space: nowrap; }
+.pc-cat small { font-size: 11px; color: var(--ink-muted); }
+.pc-cat[aria-pressed="true"] { border-color: var(--orange); background: var(--orange); color: var(--white); }
+.pc-cat[aria-pressed="true"] small { color: var(--paper-tint); }
+.pc-info { display: none; }
+
+.pc-main { padding: 0 16px; min-width: 0; }
+.pc-sec { padding-top: 32px; }
+.pc-sec-h { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+.pc-sec-h h2 { margin: 0; font-family: var(--font-display); font-size: 26px; font-weight: 700; letter-spacing: .025em; text-transform: uppercase; white-space: nowrap; }
+.pc-sec-h hr { flex: 1; margin: 0; border: 0; border-top: 1px solid var(--line); }
+.pc-rail { display: flex; gap: 12px; overflow-x: auto; margin: 0 -16px; padding: 0 16px 8px; scroll-snap-type: x mandatory; scrollbar-width: none; list-style: none; }
+.pc-rail::-webkit-scrollbar { display: none; }
+.pc-rail .pc-card { flex: none; width: 70%; scroll-snap-align: start; }
+.pc-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px 12px; }
+.pc-card { display: flex; flex-direction: column; }
+.pc-card .pc-img { position: relative; border-radius: var(--radius-md); overflow: hidden; background: var(--ink); }
+.pc-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform 400ms ease; }
+.pc-card:hover img { transform: scale(1.04); }
+.pc-flag { position: absolute; top: 8px; left: 8px; padding: 3px 8px; border-radius: var(--radius-pill); background: var(--paper); color: var(--ink); font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.pc-flag.veg { color: var(--veg); }
+.pc-card h3 { margin: 12px 0 4px; font-family: var(--font-display); font-size: 18px; font-weight: 700; line-height: 1.2; text-transform: uppercase; }
+.pc-card p { margin: 0; font-size: 13px; line-height: 1.55; color: var(--ink-muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 3.1em; }
+.pc-card-f { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+.pc-price { font-size: 14px; font-weight: 700; }
+.pc-add { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px 0 10px; border-radius: var(--radius-pill); border: 0; background: var(--orange); color: var(--white); font-size: 13px; font-weight: 500; }
+.pc-add::after { content: 'Add'; }
+.pc-add:hover { background: var(--orange-deep); }
+.pc-add.on { background: var(--ink); }
+
+.pc-cater { margin: 48px 16px 0; display: grid; grid-template-columns: 1fr; border-radius: var(--radius-md); overflow: hidden; background: var(--night); color: var(--white); }
+.pc-cater img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: 48% 32%; opacity: .9; }
+.pc-cater div { padding: 24px 20px 28px; }
+.pc-cater h2 { margin: 0; font-size: 28px; font-weight: 600; letter-spacing: -.045em; line-height: 1.1; }
+.pc-cater p { margin: 8px 0 0; font-size: 15px; color: var(--line); }
+.pc-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; margin-top: 18px; padding: 12px 22px; border-radius: var(--radius-pill); background: var(--orange); color: var(--white); font-size: 14px; font-weight: 500; text-decoration: none; }
+.pc-foot { padding: 32px 16px 40px; text-align: center; font-size: 13px; color: var(--ink-muted); }
+.pc-bagbar { position: sticky; bottom: 16px; z-index: 6; display: flex; justify-content: space-between; align-items: center; margin: 0 16px 16px; min-height: 52px; padding: 0 20px; border-radius: var(--radius-pill); background: var(--ink); color: var(--paper); font-size: 14px; font-weight: 500; box-shadow: 0 8px 24px rgba(39, 38, 31, .25); }
+.pc-bagbar [data-total] { color: var(--white); font-weight: 700; }
+.pc-bagbar[hidden] { display: none; }
+
+@container (min-width: 760px) {
+  .pc-head { padding: 0 32px; }
+  .pc-nav { display: flex; }
+  .pc-hero img { aspect-ratio: auto; height: clamp(480px, 42cqw, 640px); object-position: 50% 18%; }
+  .pc-hero figcaption { display: block; position: absolute; left: 32px; bottom: 16px; padding: 6px 12px; border-radius: var(--radius-pill); background: rgba(0, 0, 0, .55); color: var(--white); font-size: 12px; }
+  .pc-counter { position: absolute; right: 32px; bottom: -64px; width: 400px; margin: 0; padding: 28px; }
+  .pc-counter h1 { font-size: 44px; }
+  .pc-body { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; padding: 96px 32px 24px; align-items: start; }
+  .pc-side { top: 84px; margin: 0; border: 0; background: transparent; }
+  .pc-cats { flex-direction: column; gap: 2px; padding: 0; overflow: visible; }
+  .pc-cat { width: 100%; justify-content: space-between; height: 44px; padding: 0 14px; border: 0; border-radius: var(--radius-md); font-size: 14px; }
+  .pc-cat:hover { background: var(--paper-tint); }
+  .pc-info { display: block; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13px; line-height: 1.6; color: var(--ink-muted); }
+  .pc-info h4 { margin: 0 0 6px; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); }
+  .pc-info dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; margin: 0 0 16px; }
+  .pc-info dd { margin: 0; text-align: right; color: var(--ink); }
+  .pc-main { padding: 0; }
+  .pc-sec:first-child { padding-top: 0; }
+  .pc-sec-h h2 { font-size: 30px; }
+  .pc-rail { margin: 0; padding: 0 0 8px; }
+  .pc-rail .pc-card { width: calc((100% - 24px) / 3); }
+  .pc-grid { grid-template-columns: repeat(3, 1fr); gap: 32px 20px; }
+  .pc-cater { margin: 64px 32px 0; grid-template-columns: 1fr 1fr; }
+  .pc-cater img { height: 100%; aspect-ratio: auto; min-height: 260px; }
+  .pc-cater div { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 40px; }
+  .pc-cater h2 { font-size: 40px; }
+  .pc-bagbar { display: none; }
+}
+
+</style>
+</head>
+<body>
+<div data-view="p"></div>
+<script>
+/* shared menu data + behaviour — inlined into each option's preview */
+var A = '../../public/assets/';
+var IMG = {
+  hero: A + 'menu-team-hero.webp', logo: A + 'm_logo.svg',
+  curry: A + 'chicken_curry.webp', masala: A + 'chickpea_masala.webp',
+  punjabi: A + 'samosas/traditional_punjabi_samosa.webp', steak: A + 'samosas/steakandcheese.webp',
+  chixcheese: A + 'samosas/chicken_cheese3.webp', spicy: A + 'samosas/spicy_chicken2.webp',
+  potato: A + 'samosas/spicy_potato_samosa.webp', veggie: A + 'samosas/veggie_samosa3.webp',
+  apple: A + 'samosas/apple_samosa3.webp'
+};
+var ITEMS = {
+  steak: { name: 'Steak & Cheese', price: 3.75, desc: 'Tender minced beef, sharp cheese, onion, and spices.', best: 1 },
+  chixcheese: { name: 'Chicken & Cheese', price: 3.75, desc: 'Tender minced chicken, sharp cheese, aromatic spices and herbs.', best: 1 },
+  spicy: { name: 'Spicy Chicken', price: 3.75, desc: 'Roasted chicken with a hint of rich chili flavor.', best: 1 },
+  potato: { name: 'Spicy Potato', price: 3.75, desc: 'Spiced potatoes, green onion, hot peppers, and fresh herbs.', veg: 1 },
+  punjabi: { name: 'Punjabi', price: 3.75, desc: 'A hearty blend of delicately spiced potatoes, green peas, and herbs.', veg: 1, best: 1 },
+  veggie: { name: 'Vegetarian', price: 3.75, desc: 'The classic samosa. Potatoes, sweet peas, carrots, celery, and mild spices.', veg: 1 },
+  apple: { name: 'Apple Pie', price: 3.75, desc: 'Warm blend of apples, nutmeg, brown sugar, and cinnamon spice.', veg: 1 },
+  curry: { name: 'Chicken Curry', price: 13.95, desc: 'Tender aromatic golden chicken pieces cooked in exotic creamy curry sauce.', best: 1, meal: 1 },
+  masala: { name: 'Chickpea Masala', price: 12.95, desc: 'A hearty and flavorful chickpea masala, slow cooked with a blend of spices.', meal: 1 }
+};
+var BEST = ['curry', 'punjabi', 'steak', 'spicy', 'chixcheese'];
+var SECTIONS = [
+  { id: 'meat', title: 'Meat Samosas', short: 'Meat', ids: ['steak', 'chixcheese', 'spicy'] },
+  { id: 'veg', title: 'Vegetarian Samosas', short: 'Vegetarian', ids: ['potato', 'punjabi', 'veggie', 'apple'] },
+  { id: 'meals', title: 'Meals', short: 'Meals', ids: ['curry', 'masala'] }
+];
+function money(n) { return '$' + n.toFixed(2); }
+function esc(s) { return s.replace(/&/g, '&amp;'); }
+function status() {
+  var H = { 0: [10, 20], 1: [10, 21], 2: [10, 21], 3: [10, 21], 4: [10, 21], 5: [10, 22], 6: [10, 22] };
+  var p = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', hour12: false }).formatToParts(new Date());
+  var wd = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(p.filter(function (x) { return x.type === 'weekday'; })[0].value);
+  var h = +p.filter(function (x) { return x.type === 'hour'; })[0].value % 24;
+  var oc = H[wd], fmt = function (x) { return (x > 12 ? x - 12 : x) + (x >= 12 ? ' PM' : ' AM'); };
+  return h >= oc[0] && h < oc[1] ? { open: true, text: 'Open now · until ' + fmt(oc[1]) }
+    : { open: false, text: 'Closed · opens ' + (h < oc[0] ? 'today' : 'tomorrow') + ' at 10 AM' };
+}
+var PLUS = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
+var CHECK = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+var BAGI = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>';
+function addBtn(id, cls) { var it = ITEMS[id]; return '<button type="button" class="' + cls + '" data-add="' + id + '" aria-label="Add ' + esc(it.name) + ' to bag">' + PLUS + '</button>'; }
+
+/* mount the same page twice (desktop + phone); each copy keeps its own bag */
+function mount(build) {
+  document.querySelectorAll('[data-view]').forEach(function (view) {
+    view.innerHTML = build(view.getAttribute('data-view'));
+    var bag = {}, count = 0, total = 0;
+    view.addEventListener('click', function (e) {
+      if (e.target.closest('a[href="#"]')) e.preventDefault();
+      var add = e.target.closest('[data-add]');
+      if (add) {
+        var id = add.getAttribute('data-add');
+        bag[id] = (bag[id] || 0) + 1; count++; total += ITEMS[id].price;
+        view.querySelectorAll('[data-add="' + id + '"]').forEach(function (b) { b.classList.add('on'); b.innerHTML = CHECK; });
+        setTimeout(function () { view.querySelectorAll('[data-add="' + id + '"]').forEach(function (b) { b.innerHTML = PLUS; }); }, 700);
+        view.querySelectorAll('[data-count]').forEach(function (n) { n.textContent = count; });
+        view.querySelectorAll('[data-total]').forEach(function (n) { n.textContent = money(total); });
+        view.querySelectorAll('[data-bagbar]').forEach(function (n) { n.hidden = false; });
+        return;
+      }
+      var tab = e.target.closest('[data-jump]');
+      if (tab) {
+        var sec = view.querySelector('#' + tab.getAttribute('data-jump') + '-' + view.getAttribute('data-view'));
+        var sticky = 0; view.querySelectorAll('[data-sticky]').forEach(function (s) { if (getComputedStyle(s).position === 'sticky') sticky += s.offsetHeight; });
+        if (sec) view.scrollTo({ top: sec.getBoundingClientRect().top - view.getBoundingClientRect().top + view.scrollTop - sticky - 8, behavior: 'smooth' });
+        var jid = tab.getAttribute('data-jump'); view.querySelectorAll('button[data-jump]').forEach(function (t) { t.setAttribute('aria-pressed', t.getAttribute('data-jump') === jid ? 'true' : 'false'); });
+      }
+    });
+  });
+}
+
+function buildC(v) {
+  var st = status();
+  function card(id) {
+    var it = ITEMS[id];
+    var flag = it.veg ? '<span class="pc-flag veg">Vegetarian</span>' : '';
+    return '<li class="pc-card"><div class="pc-img"><img src="' + IMG[id] + '" alt="' + esc(it.name) + '" loading="lazy">' + flag + '</div>' +
+      '<h3>' + esc(it.name) + '</h3><p>' + it.desc + '</p>' +
+      '<div class="pc-card-f"><span class="pc-price">' + money(it.price) + '</span>' + addBtn(id, 'pc-add') + '</div></li>';
+  }
+  var cats = [{ id: 'best', short: 'Best Sellers', n: BEST.length }].concat(SECTIONS.map(function (s) { return { id: s.id, short: s.title, n: s.ids.length }; }));
+  var secs = '<section class="pc-sec" id="best-' + v + '"><div class="pc-sec-h"><h2>Best Sellers</h2><hr></div><ul class="pc-rail">' + BEST.map(card).join('') + '</ul></section>' +
+    SECTIONS.map(function (s) {
+      return '<section class="pc-sec" id="' + s.id + '-' + v + '"><div class="pc-sec-h"><h2>' + s.title + '</h2><hr></div><ul class="pc-grid">' + s.ids.map(card).join('') + '</ul></section>';
+    }).join('');
+  return '<div class="pc">' +
+    '<header class="pc-head" data-sticky><img src="' + IMG.logo + '" alt="SamosaMan">' +
+    '<nav class="pc-nav" aria-label="Main"><a href="#" aria-current="page">Menu</a><a href="#">Catering</a><a href="#">Our Story</a><a href="#">Rewards</a></nav>' +
+    '<button type="button" class="pc-bag" aria-label="Bag">' + BAGI + '<b data-count>0</b></button></header>' +
+    '<section class="pc-hero"><figure><img src="' + IMG.hero + '" alt="The SamosaMan crew crowding around a handful of golden samosas" loading="eager"><figcaption>The crew, Burlington VT</figcaption></figure>' +
+    '<div class="pc-counter"><h1>Burlington Menu</h1><p class="pc-addr">100 Church St, Burlington, VT 05401</p>' +
+    '<div class="pc-open' + (st.open ? '' : ' closed') + '"><i></i>' + st.text + '</div>' +
+    '<div class="pc-seg" role="group" aria-label="Order type"><button type="button" aria-pressed="true">Pickup</button><button type="button" aria-pressed="false">Delivery</button></div></div></section>' +
+    '<div class="pc-body"><aside class="pc-side" data-sticky><ul class="pc-cats" aria-label="Menu categories">' +
+    cats.map(function (c, i) { return '<li><button type="button" class="pc-cat" data-jump="' + c.id + '" aria-pressed="' + (i === 0) + '">' + c.short + ' <small>' + c.n + '</small></button></li>'; }).join('') + '</ul>' +
+    '<div class="pc-info"><h4>Hours</h4><dl><dt>Mon – Thu</dt><dd>10 AM – 9 PM</dd><dt>Fri – Sat</dt><dd>10 AM – 10 PM</dd><dt>Sunday</dt><dd>10 AM – 8 PM</dd></dl><h4>Call</h4>(802) 881-7607</div></aside>' +
+    '<div class="pc-main">' + secs + '</div></div>' +
+    '<section class="pc-cater"><img src="' + IMG.punjabi + '" alt="A golden samosa beside a cup of salsa" loading="lazy"><div><h2>Samosas are best shared.</h2><p>Bring the crunch. Feed the crowd.</p><a class="pc-btn" href="#">Plan your catering</a></div></section>' +
+    '<footer class="pc-foot">SamosaMan · Burlington, VT</footer>' +
+    '<div class="pc-bagbar" data-bagbar hidden><span>View bag · <span data-count>0</span> items</span><span data-total>$0.00</span></div>' +
+    '</div>';
+}
+mount(buildC);
+document.querySelectorAll('.pc-seg').forEach(function (g) {
+  g.addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }); });
+});
+
+</script>
+</body>
+</html>

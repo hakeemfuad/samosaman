@@ -1,0 +1,28 @@
+{
+  "added": {
+    "count": 1,
+    "hidden": false,
+    "subtotal": 13.95,
+    "total": 14.93
+  },
+  "removed": [
+    {
+      "width": 1440,
+      "display": "none",
+      "hidden": true,
+      "text": "0"
+    },
+    {
+      "width": 820,
+      "display": "none",
+      "hidden": true,
+      "text": "0"
+    },
+    {
+      "width": 390,
+      "display": "none",
+      "hidden": true,
+      "text": "0"
+    }
+  ]
+}

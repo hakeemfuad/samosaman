@@ -1,0 +1,113 @@
+[
+  {
+    "width": 1440,
+    "cycle": [
+      {
+        "id": "",
+        "label": "Close order options",
+        "mode": null,
+        "text": ""
+      },
+      {
+        "id": "",
+        "label": null,
+        "mode": "pickup",
+        "text": "Pickup"
+      },
+      {
+        "id": "",
+        "label": null,
+        "mode": "delivery",
+        "text": "Delivery"
+      },
+      {
+        "id": "start-order",
+        "label": null,
+        "mode": null,
+        "text": "Start order"
+      },
+      {
+        "id": "",
+        "label": "Close order options",
+        "mode": null,
+        "text": ""
+      }
+    ],
+    "closed": "",
+    "focusReturned": true
+  },
+  {
+    "width": 820,
+    "cycle": [
+      {
+        "id": "",
+        "label": "Close order options",
+        "mode": null,
+        "text": ""
+      },
+      {
+        "id": "",
+        "label": null,
+        "mode": "pickup",
+        "text": "Pickup"
+      },
+      {
+        "id": "",
+        "label": null,
+        "mode": "delivery",
+        "text": "Delivery"
+      },
+      {
+        "id": "start-order",
+        "label": null,
+        "mode": null,
+        "text": "Start order"
+      },
+      {
+        "id": "",
+        "label": "Close order options",
+        "mode": null,
+        "text": ""
+      }
+    ],
+    "closed": "",
+    "focusReturned": true
+  },
+  {
+    "width": 390,
+    "cycle": [
+      {
+        "id": "",
+        "label": "Close order options",
+        "mode": null,
+        "text": ""
+      },
+      {
+        "id": "",
+        "label": null,
+        "mode": "pickup",
+        "text": "Pickup"
+      },
+      {
+        "id": "",
+        "label": null,
+        "mode": "delivery",
+        "text": "Delivery"
+      },
+      {
+        "id": "start-order",
+        "label": null,
+        "mode": null,
+        "text": "Start order"
+      },
+      {
+        "id": "",
+        "label": "Close order options",
+        "mode": null,
+        "text": ""
+      }
+    ],
+    "closed": "",
+    "focusReturned": true
+  }
+]

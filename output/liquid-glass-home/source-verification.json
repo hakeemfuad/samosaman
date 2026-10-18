@@ -1,0 +1,21 @@
+{
+  "changedPublicFiles": [
+    "Website/public/index.html",
+    "Website/public/css/home.css",
+    "Website/public/css/samosa-diagram.css",
+    "Website/public/js/samosa-diagram.js",
+    "Website/public/js/navbar.js",
+    "Website/public/js/cart.js",
+    "Website/public/js/home.js"
+  ],
+  "outOfScopeFilesUnchanged": true,
+  "headPreservedExceptAssetVersions": true,
+  "crewMarkupIdentical": true,
+  "originalDiagramArtIdentical": true,
+  "originalNonHomeNavIdentical": true,
+  "originalCartDrawerIdentical": true,
+  "originalGeneratedAuthModalIdentical": true,
+  "missingExistingHtmlIds": [],
+  "newSubtitleCopyOmitted": true,
+  "noPrototypeOnlyFeatures": true
+}

@@ -76,8 +76,9 @@ function updateCartBadge() {
     
     if (badge) {
         badge.innerText = totalItems;
+        badge.hidden = totalItems === 0;
         
-        // Always ensure it is visible
+        // Keep opacity ready for the next non-empty cart
         badge.classList.remove('opacity-0');
 
         // Only animate when items are actually added (count > 0)
@@ -322,32 +323,70 @@ function injectOrderTypeModal() {
 }
 
 // Drawer Toggle Logic
+let cartScrollState = null;
+let cartOpenTimer;
+let cartCloseTimer;
+
 function openCart() {
     const overlay = document.getElementById('cart-overlay');
     const sidebar = document.getElementById('cart-sidebar');
+
+    clearTimeout(cartOpenTimer);
+    clearTimeout(cartCloseTimer);
+
+    // Capture once: the nav and cart can both register an open listener.
+    if (!cartScrollState) {
+        const navigation = document.getElementById('open-cart-btn')?.closest('nav');
+        const fixedNavigation = navigation && getComputedStyle(navigation).position === 'fixed' ? navigation : null;
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        cartScrollState = {
+            overflow: document.body.style.overflow,
+            paddingRight: document.body.style.paddingRight,
+            navigation: fixedNavigation,
+            navigationPaddingRight: fixedNavigation?.style.paddingRight
+        };
+
+        // Keep the page and fixed header still when the scrollbar disappears.
+        if (scrollbarWidth > 0) {
+            const bodyPadding = parseFloat(getComputedStyle(document.body).paddingRight) || 0;
+            document.body.style.paddingRight = `${bodyPadding + scrollbarWidth}px`;
+            if (fixedNavigation) {
+                const navigationPadding = parseFloat(getComputedStyle(fixedNavigation).paddingRight) || 0;
+                fixedNavigation.style.paddingRight = `${navigationPadding + scrollbarWidth}px`;
+            }
+        }
+    }
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
     
     renderCartDrawer();
     
     overlay.classList.remove('hidden');
     // slight delay to allow display:block to apply before opacity transition
-    setTimeout(() => {
+    cartOpenTimer = setTimeout(() => {
         overlay.classList.remove('opacity-0');
         sidebar.classList.remove('translate-x-full');
     }, 10);
-    
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
 }
 
 function closeCart() {
     const overlay = document.getElementById('cart-overlay');
     const sidebar = document.getElementById('cart-sidebar');
 
+    clearTimeout(cartOpenTimer);
+    clearTimeout(cartCloseTimer);
     sidebar.classList.add('translate-x-full');
     overlay.classList.add('opacity-0');
     
-    setTimeout(() => {
+    cartCloseTimer = setTimeout(() => {
         overlay.classList.add('hidden');
-        document.body.style.overflow = ''; // Restore scrolling
+        if (cartScrollState) {
+            document.body.style.overflow = cartScrollState.overflow;
+            document.body.style.paddingRight = cartScrollState.paddingRight;
+            if (cartScrollState.navigation) {
+                cartScrollState.navigation.style.paddingRight = cartScrollState.navigationPaddingRight;
+            }
+            cartScrollState = null;
+        }
     }, 300);
 }
 

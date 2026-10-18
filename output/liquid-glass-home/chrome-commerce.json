@@ -1,0 +1,70 @@
+{
+  "drawer": [
+    {
+      "checkoutEnabled": true,
+      "drawer": {
+        "bottom": 900,
+        "height": 900,
+        "left": 940,
+        "right": 1440,
+        "top": 0,
+        "width": 500,
+        "x": 940,
+        "y": 0
+      },
+      "subtotal": "$41.85",
+      "width": 1440
+    },
+    {
+      "checkoutEnabled": true,
+      "drawer": {
+        "bottom": 900,
+        "height": 900,
+        "left": 320,
+        "right": 820,
+        "top": 0,
+        "width": 500,
+        "x": 320,
+        "y": 0
+      },
+      "subtotal": "$41.85",
+      "width": 820
+    },
+    {
+      "checkoutEnabled": true,
+      "drawer": {
+        "bottom": 900,
+        "height": 900,
+        "left": 0,
+        "right": 390,
+        "top": 0,
+        "width": 390,
+        "x": 0,
+        "y": 0
+      },
+      "subtotal": "$41.85",
+      "width": 390
+    }
+  ],
+  "auth": [
+    {
+      "fields": true,
+      "open": true,
+      "title": "Welcome Back",
+      "width": 1440
+    },
+    {
+      "fields": true,
+      "open": true,
+      "title": "Welcome Back",
+      "width": 820
+    },
+    {
+      "fields": true,
+      "open": true,
+      "title": "Welcome Back",
+      "width": 390
+    }
+  ],
+  "guestCheckout": "checkout-options.html and original order-type-modal verified; no order submitted"
+}

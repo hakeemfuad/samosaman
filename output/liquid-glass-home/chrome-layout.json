@@ -1,0 +1,170 @@
+[
+  {
+    "buttons": [
+      {
+        "background": "rgba(185, 67, 22, 0.9)",
+        "blur": "blur(24px) saturate(1.8)",
+        "height": 48,
+        "text": "Order Now"
+      },
+      {
+        "background": "rgba(255, 255, 255, 0.55)",
+        "blur": "blur(24px) saturate(1.8)",
+        "height": 48,
+        "text": "Catering"
+      },
+      {
+        "background": "rgb(12, 10, 9)",
+        "blur": "none",
+        "height": 48,
+        "text": "Order Now"
+      },
+      {
+        "background": "rgba(12, 10, 9, 0.05)",
+        "blur": "none",
+        "height": 48,
+        "text": "Catering"
+      }
+    ],
+    "cateringHeight": 820,
+    "height": 900,
+    "hero": {
+      "bottom": 860,
+      "height": 860,
+      "left": 0,
+      "right": 1432,
+      "top": 0,
+      "width": 1432,
+      "x": 0,
+      "y": 0
+    },
+    "locationPill": false,
+    "missingImages": [],
+    "overflow": false,
+    "photo": {
+      "bottom": 860,
+      "height": 860,
+      "left": 0,
+      "right": 1432,
+      "top": 0,
+      "width": 1432,
+      "x": 0,
+      "y": 0
+    },
+    "photoPosition": "50% 40%",
+    "scrollY": 0,
+    "width": 1440
+  },
+  {
+    "buttons": [
+      {
+        "background": "rgba(185, 67, 22, 0.9)",
+        "blur": "blur(24px) saturate(1.8)",
+        "height": 48,
+        "text": "Order Now"
+      },
+      {
+        "background": "rgba(255, 255, 255, 0.55)",
+        "blur": "blur(24px) saturate(1.8)",
+        "height": 48,
+        "text": "Catering"
+      },
+      {
+        "background": "rgb(12, 10, 9)",
+        "blur": "none",
+        "height": 48,
+        "text": "Order Now"
+      },
+      {
+        "background": "rgba(12, 10, 9, 0.05)",
+        "blur": "none",
+        "height": 48,
+        "text": "Catering"
+      }
+    ],
+    "cateringHeight": 820,
+    "height": 900,
+    "hero": {
+      "bottom": 860,
+      "height": 860,
+      "left": 0,
+      "right": 812,
+      "top": 0,
+      "width": 812,
+      "x": 0,
+      "y": 0
+    },
+    "locationPill": false,
+    "missingImages": [],
+    "overflow": false,
+    "photo": {
+      "bottom": 860,
+      "height": 860,
+      "left": 0,
+      "right": 812,
+      "top": 0,
+      "width": 812,
+      "x": 0,
+      "y": 0
+    },
+    "photoPosition": "50% 40%",
+    "scrollY": 0,
+    "width": 820
+  },
+  {
+    "buttons": [
+      {
+        "background": "rgba(185, 67, 22, 0.9)",
+        "blur": "blur(24px) saturate(1.8)",
+        "height": 50,
+        "text": "Order Now"
+      },
+      {
+        "background": "rgba(255, 255, 255, 0.55)",
+        "blur": "blur(24px) saturate(1.8)",
+        "height": 50,
+        "text": "Catering"
+      },
+      {
+        "background": "rgb(12, 10, 9)",
+        "blur": "none",
+        "height": 50,
+        "text": "Order Now"
+      },
+      {
+        "background": "rgba(12, 10, 9, 0.05)",
+        "blur": "none",
+        "height": 50,
+        "text": "Catering"
+      }
+    ],
+    "cateringHeight": 560,
+    "height": 844,
+    "hero": {
+      "bottom": 760,
+      "height": 760,
+      "left": 0,
+      "right": 382,
+      "top": 0,
+      "width": 382,
+      "x": 0,
+      "y": 0
+    },
+    "locationPill": false,
+    "missingImages": [],
+    "overflow": false,
+    "photo": {
+      "bottom": 760,
+      "height": 640,
+      "left": 0,
+      "right": 382,
+      "top": 120,
+      "width": 382,
+      "x": 0,
+      "y": 120
+    },
+    "photoPosition": "44% 50%",
+    "scrollY": 0,
+    "width": 390
+  }
+]

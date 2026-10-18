@@ -1,0 +1,13 @@
+.home-team {
+    padding: 56px 64px 64px;
+    background: var(--home-paper);
+    box-shadow: 0 0 0 100vmax var(--home-paper);
+    clip-path: inset(0 -100vmax);
+    text-align: center;
+}
+.home-section-heading { max-width: 680px; margin: 0 auto 40px; }
+.home-team-intro { margin: 18px auto 0; color: var(--home-ink); font-size: 18px; line-height: 1.55; text-wrap: balance; }
+.home-team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 24px; list-style: none; padding: 0; margin: 0; }
+.home-team-grid figure { margin: 0; }
+.home-team-grid img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 0%; background: #d2d0c9; }
+.home-team-grid figcaption { margin-top: 12px; font-size: 20px; font-weight: 400; letter-spacing: -.03em; }
