@@ -1,0 +1,113 @@
+{
+  "date": "2026-10-18",
+  "previousSourceCommit": "412e41c",
+  "desktopRule": "max(540px, calc(100svh - 132px))",
+  "mobileHeroHeight": 760,
+  "mobilePhotoHeight": 640,
+  "nextSectionTopPadding": 56,
+  "checks": [
+    {
+      "nextHeading": {
+        "bottom": 891.1953125,
+        "top": 824
+      },
+      "overflow": false,
+      "photo": {
+        "height": 768,
+        "top": 120
+      },
+      "sections": [
+        {
+          "height": 768,
+          "name": "home-fresh",
+          "top": 0
+        },
+        {
+          "height": 768,
+          "name": "home-hero",
+          "top": 768
+        },
+        {
+          "height": 768,
+          "name": "home-catering",
+          "top": 1536
+        }
+      ],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    {
+      "nextHeading": {
+        "bottom": 705.8203125,
+        "top": 644
+      },
+      "overflow": false,
+      "photo": {
+        "height": 588,
+        "top": 120
+      },
+      "sections": [
+        {
+          "height": 588,
+          "name": "home-fresh",
+          "top": 0
+        },
+        {
+          "height": 588,
+          "name": "home-hero",
+          "top": 588
+        },
+        {
+          "height": 588,
+          "name": "home-catering",
+          "top": 1176
+        }
+      ],
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "nextHeading": {
+        "bottom": 851.6953125,
+        "top": 816
+      },
+      "overflow": false,
+      "photo": {
+        "height": 640,
+        "top": 144
+      },
+      "sections": [
+        {
+          "height": 760,
+          "name": "home-fresh",
+          "top": 0
+        },
+        {
+          "height": 660.96875,
+          "name": "home-hero",
+          "top": 760
+        },
+        {
+          "height": 560,
+          "name": "home-catering",
+          "top": 1420.96875
+        }
+      ],
+      "viewport": [
+        390,
+        844
+      ]
+    }
+  ],
+  "validation": {
+    "equalDesktopFeaturePanels": true,
+    "desktopNextHeadingVisible": true,
+    "horizontalOverflow": false,
+    "diffCheck": "passed"
+  },
+  "scope": "Local correction only; no deployment"
+}

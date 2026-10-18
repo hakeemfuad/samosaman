@@ -1,0 +1,200 @@
+{
+  "previousRelease": {
+    "sourceCommit": "2b717a8853e7964127131836245af8807951dcf4",
+    "hostingVersion": "fdca5034b4b4d1c5",
+    "releaseEvidence": "output/qa/firebase-live-20261018/deployment.json",
+    "homeCssReleaseEvidence": "output/qa/served-fresh-deployment-326a87d.json",
+    "method": "Rendered the previous release source in an isolated local snapshot with the existing unchanged hero photo",
+    "measurements": [
+      {
+        "frameMarginTop": "80px",
+        "heroAfterBackdropFilter": "none",
+        "heroAfterBackground": "linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0) 48%)",
+        "heroBottom": 760,
+        "heroHeight": 680,
+        "heroTop": 80,
+        "photoHeight": 680,
+        "photoTop": 80,
+        "sections": [
+          {
+            "height": 680,
+            "name": "home-fresh"
+          },
+          {
+            "height": 956.5625,
+            "name": "home-hero"
+          },
+          {
+            "height": 683.359375,
+            "name": "home-section home-catering"
+          },
+          {
+            "height": 524.359375,
+            "name": "home-section home-team"
+          }
+        ],
+        "viewport": [
+          1304,
+          984
+        ]
+      },
+      {
+        "frameMarginTop": "80px",
+        "heroAfterBackdropFilter": "none",
+        "heroAfterBackground": "linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0) 48%)",
+        "heroBottom": 760,
+        "heroHeight": 680,
+        "heroTop": 80,
+        "photoHeight": 680,
+        "photoTop": 80,
+        "sections": [
+          {
+            "height": 680,
+            "name": "home-fresh"
+          },
+          {
+            "height": 962.296875,
+            "name": "home-hero"
+          },
+          {
+            "height": 683.359375,
+            "name": "home-section home-catering"
+          },
+          {
+            "height": 524.359375,
+            "name": "home-section home-team"
+          }
+        ],
+        "viewport": [
+          1440,
+          900
+        ]
+      },
+      {
+        "frameMarginTop": "80px",
+        "heroAfterBackdropFilter": "none",
+        "heroAfterBackground": "linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0) 48%)",
+        "heroBottom": 646,
+        "heroHeight": 566,
+        "heroTop": 80,
+        "photoHeight": 566,
+        "photoTop": 80,
+        "sections": [
+          {
+            "height": 566,
+            "name": "home-fresh"
+          },
+          {
+            "height": 817.875,
+            "name": "home-hero"
+          },
+          {
+            "height": 573.359375,
+            "name": "home-section home-catering"
+          },
+          {
+            "height": 522.6875,
+            "name": "home-section home-team"
+          }
+        ],
+        "viewport": [
+          1280,
+          720
+        ]
+      },
+      {
+        "frameMarginTop": "80px",
+        "heroAfterBackdropFilter": "none",
+        "heroAfterBackground": "linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0) 48%)",
+        "heroBottom": 700,
+        "heroHeight": 620,
+        "heroTop": 80,
+        "photoHeight": 620,
+        "photoTop": 80,
+        "sections": [
+          {
+            "height": 620,
+            "name": "home-fresh"
+          },
+          {
+            "height": 671.34375,
+            "name": "home-hero"
+          },
+          {
+            "height": 483.890625,
+            "name": "home-section home-catering"
+          },
+          {
+            "height": 912.0625,
+            "name": "home-section home-team"
+          }
+        ],
+        "viewport": [
+          390,
+          844
+        ]
+      }
+    ]
+  },
+  "currentLocal": {
+    "elements": [
+      {
+        "backdropFilter": "none",
+        "background": "none",
+        "filter": "none",
+        "height": 852,
+        "position": "relative",
+        "selector": ".home-fresh",
+        "top": 0
+      },
+      {
+        "backdropFilter": "none",
+        "background": "none",
+        "filter": "none",
+        "height": 852,
+        "position": "absolute",
+        "selector": ".home-fresh-photo",
+        "top": 120
+      },
+      {
+        "backdropFilter": "none",
+        "background": "linear-gradient(rgb(77, 85, 98), rgba(77, 85, 98, 0))",
+        "filter": "none",
+        "height": 90,
+        "position": "absolute",
+        "selector": ".home-fresh-fade",
+        "top": 120
+      },
+      {
+        "backdropFilter": "none",
+        "background": "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 46%)",
+        "filter": "none",
+        "height": 852,
+        "position": "absolute",
+        "selector": ".home-fresh-shade",
+        "top": 0
+      },
+      {
+        "backdropFilter": "none",
+        "background": "none",
+        "filter": "none",
+        "height": 64,
+        "position": "relative",
+        "selector": "#glass-nav",
+        "top": 16
+      }
+    ],
+    "viewport": [
+      1304,
+      984
+    ]
+  },
+  "topTreatment": {
+    "desktopPhotoOffset": 120,
+    "phonePhotoOffset": 144,
+    "fadeHeight": 90,
+    "addsSectionHeight": false,
+    "desktopPhotoBelowFadeAt1440x900": 558
+  },
+  "websiteChangesThisCheck": false
+}

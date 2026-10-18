@@ -173,7 +173,7 @@
     --home-photo-offset: 120px;
     grid-column: 1 / -1;
     position: relative;
-    height: 580px;
+    height: 860px;
     overflow: hidden;
     background: #4D5562;
     color: #fff;
@@ -190,22 +190,9 @@
 .home-page .home-rise-2 { animation-delay: 90ms; }
 .home-page .home-rise-3 { animation-delay: 180ms; }
 @keyframes home-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-/* Match the opening tile heights on Apple's homepage. */
-@media (max-width: 1068px) {
-    .home-page .home-frame > .home-fresh { height: 570px; }
-}
-@media (min-width: 1069px) and (min-height: 776px) {
-    .home-page .home-frame > .home-fresh { height: 692px; }
-}
-@media (min-width: 735px) and (max-width: 1068px) and (min-height: 734px) {
-    .home-page .home-frame > .home-fresh { height: 650px; }
-}
-@media (max-width: 734px) {
-    .home-page .home-frame > .home-fresh { height: 500px; }
-}
 @media (max-width: 640px) {
-    .home-page .home-frame > .home-fresh { --home-photo-offset: 144px; }
-    .home-page .home-fresh-photo { object-position: 44% 50%; }
+    .home-page .home-frame > .home-fresh { --home-photo-offset: 144px; height: 760px; }
+    .home-page .home-fresh-photo { height: 640px; object-position: 44% 50%; }
     .home-page .home-fresh-shade { background: linear-gradient(to bottom,rgba(0,0,0,.52),rgba(0,0,0,0) 50%); }
     .home-page .home-fresh-copy { padding: 112px 20px 0; }
     .home-page .home-fresh h1 { font-size: 44px; }
@@ -332,9 +319,14 @@
     .home-page .home-team { padding-inline: 16px; }
 }
 @media (min-width: 1024px) {
-    /* Keep the remaining desktop panels at their current size. */
+    /* The hero, product and catering panels share one desktop height. */
     .home-page { --home-panel-height: max(540px, calc(100svh - 132px)); }
-    .home-page .home-frame > :is(.home-hero, .home-catering) { height: var(--home-panel-height); }
+    .home-page .home-frame > :is(.home-fresh, .home-hero, .home-catering) { height: var(--home-panel-height); }
+    /* Keep more of the desktop photo visible below a shorter top fade. */
+    .home-page .home-frame > .home-fresh { --home-photo-offset: 48px; }
+    .home-page .home-fresh-photo { object-position: center 30%; }
+    .home-page .home-fresh-fade { height: 40px; }
+    .home-page .home-fresh-copy { padding-top: 96px; }
     .home-page .home-frame > .home-hero {
         display: flex;
         flex-direction: column;
