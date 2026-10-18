@@ -262,6 +262,9 @@
         window.matchMedia('(min-width: 981px)').addEventListener('change', (event) => {
             if (event.matches) closeMenu();
         });
+        window.addEventListener('scroll', () => {
+            if (!mobileMenu.hidden) closeMenu();
+        }, { passive: true });
     }
 
     const nav = document.getElementById('glass-nav');

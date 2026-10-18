@@ -1188,8 +1188,8 @@ exports.sendWelcomeEmail = onDocumentCreated("users/{userId}", (event) => {
   const firstName = newUser.firstName || 'Samosa Lover';
   const safeFirstName = escapeHtml(firstName);
 
-  const logoUrl = "https://i.ibb.co/r268hyb6/231cd8a888582779c5042d2577a2ec56.png";
-  const heroUrl = "https://i.ibb.co/Z1271V1b/bb055516724cb0fd45293f8d365b389a.jpg";
+  const logoUrl = "https://samosamanvt.com/assets/catering-email/e9f882ffd621b78c600405551c32b709.png";
+  const heroUrl = "https://samosamanvt.com/assets/catering-email/7af791e064519432b0f2a9b207d0b094.png";
 
   const mailOptions = {
     from: '"SamosaMan" <no_reply@samosamanvt.com>',
@@ -1616,7 +1616,7 @@ function getCateringCustomerEmailTemplate(inquiry) {
   <!-- LOGO -->
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
     <tr><td style="padding:28px 20px 0;text-align:center;">
-      <img src="https://i.ibb.co/r268hyb6/231cd8a888582779c5042d2577a2ec56.png"
+      <img src="https://samosamanvt.com/assets/catering-email/e9f882ffd621b78c600405551c32b709.png"
            width="110" height="95" alt="SamosaMan"
            style="display:block;width:110px;height:auto;max-width:110px;margin:0 auto;">
     </td></tr>
@@ -1634,7 +1634,7 @@ function getCateringCustomerEmailTemplate(inquiry) {
   <!-- HERO IMAGE -->
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
     <tr><td style="padding:22px 20px 0;">
-      <img src="https://i.ibb.co/Z1271V1b/bb055516724cb0fd45293f8d365b389a.jpg"
+      <img src="https://samosamanvt.com/assets/catering-email/7af791e064519432b0f2a9b207d0b094.png"
            width="560" alt="SamosaMan Catering"
            style="display:block;width:100%;height:auto;border-radius:8px;max-width:560px;">
     </td></tr>
