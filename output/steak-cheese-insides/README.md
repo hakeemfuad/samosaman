@@ -1,43 +1,58 @@
-# Steak and Cheese — See insides
+# Steak and Cheese — See inside
 
-Standalone visual preview. Nothing is integrated into the website or Flutter app.
+Standalone preview of the existing Punjabi samosa diagram with Steak and Cheese
+filling. No website or Flutter source has been modified.
 
-Open `index.html` directly in a browser. It embeds its artwork and runs offline,
-with no analytics, external dependencies, account services, or network requests.
+Open `index.html` directly in a browser, or visit the local preview on port 4192.
+The page embeds its artwork and runs offline with no external dependencies.
 
-The preview starts open so the new filling is visible. Choose **Whole**, then
-**See insides** to watch the reveal. The three + buttons show the photographed
-crust, minced beef, and sharp cheese. **All ingredients**, clicking the close-up,
-or **Escape** returns to the exploded view. Escape again returns to Whole.
-The controls support keyboard navigation and reduced motion.
+The diagram uses the Punjabi component's exact markup, CSS and interaction code:
 
-To serve this folder locally:
+- It starts in **Whole**, with the original samosa and salsa photographs.
+- **See inside** opens the filling using the original layer positions and timing.
+- The three original controls explore the **hand-folded edge**, **filling**, and
+  **salsa**. The fold and salsa use the original close-up camera movement.
+- Selecting the active + again or pressing **Escape** leaves the detail.
+  Clicking outside the diagram leaves the detail using the original handler.
+- **Whole** resets the diagram. Arrow-key selection and reduced motion follow
+  the original implementation.
+
+Only the filling image, its accessible label, and its ingredient description differ.
+There are no separate beef/cheese close-ups, custom return controls or saved view state.
+The surrounding heading identifies this standalone Steak and Cheese preview.
+
+## Rebuild
 
 ```sh
+python3 output/steak-cheese-insides/build_preview.py
 python3 -m http.server 4192 --bind 127.0.0.1 --directory output/steak-cheese-insides
 ```
 
-`preview.fragment.html` is the editable source; `python3 output/steak-cheese-insides/build_preview.py`
-rebuilds the self-contained page and the conversation preview.
+The build reads the current Punjabi diagram from `Website/public/index.html`,
+`css/samosa-diagram.css`, `css/home.css` and `js/samosa-diagram.js`. It only writes
+inside this preview directory and the existing conversation visualization path.
+The initializer is scoped to the standalone root; event handlers remain unchanged.
 
-## Source references
+`parity-source-verification.json` records source equivalence.
+`reference/punjabi.html` packages the unchanged Punjabi component into the same
+standalone frame for comparison. `preview.fragment.html` and `index.html` are
+generated outputs; `preview-shell.html` contains only the surrounding frame.
 
-- The original crust photograph and SVG seam masks come from the existing
-  `Website/public/index.html` See inside component and
-  `Website/public/assets/home/samosa_header.webp`.
-- Ingredients follow `Website/public/burlington.html`: "Tender minced beef,
-  sharp cheese, onion, and spices."
-- The heading and subtitle match the existing Steak and Cheese treatment.
-- `Samosaman-App/lib/main.dart` was inspected. It contains the Flutter starter
-  counter screen and has no reusable product-detail or ingredient component.
+`Samosaman-App/lib/main.dart` was inspected again; it still contains the Flutter
+starter counter screen and has no product-detail component to reuse.
 
-## Artwork provenance
+## Artwork
 
-`assets/steak-cheese-filling-original.png` was generated with the built-in imagegen
-tool for this visual concept; it is not a photograph of a finished product.
-The prompt is saved in `filling-prompt.txt`. References were the existing Punjabi
-filling silhouette, the Steak and Cheese menu photograph, and the crust photograph.
-`assets/steak-cheese-filling.webp` is a WebP encoding with the generated alpha
-preserved. The original generated PNG is also retained at its source location.
+The current filling uses **Cabot sharp white cheddar**, as confirmed by the user.
+Built-in imagegen edited the original filling to change the melted orange cheese
+to natural ivory-white cheddar while retaining the filling's composition.
+The edited original is `assets/steak-cheese-filling-white-cheddar-v2.png`, and
+`assets/steak-cheese-filling-white-cheddar-v2.webp` is the transparent preview asset.
+The edit prompt is saved in `white-cheddar-v2.prompt.txt`.
 
-This folder is review-only. No site integration, commit, push, or deployment was performed.
+The previous orange-cheese artwork and its original prompt remain available in
+`assets/steak-cheese-filling-original.png` and `filling-prompt.txt` for provenance.
+The crust, salsa, ingredient text, and diagram behavior were unchanged by this edit.
+
+This remains a local review preview. It has not been integrated, committed,
+pushed or deployed.

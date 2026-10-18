@@ -1,0 +1,2598 @@
+{
+  "status": "passed",
+  "comparison": "Current Punjabi source versus Steak and Cheese preview",
+  "checks": [
+    {
+      "name": "initial Whole state",
+      "state": {
+        "mode": "whole",
+        "detailOpen": "false",
+        "closeup": "",
+        "spread": "0",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 538.1463012695312,
+          "height": 489.3658447265625
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 340,
+            "height": 340
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 489.3658142089844,
+            "height": 489.3658447265625
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          }
+        ],
+        "hotspotsHidden": true,
+        "title": "",
+        "descriptionHidden": true,
+        "whole": "true",
+        "inside": "false",
+        "overflow": false,
+        "focusPart": null
+      }
+    },
+    {
+      "name": "See inside at 320px",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "true",
+        "closeup": "",
+        "spread": "1",
+        "stage": {
+          "width": 280,
+          "height": 227.5
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 292.3489990234375,
+          "height": 225.98135375976562
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 10, 65)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 185.5,
+            "height": 185.5
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 170, 35)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 148.75,
+            "height": 148.75
+          },
+          {
+            "transform": "matrix(0.84, 0, 0, 0.84, -140, -45)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 155.8199920654297,
+            "height": 155.82000732421875
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 80, 45)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 214.0975341796875,
+            "height": 214.09756469726562
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "true",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "Goodness inside.",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": null
+      }
+    },
+    {
+      "name": "filling toggle closes at 320px",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "false",
+        "closeup": "",
+        "spread": "0",
+        "stage": {
+          "width": 280,
+          "height": 227.5
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 235.43899536132812,
+          "height": 214.09756469726562
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 185.5,
+            "height": 185.5
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 148.75,
+            "height": 148.75
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 185.5,
+            "height": 185.5
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 214.0975341796875,
+            "height": 214.09756469726562
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": "filling"
+      }
+    },
+    {
+      "name": "Whole resets at 320px",
+      "state": {
+        "mode": "whole",
+        "detailOpen": "false",
+        "closeup": "",
+        "spread": "0",
+        "stage": {
+          "width": 280,
+          "height": 227.5
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 235.43899536132812,
+          "height": 214.09756469726562
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 185.5,
+            "height": 185.5
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 148.75,
+            "height": 148.75
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 185.5,
+            "height": 185.5
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 214.0975341796875,
+            "height": 214.09756469726562
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          }
+        ],
+        "hotspotsHidden": true,
+        "title": "",
+        "descriptionHidden": true,
+        "whole": "true",
+        "inside": "false",
+        "overflow": false,
+        "focusPart": null
+      }
+    },
+    {
+      "name": "See inside at 390px",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "true",
+        "closeup": "",
+        "spread": "1",
+        "stage": {
+          "width": 350,
+          "height": 284.375
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 365.436279296875,
+          "height": 282.4766845703125
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 10, 65)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 231.875,
+            "height": 231.875
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 170, 35)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 185.9375,
+            "height": 185.9375
+          },
+          {
+            "transform": "matrix(0.84, 0, 0, 0.84, -140, -45)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 194.7749786376953,
+            "height": 194.77500915527344
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 80, 45)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 267.6219482421875,
+            "height": 267.6219482421875
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "true",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "Goodness inside.",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": null
+      }
+    },
+    {
+      "name": "filling toggle closes at 390px",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "false",
+        "closeup": "",
+        "spread": "0",
+        "stage": {
+          "width": 350,
+          "height": 284.375
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 294.29876708984375,
+          "height": 267.6219482421875
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 231.875,
+            "height": 231.875
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 185.9375,
+            "height": 185.9375
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 231.875,
+            "height": 231.875
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 267.6219482421875,
+            "height": 267.6219482421875
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": "filling"
+      }
+    },
+    {
+      "name": "Whole resets at 390px",
+      "state": {
+        "mode": "whole",
+        "detailOpen": "false",
+        "closeup": "",
+        "spread": "0",
+        "stage": {
+          "width": 350,
+          "height": 284.375
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 294.29876708984375,
+          "height": 267.6219482421875
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 231.875,
+            "height": 231.875
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 185.9375,
+            "height": 185.9375
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 231.875,
+            "height": 231.875
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 267.6219482421875,
+            "height": 267.6219482421875
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          }
+        ],
+        "hotspotsHidden": true,
+        "title": "",
+        "descriptionHidden": true,
+        "whole": "true",
+        "inside": "false",
+        "overflow": false,
+        "focusPart": null
+      }
+    },
+    {
+      "name": "See inside at 736px",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "true",
+        "closeup": "",
+        "spread": "1",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 668.226318359375,
+          "height": 516.52880859375
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 10, 65)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 170, 35)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 340,
+            "height": 340
+          },
+          {
+            "transform": "matrix(0.84, 0, 0, 0.84, -140, -45)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 356.15997314453125,
+            "height": 356.1600036621094
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 80, 45)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 489.3658142089844,
+            "height": 489.3658752441406
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "true",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "Goodness inside.",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": null
+      }
+    },
+    {
+      "name": "filling toggle closes at 736px",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "false",
+        "closeup": "",
+        "spread": "0",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 538.1463012695312,
+          "height": 489.3658447265625
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 340,
+            "height": 340
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 489.3658142089844,
+            "height": 489.3658447265625
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": "filling"
+      }
+    },
+    {
+      "name": "Whole resets at 736px",
+      "state": {
+        "mode": "whole",
+        "detailOpen": "false",
+        "closeup": "",
+        "spread": "0",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 538.1463012695312,
+          "height": 489.3658447265625
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 340,
+            "height": 340
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 489.3658142089844,
+            "height": 489.3658447265625
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          }
+        ],
+        "hotspotsHidden": true,
+        "title": "",
+        "descriptionHidden": true,
+        "whole": "true",
+        "inside": "false",
+        "overflow": false,
+        "focusPart": null
+      }
+    },
+    {
+      "name": "See inside at 820px",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "true",
+        "closeup": "",
+        "spread": "1",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 668.226318359375,
+          "height": 516.52880859375
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 10, 65)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 170, 35)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 340,
+            "height": 340
+          },
+          {
+            "transform": "matrix(0.84, 0, 0, 0.84, -140, -45)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 356.15997314453125,
+            "height": 356.1600036621094
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 80, 45)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 489.3658142089844,
+            "height": 489.3658752441406
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "true",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "Goodness inside.",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": null
+      }
+    },
+    {
+      "name": "filling toggle closes at 820px",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "false",
+        "closeup": "",
+        "spread": "0",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 538.1463012695312,
+          "height": 489.3658447265625
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 340,
+            "height": 340
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 489.3658142089844,
+            "height": 489.3658447265625
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": "filling"
+      }
+    },
+    {
+      "name": "Whole resets at 820px",
+      "state": {
+        "mode": "whole",
+        "detailOpen": "false",
+        "closeup": "",
+        "spread": "0",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 538.1463012695312,
+          "height": 489.3658447265625
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 340,
+            "height": 340
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 489.3658142089844,
+            "height": 489.3658447265625
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          }
+        ],
+        "hotspotsHidden": true,
+        "title": "",
+        "descriptionHidden": true,
+        "whole": "true",
+        "inside": "false",
+        "overflow": false,
+        "focusPart": null
+      }
+    },
+    {
+      "name": "See inside at 1024px",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "true",
+        "closeup": "",
+        "spread": "1",
+        "stage": {
+          "width": 416,
+          "height": 338
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 434.34710693359375,
+          "height": 335.7437438964844
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 10, 65)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 275.6000061035156,
+            "height": 275.5999755859375
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 170, 35)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 221,
+            "height": 221
+          },
+          {
+            "transform": "matrix(0.84, 0, 0, 0.84, -140, -45)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 231.50396728515625,
+            "height": 231.50399780273438
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 80, 45)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 318.0877990722656,
+            "height": 318.08782958984375
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "true",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "Goodness inside.",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": null
+      }
+    },
+    {
+      "name": "filling toggle closes at 1024px",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "false",
+        "closeup": "",
+        "spread": "0",
+        "stage": {
+          "width": 416,
+          "height": 338
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 349.7950744628906,
+          "height": 318.08782958984375
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 275.6000061035156,
+            "height": 275.6000061035156
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 220.99996948242188,
+            "height": 221
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 275.6000061035156,
+            "height": 275.6000061035156
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 318.0877685546875,
+            "height": 318.08782958984375
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": "filling"
+      }
+    },
+    {
+      "name": "Whole resets at 1024px",
+      "state": {
+        "mode": "whole",
+        "detailOpen": "false",
+        "closeup": "",
+        "spread": "0",
+        "stage": {
+          "width": 416,
+          "height": 338
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 349.7950744628906,
+          "height": 318.08782958984375
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 275.6000061035156,
+            "height": 275.6000061035156
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 220.99996948242188,
+            "height": 221
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 275.6000061035156,
+            "height": 275.6000061035156
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 318.0877685546875,
+            "height": 318.08782958984375
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          }
+        ],
+        "hotspotsHidden": true,
+        "title": "",
+        "descriptionHidden": true,
+        "whole": "true",
+        "inside": "false",
+        "overflow": false,
+        "focusPart": null
+      }
+    },
+    {
+      "name": "See inside at 1440px",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "true",
+        "closeup": "",
+        "spread": "1",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 668.2261962890625,
+          "height": 516.52880859375
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 10, 65)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 170, 35)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 340,
+            "height": 340
+          },
+          {
+            "transform": "matrix(0.84, 0, 0, 0.84, -140, -45)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 356.1599426269531,
+            "height": 356.1600036621094
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 80, 45)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 489.36572265625,
+            "height": 489.3658752441406
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "true",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "Goodness inside.",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": null
+      }
+    },
+    {
+      "name": "filling toggle closes at 1440px",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "false",
+        "closeup": "",
+        "spread": "0",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 538.1463012695312,
+          "height": 489.3658447265625
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 340,
+            "height": 340
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 489.3658142089844,
+            "height": 489.3658447265625
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": "filling"
+      }
+    },
+    {
+      "name": "Whole resets at 1440px",
+      "state": {
+        "mode": "whole",
+        "detailOpen": "false",
+        "closeup": "",
+        "spread": "0",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 538.1463012695312,
+          "height": 489.3658447265625
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 340,
+            "height": 340
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 489.3658142089844,
+            "height": 489.3658447265625
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          }
+        ],
+        "hotspotsHidden": true,
+        "title": "",
+        "descriptionHidden": true,
+        "whole": "true",
+        "inside": "false",
+        "overflow": false,
+        "focusPart": null
+      }
+    },
+    {
+      "name": "fold close-up",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "true",
+        "closeup": "fold",
+        "spread": "0",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(2.8, 0, 0, 2.8, 160, -110)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 1506.8095703125,
+          "height": 1370.224365234375
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 1187.2000732421875,
+            "height": 1187.199951171875
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 952,
+            "height": 952
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 1187.2000732421875,
+            "height": 1187.199951171875
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 1370.22412109375,
+            "height": 1370.224365234375
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "true",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": true,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": true,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "A personal touch.",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": "fold"
+      }
+    },
+    {
+      "name": "active fold toggle closes",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "false",
+        "closeup": "",
+        "spread": "0",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 538.1463012695312,
+          "height": 489.3658447265625
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 340,
+            "height": 340
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 489.3658142089844,
+            "height": 489.3658447265625
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": "fold"
+      }
+    },
+    {
+      "name": "salsa close-up",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "true",
+        "closeup": "salsa",
+        "spread": "0",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(2.8, 0, 0, 2.8, -834, -194)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 1506.8095703125,
+          "height": 1370.224365234375
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 1187.199951171875,
+            "height": 1187.199951171875
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 951.9999389648438,
+            "height": 952
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 1187.199951171875,
+            "height": 1187.199951171875
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 1370.2242431640625,
+            "height": 1370.224365234375
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": true,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": true,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          },
+          {
+            "part": "salsa",
+            "pressed": "true",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "Better together.",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": "salsa"
+      }
+    },
+    {
+      "name": "Escape restores hotspot focus",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "false",
+        "closeup": "",
+        "spread": "0",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 538.1463012695312,
+          "height": 489.3658447265625
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 340,
+            "height": 340
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 489.3658142089844,
+            "height": 489.3658447265625
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": "salsa"
+      }
+    },
+    {
+      "name": "outside click clears selected detail",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "false",
+        "closeup": "",
+        "spread": "0",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 538.1463012695312,
+          "height": 489.3658447265625
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 340,
+            "height": 340
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 489.3658142089844,
+            "height": 489.3658447265625
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": null
+      }
+    },
+    {
+      "name": "ArrowRight selects filling",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "true",
+        "closeup": "",
+        "spread": "1",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 668.2261962890625,
+          "height": 516.52880859375
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 10, 65)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 170, 35)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 340,
+            "height": 340
+          },
+          {
+            "transform": "matrix(0.84, 0, 0, 0.84, -140, -45)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 356.1599426269531,
+            "height": 356.1600036621094
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 80, 45)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 489.36572265625,
+            "height": 489.3658752441406
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "true",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "Goodness inside.",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": "filling"
+      }
+    },
+    {
+      "name": "ArrowRight selects salsa",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "true",
+        "closeup": "salsa",
+        "spread": "0",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(2.8, 0, 0, 2.8, -834, -194)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 1506.8095703125,
+          "height": 1370.224365234375
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 1187.199951171875,
+            "height": 1187.199951171875
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 951.9999389648438,
+            "height": 952
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 1187.199951171875,
+            "height": 1187.199951171875
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 1370.2242431640625,
+            "height": 1370.224365234375
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": true,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": true,
+            "transform": "none",
+            "origin": "50% 50%",
+            "transition": "0s",
+            "width": 0,
+            "height": 0
+          },
+          {
+            "part": "salsa",
+            "pressed": "true",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "Better together.",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": "salsa"
+      }
+    },
+    {
+      "name": "Escape exits salsa with keyboard",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "false",
+        "closeup": "",
+        "spread": "0",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 538.1463012695312,
+          "height": 489.3658447265625
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 340,
+            "height": 340
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 489.3658142089844,
+            "height": 489.3658447265625
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": "salsa"
+      }
+    },
+    {
+      "name": "Enter opens filling",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "true",
+        "closeup": "",
+        "spread": "1",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "0s",
+          "width": 668.2261962890625,
+          "height": 516.52880859375
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 10, 65)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 170, 35)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 340,
+            "height": 340
+          },
+          {
+            "transform": "matrix(0.84, 0, 0, 0.84, -140, -45)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 356.1599426269531,
+            "height": 356.1600036621094
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 80, 45)",
+            "origin": "435px 310px",
+            "transition": "0s",
+            "width": 489.36572265625,
+            "height": 489.3658752441406
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "true",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "Goodness inside.",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": null
+      }
+    },
+    {
+      "name": "animated opening settles identically",
+      "state": {
+        "mode": "inside",
+        "detailOpen": "true",
+        "closeup": "",
+        "spread": "1",
+        "stage": {
+          "width": 640,
+          "height": 520
+        },
+        "camera": {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "origin": "340px 435px",
+          "transition": "1s",
+          "width": 668.2261962890625,
+          "height": 516.52880859375
+        },
+        "pieces": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 10, 65)",
+            "origin": "435px 310px",
+            "transition": "0.85s, 0.6s",
+            "width": 424,
+            "height": 424
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 170, 35)",
+            "origin": "435px 310px",
+            "transition": "0.85s, 0.6s",
+            "width": 340,
+            "height": 340
+          },
+          {
+            "transform": "matrix(0.84, 0, 0, 0.84, -140, -45)",
+            "origin": "435px 310px",
+            "transition": "0.85s, 0.6s",
+            "width": 356.1599426269531,
+            "height": 356.1600036621094
+          },
+          {
+            "transform": "matrix(1, 0, 0, 1, 80, 45)",
+            "origin": "435px 310px",
+            "transition": "0.85s, 0.6s",
+            "width": 489.36572265625,
+            "height": 489.3658752441406
+          }
+        ],
+        "points": [
+          {
+            "part": "fold",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0.85s, 0.85s, 0.34s, 0.2s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "filling",
+            "pressed": "true",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0.85s, 0.85s, 0.34s, 0.2s",
+            "width": 44,
+            "height": 44
+          },
+          {
+            "part": "salsa",
+            "pressed": "false",
+            "hidden": false,
+            "transform": "matrix(1, 0, 0, 1, -22, -22)",
+            "origin": "22px 22px",
+            "transition": "0.85s, 0.85s, 0.34s, 0.2s",
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "hotspotsHidden": false,
+        "title": "Goodness inside.",
+        "descriptionHidden": false,
+        "whole": "false",
+        "inside": "true",
+        "overflow": false,
+        "focusPart": null
+      }
+    }
+  ],
+  "animation": [
+    {
+      "duration": "0.85s, 0.6s",
+      "timing": "cubic-bezier(0.22, 0.75, 0.18, 1), ease"
+    },
+    {
+      "duration": "0.85s, 0.6s",
+      "timing": "cubic-bezier(0.22, 0.75, 0.18, 1), ease"
+    }
+  ],
+  "errors": []
+}

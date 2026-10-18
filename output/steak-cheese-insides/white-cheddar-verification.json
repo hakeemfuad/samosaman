@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "artwork": "Cabot sharp white cheddar",
+  "imageInfo": {
+    "width": 1254,
+    "height": 1254,
+    "opacity": "1"
+  },
+  "alpha": {
+    "hasAlpha": true,
+    "min": 0,
+    "max": 255
+  },
+  "mobileOverflow": false,
+  "errors": [],
+  "unchanged_source_and_behavior_files": 131,
+  "changed_source_or_behavior_files": []
+}
