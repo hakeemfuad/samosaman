@@ -152,7 +152,19 @@
     max-height: calc(100dvh - 96px);
     overflow-y: auto;
     transform-origin: top right;
-    animation: nav-dropdown-in 360ms var(--spring) both;
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+    transition: opacity 180ms var(--ease), transform 360ms var(--spring), visibility 0s;
+}
+#navbar-placeholder .dropdown[hidden] {
+    /* Keep the closing menu painted; the shared handler makes it inert at once. */
+    display: flex !important;
+    opacity: 0;
+    transform: scale(.96) translateY(-4px);
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 180ms var(--ease), transform 180ms var(--ease), visibility 0s 180ms;
 }
 #navbar-placeholder .dropdown a:not(.btn) {
     display: flex;
@@ -178,7 +190,6 @@
     #navbar-placeholder .dropdown { background: linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,.8)); }
 }
 @keyframes nav-pop { from { transform: scale(.4); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-@keyframes nav-dropdown-in { from { opacity: 0; transform: scale(.88) translateY(-6px); } to { opacity: 1; transform: none; } }
 @media (max-width: 980px) {
     #navbar-placeholder .nav-links, #navbar-placeholder .nav-cta { display: none; }
     #navbar-placeholder .menu-btn { display: inline-flex; }
