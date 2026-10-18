@@ -1,0 +1,24 @@
+{
+  "files_changed_by_this_task": [
+    "Website/public/index.html",
+    "Website/public/css/samosa-diagram.css",
+    "Website/public/js/samosa-diagram.js"
+  ],
+  "other_concurrent_changes_preserved": [
+    "Website/public/css/home.css"
+  ],
+  "concurrent_index_edit_preserved": "Home stylesheet cache version for the separate hero photo spacing edit",
+  "steak_and_cheese_image_unchanged": true,
+  "section_markup_unchanged": true,
+  "section_heights_unchanged_at_widths": [
+    1440,
+    1280,
+    820,
+    390,
+    320
+  ],
+  "live_behavior_matches_mouse_and_simulated_touch": true,
+  "keyboard_checks_passed": true,
+  "served_source_matches": true,
+  "published": false
+}

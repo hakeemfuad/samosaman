@@ -34,7 +34,8 @@
 .home-page .samosa-diagram__fold { transform: translate(calc(var(--spread) * 10px), calc(var(--spread) * 65px)); }
 .home-page .samosa-diagram__filling { opacity: var(--spread); transform: translate(calc(var(--spread) * 170px), calc(var(--spread) * 35px)); }
 .home-page .samosa-diagram__salsa { transform: translate(calc(var(--spread) * 80px), calc(var(--spread) * 45px)); }
-.home-page .samosa-diagram__hotspots { position: absolute; inset: 0; }
+.home-page .samosa-diagram__hotspots { position: absolute; inset: 0; transition: opacity 250ms; }
+.home-page .samosa-diagram[data-detail-open="true"] .samosa-diagram__hotspots { opacity: 0; pointer-events: none; }
 .home-page .samosa-diagram__point {
     position: absolute;
     left: calc(var(--point-x) + var(--spread) * var(--point-dx));
@@ -63,9 +64,6 @@
 .home-page .samosa-diagram__point[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: rgba(255,255,255,.25); }
 .home-page .samosa-diagram__point[aria-pressed="true"] svg { transform: rotate(45deg); }
 .home-page .samosa-diagram__point[aria-pressed="true"]::after { display: none; }
-/* In a close-up only the photographed part's control remains on the image. */
-.home-page .samosa-diagram[data-closeup="fold"] .samosa-diagram__point[aria-pressed="true"] { left: 29%; top: 50%; }
-.home-page .samosa-diagram[data-closeup="salsa"] .samosa-diagram__point[aria-pressed="true"] { left: 52%; top: 51%; }
 .home-page .samosa-diagram__toggle {
     position: relative;
     display: inline-grid;

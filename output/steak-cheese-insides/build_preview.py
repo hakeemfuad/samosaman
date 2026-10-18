@@ -42,10 +42,10 @@ steak_js = diagram_js.replace(PUNJABI_COPY, STEAK_COPY)
 # Keep all source markup, positioning, icons and geometry. These are the only
 # product substitutions; asset URLs are remapped for the isolated package.
 steak_component = component.replace(
-    'assets/home/samosa-filling-v1.webp', 'assets/steak-cheese-filling-white-cheddar-v2.webp'
+    'assets/home/samosa-filling-v1.webp', 'assets/steak-cheese-filling-less-cheese-v3.webp'
 ).replace('Explore the Punjabi filling', 'Explore the Steak and Cheese filling')
 assert steak_component.replace(
-    'assets/steak-cheese-filling-white-cheddar-v2.webp', 'assets/home/samosa-filling-v1.webp'
+    'assets/steak-cheese-filling-less-cheese-v3.webp', 'assets/home/samosa-filling-v1.webp'
 ).replace('Explore the Steak and Cheese filling', 'Explore the Punjabi filling') == component
 assert steak_js.replace(STEAK_COPY, PUNJABI_COPY) == diagram_js
 
@@ -65,7 +65,7 @@ def make_fragment(markup, script, embed):
         'assets/home/samosa_header.webp': 'assets/samosa-shell.webp',
         'assets/home/samosa_hero.webp?v=e7ad12fd': 'assets/samosa-salsa.webp',
         'assets/home/samosa-filling-v1.webp': 'assets/punjabi-filling.webp',
-        'assets/steak-cheese-filling-white-cheddar-v2.webp': 'assets/steak-cheese-filling-white-cheddar-v2.webp',
+        'assets/steak-cheese-filling-less-cheese-v3.webp': 'assets/steak-cheese-filling-less-cheese-v3.webp',
     }
     for original, copied in assets.items():
         if embed:

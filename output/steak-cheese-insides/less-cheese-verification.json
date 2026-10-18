@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "artwork": "Less Cabot sharp white cheddar, with melted strands",
+  "imageSize": {
+    "width": 1254,
+    "height": 1254
+  },
+  "hasTransparency": true,
+  "mobileOverflow": false,
+  "errors": [],
+  "unchanged_source_and_behavior_files": 131,
+  "changed_source_or_behavior_files": []
+}

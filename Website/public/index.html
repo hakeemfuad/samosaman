@@ -57,9 +57,9 @@
             }
         };
     </script>
-    <link rel="stylesheet" href="css/home.css?v=20261018-crew-titles">
-    <link rel="stylesheet" href="css/samosa-diagram.css?v=20261016-larger-samosa">
-    <script src="js/samosa-diagram.js?v=20261015-liquid-glass" defer></script>
+    <link rel="stylesheet" href="css/home.css?v=20261018-hero-sizing">
+    <link rel="stylesheet" href="css/samosa-diagram.css?v=20261018-tap-to-close">
+    <script src="js/samosa-diagram.js?v=20261018-tap-to-close" defer></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
     <script src="https://unpkg.com/lucide@latest" defer></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
@@ -68,7 +68,7 @@
     <script src="js/firebase-init.js"></script>
     <script src="js/errors.js"></script>
     <script src="js/cart.js?v=20261015-liquid-glass"></script>
-    <link rel="stylesheet" href="css/navbar.css?v=20261018-shared-glass">
+    <link rel="stylesheet" href="css/navbar.css?v=20261018-drawer-initial-state">
 </head>
 
 <body class="home-page">
@@ -93,14 +93,14 @@
         </section>
 
         <section class="home-hero" id="samosas-and-salsa" aria-labelledby="hero-heading">
-            <h2 id="hero-heading">Samosas and Salsa</h2>
-            <p class="home-hero-copy">The combo of dreams.</p>
+            <h2 id="hero-heading">Steak and Cheese.</h2>
+            <p class="home-hero-copy">The holy grail of Samosas.</p>
             <div class="home-actions">
                 <button class="btn btn-order" type="button" data-open-order>Order Now</button>
                 <a class="btn btn-paper" href="catering.html">Catering</a>
             </div>
             <img class="home-hero-art" data-diagram-fallback src="assets/home/samosa_hero.webp?v=e7ad12fd"
-                width="1254" height="1254" alt="A golden, crispy samosa with a bowl of Garlic Tomato Salsa"
+                width="1254" height="1254" alt="A golden, crispy Steak and Cheese samosa with a bowl of Garlic Tomato Salsa"
                 loading="lazy" decoding="async">
             <div class="samosa-diagram" data-samosa-diagram hidden>
                 <div class="samosa-diagram__stage" id="samosa-layers" role="group" aria-label="Explore the parts of a samosa">
@@ -133,7 +133,7 @@
                     </svg>
                     </g>
                     <g class="samosa-diagram__piece samosa-diagram__filling" data-art-part="filling">
-                    <image href="assets/home/samosa-filling-v1.webp" x="205" y="90" width="425" height="425"></image>
+                    <image href="assets/home/steak-cheese-filling-v3.webp" x="205" y="90" width="425" height="425"></image>
                     </g>
                     <g class="samosa-diagram__piece samosa-diagram__shell" data-art-part="crust">
                     <svg x="170" y="45" width="530" height="530" viewBox="0 0 960 960">
@@ -157,7 +157,7 @@
                         <span aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" focusable="false"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
                     </button>
                     <button class="samosa-diagram__point" type="button" data-diagram-part="filling"
-                        aria-label="Explore the Punjabi filling" aria-pressed="false" aria-controls="samosa-part-details"
+                        aria-label="Explore the Steak and Cheese filling" aria-pressed="false" aria-controls="samosa-part-details"
                         style="--point-x: 47.5%; --point-y: 55%; --point-dx: 17.5%; --point-dy: -9%">
                         <span aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" focusable="false"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
                     </button>
@@ -192,11 +192,7 @@
         <h2 id="catering-heading">Samosas are best shared.</h2>
         <p>Bring the crunch. Feed the crowd.</p>
       </div>
-      <a class="well" href="catering.html">
-        <span class="glyph" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span>
-        <span class="well-text"><span class="well-title">Plan your catering</span></span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(12,10,9,.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
-      </a>
+      <a class="btn btn-order home-catering-cta" href="catering.html">Plan your catering</a>
     </div>
   </section>
 

@@ -44,11 +44,15 @@ starter counter screen and has no product-detail component to reuse.
 ## Artwork
 
 The current filling uses **Cabot sharp white cheddar**, as confirmed by the user.
-Built-in imagegen edited the original filling to change the melted orange cheese
-to natural ivory-white cheddar while retaining the filling's composition.
-The edited original is `assets/steak-cheese-filling-white-cheddar-v2.png`, and
-`assets/steak-cheese-filling-white-cheddar-v2.webp` is the transparent preview asset.
-The edit prompt is saved in `white-cheddar-v2.prompt.txt`.
+The built-in image tool reduced the cheese in version 3. More beef is visible.
+Small areas of melted white cheese and thin strands remain.
+The image is `assets/steak-cheese-filling-less-cheese-v3.png`.
+The preview uses `assets/steak-cheese-filling-less-cheese-v3.webp`, with a transparent background.
+The edit prompt is saved in `less-cheese-v3.prompt.txt`.
+
+Version 2, with more white cheese, remains in
+`assets/steak-cheese-filling-white-cheddar-v2.png`. Its prompt remains in
+`white-cheddar-v2.prompt.txt`.
 
 The previous orange-cheese artwork and its original prompt remain available in
 `assets/steak-cheese-filling-original.png` and `filling-prompt.txt` for provenance.

@@ -1,5 +1,8 @@
 /* Shared glass navigation. Materials follow the Flutter GlassTokens/GlassShelf
    reference; scope every rule here so page and commerce styles stay independent. */
+/* Keep the drawer closed before Tailwind processes the injected markup. */
+#cart-sidebar.translate-x-full { transform: translateX(100%); }
+
 #navbar-placeholder {
     --ink: #0C0A09;
     --accent: #B94316;

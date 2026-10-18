@@ -1,0 +1,83 @@
+{
+  "status": "passed",
+  "results": [
+    {
+      "input": "mouse",
+      "part": "fold",
+      "matchesLive": true,
+      "tapRestoresAllButtons": true
+    },
+    {
+      "input": "mouse",
+      "part": "filling",
+      "matchesLive": true,
+      "tapRestoresAllButtons": true
+    },
+    {
+      "input": "mouse",
+      "part": "salsa",
+      "matchesLive": true,
+      "tapRestoresAllButtons": true
+    },
+    {
+      "keyboard": true,
+      "enter": true,
+      "space": true,
+      "arrows": true,
+      "escapeRestoresFocus": true
+    },
+    {
+      "input": "touch",
+      "part": "fold",
+      "matchesLive": true,
+      "tapRestoresAllButtons": true
+    },
+    {
+      "input": "touch",
+      "part": "filling",
+      "matchesLive": true,
+      "tapRestoresAllButtons": true
+    },
+    {
+      "input": "touch",
+      "part": "salsa",
+      "matchesLive": true,
+      "tapRestoresAllButtons": true
+    }
+  ],
+  "heights": [
+    {
+      "width": 1440,
+      "whole": 768,
+      "inside": 768,
+      "unchanged": true
+    },
+    {
+      "width": 1280,
+      "whole": 588,
+      "inside": 588,
+      "unchanged": true
+    },
+    {
+      "width": 820,
+      "whole": 1018.984375,
+      "inside": 1018.984375,
+      "unchanged": true
+    },
+    {
+      "width": 390,
+      "whole": 667.453125,
+      "inside": 680.203125,
+      "unchanged": true
+    },
+    {
+      "width": 320,
+      "whole": 610.578125,
+      "inside": 623.328125,
+      "unchanged": true
+    }
+  ],
+  "errors": [],
+  "accessibilityWarnings": [],
+  "failedLocal": []
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "name": "initial",
+    "detailOpen": "false",
+    "closeup": "",
+    "spread": "0",
+    "hotspotsOpacity": "1",
+    "inert": false,
+    "ariaHidden": null
+  },
+  {
+    "name": "fold",
+    "detailOpen": "true",
+    "closeup": "fold",
+    "spread": "0",
+    "hotspotsOpacity": "0",
+    "inert": true,
+    "ariaHidden": "true"
+  },
+  {
+    "name": "tap-exit-fold",
+    "detailOpen": "false",
+    "closeup": "",
+    "spread": "0",
+    "hotspotsOpacity": "1",
+    "inert": false,
+    "ariaHidden": "false"
+  },
+  {
+    "name": "filling",
+    "detailOpen": "true",
+    "closeup": "",
+    "spread": "1",
+    "hotspotsOpacity": "0",
+    "inert": true,
+    "ariaHidden": "true"
+  },
+  {
+    "name": "tap-exit-filling",
+    "detailOpen": "false",
+    "closeup": "",
+    "spread": "0",
+    "hotspotsOpacity": "1",
+    "inert": false,
+    "ariaHidden": "false"
+  },
+  {
+    "name": "salsa",
+    "detailOpen": "true",
+    "closeup": "salsa",
+    "spread": "0",
+    "hotspotsOpacity": "0",
+    "inert": true,
+    "ariaHidden": "true"
+  },
+  {
+    "name": "tap-exit-salsa",
+    "detailOpen": "false",
+    "closeup": "",
+    "spread": "0",
+    "hotspotsOpacity": "1",
+    "inert": false,
+    "ariaHidden": "false"
+  }
+]
