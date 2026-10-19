@@ -1,0 +1,1382 @@
+[
+  {
+    "route": "index.html",
+    "state": "top",
+    "width": 320,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "index.html",
+    "state": "scroll",
+    "width": 320,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "index.html",
+    "state": "top",
+    "width": 390,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "index.html",
+    "state": "scroll",
+    "width": 390,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "index.html",
+    "state": "top",
+    "width": 640,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "index.html",
+    "state": "scroll",
+    "width": 640,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "index.html",
+    "state": "top",
+    "width": 768,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "index.html",
+    "state": "scroll",
+    "width": 768,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "index.html",
+    "state": "top",
+    "width": 980,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "index.html",
+    "state": "scroll",
+    "width": 980,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "index.html",
+    "state": "top",
+    "width": 1024,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "index.html",
+    "state": "scroll",
+    "width": 1024,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "index.html",
+    "state": "top",
+    "width": 1512,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "index.html",
+    "state": "scroll",
+    "width": 1512,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "burlington.html",
+    "state": "top",
+    "width": 320,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "burlington.html",
+    "state": "scroll",
+    "width": 320,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "burlington.html",
+    "state": "top",
+    "width": 390,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "burlington.html",
+    "state": "scroll",
+    "width": 390,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "burlington.html",
+    "state": "top",
+    "width": 640,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "burlington.html",
+    "state": "scroll",
+    "width": 640,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "burlington.html",
+    "state": "top",
+    "width": 768,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "burlington.html",
+    "state": "scroll",
+    "width": 768,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "burlington.html",
+    "state": "top",
+    "width": 980,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "burlington.html",
+    "state": "scroll",
+    "width": 980,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "burlington.html",
+    "state": "top",
+    "width": 1024,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "burlington.html",
+    "state": "scroll",
+    "width": 1024,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "burlington.html",
+    "state": "top",
+    "width": 1512,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "route": "burlington.html",
+    "state": "scroll",
+    "width": 1512,
+    "overflow": false,
+    "items": [
+      {
+        "name": "Menu",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Delivery",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Rewards",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Catering",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Our Story",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "My account",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "0",
+        "visible": true,
+        "fits": true
+      },
+      {
+        "name": "Start your order",
+        "visible": true,
+        "fits": true
+      }
+    ],
+    "hamburger": false
+  },
+  {
+    "orderSheet": true,
+    "focusRestored": true
+  },
+  {
+    "cart": true,
+    "accountVisible": true
+  }
+]

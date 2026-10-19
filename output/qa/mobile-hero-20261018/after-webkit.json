@@ -1,0 +1,167 @@
+[
+  {
+    "hero": {
+      "top": 0,
+      "bottom": 547,
+      "height": 547
+    },
+    "photo": {
+      "top": 0,
+      "bottom": 640,
+      "height": 640
+    },
+    "fade": {
+      "top": 0,
+      "bottom": 45,
+      "height": 45
+    },
+    "nav": {
+      "top": 12,
+      "bottom": 72,
+      "height": 60
+    },
+    "heading": {
+      "top": 603,
+      "bottom": 638.6875,
+      "height": 35.6875
+    },
+    "viewport": 659,
+    "overflow": false,
+    "width": 393,
+    "height": 659,
+    "headingVisible": true,
+    "photoAtZero": true
+  },
+  {
+    "hero": {
+      "top": 0,
+      "bottom": 616,
+      "height": 616
+    },
+    "photo": {
+      "top": 0,
+      "bottom": 640,
+      "height": 640
+    },
+    "fade": {
+      "top": 0,
+      "bottom": 45,
+      "height": 45
+    },
+    "nav": {
+      "top": 12,
+      "bottom": 72,
+      "height": 60
+    },
+    "heading": {
+      "top": 672,
+      "bottom": 707.6875,
+      "height": 35.6875
+    },
+    "viewport": 852,
+    "overflow": false,
+    "width": 393,
+    "height": 852,
+    "headingVisible": true,
+    "photoAtZero": true
+  },
+  {
+    "hero": {
+      "top": 0,
+      "bottom": 552,
+      "height": 552
+    },
+    "photo": {
+      "top": 0,
+      "bottom": 640,
+      "height": 640
+    },
+    "fade": {
+      "top": 0,
+      "bottom": 45,
+      "height": 45
+    },
+    "nav": {
+      "top": 12,
+      "bottom": 72,
+      "height": 60
+    },
+    "heading": {
+      "top": 608,
+      "bottom": 643.6875,
+      "height": 35.6875
+    },
+    "viewport": 664,
+    "overflow": false,
+    "width": 390,
+    "height": 664,
+    "headingVisible": true,
+    "photoAtZero": true
+  },
+  {
+    "hero": {
+      "top": 0,
+      "bottom": 555,
+      "height": 555
+    },
+    "photo": {
+      "top": 0,
+      "bottom": 640,
+      "height": 640
+    },
+    "fade": {
+      "top": 0,
+      "bottom": 45,
+      "height": 45
+    },
+    "nav": {
+      "top": 12,
+      "bottom": 72,
+      "height": 60
+    },
+    "heading": {
+      "top": 611,
+      "bottom": 646.6875,
+      "height": 35.6875
+    },
+    "viewport": 667,
+    "overflow": false,
+    "width": 375,
+    "height": 667,
+    "headingVisible": true,
+    "photoAtZero": true
+  },
+  {
+    "hero": {
+      "top": 0,
+      "bottom": 768,
+      "height": 768
+    },
+    "photo": {
+      "top": 48,
+      "bottom": 816,
+      "height": 768
+    },
+    "fade": {
+      "top": 48,
+      "bottom": 88,
+      "height": 40
+    },
+    "nav": {
+      "top": 16,
+      "bottom": 80,
+      "height": 64
+    },
+    "heading": {
+      "top": 824,
+      "bottom": 891.1875,
+      "height": 67.1875
+    },
+    "viewport": 900,
+    "overflow": false,
+    "width": 1440,
+    "height": 900,
+    "headingVisible": true,
+    "photoAtZero": false
+  }
+]

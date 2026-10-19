@@ -1,0 +1,42 @@
+[
+  {
+    "width": 320,
+    "sidebarClear": true,
+    "headingClear": true,
+    "navBottom": 164,
+    "sidebarTop": 176,
+    "headingTop": 236.796875
+  },
+  {
+    "width": 390,
+    "sidebarClear": true,
+    "headingClear": true,
+    "navBottom": 164,
+    "sidebarTop": 176,
+    "headingTop": 237.421875
+  },
+  {
+    "width": 768,
+    "sidebarClear": true,
+    "headingClear": true,
+    "navBottom": 120,
+    "sidebarTop": 152,
+    "headingTop": 151.875
+  },
+  {
+    "width": 980,
+    "sidebarClear": true,
+    "headingClear": true,
+    "navBottom": 120,
+    "sidebarTop": 152,
+    "headingTop": 151.875
+  },
+  {
+    "width": 1024,
+    "sidebarClear": true,
+    "headingClear": true,
+    "navBottom": 68,
+    "sidebarTop": 104,
+    "headingTop": 103.875
+  }
+]

@@ -1,0 +1,11 @@
+State: local files only. No commit, push, or deployment.
+Live baseline: homepage declares SVG for both favicon and apple-touch-icon; standard favicon.ico and apple-touch-icon.png return 404. No Squarespace references found in homepage HTML. Device cache was not inspected.
+Cause found: missing PNG Apple touch icon and raster favicon fallback files.
+Reference: https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
+Flutter reference checked: Samosaman-App/web/index.html and web/manifest.json declare PNG icons. Its native app icon is the default Flutter mark. Website derivatives use Website/public/assets/m_logo.svg.
+Before fix: verify.py https://samosamanvt.com failed on all 13 page touch-icon declarations and all 7 icon/manifest resources.
+After fix: verify.py http://127.0.0.1:4287 passed for 13 pages and 7 icon/manifest resources. PNG dimensions, ICO sizes, MIME types and manifest targets checked.
+Browser check: all five declared icon image resources decoded in Chromium with the iPhone 13 device profile. Browser chrome, Safari, a physical mobile device, and cached bookmarks were not verified.
+Visual check: 180px PNG uses the existing SamosaMan mark on an opaque cream square.
+Source preservation: all 13 edited pages match their pre-change content after removal of the icon block. The pre-existing homepage CSS version change is retained. No CSS, JavaScript, Firebase settings, or Flutter files were changed by this fix.
+git diff --check: passed.

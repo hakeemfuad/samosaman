@@ -1,0 +1,2897 @@
+{
+  "checkedAt": "2026-10-18T23:41:48.266Z",
+  "results": [
+    {
+      "route": "index.html",
+      "width": 390,
+      "motion": "no-preference",
+      "pass": true,
+      "quickReopen": true,
+      "errors": [],
+      "actions": [
+        {
+          "action": "button",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.699999999999818,
+              "opacity": 0.630052,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.30000000000018,
+              "opacity": 0.350408,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 50,
+              "opacity": 0.196711,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.59999999999991,
+              "opacity": 0.114811,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.40000000000009,
+              "opacity": 0.0669933,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 100,
+              "opacity": 0.0383304,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.69999999999982,
+              "opacity": 0.0204916,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.30000000000018,
+              "opacity": 0.00970642,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 150,
+              "opacity": 0.00353228,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.5999999999999,
+              "opacity": 0.000628924,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.30000000000018,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 200,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.5999999999999,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.30000000000018,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 250,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        },
+        {
+          "action": "scroll",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.59999999999991,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.399999999999636,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 50,
+              "opacity": 0.630842,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.69999999999982,
+              "opacity": 0.34963,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.39999999999964,
+              "opacity": 0.196306,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 100,
+              "opacity": 0.114584,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.69999999999982,
+              "opacity": 0.0670762,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.29999999999973,
+              "opacity": 0.0383816,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 150,
+              "opacity": 0.0205232,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.69999999999982,
+              "opacity": 0.00967591,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.29999999999973,
+              "opacity": 0.0035422,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 200,
+              "opacity": 0.000622865,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.69999999999982,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.29999999999973,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 250,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        },
+        {
+          "action": "escape",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.59999999999991,
+              "opacity": 0.631674,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.29999999999973,
+              "opacity": 0.350131,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 50,
+              "opacity": 0.196567,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.59999999999991,
+              "opacity": 0.11473,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.29999999999973,
+              "opacity": 0.0671635,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 100,
+              "opacity": 0.0383008,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.59999999999991,
+              "opacity": 0.0205564,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.29999999999973,
+              "opacity": 0.00969559,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 150,
+              "opacity": 0.00352654,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.5999999999999,
+              "opacity": 0.00062677,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.29999999999973,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 200,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.5999999999999,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.29999999999973,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 250,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        },
+        {
+          "action": "outside",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.699999999999818,
+              "opacity": 0.629719,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.29999999999927,
+              "opacity": 0.350207,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 50,
+              "opacity": 0.196606,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.59999999999945,
+              "opacity": 0.114752,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.29999999999927,
+              "opacity": 0.0671766,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 100,
+              "opacity": 0.0383089,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.69999999999982,
+              "opacity": 0.0204784,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.29999999999927,
+              "opacity": 0.00969854,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 150,
+              "opacity": 0.00352811,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.69999999999982,
+              "opacity": 0.000617613,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.29999999999927,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 200,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.59999999999945,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.29999999999927,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 250,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "burlington.html",
+      "width": 390,
+      "motion": "no-preference",
+      "pass": true,
+      "quickReopen": true,
+      "errors": [],
+      "actions": [
+        {
+          "action": "button",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.700000000000273,
+              "opacity": 0.631362,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.40000000000009,
+              "opacity": 0.349943,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 50,
+              "opacity": 0.197124,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.70000000000027,
+              "opacity": 0.114675,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.40000000000009,
+              "opacity": 0.0671307,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 100.09999999999991,
+              "opacity": 0.0382807,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.70000000000027,
+              "opacity": 0.0205439,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.4000000000001,
+              "opacity": 0.00968821,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 150,
+              "opacity": 0.00354873,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.70000000000027,
+              "opacity": 0.000625304,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.4000000000001,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 200,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.80000000000018,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.30000000000018,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 250.0999999999999,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        },
+        {
+          "action": "scroll",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.59999999999991,
+              "opacity": 0.631486,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.30000000000018,
+              "opacity": 0.350018,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 49.90000000000009,
+              "opacity": 0.197163,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.59999999999991,
+              "opacity": 0.114697,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.30000000000018,
+              "opacity": 0.0671438,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 99.90000000000009,
+              "opacity": 0.0384234,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.69999999999982,
+              "opacity": 0.0204659,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.30000000000018,
+              "opacity": 0.00969116,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 149.9000000000001,
+              "opacity": 0.0035503,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.69999999999982,
+              "opacity": 0.000616158,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.30000000000018,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 200,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.69999999999982,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.30000000000018,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 249.9000000000001,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        },
+        {
+          "action": "escape",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.59999999999991,
+              "opacity": 0.631611,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.29999999999973,
+              "opacity": 0.350094,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 49.899999999999636,
+              "opacity": 0.197202,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.69999999999982,
+              "opacity": 0.114353,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.29999999999973,
+              "opacity": 0.0671569,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 100,
+              "opacity": 0.0382968,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.59999999999991,
+              "opacity": 0.0205539,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.29999999999973,
+              "opacity": 0.00969411,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 150,
+              "opacity": 0.00352576,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.69999999999982,
+              "opacity": 0.00061674,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.29999999999973,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 200,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.5999999999999,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.29999999999973,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 250,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        },
+        {
+          "action": "outside",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.699999999999818,
+              "opacity": 0.629657,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.399999999999636,
+              "opacity": 0.348917,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 50,
+              "opacity": 0.196587,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.69999999999982,
+              "opacity": 0.114375,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.29999999999927,
+              "opacity": 0.06717,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 100,
+              "opacity": 0.0383049,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.59999999999945,
+              "opacity": 0.0205589,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.29999999999927,
+              "opacity": 0.00969706,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 149.89999999999964,
+              "opacity": 0.00355344,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.59999999999945,
+              "opacity": 0.000627064,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.29999999999927,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 200,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.59999999999945,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.29999999999927,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 250,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "index.html",
+      "width": 820,
+      "motion": "no-preference",
+      "pass": true,
+      "quickReopen": true,
+      "errors": [],
+      "actions": [
+        {
+          "action": "button",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.700000000000045,
+              "opacity": 0.630114,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.299999999999955,
+              "opacity": 0.350445,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 50.00000000000023,
+              "opacity": 0.19673,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.70000000000005,
+              "opacity": 0.114456,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.39999999999986,
+              "opacity": 0.0669999,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 100.00000000000023,
+              "opacity": 0.0383345,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.70000000000005,
+              "opacity": 0.0204941,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.29999999999995,
+              "opacity": 0.0097079,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 150.00000000000023,
+              "opacity": 0.00353306,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.60000000000014,
+              "opacity": 0.000629218,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.29999999999995,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 200.00000000000023,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.70000000000005,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.29999999999995,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 249.89999999999986,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        },
+        {
+          "action": "scroll",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.700000000000273,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.30000000000018,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 50,
+              "opacity": 0.630904,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.59999999999991,
+              "opacity": 0.350923,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.40000000000009,
+              "opacity": 0.196325,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 100,
+              "opacity": 0.114595,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.70000000000027,
+              "opacity": 0.0670827,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.30000000000018,
+              "opacity": 0.0383856,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 150,
+              "opacity": 0.0205256,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.70000000000027,
+              "opacity": 0.00967739,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.30000000000018,
+              "opacity": 0.00354298,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 200,
+              "opacity": 0.000623157,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.70000000000027,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.30000000000018,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 250,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        },
+        {
+          "action": "escape",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.700000000000273,
+              "opacity": 0.629657,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.30000000000018,
+              "opacity": 0.350169,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 50,
+              "opacity": 0.196587,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.70000000000027,
+              "opacity": 0.114375,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.30000000000018,
+              "opacity": 0.06717,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 100,
+              "opacity": 0.0383049,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.59999999999991,
+              "opacity": 0.0205589,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.30000000000018,
+              "opacity": 0.00969706,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 150,
+              "opacity": 0.00352733,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.5999999999999,
+              "opacity": 0.000627064,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.30000000000018,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 200,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.70000000000027,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.30000000000018,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 250,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        },
+        {
+          "action": "outside",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.700000000000273,
+              "opacity": 0.629781,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.29999999999973,
+              "opacity": 0.350244,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 49.999999999999545,
+              "opacity": 0.196626,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.59999999999991,
+              "opacity": 0.114763,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.29999999999973,
+              "opacity": 0.0671831,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 99.99999999999955,
+              "opacity": 0.0383129,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.70000000000027,
+              "opacity": 0.0204809,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.29999999999973,
+              "opacity": 0.00970002,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 149.99999999999955,
+              "opacity": 0.00352889,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.70000000000027,
+              "opacity": 0.000617904,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.29999999999973,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 199.99999999999955,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.70000000000027,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.29999999999973,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 249.99999999999955,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "burlington.html",
+      "width": 820,
+      "motion": "no-preference",
+      "pass": true,
+      "quickReopen": true,
+      "errors": [],
+      "actions": [
+        {
+          "action": "button",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.700000000000045,
+              "opacity": 0.631091,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.40000000000009,
+              "opacity": 0.34978,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 50,
+              "opacity": 0.197038,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.70000000000005,
+              "opacity": 0.114628,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.40000000000009,
+              "opacity": 0.0671023,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 100,
+              "opacity": 0.0383978,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.70000000000005,
+              "opacity": 0.0205331,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.4000000000001,
+              "opacity": 0.00968181,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 150.0999999999999,
+              "opacity": 0.00351925,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.79999999999995,
+              "opacity": 0.000614319,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.4000000000001,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 200.0999999999999,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.69999999999982,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.4000000000001,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 250,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        },
+        {
+          "action": "scroll",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.799999999999727,
+              "opacity": 0.629138,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.399999999999636,
+              "opacity": 0.349855,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 50,
+              "opacity": 0.197078,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.69999999999982,
+              "opacity": 0.11465,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.39999999999964,
+              "opacity": 0.0671154,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 100.09999999999991,
+              "opacity": 0.0382712,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.79999999999973,
+              "opacity": 0.0204552,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.39999999999964,
+              "opacity": 0.00968476,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 150,
+              "opacity": 0.0035469,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.69999999999982,
+              "opacity": 0.000624621,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.39999999999964,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 200,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.79999999999973,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.39999999999964,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 250,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        },
+        {
+          "action": "escape",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.800000000000182,
+              "opacity": 0.629262,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.40000000000009,
+              "opacity": 0.349931,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 50,
+              "opacity": 0.197117,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.70000000000027,
+              "opacity": 0.114671,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.40000000000009,
+              "opacity": 0.0671285,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 100,
+              "opacity": 0.038414,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.70000000000027,
+              "opacity": 0.0205431,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.4000000000001,
+              "opacity": 0.00968771,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 150.0999999999999,
+              "opacity": 0.00352238,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.70000000000027,
+              "opacity": 0.000625207,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.4000000000001,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 200.0999999999999,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.70000000000027,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.4000000000001,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 250,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        },
+        {
+          "action": "outside",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 1,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.59999999999991,
+              "opacity": 0.631466,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.30000000000018,
+              "opacity": 0.350006,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 50,
+              "opacity": 0.196502,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.59999999999991,
+              "opacity": 0.114693,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.30000000000018,
+              "opacity": 0.0671416,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 100,
+              "opacity": 0.0382874,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.69999999999982,
+              "opacity": 0.0204651,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.30000000000018,
+              "opacity": 0.00969067,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 150,
+              "opacity": 0.00352394,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.69999999999982,
+              "opacity": 0.000616062,
+              "visibility": "visible",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.19999999999982,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 199.89999999999964,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.60000000000036,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.30000000000018,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 249.89999999999964,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "index.html",
+      "width": 390,
+      "motion": "reduce",
+      "pass": true,
+      "quickReopen": true,
+      "errors": [],
+      "actions": [
+        {
+          "action": "button",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.682000000000016,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.281999999999925,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 49.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.58199999999988,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.28199999999993,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 99.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.58199999999988,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.28199999999993,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 149.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.58199999999988,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.28199999999993,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 199.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.68200000000002,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.28199999999993,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 249.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        },
+        {
+          "action": "scroll",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.682000000000244,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.28200000000015,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 49.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.68200000000024,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.38200000000006,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 99.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.68200000000024,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.38200000000006,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 149.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.58199999999988,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.28200000000015,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 199.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.68200000000024,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.28200000000015,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 249.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        },
+        {
+          "action": "escape",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.58199999999988,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.18199999999979,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 49.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.58199999999988,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.2819999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 99.8819999999996,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.58199999999988,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.1819999999998,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 149.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.58199999999988,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.2819999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 199.8819999999996,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.58199999999988,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.2819999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 249.8819999999996,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        },
+        {
+          "action": "outside",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.58199999999988,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.2819999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 49.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.58199999999988,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.2819999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 99.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.58199999999988,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.2819999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 149.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.58199999999988,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.2819999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 199.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.58199999999988,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.2819999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 249.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "burlington.html",
+      "width": 390,
+      "motion": "reduce",
+      "pass": true,
+      "quickReopen": true,
+      "errors": [],
+      "actions": [
+        {
+          "action": "button",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.610000000000127,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.309999999999945,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 49.91000000000008,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.61000000000013,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.30999999999995,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 99.91000000000008,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.61000000000013,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.30999999999995,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 149.91000000000008,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.61000000000013,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.21000000000004,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 199.91000000000008,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.61000000000013,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.30999999999995,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 249.91000000000008,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        },
+        {
+          "action": "scroll",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.59999999999991,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.29999999999973,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 50,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.69999999999982,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.29999999999973,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 100,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.59999999999991,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.29999999999973,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 149.9000000000001,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.5999999999999,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.29999999999973,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 199.9000000000001,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.5999999999999,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.29999999999973,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 250,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        },
+        {
+          "action": "escape",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.58199999999988,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.28200000000015,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 49.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.58199999999988,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.28200000000015,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 99.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.68199999999979,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.28200000000015,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 149.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.58199999999988,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.28200000000015,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 199.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.58199999999988,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.38200000000006,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 249.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        },
+        {
+          "action": "outside",
+          "pass": true,
+          "frames": [
+            {
+              "ms": 0,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 16.582000000000335,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 33.28200000000015,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 49.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 66.58200000000033,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 83.28200000000015,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 99.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 116.58200000000033,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 133.18200000000024,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 149.88200000000006,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 166.58200000000033,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 183.28200000000015,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 199.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 216.58200000000033,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 233.28200000000015,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            },
+            {
+              "ms": 249.98199999999997,
+              "opacity": 0,
+              "visibility": "hidden",
+              "hidden": true,
+              "inert": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
