@@ -8,6 +8,9 @@
 /documents/
 /videos/
 
+# Keep Markdown files local
+*.md
+
 # Editor and tool state
 /.agent/
 /.claude/
