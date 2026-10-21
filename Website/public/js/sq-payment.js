@@ -139,8 +139,9 @@ function getCurrentUser() {
     });
 }
 
-function getCart() {
+function getPaymentCart() {
     try {
+        if (typeof window.getCart === 'function') return window.getCart();
         return JSON.parse(localStorage.getItem('samosaman_cart')) || [];
     } catch (error) {
         return [];
@@ -162,7 +163,7 @@ function getCheckoutPaidSubtotal(cart) {
         }, 0);
 }
 
-function getCheckoutMinimumOrderState(cart = getCart()) {
+function getCheckoutMinimumOrderState(cart = getPaymentCart()) {
     const minimum = Number(window.SAMOSAMAN_MINIMUM_ORDER_SUBTOTAL) || 30;
     const subtotal = Math.round(getCheckoutPaidSubtotal(cart) * 100) / 100;
     const shortfall = Math.max(0, Math.round((minimum - subtotal) * 100) / 100);
@@ -336,7 +337,7 @@ function loadSquareSdk(sdkUrl) {
 async function buildCheckoutPayload() {
     const user = await getCurrentUser();
     const uid = user ? user.uid : null;
-    const cart = getCart();
+    const cart = getPaymentCart();
 
     if (cart.length === 0) {
         throw new Error('Your cart is empty.');

@@ -1,0 +1,21 @@
+{
+  "results": [
+    {
+      "flavor": "punjabi",
+      "touchAndKeyboardPass": true
+    },
+    {
+      "flavor": "chicken-cheese",
+      "touchAndKeyboardPass": true
+    },
+    {
+      "flavor": "spicy-chicken",
+      "touchAndKeyboardPass": true
+    },
+    {
+      "flavor": "apple-pie",
+      "touchAndKeyboardPass": true
+    }
+  ],
+  "errors": []
+}

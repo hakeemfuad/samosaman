@@ -70,43 +70,43 @@ const MENU_CATALOG_BY_BRANCH = {
     'apple-samosa': {
       id: 'apple-samosa',
       name: 'Apple Pie Samosa',
-      price: 3.75,
+      price: 4.75,
       image: 'assets/samosas/apple_samosa3.webp'
     },
     'punjabi-samosa': {
       id: 'punjabi-samosa',
       name: 'Traditional Punjabi Samosa',
-      price: 3.75,
+      price: 4.75,
       image: 'assets/samosas/traditional_punjabi_samosa.webp'
     },
     'steak-cheese': {
       id: 'steak-cheese',
       name: 'Steak & Cheese Samosa',
-      price: 3.75,
+      price: 4.75,
       image: 'assets/samosas/steakandcheese.webp'
     },
     'spicy-chicken': {
       id: 'spicy-chicken',
       name: 'Spicy Chicken Samosa',
-      price: 3.75,
+      price: 4.75,
       image: 'assets/samosas/spicy_chicken2.webp'
     },
     'chicken-cheese': {
       id: 'chicken-cheese',
       name: 'Chicken & Cheese Samosa',
-      price: 3.75,
+      price: 4.75,
       image: 'assets/samosas/chicken_cheese3.webp'
     },
     'spicy-potato': {
       id: 'spicy-potato',
       name: 'Spicy Potato Samosa',
-      price: 3.75,
+      price: 4.75,
       image: 'assets/samosas/spicy_potato_samosa.webp'
     },
     'veggie-samosa': {
       id: 'veggie-samosa',
       name: 'Vegetarian Samosa',
-      price: 3.75,
+      price: 4.75,
       image: 'assets/samosas/veggie_samosa3.webp'
     },
     'chicken-curry-meal': {

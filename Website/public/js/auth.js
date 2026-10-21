@@ -452,35 +452,46 @@ async function handleGoogleLogin() {
     }
 }
 
+// Keep the navbar's guest artwork for sign-out without changing it during startup.
+const guestAccountIcon = document.getElementById('nav-user-btn')?.querySelector('svg')?.cloneNode(true);
+
 // Auth State Listener
 auth.onAuthStateChanged((user) => {
     const userBtn = document.getElementById('nav-user-btn');
 
     if (user) {
         if (userBtn) {
-            // 1. Get First Name (or default to 'Me')
-            const firstName = user.displayName ? user.displayName.split(' ')[0] : 'Me';
+            const firstName = user.displayName?.trim().split(/\s+/)[0] || 'Me';
 
-            // 2. Adjust Layout for Vertical Stacking
+            // CSS selects the initial on desktop and the account label on mobile.
             userBtn.classList.remove('text-slate-500');
-            userBtn.classList.add('text-slate-900', 'flex', 'flex-col', 'items-center', 'justify-center', 'gap-0.5', 'leading-none');
-
-            // 3. Render Icon + Name
-            userBtn.innerHTML = `
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                <span class="text-[10px] font-bold uppercase tracking-wide">${firstName}</span>
-            `;
+            userBtn.classList.add('is-signed-in');
+            const initial = document.createElement('span');
+            initial.className = 'nav-user-initial';
+            initial.setAttribute('aria-hidden', 'true');
+            initial.textContent = Array.from(firstName.toLocaleUpperCase())[0];
+            const label = document.createElement('span');
+            label.className = 'nav-user-label';
+            label.setAttribute('aria-hidden', 'true');
+            label.textContent = 'My account';
+            userBtn.replaceChildren(initial, label);
+            userBtn.setAttribute('aria-label', `${firstName}, My account`);
+            userBtn.title = `${firstName} · My account`;
 
             // Redirect to rewards on click
             userBtn.onclick = () => window.location.href = 'myaccount.html';
         }
     } else {
         if (userBtn) {
-            // 4. Reset Layout for Guest (Icon Only)
-            userBtn.classList.remove('text-slate-900', 'flex', 'flex-col', 'items-center', 'justify-center', 'gap-0.5', 'leading-none');
+            // Restore the guest icon and sign-in action.
+            userBtn.classList.remove('is-signed-in');
             userBtn.classList.add('text-slate-500');
+            userBtn.setAttribute('aria-label', 'My account');
+            userBtn.removeAttribute('title');
 
-            userBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-6 h-6"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`;
+            if (guestAccountIcon && !userBtn.querySelector('svg')) {
+                userBtn.replaceChildren(guestAccountIcon.cloneNode(true));
+            }
 
             // Open Login Modal on click
             userBtn.onclick = () => toggleAuthModal(true);

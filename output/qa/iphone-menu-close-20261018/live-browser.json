@@ -1,0 +1,909 @@
+{
+  "results": [
+    {
+      "browser": "Chrome",
+      "motion": "no-preference",
+      "action": "button",
+      "pass": true,
+      "frames": [
+        {
+          "ms": 12.49999990463266,
+          "opacity": 1,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 29.199999904632477,
+          "opacity": 0.988746,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 45.79999990463239,
+          "opacity": 0.953942,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 62.49999990463266,
+          "opacity": 0.893791,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 79.09999990463257,
+          "opacity": 0.809133,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 95.79999990463239,
+          "opacity": 0.701647,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 112.49999990463266,
+          "opacity": 0.577959,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 129.19999990463248,
+          "opacity": 0.447616,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 145.7999999046324,
+          "opacity": 0.322489,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 162.49999990463266,
+          "opacity": 0.211082,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 179.09999990463257,
+          "opacity": 0.121573,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 195.7999999046324,
+          "opacity": 0.0562357,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 212.39999990463275,
+          "opacity": 0.0164064,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 229.09999990463257,
+          "opacity": 0.000454481,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 245.7999999046324,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 262.49999990463266,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 279.1999999046325,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 295.7999999046324,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        }
+      ]
+    },
+    {
+      "browser": "Chrome",
+      "motion": "no-preference",
+      "action": "scroll",
+      "pass": true,
+      "frames": [
+        {
+          "ms": 10.299999809265046,
+          "opacity": 1,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 26.899999809264955,
+          "opacity": 1,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 43.59999980926523,
+          "opacity": 0.988748,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 60.299999809265046,
+          "opacity": 0.953664,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 76.89999980926495,
+          "opacity": 0.8938,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 93.59999980926523,
+          "opacity": 0.808564,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 110.19999980926514,
+          "opacity": 0.701661,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 126.89999980926495,
+          "opacity": 0.577974,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 143.59999980926523,
+          "opacity": 0.447632,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 160.19999980926514,
+          "opacity": 0.322504,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 176.89999980926495,
+          "opacity": 0.211094,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 193.59999980926523,
+          "opacity": 0.121115,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 210.19999980926514,
+          "opacity": 0.056242,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 226.89999980926495,
+          "opacity": 0.0162439,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 243.49999980926532,
+          "opacity": 0.000455017,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 260.19999980926514,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 276.89999980926495,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 293.5999998092652,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        }
+      ]
+    },
+    {
+      "browser": "Chrome",
+      "motion": "reduce",
+      "action": "button",
+      "pass": true,
+      "frames": [
+        {
+          "ms": -10.200000190734954,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 6.399999809265182,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 22.99999980926509,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 39.799999809265046,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 56.39999980926518,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 72.99999980926509,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 89.69999980926514,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 106.39999980926518,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 123.09999980926523,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 139.79999980926505,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 156.39999980926518,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 173.09999980926523,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 189.79999980926505,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 206.39999980926518,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 222.9999998092651,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 239.69999980926514,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 256.3999998092652,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 273.0999998092652,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 289.79999980926505,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        }
+      ]
+    },
+    {
+      "browser": "Chrome",
+      "motion": "reduce",
+      "action": "scroll",
+      "pass": true,
+      "frames": [
+        {
+          "ms": -6.800000000000182,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 9.900000000000091,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 26.5,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 43.19999999999982,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 59.80000000000018,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 76.5,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 93.19999999999982,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 109.80000000000018,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 126.5,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 143.0999999999999,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 159.80000000000018,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 176.5,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 193.19999999999982,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 209.9000000000001,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 226.5,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 243.19999999999982,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 259.9000000000001,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 276.5,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 293.1999999999998,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        }
+      ]
+    },
+    {
+      "browser": "WebKit",
+      "motion": "no-preference",
+      "action": "button",
+      "pass": true,
+      "frames": [
+        {
+          "ms": 2,
+          "opacity": 0.999961,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 10,
+          "opacity": 0.996016,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 27,
+          "opacity": 0.972259,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 43,
+          "opacity": 0.925791,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 60,
+          "opacity": 0.850871,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 77,
+          "opacity": 0.751076,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 93,
+          "opacity": 0.638694,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 110,
+          "opacity": 0.507837,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 127,
+          "opacity": 0.376279,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 143,
+          "opacity": 0.262116,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 160,
+          "opacity": 0.159637,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 177,
+          "opacity": 0.08166,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 193,
+          "opacity": 0.029967,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 210,
+          "opacity": 0.003984,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 227,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 243,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 260,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 277,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 293,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        }
+      ]
+    },
+    {
+      "browser": "WebKit",
+      "motion": "no-preference",
+      "action": "scroll",
+      "pass": true,
+      "frames": [
+        {
+          "ms": 1,
+          "opacity": 1,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 88,
+          "opacity": 0.67535,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 110,
+          "opacity": 0.5,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 133,
+          "opacity": 0.331884,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 151,
+          "opacity": 0.211082,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 170,
+          "opacity": 0.110619,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 172,
+          "opacity": 0.10189,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 190,
+          "opacity": 0.037183,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 205,
+          "opacity": 0.00905,
+          "visible": true,
+          "inert": true
+        },
+        {
+          "ms": 227,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 238,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 255,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 272,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 288,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        }
+      ]
+    },
+    {
+      "browser": "WebKit",
+      "motion": "reduce",
+      "action": "button",
+      "pass": true,
+      "frames": [
+        {
+          "ms": 3,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 21,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 38,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 56,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 72,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 92,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 105,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 121,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 137,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 154,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 172,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 188,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 206,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 224,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 238,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 255,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 271,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 288,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        }
+      ]
+    },
+    {
+      "browser": "WebKit",
+      "motion": "reduce",
+      "action": "scroll",
+      "pass": true,
+      "frames": [
+        {
+          "ms": 0,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 68,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 85,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 102,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 118,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 135,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 152,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 168,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 185,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 202,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 218,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 235,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 252,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 268,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        },
+        {
+          "ms": 285,
+          "opacity": 0,
+          "visible": false,
+          "inert": true
+        }
+      ]
+    }
+  ],
+  "checkedAt": "2026-10-19T01:40:11.075Z"
+}

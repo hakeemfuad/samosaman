@@ -1,4 +1,9 @@
 const CART_KEY = 'samosaman_cart';
+const SAMOSA_PRICE = 4.75;
+const PAID_SAMOSA_IDS = new Set([
+    'apple-samosa', 'punjabi-samosa', 'steak-cheese', 'spicy-chicken',
+    'chicken-cheese', 'spicy-potato', 'veggie-samosa'
+]);
 const TAX_RATE = 0.07; // Estimated 7% tax
 window.SAMOSAMAN_MINIMUM_ORDER_SUBTOTAL = window.SAMOSAMAN_MINIMUM_ORDER_SUBTOTAL || 30;
 
@@ -48,7 +53,16 @@ const ORDER_TYPE_MODAL_HTML = `
  */
 function getCart() {
     const cartJson = localStorage.getItem(CART_KEY);
-    return cartJson ? JSON.parse(cartJson) : [];
+    const cart = cartJson ? JSON.parse(cartJson) : [];
+    let pricesChanged = false;
+    cart.forEach(item => {
+        if (item.isReward !== true && PAID_SAMOSA_IDS.has(item.id) && item.price !== SAMOSA_PRICE) {
+            item.price = SAMOSA_PRICE;
+            pricesChanged = true;
+        }
+    });
+    if (pricesChanged) localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    return cart;
 }
 
 /**

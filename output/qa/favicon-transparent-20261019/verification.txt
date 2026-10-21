@@ -1,0 +1,10 @@
+Local update only. Not deployed.
+PASS: all 13 local pages use the new transparent tab icon filenames.
+PASS: all 6 new and fallback favicon files match the prepared release candidate.
+PASS: all PNG and ICO frames have alpha 0 at all corners and contain opaque logo pixels.
+PASS: original Apple touch and Android home-screen icons remain byte-identical.
+PASS: only the 3 favicon href values changed on each local and candidate page.
+The previous live filename update is already deployed; its tab PNG and ICO icons are opaque.
+Browser check: blocked; automatic approval review failed because its selected model was at capacity. No browser action was executed.
+Hosting check: elevated Firebase credential-cache refresh and read-only release query were blocked by the same review failure. No deployment action was executed.
+iPhone old icon remains unresolved; direct-resource check requested.

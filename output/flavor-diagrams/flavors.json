@@ -1,0 +1,45 @@
+[
+  {
+    "slug": "punjabi",
+    "name": "Traditional Punjabi",
+    "heading": "Traditional Punjabi.",
+    "caption": "Spiced potatoes, green peas, and herbs.",
+    "sourceDescription": "A hearty blend of delicately spiced potatoes, green peas, and herbs.",
+    "source": "Website/public/burlington.html",
+    "image": "punjabi-filling-v1.webp",
+    "chutney": true
+  },
+  {
+    "slug": "chicken-cheese",
+    "name": "Chicken & Cheese",
+    "heading": "Chicken & Cheese.",
+    "caption": "Minced chicken, Cabot sharp cheddar, spices, and herbs.",
+    "sourceDescription": "Tender minced chicken, Cabot™ Sharp Cheddar, aromatic spices and herbs.",
+    "source": "Website/public/burlington.html",
+    "image": "chicken-cheese-filling-v1.webp",
+    "chutney": true
+  },
+  {
+    "slug": "spicy-chicken",
+    "name": "Spicy Chicken",
+    "heading": "Spicy Chicken.",
+    "caption": "Ground chicken with chili seasoning.",
+    "sourceDescription": "Roasted chicken with a hint of rich chili flavor.",
+    "source": "Website/public/burlington.html",
+    "image": "spicy-chicken-ground-v3.webp",
+    "chutney": true,
+    "textureSource": "User confirmed ground chicken on October 20, 2026.",
+    "appearanceSource": "User requested less red coloring and visible spice on October 20, 2026."
+  },
+  {
+    "slug": "apple-pie",
+    "name": "Apple Pie",
+    "heading": "Apple Pie.",
+    "caption": "Apples, nutmeg, brown sugar, and cinnamon.",
+    "sourceDescription": "Warm blend of apples, nutmeg, brown sugar, and cinnamon spice.",
+    "source": "Website/public/burlington.html",
+    "image": "apple-pie-more-syrup-v3.webp",
+    "chutney": false,
+    "appearanceSource": "User requested slightly smaller apple pieces, the same low piece count, and more syrup on October 20, 2026."
+  }
+]

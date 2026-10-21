@@ -9,13 +9,27 @@
     const badgePop = cartCount > 0 ? 'animate-pop' : '';
 
     // 2. SHARED GLASS NAVBAR
+    const navTransitionKey = 'samosaman_nav_transition';
+    let restoreCompactNav = false;
+    try {
+        const previousNav = JSON.parse(sessionStorage.getItem(navTransitionKey) || 'null');
+        sessionStorage.removeItem(navTransitionKey);
+        const navigation = performance.getEntriesByType('navigation')[0];
+        // Consume only a recent state from the page that led here in this tab.
+        restoreCompactNav = previousNav?.compact === true &&
+            previousNav.from === document.referrer.split('#')[0] &&
+            Date.now() - previousNav.savedAt < 30000 &&
+            navigation?.type === 'navigate' &&
+            !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    } catch (_) { /* Navigation still works when session storage is unavailable. */ }
+
     const isHome = document.body.classList.contains('home-page');
     const orderControl = (classes) => isHome
         ? `<button class="${classes}" type="button" data-open-order>Start your order</button>`
         : `<a class="${classes}" href="burlington.html">Start your order</a>`;
     const navbarHTML = `
 <div class="nav-pad">
-    <nav class="nav" id="glass-nav" aria-label="Main">
+    <nav class="nav${restoreCompactNav ? ' is-compact' : ''}" id="glass-nav" aria-label="Main">
       <a class="nav-logo" href="index.html" aria-label="SamosaMan home"><img src="assets/samosaman-wordmark.webp?v=20261015-liquid-glass" alt="SamosaMan" width="960" height="423"></a>
       <div class="nav-links">
         <a class="nav-link" href="burlington.html">Menu</a>
@@ -26,10 +40,10 @@
       </div>
       <span class="nav-spacer"></span>
       <button class="btn btn-glass circle circle-quiet" id="nav-user-btn" type="button" aria-label="My account">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       </button>
       <button class="btn btn-glass circle circle-quiet" id="open-cart-btn" type="button" aria-label="Open shopping bag">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 12.5h-11L5.5 8Z"/><path d="M9 8V6.8a3 3 0 0 1 6 0V8"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.75 3.5h5c.65 2.4 3.85 2.4 4.5 0h3v16.25L8.5 21l-2.75-2Z"/><path d="M8.5 3.5V21"/></svg>
         <span class="badge ${badgePop}" id="cart-badge" aria-hidden="true" ${cartCount === 0 ? 'hidden' : ''}>${cartCount}</span>
       </button>
       ${orderControl('btn btn-tint nav-cta')}
@@ -270,6 +284,7 @@
     const nav = document.getElementById('glass-nav');
     let previousScrollY = Math.max(0, window.scrollY);
     const condenseNav = () => {
+        if (restoreCompactNav) return;
         // The homepage order sheet fixes the body while preserving its scroll offset.
         const scrollY = Math.max(0, document.body.style.position === 'fixed'
             ? -(parseFloat(document.body.style.top) || 0)
@@ -283,7 +298,30 @@
         previousScrollY = scrollY;
     };
     window.addEventListener('scroll', condenseNav, { passive: true });
-    condenseNav();
+    if (restoreCompactNav) {
+        // Paint the outgoing size before the existing CSS transition expands it.
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+            restoreCompactNav = false;
+            condenseNav();
+        }));
+    } else {
+        condenseNav();
+    }
+    window.addEventListener('pagehide', () => {
+        try {
+            sessionStorage.setItem(navTransitionKey, JSON.stringify({
+                compact: nav?.classList.contains('is-compact') === true,
+                from: window.location.href.split('#')[0],
+                savedAt: Date.now(),
+            }));
+        } catch (_) { /* Storage is optional; do not interrupt page navigation. */ }
+    });
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+            // A cached page already has its own navbar and scroll position.
+            try { sessionStorage.removeItem(navTransitionKey); } catch (_) {}
+        }
+    });
 
     firebase.auth().onAuthStateChanged((user) => {
     const rewardsLinks = document.querySelectorAll('a[href="rewards-signup.html"], a[href="rewards.html"], a[href="myaccount.html"]');
@@ -292,14 +330,7 @@
         link.href = user ? 'myaccount.html' : 'rewards-signup.html';
     });
 
-    // Update user button to go to account page
-    const userBtn = document.getElementById('nav-user-btn');
-    if (userBtn && user) {
-        userBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.location.href = 'myaccount.html';
-        });
-    }
+    // auth.js owns the account button action, including its signed-out state.
 });
 
 })();

@@ -1,0 +1,9 @@
+State: local update only; not committed, pushed, or deployed.
+Change: 13 HTML pages now reference 5 icon files whose names contain their content hashes. Artwork and standard root fallback files are unchanged.
+Reference checked: Flutter web/index.html uses separate PNG favicon and Apple touch icon links.
+Local HTTP verification: PASS, 13 pages and all 5 new icon paths; MIME types, exact bytes, dimensions, ICO frames, SVG XML, and hash filenames checked.
+Source preservation: PASS, reversing only the 5 icon href replacements restores all 13 original local pages and all 13 live snapshot pages exactly.
+Git diff whitespace check: PASS.
+Device diagnosis: iPhone continues to show the old icon per user report; desktop shows the correct icon. A saved Safari icon is a hypothesis, not a confirmed cause.
+Physical iPhone result after new URLs: unverified; the update is not live.
+Read-only release preparation: Firebase rejected saved authentication and requires login --reauth. No new hosting version or release was created.

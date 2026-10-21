@@ -1,0 +1,75 @@
+{
+  "results": [
+    {
+      "route": "",
+      "width": 390,
+      "status": 200,
+      "noOverflow": true,
+      "images": true
+    },
+    {
+      "route": "",
+      "width": 1440,
+      "status": 200,
+      "noOverflow": true,
+      "images": true
+    },
+    {
+      "route": "burlington.html",
+      "width": 390,
+      "status": 200,
+      "noOverflow": true,
+      "images": true
+    },
+    {
+      "route": "burlington.html",
+      "width": 1440,
+      "status": 200,
+      "noOverflow": true,
+      "images": true
+    },
+    {
+      "route": "catering.html",
+      "width": 390,
+      "status": 200,
+      "noOverflow": true,
+      "images": true
+    },
+    {
+      "route": "catering.html",
+      "width": 1440,
+      "status": 200,
+      "noOverflow": true,
+      "images": true
+    },
+    {
+      "route": "delivery.html",
+      "width": 390,
+      "status": 200,
+      "noOverflow": true,
+      "images": true
+    },
+    {
+      "route": "delivery.html",
+      "width": 1440,
+      "status": 200,
+      "noOverflow": true,
+      "images": true
+    },
+    {
+      "route": "our-story.html",
+      "width": 390,
+      "status": 200,
+      "noOverflow": true,
+      "images": true
+    },
+    {
+      "route": "our-story.html",
+      "width": 1440,
+      "status": 200,
+      "noOverflow": true,
+      "images": true
+    }
+  ],
+  "errors": []
+}

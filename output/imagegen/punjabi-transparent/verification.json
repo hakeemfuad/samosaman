@@ -1,0 +1,27 @@
+{
+  "file": "/Users/hakeem/Samosaman/output/imagegen/punjabi-transparent/traditional_punjabi_samosa_transparent_v1.png",
+  "size": [
+    1531,
+    1027
+  ],
+  "mode": "RGBA",
+  "alpha_range": [
+    0,
+    255
+  ],
+  "transparent_pixels": 907839,
+  "partial_alpha_pixels": 663918,
+  "opaque_pixels": 580,
+  "visible_bounds": [
+    0,
+    0,
+    1531,
+    1027
+  ],
+  "corner_alpha": [
+    0,
+    0,
+    0,
+    0
+  ]
+}

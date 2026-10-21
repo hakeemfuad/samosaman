@@ -1,0 +1,38 @@
+{
+  "scope": "Local standalone Apple Pie image and gallery only.",
+  "image": "apple-pie-fewer-pieces-v2.webp",
+  "source": "Built-in imagegen edit",
+  "prompt": "apple-pie-fewer-pieces-v2.prompt.txt",
+  "embeddedAssetMatches": {
+    "apple-pie.html": true,
+    "index.html": true
+  },
+  "unchanged": {
+    "punjabi.html": true,
+    "chutney-control.html": true,
+    "baseline.html": true,
+    "chicken-cheese.html": true,
+    "spicy-chicken.html": true,
+    "preview.css": true,
+    "build.py": true
+  },
+  "build": {
+    "flavor": "apple-pie",
+    "bytes": 1046015,
+    "sha256": "3ef659c8fb376d1d31af1d46bf41032877aeea0890afe2f5d46752875778851c",
+    "chutney": false,
+    "image": "apple-pie-fewer-pieces-v2.webp"
+  },
+  "servedPageMatchesLocalFile": true,
+  "browser": {
+    "url": "http://127.0.0.1:4195/apple-pie.html",
+    "seeInsideSelected": true,
+    "visualCheck": "Fewer, larger apple pieces are visible. The filling fits the existing triangle. No chutney is shown.",
+    "screenshot": "qa/apple-pie-fewer-pieces-v2-browser.png"
+  },
+  "asset": {
+    "width": 1254,
+    "height": 1254,
+    "hasAlpha": true
+  }
+}

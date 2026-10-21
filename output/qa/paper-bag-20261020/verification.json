@@ -1,0 +1,118 @@
+[
+  {
+    "page": "index",
+    "width": 390,
+    "filled": false,
+    "label": "Open shopping bag",
+    "size": [
+      20,
+      20
+    ],
+    "buttonSize": [
+      44,
+      44
+    ],
+    "path": "M5.75 3.5h5c.65 2.4 3.85 2.4 4.5 0h3v16.25L8.5 20.8l-2.75-1.8Z",
+    "bag": {
+      "top": 34.25,
+      "bottom": 49.999999364217125
+    },
+    "account": {
+      "top": 34,
+      "bottom": 50
+    },
+    "overflow": false,
+    "badgeVisible": false,
+    "badgeText": "0",
+    "script": "http://127.0.0.1:4190/js/navbar.js?v=20261020-paper-bag",
+    "drawerOpenClose": "pass",
+    "errors": []
+  },
+  {
+    "page": "index",
+    "width": 1440,
+    "filled": false,
+    "label": "Open shopping bag",
+    "size": [
+      20,
+      20
+    ],
+    "buttonSize": [
+      44,
+      44
+    ],
+    "path": "M5.75 3.5h5c.65 2.4 3.85 2.4 4.5 0h3v16.25L8.5 20.8l-2.75-1.8Z",
+    "bag": {
+      "top": 40.25,
+      "bottom": 55.999999364217125
+    },
+    "account": {
+      "top": 40,
+      "bottom": 56
+    },
+    "overflow": false,
+    "badgeVisible": false,
+    "badgeText": "0",
+    "script": "http://127.0.0.1:4190/js/navbar.js?v=20261020-paper-bag",
+    "drawerOpenClose": "pass",
+    "errors": []
+  },
+  {
+    "page": "burlington",
+    "width": 390,
+    "filled": true,
+    "label": "Open shopping bag",
+    "size": [
+      20,
+      20
+    ],
+    "buttonSize": [
+      44,
+      44
+    ],
+    "path": "M5.75 3.5h5c.65 2.4 3.85 2.4 4.5 0h3v16.25L8.5 20.8l-2.75-1.8Z",
+    "bag": {
+      "top": 34.25,
+      "bottom": 49.999999364217125
+    },
+    "account": {
+      "top": 34,
+      "bottom": 50
+    },
+    "overflow": false,
+    "badgeVisible": true,
+    "badgeText": "2",
+    "script": "http://127.0.0.1:4190/js/navbar.js?v=20261020-paper-bag",
+    "drawerOpenClose": "pass",
+    "errors": []
+  },
+  {
+    "page": "burlington",
+    "width": 1440,
+    "filled": false,
+    "label": "Open shopping bag",
+    "size": [
+      20,
+      20
+    ],
+    "buttonSize": [
+      44,
+      44
+    ],
+    "path": "M5.75 3.5h5c.65 2.4 3.85 2.4 4.5 0h3v16.25L8.5 20.8l-2.75-1.8Z",
+    "bag": {
+      "top": 40.25,
+      "bottom": 55.999999364217125
+    },
+    "account": {
+      "top": 40,
+      "bottom": 56
+    },
+    "overflow": false,
+    "badgeVisible": false,
+    "badgeText": "0",
+    "script": "http://127.0.0.1:4190/js/navbar.js?v=20261020-paper-bag",
+    "drawerOpenClose": "pass",
+    "errors": []
+  }
+]

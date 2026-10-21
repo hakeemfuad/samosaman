@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- LOCAL PROTOTYPE: Three signed-in controls in the homepage navbar, selected with ?variant=1|2|3. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Account navbar · Three local options</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="preview.css">
+</head>
+<body class="home-page" data-variant="1">
+  <div id="navbar-placeholder">
+    <div class="nav-pad">
+      <nav class="nav is-compact" id="glass-nav" aria-label="Main">
+        <a class="nav-logo" href="index.html" aria-label="SamosaMan home"><img src="assets/samosaman-wordmark.webp" alt="SamosaMan" width="960" height="423"></a>
+        <div class="nav-links">
+          <a class="nav-link" href="burlington.html">Menu</a>
+          <a class="nav-link" href="delivery.html">Delivery</a>
+          <a class="nav-link" href="myaccount.html">Rewards</a>
+          <a class="nav-link" href="catering.html">Catering</a>
+          <a class="nav-link" href="our-story.html">Our Story</a>
+        </div>
+        <span class="nav-spacer"></span>
+        <button class="btn btn-glass circle-quiet account-control" id="nav-user-btn" type="button" aria-label="Hakeem, My account"></button>
+        <button class="btn btn-glass circle circle-quiet" id="open-cart-btn" type="button" aria-label="Open shopping bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 12.5h-11L5.5 8Z"/><path d="M9 8V6.8a3 3 0 0 1 6 0V8"/></svg>
+        </button>
+        <button class="btn btn-tint nav-cta" type="button">Start your order</button>
+        <button class="btn btn-glass circle circle-quiet menu-btn" id="mobile-menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu-overlay">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+        </button>
+        <div class="dropdown shelf" id="mobile-menu-overlay" hidden inert>
+          <a href="burlington.html">Menu</a><a href="delivery.html">Delivery</a><a href="myaccount.html">Rewards</a><a href="catering.html">Catering</a><a href="our-story.html">Our Story</a>
+          <button class="btn btn-tint" type="button">Start your order</button>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <main id="main"><!-- CURRENT_CREW_SECTION --></main>
+  <aside class="prototype-switcher" aria-label="Design options">
+    <div class="preview-meta"><span>LOCAL PREVIEW</span><div class="view-controls"><a id="device-link" href="mobile.html?variant=1" target="_top">Mobile view</a><button type="button" id="size-toggle" aria-pressed="true">Compact navbar</button></div></div>
+    <div class="switcher-main">
+      <button class="arrow" id="previous" type="button" aria-label="Previous option">←</button>
+      <div class="variant-description" aria-live="polite"><h1 id="variant-title">01 · Name pill</h1><p id="variant-note">The name stays beside the icon.</p></div>
+      <button class="arrow" id="next" type="button" aria-label="Next option">→</button>
+    </div>
+    <div class="variant-options" role="group" aria-label="Select an option">
+      <button type="button" data-select="1" aria-pressed="true">1 · Name pill</button>
+      <button type="button" data-select="2" aria-pressed="false">2 · Initial circle</button>
+      <button type="button" data-select="3" aria-pressed="false">3 · Account text</button>
+    </div>
+    <div class="fixture"><label for="preview-name">Signed in as</label><input id="preview-name" value="Hakeem" autocomplete="off" maxlength="60" aria-label="Preview name"></div>
+    <p class="preview-action" id="preview-action" role="status">Select the arrows to compare the options.</p>
+  </aside>
+  <script src="preview.js"></script>
+</body>
+</html>

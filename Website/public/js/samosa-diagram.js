@@ -6,7 +6,7 @@
     // its starter screen and has no product-detail component to share here.
     const parts = [
         { id: 'fold', title: 'A personal touch.', description: 'Folded by hand. One samosa at a time.' },
-        { id: 'filling', title: 'Goodness inside.', description: 'Minced beef, Cabot sharp white cheddar, onion, and spices.' },
+        { id: 'filling', title: 'Goodness inside.', description: 'Minced beef, Cabot™ sharp white cheddar, onion, and spices.' },
         { id: 'salsa', title: 'Better together.', description: 'Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.' },
     ];
     const stage = diagram.querySelector('.samosa-diagram__stage');
@@ -50,7 +50,13 @@
         caption.classList.toggle('is-idle', !part);
         title.hidden = !part;
         title.textContent = part?.title || '';
-        description.textContent = part?.description || 'Select + for a closer look.';
+        const copy = part?.description || 'Select + for a closer look.';
+        description.replaceChildren(...copy.split(/(™)/).map((text) => {
+            if (text !== '™') return text;
+            const trademark = document.createElement('sup');
+            trademark.textContent = text;
+            return trademark;
+        }));
     };
 
     const leaveDetail = ({ restoreFocus = true } = {}) => {

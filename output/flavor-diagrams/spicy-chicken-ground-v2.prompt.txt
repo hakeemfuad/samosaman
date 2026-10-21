@@ -1,0 +1,6 @@
+Use case: precise-object-edit.
+Edit target: the supplied Spicy Chicken samosa filling image.
+Change only the chicken texture from shredded/chopped chicken to cooked GROUND CHICKEN.
+The filling must consist entirely of small, irregular, loose ground-chicken crumbles (approximately 3–8 mm), finely minced and cooked with chili seasoning. Show granular, crumbly pieces with small browned edges and warm golden interiors under the existing warm red-brown chili coating. The ground meat should look moist and appetizing, with the same subtle glossy seasoning and very small chili flecks.
+Keep the exact triangular silhouette, upper-left apex, lower-left corner, right-hand point, camera angle, canvas margins, scale, soft light direction, and photographic style of the edit target. Keep the same square canvas and genuine transparent background.
+Do not leave any shredded or pulled chicken, string-like muscle fibers, long strips, large chunks, diced chicken cubes, cheese, vegetables, peas, potatoes, whole peppers or added ingredients. No pastry, shell, plate, bowl, text, watermark or background. Do not change the overall color, shape or framing.

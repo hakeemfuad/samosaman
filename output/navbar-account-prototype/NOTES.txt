@@ -1,0 +1,34 @@
+LOCAL NAVBAR DESIGN PROTOTYPE
+
+Run from the repository root:
+python3 output/navbar-account-prototype/serve.py
+
+Open http://127.0.0.1:4196/?variant=1
+Options 1, 2, and 3 share one page. Use the bottom controls or arrow keys.
+Enter a different name to check the available space. Select Compact navbar
+to compare the full navbar. All actions are simulated. No user data is read.
+
+1. Name pill: person icon beside a single-line name. On screens at or below
+   360 pixels, omit the icon to keep room for the name.
+2. Initial circle: one initial in the current 44-pixel account control.
+3. Account text: My account as a plain text control. Its width stays fixed
+   when the user's name changes.
+
+The preview reads the current crew section and shared CSS from Website/public.
+It runs outside the Firebase public directory. No production source is changed.
+
+Reference code inspected:
+- Website/public/js/auth.js: signed-in account behavior and current name stack.
+- Website/public/js/navbar.js: navbar structure and 44-pixel account control.
+- Website/public/css/navbar.css: glass, compact layout, mobile breakpoints.
+- samosaman_app/lib/main.dart: starter Flutter screen; no account component.
+- /Users/hakeem/Qloset/lib/widgets/profile/account_profile_header.dart:
+  horizontal avatar and name, one line, ellipsis.
+- /Users/hakeem/Qloset/lib/widgets/liquid_glass_topbar.dart:
+  44-pixel actions, semantic labels, translucent glass.
+
+Selected design: option 3 at widths up to 980 pixels; option 2 above 980 pixels.
+Applied locally to the shared website navbar on October 20, 2026. Not published.
+The selected design preview uses the real shared CSS, navbar.js, and auth.js
+with a local sample account: http://127.0.0.1:4196/selected.html
+Use its Mobile and Desktop buttons to compare the selected behavior.
