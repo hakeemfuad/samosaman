@@ -89,17 +89,20 @@ function updateCartBadge() {
     const badge = document.getElementById('cart-badge');
     
     if (badge) {
+        const countChanged = Number(badge.textContent) !== totalItems;
         badge.innerText = totalItems;
         badge.hidden = totalItems === 0;
         
         // Keep opacity ready for the next non-empty cart
         badge.classList.remove('opacity-0');
 
-        // Only animate when items are actually added (count > 0)
-        if (totalItems > 0) {
+        // Page initialization and repeated refreshes keep the current count still.
+        if (countChanged) {
             badge.classList.remove('animate-pop');
-            void badge.offsetWidth; 
-            badge.classList.add('animate-pop');
+            if (totalItems > 0) {
+                void badge.offsetWidth;
+                badge.classList.add('animate-pop');
+            }
         }
     }
 }

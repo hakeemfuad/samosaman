@@ -5,9 +5,14 @@
     // Product language follows the Burlington menu. The Flutter app still has
     // its starter screen and has no product-detail component to share here.
     const parts = [
-        { id: 'fold', title: 'A personal touch.', description: 'Folded by hand. One samosa at a time.' },
+        { id: 'fold', title: 'A personal touch.', description: 'Made with love. One samosa at a time.' },
         { id: 'filling', title: 'Goodness inside.', description: 'Minced beef, Cabot™ sharp white cheddar, onion, and spices.' },
-        { id: 'salsa', title: 'Better together.', description: 'Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.' },
+        {
+            id: 'salsa',
+            title: 'Better together.',
+            description: 'Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.',
+            ingredients: 'Tomato, green pepper, yellow onion, peeled garlic, cilantro, ginger, habanero peppers, lemon juice, and a dash of salt.',
+        },
     ];
     const stage = diagram.querySelector('.samosa-diagram__stage');
     const hotspots = diagram.querySelector('[data-diagram-hotspots]');
@@ -15,6 +20,7 @@
     const caption = diagram.querySelector('[data-diagram-caption]');
     const title = caption.querySelector('h3');
     const description = caption.querySelector('p');
+    const ingredients = caption.querySelector('[data-diagram-ingredients]');
     const toggle = diagram.querySelector('[data-diagram-toggle]');
     const whole = diagram.querySelector('[data-diagram-whole]');
     const controls = diagram.querySelector('[data-diagram-controls]');
@@ -57,6 +63,8 @@
             trademark.textContent = text;
             return trademark;
         }));
+        ingredients.hidden = !part?.ingredients;
+        ingredients.textContent = part?.ingredients ? `Ingredients: ${part.ingredients}` : '';
     };
 
     const leaveDetail = ({ restoreFocus = true } = {}) => {

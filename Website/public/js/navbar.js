@@ -6,8 +6,6 @@
         cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
     } catch (e) { console.error(e); }
 
-    const badgePop = cartCount > 0 ? 'animate-pop' : '';
-
     // 2. SHARED GLASS NAVBAR
     const navTransitionKey = 'samosaman_nav_transition';
     let restoreCompactNav = false;
@@ -44,7 +42,7 @@
       </button>
       <button class="btn btn-glass circle circle-quiet" id="open-cart-btn" type="button" aria-label="Open shopping bag">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.75 3.5h5c.65 2.4 3.85 2.4 4.5 0h3v16.25L8.5 21l-2.75-2Z"/><path d="M8.5 3.5V21"/></svg>
-        <span class="badge ${badgePop}" id="cart-badge" aria-hidden="true" ${cartCount === 0 ? 'hidden' : ''}>${cartCount}</span>
+        <span class="badge" id="cart-badge" aria-hidden="true" ${cartCount === 0 ? 'hidden' : ''}>${cartCount}</span>
       </button>
       ${orderControl('btn btn-tint nav-cta')}
       <button class="btn btn-glass circle circle-quiet menu-btn" id="mobile-menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu-overlay">
