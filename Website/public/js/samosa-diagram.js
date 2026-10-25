@@ -4,20 +4,21 @@
 
     // Product language follows the Burlington menu. The Flutter app still has
     // its starter screen and has no product-detail component to share here.
+    const fillingCopy = 'Steak & Cheese Samosa: Minced beef, Cabot™ sharp white cheddar, onion, and spices.';
     const parts = [
         { id: 'fold', title: 'A personal touch.', description: 'Made with love. One samosa at a time.' },
-        { id: 'filling', title: '', description: 'Press anywhere to close' },
+        { id: 'filling', title: '', description: fillingCopy },
         {
             id: 'salsa',
-            title: 'Better together.',
+            title: '',
             description: 'Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.',
-            ingredients: 'Tomato, green pepper, yellow onion, peeled garlic, cilantro, ginger, habanero peppers, lemon juice, and a dash of salt.',
         },
     ];
     const stage = diagram.querySelector('.samosa-diagram__stage');
     const hotspots = diagram.querySelector('[data-diagram-hotspots]');
     const points = [...diagram.querySelectorAll('[data-diagram-part]')];
     const caption = diagram.querySelector('[data-diagram-caption]');
+    const hint = diagram.closest('.home-spotlight').querySelector('[data-diagram-hint]');
     const title = caption.querySelector('h3');
     const description = caption.querySelector('p');
     const ingredients = caption.querySelector('[data-diagram-ingredients]');
@@ -53,10 +54,10 @@
         points.forEach((point) => {
             point.setAttribute('aria-pressed', String(point.dataset.diagramPart === id));
         });
-        caption.classList.toggle('is-idle', !part || expanded);
+        hint.textContent = detailOpen ? 'Press anywhere to close' : 'Select + for a closer look.';
         title.hidden = !part?.title;
         title.textContent = part?.title || '';
-        const copy = part?.description || 'Select + for a closer look.';
+        const copy = part?.description || fillingCopy;
         description.replaceChildren(...copy.split(/(™)/).map((text) => {
             if (text !== '™') return text;
             const trademark = document.createElement('sup');
@@ -124,5 +125,6 @@
     const fallback = document.querySelector('[data-diagram-fallback]');
     selectPart(null);
     if (fallback) fallback.hidden = true;
+    hint.hidden = false;
     diagram.hidden = false;
 })();

@@ -5,6 +5,7 @@
     scroll-margin-top: 94px;
 }
 .home-spotlight__heading { margin: 0 auto 22px; text-align: center; }
+.home-spotlight__hint { margin: 8px 0 0; color: var(--ink-55); font-size: 13px; line-height: 1.45; }
 .home-spotlight__heading h2 {
     margin: 0;
     font-size: clamp(38px, 4.2vw, 58px);
@@ -25,15 +26,7 @@
     flex: initial;
 }
 .home-spotlight__copy { text-align: left; }
-.home-spotlight__name {
-    margin: 18px 0 14px;
-    font-size: clamp(32px, 3.3vw, 46px);
-    font-weight: 600;
-    line-height: 1.04;
-    letter-spacing: -.045em;
-}
-.home-spotlight__description { color: var(--ink-62); font-size: 16px; line-height: 1.6; margin: 0 0 24px; }
-.home-spotlight__description sup, .home-spotlight .samosa-diagram sup { font-size: .65em; }
+.home-spotlight .samosa-diagram sup { font-size: .65em; }
 .home-spotlight__actions { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; }
 .home-spotlight__menu { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; text-decoration: none; font-size: 14px; font-weight: 550; color: #0069d1; }
 .home-spotlight__menu:hover { text-decoration: underline; text-underline-offset: 4px; }
@@ -59,15 +52,13 @@
 }
 @media (max-width: 700px) {
     .home-page .home-frame > .home-spotlight { padding: 42px 20px 48px; scroll-margin-top: 84px; }
-    .home-spotlight__heading { margin-bottom: 24px; }
+    .home-spotlight__heading { margin-bottom: 18px; }
     .home-spotlight__heading h2 { font-size: 38px; max-width: 450px; margin: auto; }
     .home-page .home-spotlight .samosa-diagram { display: flex; flex-direction: column; gap: 0; }
     .home-spotlight__copy { display: contents; }
-    .home-spotlight__name { order: 0; text-align: center; font-size: 29px; margin: 4px 0 10px; }
-    .home-spotlight__description { order: 1; text-align: center; font-size: 14px; margin-bottom: 0; max-width: 350px; }
     .home-spotlight__visual { order: 2; width: 100%; }
     .home-page .home-spotlight .samosa-diagram__stage { width: 100%; }
-    .home-page .home-spotlight .samosa-diagram__caption { order: 3; text-align: center; width: 100%; min-height: 56px; margin-top: 14px; }
-    .home-page .home-spotlight .samosa-diagram__caption p { font-size: 13px; }
-    .home-spotlight__actions { order: 4; justify-content: center; }
+    .home-page .home-spotlight .samosa-diagram__caption { order: 3; text-align: center; width: 100%; max-width: 350px; min-height: 0; margin: 18px 0 0; }
+    .home-page .home-spotlight .samosa-diagram__caption p { font-size: 14px; }
+    .home-spotlight__actions { order: 1; justify-content: center; margin-bottom: 12px; }
 }

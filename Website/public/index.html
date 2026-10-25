@@ -63,8 +63,8 @@
     </script>
     <link rel="stylesheet" href="css/home.css?v=20261021-home-faq">
     <link rel="stylesheet" href="css/samosa-diagram.css?v=20261021-salsa-ingredients-subtext">
-    <link rel="stylesheet" href="css/home-spotlight.css?v=20261025-steak-spotlight">
-    <script src="js/samosa-diagram.js?v=20261025-steak-spotlight" defer></script>
+    <link rel="stylesheet" href="css/home-spotlight.css?v=20261025-dynamic-details">
+    <script src="js/samosa-diagram.js?v=20261025-dynamic-details" defer></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
     <script src="https://unpkg.com/lucide@latest" defer></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
@@ -98,21 +98,22 @@
         </section>
 
         <section class="home-spotlight" id="samosas-and-salsa" aria-labelledby="hero-heading">
-            <header class="home-spotlight__heading"><h2 id="hero-heading">The holy grail of samosas.</h2></header>
+            <header class="home-spotlight__heading">
+                <h2 id="hero-heading">What is a samosa?</h2>
+                <p class="home-spotlight__hint" data-diagram-hint aria-live="polite" hidden>Select + for a closer look.</p>
+            </header>
             <img class="home-hero-art" data-diagram-fallback src="assets/home/samosa_hero.webp?v=e7ad12fd"
                 width="1254" height="1254" alt="A golden, crispy Steak and Cheese samosa with a bowl of Tomato Garlic Chutney"
                 loading="lazy" decoding="async">
             <div class="samosa-diagram" data-samosa-diagram hidden>
                 <div class="home-spotlight__copy">
-                    <h3 class="home-spotlight__name">Steak and Cheese</h3>
-                    <p class="home-spotlight__description">Minced beef, Cabot<sup>™</sup> sharp white cheddar, onion, and spices.</p>
                     <div class="home-spotlight__actions">
                         <button class="btn btn-order" type="button" data-open-order>Order Now</button>
                         <a class="home-spotlight__menu" href="burlington.html">View menu <span aria-hidden="true">→</span></a>
                     </div>
-                    <div class="samosa-diagram__caption is-idle" id="samosa-part-details" data-diagram-caption aria-live="polite" aria-atomic="true">
+                    <div class="samosa-diagram__caption" id="samosa-part-details" data-diagram-caption aria-live="polite" aria-atomic="true">
                         <h3 hidden></h3>
-                        <p>Select + for a closer look.</p>
+                        <p>Steak &amp; Cheese Samosa: Minced beef, Cabot<sup>™</sup> sharp white cheddar, onion, and spices.</p>
                         <p class="samosa-diagram__ingredients" data-diagram-ingredients hidden></p>
                     </div>
                 </div>
