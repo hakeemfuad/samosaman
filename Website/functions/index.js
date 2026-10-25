@@ -1,5 +1,6 @@
 const { onRequest } = require("firebase-functions/v2/https");
 const { onDocumentCreated } = require("firebase-functions/v2/firestore");
+const { defineSecret } = require("firebase-functions/params");
 const logger = require("firebase-functions/logger");
 const crypto = require("crypto");
 const cors = require("cors")({ origin: true });
@@ -35,16 +36,20 @@ const FieldValue = new Proxy({}, {
   }
 });
 
+const smtpPassword = defineSecret("SMTP_PASSWORD");
 let transporter;
 
 function getTransporter() {
   if (!transporter) {
+    const password = smtpPassword.value();
+    if (!password) throw new Error('SMTP_PASSWORD is not configured.');
+
     const nodemailer = require('nodemailer');
     transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: 'no_reply@samosamanvt.com',
-        pass: 'fahr kjbl gudj bptm'
+        pass: password
       }
     });
   }
@@ -1152,6 +1157,7 @@ function handleProcessPayment(req, res, checkoutEnvironment = 'production') {
 // --- SQUARE EMBEDDED PAYMENT FUNCTION (v2) ---
 exports.processPayment = onRequest({
   secrets: [
+    smtpPassword,
     "SQUARE_ACCESS_TOKEN",
     "SQUARE_APPLICATION_ID",
     "SQUARE_LOCATION_ID",
@@ -1177,7 +1183,10 @@ exports.processPaymentSandbox = onRequest({
 });
 
 // --- [UPDATED] WELCOME EMAIL FUNCTION (v2) ---
-exports.sendWelcomeEmail = onDocumentCreated("users/{userId}", (event) => {
+exports.sendWelcomeEmail = onDocumentCreated({
+  document: "users/{userId}",
+  secrets: [smtpPassword]
+}, (event) => {
   const snapshot = event.data;
   if (!snapshot) {
     return;
@@ -1481,7 +1490,9 @@ async function sendOrderConfirmationEmails(order) {
 }
 
 // --- CATERING INQUIRY FUNCTION (v2) ---
-exports.submitCateringInquiry = onRequest(async (req, res) => {
+exports.submitCateringInquiry = onRequest({
+  secrets: [smtpPassword]
+}, async (req, res) => {
   cors(req, res, async () => {
     if (req.method !== 'POST') {
       return res.status(405).send('Method Not Allowed');
