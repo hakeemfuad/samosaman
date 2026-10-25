@@ -110,22 +110,18 @@ function updateCartBadge() {
 /**
  * Adds an item to the cart
  */
-function addToCart(id, name, price, image) {
-    let cart = getCart();
+function addToCart(id, name, price, image, quantity = 1) {
+    if (!Number.isInteger(quantity) || quantity < 1 || quantity > 99) return false;
+    const cart = getCart();
     const existingItem = cart.find(item => item.id === id);
 
     if (existingItem) {
-        existingItem.quantity += 1;
+        existingItem.quantity += quantity;
     } else {
-        cart.push({
-            id: id,
-            name: name,
-            price: parseFloat(price),
-            quantity: 1,
-            image: image // We now store the image path for the display
-        });
+        cart.push({id, name, price: parseFloat(price), quantity, image});
     }
     saveCart(cart);
+    return true;
 }
 
 /**
@@ -429,7 +425,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const price = btn.dataset.price;
 
             if(id && name && price) {
-                addToCart(id, name, price, imageSrc);
+                if (window.SamosamanMenu?.selectQuantity) {
+                    window.SamosamanMenu.selectQuantity(id, name, price, imageSrc, btn);
+                } else {
+                    addToCart(id, name, price, imageSrc);
+                }
             }
         });
     });
