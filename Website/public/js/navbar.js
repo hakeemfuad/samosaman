@@ -34,7 +34,6 @@
         <a class="nav-link" href="delivery.html">Delivery</a>
         <a class="nav-link" href="rewards-signup.html">Rewards</a>
         <a class="nav-link" href="catering.html">Catering</a>
-        <a class="nav-link" href="our-story.html">Our Story</a>
       </div>
       <span class="nav-spacer"></span>
       <button class="btn btn-glass circle circle-quiet" id="nav-user-btn" type="button" aria-label="My account">
@@ -54,7 +53,6 @@
         <a href="delivery.html">Delivery</a>
         <a href="rewards-signup.html">Rewards</a>
         <a href="catering.html">Catering</a>
-        <a href="our-story.html">Our Story</a>
         ${orderControl('btn btn-tint')}
       </div>
     </nav>

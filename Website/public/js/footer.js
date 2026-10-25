@@ -6,7 +6,6 @@
                 <div class="grid grid-cols-2 gap-x-6 gap-y-7 py-8 text-center md:grid-cols-3 md:gap-10">
                     <nav aria-label="Explore SamosaMan" class="flex flex-col items-center text-xs">
                         <h3 class="flex min-h-[34px] items-center font-semibold">SamosaMan</h3>
-                        <a href="our-story.html" class="flex min-h-[34px] items-center hover:underline">Our Values</a>
                         <a href="burlington.html" class="flex min-h-[34px] items-center hover:underline">All Locations</a>
                     </nav>
 
