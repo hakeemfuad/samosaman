@@ -1,0 +1,36 @@
+[
+  {
+    "graphicTop": 336.796875,
+    "headingTop": 132,
+    "heroHeight": 724,
+    "heroTop": 0,
+    "nextTop": 736,
+    "overflow": false,
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  {
+    "headingTop": 119,
+    "heroHeight": 532,
+    "heroTop": 0,
+    "nextTop": 544,
+    "overflow": false,
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "headingTop": 119,
+    "heroHeight": 532,
+    "heroTop": 0,
+    "nextTop": 544,
+    "overflow": false,
+    "viewport": [
+      320,
+      568
+    ]
+  }
+]

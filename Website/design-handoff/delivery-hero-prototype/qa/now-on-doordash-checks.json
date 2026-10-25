@@ -1,0 +1,132 @@
+[
+  {
+    "clearOfButtons": true,
+    "clearOfNavigation": true,
+    "expectedHeroHeight": 768,
+    "headline": "Now on DoorDash.",
+    "heightMatches": true,
+    "heroHeight": 768,
+    "imageBottom": 635.6464415476798,
+    "imageInsideHero": true,
+    "imageRenderedHeight": 334.8495665476798,
+    "imageTop": 300.796875,
+    "overflow": false,
+    "variant": "C",
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  {
+    "clearOfButtons": true,
+    "clearOfNavigation": true,
+    "expectedHeroHeight": 588,
+    "headline": "Now on DoorDash.",
+    "heightMatches": true,
+    "heroHeight": 588,
+    "imageBottom": 549.5879493880673,
+    "imageInsideHero": true,
+    "imageRenderedHeight": 256.36919938806733,
+    "imageTop": 293.21875,
+    "overflow": false,
+    "variant": "C",
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  {
+    "clearOfButtons": true,
+    "clearOfNavigation": true,
+    "expectedHeroHeight": 616,
+    "headline": "Now on DoorDash.",
+    "heightMatches": true,
+    "heroHeight": 616,
+    "imageBottom": 454.9821121239163,
+    "imageInsideHero": true,
+    "imageRenderedHeight": 178.93523712391635,
+    "imageTop": 276.046875,
+    "overflow": false,
+    "variant": "C",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "clearOfButtons": true,
+    "clearOfNavigation": true,
+    "expectedHeroHeight": 555,
+    "headline": "Now on DoorDash.",
+    "heightMatches": true,
+    "heroHeight": 555,
+    "imageBottom": 445.5872004079551,
+    "imageInsideHero": true,
+    "imageRenderedHeight": 171.08720040795512,
+    "imageTop": 274.5,
+    "overflow": false,
+    "variant": "C",
+    "viewport": [
+      375,
+      667
+    ]
+  },
+  {
+    "clearOfButtons": true,
+    "clearOfNavigation": true,
+    "expectedHeroHeight": 456,
+    "headline": "Now on DoorDash.",
+    "heightMatches": true,
+    "heroHeight": 456,
+    "imageBottom": 432,
+    "imageInsideHero": true,
+    "imageRenderedHeight": 94.0625,
+    "imageTop": 337.9375,
+    "overflow": false,
+    "variant": "C",
+    "viewport": [
+      320,
+      568
+    ]
+  },
+  {
+    "ctaInsideHero": true,
+    "heroHeight": 768,
+    "overflow": false,
+    "variant": "A",
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  {
+    "ctaInsideHero": true,
+    "heroHeight": 768,
+    "overflow": false,
+    "variant": "B",
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  {
+    "ctaInsideHero": true,
+    "heroHeight": 616,
+    "overflow": false,
+    "variant": "A",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "ctaInsideHero": true,
+    "heroHeight": 616,
+    "overflow": false,
+    "variant": "B",
+    "viewport": [
+      390,
+      844
+    ]
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "desktop": {
+    "freshFont": "84px",
+    "freshPhotoLoaded": true,
+    "h1Count": 1,
+    "meta": "width=device-width, initial-scale=1.0",
+    "overflow": false,
+    "sections": [
+      {
+        "heading": "Now on DoorDash.",
+        "height": 768,
+        "top": 0
+      },
+      {
+        "heading": "Served Fresh.",
+        "height": 768,
+        "top": 768
+      },
+      {
+        "heading": "What is a samosa?",
+        "height": 699.140625,
+        "top": 1536
+      }
+    ],
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  "phone": {
+    "cateringHref": "catering.html",
+    "freshFont": "44px",
+    "overflow": false,
+    "sections": [
+      {
+        "heading": "Now on DoorDash.",
+        "height": 616,
+        "top": 0
+      },
+      {
+        "heading": "Served Fresh.",
+        "height": 616,
+        "top": 616
+      },
+      {
+        "heading": "What is a samosa?",
+        "height": 626.828125,
+        "top": 1232
+      }
+    ],
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  "orderSelectorOpenedAndClosed": true
+}
