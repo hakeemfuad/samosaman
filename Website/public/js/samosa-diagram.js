@@ -6,7 +6,7 @@
     // its starter screen and has no product-detail component to share here.
     const parts = [
         { id: 'fold', title: 'A personal touch.', description: 'Made with love. One samosa at a time.' },
-        { id: 'filling', title: 'Goodness inside.', description: 'Minced beef, Cabot™ sharp white cheddar, onion, and spices.' },
+        { id: 'filling', title: '', description: 'Press anywhere to close' },
         {
             id: 'salsa',
             title: 'Better together.',
@@ -43,8 +43,8 @@
         stage.setAttribute('aria-label', id === 'fold'
             ? 'A closer look at the samosa’s hand-folded edge'
             : id === 'salsa'
-                ? 'A closer look at the Garlic Tomato Salsa'
-                : 'Explore the parts of a samosa');
+                ? 'A closer look at Tomato Garlic Chutney'
+                : expanded ? 'Steak and Cheese, with the filling exposed' : 'Steak and Cheese, whole');
         controls.dataset.state = detailOpen ? 'inside' : 'whole';
         toggle.setAttribute('aria-pressed', String(detailOpen));
         whole.setAttribute('aria-pressed', String(!detailOpen));
@@ -53,8 +53,8 @@
         points.forEach((point) => {
             point.setAttribute('aria-pressed', String(point.dataset.diagramPart === id));
         });
-        caption.classList.toggle('is-idle', !part);
-        title.hidden = !part;
+        caption.classList.toggle('is-idle', !part || expanded);
+        title.hidden = !part?.title;
         title.textContent = part?.title || '';
         const copy = part?.description || 'Select + for a closer look.';
         description.replaceChildren(...copy.split(/(™)/).map((text) => {
@@ -103,12 +103,23 @@
         event.preventDefault();
         leaveDetail();
     });
-    // Capture checks the state before an opening control handles its click.
-    // The view controls keep their own click and focus behavior.
-    document.addEventListener('click', (event) => {
-        if (!selected || controls.contains(event.target)) return;
-        leaveDetail({ restoreFocus: false });
-    }, { capture: true });
+    // A background press closes the detail. Controls and scrolling keep their own behavior.
+    const isControl = (target) => target.closest('button,a,input,label,select,textarea,summary,[role="button"],[role="link"],[contenteditable]');
+    let detailTouch = null;
+    document.addEventListener('pointerdown', (event) => {
+        detailTouch = null;
+        if (!event.isPrimary || event.button !== 0 || !selected || isControl(event.target)) return;
+        detailTouch = { id: event.pointerId, x: event.clientX, y: event.clientY };
+    }, { passive: true });
+    document.addEventListener('pointerup', (event) => {
+        if (!detailTouch || event.pointerId !== detailTouch.id) return;
+        const start = detailTouch;
+        detailTouch = null;
+        if (selected && !isControl(event.target) && Math.hypot(start.x - event.clientX, start.y - event.clientY) <= 10) {
+            leaveDetail({ restoreFocus: false });
+        }
+    }, { passive: true });
+    document.addEventListener('pointercancel', () => { detailTouch = null; }, { passive: true });
 
     const fallback = document.querySelector('[data-diagram-fallback]');
     selectPart(null);

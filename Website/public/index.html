@@ -63,7 +63,8 @@
     </script>
     <link rel="stylesheet" href="css/home.css?v=20261021-home-faq">
     <link rel="stylesheet" href="css/samosa-diagram.css?v=20261021-salsa-ingredients-subtext">
-    <script src="js/samosa-diagram.js?v=20261021-made-with-love" defer></script>
+    <link rel="stylesheet" href="css/home-spotlight.css?v=20261025-steak-spotlight">
+    <script src="js/samosa-diagram.js?v=20261025-steak-spotlight" defer></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
     <script src="https://unpkg.com/lucide@latest" defer></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
@@ -96,18 +97,27 @@
             </div>
         </section>
 
-        <section class="home-hero" id="samosas-and-salsa" aria-labelledby="hero-heading">
-            <h2 id="hero-heading">Steak and Cheese.</h2>
-            <p class="home-hero-copy">The holy grail of Samosas.</p>
-            <div class="home-actions">
-                <button class="btn btn-order" type="button" data-open-order>Order Now</button>
-                <a class="btn btn-paper" href="catering.html">Catering</a>
-            </div>
+        <section class="home-spotlight" id="samosas-and-salsa" aria-labelledby="hero-heading">
+            <header class="home-spotlight__heading"><h2 id="hero-heading">The holy grail of samosas.</h2></header>
             <img class="home-hero-art" data-diagram-fallback src="assets/home/samosa_hero.webp?v=e7ad12fd"
-                width="1254" height="1254" alt="A golden, crispy Steak and Cheese samosa with a bowl of Garlic Tomato Salsa"
+                width="1254" height="1254" alt="A golden, crispy Steak and Cheese samosa with a bowl of Tomato Garlic Chutney"
                 loading="lazy" decoding="async">
             <div class="samosa-diagram" data-samosa-diagram hidden>
-                <div class="samosa-diagram__stage" id="samosa-layers" role="group" aria-label="Explore the parts of a samosa">
+                <div class="home-spotlight__copy">
+                    <h3 class="home-spotlight__name">Steak and Cheese</h3>
+                    <p class="home-spotlight__description">Minced beef, Cabot<sup>™</sup> sharp white cheddar, onion, and spices.</p>
+                    <div class="home-spotlight__actions">
+                        <button class="btn btn-order" type="button" data-open-order>Order Now</button>
+                        <a class="home-spotlight__menu" href="burlington.html">View menu <span aria-hidden="true">→</span></a>
+                    </div>
+                    <div class="samosa-diagram__caption is-idle" id="samosa-part-details" data-diagram-caption aria-live="polite" aria-atomic="true">
+                        <h3 hidden></h3>
+                        <p>Select + for a closer look.</p>
+                        <p class="samosa-diagram__ingredients" data-diagram-ingredients hidden></p>
+                    </div>
+                </div>
+                <div class="home-spotlight__visual">
+                    <div class="samosa-diagram__stage" id="samosa-layers" role="group" aria-label="Explore the parts of a samosa">
                     <svg class="samosa-diagram__art" viewBox="100 0 800 650" aria-hidden="true" focusable="false">
                     <defs>
                     <path id="diagram-samosa-outline" d="M156 42 C143 45 137 61 132 88 C122 102 115 117 111 130 C110 146 123 165 136 181 C140 210 149 249 152 279 C150 344 143 401 144 456 C142 486 128 520 123 558 C115 582 111 617 115 652 C115 680 117 703 114 730 C99 740 93 763 91 789 C74 811 62 838 52 861 C44 878 49 893 65 900 C100 913 145 907 177 899 C227 887 272 868 317 846 C390 814 448 783 509 748 C584 709 646 673 705 641 C727 630 739 632 758 644 C789 653 801 670 836 680 C868 689 902 684 916 668 C932 649 925 622 909 608 C881 589 851 577 823 561 C786 538 751 514 719 486 C682 461 658 432 624 413 C595 391 571 367 537 350 C503 332 476 309 447 292 C421 275 395 254 369 240 C347 221 333 217 310 211 C288 193 270 164 251 143 C232 118 217 90 201 67 C188 46 172 41 156 42 Z"></path>
@@ -166,7 +176,7 @@
                         <span aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" focusable="false"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
                     </button>
                     <button class="samosa-diagram__point" type="button" data-diagram-part="salsa"
-                        aria-label="Explore the Garlic Tomato Salsa" aria-pressed="false" aria-controls="samosa-part-details"
+                        aria-label="Explore the Tomato Garlic Chutney" aria-pressed="false" aria-controls="samosa-part-details"
                         style="--point-x: 75%; --point-y: 72%; --point-dx: 10%; --point-dy: 7%">
                         <span aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" focusable="false"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
                     </button>
@@ -182,10 +192,7 @@
                         <span data-toggle-label>See inside</span>
                     </button>
                 </div>
-                <div class="samosa-diagram__caption is-idle" id="samosa-part-details" data-diagram-caption aria-live="polite" aria-atomic="true">
-                    <h3 hidden></h3>
-                    <p>Select + for a closer look.</p>
-                    <p class="samosa-diagram__ingredients" data-diagram-ingredients hidden></p>
+
                 </div>
             </div>
         </section>

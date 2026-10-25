@@ -1,0 +1,73 @@
+/* Approved Steak and Cheese spotlight. Reuses the home glass controls and diagram motion. */
+.home-page .home-frame > .home-spotlight {
+    grid-column: 1 / -1;
+    padding: 36px max(24px, calc((100% - 1240px) / 2)) 32px;
+    scroll-margin-top: 94px;
+}
+.home-spotlight__heading { margin: 0 auto 22px; text-align: center; }
+.home-spotlight__heading h2 {
+    margin: 0;
+    font-size: clamp(38px, 4.2vw, 58px);
+    font-weight: 600;
+    letter-spacing: -.05em;
+    line-height: 1.04;
+    text-wrap: balance;
+}
+.home-page .home-spotlight .samosa-diagram {
+    display: grid;
+    grid-template-columns: minmax(250px, .8fr) minmax(0, 1.7fr);
+    grid-template-rows: auto;
+    gap: 48px;
+    align-items: center;
+    max-width: 1080px;
+    margin: 0 auto;
+    container-type: normal;
+    flex: initial;
+}
+.home-spotlight__copy { text-align: left; }
+.home-spotlight__name {
+    margin: 18px 0 14px;
+    font-size: clamp(32px, 3.3vw, 46px);
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: -.045em;
+}
+.home-spotlight__description { color: var(--ink-62); font-size: 16px; line-height: 1.6; margin: 0 0 24px; }
+.home-spotlight__description sup, .home-spotlight .samosa-diagram sup { font-size: .65em; }
+.home-spotlight__actions { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; }
+.home-spotlight__menu { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; text-decoration: none; font-size: 14px; font-weight: 550; color: #0069d1; }
+.home-spotlight__menu:hover { text-decoration: underline; text-underline-offset: 4px; }
+.home-spotlight__visual { min-width: 0; background: radial-gradient(ellipse at 50% 55%, rgba(232,219,192,.36), transparent 65%); }
+.home-page .home-spotlight .samosa-diagram__stage {
+    width: min(100%, calc(clamp(280px, calc(100svh - 390px), 470px) * 800 / 650));
+    max-width: 660px;
+    height: auto;
+    margin: 0 auto;
+    grid-area: auto;
+    align-self: auto;
+}
+.home-page .home-spotlight .samosa-diagram__toggle { width: 248px; max-width: 100%; margin: 0; grid-area: auto; align-self: auto; justify-self: auto; }
+.home-page .home-spotlight .samosa-diagram__toggle button { padding: 0 12px; white-space: nowrap; }
+.home-page .home-spotlight .samosa-diagram__caption { grid-area: auto; text-align: left; margin: 18px auto 0; min-height: 62px; }
+.home-page .home-spotlight .samosa-diagram__caption p { text-wrap: pretty; }
+@media (min-width: 1600px) {
+    .home-page .home-frame > .home-spotlight { min-height: var(--home-panel-height); display: flex; flex-direction: column; justify-content: center; }
+}
+@media (max-width: 1000px) {
+    .home-page .home-frame > .home-spotlight { padding: 48px 24px; }
+    .home-page .home-spotlight .samosa-diagram { gap: 18px; grid-template-columns: minmax(220px, .8fr) minmax(0, 1.3fr); }
+}
+@media (max-width: 700px) {
+    .home-page .home-frame > .home-spotlight { padding: 42px 20px 48px; scroll-margin-top: 84px; }
+    .home-spotlight__heading { margin-bottom: 24px; }
+    .home-spotlight__heading h2 { font-size: 38px; max-width: 450px; margin: auto; }
+    .home-page .home-spotlight .samosa-diagram { display: flex; flex-direction: column; gap: 0; }
+    .home-spotlight__copy { display: contents; }
+    .home-spotlight__name { order: 0; text-align: center; font-size: 29px; margin: 4px 0 10px; }
+    .home-spotlight__description { order: 1; text-align: center; font-size: 14px; margin-bottom: 0; max-width: 350px; }
+    .home-spotlight__visual { order: 2; width: 100%; }
+    .home-page .home-spotlight .samosa-diagram__stage { width: 100%; }
+    .home-page .home-spotlight .samosa-diagram__caption { order: 3; text-align: center; width: 100%; min-height: 56px; margin-top: 14px; }
+    .home-page .home-spotlight .samosa-diagram__caption p { font-size: 13px; }
+    .home-spotlight__actions { order: 4; justify-content: center; }
+}
