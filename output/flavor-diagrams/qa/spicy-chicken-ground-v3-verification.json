@@ -1,0 +1,18 @@
+{
+  "asset": "spicy-chicken-ground-v3.webp",
+  "change": "Less red chili color and fewer visible spice flecks",
+  "embeddedAssetMatches": true,
+  "otherFilesUnchanged": {
+    "punjabi.html": true,
+    "chicken-cheese.html": true,
+    "apple-pie.html": true,
+    "baseline.html": true,
+    "preview.css": true,
+    "build.py": true,
+    "chutney-control.html": true
+  },
+  "htmlSha256": "b8abed3181633077c3edc59e0af5306fbf7aa67a6c6efb2f42617749442a05cc",
+  "alphaRetained": true,
+  "browserVisualCheck": "Ground chicken texture, reduced red color, fewer visible chili flecks, and diagram fit confirmed in the in-app browser.",
+  "screenshot": "spicy-chicken-ground-v3-browser.png"
+}

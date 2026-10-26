@@ -1,0 +1,59 @@
+/* Local menu preview controls. Tokens come from the saved home page theme. */
+.home-page .samosa-diagram__options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: min(100%, 248px);
+    margin: 8px auto 0;
+}
+.home-page .samosa-diagram__options .samosa-diagram__toggle { width: 100%; margin: 0; }
+.home-page .samosa-diagram__options .samosa-diagram__toggle button { padding: 0 14px; }
+.home-page .samosa-diagram__options [data-toggle-label] { white-space: nowrap; }
+.home-page .chutney-choice {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 6px;
+    border-radius: 24px;
+    cursor: pointer;
+    box-shadow: var(--bevel), 0 8px 24px rgba(12,10,9,.07);
+    -webkit-tap-highlight-color: transparent;
+}
+.home-page .chutney-choice input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+.home-page .chutney-choice:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 4px; }
+.home-page .chutney-choice .well { gap: 10px; padding: 12px; min-height: 72px; border-radius: 18px; }
+.home-page .chutney-choice .well-title { font-size: 14px; line-height: 1.3; letter-spacing: -.2px; }
+.home-page .chutney-choice__hint { display: block; margin-top: 4px; font-size: 12px; line-height: 1.3; color: var(--ink-62); }
+.home-page .chutney-choice__check {
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    flex: none;
+    border: 1px solid rgba(12,10,9,.2);
+    border-radius: 7px;
+    background: rgba(255,255,255,.55);
+    color: white;
+    transition: background 160ms ease, border-color 160ms ease;
+}
+.home-page .chutney-choice__check svg { opacity: 0; transition: opacity 160ms ease; }
+.home-page .chutney-choice input:checked + .well { background: rgba(255,255,255,.86); }
+.home-page .chutney-choice input:checked + .well .chutney-choice__check { background: var(--accent); border-color: var(--accent); }
+.home-page .chutney-choice input:checked + .well .chutney-choice__check svg { opacity: 1; }
+.home-page .samosa-diagram[data-chutney="false"] .samosa-diagram__salsa {
+    opacity: 0;
+    transform: translate(145px, 45px) scale(.9);
+    pointer-events: none;
+}
+@media (min-width: 1024px) {
+    .home-page .samosa-diagram__options { grid-column: 1; grid-row: 1; align-self: end; justify-self: end; margin: 0 0 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .home-page .chutney-choice * { transition: none !important; }
+}

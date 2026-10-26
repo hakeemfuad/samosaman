@@ -1,0 +1,8 @@
+/* Let the mobile diagram use the section width instead of the remaining panel height. */
+@media (max-width: 700px) {
+  .home-page .home-frame { row-gap: 0; background: var(--home-paper); }
+  .home-page .home-frame > .home-spotlight { height: auto; min-height: 0; }
+  .home-page .home-spotlight .samosa-diagram { flex: none; }
+  .home-page .home-spotlight__visual { flex: none; height: auto; width: 100%; container-type: normal; }
+  .home-page .home-spotlight .samosa-diagram__stage { width: 100%; }
+}

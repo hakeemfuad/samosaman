@@ -1,0 +1,89 @@
+{
+  "pass": true,
+  "pages": [
+    {
+      "headY": "7",
+      "height": 20,
+      "page": "/index.html",
+      "scripts": [
+        "http://127.0.0.1:4190/js/navbar.js?v=20261020-stable-avatar",
+        "http://127.0.0.1:4190/js/auth.js?v=20261020-stable-avatar"
+      ],
+      "stroke": "1.2",
+      "svg": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"></path><circle cx=\"12\" cy=\"7\" r=\"4\"></circle></svg>",
+      "width": 20,
+      "x": 991.703125,
+      "y": 38
+    },
+    {
+      "headY": "7",
+      "height": 20,
+      "page": "/burlington.html",
+      "scripts": [
+        "http://127.0.0.1:4190/js/navbar.js?v=20261020-stable-avatar",
+        "http://127.0.0.1:4190/js/auth.js?v=20261020-stable-avatar"
+      ],
+      "stroke": "1.2",
+      "svg": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"></path><circle cx=\"12\" cy=\"7\" r=\"4\"></circle></svg>",
+      "width": 20,
+      "x": 991.703125,
+      "y": 38
+    },
+    {
+      "headY": "7",
+      "height": 20,
+      "page": "/delivery.html",
+      "scripts": [
+        "http://127.0.0.1:4190/js/navbar.js?v=20261020-stable-avatar",
+        "http://127.0.0.1:4190/js/auth.js?v=20261020-stable-avatar"
+      ],
+      "stroke": "1.2",
+      "svg": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"></path><circle cx=\"12\" cy=\"7\" r=\"4\"></circle></svg>",
+      "width": 20,
+      "x": 991.703125,
+      "y": 38
+    },
+    {
+      "headY": "7",
+      "height": 20,
+      "page": "/rewards-signup.html",
+      "scripts": [
+        "http://127.0.0.1:4190/js/navbar.js?v=20261020-stable-avatar",
+        "http://127.0.0.1:4190/js/auth.js?v=20261020-stable-avatar"
+      ],
+      "stroke": "1.2",
+      "svg": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"></path><circle cx=\"12\" cy=\"7\" r=\"4\"></circle></svg>",
+      "width": 20,
+      "x": 991.703125,
+      "y": 38
+    },
+    {
+      "headY": "7",
+      "height": 20,
+      "page": "/catering.html",
+      "scripts": [
+        "http://127.0.0.1:4190/js/navbar.js?v=20261020-stable-avatar",
+        "http://127.0.0.1:4190/js/auth.js?v=20261020-stable-avatar"
+      ],
+      "stroke": "1.2",
+      "svg": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"></path><circle cx=\"12\" cy=\"7\" r=\"4\"></circle></svg>",
+      "width": 20,
+      "x": 991.703125,
+      "y": 38
+    },
+    {
+      "headY": "7",
+      "height": 20,
+      "page": "/our-story.html",
+      "scripts": [
+        "http://127.0.0.1:4190/js/navbar.js?v=20261020-stable-avatar",
+        "http://127.0.0.1:4190/js/auth.js?v=20261020-stable-avatar"
+      ],
+      "stroke": "1.2",
+      "svg": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"></path><circle cx=\"12\" cy=\"7\" r=\"4\"></circle></svg>",
+      "width": 20,
+      "x": 991.703125,
+      "y": 38
+    }
+  ]
+}

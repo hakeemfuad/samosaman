@@ -1,0 +1,5154 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'true' !== 'false'\n\n    at run (/Users/hakeem/Samosaman/output/flavor-diagrams/verify.cjs:160:102)",
+  "errors": [],
+  "results": [
+    {
+      "flavor": "baseline",
+      "viewport": [
+        320,
+        760
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "caption": "Select + for a closer look.",
+      "height": 610.578125,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 280,
+        "height": 227.5
+      },
+      "options": {
+        "x": 23.765625,
+        "y": 446.578125,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 514.578125,
+        "width": 280,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        320,
+        760
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 610.578125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 280,
+        "height": 227.5
+      },
+      "options": {
+        "x": 23.765625,
+        "y": 446.578125,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 514.578125,
+        "width": 280,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        320,
+        760
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "caption": "Minced beef, Cabot sharp white cheddar, onion, and spices.",
+      "height": 623.328125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 280,
+        "height": 227.5
+      },
+      "options": {
+        "x": 23.765625,
+        "y": 446.578125,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 514.578125,
+        "width": 280,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        320,
+        760
+      ],
+      "part": "salsa",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 623.328125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 280,
+        "height": 227.5
+      },
+      "options": {
+        "x": 23.765625,
+        "y": 446.578125,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 514.578125,
+        "width": 280,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        390,
+        844
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "caption": "Select + for a closer look.",
+      "height": 667.453125,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 350,
+        "height": 284.375
+      },
+      "options": {
+        "x": 58.765625,
+        "y": 503.453125,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 571.453125,
+        "width": 350,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        390,
+        844
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 667.453125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 350,
+        "height": 284.375
+      },
+      "options": {
+        "x": 58.765625,
+        "y": 503.453125,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 571.453125,
+        "width": 350,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        390,
+        844
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "caption": "Minced beef, Cabot sharp white cheddar, onion, and spices.",
+      "height": 680.203125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 350,
+        "height": 284.375
+      },
+      "options": {
+        "x": 58.765625,
+        "y": 503.453125,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 571.453125,
+        "width": 350,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        390,
+        844
+      ],
+      "part": "salsa",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 680.203125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 350,
+        "height": 284.375
+      },
+      "options": {
+        "x": 58.765625,
+        "y": 503.453125,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 571.453125,
+        "width": 350,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        820,
+        1180
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "caption": "Select + for a closer look.",
+      "height": 978.984375,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 90,
+        "y": 238.984375,
+        "width": 640,
+        "height": 520
+      },
+      "options": {
+        "x": 273.765625,
+        "y": 766.984375,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 180,
+        "y": 834.984375,
+        "width": 460,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        820,
+        1180
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 978.984375,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 90,
+        "y": 238.984375,
+        "width": 640,
+        "height": 520
+      },
+      "options": {
+        "x": 273.765625,
+        "y": 766.984375,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 180,
+        "y": 834.984375,
+        "width": 460,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        820,
+        1180
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "caption": "Minced beef, Cabot sharp white cheddar, onion, and spices.",
+      "height": 978.984375,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 90,
+        "y": 238.984375,
+        "width": 640,
+        "height": 520
+      },
+      "options": {
+        "x": 273.765625,
+        "y": 766.984375,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 180,
+        "y": 834.984375,
+        "width": 460,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        820,
+        1180
+      ],
+      "part": "salsa",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 991.734375,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 90,
+        "y": 238.984375,
+        "width": 640,
+        "height": 520
+      },
+      "options": {
+        "x": 273.765625,
+        "y": 766.984375,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 180,
+        "y": 834.984375,
+        "width": 460,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        1024,
+        768
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "caption": "Select + for a closer look.",
+      "height": 636,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 304,
+        "y": 247.03125,
+        "width": 416,
+        "height": 338
+      },
+      "options": {
+        "x": 24,
+        "y": 540,
+        "width": 256,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 744,
+        "y": 566.25,
+        "width": 256,
+        "height": 25.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        1024,
+        768
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 636,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 304,
+        "y": 247.03125,
+        "width": 416,
+        "height": 338
+      },
+      "options": {
+        "x": 24,
+        "y": 540,
+        "width": 256,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 744,
+        "y": 523.25,
+        "width": 256,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        1024,
+        768
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "caption": "Minced beef, Cabot sharp white cheddar, onion, and spices.",
+      "height": 636,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 304,
+        "y": 247.03125,
+        "width": 416,
+        "height": 338
+      },
+      "options": {
+        "x": 24,
+        "y": 540,
+        "width": 256,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 744,
+        "y": 523.25,
+        "width": 256,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        1024,
+        768
+      ],
+      "part": "salsa",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 636,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 304,
+        "y": 247.03125,
+        "width": 416,
+        "height": 338
+      },
+      "options": {
+        "x": 24,
+        "y": 540,
+        "width": 256,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 744,
+        "y": 501.5,
+        "width": 256,
+        "height": 90.5
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        1280,
+        720
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "caption": "Select + for a closer look.",
+      "height": 588,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 438.765625,
+        "y": 237,
+        "width": 402.453125,
+        "height": 326.984375
+      },
+      "options": {
+        "x": 142.296875,
+        "y": 492,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 865.21875,
+        "y": 518.25,
+        "width": 390.78125,
+        "height": 25.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        1280,
+        720
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 588,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 438.765625,
+        "y": 237,
+        "width": 402.453125,
+        "height": 326.984375
+      },
+      "options": {
+        "x": 142.296875,
+        "y": 492,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 865.21875,
+        "y": 497,
+        "width": 390.78125,
+        "height": 47
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        1280,
+        720
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "caption": "Minced beef, Cabot sharp white cheddar, onion, and spices.",
+      "height": 588,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 438.765625,
+        "y": 237,
+        "width": 402.453125,
+        "height": 326.984375
+      },
+      "options": {
+        "x": 142.296875,
+        "y": 492,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 865.21875,
+        "y": 475.25,
+        "width": 390.78125,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        1280,
+        720
+      ],
+      "part": "salsa",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 588,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 438.765625,
+        "y": 237,
+        "width": 402.453125,
+        "height": 326.984375
+      },
+      "options": {
+        "x": 142.296875,
+        "y": 492,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 865.21875,
+        "y": 475.25,
+        "width": 390.78125,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        1440,
+        900
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "caption": "Select + for a closer look.",
+      "height": 768,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 411.3125,
+        "y": 242.375,
+        "width": 617.375,
+        "height": 501.609375
+      },
+      "options": {
+        "x": 114.84375,
+        "y": 672,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 1052.6875,
+        "y": 698.25,
+        "width": 287.3125,
+        "height": 25.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        1440,
+        900
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 768,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 411.3125,
+        "y": 242.375,
+        "width": 617.375,
+        "height": 501.609375
+      },
+      "options": {
+        "x": 114.84375,
+        "y": 672,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 1052.6875,
+        "y": 677,
+        "width": 287.3125,
+        "height": 47
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        1440,
+        900
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "caption": "Minced beef, Cabot sharp white cheddar, onion, and spices.",
+      "height": 768,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 411.3125,
+        "y": 242.375,
+        "width": 617.375,
+        "height": 501.609375
+      },
+      "options": {
+        "x": 114.84375,
+        "y": 672,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 1052.6875,
+        "y": 655.25,
+        "width": 287.3125,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "baseline",
+      "viewport": [
+        1440,
+        900
+      ],
+      "part": "salsa",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 768,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 411.3125,
+        "y": 242.375,
+        "width": 617.375,
+        "height": 501.609375
+      },
+      "options": {
+        "x": 114.84375,
+        "y": 672,
+        "width": 272.46875,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 1052.6875,
+        "y": 655.25,
+        "width": 287.3125,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        320,
+        760
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 710.578125,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 280,
+        "height": 227.5
+      },
+      "options": {
+        "x": 36,
+        "y": 446.578125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 614.578125,
+        "width": 280,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        320,
+        760
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 710.578125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 280,
+        "height": 227.5
+      },
+      "options": {
+        "x": 36,
+        "y": 446.578125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 614.578125,
+        "width": 280,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        320,
+        760
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Spiced potatoes, green peas, and herbs.",
+      "height": 710.578125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 280,
+        "height": 227.5
+      },
+      "options": {
+        "x": 36,
+        "y": 446.578125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 614.578125,
+        "width": 280,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        320,
+        760
+      ],
+      "part": "chutney",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "chutney": "true",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 723.328125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 280,
+        "height": 227.5
+      },
+      "options": {
+        "x": 36,
+        "y": 446.578125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 614.578125,
+        "width": 280,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        390,
+        844
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 767.453125,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 350,
+        "height": 284.375
+      },
+      "options": {
+        "x": 71,
+        "y": 503.453125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 671.453125,
+        "width": 350,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        390,
+        844
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 767.453125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 350,
+        "height": 284.375
+      },
+      "options": {
+        "x": 71,
+        "y": 503.453125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 671.453125,
+        "width": 350,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        390,
+        844
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Spiced potatoes, green peas, and herbs.",
+      "height": 767.453125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 350,
+        "height": 284.375
+      },
+      "options": {
+        "x": 71,
+        "y": 503.453125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 671.453125,
+        "width": 350,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        390,
+        844
+      ],
+      "part": "chutney",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "chutney": "true",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 780.203125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 350,
+        "height": 284.375
+      },
+      "options": {
+        "x": 71,
+        "y": 503.453125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 671.453125,
+        "width": 350,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        820,
+        1180
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 1078.984375,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 90,
+        "y": 238.984375,
+        "width": 640,
+        "height": 520
+      },
+      "options": {
+        "x": 286,
+        "y": 766.984375,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 180,
+        "y": 934.984375,
+        "width": 460,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        820,
+        1180
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 1078.984375,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 90,
+        "y": 238.984375,
+        "width": 640,
+        "height": 520
+      },
+      "options": {
+        "x": 286,
+        "y": 766.984375,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 180,
+        "y": 934.984375,
+        "width": 460,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        820,
+        1180
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Spiced potatoes, green peas, and herbs.",
+      "height": 1078.984375,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 90,
+        "y": 238.984375,
+        "width": 640,
+        "height": 520
+      },
+      "options": {
+        "x": 286,
+        "y": 766.984375,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 180,
+        "y": 934.984375,
+        "width": 460,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        820,
+        1180
+      ],
+      "part": "chutney",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "chutney": "true",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 1091.734375,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 90,
+        "y": 238.984375,
+        "width": 640,
+        "height": 520
+      },
+      "options": {
+        "x": 286,
+        "y": 766.984375,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 180,
+        "y": 934.984375,
+        "width": 460,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        1024,
+        768
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 636,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 304,
+        "y": 247.03125,
+        "width": 416,
+        "height": 338
+      },
+      "options": {
+        "x": 32,
+        "y": 440,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 744,
+        "y": 566.25,
+        "width": 256,
+        "height": 25.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        1024,
+        768
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 636,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 304,
+        "y": 247.03125,
+        "width": 416,
+        "height": 338
+      },
+      "options": {
+        "x": 32,
+        "y": 440,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 744,
+        "y": 523.25,
+        "width": 256,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        1024,
+        768
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Spiced potatoes, green peas, and herbs.",
+      "height": 636,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 304,
+        "y": 247.03125,
+        "width": 416,
+        "height": 338
+      },
+      "options": {
+        "x": 32,
+        "y": 440,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 744,
+        "y": 523.25,
+        "width": 256,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        1024,
+        768
+      ],
+      "part": "chutney",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "chutney": "true",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 636,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 304,
+        "y": 247.03125,
+        "width": 416,
+        "height": 338
+      },
+      "options": {
+        "x": 32,
+        "y": 440,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 744,
+        "y": 501.5,
+        "width": 256,
+        "height": 90.5
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        1280,
+        720
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 588,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 438.765625,
+        "y": 237,
+        "width": 402.453125,
+        "height": 326.984375
+      },
+      "options": {
+        "x": 166.765625,
+        "y": 392,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 865.21875,
+        "y": 518.25,
+        "width": 390.78125,
+        "height": 25.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        1280,
+        720
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 588,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 438.765625,
+        "y": 237,
+        "width": 402.453125,
+        "height": 326.984375
+      },
+      "options": {
+        "x": 166.765625,
+        "y": 392,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 865.21875,
+        "y": 497,
+        "width": 390.78125,
+        "height": 47
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        1280,
+        720
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Spiced potatoes, green peas, and herbs.",
+      "height": 588,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 438.765625,
+        "y": 237,
+        "width": 402.453125,
+        "height": 326.984375
+      },
+      "options": {
+        "x": 166.765625,
+        "y": 392,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 865.21875,
+        "y": 497,
+        "width": 390.78125,
+        "height": 47
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        1280,
+        720
+      ],
+      "part": "chutney",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "chutney": "true",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 588,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 438.765625,
+        "y": 237,
+        "width": 402.453125,
+        "height": 326.984375
+      },
+      "options": {
+        "x": 166.765625,
+        "y": 392,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 865.21875,
+        "y": 475.25,
+        "width": 390.78125,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        1440,
+        900
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 768,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 411.3125,
+        "y": 242.375,
+        "width": 617.375,
+        "height": 501.609375
+      },
+      "options": {
+        "x": 139.3125,
+        "y": 572,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 1052.6875,
+        "y": 698.25,
+        "width": 287.3125,
+        "height": 25.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        1440,
+        900
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 768,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 411.3125,
+        "y": 242.375,
+        "width": 617.375,
+        "height": 501.609375
+      },
+      "options": {
+        "x": 139.3125,
+        "y": 572,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 1052.6875,
+        "y": 677,
+        "width": 287.3125,
+        "height": 47
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        1440,
+        900
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Spiced potatoes, green peas, and herbs.",
+      "height": 768,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 411.3125,
+        "y": 242.375,
+        "width": 617.375,
+        "height": 501.609375
+      },
+      "options": {
+        "x": 139.3125,
+        "y": 572,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 1052.6875,
+        "y": 677,
+        "width": 287.3125,
+        "height": 47
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "punjabi",
+      "viewport": [
+        1440,
+        900
+      ],
+      "part": "chutney",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "chutney": "true",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 768,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 411.3125,
+        "y": 242.375,
+        "width": 617.375,
+        "height": 501.609375
+      },
+      "options": {
+        "x": 139.3125,
+        "y": 572,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 1052.6875,
+        "y": 655.25,
+        "width": 287.3125,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        320,
+        760
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 710.578125,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 280,
+        "height": 227.5
+      },
+      "options": {
+        "x": 36,
+        "y": 446.578125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 614.578125,
+        "width": 280,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        320,
+        760
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 710.578125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 280,
+        "height": 227.5
+      },
+      "options": {
+        "x": 36,
+        "y": 446.578125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 614.578125,
+        "width": 280,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        320,
+        760
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Minced chicken, Cabot sharp cheddar, spices, and herbs.",
+      "height": 723.328125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 280,
+        "height": 227.5
+      },
+      "options": {
+        "x": 36,
+        "y": 446.578125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 614.578125,
+        "width": 280,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        320,
+        760
+      ],
+      "part": "chutney",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "chutney": "true",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 723.328125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 280,
+        "height": 227.5
+      },
+      "options": {
+        "x": 36,
+        "y": 446.578125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 614.578125,
+        "width": 280,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        390,
+        844
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 767.453125,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 350,
+        "height": 284.375
+      },
+      "options": {
+        "x": 71,
+        "y": 503.453125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 671.453125,
+        "width": 350,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        390,
+        844
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 767.453125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 350,
+        "height": 284.375
+      },
+      "options": {
+        "x": 71,
+        "y": 503.453125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 671.453125,
+        "width": 350,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        390,
+        844
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Minced chicken, Cabot sharp cheddar, spices, and herbs.",
+      "height": 780.203125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 350,
+        "height": 284.375
+      },
+      "options": {
+        "x": 71,
+        "y": 503.453125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 671.453125,
+        "width": 350,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        390,
+        844
+      ],
+      "part": "chutney",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "chutney": "true",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 780.203125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 350,
+        "height": 284.375
+      },
+      "options": {
+        "x": 71,
+        "y": 503.453125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 671.453125,
+        "width": 350,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        820,
+        1180
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 1078.984375,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 90,
+        "y": 238.984375,
+        "width": 640,
+        "height": 520
+      },
+      "options": {
+        "x": 286,
+        "y": 766.984375,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 180,
+        "y": 934.984375,
+        "width": 460,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        820,
+        1180
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 1078.984375,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 90,
+        "y": 238.984375,
+        "width": 640,
+        "height": 520
+      },
+      "options": {
+        "x": 286,
+        "y": 766.984375,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 180,
+        "y": 934.984375,
+        "width": 460,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        820,
+        1180
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Minced chicken, Cabot sharp cheddar, spices, and herbs.",
+      "height": 1078.984375,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 90,
+        "y": 238.984375,
+        "width": 640,
+        "height": 520
+      },
+      "options": {
+        "x": 286,
+        "y": 766.984375,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 180,
+        "y": 934.984375,
+        "width": 460,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        820,
+        1180
+      ],
+      "part": "chutney",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "chutney": "true",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 1091.734375,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 90,
+        "y": 238.984375,
+        "width": 640,
+        "height": 520
+      },
+      "options": {
+        "x": 286,
+        "y": 766.984375,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 180,
+        "y": 934.984375,
+        "width": 460,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        1024,
+        768
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 636,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 304,
+        "y": 247.03125,
+        "width": 416,
+        "height": 338
+      },
+      "options": {
+        "x": 32,
+        "y": 440,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 744,
+        "y": 566.25,
+        "width": 256,
+        "height": 25.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        1024,
+        768
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 636,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 304,
+        "y": 247.03125,
+        "width": 416,
+        "height": 338
+      },
+      "options": {
+        "x": 32,
+        "y": 440,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 744,
+        "y": 523.25,
+        "width": 256,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        1024,
+        768
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Minced chicken, Cabot sharp cheddar, spices, and herbs.",
+      "height": 636,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 304,
+        "y": 247.03125,
+        "width": 416,
+        "height": 338
+      },
+      "options": {
+        "x": 32,
+        "y": 440,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 744,
+        "y": 523.25,
+        "width": 256,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        1024,
+        768
+      ],
+      "part": "chutney",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "chutney": "true",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 636,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 304,
+        "y": 247.03125,
+        "width": 416,
+        "height": 338
+      },
+      "options": {
+        "x": 32,
+        "y": 440,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 744,
+        "y": 501.5,
+        "width": 256,
+        "height": 90.5
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        1280,
+        720
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 588,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 438.765625,
+        "y": 237,
+        "width": 402.453125,
+        "height": 326.984375
+      },
+      "options": {
+        "x": 166.765625,
+        "y": 392,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 865.21875,
+        "y": 518.25,
+        "width": 390.78125,
+        "height": 25.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        1280,
+        720
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 588,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 438.765625,
+        "y": 237,
+        "width": 402.453125,
+        "height": 326.984375
+      },
+      "options": {
+        "x": 166.765625,
+        "y": 392,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 865.21875,
+        "y": 497,
+        "width": 390.78125,
+        "height": 47
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        1280,
+        720
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Minced chicken, Cabot sharp cheddar, spices, and herbs.",
+      "height": 588,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 438.765625,
+        "y": 237,
+        "width": 402.453125,
+        "height": 326.984375
+      },
+      "options": {
+        "x": 166.765625,
+        "y": 392,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 865.21875,
+        "y": 475.25,
+        "width": 390.78125,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        1280,
+        720
+      ],
+      "part": "chutney",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "chutney": "true",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 588,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 438.765625,
+        "y": 237,
+        "width": 402.453125,
+        "height": 326.984375
+      },
+      "options": {
+        "x": 166.765625,
+        "y": 392,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 865.21875,
+        "y": 475.25,
+        "width": 390.78125,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        1440,
+        900
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 768,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 411.3125,
+        "y": 242.375,
+        "width": 617.375,
+        "height": 501.609375
+      },
+      "options": {
+        "x": 139.3125,
+        "y": 572,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 1052.6875,
+        "y": 698.25,
+        "width": 287.3125,
+        "height": 25.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        1440,
+        900
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 768,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 411.3125,
+        "y": 242.375,
+        "width": 617.375,
+        "height": 501.609375
+      },
+      "options": {
+        "x": 139.3125,
+        "y": 572,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 1052.6875,
+        "y": 677,
+        "width": 287.3125,
+        "height": 47
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        1440,
+        900
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Minced chicken, Cabot sharp cheddar, spices, and herbs.",
+      "height": 768,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 411.3125,
+        "y": 242.375,
+        "width": 617.375,
+        "height": 501.609375
+      },
+      "options": {
+        "x": 139.3125,
+        "y": 572,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 1052.6875,
+        "y": 655.25,
+        "width": 287.3125,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "chicken-cheese",
+      "viewport": [
+        1440,
+        900
+      ],
+      "part": "chutney",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "chutney": "true",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 768,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 411.3125,
+        "y": 242.375,
+        "width": 617.375,
+        "height": 501.609375
+      },
+      "options": {
+        "x": 139.3125,
+        "y": 572,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 1052.6875,
+        "y": 655.25,
+        "width": 287.3125,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        320,
+        760
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 710.578125,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 280,
+        "height": 227.5
+      },
+      "options": {
+        "x": 36,
+        "y": 446.578125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 614.578125,
+        "width": 280,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        320,
+        760
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 710.578125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 280,
+        "height": 227.5
+      },
+      "options": {
+        "x": 36,
+        "y": 446.578125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 614.578125,
+        "width": 280,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        320,
+        760
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Roasted chicken with chili seasoning.",
+      "height": 710.578125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 280,
+        "height": 227.5
+      },
+      "options": {
+        "x": 36,
+        "y": 446.578125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 614.578125,
+        "width": 280,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        320,
+        760
+      ],
+      "part": "chutney",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "chutney": "true",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 723.328125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 280,
+        "height": 227.5
+      },
+      "options": {
+        "x": 36,
+        "y": 446.578125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 614.578125,
+        "width": 280,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        390,
+        844
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 767.453125,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 350,
+        "height": 284.375
+      },
+      "options": {
+        "x": 71,
+        "y": 503.453125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 671.453125,
+        "width": 350,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        390,
+        844
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 767.453125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 350,
+        "height": 284.375
+      },
+      "options": {
+        "x": 71,
+        "y": 503.453125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 671.453125,
+        "width": 350,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        390,
+        844
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Roasted chicken with chili seasoning.",
+      "height": 767.453125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 350,
+        "height": 284.375
+      },
+      "options": {
+        "x": 71,
+        "y": 503.453125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 671.453125,
+        "width": 350,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        390,
+        844
+      ],
+      "part": "chutney",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "chutney": "true",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 780.203125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 350,
+        "height": 284.375
+      },
+      "options": {
+        "x": 71,
+        "y": 503.453125,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 671.453125,
+        "width": 350,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        820,
+        1180
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 1078.984375,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 90,
+        "y": 238.984375,
+        "width": 640,
+        "height": 520
+      },
+      "options": {
+        "x": 286,
+        "y": 766.984375,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 180,
+        "y": 934.984375,
+        "width": 460,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        820,
+        1180
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 1078.984375,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 90,
+        "y": 238.984375,
+        "width": 640,
+        "height": 520
+      },
+      "options": {
+        "x": 286,
+        "y": 766.984375,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 180,
+        "y": 934.984375,
+        "width": 460,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        820,
+        1180
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Roasted chicken with chili seasoning.",
+      "height": 1078.984375,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 90,
+        "y": 238.984375,
+        "width": 640,
+        "height": 520
+      },
+      "options": {
+        "x": 286,
+        "y": 766.984375,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 180,
+        "y": 934.984375,
+        "width": 460,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        820,
+        1180
+      ],
+      "part": "chutney",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "chutney": "true",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 1091.734375,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 90,
+        "y": 238.984375,
+        "width": 640,
+        "height": 520
+      },
+      "options": {
+        "x": 286,
+        "y": 766.984375,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 180,
+        "y": 934.984375,
+        "width": 460,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        1024,
+        768
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 636,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 304,
+        "y": 247.03125,
+        "width": 416,
+        "height": 338
+      },
+      "options": {
+        "x": 32,
+        "y": 440,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 744,
+        "y": 566.25,
+        "width": 256,
+        "height": 25.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        1024,
+        768
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 636,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 304,
+        "y": 247.03125,
+        "width": 416,
+        "height": 338
+      },
+      "options": {
+        "x": 32,
+        "y": 440,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 744,
+        "y": 523.25,
+        "width": 256,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        1024,
+        768
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Roasted chicken with chili seasoning.",
+      "height": 636,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 304,
+        "y": 247.03125,
+        "width": 416,
+        "height": 338
+      },
+      "options": {
+        "x": 32,
+        "y": 440,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 744,
+        "y": 545,
+        "width": 256,
+        "height": 47
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        1024,
+        768
+      ],
+      "part": "chutney",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "chutney": "true",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 636,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 304,
+        "y": 247.03125,
+        "width": 416,
+        "height": 338
+      },
+      "options": {
+        "x": 32,
+        "y": 440,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 744,
+        "y": 501.5,
+        "width": 256,
+        "height": 90.5
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        1280,
+        720
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 588,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 438.765625,
+        "y": 237,
+        "width": 402.453125,
+        "height": 326.984375
+      },
+      "options": {
+        "x": 166.765625,
+        "y": 392,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 865.21875,
+        "y": 518.25,
+        "width": 390.78125,
+        "height": 25.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        1280,
+        720
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 588,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 438.765625,
+        "y": 237,
+        "width": 402.453125,
+        "height": 326.984375
+      },
+      "options": {
+        "x": 166.765625,
+        "y": 392,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 865.21875,
+        "y": 497,
+        "width": 390.78125,
+        "height": 47
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        1280,
+        720
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Roasted chicken with chili seasoning.",
+      "height": 588,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 438.765625,
+        "y": 237,
+        "width": 402.453125,
+        "height": 326.984375
+      },
+      "options": {
+        "x": 166.765625,
+        "y": 392,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 865.21875,
+        "y": 497,
+        "width": 390.78125,
+        "height": 47
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        1280,
+        720
+      ],
+      "part": "chutney",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "chutney": "true",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 588,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 438.765625,
+        "y": 237,
+        "width": 402.453125,
+        "height": 326.984375
+      },
+      "options": {
+        "x": 166.765625,
+        "y": 392,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 865.21875,
+        "y": 475.25,
+        "width": 390.78125,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        1440,
+        900
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 768,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 411.3125,
+        "y": 242.375,
+        "width": 617.375,
+        "height": 501.609375
+      },
+      "options": {
+        "x": 139.3125,
+        "y": 572,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 1052.6875,
+        "y": 698.25,
+        "width": 287.3125,
+        "height": 25.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        1440,
+        900
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 768,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 411.3125,
+        "y": 242.375,
+        "width": 617.375,
+        "height": 501.609375
+      },
+      "options": {
+        "x": 139.3125,
+        "y": 572,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 1052.6875,
+        "y": 677,
+        "width": 287.3125,
+        "height": 47
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        1440,
+        900
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Roasted chicken with chili seasoning.",
+      "height": 768,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 411.3125,
+        "y": 242.375,
+        "width": 617.375,
+        "height": 501.609375
+      },
+      "options": {
+        "x": 139.3125,
+        "y": 572,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 1052.6875,
+        "y": 677,
+        "width": 287.3125,
+        "height": 47
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "0",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "spicy-chicken",
+      "viewport": [
+        1440,
+        900
+      ],
+      "part": "chutney",
+      "open": "true",
+      "closeup": "salsa",
+      "spread": "0",
+      "chutney": "true",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "height": 768,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "stage": {
+        "x": 411.3125,
+        "y": 242.375,
+        "width": 617.375,
+        "height": 501.609375
+      },
+      "options": {
+        "x": 139.3125,
+        "y": 572,
+        "width": 248,
+        "height": 152
+      },
+      "captionBox": {
+        "x": 1052.6875,
+        "y": 655.25,
+        "width": 287.3125,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": "1",
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "apple-pie",
+      "viewport": [
+        320,
+        760
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 610.578125,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 280,
+        "height": 227.5
+      },
+      "options": {
+        "x": 36,
+        "y": 446.578125,
+        "width": 248,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 514.578125,
+        "width": 280,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": null,
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "apple-pie",
+      "viewport": [
+        320,
+        760
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 610.578125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 280,
+        "height": 227.5
+      },
+      "options": {
+        "x": 36,
+        "y": 446.578125,
+        "width": 248,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 514.578125,
+        "width": 280,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": null,
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "apple-pie",
+      "viewport": [
+        320,
+        760
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Apples, nutmeg, brown sugar, and cinnamon.",
+      "height": 623.328125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 280,
+        "height": 227.5
+      },
+      "options": {
+        "x": 36,
+        "y": 446.578125,
+        "width": 248,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 514.578125,
+        "width": 280,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": null,
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "apple-pie",
+      "viewport": [
+        390,
+        844
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 667.453125,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 350,
+        "height": 284.375
+      },
+      "options": {
+        "x": 71,
+        "y": 503.453125,
+        "width": 248,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 571.453125,
+        "width": 350,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": null,
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "apple-pie",
+      "viewport": [
+        390,
+        844
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 667.453125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 350,
+        "height": 284.375
+      },
+      "options": {
+        "x": 71,
+        "y": 503.453125,
+        "width": 248,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 571.453125,
+        "width": 350,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": null,
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "apple-pie",
+      "viewport": [
+        390,
+        844
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Apples, nutmeg, brown sugar, and cinnamon.",
+      "height": 667.453125,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 20,
+        "y": 211.078125,
+        "width": 350,
+        "height": 284.375
+      },
+      "options": {
+        "x": 71,
+        "y": 503.453125,
+        "width": 248,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 20,
+        "y": 571.453125,
+        "width": 350,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": null,
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "apple-pie",
+      "viewport": [
+        820,
+        1180
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 978.984375,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 90,
+        "y": 238.984375,
+        "width": 640,
+        "height": 520
+      },
+      "options": {
+        "x": 286,
+        "y": 766.984375,
+        "width": 248,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 180,
+        "y": 834.984375,
+        "width": 460,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": null,
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "apple-pie",
+      "viewport": [
+        820,
+        1180
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 978.984375,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 90,
+        "y": 238.984375,
+        "width": 640,
+        "height": 520
+      },
+      "options": {
+        "x": 286,
+        "y": 766.984375,
+        "width": 248,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 180,
+        "y": 834.984375,
+        "width": 460,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": null,
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "apple-pie",
+      "viewport": [
+        820,
+        1180
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Apples, nutmeg, brown sugar, and cinnamon.",
+      "height": 978.984375,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 90,
+        "y": 238.984375,
+        "width": 640,
+        "height": 520
+      },
+      "options": {
+        "x": 286,
+        "y": 766.984375,
+        "width": 248,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 180,
+        "y": 834.984375,
+        "width": 460,
+        "height": 56
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": null,
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "apple-pie",
+      "viewport": [
+        1024,
+        768
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 636,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 304,
+        "y": 247.03125,
+        "width": 416,
+        "height": 338
+      },
+      "options": {
+        "x": 32,
+        "y": 540,
+        "width": 248,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 744,
+        "y": 566.25,
+        "width": 256,
+        "height": 25.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": null,
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "apple-pie",
+      "viewport": [
+        1024,
+        768
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 636,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 304,
+        "y": 247.03125,
+        "width": 416,
+        "height": 338
+      },
+      "options": {
+        "x": 32,
+        "y": 540,
+        "width": 248,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 744,
+        "y": 523.25,
+        "width": 256,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": null,
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "apple-pie",
+      "viewport": [
+        1024,
+        768
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Apples, nutmeg, brown sugar, and cinnamon.",
+      "height": 636,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 304,
+        "y": 247.03125,
+        "width": 416,
+        "height": 338
+      },
+      "options": {
+        "x": 32,
+        "y": 540,
+        "width": 248,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 744,
+        "y": 523.25,
+        "width": 256,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": null,
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "apple-pie",
+      "viewport": [
+        1280,
+        720
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 588,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 438.765625,
+        "y": 237,
+        "width": 402.453125,
+        "height": 326.984375
+      },
+      "options": {
+        "x": 166.765625,
+        "y": 492,
+        "width": 248,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 865.21875,
+        "y": 518.25,
+        "width": 390.78125,
+        "height": 25.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": null,
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "apple-pie",
+      "viewport": [
+        1280,
+        720
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 588,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 438.765625,
+        "y": 237,
+        "width": 402.453125,
+        "height": 326.984375
+      },
+      "options": {
+        "x": 166.765625,
+        "y": 492,
+        "width": 248,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 865.21875,
+        "y": 497,
+        "width": 390.78125,
+        "height": 47
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": null,
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "apple-pie",
+      "viewport": [
+        1280,
+        720
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Apples, nutmeg, brown sugar, and cinnamon.",
+      "height": 588,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 438.765625,
+        "y": 237,
+        "width": 402.453125,
+        "height": 326.984375
+      },
+      "options": {
+        "x": 166.765625,
+        "y": 492,
+        "width": 248,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 865.21875,
+        "y": 497,
+        "width": 390.78125,
+        "height": 47
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": null,
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "apple-pie",
+      "viewport": [
+        1440,
+        900
+      ],
+      "part": "whole",
+      "open": "false",
+      "closeup": "",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Select + for a closer look.",
+      "height": 768,
+      "overflow": false,
+      "inert": false,
+      "ariaHidden": "false",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 411.3125,
+        "y": 242.375,
+        "width": 617.375,
+        "height": 501.609375
+      },
+      "options": {
+        "x": 139.3125,
+        "y": 672,
+        "width": 248,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 1052.6875,
+        "y": 698.25,
+        "width": 287.3125,
+        "height": 25.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": null,
+      "duplicateIds": [],
+      "focused": "BODY"
+    },
+    {
+      "flavor": "apple-pie",
+      "viewport": [
+        1440,
+        900
+      ],
+      "part": "fold",
+      "open": "true",
+      "closeup": "fold",
+      "spread": "0",
+      "chutney": "false",
+      "caption": "Folded by hand. One samosa at a time.",
+      "height": 768,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 411.3125,
+        "y": 242.375,
+        "width": 617.375,
+        "height": 501.609375
+      },
+      "options": {
+        "x": 139.3125,
+        "y": 672,
+        "width": 248,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 1052.6875,
+        "y": 677,
+        "width": 287.3125,
+        "height": 47
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": null,
+      "duplicateIds": [],
+      "focused": "toggle"
+    },
+    {
+      "flavor": "apple-pie",
+      "viewport": [
+        1440,
+        900
+      ],
+      "part": "filling",
+      "open": "true",
+      "closeup": "",
+      "spread": "1",
+      "chutney": "false",
+      "caption": "Apples, nutmeg, brown sugar, and cinnamon.",
+      "height": 768,
+      "overflow": false,
+      "inert": true,
+      "ariaHidden": "true",
+      "visiblePoints": [
+        "fold",
+        "filling"
+      ],
+      "stage": {
+        "x": 411.3125,
+        "y": 242.375,
+        "width": 617.375,
+        "height": 501.609375
+      },
+      "options": {
+        "x": 139.3125,
+        "y": 672,
+        "width": 248,
+        "height": 52
+      },
+      "captionBox": {
+        "x": 1052.6875,
+        "y": 655.25,
+        "width": 287.3125,
+        "height": 68.75
+      },
+      "stageOptionsOverlap": false,
+      "stageCaptionOverlap": false,
+      "cameraTransition": "1s",
+      "bowlOpacity": null,
+      "duplicateIds": [],
+      "focused": "toggle"
+    }
+  ]
+}

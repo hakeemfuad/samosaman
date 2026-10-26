@@ -1,0 +1,54 @@
+[
+  {
+    "art": "pairing",
+    "buttonsInside": true,
+    "hasOverflow": false,
+    "height": 900,
+    "heroHeight": 768,
+    "imageHeight": 439.203125,
+    "imageInside": true,
+    "imageLoaded": true,
+    "imageWidth": 900,
+    "variant": "C",
+    "width": 1440
+  },
+  {
+    "art": "pairing",
+    "buttonsInside": true,
+    "hasOverflow": false,
+    "height": 844,
+    "heroHeight": 616,
+    "imageHeight": 315.953125,
+    "imageInside": true,
+    "imageLoaded": true,
+    "imageWidth": 342,
+    "variant": "C",
+    "width": 390
+  },
+  {
+    "art": "pairing",
+    "buttonsInside": true,
+    "hasOverflow": false,
+    "height": 568,
+    "heroHeight": 456,
+    "imageHeight": 94.0625,
+    "imageInside": true,
+    "imageLoaded": true,
+    "imageWidth": 272,
+    "variant": "C",
+    "width": 320
+  },
+  {
+    "art": "pairing",
+    "buttonsInside": true,
+    "hasOverflow": false,
+    "height": 720,
+    "heroHeight": 588,
+    "imageHeight": 266.78125,
+    "imageInside": true,
+    "imageLoaded": true,
+    "imageWidth": 900,
+    "variant": "C",
+    "width": 1280
+  }
+]

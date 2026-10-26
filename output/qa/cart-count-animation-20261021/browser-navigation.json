@@ -1,0 +1,80 @@
+[
+  {
+    "animation": "none",
+    "className": "badge",
+    "count": 5,
+    "hidden": false,
+    "opacity": "1",
+    "page": "/burlington.html",
+    "scripts": [
+      "http://127.0.0.1:4190/js/navbar.js?v=20261021-count-change-only",
+      "http://127.0.0.1:4190/js/cart.js?v=20261021-count-change-only"
+    ],
+    "transform": "none"
+  },
+  {
+    "animation": "none",
+    "className": "badge",
+    "count": 5,
+    "hidden": false,
+    "opacity": "1",
+    "page": "/index.html",
+    "scripts": [
+      "http://127.0.0.1:4190/js/cart.js?v=20261021-count-change-only",
+      "http://127.0.0.1:4190/js/navbar.js?v=20261021-count-change-only"
+    ],
+    "transform": "none"
+  },
+  {
+    "animation": "none",
+    "className": "badge",
+    "count": 5,
+    "hidden": false,
+    "opacity": "1",
+    "page": "/delivery.html",
+    "scripts": [
+      "http://127.0.0.1:4190/js/cart.js?v=20261021-count-change-only",
+      "http://127.0.0.1:4190/js/navbar.js?v=20261021-count-change-only"
+    ],
+    "transform": "none"
+  },
+  {
+    "animation": "none",
+    "className": "badge",
+    "count": 5,
+    "hidden": false,
+    "opacity": "1",
+    "page": "/burlington.html",
+    "scripts": [
+      "http://127.0.0.1:4190/js/navbar.js?v=20261021-count-change-only",
+      "http://127.0.0.1:4190/js/cart.js?v=20261021-count-change-only"
+    ],
+    "transform": "none"
+  },
+  {
+    "animation": "none",
+    "className": "badge",
+    "count": 5,
+    "hidden": false,
+    "opacity": "1",
+    "page": "/index.html",
+    "scripts": [
+      "http://127.0.0.1:4190/js/cart.js?v=20261021-count-change-only",
+      "http://127.0.0.1:4190/js/navbar.js?v=20261021-count-change-only"
+    ],
+    "transform": "none"
+  },
+  {
+    "animation": "none",
+    "className": "badge",
+    "count": 5,
+    "hidden": false,
+    "opacity": "1",
+    "page": "/burlington.html",
+    "scripts": [
+      "http://127.0.0.1:4190/js/navbar.js?v=20261021-count-change-only",
+      "http://127.0.0.1:4190/js/cart.js?v=20261021-count-change-only"
+    ],
+    "transform": "none"
+  }
+]

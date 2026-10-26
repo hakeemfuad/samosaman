@@ -1,0 +1,32 @@
+[
+  {
+    "background": "rgb(0, 113, 227)",
+    "color": "rgb(255, 255, 255)",
+    "fits": true,
+    "height": 48,
+    "href": "catering.html",
+    "overflow": false,
+    "radius": "999px",
+    "text": "Plan your catering",
+    "viewport": [
+      1280,
+      720
+    ],
+    "width": 172.203125
+  },
+  {
+    "background": "rgb(0, 113, 227)",
+    "color": "rgb(255, 255, 255)",
+    "fits": true,
+    "height": 48,
+    "href": "catering.html",
+    "overflow": false,
+    "radius": "999px",
+    "text": "Plan your catering",
+    "viewport": [
+      390,
+      844
+    ],
+    "width": 172.203125
+  }
+]

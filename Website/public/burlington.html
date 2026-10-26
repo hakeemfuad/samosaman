@@ -13,7 +13,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samosaman - Burlington Menu</title>
-    <link rel="icon" type="image/svg+xml" href="assets/m_logo.svg">
+    <link rel="icon" href="/assets/icons/favicon-8c5fc881c5e8.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16-f350dc6fd625.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32-883d9d601287.png">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/icons/favicon-6e320b5d1a02.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-a9b0ba2e5de8.png">
+    <link rel="manifest" href="/site.webmanifest?v=20261018">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,12 +55,14 @@
             }
         }
     </script>
+    <link rel="stylesheet" href="css/navbar.css?v=20261021-account-loading">
+    <link rel="stylesheet" href="css/menu-details.css?v=20261025-menu-details">
 </head>
 <body class="menu-page">
     <a class="menu-skip-link" href="#best-sellers">Skip to menu</a>
 
     <div id="navbar-placeholder"></div>
-    <script src="js/navbar.js?v=20261015-stable-menu"></script>
+    <script src="js/navbar.js?v=20261024-remove-our-story"></script>
 
     <main id="menu-main" class="menu-main pt-20">
         <section class="menu-hero" aria-labelledby="menu-title">
@@ -83,7 +90,7 @@
                     <ul class="menu-categories">
                             <li><a class="menu-category" href="#best-sellers" aria-current="true">Best Sellers <small>5</small></a></li>
                             <li><a class="menu-category" href="#meat-samosas">Meat Samosas <small>3</small></a></li>
-                            <li><a class="menu-category" href="#vegetarian-samosas">Vegetarian Samosas <small>4</small></a></li>
+                            <li><a class="menu-category" href="#vegetarian-samosas">Vegetarian Samosas <small>2</small></a></li>
                             <li><a class="menu-category" href="#meals">Meals <small>2</small></a></li>
                     </ul>
                 </nav>
@@ -115,13 +122,12 @@
                         <li class="menu-card group">
                             <div class="menu-image">
                                 <img src="assets/samosas/traditional_punjabi_samosa.webp" alt="Traditional Punjabi Samosa" width="800" height="600" loading="lazy" decoding="async">
-                                <span class="menu-vegetarian">Vegetarian</span>
-                            </div>
+                            <button type="button" class="menu-explore" data-product-open="punjabi-samosa" aria-haspopup="dialog" aria-controls="flavor-dialog" aria-label="See inside Traditional Punjabi"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m3 7 7-4 7 4-7 4-7-4Zm0 4 7 4 7-4M3 15l7 4 7-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>See inside</button></div>
                             <h3>Punjabi</h3>
                             <p class="menu-description">A hearty blend of delicately spiced potatoes, green peas, and herbs.</p>
                             <div class="menu-card-footer">
-                                <span class="menu-price">$3.75</span>
-                                <button type="button" class="add-to-bag-btn menu-add" data-id="punjabi-samosa" data-name="Traditional Punjabi Samosa" data-price="3.75" aria-label="Add Traditional Punjabi Samosa to bag">
+                                <span class="menu-price">$4.75</span>
+                                <button type="button" class="add-to-bag-btn menu-add" data-id="punjabi-samosa" data-name="Traditional Punjabi Samosa" data-price="4.75" aria-label="Add Traditional Punjabi Samosa to bag">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
                                     <span>Add</span>
                                 </button>
@@ -130,12 +136,12 @@
                         <li class="menu-card group">
                             <div class="menu-image">
                                 <img src="assets/samosas/steakandcheese.webp" alt="Steak and Cheese Samosa" width="800" height="600" loading="lazy" decoding="async">
-                            </div>
+                            <button type="button" class="menu-explore" data-product-open="steak-cheese" aria-haspopup="dialog" aria-controls="flavor-dialog" aria-label="See inside Steak &amp; Cheese"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m3 7 7-4 7 4-7 4-7-4Zm0 4 7 4 7-4M3 15l7 4 7-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>See inside</button></div>
                             <h3>Steak &amp; Cheese</h3>
-                            <p class="menu-description">Tender minced beef, sharp cheese, onion, and spices.</p>
+                            <p class="menu-description">Tender minced beef, Cabot<sup>™</sup> Sharp Cheddar, onion, and spices.</p>
                             <div class="menu-card-footer">
-                                <span class="menu-price">$3.75</span>
-                                <button type="button" class="add-to-bag-btn menu-add" data-id="steak-cheese" data-name="Steak &amp; Cheese Samosa" data-price="3.75" aria-label="Add Steak &amp; Cheese Samosa to bag">
+                                <span class="menu-price">$4.75</span>
+                                <button type="button" class="add-to-bag-btn menu-add" data-id="steak-cheese" data-name="Steak &amp; Cheese Samosa" data-price="4.75" aria-label="Add Steak &amp; Cheese Samosa to bag">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
                                     <span>Add</span>
                                 </button>
@@ -144,12 +150,12 @@
                         <li class="menu-card group">
                             <div class="menu-image">
                                 <img src="assets/samosas/spicy_chicken2.webp" alt="Spicy Chicken Samosa" width="800" height="600" loading="lazy" decoding="async">
-                            </div>
+                            <button type="button" class="menu-explore" data-product-open="spicy-chicken" aria-haspopup="dialog" aria-controls="flavor-dialog" aria-label="See inside Spicy Chicken"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m3 7 7-4 7 4-7 4-7-4Zm0 4 7 4 7-4M3 15l7 4 7-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>See inside</button></div>
                             <h3>Spicy Chicken</h3>
-                            <p class="menu-description">Roasted chicken with a hint of rich chili flavor.</p>
+                            <p class="menu-description">Ground chicken with chili seasoning.</p>
                             <div class="menu-card-footer">
-                                <span class="menu-price">$3.75</span>
-                                <button type="button" class="add-to-bag-btn menu-add" data-id="spicy-chicken" data-name="Spicy Chicken Samosa" data-price="3.75" aria-label="Add Spicy Chicken Samosa to bag">
+                                <span class="menu-price">$4.75</span>
+                                <button type="button" class="add-to-bag-btn menu-add" data-id="spicy-chicken" data-name="Spicy Chicken Samosa" data-price="4.75" aria-label="Add Spicy Chicken Samosa to bag">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
                                     <span>Add</span>
                                 </button>
@@ -158,12 +164,12 @@
                         <li class="menu-card group">
                             <div class="menu-image">
                                 <img src="assets/samosas/chicken_cheese3.webp" alt="Chicken and Cheese Samosa" width="800" height="600" loading="lazy" decoding="async">
-                            </div>
+                            <button type="button" class="menu-explore" data-product-open="chicken-cheese" aria-haspopup="dialog" aria-controls="flavor-dialog" aria-label="See inside Chicken &amp; Cheese"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m3 7 7-4 7 4-7 4-7-4Zm0 4 7 4 7-4M3 15l7 4 7-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>See inside</button></div>
                             <h3>Chicken &amp; Cheese</h3>
-                            <p class="menu-description">Tender minced chicken, sharp cheese, aromatic spices and herbs.</p>
+                            <p class="menu-description">Tender minced chicken, Cabot<sup>™</sup> Sharp Cheddar, aromatic spices and herbs.</p>
                             <div class="menu-card-footer">
-                                <span class="menu-price">$3.75</span>
-                                <button type="button" class="add-to-bag-btn menu-add" data-id="chicken-cheese" data-name="Chicken &amp; Cheese Samosa" data-price="3.75" aria-label="Add Chicken &amp; Cheese Samosa to bag">
+                                <span class="menu-price">$4.75</span>
+                                <button type="button" class="add-to-bag-btn menu-add" data-id="chicken-cheese" data-name="Chicken &amp; Cheese Samosa" data-price="4.75" aria-label="Add Chicken &amp; Cheese Samosa to bag">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
                                     <span>Add</span>
                                 </button>
@@ -177,12 +183,12 @@
                         <li class="menu-card group">
                             <div class="menu-image">
                                 <img src="assets/samosas/steakandcheese.webp" alt="Steak and Cheese Samosa" width="800" height="600" loading="lazy" decoding="async">
-                            </div>
+                            <button type="button" class="menu-explore" data-product-open="steak-cheese" aria-haspopup="dialog" aria-controls="flavor-dialog" aria-label="See inside Steak &amp; Cheese"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m3 7 7-4 7 4-7 4-7-4Zm0 4 7 4 7-4M3 15l7 4 7-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>See inside</button></div>
                             <h3>Steak &amp; Cheese</h3>
-                            <p class="menu-description">Tender minced beef, sharp cheese, onion, and spices.</p>
+                            <p class="menu-description">Tender minced beef, Cabot<sup>™</sup> Sharp Cheddar, onion, and spices.</p>
                             <div class="menu-card-footer">
-                                <span class="menu-price">$3.75</span>
-                                <button type="button" class="add-to-bag-btn menu-add" data-id="steak-cheese" data-name="Steak &amp; Cheese Samosa" data-price="3.75" aria-label="Add Steak &amp; Cheese Samosa to bag">
+                                <span class="menu-price">$4.75</span>
+                                <button type="button" class="add-to-bag-btn menu-add" data-id="steak-cheese" data-name="Steak &amp; Cheese Samosa" data-price="4.75" aria-label="Add Steak &amp; Cheese Samosa to bag">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
                                     <span>Add</span>
                                 </button>
@@ -191,12 +197,12 @@
                         <li class="menu-card group">
                             <div class="menu-image">
                                 <img src="assets/samosas/chicken_cheese3.webp" alt="Chicken and Cheese Samosa" width="800" height="600" loading="lazy" decoding="async">
-                            </div>
+                            <button type="button" class="menu-explore" data-product-open="chicken-cheese" aria-haspopup="dialog" aria-controls="flavor-dialog" aria-label="See inside Chicken &amp; Cheese"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m3 7 7-4 7 4-7 4-7-4Zm0 4 7 4 7-4M3 15l7 4 7-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>See inside</button></div>
                             <h3>Chicken &amp; Cheese</h3>
-                            <p class="menu-description">Tender minced chicken, sharp cheese, aromatic spices and herbs.</p>
+                            <p class="menu-description">Tender minced chicken, Cabot<sup>™</sup> Sharp Cheddar, aromatic spices and herbs.</p>
                             <div class="menu-card-footer">
-                                <span class="menu-price">$3.75</span>
-                                <button type="button" class="add-to-bag-btn menu-add" data-id="chicken-cheese" data-name="Chicken &amp; Cheese Samosa" data-price="3.75" aria-label="Add Chicken &amp; Cheese Samosa to bag">
+                                <span class="menu-price">$4.75</span>
+                                <button type="button" class="add-to-bag-btn menu-add" data-id="chicken-cheese" data-name="Chicken &amp; Cheese Samosa" data-price="4.75" aria-label="Add Chicken &amp; Cheese Samosa to bag">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
                                     <span>Add</span>
                                 </button>
@@ -205,12 +211,12 @@
                         <li class="menu-card group">
                             <div class="menu-image">
                                 <img src="assets/samosas/spicy_chicken2.webp" alt="Spicy Chicken Samosa" width="800" height="600" loading="lazy" decoding="async">
-                            </div>
+                            <button type="button" class="menu-explore" data-product-open="spicy-chicken" aria-haspopup="dialog" aria-controls="flavor-dialog" aria-label="See inside Spicy Chicken"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m3 7 7-4 7 4-7 4-7-4Zm0 4 7 4 7-4M3 15l7 4 7-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>See inside</button></div>
                             <h3>Spicy Chicken</h3>
-                            <p class="menu-description">Roasted chicken with a hint of rich chili flavor.</p>
+                            <p class="menu-description">Ground chicken with chili seasoning.</p>
                             <div class="menu-card-footer">
-                                <span class="menu-price">$3.75</span>
-                                <button type="button" class="add-to-bag-btn menu-add" data-id="spicy-chicken" data-name="Spicy Chicken Samosa" data-price="3.75" aria-label="Add Spicy Chicken Samosa to bag">
+                                <span class="menu-price">$4.75</span>
+                                <button type="button" class="add-to-bag-btn menu-add" data-id="spicy-chicken" data-name="Spicy Chicken Samosa" data-price="4.75" aria-label="Add Spicy Chicken Samosa to bag">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
                                     <span>Add</span>
                                 </button>
@@ -223,44 +229,13 @@
                     <ul class="menu-grid">
                         <li class="menu-card group">
                             <div class="menu-image">
-                                <img src="assets/samosas/spicy_potato_samosa.webp" alt="Spicy Potato Samosa" width="800" height="600" loading="lazy" decoding="async">
-                                <span class="menu-vegetarian">Vegetarian</span>
-                            </div>
-                            <h3>Spicy Potato</h3>
-                            <p class="menu-description">Spiced potatoes, green onion, hot peppers, and fresh herbs.</p>
-                            <div class="menu-card-footer">
-                                <span class="menu-price">$3.75</span>
-                                <button type="button" class="add-to-bag-btn menu-add" data-id="spicy-potato" data-name="Spicy Potato Samosa" data-price="3.75" aria-label="Add Spicy Potato Samosa to bag">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-                                    <span>Add</span>
-                                </button>
-                            </div>
-                        </li>
-                        <li class="menu-card group">
-                            <div class="menu-image">
                                 <img src="assets/samosas/traditional_punjabi_samosa.webp" alt="Traditional Punjabi Samosa" width="800" height="600" loading="lazy" decoding="async">
-                                <span class="menu-vegetarian">Vegetarian</span>
-                            </div>
+                            <button type="button" class="menu-explore" data-product-open="punjabi-samosa" aria-haspopup="dialog" aria-controls="flavor-dialog" aria-label="See inside Traditional Punjabi"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m3 7 7-4 7 4-7 4-7-4Zm0 4 7 4 7-4M3 15l7 4 7-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>See inside</button></div>
                             <h3>Punjabi</h3>
                             <p class="menu-description">A hearty blend of delicately spiced potatoes, green peas, and herbs.</p>
                             <div class="menu-card-footer">
-                                <span class="menu-price">$3.75</span>
-                                <button type="button" class="add-to-bag-btn menu-add" data-id="punjabi-samosa" data-name="Traditional Punjabi Samosa" data-price="3.75" aria-label="Add Traditional Punjabi Samosa to bag">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-                                    <span>Add</span>
-                                </button>
-                            </div>
-                        </li>
-                        <li class="menu-card group">
-                            <div class="menu-image">
-                                <img src="assets/samosas/veggie_samosa3.webp" alt="Vegetarian Samosa" width="800" height="600" loading="lazy" decoding="async">
-                                <span class="menu-vegetarian">Vegetarian</span>
-                            </div>
-                            <h3>Vegetarian</h3>
-                            <p class="menu-description">The classic samosa. Potatoes, sweet peas, carrots, celery, and mild spices.</p>
-                            <div class="menu-card-footer">
-                                <span class="menu-price">$3.75</span>
-                                <button type="button" class="add-to-bag-btn menu-add" data-id="veggie-samosa" data-name="Vegetarian Samosa" data-price="3.75" aria-label="Add Vegetarian Samosa to bag">
+                                <span class="menu-price">$4.75</span>
+                                <button type="button" class="add-to-bag-btn menu-add" data-id="punjabi-samosa" data-name="Traditional Punjabi Samosa" data-price="4.75" aria-label="Add Traditional Punjabi Samosa to bag">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
                                     <span>Add</span>
                                 </button>
@@ -269,13 +244,12 @@
                         <li class="menu-card group">
                             <div class="menu-image">
                                 <img src="assets/samosas/apple_samosa3.webp" alt="Apple Pie Samosa" width="800" height="600" loading="lazy" decoding="async">
-                                <span class="menu-vegetarian">Vegetarian</span>
-                            </div>
+                            <button type="button" class="menu-explore" data-product-open="apple-samosa" aria-haspopup="dialog" aria-controls="flavor-dialog" aria-label="See inside Apple Pie"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m3 7 7-4 7 4-7 4-7-4Zm0 4 7 4 7-4M3 15l7 4 7-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>See inside</button></div>
                             <h3>Apple Pie</h3>
                             <p class="menu-description">Warm blend of apples, nutmeg, brown sugar, and cinnamon spice.</p>
                             <div class="menu-card-footer">
-                                <span class="menu-price">$3.75</span>
-                                <button type="button" class="add-to-bag-btn menu-add" data-id="apple-samosa" data-name="Apple Pie Samosa" data-price="3.75" aria-label="Add Apple Pie Samosa to bag">
+                                <span class="menu-price">$4.75</span>
+                                <button type="button" class="add-to-bag-btn menu-add" data-id="apple-samosa" data-name="Apple Pie Samosa" data-price="4.75" aria-label="Add Apple Pie Samosa to bag">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
                                     <span>Add</span>
                                 </button>
@@ -320,14 +294,16 @@
         </div>
 
         <div class="menu-catering-wrap">
-            <section class="menu-catering" aria-labelledby="menu-catering-title">
-                <img src="assets/samosas/traditional_punjabi_samosa.webp" width="800" height="600" alt="A golden Punjabi samosa beside a cup of salsa" loading="lazy" decoding="async">
-                <div class="menu-catering-copy">
-                    <h2 id="menu-catering-title">Samosas are best shared.</h2>
-                    <p>Bring the crunch. Feed the crowd.</p>
-                    <a class="menu-catering-link" href="catering.html">Plan your catering <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                </div>
-            </section>
+            <section class="home-catering" id="menu-catering" aria-labelledby="menu-catering-title">
+    <img src="assets/menu-diagrams/catering-7db049622337.webp" width="1536" height="1024" alt="A tray filled with golden, crispy samosas" loading="lazy">
+    <div class="shelf home-cater-shelf">
+      <div class="home-catering-copy">
+        <h2 id="menu-catering-title">Samosas are best shared.</h2>
+        <p>Bring the crunch. Feed the crowd.</p>
+      </div>
+      <a class="btn btn-order home-catering-cta" href="catering.html">Plan your catering</a>
+    </div>
+  </section>
         </div>
     </main>
     <button type="button" class="menu-bag-bar" id="menu-bag-bar" hidden>
@@ -335,8 +311,8 @@
         <strong id="menu-bag-total">$0.00</strong>
     </button>
     
-    <script src="js/cart.js"></script>
-    <script src="js/auth.js"></script>
+    <script src="js/cart.js?v=20261025-menu-details"></script>
+    <script src="js/auth.js?v=20261021-account-loading"></script>
 
 
 <div id="hours-modal" aria-labelledby="hours-title" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true">
@@ -371,8 +347,124 @@
 <script src="js/menu.js?v=20261014-crew"></script>
 
     <div id="footer-placeholder"></div>
-    <script src="js/footer.js"></script>
+    <script src="js/footer.js?v=20261024-remove-our-story"></script>
 
+<dialog class="product-dialog" id="flavor-dialog" aria-labelledby="product-title">
+  <div class="product-dialog-header">
+    <span class="product-eyebrow">SamosaMan · Burlington</span>
+    <button type="button" class="product-close" data-product-close aria-label="Close samosa details" autofocus><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+  </div>
+  <div class="product-dialog-scroll">
+    <div class="product-dialog-body">
+      <div class="samosa-diagram" data-product-diagram data-chutney="false">
+        <div class="samosa-diagram__stage" id="menu-samosa-layers" role="group" aria-label="Explore the samosa">
+          <svg class="samosa-diagram__art" viewBox="100 0 800 650" aria-hidden="true" focusable="false">
+                    <defs>
+                    <path id="menu-diagram-samosa-outline" d="M156 42 C143 45 137 61 132 88 C122 102 115 117 111 130 C110 146 123 165 136 181 C140 210 149 249 152 279 C150 344 143 401 144 456 C142 486 128 520 123 558 C115 582 111 617 115 652 C115 680 117 703 114 730 C99 740 93 763 91 789 C74 811 62 838 52 861 C44 878 49 893 65 900 C100 913 145 907 177 899 C227 887 272 868 317 846 C390 814 448 783 509 748 C584 709 646 673 705 641 C727 630 739 632 758 644 C789 653 801 670 836 680 C868 689 902 684 916 668 C932 649 925 622 909 608 C881 589 851 577 823 561 C786 538 751 514 719 486 C682 461 658 432 624 413 C595 391 571 367 537 350 C503 332 476 309 447 292 C421 275 395 254 369 240 C347 221 333 217 310 211 C288 193 270 164 251 143 C232 118 217 90 201 67 C188 46 172 41 156 42 Z"></path>
+                    <clipPath id="menu-diagram-samosa-clip"><use href="#menu-diagram-samosa-outline"></use></clipPath>
+                    <!-- These two masks divide the existing photograph along its folded seam. -->
+                    <clipPath id="menu-diagram-shell-clip">
+                    <path d="M0 0 H960 V640 L730 625 C530 654 370 691 220 700 C180 525 139 280 138 145 Z"></path>
+                    </clipPath>
+                    <clipPath id="menu-diagram-fold-clip">
+                    <path d="M0 0 H960 V960 H0 Z M0 0 H960 V640 L730 625 C530 654 370 691 220 700 C180 525 139 280 138 145 Z" clip-rule="evenodd"></path>
+                    </clipPath>
+                    <clipPath id="menu-diagram-salsa-clip">
+                    <path d="M746 786 C744 759 796 739 866 726 C952 710 1069 713 1143 733 C1186 745 1215 761 1217 782 C1218 804 1206 834 1199 860 L1160 994 C1150 1023 1118 1036 1070 1044 C1008 1055 925 1054 872 1040 C839 1032 820 1017 812 994 L762 849 C753 826 745 805 746 786 Z"></path>
+                    </clipPath>
+                    <radialGradient id="menu-diagram-shadow">
+                    <stop stop-color="#69563c" stop-opacity=".18"></stop>
+                    <stop offset="1" stop-color="#69563c" stop-opacity="0"></stop>
+                    </radialGradient>
+                    </defs>
+                    <g class="samosa-diagram__camera">
+                    <ellipse class="samosa-diagram__shadow" cx="475" cy="574" rx="320" ry="42" fill="url(#menu-diagram-shadow)"></ellipse>
+                    <g class="samosa-diagram__piece samosa-diagram__fold" data-art-part="fold">
+                    <svg x="170" y="45" width="530" height="530" viewBox="0 0 960 960">
+                    <g clip-path="url(#menu-diagram-samosa-clip)">
+                    <image href="assets/menu-diagrams/diagram-layer-1-7f8897aea551.webp" width="960" height="960" clip-path="url(#menu-diagram-fold-clip)"></image>
+                    </g>
+                    </svg>
+                    </g>
+                    <g class="samosa-diagram__piece samosa-diagram__filling" data-art-part="filling">
+                    <image href="assets/menu-diagrams/steak-cheese-85d0c2a3b408.webp" x="205" y="90" width="425" height="425"></image>
+                    </g>
+                    <g class="samosa-diagram__piece samosa-diagram__shell" data-art-part="crust">
+                    <svg x="170" y="45" width="530" height="530" viewBox="0 0 960 960">
+                    <g clip-path="url(#menu-diagram-samosa-clip)">
+                    <image href="assets/menu-diagrams/diagram-layer-2-7f8897aea551.webp" width="960" height="960" clip-path="url(#menu-diagram-shell-clip)"></image>
+                    </g>
+                    </svg>
+                    </g>
+                    <g class="samosa-diagram__piece samosa-diagram__salsa" data-art-part="salsa">
+                    <ellipse cx="691" cy="554" rx="132" ry="26" fill="url(#menu-diagram-shadow)"></ellipse>
+                    <svg x="575" y="378" width="240" height="175" viewBox="736 711 492 358">
+                    <image href="assets/menu-diagrams/diagram-layer-3-5c1f2ac1b92d.webp" width="1254" height="1254" clip-path="url(#menu-diagram-salsa-clip)"></image>
+                    </svg>
+                    </g>
+                    </g>
+                    </svg>
+          <div class="samosa-diagram__hotspots" data-diagram-hotspots>
+            <button type="button" class="samosa-diagram__point" data-diagram-part="fold" aria-label="Explore the hand-folded edge" aria-controls="product-part-copy" style="--point-x:22.5%;--point-y:67%;--point-dx:1.25%;--point-dy:9%"><span aria-hidden="true">+</span></button>
+            <button type="button" class="samosa-diagram__point" data-diagram-part="filling" aria-label="Explore the filling" aria-controls="product-part-copy" style="--point-x:47.5%;--point-y:55%;--point-dx:17.5%;--point-dy:-9%"><span aria-hidden="true">+</span></button>
+            <button type="button" class="samosa-diagram__point" data-diagram-part="salsa" aria-label="Explore Tomato Garlic Chutney" aria-controls="product-part-copy" style="--point-x:75%;--point-y:72%;--point-dx:10%;--point-dy:7%" hidden><span aria-hidden="true">+</span></button>
+          </div>
+        </div>
+        <div class="samosa-diagram__toggle" role="group" aria-label="Samosa view" data-diagram-controls data-state="whole">
+          <span class="samosa-diagram__lens" aria-hidden="true"></span>
+          <button type="button" data-diagram-whole aria-pressed="true" aria-controls="menu-samosa-layers">Whole</button>
+          <button type="button" data-diagram-toggle aria-pressed="false" aria-controls="menu-samosa-layers">See inside</button>
+        </div>
+        <p class="product-diagram-hint" data-diagram-hint>Tap the samosa to return to the whole view.</p>
+      </div>
+      <div class="product-details">
+        <span class="product-eyebrow">Handmade with love</span>
+        <h2 id="product-title"></h2>
+        <div id="product-part-copy" aria-live="polite" aria-atomic="true">
+          <h3 data-part-title hidden></h3>
+          <p class="product-subtext" data-part-description></p>
+          <p class="product-ingredients" data-part-ingredients hidden></p>
+        </div>
+        <label class="product-chutney" data-chutney-option>
+          <input type="checkbox" data-chutney-toggle>
+          <span><strong>Show chutney</strong><small>Tomato Garlic Chutney</small></span>
+        </label>
+        <p class="product-chutney-note" data-chutney-note>Changes the picture only.</p>
+      </div>
+    </div>
+  </div>
+  <div class="product-order-bar">
+    <div><span class="product-price-label">One samosa</span><strong data-product-price>$4.75</strong></div>
+    <button type="button" class="product-view-bag" data-product-bag hidden>View bag</button>
+    <button type="button" class="product-add" data-product-add aria-haspopup="dialog" aria-controls="quantity-dialog">Add to bag</button>
+  </div>
+  <p class="product-added-status" role="status" data-product-status hidden></p>
+</dialog>
+<dialog class="quantity-dialog" id="quantity-dialog" aria-labelledby="quantity-title" aria-describedby="quantity-product-name">
+  <form data-quantity-form novalidate>
+    <div class="quantity-header">
+      <h2 id="quantity-title" tabindex="-1" autofocus>How many?</h2>
+      <button type="button" class="product-close" data-quantity-close aria-label="Close quantity selection"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="quantity-product">
+      <img data-quantity-image src="data:," alt="">
+      <div><h3 id="quantity-product-name"></h3><p data-quantity-unit-price></p></div>
+    </div>
+    <label class="quantity-label" for="quantity-input">Quantity</label>
+    <div class="quantity-stepper">
+      <button type="button" data-quantity-minus aria-label="Decrease quantity">−</button>
+      <input id="quantity-input" name="quantity" type="number" inputmode="numeric" min="1" max="99" step="1" value="1" required aria-describedby="quantity-error">
+      <button type="button" data-quantity-plus aria-label="Increase quantity">+</button>
+    </div>
+    <p class="quantity-error" id="quantity-save-error" role="alert" hidden>We could not save your bag. Please try again.</p>
+    <p class="quantity-error" id="quantity-error" role="status" hidden>Enter a whole number from 1 to 99.</p>
+    <button type="submit" class="product-add quantity-confirm" data-quantity-confirm><span data-quantity-action>Add 1 to bag</span><span data-quantity-total>$4.75</span></button>
+    <button type="button" class="quantity-cancel" data-quantity-close>Cancel</button>
+  </form>
+</dialog>
+<div class="menu-toast" id="menu-toast" role="status" hidden></div>
+
+<script src="js/menu-details.js?v=20261025-menu-details"></script>
 </body>
 
 </html>

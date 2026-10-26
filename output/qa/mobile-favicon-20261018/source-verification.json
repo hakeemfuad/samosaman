@@ -1,0 +1,80 @@
+[
+  {
+    "file": "Website/public/burlington.html",
+    "before_sha256": "ba25163be384038955bddb2c5a2896f3e15e1741fde5e4c27c87105699a8840c",
+    "after_sha256": "ea20d3700d0c97c2eb6a703dc2873100bc67ed2eed38ff7f886033e57d401c75",
+    "only_icon_block_changed": true
+  },
+  {
+    "file": "Website/public/catering.html",
+    "before_sha256": "466f13990dec86096822b74431d7109fa75b865debdec62c0c21dcc3263b1695",
+    "after_sha256": "bbf7b3d06a1bf711700b58989e24673403dd7a25078f0be6b175a2a2bb009c4b",
+    "only_icon_block_changed": true
+  },
+  {
+    "file": "Website/public/checkout-options.html",
+    "before_sha256": "625eab4e6265ad7524d755799240bb7e72a9af839170abb0c5c9e99f5b16d89b",
+    "after_sha256": "6bc99324f50b36cb36f6f32645917d7e1e18c1ba839dada3563365847762d912",
+    "only_icon_block_changed": true
+  },
+  {
+    "file": "Website/public/checkout.html",
+    "before_sha256": "537e5655d49317ebc57bbaebb4632241417021798e81575a92d9056bffd8c7b3",
+    "after_sha256": "99f81597105f274b999189acf6eaad7ffcc1af1adc2c865d37cc06584a7d35a7",
+    "only_icon_block_changed": true
+  },
+  {
+    "file": "Website/public/delivery.html",
+    "before_sha256": "5c0044ae8eb21b9d91c5d723fb4028034e7877e01d9a0317b76f70348812214c",
+    "after_sha256": "41240d284fdceb85d573f1c9f56ca0ff747a663b9be40ee75333051ec27e27cf",
+    "only_icon_block_changed": true
+  },
+  {
+    "file": "Website/public/guest-checkout.html",
+    "before_sha256": "22f50416f12cced32b3256e6283b9d960b379a7bd9600ac24b21b85fe1cc8590",
+    "after_sha256": "85679a01ef7fd0b6b6f7a0806457c67f429aa5e052f3b4de09da679ffbb863b1",
+    "only_icon_block_changed": true
+  },
+  {
+    "file": "Website/public/index.html",
+    "before_sha256": "355bb7d8ee001b96cf4ee3e70085e17f2047b69040ffe8d88695643618300602",
+    "after_sha256": "b125d2cb73177fcd44b5187f09be23d8bc72d1a327bf5b384e6f55b634cfcd26",
+    "only_icon_block_changed": true
+  },
+  {
+    "file": "Website/public/menu.html",
+    "before_sha256": "36d10fc3c86be8917c47d6efd50edc397bc477da916892682100c3f0592565bd",
+    "after_sha256": "7b5f7247a9eb8bc4fb443c34294ba20a0fb811d385cba16b58b3ce4bf101a3ac",
+    "only_icon_block_changed": true
+  },
+  {
+    "file": "Website/public/myaccount.html",
+    "before_sha256": "d310648ca9b8fa3960849d5c5d1ce37418d806498a4417be879dcf26af4f3d13",
+    "after_sha256": "fcbaa3d0ddd06f0a95248a7006d3806d41e48640f0c08d39e5bedcd68f695365",
+    "only_icon_block_changed": true
+  },
+  {
+    "file": "Website/public/our-story.html",
+    "before_sha256": "eb9b2ea7ca6a5bb9c5a7e134c85a3fec2dc826244527bf23fd9eed12a8b6c6ac",
+    "after_sha256": "c361af915a8a2ec0066573d14d1c291cadc310a475bb7412294c734ce6d43a51",
+    "only_icon_block_changed": true
+  },
+  {
+    "file": "Website/public/privacy-policy.html",
+    "before_sha256": "48763dcf9d819ccc084672a49b1ca0cf5d1a7e3c8ad4ed01740474f537a1a377",
+    "after_sha256": "48b7db25548727317c8124f36ac1291cad048bf12411857d8bfa789038e6cda3",
+    "only_icon_block_changed": true
+  },
+  {
+    "file": "Website/public/rewards-signup.html",
+    "before_sha256": "800b0e57a564d5272649bd7ae583a57a7fc1bee2896782086c2faa20f5ead75c",
+    "after_sha256": "78b4c1c8685306ee5b125d79bcd5a9daeefd0266b363bd69757cee14df0e8235",
+    "only_icon_block_changed": true
+  },
+  {
+    "file": "Website/public/rewards.html",
+    "before_sha256": "1120056a9b4530f0dca989a5d8e2c4d84191388385e94f3334511af7b6862f76",
+    "after_sha256": "8bb904cd8f54755dda9de615aa13065966272d38ee1c3749ac59a92b0408f19a",
+    "only_icon_block_changed": true
+  }
+]

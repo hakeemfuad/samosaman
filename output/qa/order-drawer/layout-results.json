@@ -1,0 +1,137 @@
+{
+  "responsive": [
+    {
+      "width": 390,
+      "route": "burlington.html",
+      "cycle": 1,
+      "pass": true,
+      "stylesRestored": true
+    },
+    {
+      "width": 390,
+      "route": "burlington.html",
+      "cycle": 2,
+      "pass": true,
+      "stylesRestored": true
+    },
+    {
+      "width": 390,
+      "route": "burlington.html",
+      "cycle": 3,
+      "pass": true,
+      "stylesRestored": true
+    },
+    {
+      "width": 390,
+      "route": "index.html",
+      "cycle": 1,
+      "pass": true,
+      "stylesRestored": true
+    },
+    {
+      "width": 390,
+      "route": "index.html",
+      "cycle": 2,
+      "pass": true,
+      "stylesRestored": true
+    },
+    {
+      "width": 390,
+      "route": "index.html",
+      "cycle": 3,
+      "pass": true,
+      "stylesRestored": true
+    },
+    {
+      "width": 900,
+      "route": "burlington.html",
+      "cycle": 1,
+      "pass": true,
+      "stylesRestored": true
+    },
+    {
+      "width": 900,
+      "route": "burlington.html",
+      "cycle": 2,
+      "pass": true,
+      "stylesRestored": true
+    },
+    {
+      "width": 900,
+      "route": "burlington.html",
+      "cycle": 3,
+      "pass": true,
+      "stylesRestored": true
+    },
+    {
+      "width": 900,
+      "route": "index.html",
+      "cycle": 1,
+      "pass": true,
+      "stylesRestored": true
+    },
+    {
+      "width": 900,
+      "route": "index.html",
+      "cycle": 2,
+      "pass": true,
+      "stylesRestored": true
+    },
+    {
+      "width": 900,
+      "route": "index.html",
+      "cycle": 3,
+      "pass": true,
+      "stylesRestored": true
+    },
+    {
+      "width": 1512,
+      "route": "burlington.html",
+      "cycle": 1,
+      "pass": true,
+      "stylesRestored": true
+    },
+    {
+      "width": 1512,
+      "route": "burlington.html",
+      "cycle": 2,
+      "pass": true,
+      "stylesRestored": true
+    },
+    {
+      "width": 1512,
+      "route": "burlington.html",
+      "cycle": 3,
+      "pass": true,
+      "stylesRestored": true
+    },
+    {
+      "width": 1512,
+      "route": "index.html",
+      "cycle": 1,
+      "pass": true,
+      "stylesRestored": true
+    },
+    {
+      "width": 1512,
+      "route": "index.html",
+      "cycle": 2,
+      "pass": true,
+      "stylesRestored": true
+    },
+    {
+      "width": 1512,
+      "route": "index.html",
+      "cycle": 3,
+      "pass": true,
+      "stylesRestored": true
+    }
+  ],
+  "nativeMotion": {
+    "sampledFrames": 32,
+    "scrollY": 1676.5,
+    "pageAndNavbarStill": true,
+    "scrollPositionPreserved": true,
+    "drawerMoves": true
+  }
+}

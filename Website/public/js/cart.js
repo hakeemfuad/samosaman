@@ -1,4 +1,9 @@
 const CART_KEY = 'samosaman_cart';
+const SAMOSA_PRICE = 4.75;
+const PAID_SAMOSA_IDS = new Set([
+    'apple-samosa', 'punjabi-samosa', 'steak-cheese', 'spicy-chicken',
+    'chicken-cheese', 'spicy-potato', 'veggie-samosa'
+]);
 const TAX_RATE = 0.07; // Estimated 7% tax
 window.SAMOSAMAN_MINIMUM_ORDER_SUBTOTAL = window.SAMOSAMAN_MINIMUM_ORDER_SUBTOTAL || 30;
 
@@ -48,7 +53,16 @@ const ORDER_TYPE_MODAL_HTML = `
  */
 function getCart() {
     const cartJson = localStorage.getItem(CART_KEY);
-    return cartJson ? JSON.parse(cartJson) : [];
+    const cart = cartJson ? JSON.parse(cartJson) : [];
+    let pricesChanged = false;
+    cart.forEach(item => {
+        if (item.isReward !== true && PAID_SAMOSA_IDS.has(item.id) && item.price !== SAMOSA_PRICE) {
+            item.price = SAMOSA_PRICE;
+            pricesChanged = true;
+        }
+    });
+    if (pricesChanged) localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    return cart;
 }
 
 /**
@@ -75,16 +89,20 @@ function updateCartBadge() {
     const badge = document.getElementById('cart-badge');
     
     if (badge) {
+        const countChanged = Number(badge.textContent) !== totalItems;
         badge.innerText = totalItems;
+        badge.hidden = totalItems === 0;
         
-        // Always ensure it is visible
+        // Keep opacity ready for the next non-empty cart
         badge.classList.remove('opacity-0');
 
-        // Only animate when items are actually added (count > 0)
-        if (totalItems > 0) {
+        // Page initialization and repeated refreshes keep the current count still.
+        if (countChanged) {
             badge.classList.remove('animate-pop');
-            void badge.offsetWidth; 
-            badge.classList.add('animate-pop');
+            if (totalItems > 0) {
+                void badge.offsetWidth;
+                badge.classList.add('animate-pop');
+            }
         }
     }
 }
@@ -92,22 +110,18 @@ function updateCartBadge() {
 /**
  * Adds an item to the cart
  */
-function addToCart(id, name, price, image) {
-    let cart = getCart();
+function addToCart(id, name, price, image, quantity = 1) {
+    if (!Number.isInteger(quantity) || quantity < 1 || quantity > 99) return false;
+    const cart = getCart();
     const existingItem = cart.find(item => item.id === id);
 
     if (existingItem) {
-        existingItem.quantity += 1;
+        existingItem.quantity += quantity;
     } else {
-        cart.push({
-            id: id,
-            name: name,
-            price: parseFloat(price),
-            quantity: 1,
-            image: image // We now store the image path for the display
-        });
+        cart.push({id, name, price: parseFloat(price), quantity, image});
     }
     saveCart(cart);
+    return true;
 }
 
 /**
@@ -322,32 +336,70 @@ function injectOrderTypeModal() {
 }
 
 // Drawer Toggle Logic
+let cartScrollState = null;
+let cartOpenTimer;
+let cartCloseTimer;
+
 function openCart() {
     const overlay = document.getElementById('cart-overlay');
     const sidebar = document.getElementById('cart-sidebar');
+
+    clearTimeout(cartOpenTimer);
+    clearTimeout(cartCloseTimer);
+
+    // Capture once: the nav and cart can both register an open listener.
+    if (!cartScrollState) {
+        const navigation = document.getElementById('open-cart-btn')?.closest('nav');
+        const fixedNavigation = navigation && getComputedStyle(navigation).position === 'fixed' ? navigation : null;
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        cartScrollState = {
+            overflow: document.body.style.overflow,
+            paddingRight: document.body.style.paddingRight,
+            navigation: fixedNavigation,
+            navigationPaddingRight: fixedNavigation?.style.paddingRight
+        };
+
+        // Keep the page and fixed header still when the scrollbar disappears.
+        if (scrollbarWidth > 0) {
+            const bodyPadding = parseFloat(getComputedStyle(document.body).paddingRight) || 0;
+            document.body.style.paddingRight = `${bodyPadding + scrollbarWidth}px`;
+            if (fixedNavigation) {
+                const navigationPadding = parseFloat(getComputedStyle(fixedNavigation).paddingRight) || 0;
+                fixedNavigation.style.paddingRight = `${navigationPadding + scrollbarWidth}px`;
+            }
+        }
+    }
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
     
     renderCartDrawer();
     
     overlay.classList.remove('hidden');
     // slight delay to allow display:block to apply before opacity transition
-    setTimeout(() => {
+    cartOpenTimer = setTimeout(() => {
         overlay.classList.remove('opacity-0');
         sidebar.classList.remove('translate-x-full');
     }, 10);
-    
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
 }
 
 function closeCart() {
     const overlay = document.getElementById('cart-overlay');
     const sidebar = document.getElementById('cart-sidebar');
 
+    clearTimeout(cartOpenTimer);
+    clearTimeout(cartCloseTimer);
     sidebar.classList.add('translate-x-full');
     overlay.classList.add('opacity-0');
     
-    setTimeout(() => {
+    cartCloseTimer = setTimeout(() => {
         overlay.classList.add('hidden');
-        document.body.style.overflow = ''; // Restore scrolling
+        if (cartScrollState) {
+            document.body.style.overflow = cartScrollState.overflow;
+            document.body.style.paddingRight = cartScrollState.paddingRight;
+            if (cartScrollState.navigation) {
+                cartScrollState.navigation.style.paddingRight = cartScrollState.navigationPaddingRight;
+            }
+            cartScrollState = null;
+        }
     }, 300);
 }
 
@@ -373,7 +425,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const price = btn.dataset.price;
 
             if(id && name && price) {
-                addToCart(id, name, price, imageSrc);
+                if (window.SamosamanMenu?.selectQuantity) {
+                    window.SamosamanMenu.selectQuantity(id, name, price, imageSrc, btn);
+                } else {
+                    addToCart(id, name, price, imageSrc);
+                }
             }
         });
     });

@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "revision": "punjabi-parity",
+  "matched_browser_states": 29,
+  "viewport_widths": [
+    320,
+    390,
+    736,
+    820,
+    1024,
+    1440
+  ],
+  "animation_timing": {
+    "duration": "0.85s, 0.6s",
+    "timing": "cubic-bezier(0.22, 0.75, 0.18, 1), ease"
+  },
+  "source_parity": {
+    "source": "/Users/hakeem/Samosaman/Website/public",
+    "diagram_css_identical": true,
+    "home_css_identical": true,
+    "behavior_identical_except_filling_description": true,
+    "markup_identical_except_filling_asset_and_accessible_label": true,
+    "shell_identical": true,
+    "salsa_identical": true,
+    "source_sha256": {
+      "index.html": "dc5fca101baff19588b1d987fa6827e76400437d0c10cd682a144e4c24f5048b",
+      "css/home.css": "b5a313bf329271f443172e3bfbcfbe90c0226240e1a5e3c4385ef9b50ee6c538",
+      "css/samosa-diagram.css": "7efac276ae61339de8e85e48a22e6e60003d23c4ea36ddd232bd4b7601af844b",
+      "js/samosa-diagram.js": "fee49a5b1da4ced8f87aae17ab06ae44b9eceb5c3ce3c822bc3bd9703cc185b5"
+    },
+    "inline_bytes": 962139
+  },
+  "website_and_flutter_unchanged": true,
+  "inline_filling_visible_after_original_animation": true,
+  "deployed": false
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "label": "fold-opens",
+    "button": "Back to full view",
+    "closeup": "fold",
+    "detailOpen": "true",
+    "focusId": "",
+    "focusPart": null,
+    "hotspotsInert": true,
+    "spread": "0"
+  },
+  {
+    "label": "click-photo-dismisses-fold",
+    "button": "See inside",
+    "closeup": "",
+    "detailOpen": "false",
+    "focusId": "main",
+    "focusPart": null,
+    "hotspotsInert": false,
+    "spread": "0"
+  },
+  {
+    "label": "salsa-opens",
+    "button": "Back to full view",
+    "closeup": "salsa",
+    "detailOpen": "true",
+    "focusId": "",
+    "focusPart": null,
+    "hotspotsInert": true,
+    "spread": "0"
+  },
+  {
+    "label": "click-caption-dismisses-salsa",
+    "button": "See inside",
+    "closeup": "",
+    "detailOpen": "false",
+    "focusId": "main",
+    "focusPart": null,
+    "hotspotsInert": false,
+    "spread": "0"
+  },
+  {
+    "label": "see-inside-opens",
+    "button": "Back to full view",
+    "closeup": "",
+    "detailOpen": "true",
+    "focusId": "",
+    "focusPart": null,
+    "hotspotsInert": true,
+    "spread": "1"
+  },
+  {
+    "label": "click-outside-diagram-dismisses-inside",
+    "button": "See inside",
+    "closeup": "",
+    "detailOpen": "false",
+    "focusId": "main",
+    "focusPart": null,
+    "hotspotsInert": false,
+    "spread": "0"
+  },
+  {
+    "label": "menu-click-dismisses-detail",
+    "button": "See inside",
+    "closeup": "",
+    "detailOpen": "false",
+    "focusId": "mobile-menu-btn",
+    "focusPart": null,
+    "hotspotsInert": false,
+    "spread": "0"
+  },
+  {
+    "label": "return-button-does-not-reopen",
+    "button": "See inside",
+    "closeup": "",
+    "detailOpen": "false",
+    "focusId": "",
+    "focusPart": null,
+    "hotspotsInert": false,
+    "spread": "0"
+  },
+  {
+    "label": "escape-restores-keyboard-focus",
+    "button": "See inside",
+    "closeup": "",
+    "detailOpen": "false",
+    "focusId": "",
+    "focusPart": "salsa",
+    "hotspotsInert": false,
+    "spread": "0"
+  }
+]

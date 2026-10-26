@@ -1,0 +1,32 @@
+{
+  "checked_at_utc": "2026-10-18T22:57:03.533052+00:00",
+  "public_url": "https://samosamanvt.com/#samosas-and-salsa",
+  "checks": [
+    {
+      "path": "index.html",
+      "public_sha256": "8377f129655a0cd420c7444a4699c61c57ea01fe2325ab867b4798002cf751ca",
+      "local_sha256": "3dfe88b9ee7a4c87b445ddd9d34ce0f5330f4f589aa57dd487ce1f5a0c085340",
+      "matches": false
+    },
+    {
+      "path": "js/samosa-diagram.js?v=20261018-tap-to-close",
+      "public_sha256": "a77a66b958ae1ed6e81bdcec8941d267ce1cb9cd16c023a2624d85b881ebfdaa",
+      "local_sha256": "a77a66b958ae1ed6e81bdcec8941d267ce1cb9cd16c023a2624d85b881ebfdaa",
+      "matches": true
+    },
+    {
+      "path": "css/samosa-diagram.css?v=20261018-tap-to-close",
+      "public_sha256": "ac0f654b1952820cf32e248cfb9cea0281f931d080a893fac7aa28c9f9f26c37",
+      "local_sha256": "ac0f654b1952820cf32e248cfb9cea0281f931d080a893fac7aa28c9f9f26c37",
+      "matches": true
+    },
+    {
+      "path": "assets/home/steak-cheese-filling-v3.webp",
+      "public_sha256": "86b9bb9196b35cfd6d5394cdeda2c0b9f69418d94d5c05e5a41b5448b1dfe156",
+      "local_sha256": "86b9bb9196b35cfd6d5394cdeda2c0b9f69418d94d5c05e5a41b5448b1dfe156",
+      "matches": true
+    }
+  ],
+  "all_match": false,
+  "scope": "Public file comparison. Browser behavior checks are recorded separately."
+}

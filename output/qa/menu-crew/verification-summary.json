@@ -1,0 +1,74 @@
+{
+  "state": "Implemented locally on main; not committed, pushed, or deployed",
+  "preview": "http://127.0.0.1:4183/burlington.html",
+  "implementationFiles": {
+    "Website/public/burlington.html": "4a112b5d97ca0a157012246a7f11679492419256b1e2d6a07dd9ccfcd8e3c03a",
+    "Website/public/css/menu.css": "9b7c879f9f6ce42f3d40085f7149dd48fcf83e1a37a82e3c9d449c026b4420f2",
+    "Website/public/js/menu.js": "99b8b05d6baa2139e02f034fbffbaf9f6d20c08f8424e597db307b67c476052a",
+    "Website/public/js/navbar.js": "05d69944852591898c870191b23c60a88e93f7c77139a1a5b0c9c0d4e5cdc3bb",
+    "Website/public/js/footer.js": "b1cbcae8ccf3cd88801e4aec33e90b95d51f0eaf257bbe72c8449146b422afd1"
+  },
+  "functionalAndResponsiveChecks": {
+    "passed": 20,
+    "failed": 0,
+    "report": "acceptance-results.json"
+  },
+  "viewportWidths": [
+    375,
+    430,
+    768,
+    1024,
+    1100,
+    1440,
+    1920
+  ],
+  "menuAccessibilityViolations": 0,
+  "wholePageLighthouseAccessibility": {
+    "mobile": 100,
+    "desktop": 100
+  },
+  "allAcceptanceCriteriaMet": true,
+  "remainingCriterion": null,
+  "preservedFiles": [
+    {
+      "file": "Website/public/index.html",
+      "unchanged": true
+    },
+    {
+      "file": "Website/public/checkout.html",
+      "unchanged": true
+    },
+    {
+      "file": "Website/public/js/cart.js",
+      "unchanged": true
+    },
+    {
+      "file": "Website/public/js/auth.js",
+      "unchanged": true
+    },
+    {
+      "file": "Website/public/js/samosa-diagram.js",
+      "unchanged": true
+    }
+  ],
+  "checkoutFollowUp": "Read samosaman_order_type at checkout; this pass only stores the preference as specified.",
+  "qaRunner": "NODE_PATH=/private/tmp/menu-crew-tools/node_modules node output/qa/menu-crew/verify.cjs",
+  "appliedAccessibilityFixes": {
+    "authorizedByUser": true,
+    "files": [
+      "Website/public/js/navbar.js",
+      "Website/public/js/footer.js"
+    ],
+    "changes": [
+      "Accessible names for account, navigation, cart close, and footer social links",
+      "Shopping bag accessible name includes its changing item count",
+      "34px footer Learn More controls",
+      "Higher-contrast desktop location label"
+    ],
+    "regressionReport": "accessibility-fixes-check.json",
+    "lighthouseReports": [
+      "lighthouse-mobile.report.html",
+      "lighthouse-desktop.report.html"
+    ]
+  }
+}

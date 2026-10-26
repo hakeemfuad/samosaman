@@ -1,0 +1,101 @@
+/* Local preview measurements from apple.com, checked 2026-10-25.
+   Source: /v/homepage/a/styles/homepage.built.css.
+   Reuse Apple's section heights and gap, without its navbar reserve space. */
+.home-page {
+  --home-paper: #f5f5f7;
+  background: var(--home-paper);
+  --apple-panel-height: 580px;
+  --apple-panel-top: 48px;
+  --apple-panel-bottom: 56px;
+  --delivery-nav-clearance: 44px;
+  --delivery-extra-space: 32px;
+  --home-panel-height: var(--apple-panel-height);
+}
+@media (max-width: 1068px) {
+  .home-page { --apple-panel-height: 570px; --apple-panel-top: 54px; --apple-panel-bottom: 61px; }
+}
+@media (max-width: 833px) {
+  .home-page { --delivery-nav-clearance: 48px; }
+}
+@media (max-width: 734px) {
+  .home-page { --apple-panel-height: 500px; --apple-panel-top: 39px; --apple-panel-bottom: 43px; }
+}
+@media (min-width: 1069px) and (min-height: 776px) {
+  .home-page { --apple-panel-height: 692px; --apple-panel-top: 56px; --apple-panel-bottom: 63px; }
+}
+@media (min-width: 735px) and (max-width: 1068px) and (min-height: 734px) {
+  .home-page { --apple-panel-height: 650px; --apple-panel-top: 61px; --apple-panel-bottom: 69px; }
+}
+.home-page .home-frame {
+  padding-top: 0;
+  row-gap: 12px;
+  background: #fff;
+}
+.home-page .home-frame > :is(.delivery-hero, .home-fresh, .home-spotlight, .home-catering) {
+  height: var(--apple-panel-height);
+  min-height: var(--apple-panel-height);
+}
+.home-page .home-frame > .delivery-hero {
+  /* Leave room for the full Served Fresh heading after the 12px gap. */
+  height: max(456px, calc(100svh - 172px));
+  min-height: 456px;
+  /* Keep the headline below our floating navigation, inside the hero. */
+  padding-top: calc(var(--apple-panel-top) + var(--delivery-nav-clearance) + var(--delivery-extra-space));
+  padding-bottom: var(--apple-panel-bottom);
+}
+.home-page .home-fresh-copy { padding-top: var(--apple-panel-top); }
+
+/* On phones, end the chosen hero layout 96px below the graphic. */
+@media (max-width: 640px) {
+  .home-page .home-frame > .delivery-hero[data-delivery-variant="C"] {
+    height: auto;
+    min-height: 0;
+    padding-bottom: 96px;
+  }
+  .delivery-hero[data-delivery-variant="C"] .delivery-hero__inner { height: auto; }
+  .delivery-hero[data-delivery-variant="C"] .delivery-hero__art { flex: none; margin-top: 48px; }
+  .delivery-hero[data-delivery-variant="C"] .delivery-hero__art img { height: auto; transform: none; }
+}
+
+/* Let the diagram use the space left by its heading, controls, and caption. */
+.home-page .home-frame > .home-spotlight {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--apple-panel-top);
+  padding-bottom: var(--apple-panel-bottom);
+  background: var(--home-paper);
+}
+.home-spotlight__heading { flex-shrink: 0; }
+.home-page .home-spotlight .samosa-diagram { flex: 1; min-height: 0; }
+.home-page .home-spotlight__visual {
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  container-type: size;
+}
+.home-page .home-spotlight .samosa-diagram__stage {
+  width: min(100%, calc((100cqh - 64px) * 800 / 650));
+  flex: none;
+}
+.home-page .home-spotlight .samosa-diagram__toggle { flex-shrink: 0; }
+.home-page .home-spotlight > .home-hero-art { min-height: 0; flex: 1; object-fit: contain; }
+@media (max-width: 700px) {
+  .home-page .home-spotlight__visual { flex: 1; height: auto; width: 100%; }
+  .home-page .home-spotlight .samosa-diagram__caption { flex-shrink: 0; }
+}
+
+/* These sections need space for all portraits and expanded answers. */
+.home-page .home-team,
+.home-page .home-faq { height: auto; min-height: 0; }
+
+/* The alternate stacked layout must fit the same measured panel height. */
+@media (max-width: 980px) {
+  .delivery-hero[data-delivery-variant="B"] .delivery-hero__inner { display: flex; flex-direction: column; gap: 12px; }
+  .delivery-hero[data-delivery-variant="B"] .delivery-hero__art { flex: 1; min-height: 0; }
+  .delivery-hero[data-delivery-variant="B"] .delivery-hero__art img { height: 100%; object-position: center top; }
+  .delivery-hero[data-delivery-variant="B"] .delivery-hero__copy { flex-shrink: 0; }
+}

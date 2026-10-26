@@ -1,0 +1,21 @@
+{
+  "originalSource": "/Users/hakeem/Samosaman/Website/public/assets/yellow_heart.png",
+  "approvedIllustration": "/Users/hakeem/Samosaman/Website/design-handoff/delivery-announcement/samosaman-doordash-logo-v8-left-spill.png",
+  "finalPath": "/Users/hakeem/Samosaman/Website/design-handoff/delivery-announcement/samosaman-doordash-logo-v10-repaired-bag.png",
+  "width": 2080,
+  "height": 1280,
+  "sourceOffset": {
+    "x": 160,
+    "y": 200
+  },
+  "protectedSourceRegion": {
+    "x": 0,
+    "y": 469,
+    "width": 1920,
+    "height": 611
+  },
+  "comparedPixels": 1173120,
+  "changedPixels": 0,
+  "bagInteriorHoles": 0,
+  "method": "Full bag geometry restored with original figure and fixed source lettering. Source typography is copied without scaling or recoloring."
+}

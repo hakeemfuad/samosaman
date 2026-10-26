@@ -1,0 +1,21 @@
+Tool: built-in image_gen
+Date: 2026-10-18
+Final image: holding_samosa_and_salsa_v1.png
+Status: Local image concept. No website references changed.
+
+Initial prompt
+
+Use case: compositing.
+Asset type: photorealistic landscape food hero image, 3:2 composition.
+Input images: Image 1 is the edit target, holding_samosa.webp, with a man in a black sleeveless shirt presenting a samosa against a blurred blue-gray market tent. Image 2, samosa_hero.webp, is the food reference for the crisp triangular samosa and the small clear round bowl of chunky red salsa.
+Primary request: Reimagine Image 1 so the same man extends both hands toward the camera, holding one samosa directly in one hand and the salsa bowl from Image 2 in the other. Remove the tongs. He lightly holds the lower edge of the samosa, and supports the bowl from below in his other hand. Keep both foods fully visible, next to each other in the foreground, with believable scale and natural anatomy. Show enough of the top of the salsa to see its tomato pieces and green herbs.
+Focus: Only the samosa and the salsa with its clear bowl are tack sharp. The man, his face, his shirt, arms, hands, and the complete background stay softly out of focus. Keep the strong shallow depth of field and soft blue-gray background blur of Image 1. Both food items lie on the same focal plane. The face must remain as blurred as in Image 1.
+Preserve: The same person, black sleeveless shirt, casual presentation, original setting, cool background colors, natural light, photographic realism, and wide framing. Match the rich golden blistered fried pastry and chunky red salsa in Image 2, adapting the light naturally to Image 1.
+Constraints: Exactly one samosa, one salsa bowl, two natural hands. No tongs, no additional food, no table, no white studio background, no added text or logos, no watermark. Avoid sharp hands or a sharp person, cutout halos, plastic food, oversaturated orange, and extra fingers.
+
+Final refinement prompt
+
+Use case: precise-object-edit.
+Edit the supplied photo with ONE targeted change: make BOTH HANDS, all fingers, nails, and visible forearms softly out of focus. The left hand holding the samosa and the right hand supporting the salsa currently show sharp skin creases and nail edges; remove that fine detail with convincing gentle optical defocus. They should have the softly blurred appearance of objects behind the narrow plane of focus. Do not blur the food or the glass bowl.
+Preserve the exact image composition, man, facial blur, background blur, pose, two hands, food scale, colors, lighting, samosa texture, salsa texture, clear bowl, framing and image dimensions. Only the single golden triangular samosa and the chunky red salsa in its clear bowl must remain tack sharp. Keep food edges intact and avoid halos. Do not change the contents, add objects, add text, or alter the image in any other way.
+

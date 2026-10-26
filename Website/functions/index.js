@@ -75,43 +75,43 @@ const MENU_CATALOG_BY_BRANCH = {
     'apple-samosa': {
       id: 'apple-samosa',
       name: 'Apple Pie Samosa',
-      price: 3.75,
+      price: 4.75,
       image: 'assets/samosas/apple_samosa3.webp'
     },
     'punjabi-samosa': {
       id: 'punjabi-samosa',
       name: 'Traditional Punjabi Samosa',
-      price: 3.75,
+      price: 4.75,
       image: 'assets/samosas/traditional_punjabi_samosa.webp'
     },
     'steak-cheese': {
       id: 'steak-cheese',
       name: 'Steak & Cheese Samosa',
-      price: 3.75,
+      price: 4.75,
       image: 'assets/samosas/steakandcheese.webp'
     },
     'spicy-chicken': {
       id: 'spicy-chicken',
       name: 'Spicy Chicken Samosa',
-      price: 3.75,
+      price: 4.75,
       image: 'assets/samosas/spicy_chicken2.webp'
     },
     'chicken-cheese': {
       id: 'chicken-cheese',
       name: 'Chicken & Cheese Samosa',
-      price: 3.75,
+      price: 4.75,
       image: 'assets/samosas/chicken_cheese3.webp'
     },
     'spicy-potato': {
       id: 'spicy-potato',
       name: 'Spicy Potato Samosa',
-      price: 3.75,
+      price: 4.75,
       image: 'assets/samosas/spicy_potato_samosa.webp'
     },
     'veggie-samosa': {
       id: 'veggie-samosa',
       name: 'Vegetarian Samosa',
-      price: 3.75,
+      price: 4.75,
       image: 'assets/samosas/veggie_samosa3.webp'
     },
     'chicken-curry-meal': {
@@ -1197,8 +1197,8 @@ exports.sendWelcomeEmail = onDocumentCreated({
   const firstName = newUser.firstName || 'Samosa Lover';
   const safeFirstName = escapeHtml(firstName);
 
-  const logoUrl = "https://i.ibb.co/r268hyb6/231cd8a888582779c5042d2577a2ec56.png";
-  const heroUrl = "https://i.ibb.co/Z1271V1b/bb055516724cb0fd45293f8d365b389a.jpg";
+  const logoUrl = "https://samosamanvt.com/assets/catering-email/e9f882ffd621b78c600405551c32b709.png";
+  const heroUrl = "https://samosamanvt.com/assets/catering-email/7af791e064519432b0f2a9b207d0b094.png";
 
   const mailOptions = {
     from: '"SamosaMan" <no_reply@samosamanvt.com>',
@@ -1627,7 +1627,7 @@ function getCateringCustomerEmailTemplate(inquiry) {
   <!-- LOGO -->
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
     <tr><td style="padding:28px 20px 0;text-align:center;">
-      <img src="https://i.ibb.co/r268hyb6/231cd8a888582779c5042d2577a2ec56.png"
+      <img src="https://samosamanvt.com/assets/catering-email/e9f882ffd621b78c600405551c32b709.png"
            width="110" height="95" alt="SamosaMan"
            style="display:block;width:110px;height:auto;max-width:110px;margin:0 auto;">
     </td></tr>
@@ -1645,7 +1645,7 @@ function getCateringCustomerEmailTemplate(inquiry) {
   <!-- HERO IMAGE -->
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
     <tr><td style="padding:22px 20px 0;">
-      <img src="https://i.ibb.co/Z1271V1b/bb055516724cb0fd45293f8d365b389a.jpg"
+      <img src="https://samosamanvt.com/assets/catering-email/7af791e064519432b0f2a9b207d0b094.png"
            width="560" alt="SamosaMan Catering"
            style="display:block;width:100%;height:auto;border-radius:8px;max-width:560px;">
     </td></tr>

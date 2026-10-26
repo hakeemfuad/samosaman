@@ -1,0 +1,58 @@
+{
+  "responsive": [
+    {
+      "width": 1024,
+      "rows": [
+        4,
+        2
+      ],
+      "noHorizontalOverflow": true,
+      "allPhotosLoaded": true,
+      "footerClear": true,
+      "centeredLastRow": true
+    },
+    {
+      "width": 900,
+      "rows": [
+        3,
+        3
+      ],
+      "noHorizontalOverflow": true,
+      "allPhotosLoaded": true,
+      "footerClear": true,
+      "centeredLastRow": null
+    },
+    {
+      "width": 390,
+      "rows": [
+        2,
+        2,
+        2
+      ],
+      "noHorizontalOverflow": true,
+      "allPhotosLoaded": true,
+      "footerClear": true,
+      "centeredLastRow": null
+    },
+    {
+      "width": 1440,
+      "rows": [
+        4,
+        2
+      ],
+      "noHorizontalOverflow": true,
+      "allPhotosLoaded": true,
+      "footerClear": true,
+      "centeredLastRow": true
+    }
+  ],
+  "hover": {
+    "photo": {
+      "alt": "Portrait of Hakeem",
+      "loaded": true,
+      "transform": "matrix(1.025, 0, 0, 1.025, 0, -4)",
+      "transition": "0.24s, 0.24s"
+    },
+    "cardPositionsStable": true
+  }
+}

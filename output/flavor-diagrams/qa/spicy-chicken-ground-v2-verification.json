@@ -1,0 +1,23 @@
+{
+  "flavor": "spicy-chicken",
+  "asset": "spicy-chicken-ground-v2.webp",
+  "caption": "Ground chicken with chili seasoning.",
+  "embeddedAssetMatches": true,
+  "otherFilesUnchanged": {
+    "punjabi.html": true,
+    "chicken-cheese.html": true,
+    "apple-pie.html": true,
+    "baseline.html": true,
+    "preview.css": true,
+    "build.py": true,
+    "chutney-control.html": true
+  },
+  "checks": [
+    "Alpha channel retained during WebP export",
+    "Visible ground texture inspected in the in-app browser",
+    "Updated caption verified in the in-app browser",
+    "Existing diagram geometry and behavior code retained"
+  ],
+  "htmlSha256": "1c93cb733451405adead24ba63963306aade87ab4e00f856e5b5a412ef01d12e",
+  "screenshot": "spicy-chicken-ground-v2-browser.png"
+}

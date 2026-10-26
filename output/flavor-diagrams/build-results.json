@@ -1,0 +1,30 @@
+[
+  {
+    "flavor": "punjabi",
+    "bytes": 953502,
+    "sha256": "2aee4759ee5274964851b8bb0530fc1c50ccd0046df13c30eace6366eb5109c1",
+    "chutney": true,
+    "image": "punjabi-filling-v1.webp"
+  },
+  {
+    "flavor": "chicken-cheese",
+    "bytes": 1315093,
+    "sha256": "86b8ec274fcb612522cbaf8eab096aabbb59597979e1477df84b203b8c72c53f",
+    "chutney": true,
+    "image": "chicken-cheese-filling-v1.webp"
+  },
+  {
+    "flavor": "spicy-chicken",
+    "bytes": 1236250,
+    "sha256": "b8abed3181633077c3edc59e0af5306fbf7aa67a6c6efb2f42617749442a05cc",
+    "chutney": true,
+    "image": "spicy-chicken-ground-v3.webp"
+  },
+  {
+    "flavor": "apple-pie",
+    "bytes": 982655,
+    "sha256": "078e33f2c19546fc9f404ff565816d6ebf7bfe3991277330f1618c10033c9a33",
+    "chutney": false,
+    "image": "apple-pie-more-syrup-v3.webp"
+  }
+]

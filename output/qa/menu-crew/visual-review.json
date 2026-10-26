@@ -1,0 +1,20 @@
+{
+  "drawerVisible": true,
+  "drawerImageCorrect": true,
+  "catering": [
+    {
+      "width": 375,
+      "panelWidth": 343,
+      "panelHeight": 403.03125,
+      "imageLoaded": true,
+      "link": "catering.html"
+    },
+    {
+      "width": 1440,
+      "panelWidth": 1336,
+      "panelHeight": 448.140625,
+      "imageLoaded": true,
+      "link": "catering.html"
+    }
+  ]
+}

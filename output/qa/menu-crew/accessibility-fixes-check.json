@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": [
+    "Account, navigation, and cart buttons have names; cart name tracks quantity and drawer still opens/closes",
+    "Mobile navigation still toggles",
+    "Footer link names, 34px Learn More target, and modal work at 375px",
+    "Footer link names, 34px Learn More target, and modal work at 1440px",
+    "Shared header/footer load on the existing homepage; desktop location label uses darker text"
+  ],
+  "errors": []
+}

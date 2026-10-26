@@ -1,0 +1,14 @@
+{
+  "branch": "liquidglassrefactor",
+  "revision": "feed97ff9ab2c091c66f58d93d3f883a39961af4",
+  "sourceHashes": {
+    "Website/public/index.html": "159f86d21df903333e68e19a4d82e4287d73ca79a2f76f896547ef3a152d1849",
+    "Website/public/css/home.css": "eaac17f95e5ddc21cd4b4677207f66ffccd5320dfbf3ac29fc93ebf37b0529b2",
+    "Website/public/css/samosa-diagram.css": "ac0f654b1952820cf32e248cfb9cea0281f931d080a893fac7aa28c9f9f26c37",
+    "Website/public/js/samosa-diagram.js": "a77a66b958ae1ed6e81bdcec8941d267ce1cb9cd16c023a2624d85b881ebfdaa",
+    "Website/public/burlington.html": "8b9968db81e1ec808a4f6dc1a91a4b5121d85a3b4aaea69a8e43d169f381c3b6",
+    "Website/archive/hanover.html": "783c5783e20e4e30fe5948a73a4c0ff0ea4bd9e7b2ac0efa5b64d2d8d95654b8",
+    "Samosaman-App/lib/main.dart": "906d1e43f8d12b4f6f325c8b9a902b785be91117648fb5540cf224076d5b3988"
+  },
+  "initialGitStatus": " M Samosaman-App\n M Website/functions/index.js\n M Website/public/burlington.html\n M Website/public/catering.html\n M Website/public/checkout-options.html\n M Website/public/checkout.html\n M Website/public/css/navbar.css\n M Website/public/delivery.html\n M Website/public/favicon-16x16.png\n M Website/public/favicon-32x32.png\n M Website/public/favicon.ico\n M Website/public/guest-checkout.html\n M Website/public/index.html\n M Website/public/js/cart.js\n M Website/public/js/sq-payment.js\n M Website/public/menu.html\n M Website/public/myaccount.html\n M Website/public/our-story.html\n M Website/public/privacy-policy.html\n M Website/public/rewards-signup.html\n M Website/public/rewards.html\n M output/qa/mobile-favicon-20261018/generate-icons.cjs\n?? Website/public/assets/icons/\n?? output/qa/current-site-deploy-20261018/deployment.json\n?? output/qa/current-site-deploy-20261018/live-1440.png\n?? output/qa/current-site-deploy-20261018/live-390.png\n?? output/qa/current-site-deploy-20261018/live-smoke.json\n?? output/qa/current-site-deploy-20261018/local-smoke.json\n?? output/qa/favicon-transparent-20261019/\n?? output/qa/iphone-favicon-refresh-20261018/\n?? output/qa/iphone-menu-close-20261018/\n"
+}

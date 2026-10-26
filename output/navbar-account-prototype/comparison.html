@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SamosaMan · Three account controls</title>
+<link rel="icon" href="data:,">
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; padding: 30px 0 24px; background: #f7f3ea; color: #27261f; font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
+header { padding: 0 44px 12px; }
+.eyebrow { color: #8a5340; font-size: 11px; letter-spacing: 1.8px; font-weight: 600; }
+h1 { font-size: 28px; font-weight: 500; letter-spacing: -.8px; margin: 10px 0 7px; }
+header p { color: #68645b; font-size: 14px; margin: 0; }
+section { padding-top: 20px; }
+.label { display: flex; align-items: baseline; gap: 13px; padding: 0 44px 12px; }
+.number { color: #a46549; font-size: 12px; }
+h2 { margin: 0; font-size: 17px; font-weight: 500; }
+.note { color: #68645b; font-size: 13px; margin-left: auto; }
+.window { height: 122px; overflow: hidden; position: relative; }
+iframe { border: 0; width: 100%; height: 900px; display: block; pointer-events: none; }
+.window::after { content: ''; position: absolute; inset: 84px 0 0; background: linear-gradient(transparent, #f7f3ea); }
+footer { padding: 16px 44px 0; font-size: 11px; color: #68645b; }
+</style>
+</head>
+<body>
+<header><span class="eyebrow">SAMOSAMAN / NAVBAR STUDY</span><h1>Three ways to show your account.</h1><p>The same glass navbar. Three signed-in controls.</p></header>
+<section><div class="label"><span class="number">01</span><h2>Name pill</h2><span class="note">Personal · name beside the icon</span></div><div class="window"><iframe src="/?variant=1" title="Name pill"></iframe></div></section>
+<section><div class="label"><span class="number">02</span><h2>Initial circle</h2><span class="note">Compact · keeps the current size</span></div><div class="window"><iframe src="/?variant=2" title="Initial circle"></iframe></div></section>
+<section><div class="label"><span class="number">03</span><h2>Account text</h2><span class="note">Simple · a clear account label</span></div><div class="window"><iframe src="/?variant=3" title="Account text"></iframe></div></section>
+<footer>LOCAL DESIGN PREVIEWS · The live website has not changed.</footer>
+</body></html>

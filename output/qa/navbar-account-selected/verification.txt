@@ -1,0 +1,24 @@
+Selected website account control, October 20, 2026
+
+Scope: local website source only. No commit, push, or deployment.
+Mobile through 980 pixels: My account text (option 3).
+Desktop above 980 pixels: first-name initial in 44px circle (option 2).
+
+Browser checks used the actual shared navbar.css, navbar.js, and auth.js.
+Authentication was a local sample state; no real account was changed.
+
+Passed in the in-app browser:
+- Compact 320px mobile navbar fits the logo, account, bag, and menu controls.
+- 980px uses My account and the mobile menu.
+- 981px uses the initial circle and desktop links.
+- 1200px desktop layout fits.
+- Signed-in -> signed-out restores the person icon and removes the name tooltip.
+- Clicking after sign-out opens the sign-in form without a stale account redirect.
+- Signing in again restores the selected control.
+- A blank/whitespace display name uses Me / M.
+
+JavaScript syntax checks and git diff --check passed.
+The existing myaccount-order-history tests passed (3 tests).
+
+Visual evidence: desktop.png, desktop-981.png, mobile-980.png, mobile-320.png.
+Interactive preview: http://127.0.0.1:4196/selected.html

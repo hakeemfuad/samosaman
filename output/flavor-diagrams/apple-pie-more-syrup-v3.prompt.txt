@@ -1,0 +1,7 @@
+Use case: precise-object-edit.
+Asset type: transparent filling photograph for an interactive Apple Pie samosa diagram.
+Edit target: the supplied Apple Pie filling version 2.
+Make the visible apple pieces slightly smaller: reduce each piece by about 15 to 20 percent in width and height. Keep approximately the same low piece count as this image, around 15 to 20 distinct pieces, with the same general distribution. Do not add little apple bits or turn it back into a dense pile of diced apples.
+Increase the amount of thick cinnamon and brown-sugar apple syrup to fill the extra space. Show a cohesive, glossy amber syrup filling with visible smooth pools and bridges of syrup between the smaller, softly cooked apple pieces. The syrup must make up more of the filling's visible surface and volume. It is thick and soft-set enough to hold the triangular form, not a watery puddle. Keep natural subtle cinnamon and nutmeg specks and realistic apple-pie texture. Do not make the syrup look like pastry or a crust.
+Preserve the exact overall triangular silhouette, upper-left apex, lower-left corner, right-hand point, square canvas, canvas margins, scale, camera angle, warm golden-amber color palette, light direction, and realistic food-photography style of the reference.
+Change only the apple piece size and the proportion of syrup. Preserve genuine background transparency and clean alpha edges. No pastry, shell, plate, bowl, extra ingredients, whole spices, text, watermark, shadow outside the food, or background.

@@ -1,0 +1,7 @@
+Use case: precise-object-edit
+Asset type: transparent food filling cutout for an existing interactive samosa preview.
+Input image: edit target. Edit this exact filling image.
+Primary request: Reduce the amount of melted white cheese by about 60 percent. The current image has too much cheese. Expose much more of the browned minced beef. Retain the soft, glossy, gooey texture in a few small pockets and thin, short melted connections between the beef pieces.
+Cheese: Cabot sharp white cheddar. Keep a natural ivory-white color. Use sparse melted cheese within the meat, with no broad white sheets, thick ribbons, cheese blanket, or heavy surface drizzle.
+Preserve: the exact triangular shape and outer edges, position, orientation, camera angle, framing, scale, beef texture, onion pieces, spices, studio lighting, and photorealistic food style. Where cheese is reduced, reveal plausible matching beef underneath. Do not change the food elsewhere.
+Constraints: Change only the cheese quantity and the covered areas. Keep the transparent background and clean alpha edge. No crust, bowl, salsa, plate, text, logo, garnish, or new objects.

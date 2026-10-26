@@ -1,0 +1,54 @@
+[
+  {
+    "slug": "punjabi",
+    "width": 800,
+    "height": 800,
+    "hasAlpha": true,
+    "transparentPixels": 366222,
+    "visibleBounds": [
+      38,
+      35,
+      777,
+      766
+    ]
+  },
+  {
+    "slug": "chicken-cheese",
+    "width": 1254,
+    "height": 1254,
+    "hasAlpha": true,
+    "transparentPixels": 869800,
+    "visibleBounds": [
+      52,
+      51,
+      1221,
+      1208
+    ]
+  },
+  {
+    "slug": "spicy-chicken",
+    "width": 1254,
+    "height": 1254,
+    "hasAlpha": true,
+    "transparentPixels": 866493,
+    "visibleBounds": [
+      55,
+      52,
+      1223,
+      1206
+    ]
+  },
+  {
+    "slug": "apple-pie",
+    "width": 1254,
+    "height": 1254,
+    "hasAlpha": true,
+    "transparentPixels": 869809,
+    "visibleBounds": [
+      53,
+      51,
+      1222,
+      1206
+    ]
+  }
+]

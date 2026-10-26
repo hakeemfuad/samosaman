@@ -1,0 +1,108 @@
+[
+  {
+    "step": "down past threshold",
+    "compact": false,
+    "height": 64,
+    "script": "http://127.0.0.1:4191/js/navbar.js?v=20261018-upward-scroll",
+    "transition": "0.46s, 0.46s, 0.46s",
+    "y": 648,
+    "pass": true
+  },
+  {
+    "step": "up above threshold",
+    "compact": true,
+    "height": 56.625,
+    "script": "http://127.0.0.1:4191/js/navbar.js?v=20261018-upward-scroll",
+    "transition": "0.46s, 0.46s, 0.46s",
+    "y": 504,
+    "pass": true
+  },
+  {
+    "step": "resume down",
+    "compact": false,
+    "height": 63.390625,
+    "script": "http://127.0.0.1:4191/js/navbar.js?v=20261018-upward-scroll",
+    "transition": "0.46s, 0.46s, 0.46s",
+    "y": 576,
+    "pass": true
+  },
+  {
+    "step": "return to top",
+    "compact": false,
+    "height": 64,
+    "script": "http://127.0.0.1:4191/js/navbar.js?v=20261018-upward-scroll",
+    "transition": "0.46s, 0.46s, 0.46s",
+    "y": 0,
+    "pass": true
+  },
+  {
+    "step": "down to 96px",
+    "compact": false,
+    "height": 64,
+    "script": "http://127.0.0.1:4191/js/navbar.js?v=20261018-upward-scroll",
+    "transition": "0.46s, 0.46s, 0.46s",
+    "y": 96,
+    "pass": true
+  },
+  {
+    "step": "up to 49px",
+    "compact": true,
+    "height": 56.625,
+    "script": "http://127.0.0.1:4191/js/navbar.js?v=20261018-upward-scroll",
+    "transition": "0.46s, 0.46s, 0.46s",
+    "y": 49,
+    "pass": true
+  },
+  {
+    "step": "up to 48px",
+    "compact": false,
+    "height": 63.40625,
+    "script": "http://127.0.0.1:4191/js/navbar.js?v=20261018-upward-scroll",
+    "transition": "0.46s, 0.46s, 0.46s",
+    "y": 48,
+    "pass": true
+  },
+  {
+    "step": "mobile down",
+    "compact": false,
+    "height": 60,
+    "script": "http://127.0.0.1:4191/js/navbar.js?v=20261018-upward-scroll",
+    "transition": "0.46s, 0.46s, 0.46s",
+    "y": 844,
+    "pass": true
+  },
+  {
+    "step": "mobile up",
+    "compact": true,
+    "height": 52.953125,
+    "script": "http://127.0.0.1:4191/js/navbar.js?v=20261018-upward-scroll",
+    "transition": "0.46s, 0.46s, 0.46s",
+    "y": 675,
+    "pass": true
+  },
+  {
+    "step": "order sheet preserves compact state and scroll",
+    "before": {
+      "compact": true,
+      "height": 52,
+      "script": "http://127.0.0.1:4191/js/navbar.js?v=20261018-upward-scroll",
+      "transition": "0.46s, 0.46s, 0.46s",
+      "y": 675
+    },
+    "during": {
+      "compact": true,
+      "height": 52,
+      "script": "http://127.0.0.1:4191/js/navbar.js?v=20261018-upward-scroll",
+      "transition": "0.46s, 0.46s, 0.46s",
+      "y": 0
+    },
+    "after": {
+      "compact": true,
+      "height": 52,
+      "script": "http://127.0.0.1:4191/js/navbar.js?v=20261018-upward-scroll",
+      "transition": "0.46s, 0.46s, 0.46s",
+      "y": 675
+    },
+    "pass": true
+  }
+]

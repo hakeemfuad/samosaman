@@ -1,0 +1,37 @@
+{
+  "added_asset": "Website/public/assets/home/steak-cheese-filling-v3.webp",
+  "approved_image_identical": true,
+  "diagram_behavior_unchanged": true,
+  "unchanged_files": 114,
+  "published": false,
+  "files_changed_by_this_task": [
+    "Website/public/index.html",
+    "Website/public/js/samosa-diagram.js"
+  ],
+  "product_section_structure_and_diagram_styles_unchanged": true,
+  "other_concurrent_changes_preserved": [
+    "Website/public/catering.html",
+    "Website/public/privacy-policy.html",
+    "Website/public/rewards-signup.html",
+    "Website/public/menu.html",
+    "Website/public/myaccount.html",
+    "Website/public/rewards.html",
+    "Website/public/delivery.html",
+    "Website/public/our-story.html",
+    "Website/public/burlington.html",
+    "Website/public/css/home.css",
+    "Website/public/css/navbar.css"
+  ],
+  "concurrent_homepage_changes_preserved": "Cart drawer stylesheet version and separate catering section edits.",
+  "filling_caption": "Minced beef, Cabot sharp white cheddar, onion, and spices.",
+  "caption_reason": "Shorter text preserves the original section height at narrow widths.",
+  "height_matches_original_at_widths": [
+    1440,
+    1280,
+    1024,
+    820,
+    390,
+    320
+  ],
+  "served_homepage_matches_source": true
+}

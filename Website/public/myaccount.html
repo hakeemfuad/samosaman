@@ -14,7 +14,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samosaman - My Account</title>
-    <link rel="icon" type="image/svg+xml" href="assets/m_logo.svg">
+    <link rel="icon" href="/assets/icons/favicon-8c5fc881c5e8.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16-f350dc6fd625.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32-883d9d601287.png">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/icons/favicon-6e320b5d1a02.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-a9b0ba2e5de8.png">
+    <link rel="manifest" href="/site.webmanifest?v=20261018">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +37,7 @@
     <script src="js/firebase-init.js"></script>
 
     <script src="js/errors.js"></script>
-    <script src="js/cart.js"></script>
+    <script src="js/cart.js?v=20261021-count-change-only"></script>
     <script src="js/rewards-config.js"></script>
     <script src="js/rewards-ui.js"></script>
 
@@ -73,12 +78,13 @@
             background: #a1a1aa;
         }
     </style>
+    <link rel="stylesheet" href="css/navbar.css?v=20261021-account-loading">
 </head>
 
 <body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
 
     <div id="navbar-placeholder"></div>
-    <script src="js/navbar.js?v=20261005-cream-header"></script>
+    <script src="js/navbar.js?v=20261024-remove-our-story"></script>
 
     <main class="flex-grow pt-20 bg-slate-50">
 
@@ -230,6 +236,77 @@
 
     </main>
 
+    <div id="how-it-works-modal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"
+            onclick="toggleHowItWorks(false)"></div>
+        <div class="relative flex min-h-full items-center justify-center p-4">
+            <div
+                class="relative w-full max-w-lg bg-white rounded-xl p-0 shadow-2xl transform transition-all overflow-hidden">
+
+                <div class="bg-brand-600 p-8 text-center relative">
+                    <button onclick="toggleHowItWorks(false)" class="absolute top-3 right-3 text-white/80 hover:text-white bg-transparent border-0 cursor-pointer text-2xl leading-none p-1" aria-label="Close">&times;</button>
+                    <h3 class="font-oswald text-3xl font-bold uppercase text-white mb-2">Samosa Math 101</h3>
+                    <p class="text-brand-100 font-medium">Class is in session. Don't worry, it's tasty.</p>
+                </div>
+
+                <div class="p-8 space-y-8">
+
+                    <div class="flex gap-5">
+                        <div aria-hidden="true"
+                            class="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center font-oswald text-lg font-bold text-yellow-800">
+                            1</div>
+                        <div>
+                            <h4 class="font-oswald text-xl font-bold text-slate-900 uppercase">1. The Welcome High-Five
+                            </h4>
+                            <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                                Join the Clan, get <span class="font-bold text-brand-600">1,250 points</span> instantly.
+                                That equates to <span class="font-bold text-brand-600">1 Free Apple Pie Samosa</span>. Instant
+                                gratification is kinda our thing.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-5">
+                        <div aria-hidden="true"
+                            class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center font-oswald text-lg font-bold text-orange-800">
+                            2</div>
+                        <div>
+                            <h4 class="font-oswald text-xl font-bold text-slate-900 uppercase">2. The Crunch Cycle</h4>
+                            <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                                Every cent you spend on qualifying food becomes <span class="font-bold text-brand-600">1 point</span>.
+                                Save up for free samosas, curry bowls, and future snack-powered victories. It's the circle of life,
+                                but crunchier.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-5">
+                        <div aria-hidden="true"
+                            class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center font-oswald text-lg font-bold text-green-800">
+                            3</div>
+                        <div>
+                            <h4 class="font-oswald text-xl font-bold text-slate-900 uppercase">3. The Infinite Glitch
+                            </h4>
+                            <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                                Redeem your points from the Rewards Exchange, add the reward to your order, and keep rolling. Basically, if you try hard enough, you
+                                can unlock an infinite samosa glitch.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="toggleHowItWorks(false)"
+                            class="w-full bg-slate-900 text-white font-oswald font-bold uppercase tracking-wide py-3 rounded hover:bg-slate-800 transition-colors">
+                            Got It. Let's Eat.
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <div id="auth-modal-container"></div>
 
     <div id="history-modal" class="fixed inset-0 z-[100] hidden">
@@ -366,6 +443,11 @@
         }
 
         // 4. How It Works Modal Logic
+        function toggleHowItWorks(show) {
+            const modal = document.getElementById('how-it-works-modal');
+            modal.classList.toggle('hidden', !show);
+        }
+
         document.getElementById('how-it-works-btn').addEventListener('click', (e) => {
             e.preventDefault();
             toggleHowItWorks(true);
@@ -531,10 +613,10 @@
             }
         }
     </script>
-    <script src="js/auth.js"></script>
+    <script src="js/auth.js?v=20261021-account-loading"></script>
 
     <div id="footer-placeholder"></div>
-    <script src="js/footer.js"></script>
+    <script src="js/footer.js?v=20261024-remove-our-story"></script>
 
 </body>
 

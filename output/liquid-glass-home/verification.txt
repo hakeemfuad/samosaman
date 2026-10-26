@@ -1,0 +1,227 @@
+LIQUID GLASS HOMEPAGE — IMPLEMENTATION AND VERIFICATION
+Date: 2026-10-15
+State: Uncommitted changes on main, published to an isolated 24-hour preview.
+Not pushed; the live production release is unchanged.
+Preview: http://127.0.0.1:4186/public/index.html
+Source: /Users/hakeem/Samosaman/Website/public
+
+The complete handoff was read before implementation. The prototype was opened
+in Chrome and compared with reference-desktop.png, reference-phone.png and
+reference-states.png. Work followed the suggested order. The three proposed
+new subtitles were omitted at the user's request.
+
+Flutter reference: Qloset/lib/widgets/profile/glass_surfaces.dart,
+Qloset/lib/widgets/glass_list_surfaces.dart, and
+Qloset/lib/widgets/liquid_add_card.dart. The implementation follows their
+ink/bone tokens, directional bevels, recessed wells, glass controls and sheets.
+
+ACCEPTANCE CHECKS
+Widths below are browser viewport widths. Existing Chrome scrollbars reserve
+8px of content width, as on the current live page.
+
+1. Desktop reference / floating and condensing navigation
+   Chrome 1440: verified hero at y=0, height 860; expanded nav 1200x64 at
+   top 16px. Scrolling adds is-compact (940px maximum, 56px height, top 12px).
+   Chrome 820 and 390: responsive nav and compact state checked; at 390 the
+   compact bar is 52px tall at y=8, inset 28px, per the prototype.
+   Visual exceptions: original diagram artwork and live crew/footer retained
+   as required; these differ from the mockup. See differences below.
+
+2. Material placement
+   Chrome 1440 / 820 / 390: hero uses tint/glass; cream product section uses
+   ink/paper with computed backdrop-filter: none. Catering uses a glass shelf.
+   Nav, dropdown and order dialog are floating glass. Hotspots sit on the
+   existing photographic layers, with other hotspots hidden during close-ups.
+
+3. Home navigation / location removal
+   Chrome 1440 / 820 / 390: location pill absent; account is immediately beside
+   the bag. Existing location updates remain null-guarded. No page JS errors
+   were reported in the inspected browser error log.
+
+4. Tablet dropdown
+   Chrome 820: links and desktop CTA hidden; menu circle shown; 240px dropdown
+   with blur(28px) saturate(1.8). Nav itself has no backdrop filter; its
+   pseudo-element has blur(24px). Settled dropdown screenshot saved.
+   Chrome 390: full-width dropdown, five 52px links, close icon, and order CTA.
+   Escape closes it and restores focus; following Catering closes the menu.
+   Desktop 1440: dropdown is not shown.
+
+5. Phone hero
+   Chrome 390: 760px hero; image is 640px high at y=120, object-position 44% 50%,
+   without additional scaling. The samosa clears the buttons and its bottom
+   tip remains visible. Desktop/tablet retain the 860px full-bleed photo.
+
+6. Order sheet
+   Chrome 1440 / 820 / 390: hero and product CTAs open it; Pickup navigates to
+   burlington.html, Delivery to delivery.html; both choices survive reopening.
+   Persistence across reload verified at 390. Mobile-menu and empty-cart CTAs
+   also open the same sheet. Desktop nav uses that same delegated handler.
+   Focus moves inside, Tab/Shift+Tab stay inside, Escape restores trigger
+   focus and scroll position. Closing a menu-launched sheet restores its menu.
+   Scrim dismissal and restoration of the empty cart/focus were verified in
+   the isolated Chromium browser at 390px on the follow-up pass.
+   Existing delivery.html currently advertises coming soon; destination kept.
+
+7. Diagram
+   Chrome 1440 / 820 / 390: Whole/See inside aria-pressed states, original
+   exploded filling animation, arrow-key selection, close-up selection,
+   captions and returning to Whole verified. 44px glass hotspots, selected
+   ink state and rotating plus, ring animation, sliding lens are implemented.
+   Original SVG art and camera/layer transformations preserved.
+   Physical touch interaction remains unverified.
+
+8. Meet the crew
+   Chrome 1440 / 820 / 390: markup is unchanged. Every recorded descendant's
+   relative box, font, color, spacing, border and grid values matches the
+   current live site exactly. Live and after measurements are saved.
+
+9. Cart, account and checkout
+   Chrome: added three real catalog items to the local test cart; badge count
+   3 and home-pop animation verified. Drawer and totals checked at all three
+   widths. Guest checkout reached checkout-options.html and its original
+   order-type-modal. Sign-in modal opened/closed at all three widths with
+   existing IDs and fields intact. Test cart items were removed.
+   An old cached cart.js initially kept a zero badge visible after removal.
+   The homepage now versions cart.js; a reload verified hidden=true and
+   display:none at zero. The final add/remove cycle after this cache fix now
+   passes: adding one Chicken Curry Meal shows badge 1, and deleting it hides
+   the badge (hidden=true, display:none) at 1440, 820 and 390px. This follow-up
+   ran in the isolated Chromium browser; the local test cart was emptied.
+   Empty-cart Order Now opens the sheet; dismissal restores the open drawer,
+   its scroll lock, and focus. Completed authentication and payments untested.
+
+10. Other pages
+    The original non-home nav template is byte-for-byte unchanged from the
+    starting working tree. Burlington and Delivery retained the cream fixed
+    navigation at all three widths; Catering also retained its current nav.
+    No non-home page file or CSS was changed by this task.
+
+11. Keyboard
+    Chrome 1440 / 820 / 390: order dialog focus entry/return and diagram
+    keyboard states verified. Phone sheet Tab wrapping and orange focus-ring
+    color rgb(185,67,22) verified; dropdown Escape verified on phone/tablet.
+    No changes made to the legacy cart/auth keyboard behavior.
+
+12. Console and Safari
+    Chrome error log reported no errors during the inspected runs. The
+    existing Tailwind CDN production warning remains; Tailwind is preserved
+    per scope. Both backdrop-filter and -webkit-backdrop-filter are present
+    inside @supports blocks, with solid fallback fills. Reduced-motion rules
+    disable animations/transitions, including pseudo-elements (source checked).
+    macOS Safari Responsive Design Mode was inspected at 1440x900, 820x900,
+    and 390x844. Hero, navigation, dropdown, sheet, diagram, catering and crew
+    rendered correctly at the applicable breakpoints. Native interaction
+    coverage is detailed in the Safari follow-up below. The inspected console
+    showed no errors; the existing Tailwind warning remains. Firebase also
+    warns that localhost and the temporary preview domain are not authorized
+    for OAuth. Google popup/redirect sign-in therefore cannot be validated on
+    this preview; no authentication settings were changed.
+    Actual iOS Safari and physical touch remain unverified. macOS Responsive
+    Design Mode is not proof of iOS rendering or device safe-area behavior.
+
+REFERENCE DIFFERENCES / REMAINING VERIFICATION
+- The real SVG diagram, exploded layers and close-up camera were retained;
+  its composition and section height differ from the static prototype image.
+- The live crew's narrower portrait grid, typography and cream color are
+  preserved exactly; the handoff mockup differs slightly from the live site.
+- Footer and auth remain unchanged; the mockup footer is explicitly out of
+  scope. The optional floating bag restyle was skipped.
+- The three new subtitles are intentionally absent, as requested.
+- Actual iOS Safari, physical touch, device safe-area behavior,
+  reduced-motion/unsupported-blur runtime emulation and completed sign-in or
+  payment remain unverified. Google sign-in is blocked on this temporary
+  preview by the existing Firebase authorized-domain configuration.
+- Native Safari interaction checks were representative, not a full repeat of
+  every Chrome permutation: cart/account/checkout were exercised at 390px,
+  and diagram keyboard navigation at 820px. Chrome covered these at all
+  three widths. Safari scrim dismissal was not independently repeated.
+- There is no claim of production publication or end-to-end payment.
+
+SOURCE CHECKS
+- node --check passed for home.js, navbar.js, samosa-diagram.js and cart.js.
+- git diff --check passed.
+- All pre-existing index IDs survive; no duplicate IDs were introduced.
+- Head preserved except changed-asset cache versions; structured data and auth
+  markup preserved. Original drawer and generated auth templates unchanged.
+- Hash comparison against the starting public tree confirms only the seven
+  in-scope files changed. Prior edits to footer.js, burlington.html and other
+  files remain untouched. No fake bag counts, toast, or Undo UI shipped.
+
+EVIDENCE
+chrome-1440-full.png, chrome-820-full.png, chrome-390-full.png
+chrome-820-menu.png, chrome-390-menu.png, chrome-390-sheet.png
+chrome-layout.json, chrome-interactions.json, chrome-routes.json
+chrome-commerce.json, crew-after.json, baseline/live-crew.json
+source-verification.json
+
+REMOTE IPAD PREVIEW — 2026-10-15
+URL: https://samosaman-6895e--liquid-glass-home-20261015-jaqh4rr2.web.app/?qa=focus-2
+Expires: 2026-10-16T14:16:42.340221805Z (October 16, 10:16 a.m. Eastern)
+Version: sites/samosaman-6895e/versions/a037b7d826137e4b
+Seven in-scope homepage files plus their existing wordmark image were placed
+over the current live baseline. All 107 other live files were preserved.
+Exact public bytes for all eight preview files and unchanged production release
+were verified. No Git commit or push was made. Firebase serves the preview
+with X-Robots-Tag: noindex.
+
+The first preview omitted the wordmark loaded dynamically by navbar.js. It was
+added; the wordmark and navbar URLs now include refreshed cache versions.
+Chrome at 820px verified the final logo and hero loaded, no horizontal overflow,
+the dropdown, and the order sheet. Screenshot: preview-820.png.
+The user can test the preview directly in iPad Safari; that device remains
+unverified by the agent. The preview uses the existing production backend.
+The query in the URL forces a fresh homepage document after Safari retained
+the earlier preview in its cache. The fresh document passed native Tab checks.
+
+Deployment evidence: preview-deployment.json.
+
+SAFARI FOLLOW-UP — 2026-10-15
+Safari default settings do not include buttons in ordinary Tab navigation.
+The first native test exposed focus escaping from the order sheet into the
+address bar. home.js now explicitly advances through the visible, enabled
+sheet controls for every Tab/Shift-Tab event. Its script URL was versioned.
+Native Safari at 1440x900 verified Close -> Pickup -> Delivery -> Start order
+-> Close, reverse wrap, and Escape returning focus to Start your order.
+The same focus cycle and return passed in isolated Chromium at 1440/820/390.
+The updated temporary preview serves the exact verified fix and preserves
+its original expiry. The production Hosting release is unchanged.
+
+Evidence: safari-1440-hero.png, safari-1440-sheet.png, focus-regression.json,
+cart-final-cycle.json, preview-390-focus.png, preview-deployment.json.
+Native Safari follow-up results:
+- 1440: floating/condensed bar, hero, cream product controls, original
+  exploded diagram and hotspot captions, catering shelf, six-column crew,
+  desktop/hero/product order triggers, Delivery destination and persistence.
+  Sheet Tab and reverse wrapping, Escape, and trigger focus restoration pass.
+- 820: 240px glass dropdown remains legible over the hero. Escape returns
+  focus to its menu trigger; Return reopens it. Menu and hero order triggers
+  open the floating sheet. Tab cycles every sheet control and wraps; Escape
+  returns hero focus. Delivery selection works by keyboard. Whole/See inside
+  work with Option-Tab and Space under Safari's default keyboard settings;
+  hotspot Space and arrow navigation update the selected part and caption.
+  An orange hotspot focus ring is visible. Catering and three-column crew
+  render correctly. A non-home Rewards page retains its original navigation.
+- 390: pinned/condensed nav, original hero scale, complete samosa tip, full
+  width dropdown, phone sheet and omitted subtitles visually verified.
+  Hero/product order triggers work; the previous Delivery choice is retained,
+  keyboard selection switches to Pickup, and Start order reaches Burlington.
+  Reverse Tab wraps and Escape restores the product trigger. The original
+  diagram opens and its salsa hotspot updates the caption. Catering and
+  two-column crew render correctly. No visible horizontal content overflow.
+  Cart shows three Chicken Curry Meals, subtotal $41.85, tax $2.93 and total
+  $44.78; checkout reaches checkout-options.html and its existing guest
+  order-type picker. The original sign-in modal opens and closes. All test
+  cart items were removed, leaving the empty bag.
+- The inspected preview reload console showed no errors and two existing
+  warnings (Tailwind CDN and Firebase OAuth domain authorization).
+- Safari's developer-features preference was restored to its initial off
+  state, Responsive Design Mode was exited, and the agent-created tab closed.
+  The user's existing tabs and other preferences were preserved.
+
+Additional evidence: safari-820-menu.png, safari-820-sheet.png,
+safari-820-diagram.png, safari-820-catering.png, safari-390-hero.png,
+safari-390-menu.png, safari-390-sheet.png, safari-390-catering.png,
+safari-390-crew.png and safari-1440-catering-crew.png.
+
+Final source recheck: only the seven scoped public files differ from the
+starting hashes. All four JavaScript syntax checks and git diff --check pass.

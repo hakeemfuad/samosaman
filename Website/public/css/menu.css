@@ -32,14 +32,12 @@
 .menu-page .menu-main img { display: block; }
 .menu-page .menu-main button { font-family: inherit; cursor: pointer; }
 /* Keep drawers visible through their slide-out, then hide their shadow and tab stops. */
-.menu-page #cart-sidebar,
-.menu-page #mobile-menu-overlay {
+.menu-page #cart-sidebar {
     transition-property: transform, visibility;
     transition-duration: 300ms, 0s;
     transition-delay: 0s, 0s;
 }
-.menu-page #cart-sidebar.translate-x-full,
-.menu-page #mobile-menu-overlay.translate-x-full {
+.menu-page #cart-sidebar.translate-x-full {
     visibility: hidden;
     transition-delay: 0s, 300ms;
 }

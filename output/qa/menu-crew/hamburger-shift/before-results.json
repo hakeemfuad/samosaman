@@ -1,0 +1,2010 @@
+[
+  {
+    "width": 375,
+    "pass": false,
+    "before": {
+      "innerWidth": 375,
+      "clientWidth": 367,
+      "bodyWidth": 367,
+      "scrollY": 0,
+      "measurements": [
+        {
+          "selector": ".menu-counter",
+          "box": {
+            "x": 12,
+            "y": 296.65625,
+            "width": 343,
+            "height": 208.796875
+          },
+          "text": [
+            {
+              "x": 31,
+              "y": 317.65625,
+              "width": 305,
+              "height": 37.796875
+            },
+            {
+              "x": 31,
+              "y": 309.65625,
+              "width": 274.9375,
+              "height": 53
+            },
+            {
+              "x": 31,
+              "y": 365.453125,
+              "width": 305,
+              "height": 21
+            },
+            {
+              "x": 31,
+              "y": 367.453125,
+              "width": 239.859375,
+              "height": 17
+            },
+            {
+              "x": 31,
+              "y": 386.453125,
+              "width": 218.390625,
+              "height": 34
+            },
+            {
+              "x": 47,
+              "y": 394.953125,
+              "width": 202.390625,
+              "height": 17
+            },
+            {
+              "x": 31,
+              "y": 436.453125,
+              "width": 305,
+              "height": 48
+            },
+            {
+              "x": 86.5,
+              "y": 451.953125,
+              "width": 45.5,
+              "height": 17
+            },
+            {
+              "x": 230.203125,
+              "y": 451.953125,
+              "width": 55.078125,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": ".menu-counter h1",
+          "box": {
+            "x": 31,
+            "y": 317.65625,
+            "width": 305,
+            "height": 37.796875
+          },
+          "text": [
+            {
+              "x": 31,
+              "y": 309.65625,
+              "width": 274.9375,
+              "height": 53
+            }
+          ]
+        },
+        {
+          "selector": ".menu-address",
+          "box": {
+            "x": 31,
+            "y": 365.453125,
+            "width": 305,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 31,
+              "y": 367.453125,
+              "width": 239.859375,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": "#hours-status-text",
+          "box": {
+            "x": 47,
+            "y": 392.953125,
+            "width": 202.390625,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 47,
+              "y": 394.953125,
+              "width": 202.390625,
+              "height": 17
+            }
+          ]
+        }
+      ]
+    },
+    "open": {
+      "innerWidth": 375,
+      "clientWidth": 375,
+      "bodyWidth": 375,
+      "scrollY": 0,
+      "measurements": [
+        {
+          "selector": ".menu-counter",
+          "box": {
+            "x": 12,
+            "y": 302,
+            "width": 351,
+            "height": 208.796875
+          },
+          "text": [
+            {
+              "x": 31,
+              "y": 323,
+              "width": 313,
+              "height": 37.796875
+            },
+            {
+              "x": 31,
+              "y": 315,
+              "width": 274.9375,
+              "height": 53
+            },
+            {
+              "x": 31,
+              "y": 370.796875,
+              "width": 313,
+              "height": 21
+            },
+            {
+              "x": 31,
+              "y": 372.796875,
+              "width": 239.859375,
+              "height": 17
+            },
+            {
+              "x": 31,
+              "y": 391.796875,
+              "width": 218.390625,
+              "height": 34
+            },
+            {
+              "x": 47,
+              "y": 400.296875,
+              "width": 202.390625,
+              "height": 17
+            },
+            {
+              "x": 31,
+              "y": 441.796875,
+              "width": 313,
+              "height": 48
+            },
+            {
+              "x": 88.5,
+              "y": 457.296875,
+              "width": 45.5,
+              "height": 17
+            },
+            {
+              "x": 236.203125,
+              "y": 457.296875,
+              "width": 55.078125,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": ".menu-counter h1",
+          "box": {
+            "x": 31,
+            "y": 323,
+            "width": 313,
+            "height": 37.796875
+          },
+          "text": [
+            {
+              "x": 31,
+              "y": 315,
+              "width": 274.9375,
+              "height": 53
+            }
+          ]
+        },
+        {
+          "selector": ".menu-address",
+          "box": {
+            "x": 31,
+            "y": 370.796875,
+            "width": 313,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 31,
+              "y": 372.796875,
+              "width": 239.859375,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": "#hours-status-text",
+          "box": {
+            "x": 47,
+            "y": 398.296875,
+            "width": 202.390625,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 47,
+              "y": 400.296875,
+              "width": 202.390625,
+              "height": 17
+            }
+          ]
+        }
+      ]
+    },
+    "closed": {
+      "innerWidth": 375,
+      "clientWidth": 367,
+      "bodyWidth": 367,
+      "scrollY": 0,
+      "measurements": [
+        {
+          "selector": ".menu-counter",
+          "box": {
+            "x": 12,
+            "y": 296.65625,
+            "width": 343,
+            "height": 208.796875
+          },
+          "text": [
+            {
+              "x": 31,
+              "y": 317.65625,
+              "width": 305,
+              "height": 37.796875
+            },
+            {
+              "x": 31,
+              "y": 309.65625,
+              "width": 274.9375,
+              "height": 53
+            },
+            {
+              "x": 31,
+              "y": 365.453125,
+              "width": 305,
+              "height": 21
+            },
+            {
+              "x": 31,
+              "y": 367.453125,
+              "width": 239.859375,
+              "height": 17
+            },
+            {
+              "x": 31,
+              "y": 386.453125,
+              "width": 218.390625,
+              "height": 34
+            },
+            {
+              "x": 47,
+              "y": 394.953125,
+              "width": 202.390625,
+              "height": 17
+            },
+            {
+              "x": 31,
+              "y": 436.453125,
+              "width": 305,
+              "height": 48
+            },
+            {
+              "x": 86.5,
+              "y": 451.953125,
+              "width": 45.5,
+              "height": 17
+            },
+            {
+              "x": 230.203125,
+              "y": 451.953125,
+              "width": 55.078125,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": ".menu-counter h1",
+          "box": {
+            "x": 31,
+            "y": 317.65625,
+            "width": 305,
+            "height": 37.796875
+          },
+          "text": [
+            {
+              "x": 31,
+              "y": 309.65625,
+              "width": 274.9375,
+              "height": 53
+            }
+          ]
+        },
+        {
+          "selector": ".menu-address",
+          "box": {
+            "x": 31,
+            "y": 365.453125,
+            "width": 305,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 31,
+              "y": 367.453125,
+              "width": 239.859375,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": "#hours-status-text",
+          "box": {
+            "x": 47,
+            "y": 392.953125,
+            "width": 202.390625,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 47,
+              "y": 394.953125,
+              "width": 202.390625,
+              "height": 17
+            }
+          ]
+        }
+      ]
+    },
+    "differences": [
+      "open: .menu-counter y 296.65625 → 302",
+      "open: .menu-counter width 343 → 351",
+      "open: .menu-counter text moved/reflowed",
+      "open: .menu-counter h1 y 317.65625 → 323",
+      "open: .menu-counter h1 width 305 → 313",
+      "open: .menu-counter h1 text moved/reflowed",
+      "open: .menu-address y 365.453125 → 370.796875",
+      "open: .menu-address width 305 → 313",
+      "open: .menu-address text moved/reflowed",
+      "open: #hours-status-text y 392.953125 → 398.296875",
+      "open: #hours-status-text text moved/reflowed"
+    ]
+  },
+  {
+    "width": 430,
+    "pass": false,
+    "before": {
+      "innerWidth": 430,
+      "clientWidth": 422,
+      "bodyWidth": 422,
+      "scrollY": 0,
+      "measurements": [
+        {
+          "selector": ".menu-counter",
+          "box": {
+            "x": 12,
+            "y": 333.328125,
+            "width": 398,
+            "height": 208.796875
+          },
+          "text": [
+            {
+              "x": 31,
+              "y": 354.328125,
+              "width": 360,
+              "height": 37.796875
+            },
+            {
+              "x": 31,
+              "y": 346.328125,
+              "width": 274.9375,
+              "height": 53
+            },
+            {
+              "x": 31,
+              "y": 402.125,
+              "width": 360,
+              "height": 21
+            },
+            {
+              "x": 31,
+              "y": 404.125,
+              "width": 239.859375,
+              "height": 17
+            },
+            {
+              "x": 31,
+              "y": 423.125,
+              "width": 218.390625,
+              "height": 34
+            },
+            {
+              "x": 47,
+              "y": 431.625,
+              "width": 202.390625,
+              "height": 17
+            },
+            {
+              "x": 31,
+              "y": 473.125,
+              "width": 360,
+              "height": 48
+            },
+            {
+              "x": 100.25,
+              "y": 488.625,
+              "width": 45.5,
+              "height": 17
+            },
+            {
+              "x": 271.453125,
+              "y": 488.625,
+              "width": 55.078125,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": ".menu-counter h1",
+          "box": {
+            "x": 31,
+            "y": 354.328125,
+            "width": 360,
+            "height": 37.796875
+          },
+          "text": [
+            {
+              "x": 31,
+              "y": 346.328125,
+              "width": 274.9375,
+              "height": 53
+            }
+          ]
+        },
+        {
+          "selector": ".menu-address",
+          "box": {
+            "x": 31,
+            "y": 402.125,
+            "width": 360,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 31,
+              "y": 404.125,
+              "width": 239.859375,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": "#hours-status-text",
+          "box": {
+            "x": 47,
+            "y": 429.625,
+            "width": 202.390625,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 47,
+              "y": 431.625,
+              "width": 202.390625,
+              "height": 17
+            }
+          ]
+        }
+      ]
+    },
+    "open": {
+      "innerWidth": 430,
+      "clientWidth": 430,
+      "bodyWidth": 430,
+      "scrollY": 0,
+      "measurements": [
+        {
+          "selector": ".menu-counter",
+          "box": {
+            "x": 12,
+            "y": 338.65625,
+            "width": 406,
+            "height": 208.796875
+          },
+          "text": [
+            {
+              "x": 31,
+              "y": 359.65625,
+              "width": 368,
+              "height": 37.796875
+            },
+            {
+              "x": 31,
+              "y": 351.65625,
+              "width": 274.9375,
+              "height": 53
+            },
+            {
+              "x": 31,
+              "y": 407.453125,
+              "width": 368,
+              "height": 21
+            },
+            {
+              "x": 31,
+              "y": 409.453125,
+              "width": 239.859375,
+              "height": 17
+            },
+            {
+              "x": 31,
+              "y": 428.453125,
+              "width": 218.390625,
+              "height": 34
+            },
+            {
+              "x": 47,
+              "y": 436.953125,
+              "width": 202.390625,
+              "height": 17
+            },
+            {
+              "x": 31,
+              "y": 478.453125,
+              "width": 368,
+              "height": 48
+            },
+            {
+              "x": 102.25,
+              "y": 493.953125,
+              "width": 45.5,
+              "height": 17
+            },
+            {
+              "x": 277.453125,
+              "y": 493.953125,
+              "width": 55.078125,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": ".menu-counter h1",
+          "box": {
+            "x": 31,
+            "y": 359.65625,
+            "width": 368,
+            "height": 37.796875
+          },
+          "text": [
+            {
+              "x": 31,
+              "y": 351.65625,
+              "width": 274.9375,
+              "height": 53
+            }
+          ]
+        },
+        {
+          "selector": ".menu-address",
+          "box": {
+            "x": 31,
+            "y": 407.453125,
+            "width": 368,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 31,
+              "y": 409.453125,
+              "width": 239.859375,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": "#hours-status-text",
+          "box": {
+            "x": 47,
+            "y": 434.953125,
+            "width": 202.390625,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 47,
+              "y": 436.953125,
+              "width": 202.390625,
+              "height": 17
+            }
+          ]
+        }
+      ]
+    },
+    "closed": {
+      "innerWidth": 430,
+      "clientWidth": 422,
+      "bodyWidth": 422,
+      "scrollY": 0,
+      "measurements": [
+        {
+          "selector": ".menu-counter",
+          "box": {
+            "x": 12,
+            "y": 333.328125,
+            "width": 398,
+            "height": 208.796875
+          },
+          "text": [
+            {
+              "x": 31,
+              "y": 354.328125,
+              "width": 360,
+              "height": 37.796875
+            },
+            {
+              "x": 31,
+              "y": 346.328125,
+              "width": 274.9375,
+              "height": 53
+            },
+            {
+              "x": 31,
+              "y": 402.125,
+              "width": 360,
+              "height": 21
+            },
+            {
+              "x": 31,
+              "y": 404.125,
+              "width": 239.859375,
+              "height": 17
+            },
+            {
+              "x": 31,
+              "y": 423.125,
+              "width": 218.390625,
+              "height": 34
+            },
+            {
+              "x": 47,
+              "y": 431.625,
+              "width": 202.390625,
+              "height": 17
+            },
+            {
+              "x": 31,
+              "y": 473.125,
+              "width": 360,
+              "height": 48
+            },
+            {
+              "x": 100.25,
+              "y": 488.625,
+              "width": 45.5,
+              "height": 17
+            },
+            {
+              "x": 271.453125,
+              "y": 488.625,
+              "width": 55.078125,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": ".menu-counter h1",
+          "box": {
+            "x": 31,
+            "y": 354.328125,
+            "width": 360,
+            "height": 37.796875
+          },
+          "text": [
+            {
+              "x": 31,
+              "y": 346.328125,
+              "width": 274.9375,
+              "height": 53
+            }
+          ]
+        },
+        {
+          "selector": ".menu-address",
+          "box": {
+            "x": 31,
+            "y": 402.125,
+            "width": 360,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 31,
+              "y": 404.125,
+              "width": 239.859375,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": "#hours-status-text",
+          "box": {
+            "x": 47,
+            "y": 429.625,
+            "width": 202.390625,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 47,
+              "y": 431.625,
+              "width": 202.390625,
+              "height": 17
+            }
+          ]
+        }
+      ]
+    },
+    "differences": [
+      "open: .menu-counter y 333.328125 → 338.65625",
+      "open: .menu-counter width 398 → 406",
+      "open: .menu-counter text moved/reflowed",
+      "open: .menu-counter h1 y 354.328125 → 359.65625",
+      "open: .menu-counter h1 width 360 → 368",
+      "open: .menu-counter h1 text moved/reflowed",
+      "open: .menu-address y 402.125 → 407.453125",
+      "open: .menu-address width 360 → 368",
+      "open: .menu-address text moved/reflowed",
+      "open: #hours-status-text y 429.625 → 434.953125",
+      "open: #hours-status-text text moved/reflowed"
+    ]
+  },
+  {
+    "width": 768,
+    "pass": false,
+    "before": {
+      "innerWidth": 768,
+      "clientWidth": 760,
+      "bodyWidth": 760,
+      "scrollY": 0,
+      "measurements": [
+        {
+          "selector": ".menu-counter",
+          "box": {
+            "x": 422.09375,
+            "y": 344.625,
+            "width": 305.90625,
+            "height": 279.375
+          },
+          "text": [
+            {
+              "x": 451.09375,
+              "y": 373.625,
+              "width": 247.90625,
+              "height": 92.375
+            },
+            {
+              "x": 451.09375,
+              "y": 363.625,
+              "width": 225.765625,
+              "height": 65
+            },
+            {
+              "x": 451.09375,
+              "y": 409.8125,
+              "width": 99.453125,
+              "height": 65
+            },
+            {
+              "x": 451.09375,
+              "y": 476,
+              "width": 247.90625,
+              "height": 21
+            },
+            {
+              "x": 451.09375,
+              "y": 478,
+              "width": 239.859375,
+              "height": 17
+            },
+            {
+              "x": 451.09375,
+              "y": 497,
+              "width": 218.390625,
+              "height": 34
+            },
+            {
+              "x": 467.09375,
+              "y": 505.5,
+              "width": 202.390625,
+              "height": 17
+            },
+            {
+              "x": 451.09375,
+              "y": 547,
+              "width": 247.90625,
+              "height": 48
+            },
+            {
+              "x": 492.3125,
+              "y": 562.5,
+              "width": 45.5,
+              "height": 17
+            },
+            {
+              "x": 607.484375,
+              "y": 562.5,
+              "width": 55.078125,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": ".menu-counter h1",
+          "box": {
+            "x": 451.09375,
+            "y": 373.625,
+            "width": 247.90625,
+            "height": 92.375
+          },
+          "text": [
+            {
+              "x": 451.09375,
+              "y": 363.625,
+              "width": 225.765625,
+              "height": 65
+            },
+            {
+              "x": 451.09375,
+              "y": 409.8125,
+              "width": 99.453125,
+              "height": 65
+            }
+          ]
+        },
+        {
+          "selector": ".menu-address",
+          "box": {
+            "x": 451.09375,
+            "y": 476,
+            "width": 247.90625,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 451.09375,
+              "y": 478,
+              "width": 239.859375,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": "#hours-status-text",
+          "box": {
+            "x": 467.09375,
+            "y": 503.5,
+            "width": 202.390625,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 467.09375,
+              "y": 505.5,
+              "width": 202.390625,
+              "height": 17
+            }
+          ]
+        }
+      ]
+    },
+    "open": {
+      "innerWidth": 768,
+      "clientWidth": 768,
+      "bodyWidth": 768,
+      "scrollY": 0,
+      "measurements": [
+        {
+          "selector": ".menu-counter",
+          "box": {
+            "x": 430.09375,
+            "y": 344.625,
+            "width": 305.90625,
+            "height": 279.375
+          },
+          "text": [
+            {
+              "x": 459.09375,
+              "y": 373.625,
+              "width": 247.90625,
+              "height": 92.375
+            },
+            {
+              "x": 459.09375,
+              "y": 363.625,
+              "width": 225.765625,
+              "height": 65
+            },
+            {
+              "x": 459.09375,
+              "y": 409.8125,
+              "width": 99.453125,
+              "height": 65
+            },
+            {
+              "x": 459.09375,
+              "y": 476,
+              "width": 247.90625,
+              "height": 21
+            },
+            {
+              "x": 459.09375,
+              "y": 478,
+              "width": 239.859375,
+              "height": 17
+            },
+            {
+              "x": 459.09375,
+              "y": 497,
+              "width": 218.390625,
+              "height": 34
+            },
+            {
+              "x": 475.09375,
+              "y": 505.5,
+              "width": 202.390625,
+              "height": 17
+            },
+            {
+              "x": 459.09375,
+              "y": 547,
+              "width": 247.90625,
+              "height": 48
+            },
+            {
+              "x": 500.3125,
+              "y": 562.5,
+              "width": 45.5,
+              "height": 17
+            },
+            {
+              "x": 615.484375,
+              "y": 562.5,
+              "width": 55.078125,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": ".menu-counter h1",
+          "box": {
+            "x": 459.09375,
+            "y": 373.625,
+            "width": 247.90625,
+            "height": 92.375
+          },
+          "text": [
+            {
+              "x": 459.09375,
+              "y": 363.625,
+              "width": 225.765625,
+              "height": 65
+            },
+            {
+              "x": 459.09375,
+              "y": 409.8125,
+              "width": 99.453125,
+              "height": 65
+            }
+          ]
+        },
+        {
+          "selector": ".menu-address",
+          "box": {
+            "x": 459.09375,
+            "y": 476,
+            "width": 247.90625,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 459.09375,
+              "y": 478,
+              "width": 239.859375,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": "#hours-status-text",
+          "box": {
+            "x": 475.09375,
+            "y": 503.5,
+            "width": 202.390625,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 475.09375,
+              "y": 505.5,
+              "width": 202.390625,
+              "height": 17
+            }
+          ]
+        }
+      ]
+    },
+    "closed": {
+      "innerWidth": 768,
+      "clientWidth": 760,
+      "bodyWidth": 760,
+      "scrollY": 0,
+      "measurements": [
+        {
+          "selector": ".menu-counter",
+          "box": {
+            "x": 422.09375,
+            "y": 344.625,
+            "width": 305.90625,
+            "height": 279.375
+          },
+          "text": [
+            {
+              "x": 451.09375,
+              "y": 373.625,
+              "width": 247.90625,
+              "height": 92.375
+            },
+            {
+              "x": 451.09375,
+              "y": 363.625,
+              "width": 225.765625,
+              "height": 65
+            },
+            {
+              "x": 451.09375,
+              "y": 409.8125,
+              "width": 99.453125,
+              "height": 65
+            },
+            {
+              "x": 451.09375,
+              "y": 476,
+              "width": 247.90625,
+              "height": 21
+            },
+            {
+              "x": 451.09375,
+              "y": 478,
+              "width": 239.859375,
+              "height": 17
+            },
+            {
+              "x": 451.09375,
+              "y": 497,
+              "width": 218.390625,
+              "height": 34
+            },
+            {
+              "x": 467.09375,
+              "y": 505.5,
+              "width": 202.390625,
+              "height": 17
+            },
+            {
+              "x": 451.09375,
+              "y": 547,
+              "width": 247.90625,
+              "height": 48
+            },
+            {
+              "x": 492.3125,
+              "y": 562.5,
+              "width": 45.5,
+              "height": 17
+            },
+            {
+              "x": 607.484375,
+              "y": 562.5,
+              "width": 55.078125,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": ".menu-counter h1",
+          "box": {
+            "x": 451.09375,
+            "y": 373.625,
+            "width": 247.90625,
+            "height": 92.375
+          },
+          "text": [
+            {
+              "x": 451.09375,
+              "y": 363.625,
+              "width": 225.765625,
+              "height": 65
+            },
+            {
+              "x": 451.09375,
+              "y": 409.8125,
+              "width": 99.453125,
+              "height": 65
+            }
+          ]
+        },
+        {
+          "selector": ".menu-address",
+          "box": {
+            "x": 451.09375,
+            "y": 476,
+            "width": 247.90625,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 451.09375,
+              "y": 478,
+              "width": 239.859375,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": "#hours-status-text",
+          "box": {
+            "x": 467.09375,
+            "y": 503.5,
+            "width": 202.390625,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 467.09375,
+              "y": 505.5,
+              "width": 202.390625,
+              "height": 17
+            }
+          ]
+        }
+      ]
+    },
+    "differences": [
+      "open: .menu-counter x 422.09375 → 430.09375",
+      "open: .menu-counter text moved/reflowed",
+      "open: .menu-counter h1 x 451.09375 → 459.09375",
+      "open: .menu-counter h1 text moved/reflowed",
+      "open: .menu-address x 451.09375 → 459.09375",
+      "open: .menu-address text moved/reflowed",
+      "open: #hours-status-text x 467.09375 → 475.09375",
+      "open: #hours-status-text text moved/reflowed"
+    ]
+  },
+  {
+    "width": 900,
+    "pass": false,
+    "before": {
+      "innerWidth": 900,
+      "clientWidth": 892,
+      "bodyWidth": 892,
+      "scrollY": 0,
+      "measurements": [
+        {
+          "selector": ".menu-counter",
+          "box": {
+            "x": 496,
+            "y": 344.625,
+            "width": 364,
+            "height": 279.375
+          },
+          "text": [
+            {
+              "x": 525,
+              "y": 373.625,
+              "width": 306,
+              "height": 92.375
+            },
+            {
+              "x": 525,
+              "y": 363.625,
+              "width": 225.765625,
+              "height": 65
+            },
+            {
+              "x": 525,
+              "y": 409.8125,
+              "width": 99.453125,
+              "height": 65
+            },
+            {
+              "x": 525,
+              "y": 476,
+              "width": 306,
+              "height": 21
+            },
+            {
+              "x": 525,
+              "y": 478,
+              "width": 239.859375,
+              "height": 17
+            },
+            {
+              "x": 525,
+              "y": 497,
+              "width": 218.390625,
+              "height": 34
+            },
+            {
+              "x": 541,
+              "y": 505.5,
+              "width": 202.390625,
+              "height": 17
+            },
+            {
+              "x": 525,
+              "y": 547,
+              "width": 306,
+              "height": 48
+            },
+            {
+              "x": 580.75,
+              "y": 562.5,
+              "width": 45.5,
+              "height": 17
+            },
+            {
+              "x": 724.953125,
+              "y": 562.5,
+              "width": 55.078125,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": ".menu-counter h1",
+          "box": {
+            "x": 525,
+            "y": 373.625,
+            "width": 306,
+            "height": 92.375
+          },
+          "text": [
+            {
+              "x": 525,
+              "y": 363.625,
+              "width": 225.765625,
+              "height": 65
+            },
+            {
+              "x": 525,
+              "y": 409.8125,
+              "width": 99.453125,
+              "height": 65
+            }
+          ]
+        },
+        {
+          "selector": ".menu-address",
+          "box": {
+            "x": 525,
+            "y": 476,
+            "width": 306,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 525,
+              "y": 478,
+              "width": 239.859375,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": "#hours-status-text",
+          "box": {
+            "x": 541,
+            "y": 503.5,
+            "width": 202.390625,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 541,
+              "y": 505.5,
+              "width": 202.390625,
+              "height": 17
+            }
+          ]
+        }
+      ]
+    },
+    "open": {
+      "innerWidth": 900,
+      "clientWidth": 900,
+      "bodyWidth": 900,
+      "scrollY": 0,
+      "measurements": [
+        {
+          "selector": ".menu-counter",
+          "box": {
+            "x": 504,
+            "y": 344.625,
+            "width": 364,
+            "height": 279.375
+          },
+          "text": [
+            {
+              "x": 533,
+              "y": 373.625,
+              "width": 306,
+              "height": 92.375
+            },
+            {
+              "x": 533,
+              "y": 363.625,
+              "width": 225.765625,
+              "height": 65
+            },
+            {
+              "x": 533,
+              "y": 409.8125,
+              "width": 99.453125,
+              "height": 65
+            },
+            {
+              "x": 533,
+              "y": 476,
+              "width": 306,
+              "height": 21
+            },
+            {
+              "x": 533,
+              "y": 478,
+              "width": 239.859375,
+              "height": 17
+            },
+            {
+              "x": 533,
+              "y": 497,
+              "width": 218.390625,
+              "height": 34
+            },
+            {
+              "x": 549,
+              "y": 505.5,
+              "width": 202.390625,
+              "height": 17
+            },
+            {
+              "x": 533,
+              "y": 547,
+              "width": 306,
+              "height": 48
+            },
+            {
+              "x": 588.75,
+              "y": 562.5,
+              "width": 45.5,
+              "height": 17
+            },
+            {
+              "x": 732.953125,
+              "y": 562.5,
+              "width": 55.078125,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": ".menu-counter h1",
+          "box": {
+            "x": 533,
+            "y": 373.625,
+            "width": 306,
+            "height": 92.375
+          },
+          "text": [
+            {
+              "x": 533,
+              "y": 363.625,
+              "width": 225.765625,
+              "height": 65
+            },
+            {
+              "x": 533,
+              "y": 409.8125,
+              "width": 99.453125,
+              "height": 65
+            }
+          ]
+        },
+        {
+          "selector": ".menu-address",
+          "box": {
+            "x": 533,
+            "y": 476,
+            "width": 306,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 533,
+              "y": 478,
+              "width": 239.859375,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": "#hours-status-text",
+          "box": {
+            "x": 549,
+            "y": 503.5,
+            "width": 202.390625,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 549,
+              "y": 505.5,
+              "width": 202.390625,
+              "height": 17
+            }
+          ]
+        }
+      ]
+    },
+    "closed": {
+      "innerWidth": 900,
+      "clientWidth": 892,
+      "bodyWidth": 892,
+      "scrollY": 0,
+      "measurements": [
+        {
+          "selector": ".menu-counter",
+          "box": {
+            "x": 496,
+            "y": 344.625,
+            "width": 364,
+            "height": 279.375
+          },
+          "text": [
+            {
+              "x": 525,
+              "y": 373.625,
+              "width": 306,
+              "height": 92.375
+            },
+            {
+              "x": 525,
+              "y": 363.625,
+              "width": 225.765625,
+              "height": 65
+            },
+            {
+              "x": 525,
+              "y": 409.8125,
+              "width": 99.453125,
+              "height": 65
+            },
+            {
+              "x": 525,
+              "y": 476,
+              "width": 306,
+              "height": 21
+            },
+            {
+              "x": 525,
+              "y": 478,
+              "width": 239.859375,
+              "height": 17
+            },
+            {
+              "x": 525,
+              "y": 497,
+              "width": 218.390625,
+              "height": 34
+            },
+            {
+              "x": 541,
+              "y": 505.5,
+              "width": 202.390625,
+              "height": 17
+            },
+            {
+              "x": 525,
+              "y": 547,
+              "width": 306,
+              "height": 48
+            },
+            {
+              "x": 580.75,
+              "y": 562.5,
+              "width": 45.5,
+              "height": 17
+            },
+            {
+              "x": 724.953125,
+              "y": 562.5,
+              "width": 55.078125,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": ".menu-counter h1",
+          "box": {
+            "x": 525,
+            "y": 373.625,
+            "width": 306,
+            "height": 92.375
+          },
+          "text": [
+            {
+              "x": 525,
+              "y": 363.625,
+              "width": 225.765625,
+              "height": 65
+            },
+            {
+              "x": 525,
+              "y": 409.8125,
+              "width": 99.453125,
+              "height": 65
+            }
+          ]
+        },
+        {
+          "selector": ".menu-address",
+          "box": {
+            "x": 525,
+            "y": 476,
+            "width": 306,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 525,
+              "y": 478,
+              "width": 239.859375,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": "#hours-status-text",
+          "box": {
+            "x": 541,
+            "y": 503.5,
+            "width": 202.390625,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 541,
+              "y": 505.5,
+              "width": 202.390625,
+              "height": 17
+            }
+          ]
+        }
+      ]
+    },
+    "differences": [
+      "open: .menu-counter x 496 → 504",
+      "open: .menu-counter text moved/reflowed",
+      "open: .menu-counter h1 x 525 → 533",
+      "open: .menu-counter h1 text moved/reflowed",
+      "open: .menu-address x 525 → 533",
+      "open: .menu-address text moved/reflowed",
+      "open: #hours-status-text x 541 → 549",
+      "open: #hours-status-text text moved/reflowed"
+    ]
+  },
+  {
+    "width": 1023,
+    "pass": false,
+    "before": {
+      "innerWidth": 1023,
+      "clientWidth": 1015,
+      "bodyWidth": 1015,
+      "scrollY": 0,
+      "measurements": [
+        {
+          "selector": ".menu-counter",
+          "box": {
+            "x": 583,
+            "y": 390.8125,
+            "width": 400,
+            "height": 233.1875
+          },
+          "text": [
+            {
+              "x": 612,
+              "y": 419.8125,
+              "width": 342,
+              "height": 46.1875
+            },
+            {
+              "x": 612,
+              "y": 409.8125,
+              "width": 336.03125,
+              "height": 65
+            },
+            {
+              "x": 612,
+              "y": 476,
+              "width": 342,
+              "height": 21
+            },
+            {
+              "x": 612,
+              "y": 478,
+              "width": 239.859375,
+              "height": 17
+            },
+            {
+              "x": 612,
+              "y": 497,
+              "width": 218.390625,
+              "height": 34
+            },
+            {
+              "x": 628,
+              "y": 505.5,
+              "width": 202.390625,
+              "height": 17
+            },
+            {
+              "x": 612,
+              "y": 547,
+              "width": 342,
+              "height": 48
+            },
+            {
+              "x": 676.75,
+              "y": 562.5,
+              "width": 45.5,
+              "height": 17
+            },
+            {
+              "x": 838.953125,
+              "y": 562.5,
+              "width": 55.078125,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": ".menu-counter h1",
+          "box": {
+            "x": 612,
+            "y": 419.8125,
+            "width": 342,
+            "height": 46.1875
+          },
+          "text": [
+            {
+              "x": 612,
+              "y": 409.8125,
+              "width": 336.03125,
+              "height": 65
+            }
+          ]
+        },
+        {
+          "selector": ".menu-address",
+          "box": {
+            "x": 612,
+            "y": 476,
+            "width": 342,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 612,
+              "y": 478,
+              "width": 239.859375,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": "#hours-status-text",
+          "box": {
+            "x": 628,
+            "y": 503.5,
+            "width": 202.390625,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 628,
+              "y": 505.5,
+              "width": 202.390625,
+              "height": 17
+            }
+          ]
+        }
+      ]
+    },
+    "open": {
+      "innerWidth": 1023,
+      "clientWidth": 1023,
+      "bodyWidth": 1023,
+      "scrollY": 0,
+      "measurements": [
+        {
+          "selector": ".menu-counter",
+          "box": {
+            "x": 591,
+            "y": 390.8125,
+            "width": 400,
+            "height": 233.1875
+          },
+          "text": [
+            {
+              "x": 620,
+              "y": 419.8125,
+              "width": 342,
+              "height": 46.1875
+            },
+            {
+              "x": 620,
+              "y": 409.8125,
+              "width": 336.03125,
+              "height": 65
+            },
+            {
+              "x": 620,
+              "y": 476,
+              "width": 342,
+              "height": 21
+            },
+            {
+              "x": 620,
+              "y": 478,
+              "width": 239.859375,
+              "height": 17
+            },
+            {
+              "x": 620,
+              "y": 497,
+              "width": 218.390625,
+              "height": 34
+            },
+            {
+              "x": 636,
+              "y": 505.5,
+              "width": 202.390625,
+              "height": 17
+            },
+            {
+              "x": 620,
+              "y": 547,
+              "width": 342,
+              "height": 48
+            },
+            {
+              "x": 684.75,
+              "y": 562.5,
+              "width": 45.5,
+              "height": 17
+            },
+            {
+              "x": 846.953125,
+              "y": 562.5,
+              "width": 55.078125,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": ".menu-counter h1",
+          "box": {
+            "x": 620,
+            "y": 419.8125,
+            "width": 342,
+            "height": 46.1875
+          },
+          "text": [
+            {
+              "x": 620,
+              "y": 409.8125,
+              "width": 336.03125,
+              "height": 65
+            }
+          ]
+        },
+        {
+          "selector": ".menu-address",
+          "box": {
+            "x": 620,
+            "y": 476,
+            "width": 342,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 620,
+              "y": 478,
+              "width": 239.859375,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": "#hours-status-text",
+          "box": {
+            "x": 636,
+            "y": 503.5,
+            "width": 202.390625,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 636,
+              "y": 505.5,
+              "width": 202.390625,
+              "height": 17
+            }
+          ]
+        }
+      ]
+    },
+    "closed": {
+      "innerWidth": 1023,
+      "clientWidth": 1015,
+      "bodyWidth": 1015,
+      "scrollY": 0,
+      "measurements": [
+        {
+          "selector": ".menu-counter",
+          "box": {
+            "x": 583,
+            "y": 390.8125,
+            "width": 400,
+            "height": 233.1875
+          },
+          "text": [
+            {
+              "x": 612,
+              "y": 419.8125,
+              "width": 342,
+              "height": 46.1875
+            },
+            {
+              "x": 612,
+              "y": 409.8125,
+              "width": 336.03125,
+              "height": 65
+            },
+            {
+              "x": 612,
+              "y": 476,
+              "width": 342,
+              "height": 21
+            },
+            {
+              "x": 612,
+              "y": 478,
+              "width": 239.859375,
+              "height": 17
+            },
+            {
+              "x": 612,
+              "y": 497,
+              "width": 218.390625,
+              "height": 34
+            },
+            {
+              "x": 628,
+              "y": 505.5,
+              "width": 202.390625,
+              "height": 17
+            },
+            {
+              "x": 612,
+              "y": 547,
+              "width": 342,
+              "height": 48
+            },
+            {
+              "x": 676.75,
+              "y": 562.5,
+              "width": 45.5,
+              "height": 17
+            },
+            {
+              "x": 838.953125,
+              "y": 562.5,
+              "width": 55.078125,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": ".menu-counter h1",
+          "box": {
+            "x": 612,
+            "y": 419.8125,
+            "width": 342,
+            "height": 46.1875
+          },
+          "text": [
+            {
+              "x": 612,
+              "y": 409.8125,
+              "width": 336.03125,
+              "height": 65
+            }
+          ]
+        },
+        {
+          "selector": ".menu-address",
+          "box": {
+            "x": 612,
+            "y": 476,
+            "width": 342,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 612,
+              "y": 478,
+              "width": 239.859375,
+              "height": 17
+            }
+          ]
+        },
+        {
+          "selector": "#hours-status-text",
+          "box": {
+            "x": 628,
+            "y": 503.5,
+            "width": 202.390625,
+            "height": 21
+          },
+          "text": [
+            {
+              "x": 628,
+              "y": 505.5,
+              "width": 202.390625,
+              "height": 17
+            }
+          ]
+        }
+      ]
+    },
+    "differences": [
+      "open: .menu-counter x 583 → 591",
+      "open: .menu-counter text moved/reflowed",
+      "open: .menu-counter h1 x 612 → 620",
+      "open: .menu-counter h1 text moved/reflowed",
+      "open: .menu-address x 612 → 620",
+      "open: .menu-address text moved/reflowed",
+      "open: #hours-status-text x 628 → 636",
+      "open: #hours-status-text text moved/reflowed"
+    ]
+  }
+]

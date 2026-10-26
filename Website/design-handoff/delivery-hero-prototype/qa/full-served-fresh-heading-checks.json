@@ -1,0 +1,75 @@
+[
+  {
+    "freshHeading": {
+      "bottom": 965.671875,
+      "fullyVisible": true,
+      "top": 880
+    },
+    "heroHeight": 812,
+    "overflow": false,
+    "viewport": [
+      1625,
+      984
+    ]
+  },
+  {
+    "freshHeading": {
+      "bottom": 881.671875,
+      "fullyVisible": true,
+      "top": 796
+    },
+    "graphicFits": true,
+    "graphicHeight": 328.203125,
+    "heroHeight": 728,
+    "overflow": false,
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  {
+    "freshHeading": {
+      "bottom": 686.328125,
+      "fullyVisible": true,
+      "top": 608
+    },
+    "graphicFits": true,
+    "graphicHeight": 170.78125,
+    "heroHeight": 548,
+    "overflow": false,
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  {
+    "freshHeading": {
+      "bottom": 767.875,
+      "fullyVisible": true,
+      "top": 723
+    },
+    "graphicFits": true,
+    "graphicHeight": 345.953125,
+    "heroHeight": 672,
+    "overflow": false,
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "freshHeading": {
+      "bottom": 551.875,
+      "fullyVisible": true,
+      "top": 507
+    },
+    "graphicFits": true,
+    "graphicHeight": 68.0625,
+    "heroHeight": 456,
+    "overflow": false,
+    "viewport": [
+      320,
+      568
+    ]
+  }
+]

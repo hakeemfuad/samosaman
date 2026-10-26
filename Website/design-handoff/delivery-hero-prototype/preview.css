@@ -1,0 +1,101 @@
+/* PROTOTYPE ONLY. The server inserts these rules into the existing home page. */
+/* Keep the original headline style when Served Fresh becomes the second section. */
+.home-page .home-fresh h2 { margin: 0; font-size: clamp(44px,6vw,84px); font-weight: 600; line-height: 1.02; letter-spacing: -.045em; text-shadow: 0 2px 14px rgba(0,0,0,.3); }
+@media (max-width: 640px) {
+  .home-page .home-fresh h2 { font-size: 44px; }
+}
+.home-page .home-frame > .delivery-hero {
+  grid-column: 1 / -1;
+  background: var(--home-paper);
+  min-height: 0;
+  height: 860px;
+  color: var(--home-ink);
+  display: grid;
+  align-items: start;
+  padding: 96px 36px 28px;
+}
+.delivery-hero__inner { width: min(100%, 1280px); height: 100%; min-height: 0; margin: 0 auto; }
+.delivery-hero__art { min-width: 0; }
+.delivery-hero__art img { display: block; width: 100%; height: auto; object-fit: contain; }
+.delivery-hero__copy { text-align: center; }
+.delivery-hero__eyebrow { margin: 0 0 12px; color: #a43b1b; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.delivery-hero h1 { margin: 0; font-size: clamp(44px, 4.9vw, 70px); line-height: 1.04; letter-spacing: -.045em; font-weight: 600; text-wrap: balance; }
+.delivery-hero__description { margin: 16px 0 0; color: var(--home-muted); font-size: 20px; line-height: 1.5; text-wrap: balance; }
+.home-page .delivery-hero .home-actions { margin-top: 24px; }
+.delivery-hero .btn { min-height: 50px; }
+
+/* A: Artwork leads, with a compact announcement underneath. */
+.delivery-hero[data-delivery-variant="A"] .delivery-hero__inner { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.delivery-hero[data-delivery-variant="A"] .delivery-hero__art { width: min(700px, 69vw); }
+.delivery-hero[data-delivery-variant="A"] .delivery-hero__art { flex: 1; min-height: 0; }
+.delivery-hero[data-delivery-variant="A"] .delivery-hero__art img { height: 100%; object-position: center top; }
+.delivery-hero[data-delivery-variant="A"] .delivery-hero__copy { flex-shrink: 0; }
+.delivery-hero[data-delivery-variant="A"] h1 { font-size: clamp(42px, 4vw, 58px); }
+.delivery-hero[data-delivery-variant="A"] .delivery-hero__eyebrow { margin-bottom: 10px; }
+.delivery-hero[data-delivery-variant="A"] .delivery-hero__description { margin-top: 12px; }
+.home-page .delivery-hero[data-delivery-variant="A"] .home-actions { margin-top: 20px; }
+
+/* B: Large artwork beside the delivery announcement. */
+.delivery-hero[data-delivery-variant="B"] .delivery-hero__inner { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: center; gap: clamp(32px, 5vw, 80px); }
+.delivery-hero[data-delivery-variant="B"] .delivery-hero__copy { text-align: left; }
+.delivery-hero[data-delivery-variant="B"] h1 { max-width: 10ch; font-size: clamp(52px, 5.5vw, 80px); }
+.delivery-hero[data-delivery-variant="B"] .delivery-hero__description { max-width: 25ch; }
+.home-page .delivery-hero[data-delivery-variant="B"] .home-actions { justify-content: flex-start; }
+
+/* C: The headline and actions lead; the full graphic sits below. */
+.delivery-hero[data-delivery-variant="C"] .delivery-hero__inner { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.delivery-hero[data-delivery-variant="C"] .delivery-hero__copy { order: -1; flex-shrink: 0; }
+.delivery-hero[data-delivery-variant="C"] .delivery-hero__art { width: min(640px, 62vw); flex: 1; min-height: 0; }
+.delivery-hero[data-delivery-variant="C"] .delivery-hero__art img { height: 100%; object-position: center top; transform: translateY(48px); }
+.delivery-hero[data-delivery-variant="C"] .delivery-hero__eyebrow { display: none; }
+
+.delivery-preview-switcher { position: fixed; z-index: 48; left: 50%; bottom: 16px; transform: translateX(-50%); display: flex; align-items: center; gap: 12px; padding: 6px; border: 1px solid #ffffff30; border-radius: 40px; background: #27261ff2; color: white; box-shadow: 0 5px 20px #0003; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+.delivery-preview-switcher button { width: 36px; height: 36px; border: 0; border-radius: 50%; color: white; background: #ffffff18; cursor: pointer; font-size: 19px; }
+.delivery-preview-switcher button:hover { background: #ffffff30; }
+.delivery-preview-switcher__text { min-width: 155px; text-align: center; font-size: 12px; line-height: 1.35; }
+.delivery-preview-switcher small { display: block; color: #d4cec3; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+.delivery-preview-switcher[hidden] { display: none; }
+
+@media (min-width: 981px) and (max-height: 800px) {
+  .delivery-hero[data-delivery-variant="A"] .delivery-hero__art { width: min(570px, 56vw); }
+  .delivery-hero[data-delivery-variant="A"] .delivery-hero__inner { gap: 18px; }
+  .delivery-hero[data-delivery-variant="C"] .delivery-hero__art { width: min(490px, 49vw); }
+}
+@media (min-width: 1024px) {
+  /* Reuse the established home-page panel height and next-section peek. */
+  .home-page .home-frame > .delivery-hero { height: var(--home-panel-height); }
+}
+@media (max-width: 980px) {
+  .home-page .home-frame > .delivery-hero { padding: 112px 24px 32px; }
+  .delivery-hero[data-delivery-variant="B"] .delivery-hero__inner { grid-template-columns: 1fr; gap: 32px; }
+  .delivery-hero[data-delivery-variant="B"] .delivery-hero__art { width: min(630px, 100%); margin: 0 auto; }
+  .delivery-hero[data-delivery-variant="B"] .delivery-hero__copy { text-align: center; }
+  .delivery-hero[data-delivery-variant="B"] h1 { max-width: none; font-size: 54px; }
+  .delivery-hero[data-delivery-variant="B"] .delivery-hero__description { max-width: none; }
+  .home-page .delivery-hero[data-delivery-variant="B"] .home-actions { justify-content: center; }
+}
+@media (max-width: 640px) {
+  .home-page .home-frame > .delivery-hero { height: min(616px, calc(100svh - 112px)); padding: 112px 20px 24px; }
+  .delivery-hero[data-delivery-variant="A"] .delivery-hero__inner { gap: 20px; }
+  .delivery-hero[data-delivery-variant="A"] .delivery-hero__art,
+  .delivery-hero[data-delivery-variant="B"] .delivery-hero__art,
+  .delivery-hero[data-delivery-variant="C"] .delivery-hero__art { width: 100%; }
+  .delivery-hero h1,
+  .delivery-hero[data-delivery-variant="A"] h1,
+  .delivery-hero[data-delivery-variant="B"] h1 { font-size: clamp(37px, 10vw, 46px); }
+  .delivery-hero__eyebrow { font-size: 10px; margin-bottom: 12px; }
+  .delivery-hero__description { font-size: 17px; margin-top: 14px; }
+  .home-page .delivery-hero .home-actions { gap: 10px; margin-top: 22px; }
+  .delivery-hero .btn { font-size: 15px; padding-inline: 22px; }
+  .delivery-hero[data-delivery-variant="C"] .delivery-hero__inner { gap: 12px; }
+  .delivery-preview-switcher { bottom: 12px; gap: 6px; }
+}
+@media (max-width: 360px) {
+  .delivery-hero .btn { padding-inline: 16px; }
+}
+
+/* The simple mascot × DoorDash graphic has a wider composition. */
+.delivery-hero[data-delivery-art="pairing"][data-delivery-variant="A"] .delivery-hero__art,
+.delivery-hero[data-delivery-art="pairing"][data-delivery-variant="C"] .delivery-hero__art {
+  width: min(900px, 100%);
+}

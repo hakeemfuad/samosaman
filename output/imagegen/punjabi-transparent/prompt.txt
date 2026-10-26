@@ -1,0 +1,7 @@
+Use case: background-extraction.
+Asset type: transparent PNG test asset for SamosaMan.
+Input image 1 is the exact edit target: traditional_punjabi_samosa.PNG.
+Primary request: remove everything except the existing Punjabi samosa and the pile of potato cubes, green peas, and cilantro/herbs sitting directly in front of it. Make the removed area genuinely transparent with an alpha channel.
+Keep the entire existing food group and its original positions, scale, perspective, colors, lighting, detail, and depth-of-field blur. Keep the same canvas framing and original edge cropping. The samosa's top is cropped in the source; preserve this cropping. The sharp filling in front and the softer samosa behind must remain as photographed.
+Remove the wooden board/table, the red bowl at left, the orange object and pale loop at right, and all dark or colored backdrop. Preserve the small loose foreground cilantro pieces that belong to the filling.
+Constraints: this is background removal only. Do not redraw, restyle, sharpen, reconstruct, move, or replace the food. No new ingredients. No added shadows, floor, plate, text, border, glow, or checkerboard. Keep clean natural cutout edges and transparent gaps between separate food pieces.

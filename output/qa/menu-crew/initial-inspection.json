@@ -1,0 +1,377 @@
+{
+  "results": [
+    {
+      "width": 375,
+      "overflow": false,
+      "hero": {
+        "x": 0,
+        "y": 80,
+        "width": 375,
+        "height": 250,
+        "bottom": 330
+      },
+      "counter": {
+        "x": 12,
+        "y": 302,
+        "width": 351,
+        "height": 208.796875,
+        "bottom": 510.796875
+      },
+      "sidebar": {
+        "x": 0,
+        "y": 530.796875,
+        "width": 375,
+        "height": 61,
+        "bottom": 591.796875
+      },
+      "grid": {
+        "x": 16,
+        "y": 1069.34375,
+        "width": 343,
+        "height": 516.03125,
+        "bottom": 1585.375
+      },
+      "status": "Closed · opens tomorrow at 10 AM",
+      "bodyHeight": 3470,
+      "buttonCount": 14,
+      "heroLoaded": 2400,
+      "afterJump": {
+        "active": "#meat-samosas",
+        "headingTop": 188.546875,
+        "sidebarTop": 80,
+        "sidebarBottom": 141
+      }
+    },
+    {
+      "width": 430,
+      "overflow": false,
+      "hero": {
+        "x": 0,
+        "y": 80,
+        "width": 430,
+        "height": 286.65625,
+        "bottom": 366.65625
+      },
+      "counter": {
+        "x": 12,
+        "y": 338.65625,
+        "width": 406,
+        "height": 208.796875,
+        "bottom": 547.453125
+      },
+      "sidebar": {
+        "x": 0,
+        "y": 567.453125,
+        "width": 430,
+        "height": 61,
+        "bottom": 628.453125
+      },
+      "grid": {
+        "x": 16,
+        "y": 1134.875,
+        "width": 398,
+        "height": 557.28125,
+        "bottom": 1692.15625
+      },
+      "status": "Closed · opens tomorrow at 10 AM",
+      "bodyHeight": 3639,
+      "buttonCount": 14,
+      "heroLoaded": 2400
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "hero": {
+        "x": 0,
+        "y": 80,
+        "width": 768,
+        "height": 480,
+        "bottom": 560
+      },
+      "counter": {
+        "x": 430.09375,
+        "y": 322.625,
+        "width": 305.90625,
+        "height": 301.375,
+        "bottom": 624
+      },
+      "sidebar": {
+        "x": 32,
+        "y": 656,
+        "width": 220,
+        "height": 390.578125,
+        "bottom": 1046.578125
+      },
+      "grid": {
+        "x": 292,
+        "y": 1036.875,
+        "width": 444,
+        "height": 244.484375,
+        "bottom": 1281.359375
+      },
+      "status": "Closed · opens tomorrow at 10 AM",
+      "bodyHeight": 3019,
+      "buttonCount": 14,
+      "heroLoaded": 2400,
+      "afterJump": {
+        "active": "#meat-samosas",
+        "headingTop": 135.875,
+        "sidebarTop": 104,
+        "sidebarBottom": 494.578125
+      }
+    },
+    {
+      "width": 1024,
+      "overflow": false,
+      "hero": {
+        "x": 0,
+        "y": 80,
+        "width": 1024,
+        "height": 480,
+        "bottom": 560
+      },
+      "counter": {
+        "x": 592,
+        "y": 390.8125,
+        "width": 400,
+        "height": 233.1875,
+        "bottom": 624
+      },
+      "sidebar": {
+        "x": 32,
+        "y": 656,
+        "width": 220,
+        "height": 390.578125,
+        "bottom": 1046.578125
+      },
+      "grid": {
+        "x": 292,
+        "y": 1100.875,
+        "width": 700,
+        "height": 286.890625,
+        "bottom": 1387.765625
+      },
+      "status": "Closed · opens tomorrow at 10 AM",
+      "bodyHeight": 3353,
+      "buttonCount": 14,
+      "heroLoaded": 2400
+    },
+    {
+      "width": 1100,
+      "overflow": false,
+      "hero": {
+        "x": 0,
+        "y": 80,
+        "width": 1100,
+        "height": 480,
+        "bottom": 560
+      },
+      "counter": {
+        "x": 668,
+        "y": 390.8125,
+        "width": 400,
+        "height": 233.1875,
+        "bottom": 624
+      },
+      "sidebar": {
+        "x": 32,
+        "y": 656,
+        "width": 220,
+        "height": 390.578125,
+        "bottom": 1046.578125
+      },
+      "grid": {
+        "x": 292,
+        "y": 1119.875,
+        "width": 776,
+        "height": 305.875,
+        "bottom": 1425.75
+      },
+      "status": "Closed · opens tomorrow at 10 AM",
+      "bodyHeight": 3473,
+      "buttonCount": 14,
+      "heroLoaded": 2400,
+      "afterJump": {
+        "active": "#meat-samosas",
+        "headingTop": 135.875,
+        "sidebarTop": 104,
+        "sidebarBottom": 494.578125
+      }
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "hero": {
+        "x": 0,
+        "y": 80,
+        "width": 1440,
+        "height": 604.796875,
+        "bottom": 684.796875
+      },
+      "counter": {
+        "x": 1008,
+        "y": 515.609375,
+        "width": 400,
+        "height": 233.1875,
+        "bottom": 748.796875
+      },
+      "sidebar": {
+        "x": 52,
+        "y": 780.796875,
+        "width": 220,
+        "height": 390.578125,
+        "bottom": 1171.375
+      },
+      "grid": {
+        "x": 312,
+        "y": 1319.671875,
+        "width": 1076,
+        "height": 380.890625,
+        "bottom": 1700.5625
+      },
+      "status": "Closed · opens tomorrow at 10 AM",
+      "bodyHeight": 4074,
+      "buttonCount": 14,
+      "heroLoaded": 2400,
+      "afterJump": {
+        "active": "#meat-samosas",
+        "headingTop": 135.671875,
+        "sidebarTop": 104,
+        "sidebarBottom": 494.578125
+      }
+    },
+    {
+      "width": 1920,
+      "overflow": false,
+      "hero": {
+        "x": 0,
+        "y": 80,
+        "width": 1920,
+        "height": 640,
+        "bottom": 720
+      },
+      "counter": {
+        "x": 1488,
+        "y": 550.8125,
+        "width": 400,
+        "height": 233.1875,
+        "bottom": 784
+      },
+      "sidebar": {
+        "x": 292,
+        "y": 816,
+        "width": 220,
+        "height": 390.578125,
+        "bottom": 1206.578125
+      },
+      "grid": {
+        "x": 552,
+        "y": 1354.875,
+        "width": 1076,
+        "height": 380.890625,
+        "bottom": 1735.765625
+      },
+      "status": "Closed · opens tomorrow at 10 AM",
+      "bodyHeight": 4109,
+      "buttonCount": 14,
+      "heroLoaded": 2400
+    }
+  ],
+  "errors": [],
+  "axe": [
+    {
+      "id": "button-name",
+      "impact": "critical",
+      "help": "Buttons must have discernible text",
+      "nodes": [
+        {
+          "target": [
+            "#nav-user-btn"
+          ],
+          "summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+        },
+        {
+          "target": [
+            "#mobile-menu-btn"
+          ],
+          "summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+        },
+        {
+          "target": [
+            "#close-cart-btn"
+          ],
+          "summary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+        }
+      ]
+    },
+    {
+      "id": "label-content-name-mismatch",
+      "impact": "serious",
+      "help": "Elements must have their visible text as part of their accessible name",
+      "nodes": [
+        {
+          "target": [
+            "#open-cart-btn"
+          ],
+          "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+        }
+      ]
+    },
+    {
+      "id": "link-name",
+      "impact": "serious",
+      "help": "Links must have discernible text",
+      "nodes": [
+        {
+          "target": [
+            ".hover\\:text-gray-600[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+          ],
+          "summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+        },
+        {
+          "target": [
+            ".hover\\:text-gray-600.transition-colors[href=\"#\"]:nth-child(2)"
+          ],
+          "summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+        },
+        {
+          "target": [
+            ".hover\\:text-gray-600.transition-colors[href=\"#\"]:nth-child(3)"
+          ],
+          "summary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "help": "All page content should be contained by landmarks",
+      "nodes": [
+        {
+          "target": [
+            ".p-6.border-b.border-slate-200 > .text-3xl"
+          ],
+          "summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": [
+            ".text-lg.justify-between.text-slate-600:nth-child(1)"
+          ],
+          "summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": [
+            ".text-lg.justify-between.text-slate-600:nth-child(2)"
+          ],
+          "summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": [
+            ".pt-4.mt-4.text-xl"
+          ],
+          "summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ]
+}

@@ -36,7 +36,12 @@
     <meta property="twitter:image" content="https://samosamanvt.com/assets/og-image.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/m_logo.svg">
+    <link rel="icon" href="/assets/icons/favicon-8c5fc881c5e8.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16-f350dc6fd625.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32-883d9d601287.png">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/icons/favicon-6e320b5d1a02.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-a9b0ba2e5de8.png">
+    <link rel="manifest" href="/site.webmanifest?v=20261018">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,7 +61,7 @@
 
     <script src="js/errors.js"></script>
 
-    <script src="js/cart.js"></script>
+    <script src="js/cart.js?v=20261021-count-change-only"></script>
 
     <script>
         tailwind.config = {
@@ -102,12 +107,13 @@
             .reveal-delay-2 { transition-delay: 0.16s; }
         }
     </style>
+    <link rel="stylesheet" href="css/navbar.css?v=20261021-account-loading">
 </head>
 
 <body class="font-sans antialiased text-slate-800 bg-white overflow-x-hidden">
 
     <div id="navbar-placeholder"></div>
-    <script src="js/navbar.js?v=20261005-cream-header"></script>
+    <script src="js/navbar.js?v=20261021-account-loading"></script>
 
     <main class="pt-20">
 
@@ -243,7 +249,7 @@
                             class="w-full h-full object-cover" style="object-position: 50% 32%;" loading="lazy" decoding="async">
                     </div>
                     <div class="w-full aspect-[16/10] rounded-2xl overflow-hidden bg-slate-200">
-                        <img src="assets/our-team.PNG"
+                        <img src="assets/our-team.webp"
                             alt="The SamosaMan team in branded black caps and aprons smiling together on the serving line"
                             class="w-full h-full object-cover" style="object-position: 50% 40%;" loading="lazy" decoding="async">
                     </div>
@@ -292,10 +298,10 @@
     </main>
 
     <div id="footer-placeholder"></div>
-    <script src="js/footer.js"></script>
+    <script src="js/footer.js?v=20261023-footer-center"></script>
 
 
-    <script src="js/auth.js"></script>
+    <script src="js/auth.js?v=20261021-account-loading"></script>
 
     <script>
         // Initialize Lucide Icons

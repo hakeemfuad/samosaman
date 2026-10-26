@@ -1,0 +1,56 @@
+[
+  {
+    "step": "down shrinks",
+    "compact": true,
+    "height": 56,
+    "script": "http://127.0.0.1:4191/js/navbar.js?v=20261018-scroll-direction",
+    "transition": "0.46s, 0.46s, 0.46s",
+    "y": 720,
+    "pass": true
+  },
+  {
+    "step": "up expands",
+    "compact": false,
+    "height": 63.03125,
+    "script": "http://127.0.0.1:4191/js/navbar.js?v=20261018-scroll-direction",
+    "transition": "0.46s, 0.46s, 0.46s",
+    "y": 576,
+    "pass": true
+  },
+  {
+    "step": "down shrinks again",
+    "compact": true,
+    "height": 56.59375,
+    "script": "http://127.0.0.1:4191/js/navbar.js?v=20261018-scroll-direction",
+    "transition": "0.46s, 0.46s, 0.46s",
+    "y": 648,
+    "pass": true
+  },
+  {
+    "step": "top stays expanded",
+    "compact": false,
+    "height": 62.546875,
+    "script": "http://127.0.0.1:4191/js/navbar.js?v=20261018-scroll-direction",
+    "transition": "0.46s, 0.46s, 0.46s",
+    "y": 0,
+    "pass": true
+  },
+  {
+    "step": "mobile down shrinks",
+    "compact": true,
+    "height": 52.796875,
+    "script": "http://127.0.0.1:4191/js/navbar.js?v=20261018-scroll-direction",
+    "transition": "0.46s, 0.46s, 0.46s",
+    "y": 675,
+    "pass": true
+  },
+  {
+    "step": "mobile up expands",
+    "compact": false,
+    "height": 59.84375,
+    "script": "http://127.0.0.1:4191/js/navbar.js?v=20261018-scroll-direction",
+    "transition": "0.46s, 0.46s, 0.46s",
+    "y": 506,
+    "pass": true
+  }
+]

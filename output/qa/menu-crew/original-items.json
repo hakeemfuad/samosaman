@@ -1,0 +1,83 @@
+{
+  "chicken-curry-meal": {
+    "id": "chicken-curry-meal",
+    "name": "Chicken Curry Meal",
+    "price": "13.95",
+    "title": "Chicken Curry",
+    "description": "Tender aromatic golden Chicken pieces cooked in exotic creamy curry sauce.",
+    "image": "assets/chicken_curry.webp",
+    "alt": "Chicken Curry Meal"
+  },
+  "punjabi-samosa": {
+    "id": "punjabi-samosa",
+    "name": "Traditional Punjabi Samosa",
+    "price": "3.75",
+    "title": "Punjabi Samosa",
+    "description": "A hearty blend of delicately spiced potatoes, green peas, and herbs.",
+    "image": "assets/samosas/traditional_punjabi_samosa.webp",
+    "alt": "Traditional Punjabi Samosa"
+  },
+  "steak-cheese": {
+    "id": "steak-cheese",
+    "name": "Steak & Cheese Samosa",
+    "price": "3.75",
+    "title": "Steak & Cheese",
+    "description": "Tender minced beef, sharp cheese, onion, and spices.",
+    "image": "assets/samosas/steakandcheese.webp",
+    "alt": "Steak and Cheese Samosa"
+  },
+  "spicy-chicken": {
+    "id": "spicy-chicken",
+    "name": "Spicy Chicken Samosa",
+    "price": "3.75",
+    "title": "Spicy Chicken",
+    "description": "Roasted chicken with a hint of rich chili flavor.",
+    "image": "assets/samosas/spicy_chicken2.webp",
+    "alt": "Spicy Chicken Samosa"
+  },
+  "chicken-cheese": {
+    "id": "chicken-cheese",
+    "name": "Chicken & Cheese Samosa",
+    "price": "3.75",
+    "title": "Chicken & Cheese",
+    "description": "Tender minced chicken, sharp cheese, aromatic spices and herbs.",
+    "image": "assets/samosas/chicken_cheese3.webp",
+    "alt": "Chicken and Cheese Samosa"
+  },
+  "spicy-potato": {
+    "id": "spicy-potato",
+    "name": "Spicy Potato Samosa",
+    "price": "3.75",
+    "title": "Spicy Potato",
+    "description": "Spiced potatoes, green onion, hot peppers, and fresh herbs.",
+    "image": "assets/samosas/spicy_potato_samosa.webp",
+    "alt": "Spicy Potato Samosa"
+  },
+  "veggie-samosa": {
+    "id": "veggie-samosa",
+    "name": "Vegetarian Samosa",
+    "price": "3.75",
+    "title": "Vegetarian",
+    "description": "The classic samosa. Potatoes, sweet peas, carrots, celery, and mild spices.",
+    "image": "assets/samosas/veggie_samosa3.webp",
+    "alt": "Vegetarian Samosa"
+  },
+  "apple-samosa": {
+    "id": "apple-samosa",
+    "name": "Apple Pie Samosa",
+    "price": "3.75",
+    "title": "Apple Pie",
+    "description": "Warm blend of apples, nutmeg, brown sugar, and cinnamon spice.",
+    "image": "assets/samosas/apple_samosa3.webp",
+    "alt": "Apple Pie Samosa"
+  },
+  "chickpea-masala": {
+    "id": "chickpea-masala",
+    "name": "Chickpea Masala",
+    "price": "12.95",
+    "title": "Chickpea Masala",
+    "description": "A hearty and flavorful chickpea masala, slow cooked with a blend of spices.",
+    "image": "assets/chickpea_masala.webp",
+    "alt": "Chickpea Masala"
+  }
+}

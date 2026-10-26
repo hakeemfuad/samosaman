@@ -14,7 +14,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samosaman - Guest Checkout</title>
-    <link rel="icon" type="image/svg+xml" href="assets/m_logo.svg">
+    <link rel="icon" href="/assets/icons/favicon-8c5fc881c5e8.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16-f350dc6fd625.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32-883d9d601287.png">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/icons/favicon-6e320b5d1a02.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-a9b0ba2e5de8.png">
+    <link rel="manifest" href="/site.webmanifest?v=20261018">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +39,7 @@
     <script src="js/errors.js"></script>
     <script src="js/branch-config.js"></script>
     <script src="js/store-hours.js"></script>
-    <script src="js/cart.js"></script>
+    <script src="js/cart.js?v=20261021-count-change-only"></script>
 
     <script>
         tailwind.config = {
@@ -533,7 +538,7 @@
     </main>
 
     <div id="footer-placeholder"></div>
-    <script src="js/footer.js"></script>
+    <script src="js/footer.js?v=20261024-remove-our-story"></script>
 
 
     <!-- Closed Store Modal -->
@@ -668,7 +673,7 @@
 
             function readCheckoutCart() {
                 try {
-                    const cart = JSON.parse(localStorage.getItem('samosaman_cart') || '[]');
+                    const cart = window.getCart();
                     return Array.isArray(cart) ? cart : [];
                 } catch (error) {
                     console.warn("Error reading cart:", error);

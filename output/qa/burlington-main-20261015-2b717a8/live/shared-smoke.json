@@ -1,0 +1,20 @@
+{
+  "url": "https://samosamanvt.com/",
+  "results": [
+    {
+      "width": 375,
+      "cart": true,
+      "navigation": "passed",
+      "socialNames": true,
+      "noOverflow": true
+    },
+    {
+      "width": 1440,
+      "cart": true,
+      "navigation": "desktop links",
+      "socialNames": true,
+      "noOverflow": true
+    }
+  ],
+  "errors": []
+}

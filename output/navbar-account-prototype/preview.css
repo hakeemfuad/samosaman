@@ -1,0 +1,98 @@
+/* Local design study. Shared production styles are read without changes. */
+html { background: #f7f3ea; }
+button, input { font: inherit; }
+button { color: inherit; }
+.home-page { background: #f7f3ea; }
+.home-page .home-team { max-width: 1280px; margin: 0 auto; padding: 0 64px 280px; border: 0; }
+.home-page .home-section-heading { display: none; }
+.home-page .home-team-grid { margin-top: -24px; }
+.home-page .home-team { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
+
+/* Variant 1: a single-line identity in a glass pill. */
+#navbar-placeholder .account-control {
+  flex: none;
+  min-width: 44px;
+  min-height: 44px;
+  height: 44px;
+  padding: 0 14px;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -.2px;
+  white-space: nowrap;
+}
+#navbar-placeholder .account-control svg { flex: none; }
+#navbar-placeholder .account-name { display: block; min-width: 0; max-width: 84px; overflow: hidden; text-overflow: ellipsis; }
+#navbar-placeholder .account-control:focus-visible { outline: 2px solid #B94316; outline-offset: 3px; }
+
+/* Variant 2: identity is the initial. It retains the current circle footprint. */
+[data-variant="2"] #navbar-placeholder .account-control {
+  width: 44px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(247,243,234,.8);
+  border-color: rgba(255,255,255,.8);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+/* Variant 3: a stable text link; personal identity stays in the account. */
+[data-variant="3"] #navbar-placeholder .account-control {
+  padding: 0 10px;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+[data-variant="3"] #navbar-placeholder .account-control:hover { background: rgba(255,255,255,.5); }
+
+/* The preview controls are separate from the website. */
+.prototype-switcher {
+  position: fixed;
+  left: 50%;
+  bottom: max(20px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  z-index: 100;
+  width: min(488px, calc(100% - 24px));
+  padding: 15px 18px 12px;
+  background: #22211f;
+  color: #faf8f2;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 22px;
+  box-shadow: 0 14px 50px #0003;
+}
+.preview-meta { display: flex; justify-content: space-between; align-items: center; color: #bdbab1; font-size: 10px; font-weight: 600; letter-spacing: 1.3px; }
+.preview-meta button { border: 0; background: transparent; color: #e1ddd2; font-size: 11px; letter-spacing: 0; padding: 3px 0; cursor: pointer; }
+.preview-meta button::after { content: ' ↔'; }
+.view-controls { display: flex; align-items: center; gap: 12px; }
+.view-controls a { color: #e1ddd2; font-size: 11px; letter-spacing: 0; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+.switcher-main { display: flex; align-items: center; gap: 12px; margin: 12px 0 15px; }
+.arrow { border: 1px solid #ffffff25; border-radius: 50%; width: 36px; height: 36px; flex: none; padding: 0; background: #ffffff08; font-size: 18px; cursor: pointer; }
+.variant-description { flex: 1; text-align: center; }
+.variant-description h1 { font-size: 17px; font-weight: 500; letter-spacing: -.3px; margin: 0; }
+.variant-description p { font-size: 12px; color: #c2beb3; margin: 6px 0 0; }
+.variant-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 4px; background: #121210; border-radius: 12px; }
+.variant-options button { border: 0; padding: 10px 2px; background: transparent; border-radius: 8px; color: #c9c6bd; font-size: 11px; font-weight: 500; cursor: pointer; white-space: nowrap; }
+.variant-options button[aria-pressed="true"] { background: #f7f3ea; color: #26231e; }
+.fixture { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; font-size: 11px; color: #bdbab1; }
+.fixture input { min-width: 0; width: 132px; border: 0; border-bottom: 1px solid #ffffff30; border-radius: 0; color: #fff; background: transparent; padding: 3px; font-size: 12px; }
+.preview-action { font-size: 10px; text-align: center; color: #bdbab1; margin: 9px 0 0; }
+.prototype-switcher :focus-visible { outline: 2px solid #f4c27c; outline-offset: 3px; }
+
+@media (max-width: 640px) {
+  .home-page .home-team { padding: 0 24px 300px; }
+  .home-page .home-team-grid { margin-top: -48px; }
+  #navbar-placeholder .account-control { padding: 0 10px; gap: 5px; font-size: 13px; }
+  #navbar-placeholder .account-name { max-width: 65px; }
+  [data-variant="2"] #navbar-placeholder .account-control { padding: 0; font-size: 17px; }
+  [data-variant="3"] #navbar-placeholder .account-control { padding: 0 8px; }
+  .prototype-switcher { padding: 13px 13px 11px; }
+}
+@media (max-width: 360px) {
+  #navbar-placeholder .account-name { max-width: 45px; }
+  #navbar-placeholder .account-control { padding: 0 7px; gap: 3px; }
+  [data-variant="1"] #navbar-placeholder .account-control svg { display: none; }
+  [data-variant="3"] #navbar-placeholder .account-control { padding: 0 4px; font-size: 12px; }
+}

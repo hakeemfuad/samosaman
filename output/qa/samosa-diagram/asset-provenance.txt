@@ -1,0 +1,10 @@
+Samosa filling asset
+Generated with the built-in image_gen tool on 2026-10-14.
+Final asset: Website/public/assets/home/samosa-filling-v1.webp
+Source output: /Users/hakeem/.codex/generated_images/01a13d56-59cd-77b2-906d-65cfd94f94e5/exec-20db3b0b-cfbc-46ff-9f39-51538c081207.png
+References: Website/public/assets/home/samosa_header.webp and Website/public/assets/samosas/traditional_punjabi_samosa.webp
+Web conversion: cwebp -q 86 -resize 800 0; alpha preserved.
+The image illustrates the Punjabi filling; it is not a photograph of an opened product.
+
+Final prompt:
+Use case: product-mockup. Asset type: transparent food cutout for a coded interactive exploded samosa diagram. Input image 1 is the outer samosa reference for orientation; input image 2 is a food ingredient and lighting reference. Create ONLY the cooked filling that could fit inside this samosa, with NO pastry shell. A compact triangular wedge mound of delicately spiced golden potato pieces, a few green peas, and tiny fresh herb flecks, highly realistic appetizing food macro photography with the natural warm lighting of the references. The mound is taller on its left side and slopes toward a lower tip at the right, matching the triangular side profile of image 1. Three-quarter front view, looking slightly down. Make it a cohesive filling wedge with irregular organic edges, not scattered ingredients, not a perfect geometric solid. All of it visible with 10 percent clear padding on each side. Actual transparent background with alpha, no plate, no surface, no pastry, no samosa, no bowl, no salsa, no text, no labels, no arrows, no lettering, no cast shadow on a background. Only the filling cutout.

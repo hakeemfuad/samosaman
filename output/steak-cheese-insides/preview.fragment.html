@@ -1,0 +1,694 @@
+<div id="steak-insides-preview" class="home-page">
+  <style>
+    /* The source theme and diagram styles are copied without changes. */
+    /* Homepage only. Materials follow Qloset's GlassTokens, GlassShelf,
+   GlassWell and LiquidAddCardButton; shared commerce surfaces stay independent. */
+.home-page {
+    --ink: #0C0A09;
+    --ink-62: rgba(12,10,9,.62);
+    --ink-55: rgba(12,10,9,.55);
+    --bone: #F6F4EE;
+    --crew-ink: #27261F;
+    --accent: #B94316;
+    --blur: 24px;
+    --glass: rgba(255,255,255,.55);
+    --glass-hi: rgba(255,255,255,.72);
+    --edge: rgba(255,255,255,.7);
+    --lift: 0 1px 2px rgba(0,0,0,.06), 0 12px 34px rgba(12,10,9,.16);
+    --bevel: inset 0 1px 0 rgba(255,255,255,.95), inset 0 -1px 0 rgba(0,0,0,.05);
+    --spring: cubic-bezier(.34,1.56,.64,1);
+    --ease: cubic-bezier(.2,.8,.2,1);
+    /* Retain the existing crew/footer palette. */
+    --home-paper: #f7f3ea;
+    --home-ink: #27261f;
+    --home-muted: #68645b;
+    --home-line: #d9d3c7;
+    --home-orange: #b94316;
+    margin: 0;
+    background: var(--bone);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+.home-page *, .home-page *::before, .home-page *::after { box-sizing: border-box; }
+.home-page [hidden] { display: none !important; }
+.home-page ::selection { background: #eed2a9; color: var(--ink); }
+.home-page :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.home-page .font-oswald { font-family: 'Oswald', sans-serif; }
+.home-page :is(.home-team, #footer-placeholder, #auth-modal, #cart-sidebar, #order-type-modal) { font-family: 'Inter', sans-serif; }
+.home-page::-webkit-scrollbar { width: 8px; }
+.home-page::-webkit-scrollbar-track { background: #f1f1f1; }
+.home-page::-webkit-scrollbar-thumb { background: #d4d4d8; border-radius: 4px; }
+.home-page::-webkit-scrollbar-thumb:hover { background: #a1a1aa; }
+.home-page .scrollbar-hide { scrollbar-width: none; }
+.home-page .scrollbar-hide::-webkit-scrollbar { display: none; }
+.home-page #cart-sidebar.translate-x-full { transform: translateX(100%) !important; }
+.home-page .skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 110;
+    transform: translateY(-160%);
+    padding: 12px 20px;
+    background: var(--ink);
+    color: white;
+}
+.home-page .skip-link:focus { transform: translateY(0); }
+
+/* Solid, legible defaults; translucent fills are enabled only with blur. */
+.home-page .shelf {
+    border-radius: 28px;
+    padding: 8px;
+    background: rgba(255,255,255,.96);
+    border: 1px solid var(--edge);
+    box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 rgba(0,0,0,.05), 0 2px 4px rgba(0,0,0,.04), 0 18px 40px rgba(0,0,0,.09);
+}
+.home-page .well {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+    min-height: 66px;
+    padding: 9px 18px 9px 9px;
+    border: 0;
+    border-radius: 20px;
+    background: rgba(255,255,255,.5);
+    box-shadow: inset 0 1px 0 rgba(0,0,0,.05), inset 0 -1px 0 rgba(255,255,255,.9);
+    font-family: inherit;
+    color: var(--ink);
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 120ms ease-out, box-shadow 120ms ease-out, transform 340ms var(--spring);
+}
+.home-page .well:hover { background: rgba(255,255,255,.66); }
+.home-page .well[aria-pressed="true"] { background: rgba(255,255,255,.86); }
+.home-page .well:active {
+    background: rgba(255,255,255,.36);
+    box-shadow: inset 0 1px 0 rgba(0,0,0,.08), inset 0 -1px 0 rgba(255,255,255,.9);
+    transform: scale(.96);
+    transition-duration: 120ms;
+    transition-timing-function: ease-out;
+}
+.home-page .well-title { display: block; font-size: 16px; font-weight: 500; letter-spacing: -.25px; }
+.home-page .well-text { flex-grow: 1; }
+.home-page .well-check { flex: none; opacity: 0; transform: scale(.6); transition: opacity 160ms ease, transform 340ms var(--spring); color: var(--accent); }
+.home-page .well[aria-pressed="true"] .well-check { opacity: 1; transform: none; }
+.home-page .glyph {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.5);
+    box-shadow: inset 0 1px 0 rgba(0,0,0,.05), inset 0 -1px 0 rgba(255,255,255,.9);
+    color: rgba(12,10,9,.85);
+}
+.home-page .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 0 22px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -.2px;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 340ms var(--spring), background-color 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+}
+.home-page .btn:active { transform: scale(.96); transition-duration: 120ms; transition-timing-function: ease-out; }
+.home-page .btn-tint {
+    background: var(--accent);
+    border-color: rgba(255,255,255,.28);
+    color: #fff;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.38), inset 0 -1px 0 rgba(0,0,0,.14), 0 1px 2px rgba(0,0,0,.08), 0 12px 30px rgba(185,67,22,.38);
+}
+.home-page .btn-tint:hover { filter: brightness(1.07); }
+.home-page .btn-order { background: #0071e3; color: #fff; }
+.home-page .btn-order:hover { background: #0076df; }
+.home-page .btn-order:active { background: #006edb; }
+.home-page .btn-order:focus-visible { outline-color: #0071e3; }
+.home-page .btn-glass {
+    background: rgba(255,255,255,.92);
+    border-color: var(--edge);
+    box-shadow: var(--bevel), var(--lift);
+    color: var(--ink);
+}
+.home-page .btn-glass:hover { background: rgba(255,255,255,.96); }
+.home-page .btn-ink {
+    background: var(--ink) linear-gradient(180deg,rgba(255,255,255,.2),rgba(255,255,255,0));
+    color: #fff;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 10px 24px rgba(16,13,12,.22);
+}
+.home-page .btn-ink:hover { filter: brightness(1.25); }
+.home-page .btn-paper { background: rgba(12,10,9,.05); border: .5px solid rgba(0,0,0,.08); color: var(--ink); }
+.home-page .btn-paper:hover { background: rgba(12,10,9,.09); }
+.home-page .btn-wide { width: 100%; min-height: 56px; font-size: 16px; }
+.home-page .circle { position: relative; flex: none; width: 44px; height: 44px; min-height: 44px; padding: 0; border-radius: 50%; }
+.home-page .circle:active { transform: scale(.9); }
+.home-page .circle-quiet { box-shadow: none; }
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+    .home-page :is(.btn-glass, .btn-tint) {
+        -webkit-backdrop-filter: blur(var(--blur)) saturate(180%);
+        backdrop-filter: blur(var(--blur)) saturate(180%);
+    }
+    .home-page .btn-glass { background: var(--glass); }
+    .home-page .btn-glass:hover { background: var(--glass-hi); }
+    .home-page .circle-quiet { background: rgba(255,255,255,.4); }
+    .home-page .btn-tint { background: rgba(185,67,22,.9); }
+    .home-page .shelf {
+        background: linear-gradient(180deg,rgba(255,255,255,.82),rgba(255,255,255,.56));
+        -webkit-backdrop-filter: blur(28px) saturate(180%);
+        backdrop-filter: blur(28px) saturate(180%);
+    }
+}
+
+/* Full-bleed hero. The phone photo keeps its 640px cover scale, offset by 120px. */
+.home-page .home-frame > .home-fresh {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 860px;
+    overflow: hidden;
+    background: #263746;
+    color: #fff;
+    text-align: center;
+}
+.home-page .home-fresh-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+.home-page .home-fresh-fade { display: none; }
+.home-page .home-fresh-shade { position: absolute; inset: 0; background: linear-gradient(to bottom,rgba(0,0,0,.5),rgba(0,0,0,0) 46%); pointer-events: none; }
+.home-page .home-fresh-copy { position: relative; padding: 136px 24px 0; display: flex; flex-direction: column; align-items: center; }
+.home-page .home-fresh h1 { margin: 0; font-size: clamp(44px,6vw,84px); font-weight: 600; line-height: 1.02; letter-spacing: -.045em; text-shadow: 0 2px 14px rgba(0,0,0,.3); }
+.home-page .home-fresh .home-hero-copy { margin: 12px 0 0; font-size: clamp(19px,2vw,26px); line-height: 1.3; letter-spacing: -.01em; text-shadow: 0 2px 10px rgba(0,0,0,.35); }
+.home-page .home-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 28px; }
+.home-page .home-rise { animation: home-rise 700ms var(--ease) both; }
+.home-page .home-rise-2 { animation-delay: 90ms; }
+.home-page .home-rise-3 { animation-delay: 180ms; }
+@keyframes home-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@media (max-width: 640px) {
+    .home-page .home-frame > .home-fresh { height: 760px; background: #4D5562; }
+    .home-page .home-fresh-photo { inset: auto; top: 120px; left: 0; height: 640px; object-position: 44% 50%; }
+    .home-page .home-fresh-fade { display: block; position: absolute; top: 120px; left: 0; right: 0; height: 90px; background: linear-gradient(to bottom,#4D5562,rgba(77,85,98,0)); pointer-events: none; }
+    .home-page .home-fresh-shade { background: linear-gradient(to bottom,rgba(0,0,0,.52),rgba(0,0,0,0) 50%); }
+    .home-page .home-fresh-copy { padding: 112px 20px 0; }
+    .home-page .home-fresh h1 { font-size: 44px; }
+    .home-page .home-fresh .home-hero-copy { font-size: 19px; margin-top: 10px; }
+    .home-page .home-fresh .home-actions { gap: 10px; margin-top: 22px; }
+    .home-page .home-fresh .btn { min-height: 50px; font-size: 16px; }
+}
+
+/* Ink and paper controls sit on the cream product section. */
+.home-page .home-frame > .home-hero { grid-column: 1 / -1; padding: 96px 24px 88px; background: var(--bone); text-align: center; }
+.home-page #samosas-and-salsa { scroll-margin-top: 80px; }
+.home-page .home-hero h2 { margin: 0; font-size: clamp(36px,4.6vw,64px); font-weight: 600; line-height: 1.05; letter-spacing: -.045em; }
+.home-page .home-hero .home-hero-copy { margin: 10px 0 0; font-size: clamp(18px,2vw,24px); line-height: 1.3; color: rgba(12,10,9,.7); }
+.home-page .home-hero .home-actions { margin-top: 26px; }
+.home-page .home-hero-art { display: block; width: min(100%,640px); height: auto; margin: 36px auto 0; mix-blend-mode: multiply; }
+@media (max-width: 640px) {
+    .home-page .home-frame > .home-hero { padding: 56px 20px 40px; }
+    .home-page .home-hero h2 { font-size: 34px; }
+    .home-page .home-hero .home-hero-copy { font-size: 18px; margin-top: 8px; }
+    .home-page .home-hero .home-actions { gap: 10px; margin-top: 20px; }
+    .home-page .home-hero .btn { min-height: 50px; font-size: 16px; }
+    .home-page .home-hero-art { margin-top: 18px; }
+}
+
+/* Full-bleed catering photo with a recessed action inside its glass shelf. */
+.home-page .home-frame > .home-catering { grid-column: 1 / -1; position: relative; height: 820px; overflow: hidden; background: #000; }
+.home-page .home-catering > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; }
+.home-page .home-cater-shelf { position: absolute; left: max(24px,calc(50% - 616px)); bottom: 40px; width: calc(100% - 48px); max-width: 440px; }
+.home-page .home-catering-copy { padding: 22px 20px 18px; }
+.home-page .home-catering-copy h2 { margin: 0; font-size: clamp(32px,3.4vw,46px); font-weight: 600; line-height: 1.04; letter-spacing: -.045em; }
+.home-page .home-catering-copy p { margin: 10px 0 0; font-size: 17px; line-height: 1.45; color: var(--ink-62); }
+@media (max-width: 640px) {
+    .home-page .home-frame > .home-catering { height: 560px; }
+    .home-page .home-catering > img { object-position: 50% 50%; }
+    .home-page .home-cater-shelf { left: 14px; right: 14px; bottom: 14px; width: auto; max-width: none; }
+    .home-page .home-catering-copy { padding: 16px 14px 14px; }
+    .home-page .home-catering-copy h2 { font-size: 30px; }
+    .home-page .home-catering-copy p { font-size: 16px; margin-top: 8px; }
+}
+
+/* Order entry floats above every homepage surface, including the existing bag. */
+.home-page .home-order-scrim { position: fixed; inset: 0; z-index: 80; background: rgba(0,0,0,.2); animation: home-fade 200ms ease both; }
+.home-page .home-order-sheet {
+    position: fixed;
+    z-index: 90;
+    left: 50%;
+    bottom: 24px;
+    width: min(520px,calc(100% - 32px));
+    max-height: calc(100dvh - 48px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    transform: translateX(-50%);
+    border-radius: 34px;
+    padding: 22px 20px 20px;
+    background: rgba(255,255,255,.96);
+    border: 1px solid var(--edge);
+    box-shadow: inset 0 1px 0 #fff, 0 24px 60px rgba(12,10,9,.22);
+    animation: home-sheet-in 420ms var(--spring) both;
+}
+.home-page .home-sheet-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 2px 16px 6px; }
+.home-page .home-sheet-head h2 { margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -.03em; line-height: normal; }
+.home-page .home-order-sheet .shelf { display: flex; flex-direction: column; gap: 6px; box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 rgba(0,0,0,.05); }
+.home-page .home-order-sheet .btn-ink { margin-top: 14px; }
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+    .home-page .home-order-scrim { -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+    .home-page .home-order-sheet { background: linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.68)); -webkit-backdrop-filter: blur(28px) saturate(180%); backdrop-filter: blur(28px) saturate(180%); }
+}
+@keyframes home-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes home-sheet-in { from { opacity: 0; transform: translateX(-50%) translateY(24px) scale(.94); } to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); } }
+@keyframes home-sheet-up { from { transform: translateY(100%); } to { transform: none; } }
+@media (max-width: 640px) {
+    .home-page .home-order-sheet { left: 0; right: 0; bottom: 0; width: auto; max-height: calc(100dvh - 12px); transform: none; border-radius: 44px 44px 0 0; padding: 26px 18px calc(24px + env(safe-area-inset-bottom)); animation: home-sheet-up 460ms var(--spring) both; }
+}
+
+/* Homepage frame and crew portraits. */
+.home-page .home-frame { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1280px) minmax(0,1fr); grid-template-rows: auto; margin: 0 auto; }
+.home-page .home-frame > section { grid-column: 2; min-width: 0; }
+.home-page .home-section { border-bottom: 1px solid var(--home-line); }
+.home-page .home-team {
+    padding: 56px 64px 64px;
+    background: var(--home-paper);
+    box-shadow: 0 0 0 100vmax var(--home-paper);
+    clip-path: inset(0 -100vmax);
+    color: var(--crew-ink);
+    text-align: center;
+}
+.home-page .home-team h2 { margin: 0; font-size: clamp(40px,4.5vw,56px); font-weight: 600; line-height: 1.08; letter-spacing: -.045em; text-wrap: balance; }
+.home-page .home-section-heading { max-width: 680px; margin: 0 auto 40px; }
+.home-page .home-team-intro { margin: 18px auto 0; color: var(--home-ink); font-size: 18px; line-height: 1.55; text-wrap: balance; }
+.home-page .home-team-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 36px 24px; list-style: none; padding: 0; margin: 0; }
+.home-page .home-team-grid figure { margin: 0; }
+.home-page .home-team-grid img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 0%; background: #d2d0c9; }
+.home-page .home-team-grid figcaption { margin-top: 12px; font-size: 20px; font-weight: 400; letter-spacing: -.03em; }
+.home-page .home-team-role { display: block; margin-top: 4px; color: var(--home-muted); font-size: 14px; line-height: 1.4; letter-spacing: 0; text-wrap: balance; }
+.home-page #footer-placeholder footer { background: var(--home-paper); border-top: 0; color: var(--home-ink); }
+@media (min-width: 1024px) {
+    .home-page .home-team-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
+    .home-page .home-team-grid > li:nth-child(5) { grid-column: 2; }
+}
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .home-page .home-team-grid img { transition: transform 240ms ease, box-shadow 240ms ease; }
+    .home-page .home-team-grid img:hover {
+        transform: translateY(-4px) scale(1.025);
+        box-shadow: 0 12px 24px rgba(39,38,31,.16);
+    }
+}
+@media (max-width: 1100px) {
+    .home-page .home-frame { grid-template-columns: 24px minmax(0,1fr) 24px; }
+    .home-page .home-team { padding: 56px 40px; }
+}
+@media (max-width: 767px) {
+    .home-page .home-frame { grid-template-columns: 16px minmax(0,1fr) 16px; }
+    .home-page .home-team { padding: 44px 24px; }
+    .home-page .home-team h2 { font-size: 34px; }
+    .home-page .home-section-heading { margin-bottom: 28px; }
+    .home-page .home-team-intro { font-size: 16px; }
+    .home-page .home-team-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px 16px; }
+    .home-page .home-team-grid figcaption { font-size: 17px; margin-top: 10px; }
+}
+@media (max-width: 374px) {
+    .home-page .home-frame { grid-template-columns: 10px minmax(0,1fr) 10px; }
+    .home-page .home-team { padding-inline: 16px; }
+}
+@media (min-width: 1024px) {
+    /* One desktop panel size; the next heading still peeks above the fold. */
+    .home-page { --home-panel-height: max(540px, calc(100svh - 132px)); }
+    .home-page .home-frame > :is(.home-fresh, .home-hero, .home-catering) { height: var(--home-panel-height); }
+    .home-page .home-frame > .home-hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 24px;
+    }
+    .home-page .home-hero > :is(h2, .home-hero-copy, .home-actions) { flex-shrink: 0; }
+    .home-page .home-hero .home-actions { margin-top: 18px; }
+    .home-page .home-hero-art {
+        flex: 1;
+        min-height: 0;
+        width: 100%;
+        object-fit: contain;
+        margin-top: 12px;
+    }
+    .home-page .home-team {
+        min-height: var(--home-panel-height);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .home-page *, .home-page *::before, .home-page *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+    /* The original photograph layers and close-up camera are unchanged. */
+.home-page .samosa-diagram { --spread: 0; width: 100%; margin: 36px auto 0; text-align: center; }
+.home-page .samosa-diagram[hidden], .home-page [data-diagram-fallback][hidden] { display: none !important; }
+.home-page .samosa-diagram button { font-family: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.home-page .samosa-diagram__stage {
+    position: relative;
+    width: min(100%, 640px);
+    aspect-ratio: 800 / 650;
+    margin: 0 auto;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: 24px;
+}
+.home-page .samosa-diagram__art { display: block; width: 100%; height: 100%; overflow: visible; }
+.home-page .samosa-diagram__camera {
+    /* A fixed origin keeps both close-ups smooth when returning to the full view. */
+    transform-origin: 340px 435px;
+    transform: translate(0, 0) scale(1);
+    transition: transform 1000ms cubic-bezier(.22,.75,.18,1);
+}
+.home-page .samosa-diagram[data-closeup="fold"] .samosa-diagram__camera { transform: translate(160px, -110px) scale(2.8); }
+.home-page .samosa-diagram[data-closeup="salsa"] .samosa-diagram__camera { transform: translate(-834px, -194px) scale(2.8); }
+.home-page .samosa-diagram__shadow { transition: opacity 400ms; }
+.home-page .samosa-diagram[data-closeup="fold"] .samosa-diagram__shadow,
+.home-page .samosa-diagram[data-closeup="fold"] .samosa-diagram__salsa,
+.home-page .samosa-diagram[data-closeup="salsa"] .samosa-diagram__shadow,
+.home-page .samosa-diagram[data-closeup="salsa"] .samosa-diagram__shell,
+.home-page .samosa-diagram[data-closeup="salsa"] .samosa-diagram__fold { opacity: 0; }
+.home-page .samosa-diagram__piece {
+    transform-origin: 435px 310px;
+    transition: transform 850ms cubic-bezier(.22,.75,.18,1), opacity 600ms;
+}
+.home-page .samosa-diagram__shell { transform: translate(calc(var(--spread) * -140px), calc(var(--spread) * -45px)) scale(calc(1 - var(--spread) * .16)); }
+.home-page .samosa-diagram__fold { transform: translate(calc(var(--spread) * 10px), calc(var(--spread) * 65px)); }
+.home-page .samosa-diagram__filling { opacity: var(--spread); transform: translate(calc(var(--spread) * 170px), calc(var(--spread) * 35px)); }
+.home-page .samosa-diagram__salsa { transform: translate(calc(var(--spread) * 80px), calc(var(--spread) * 45px)); }
+.home-page .samosa-diagram__hotspots { position: absolute; inset: 0; }
+.home-page .samosa-diagram__point {
+    position: absolute;
+    left: calc(var(--point-x) + var(--spread) * var(--point-dx));
+    top: calc(var(--point-y) + var(--spread) * var(--point-dy));
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--edge);
+    border-radius: 50%;
+    background: rgba(255,255,255,.92);
+    box-shadow: var(--bevel), var(--lift);
+    color: var(--ink);
+    transform: translate(-50%,-50%);
+    animation: diagram-hot-in 520ms var(--spring) backwards;
+    transition: left 850ms cubic-bezier(.22,.75,.18,1), top 850ms cubic-bezier(.22,.75,.18,1), transform 340ms var(--spring), background-color 200ms ease;
+}
+.home-page .samosa-diagram__point:nth-child(2) { animation-delay: 70ms; }
+.home-page .samosa-diagram__point:nth-child(3) { animation-delay: 140ms; }
+.home-page .samosa-diagram__point span { display: grid; place-items: center; }
+.home-page .samosa-diagram__point svg { width: 16px; height: 16px; transition: transform 340ms var(--spring); }
+.home-page .samosa-diagram__point::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.85); animation: diagram-ring 2.4s ease-out infinite; pointer-events: none; }
+.home-page .samosa-diagram__point:hover { transform: translate(-50%,-50%) scale(1.08); }
+.home-page .samosa-diagram__point:active { transform: translate(-50%,-50%) scale(.9); transition-duration: 120ms; transition-timing-function: ease-out; }
+.home-page .samosa-diagram__point[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: rgba(255,255,255,.25); }
+.home-page .samosa-diagram__point[aria-pressed="true"] svg { transform: rotate(45deg); }
+.home-page .samosa-diagram__point[aria-pressed="true"]::after { display: none; }
+/* In a close-up only the photographed part's control remains on the image. */
+.home-page .samosa-diagram[data-closeup="fold"] .samosa-diagram__point[aria-pressed="true"] { left: 29%; top: 50%; }
+.home-page .samosa-diagram[data-closeup="salsa"] .samosa-diagram__point[aria-pressed="true"] { left: 52%; top: 51%; }
+.home-page .samosa-diagram__toggle {
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 8px;
+    padding: 4px;
+    border-radius: 999px;
+    background: rgba(12,10,9,.06);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+.home-page .samosa-diagram__lens { position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); border-radius: 999px; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 4px 12px rgba(12,10,9,.1); transition: transform 420ms var(--spring); }
+.home-page .samosa-diagram__toggle[data-state="inside"] .samosa-diagram__lens { transform: translateX(100%); }
+.home-page .samosa-diagram__toggle button {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 44px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink-62);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    transition: color 200ms ease, transform 340ms var(--spring);
+}
+.home-page .samosa-diagram__toggle button[aria-pressed="true"] { color: var(--ink); }
+.home-page .samosa-diagram__toggle button:active { transform: scale(.96); transition-duration: 120ms; transition-timing-function: ease-out; }
+.home-page .samosa-diagram__toggle svg { width: 16px; height: 16px; }
+.home-page .samosa-diagram__caption { min-height: 56px; max-width: 460px; margin: 16px auto 0; }
+.home-page .samosa-diagram__caption h3 { margin: 0; font-size: 17px; font-weight: 600; letter-spacing: -.2px; line-height: 1.25; }
+.home-page .samosa-diagram__caption p { margin: 4px 0 0; color: var(--ink-62); font-size: 15px; line-height: 1.45; text-wrap: balance; }
+.home-page .samosa-diagram__caption.is-idle p { color: var(--ink-55); }
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+    .home-page .samosa-diagram__point { background: var(--glass); -webkit-backdrop-filter: blur(var(--blur)) saturate(180%); backdrop-filter: blur(var(--blur)) saturate(180%); }
+    .home-page .samosa-diagram__point:hover { background: var(--glass-hi); }
+    .home-page .samosa-diagram__point[aria-pressed="true"] { background: var(--ink); }
+}
+@keyframes diagram-hot-in { from { opacity: 0; transform: translate(-50%,-50%) scale(.3); } to { opacity: 1; transform: translate(-50%,-50%) scale(1); } }
+@keyframes diagram-ring { 0% { transform: scale(.85); opacity: .9; } 70%,100% { transform: scale(1.45); opacity: 0; } }
+@media (max-width: 640px) {
+    .home-page .samosa-diagram { margin-top: 18px; }
+}
+@media (min-width: 1024px) {
+    .home-page .samosa-diagram {
+        flex: 1;
+        min-height: 0;
+        max-width: 1240px;
+        margin-top: 12px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        grid-template-rows: minmax(0, 1fr);
+        gap: 24px;
+        container-type: size;
+    }
+    .home-page .samosa-diagram__stage {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: center;
+        /* Side controls free the full available height for the photograph. */
+        width: min(640px, calc(100cqw - 560px), calc(100cqh * 800 / 650));
+        height: auto;
+    }
+    .home-page .samosa-diagram__toggle { grid-column: 1; grid-row: 1; align-self: end; justify-self: end; margin: 0 0 20px; }
+    .home-page .samosa-diagram__caption { grid-column: 3; grid-row: 1; align-self: end; margin: 0 0 20px; min-height: 0; text-align: left; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .home-page .samosa-diagram *, .home-page .samosa-diagram *::before, .home-page .samosa-diagram *::after { transition: none !important; animation: none !important; }
+}
+
+    #steak-insides-preview { width: 100%; color-scheme: light; }
+  </style>
+  <div class="home-frame">
+    <section class="home-hero" aria-labelledby="steak-preview-heading">
+      <h2 id="steak-preview-heading">Steak and Cheese.</h2>
+      <p class="home-hero-copy">The holy grail of Samosas.</p>
+      <div class="samosa-diagram" data-samosa-diagram hidden>
+                <div class="samosa-diagram__stage" id="samosa-layers" role="group" aria-label="Explore the parts of a samosa">
+                    <svg class="samosa-diagram__art" viewBox="100 0 800 650" aria-hidden="true" focusable="false">
+                    <defs>
+                    <path id="diagram-samosa-outline" d="M156 42 C143 45 137 61 132 88 C122 102 115 117 111 130 C110 146 123 165 136 181 C140 210 149 249 152 279 C150 344 143 401 144 456 C142 486 128 520 123 558 C115 582 111 617 115 652 C115 680 117 703 114 730 C99 740 93 763 91 789 C74 811 62 838 52 861 C44 878 49 893 65 900 C100 913 145 907 177 899 C227 887 272 868 317 846 C390 814 448 783 509 748 C584 709 646 673 705 641 C727 630 739 632 758 644 C789 653 801 670 836 680 C868 689 902 684 916 668 C932 649 925 622 909 608 C881 589 851 577 823 561 C786 538 751 514 719 486 C682 461 658 432 624 413 C595 391 571 367 537 350 C503 332 476 309 447 292 C421 275 395 254 369 240 C347 221 333 217 310 211 C288 193 270 164 251 143 C232 118 217 90 201 67 C188 46 172 41 156 42 Z"></path>
+                    <clipPath id="diagram-samosa-clip"><use href="#diagram-samosa-outline"></use></clipPath>
+                    <!-- These two masks divide the existing photograph along its folded seam. -->
+                    <clipPath id="diagram-shell-clip">
+                    <path d="M0 0 H960 V640 L730 625 C530 654 370 691 220 700 C180 525 139 280 138 145 Z"></path>
+                    </clipPath>
+                    <clipPath id="diagram-fold-clip">
+                    <path d="M0 0 H960 V960 H0 Z M0 0 H960 V640 L730 625 C530 654 370 691 220 700 C180 525 139 280 138 145 Z" clip-rule="evenodd"></path>
+                    </clipPath>
+                    <clipPath id="diagram-salsa-clip">
+                    <path d="M746 786 C744 759 796 739 866 726 C952 710 1069 713 1143 733 C1186 745 1215 761 1217 782 C1218 804 1206 834 1199 860 L1160 994 C1150 1023 1118 1036 1070 1044 C1008 1055 925 1054 872 1040 C839 1032 820 1017 812 994 L762 849 C753 826 745 805 746 786 Z"></path>
+                    </clipPath>
+                    <radialGradient id="diagram-shadow">
+                    <stop stop-color="#69563c" stop-opacity=".18"></stop>
+                    <stop offset="1" stop-color="#69563c" stop-opacity="0"></stop>
+                    </radialGradient>
+                    </defs>
+                    <g class="samosa-diagram__camera">
+                    <ellipse class="samosa-diagram__shadow" cx="475" cy="574" rx="320" ry="42" fill="url(#diagram-shadow)"></ellipse>
+                    <g class="samosa-diagram__piece samosa-diagram__fold" data-art-part="fold">
+                    <svg x="170" y="45" width="530" height="530" viewBox="0 0 960 960">
+                    <g clip-path="url(#diagram-samosa-clip)">
+                    <image href="assets/samosa-shell.webp" width="960" height="960" clip-path="url(#diagram-fold-clip)"></image>
+                    </g>
+                    </svg>
+                    </g>
+                    <g class="samosa-diagram__piece samosa-diagram__filling" data-art-part="filling">
+                    <image href="assets/steak-cheese-filling-less-cheese-v3.webp" x="205" y="90" width="425" height="425"></image>
+                    </g>
+                    <g class="samosa-diagram__piece samosa-diagram__shell" data-art-part="crust">
+                    <svg x="170" y="45" width="530" height="530" viewBox="0 0 960 960">
+                    <g clip-path="url(#diagram-samosa-clip)">
+                    <image href="assets/samosa-shell.webp" width="960" height="960" clip-path="url(#diagram-shell-clip)"></image>
+                    </g>
+                    </svg>
+                    </g>
+                    <g class="samosa-diagram__piece samosa-diagram__salsa" data-art-part="salsa">
+                    <ellipse cx="691" cy="554" rx="132" ry="26" fill="url(#diagram-shadow)"></ellipse>
+                    <svg x="575" y="378" width="240" height="175" viewBox="736 711 492 358">
+                    <image href="assets/samosa-salsa.webp" width="1254" height="1254" clip-path="url(#diagram-salsa-clip)"></image>
+                    </svg>
+                    </g>
+                    </g>
+                    </svg>
+                    <div class="samosa-diagram__hotspots" data-diagram-hotspots>
+                    <button class="samosa-diagram__point" type="button" data-diagram-part="fold"
+                        aria-label="Explore the hand-folded edge" aria-pressed="false" aria-controls="samosa-part-details"
+                        style="--point-x: 22.5%; --point-y: 67%; --point-dx: 1.25%; --point-dy: 9%">
+                        <span aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" focusable="false"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+                    </button>
+                    <button class="samosa-diagram__point" type="button" data-diagram-part="filling"
+                        aria-label="Explore the Steak and Cheese filling" aria-pressed="false" aria-controls="samosa-part-details"
+                        style="--point-x: 47.5%; --point-y: 55%; --point-dx: 17.5%; --point-dy: -9%">
+                        <span aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" focusable="false"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+                    </button>
+                    <button class="samosa-diagram__point" type="button" data-diagram-part="salsa"
+                        aria-label="Explore the Garlic Tomato Salsa" aria-pressed="false" aria-controls="samosa-part-details"
+                        style="--point-x: 75%; --point-y: 72%; --point-dx: 10%; --point-dy: 7%">
+                        <span aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" focusable="false"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+                    </button>
+                    </div>
+                </div>
+                <div class="samosa-diagram__toggle" role="group" aria-label="Samosa view" data-diagram-controls data-state="whole">
+                    <span class="samosa-diagram__lens" aria-hidden="true"></span>
+                    <button type="button" data-diagram-whole aria-pressed="true" aria-controls="samosa-layers">Whole</button>
+                    <button type="button" data-diagram-toggle aria-pressed="false" aria-controls="samosa-layers">
+                        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+                            <path d="m3 7 7-4 7 4-7 4-7-4Zm0 4 7 4 7-4M3 15l7 4 7-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span data-toggle-label>See inside</span>
+                    </button>
+                </div>
+                <div class="samosa-diagram__caption is-idle" id="samosa-part-details" data-diagram-caption aria-live="polite" aria-atomic="true">
+                    <h3 hidden></h3>
+                    <p>Select + for a closer look.</p>
+                </div>
+            </div>
+    </section>
+  </div>
+  <script>
+    (() => {
+    const root = document.getElementById('steak-insides-preview');
+    const diagram = root.querySelector('[data-samosa-diagram]');
+    if (!diagram) return;
+
+    // Product language follows the Burlington menu. The Flutter app still has
+    // its starter screen and has no product-detail component to share here.
+    const parts = [
+        { id: 'fold', title: 'A personal touch.', description: 'Folded by hand. One samosa at a time.' },
+        { id: 'filling', title: 'Goodness inside.', description: 'Our Steak and Cheese filling: tender minced beef, sharp cheese, onion, and spices.' },
+        { id: 'salsa', title: 'Better together.', description: 'Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.' },
+    ];
+    const stage = diagram.querySelector('.samosa-diagram__stage');
+    const hotspots = diagram.querySelector('[data-diagram-hotspots]');
+    const points = [...diagram.querySelectorAll('[data-diagram-part]')];
+    const caption = diagram.querySelector('[data-diagram-caption]');
+    const title = caption.querySelector('h3');
+    const description = caption.querySelector('p');
+    const toggle = diagram.querySelector('[data-diagram-toggle]');
+    const whole = diagram.querySelector('[data-diagram-whole]');
+    const controls = diagram.querySelector('[data-diagram-controls]');
+    let inside = false;
+    let selected = null;
+    let returnFocus = toggle;
+
+    const selectPart = (id) => {
+        selected = id;
+        const detailOpen = id !== null;
+        const closeup = id === 'fold' || id === 'salsa';
+        const expanded = id === 'filling';
+
+        diagram.dataset.detailOpen = String(detailOpen);
+        diagram.dataset.closeup = closeup ? id : '';
+        diagram.style.setProperty('--spread', Number(expanded));
+        hotspots.hidden = !inside;
+        hotspots.inert = !inside;
+        hotspots.setAttribute('aria-hidden', String(!inside));
+        stage.setAttribute('aria-label', id === 'fold'
+            ? 'A closer look at the samosa’s hand-folded edge'
+            : id === 'salsa'
+                ? 'A closer look at the Garlic Tomato Salsa'
+                : 'Explore the parts of a samosa');
+        controls.dataset.state = inside ? 'inside' : 'whole';
+        toggle.setAttribute('aria-pressed', String(inside));
+        whole.setAttribute('aria-pressed', String(!inside));
+
+        const part = parts.find((item) => item.id === id);
+        points.forEach((point) => {
+            point.setAttribute('aria-pressed', String(point.dataset.diagramPart === id));
+            point.hidden = closeup && point.dataset.diagramPart !== id;
+        });
+        caption.classList.toggle('is-idle', !part);
+        title.hidden = !part;
+        title.textContent = part?.title || '';
+        description.textContent = part?.description || 'Select + for a closer look.';
+        description.hidden = !inside;
+    };
+
+    const leaveDetail = ({ restoreFocus = true } = {}) => {
+        selectPart(null);
+        if (restoreFocus) returnFocus.focus({ preventScroll: true });
+    };
+
+    points.forEach((point, index) => {
+        point.addEventListener('click', () => {
+            returnFocus = point;
+            selectPart(selected === point.dataset.diagramPart ? null : point.dataset.diagramPart);
+        });
+        point.addEventListener('keydown', (event) => {
+            const offsets = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
+            if (!(event.key in offsets)) return;
+            event.preventDefault();
+            const next = points[(index + offsets[event.key] + points.length) % points.length];
+            returnFocus = next;
+            selectPart(next.dataset.diagramPart);
+            next.focus({ preventScroll: true });
+        });
+    });
+    toggle.addEventListener('click', () => {
+        inside = true;
+        returnFocus = toggle;
+        selectPart('filling');
+    });
+    whole.addEventListener('click', () => {
+        inside = false;
+        leaveDetail({ restoreFocus: false });
+    });
+    diagram.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape' || !selected) return;
+        event.preventDefault();
+        leaveDetail();
+    });
+    // Capture checks the state before an opening control handles its click.
+    // The return button keeps its own click and focus behavior.
+    document.addEventListener('click', (event) => {
+        if (!selected || diagram.contains(event.target)) return;
+        leaveDetail({ restoreFocus: false });
+    }, { capture: true });
+
+    const fallback = root.querySelector('[data-diagram-fallback]');
+    selectPart(null);
+    if (fallback) fallback.hidden = true;
+    diagram.hidden = false;
+})();
+
+  </script>
+</div>

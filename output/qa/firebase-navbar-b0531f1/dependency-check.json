@@ -1,0 +1,99 @@
+[
+  {
+    "page": "/burlington.html",
+    "newReferences": [],
+    "newMissingReferences": [],
+    "existingMissingReferences": []
+  },
+  {
+    "page": "/catering-order-confirmation.html",
+    "newReferences": [
+      "/assets/catering-email/7af791e064519432b0f2a9b207d0b094.png",
+      "/assets/catering-email/e9f882ffd621b78c600405551c32b709.png"
+    ],
+    "newMissingReferences": [],
+    "existingMissingReferences": []
+  },
+  {
+    "page": "/catering.html",
+    "newReferences": [],
+    "newMissingReferences": [],
+    "existingMissingReferences": [
+      "/css/global.css"
+    ]
+  },
+  {
+    "page": "/checkout-options.html",
+    "newReferences": [
+      "/assets/yellow_heart.webp"
+    ],
+    "newMissingReferences": [],
+    "existingMissingReferences": [
+      "/css/global.css"
+    ]
+  },
+  {
+    "page": "/delivery.html",
+    "newReferences": [
+      "/assets/delivery_mastered.webp"
+    ],
+    "newMissingReferences": [],
+    "existingMissingReferences": [
+      "/css/global.css"
+    ]
+  },
+  {
+    "page": "/index.html",
+    "newReferences": [],
+    "newMissingReferences": [],
+    "existingMissingReferences": []
+  },
+  {
+    "page": "/menu.html",
+    "newReferences": [],
+    "newMissingReferences": [],
+    "existingMissingReferences": [
+      "/css/global.css"
+    ]
+  },
+  {
+    "page": "/myaccount.html",
+    "newReferences": [],
+    "newMissingReferences": [],
+    "existingMissingReferences": [
+      "/css/global.css"
+    ]
+  },
+  {
+    "page": "/our-story.html",
+    "newReferences": [
+      "/assets/our-team.webp"
+    ],
+    "newMissingReferences": [],
+    "existingMissingReferences": []
+  },
+  {
+    "page": "/privacy-policy.html",
+    "newReferences": [],
+    "newMissingReferences": [],
+    "existingMissingReferences": [
+      "/css/global.css"
+    ]
+  },
+  {
+    "page": "/rewards-signup.html",
+    "newReferences": [],
+    "newMissingReferences": [],
+    "existingMissingReferences": [
+      "/css/global.css"
+    ]
+  },
+  {
+    "page": "/rewards.html",
+    "newReferences": [],
+    "newMissingReferences": [],
+    "existingMissingReferences": [
+      "/css/global.css"
+    ]
+  }
+]

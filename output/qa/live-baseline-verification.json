@@ -1,0 +1,759 @@
+{
+  "checked_at": "2026-10-14T01:15:57.974259+00:00",
+  "source": "https://samosamanvt.com/",
+  "worktree": "/Users/hakeem/Samosaman/output/worktrees/live-website-baseline",
+  "commit": "1954879c80c6564a53b3e84b39055dc46f597763",
+  "files": [
+    {
+      "path": "assets/boys_at_work.png",
+      "local_sha256": "5d4e4efe6e81fdca01bb709725dd580c03d0f8796570f8ebb25e95a51e00310f",
+      "status": 200,
+      "live_sha256": "5d4e4efe6e81fdca01bb709725dd580c03d0f8796570f8ebb25e95a51e00310f",
+      "matches": true
+    },
+    {
+      "path": "assets/cart_empty.svg",
+      "local_sha256": "af2fb1e146498e940fff783c78e7f3a0c4f69b909fe8fe510b56c1c188c2ad73",
+      "status": 200,
+      "live_sha256": "af2fb1e146498e940fff783c78e7f3a0c4f69b909fe8fe510b56c1c188c2ad73",
+      "matches": true
+    },
+    {
+      "path": "assets/catering-email/177825265ebfbb094952f2a22c8e0439.png",
+      "local_sha256": "301248c3a18c6c249e84ad8da99a91276eb093e7a4782ab823c391ead60f1244",
+      "status": 200,
+      "live_sha256": "301248c3a18c6c249e84ad8da99a91276eb093e7a4782ab823c391ead60f1244",
+      "matches": true
+    },
+    {
+      "path": "assets/catering-email/5ae19005f9549a4494bd2e73d117608b.jpg",
+      "local_sha256": "7205ad41fdf647a0d1560d67852e3a64312760b801a33c0622b418cb3ff3e808",
+      "status": 200,
+      "live_sha256": "7205ad41fdf647a0d1560d67852e3a64312760b801a33c0622b418cb3ff3e808",
+      "matches": true
+    },
+    {
+      "path": "assets/catering-email/7af791e064519432b0f2a9b207d0b094.png",
+      "local_sha256": "1109841a83c4a35d3a91b1cb82fe1e447ca26abad75fca17d5df9aa23980468c",
+      "status": 200,
+      "live_sha256": "1109841a83c4a35d3a91b1cb82fe1e447ca26abad75fca17d5df9aa23980468c",
+      "matches": true
+    },
+    {
+      "path": "assets/catering-email/a6aaf2f514c0d3810f8c402070f92829.png",
+      "local_sha256": "1f7498cf9c1abbf33a83a6e2da73a0ccdc26af1579db6c4ae70768dc873eea72",
+      "status": 200,
+      "live_sha256": "1f7498cf9c1abbf33a83a6e2da73a0ccdc26af1579db6c4ae70768dc873eea72",
+      "matches": true
+    },
+    {
+      "path": "assets/catering-email/bcbdae40f2da0e25ce3e35317f9865ec.jpg",
+      "local_sha256": "9df5a9e56f1b9d55767f457ca6fb36570e8925a4bc1ba5ee4053b7363de34fa8",
+      "status": 200,
+      "live_sha256": "9df5a9e56f1b9d55767f457ca6fb36570e8925a4bc1ba5ee4053b7363de34fa8",
+      "matches": true
+    },
+    {
+      "path": "assets/catering-email/c4cb4e593064bd011b63aa4aeb8f2d34.jpg",
+      "local_sha256": "b22403306d4d458a8ef8dd220bce85d0ef641662ba35a37c3ed712136a8f4ac1",
+      "status": 200,
+      "live_sha256": "b22403306d4d458a8ef8dd220bce85d0ef641662ba35a37c3ed712136a8f4ac1",
+      "matches": true
+    },
+    {
+      "path": "assets/catering-email/d4dae0ccaa7c23e88d99f6ec4801ec2f.jpg",
+      "local_sha256": "5cc66fe72d9376aabcd4f364888ebc2bbee83e6a9448a9a1133bf2123490a545",
+      "status": 200,
+      "live_sha256": "5cc66fe72d9376aabcd4f364888ebc2bbee83e6a9448a9a1133bf2123490a545",
+      "matches": true
+    },
+    {
+      "path": "assets/catering-email/e9f882ffd621b78c600405551c32b709.png",
+      "local_sha256": "fb049074fe4854e41156416ad447b1e02ae81a85e6531ee9fb555e6df7c8a5ed",
+      "status": 200,
+      "live_sha256": "fb049074fe4854e41156416ad447b1e02ae81a85e6531ee9fb555e6df7c8a5ed",
+      "matches": true
+    },
+    {
+      "path": "assets/chicken_curry.png",
+      "local_sha256": "f05c203f4a778dfe9589d4ef194c52569bef74d3b919f4cc7fa99471a8ef539d",
+      "status": 200,
+      "live_sha256": "f05c203f4a778dfe9589d4ef194c52569bef74d3b919f4cc7fa99471a8ef539d",
+      "matches": true
+    },
+    {
+      "path": "assets/chicken_curry.webp",
+      "local_sha256": "78c4e2e9762a68c65aec0a0afa75bd8b64653244c1f649973f687e07c6f74225",
+      "status": 200,
+      "live_sha256": "78c4e2e9762a68c65aec0a0afa75bd8b64653244c1f649973f687e07c6f74225",
+      "matches": true
+    },
+    {
+      "path": "assets/chickpea_masala.PNG",
+      "local_sha256": "671e0a7f849967b98eecd55b2d1051566567dafd09bf61edd93b231364a50c2b",
+      "status": 200,
+      "live_sha256": "671e0a7f849967b98eecd55b2d1051566567dafd09bf61edd93b231364a50c2b",
+      "matches": true
+    },
+    {
+      "path": "assets/chickpea_masala.webp",
+      "local_sha256": "09a9b410426a991fcdd0aebc090582e20c4408de5c3e739d5be24c2e4c2f7291",
+      "status": 200,
+      "live_sha256": "09a9b410426a991fcdd0aebc090582e20c4408de5c3e739d5be24c2e4c2f7291",
+      "matches": true
+    },
+    {
+      "path": "assets/delivery_mastered.png",
+      "local_sha256": "37ee3d58e7005c8f63ad6b91bf481869e0a0329ae3bc29936f21f3d385849361",
+      "status": 200,
+      "live_sha256": "37ee3d58e7005c8f63ad6b91bf481869e0a0329ae3bc29936f21f3d385849361",
+      "matches": true
+    },
+    {
+      "path": "assets/festival-photo.webp",
+      "local_sha256": "50a41e8ca8d1c08e774bc14fef147ef646b106914b31ff127f040712027c6aa7",
+      "status": 200,
+      "live_sha256": "50a41e8ca8d1c08e774bc14fef147ef646b106914b31ff127f040712027c6aa7",
+      "matches": true
+    },
+    {
+      "path": "assets/fuad_and_fatu.webp",
+      "local_sha256": "bee5840b7b3ea656650d42642ca98232d2954622c0ca016c36642142f637af93",
+      "status": 200,
+      "live_sha256": "bee5840b7b3ea656650d42642ca98232d2954622c0ca016c36642142f637af93",
+      "matches": true
+    },
+    {
+      "path": "assets/fuad_ndibalema.webp",
+      "local_sha256": "f773fdfa6e5a7272432439e732dc4771903cdae55392a6b18c3dfc20fd7a5286",
+      "status": 200,
+      "live_sha256": "f773fdfa6e5a7272432439e732dc4771903cdae55392a6b18c3dfc20fd7a5286",
+      "matches": true
+    },
+    {
+      "path": "assets/hakeem_and_rishi.webp",
+      "local_sha256": "f896c8f3642b289ce2a898ca73bc2125297b2adb4e8406e4b15e6e18a6f16eb3",
+      "matches": false,
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "path": "assets/hakeem_karim.webp",
+      "local_sha256": "e06ce0f034a985a1334ad2d35e6c276a90a981ed18c118b8ad619f75e616397f",
+      "status": 200,
+      "live_sha256": "e06ce0f034a985a1334ad2d35e6c276a90a981ed18c118b8ad619f75e616397f",
+      "matches": true
+    },
+    {
+      "path": "assets/headshots/Rishi_headshot.webp",
+      "local_sha256": "bc12528e960096344584df8b1f95cca86e9971d1e9943ef63b969f9c1e145a7c",
+      "status": 200,
+      "live_sha256": "bc12528e960096344584df8b1f95cca86e9971d1e9943ef63b969f9c1e145a7c",
+      "matches": true
+    },
+    {
+      "path": "assets/headshots/Will_headshot.webp",
+      "local_sha256": "2e5a5aae31499e7f53be5d8ae846fcfe6b9894205451ed7f58f6a661901c4d85",
+      "status": 200,
+      "live_sha256": "2e5a5aae31499e7f53be5d8ae846fcfe6b9894205451ed7f58f6a661901c4d85",
+      "matches": true
+    },
+    {
+      "path": "assets/headshots/hakeem_headshot.webp",
+      "local_sha256": "b3cdc7475c76d6daa29e832bcecae77231da01d536f71c9e4cc5466593dd952b",
+      "status": 200,
+      "live_sha256": "b3cdc7475c76d6daa29e832bcecae77231da01d536f71c9e4cc5466593dd952b",
+      "matches": true
+    },
+    {
+      "path": "assets/headshots/hope_headshot.webp",
+      "local_sha256": "32058c08ea50ebaf8db02aeb2e0dd654acb8a5c459ce6212b9650df87a181181",
+      "status": 200,
+      "live_sha256": "32058c08ea50ebaf8db02aeb2e0dd654acb8a5c459ce6212b9650df87a181181",
+      "matches": true
+    },
+    {
+      "path": "assets/headshots/jordain_headshot.webp",
+      "local_sha256": "7cecf5e2dc6361046db772fe430ef4f2a156e7055265c2194cb8e28034cc83a1",
+      "status": 200,
+      "live_sha256": "7cecf5e2dc6361046db772fe430ef4f2a156e7055265c2194cb8e28034cc83a1",
+      "matches": true
+    },
+    {
+      "path": "assets/headshots/karim_headshot.webp",
+      "local_sha256": "833a8dd76f7d5bad877e9e61aea9c7f36e10d8a695a74d4fc2025f721a3dda9d",
+      "status": 200,
+      "live_sha256": "833a8dd76f7d5bad877e9e61aea9c7f36e10d8a695a74d4fc2025f721a3dda9d",
+      "matches": true
+    },
+    {
+      "path": "assets/home/hakeem-400.webp",
+      "local_sha256": "2aff713b2b214d98e4c5eb46c371514c3c25b5879db7e36b43f7240bddb5e5b1",
+      "status": 200,
+      "live_sha256": "2aff713b2b214d98e4c5eb46c371514c3c25b5879db7e36b43f7240bddb5e5b1",
+      "matches": true
+    },
+    {
+      "path": "assets/home/hakeem-800.webp",
+      "local_sha256": "6579cc1e449c8f1b65e0b12b985d0532b7d7ace1999b6e8d49e6fe4ec633b17f",
+      "status": 200,
+      "live_sha256": "6579cc1e449c8f1b65e0b12b985d0532b7d7ace1999b6e8d49e6fe4ec633b17f",
+      "matches": true
+    },
+    {
+      "path": "assets/home/holding_samosa.webp",
+      "local_sha256": "abe0a566c0a025f2486ac004bbcf0b6bfa7233cfbc02ba09a6bd886f471ef8ac",
+      "status": 200,
+      "live_sha256": "abe0a566c0a025f2486ac004bbcf0b6bfa7233cfbc02ba09a6bd886f471ef8ac",
+      "matches": true
+    },
+    {
+      "path": "assets/home/hope-400.webp",
+      "local_sha256": "97d8a35dc4f35e065848f308a5af6b6133e47e340dcc64646ffe2fb96fc061c9",
+      "status": 200,
+      "live_sha256": "97d8a35dc4f35e065848f308a5af6b6133e47e340dcc64646ffe2fb96fc061c9",
+      "matches": true
+    },
+    {
+      "path": "assets/home/hope-800.webp",
+      "local_sha256": "93a3688966524870421450c3b477440a490eec4190ec7aa79a8dd0af63338ade",
+      "status": 200,
+      "live_sha256": "93a3688966524870421450c3b477440a490eec4190ec7aa79a8dd0af63338ade",
+      "matches": true
+    },
+    {
+      "path": "assets/home/jordain-400.webp",
+      "local_sha256": "6177f451a7d6ee0e5b98f1003a7658def2f37701dc8b80600a54fe442176ee09",
+      "status": 200,
+      "live_sha256": "6177f451a7d6ee0e5b98f1003a7658def2f37701dc8b80600a54fe442176ee09",
+      "matches": true
+    },
+    {
+      "path": "assets/home/jordain-800.webp",
+      "local_sha256": "ce201e071d76f7e0e911c51c0b7fecab736198fb741328a2b98c63ba32a3de39",
+      "status": 200,
+      "live_sha256": "ce201e071d76f7e0e911c51c0b7fecab736198fb741328a2b98c63ba32a3de39",
+      "matches": true
+    },
+    {
+      "path": "assets/home/karim-400.webp",
+      "local_sha256": "705206fe4a1e411cee0a7be3008cdf09a45d67ae6bf28548a23352cb79dd958a",
+      "status": 200,
+      "live_sha256": "705206fe4a1e411cee0a7be3008cdf09a45d67ae6bf28548a23352cb79dd958a",
+      "matches": true
+    },
+    {
+      "path": "assets/home/karim-800.webp",
+      "local_sha256": "d9e1e03d86761fd1868add9081c42372549b6529ed80b35adaf8a64fda21cc01",
+      "status": 200,
+      "live_sha256": "d9e1e03d86761fd1868add9081c42372549b6529ed80b35adaf8a64fda21cc01",
+      "matches": true
+    },
+    {
+      "path": "assets/home/rishi-400.webp",
+      "local_sha256": "919995c36f6fb141d5965bcf6ae73efaf70c38a879e35b37665f55dfd7aead94",
+      "status": 200,
+      "live_sha256": "919995c36f6fb141d5965bcf6ae73efaf70c38a879e35b37665f55dfd7aead94",
+      "matches": true
+    },
+    {
+      "path": "assets/home/rishi-800.webp",
+      "local_sha256": "3ab58ae79d28706447bd93ff0cb11abfcdd2268fa34deac56afe3a7bf760c05e",
+      "status": 200,
+      "live_sha256": "3ab58ae79d28706447bd93ff0cb11abfcdd2268fa34deac56afe3a7bf760c05e",
+      "matches": true
+    },
+    {
+      "path": "assets/home/salsa-480.webp",
+      "local_sha256": "d358fa7a980fd8e7c1a49dfdc1d08d7038de742b4577bd8b742d5cba29acfac1",
+      "status": 200,
+      "live_sha256": "d358fa7a980fd8e7c1a49dfdc1d08d7038de742b4577bd8b742d5cba29acfac1",
+      "matches": true
+    },
+    {
+      "path": "assets/home/salsa-960.webp",
+      "local_sha256": "00adf557c4a8dcaedf0e1e6cc59248af16b923790ae1b935d0e1f2ee9b224103",
+      "status": 200,
+      "live_sha256": "00adf557c4a8dcaedf0e1e6cc59248af16b923790ae1b935d0e1f2ee9b224103",
+      "matches": true
+    },
+    {
+      "path": "assets/home/samosa-480.webp",
+      "local_sha256": "c63f9ae95800d2e594013b0e020aa332488772bbadf241b9525ca43a68833933",
+      "status": 200,
+      "live_sha256": "c63f9ae95800d2e594013b0e020aa332488772bbadf241b9525ca43a68833933",
+      "matches": true
+    },
+    {
+      "path": "assets/home/samosa-960.webp",
+      "local_sha256": "61930539b7daed55cf1f4594e3176654328e63f0ea07da5c330a8df8b24fcfe6",
+      "status": 200,
+      "live_sha256": "61930539b7daed55cf1f4594e3176654328e63f0ea07da5c330a8df8b24fcfe6",
+      "matches": true
+    },
+    {
+      "path": "assets/home/samosa_header.webp",
+      "local_sha256": "87530ea70b9a9352edf7cc941a84072603fb81956f966138175c60d0218f746f",
+      "status": 200,
+      "live_sha256": "87530ea70b9a9352edf7cc941a84072603fb81956f966138175c60d0218f746f",
+      "matches": true
+    },
+    {
+      "path": "assets/home/samosa_hero.webp",
+      "local_sha256": "e7ad12fd26980be243e2a71f15aaf5f7111de79406e7edd0480d9dd4b4443cc6",
+      "status": 200,
+      "live_sha256": "e7ad12fd26980be243e2a71f15aaf5f7111de79406e7edd0480d9dd4b4443cc6",
+      "matches": true
+    },
+    {
+      "path": "assets/home/samosas-frying-480.webp",
+      "local_sha256": "1f16bf64f7f637dc7c3f7a4d5a32aaef897829603522a4a89a57ac19e7230f39",
+      "status": 200,
+      "live_sha256": "1f16bf64f7f637dc7c3f7a4d5a32aaef897829603522a4a89a57ac19e7230f39",
+      "matches": true
+    },
+    {
+      "path": "assets/home/samosas-frying-960.webp",
+      "local_sha256": "dd248a12e79ee77e66cab21dbdc916d88286a8d702e7610396c559150defdde3",
+      "status": 200,
+      "live_sha256": "dd248a12e79ee77e66cab21dbdc916d88286a8d702e7610396c559150defdde3",
+      "matches": true
+    },
+    {
+      "path": "assets/home/team_looking_at_samosa.webp",
+      "local_sha256": "81dde1e1d2dcaa4542c33e9c698b18dfab6356b27efe6104087144858f6a01dd",
+      "status": 200,
+      "live_sha256": "81dde1e1d2dcaa4542c33e9c698b18dfab6356b27efe6104087144858f6a01dd",
+      "matches": true
+    },
+    {
+      "path": "assets/home/tray_of_samosas.webp",
+      "local_sha256": "7db04962233755b7f742e1cea14b645f2a912b7b61d8c13248608d6474300cb8",
+      "status": 200,
+      "live_sha256": "7db04962233755b7f742e1cea14b645f2a912b7b61d8c13248608d6474300cb8",
+      "matches": true
+    },
+    {
+      "path": "assets/home/will-400.webp",
+      "local_sha256": "de18489c24e4d842696b54ce46cb3e3ec4d1bf814ebc2d5832db82545526e489",
+      "status": 200,
+      "live_sha256": "de18489c24e4d842696b54ce46cb3e3ec4d1bf814ebc2d5832db82545526e489",
+      "matches": true
+    },
+    {
+      "path": "assets/home/will-800.webp",
+      "local_sha256": "988cfa2744c83b846e8d51460fa9e48d81e03b999e1bb3884383d6c3d6dbb84e",
+      "status": 200,
+      "live_sha256": "988cfa2744c83b846e8d51460fa9e48d81e03b999e1bb3884383d6c3d6dbb84e",
+      "matches": true
+    },
+    {
+      "path": "assets/kaia_eating_samosa.PNG",
+      "local_sha256": "af1200597d9df85a09fb76114e885e4d3e128a0b4ba104369a93fba850536c21",
+      "status": 200,
+      "live_sha256": "af1200597d9df85a09fb76114e885e4d3e128a0b4ba104369a93fba850536c21",
+      "matches": true
+    },
+    {
+      "path": "assets/m_logo.png",
+      "local_sha256": "05b3f006f18533bc7ff1e9e41a4d366ea81cb3d05b9a8ef6bc763fe97bb15ca8",
+      "status": 200,
+      "live_sha256": "05b3f006f18533bc7ff1e9e41a4d366ea81cb3d05b9a8ef6bc763fe97bb15ca8",
+      "matches": true
+    },
+    {
+      "path": "assets/m_logo.svg",
+      "local_sha256": "6e320b5d1a0213505b104729ea24aa071a3933a1c9a0b87ce782dda4fcdc54eb",
+      "status": 200,
+      "live_sha256": "6e320b5d1a0213505b104729ea24aa071a3933a1c9a0b87ce782dda4fcdc54eb",
+      "matches": true
+    },
+    {
+      "path": "assets/our-team.PNG",
+      "local_sha256": "ad4c933973773612fb9fac1faa4b62f64fbe5fa602ac2f95b032e84068146d43",
+      "status": 200,
+      "live_sha256": "ad4c933973773612fb9fac1faa4b62f64fbe5fa602ac2f95b032e84068146d43",
+      "matches": true
+    },
+    {
+      "path": "assets/pink_heart.png",
+      "local_sha256": "fd1c2c47dc2a353f94deab4ddf07cb27d3bc889fefe116e6af561d9c8b0ffb93",
+      "status": 200,
+      "live_sha256": "fd1c2c47dc2a353f94deab4ddf07cb27d3bc889fefe116e6af561d9c8b0ffb93",
+      "matches": true
+    },
+    {
+      "path": "assets/rewards.svg",
+      "local_sha256": "e1e389a0090ad6909baa5cc6a0fd172881ebc5a29da5b596fd62206a29a18c26",
+      "status": 200,
+      "live_sha256": "e1e389a0090ad6909baa5cc6a0fd172881ebc5a29da5b596fd62206a29a18c26",
+      "matches": true
+    },
+    {
+      "path": "assets/samoa_salsa_vertical.webp",
+      "local_sha256": "c71c044494d27bd7e0b2d0fda7c0accacdba8438826d8ab5c2adace2f9f2978e",
+      "status": 200,
+      "live_sha256": "c71c044494d27bd7e0b2d0fda7c0accacdba8438826d8ab5c2adace2f9f2978e",
+      "matches": true
+    },
+    {
+      "path": "assets/samosa_salsa.webp",
+      "local_sha256": "10184c69580fb29ca83a1753172bbb323c163459a9a86718dbdf87f23f4416ae",
+      "status": 200,
+      "live_sha256": "10184c69580fb29ca83a1753172bbb323c163459a9a86718dbdf87f23f4416ae",
+      "matches": true
+    },
+    {
+      "path": "assets/samosacrew.jpeg",
+      "local_sha256": "0c549d982300edb5f72be393d5cef5027b2e15129bd8f33a9c896b9f1acb36d0",
+      "status": 200,
+      "live_sha256": "0c549d982300edb5f72be393d5cef5027b2e15129bd8f33a9c896b9f1acb36d0",
+      "matches": true
+    },
+    {
+      "path": "assets/samosaman_delivery.png",
+      "local_sha256": "389224e7e9c6821f46eaae9971fd36c5b015955acb5447181488601ceb8c1186",
+      "status": 200,
+      "live_sha256": "389224e7e9c6821f46eaae9971fd36c5b015955acb5447181488601ceb8c1186",
+      "matches": true
+    },
+    {
+      "path": "assets/samosas/apple_samosa3.png",
+      "local_sha256": "aa58994f8632a418344ea1cdff27d661590c990cfb3b8ac552f12febe0197ba2",
+      "status": 200,
+      "live_sha256": "aa58994f8632a418344ea1cdff27d661590c990cfb3b8ac552f12febe0197ba2",
+      "matches": true
+    },
+    {
+      "path": "assets/samosas/apple_samosa3.webp",
+      "local_sha256": "07532791bf66fc4c9f385e9da0868421496981ce0f3d27077c0631336d3da75e",
+      "status": 200,
+      "live_sha256": "07532791bf66fc4c9f385e9da0868421496981ce0f3d27077c0631336d3da75e",
+      "matches": true
+    },
+    {
+      "path": "assets/samosas/chicken_cheese3.jpg",
+      "local_sha256": "16d53624338b1e7cbe527dcd7a39f50dc9f85016632fe77eb0bc97745de40384",
+      "status": 200,
+      "live_sha256": "16d53624338b1e7cbe527dcd7a39f50dc9f85016632fe77eb0bc97745de40384",
+      "matches": true
+    },
+    {
+      "path": "assets/samosas/chicken_cheese3.webp",
+      "local_sha256": "e794610e6eaa73b0544bd2229217e9818fdf1593daa7e039d9f1dac190a9ea35",
+      "status": 200,
+      "live_sha256": "e794610e6eaa73b0544bd2229217e9818fdf1593daa7e039d9f1dac190a9ea35",
+      "matches": true
+    },
+    {
+      "path": "assets/samosas/spicy_chicken2.jpg",
+      "local_sha256": "10e367a4135147f7840b14d26b4d9e695d402d9b5547c192adeec67ff712ba8c",
+      "status": 200,
+      "live_sha256": "10e367a4135147f7840b14d26b4d9e695d402d9b5547c192adeec67ff712ba8c",
+      "matches": true
+    },
+    {
+      "path": "assets/samosas/spicy_chicken2.webp",
+      "local_sha256": "d8bdd0cc12922f92b0f7064ceb2931ac8be4410e8fe35f59c3cd4ea00d0a9596",
+      "status": 200,
+      "live_sha256": "d8bdd0cc12922f92b0f7064ceb2931ac8be4410e8fe35f59c3cd4ea00d0a9596",
+      "matches": true
+    },
+    {
+      "path": "assets/samosas/spicy_potato_samosa.PNG",
+      "local_sha256": "4517868dd6e30c8db6b9d6c65344517f0d744004251711af43d86d2a0c6f255b",
+      "status": 200,
+      "live_sha256": "4517868dd6e30c8db6b9d6c65344517f0d744004251711af43d86d2a0c6f255b",
+      "matches": true
+    },
+    {
+      "path": "assets/samosas/spicy_potato_samosa.webp",
+      "local_sha256": "515c09a4ec93649030bf8cf8c5670006a4cfdc732fe31a644956e709104be2c3",
+      "status": 200,
+      "live_sha256": "515c09a4ec93649030bf8cf8c5670006a4cfdc732fe31a644956e709104be2c3",
+      "matches": true
+    },
+    {
+      "path": "assets/samosas/steak_and_potato.PNG",
+      "local_sha256": "225c298c1444107b66bd42f8828792489bbee124a0636729d6a5f0e12e642fba",
+      "status": 200,
+      "live_sha256": "225c298c1444107b66bd42f8828792489bbee124a0636729d6a5f0e12e642fba",
+      "matches": true
+    },
+    {
+      "path": "assets/samosas/steak_and_potato.webp",
+      "local_sha256": "a0010ab1a86ee422b729fc094f28deb01ededb81961205828ff5f165058385b8",
+      "status": 200,
+      "live_sha256": "a0010ab1a86ee422b729fc094f28deb01ededb81961205828ff5f165058385b8",
+      "matches": true
+    },
+    {
+      "path": "assets/samosas/steakandcheese.PNG",
+      "local_sha256": "f4979d0ffbfe7b205372db47d1e37447e943b2b9f5104445c94068048d985b89",
+      "status": 200,
+      "live_sha256": "f4979d0ffbfe7b205372db47d1e37447e943b2b9f5104445c94068048d985b89",
+      "matches": true
+    },
+    {
+      "path": "assets/samosas/steakandcheese.webp",
+      "local_sha256": "58cae21d2bf34cba95c03d2e823faaf03666437db3403b367396cd3e6ab2f487",
+      "status": 200,
+      "live_sha256": "58cae21d2bf34cba95c03d2e823faaf03666437db3403b367396cd3e6ab2f487",
+      "matches": true
+    },
+    {
+      "path": "assets/samosas/traditional_punjabi_samosa.PNG",
+      "local_sha256": "ddc3df82141cfbf50eff452cfd18a726213753e941978474eae70fda188082db",
+      "status": 200,
+      "live_sha256": "ddc3df82141cfbf50eff452cfd18a726213753e941978474eae70fda188082db",
+      "matches": true
+    },
+    {
+      "path": "assets/samosas/traditional_punjabi_samosa.webp",
+      "local_sha256": "77cb7987f590ff4fb462fb89d2f8039ced86c75c0fa19774e4c16555557fc842",
+      "status": 200,
+      "live_sha256": "77cb7987f590ff4fb462fb89d2f8039ced86c75c0fa19774e4c16555557fc842",
+      "matches": true
+    },
+    {
+      "path": "assets/samosas/veggie_samosa3.png",
+      "local_sha256": "165c2c8c3721bed229d1414306260c0a699ae0aea7fc62f9b9a16ec292b176d0",
+      "status": 200,
+      "live_sha256": "165c2c8c3721bed229d1414306260c0a699ae0aea7fc62f9b9a16ec292b176d0",
+      "matches": true
+    },
+    {
+      "path": "assets/samosas/veggie_samosa3.webp",
+      "local_sha256": "ed38be22b2fa2b59ac97229239a2e14a470456b3bb2b2cb47de2e0af0f61f3b5",
+      "status": 200,
+      "live_sha256": "ed38be22b2fa2b59ac97229239a2e14a470456b3bb2b2cb47de2e0af0f61f3b5",
+      "matches": true
+    },
+    {
+      "path": "assets/samosas_frying.jpeg",
+      "local_sha256": "2656e4b7fab73bf86812f6ee47f3fcd477356dc81d52241a3d78fe3d5022d270",
+      "status": 200,
+      "live_sha256": "2656e4b7fab73bf86812f6ee47f3fcd477356dc81d52241a3d78fe3d5022d270",
+      "matches": true
+    },
+    {
+      "path": "assets/white_m_logo.svg",
+      "local_sha256": "2eddc979041aae1bbf9f2475523deae8b788cc2b2f90c8a65a7100a08c62aba3",
+      "status": 200,
+      "live_sha256": "2eddc979041aae1bbf9f2475523deae8b788cc2b2f90c8a65a7100a08c62aba3",
+      "matches": true
+    },
+    {
+      "path": "assets/yellow_heart.png",
+      "local_sha256": "3283687772da3425dedae671ef71a4c573fe50065766abccb5025a5e4eb09dc0",
+      "status": 200,
+      "live_sha256": "3283687772da3425dedae671ef71a4c573fe50065766abccb5025a5e4eb09dc0",
+      "matches": true
+    },
+    {
+      "path": "burlington.html",
+      "local_sha256": "1fc528a391d4de286be58b66c4172fe9b5d1edcb38cdc992794591d213845c02",
+      "status": 200,
+      "live_sha256": "1fc528a391d4de286be58b66c4172fe9b5d1edcb38cdc992794591d213845c02",
+      "matches": true
+    },
+    {
+      "path": "catering-order-confirmation.html",
+      "local_sha256": "203cb7b5a94915e915e341832dba0b855a2550eb025ca3e59b7dc11818db19c3",
+      "status": 200,
+      "live_sha256": "203cb7b5a94915e915e341832dba0b855a2550eb025ca3e59b7dc11818db19c3",
+      "matches": true
+    },
+    {
+      "path": "catering.html",
+      "local_sha256": "f17d5bc6990fd36eb34ba1d3cdbe001d6f4583fd178de3310b19fa39b739ed4c",
+      "status": 200,
+      "live_sha256": "f17d5bc6990fd36eb34ba1d3cdbe001d6f4583fd178de3310b19fa39b739ed4c",
+      "matches": true
+    },
+    {
+      "path": "checkout-options.html",
+      "local_sha256": "c13e9b220028d8d603a2f2a160cd68c0c9111e66a757f097a47c7414c5732db9",
+      "status": 200,
+      "live_sha256": "c13e9b220028d8d603a2f2a160cd68c0c9111e66a757f097a47c7414c5732db9",
+      "matches": true
+    },
+    {
+      "path": "checkout.html",
+      "local_sha256": "537e5655d49317ebc57bbaebb4632241417021798e81575a92d9056bffd8c7b3",
+      "status": 200,
+      "live_sha256": "537e5655d49317ebc57bbaebb4632241417021798e81575a92d9056bffd8c7b3",
+      "matches": true
+    },
+    {
+      "path": "css/home.css",
+      "local_sha256": "0f88e58f9deef2d39973191e23bffa275d9c5cfd6c27d5e57ef8d60bf67195a2",
+      "status": 200,
+      "live_sha256": "0f88e58f9deef2d39973191e23bffa275d9c5cfd6c27d5e57ef8d60bf67195a2",
+      "matches": true
+    },
+    {
+      "path": "delivery.html",
+      "local_sha256": "dbe0e15cc03c92fcb6c8df0b32114f749c34baeb387cd07a422ede6f150f8b47",
+      "status": 200,
+      "live_sha256": "dbe0e15cc03c92fcb6c8df0b32114f749c34baeb387cd07a422ede6f150f8b47",
+      "matches": true
+    },
+    {
+      "path": "guest-checkout.html",
+      "local_sha256": "22f50416f12cced32b3256e6283b9d960b379a7bd9600ac24b21b85fe1cc8590",
+      "status": 200,
+      "live_sha256": "22f50416f12cced32b3256e6283b9d960b379a7bd9600ac24b21b85fe1cc8590",
+      "matches": true
+    },
+    {
+      "path": "index.html",
+      "local_sha256": "6a5a0c56fd37e22d60787406421e55cfe4307e2c3392032ff207f84482a67005",
+      "status": 200,
+      "live_sha256": "6a5a0c56fd37e22d60787406421e55cfe4307e2c3392032ff207f84482a67005",
+      "matches": true
+    },
+    {
+      "path": "js/auth.js",
+      "local_sha256": "3ed855a854d67cb08cc1729d7871ac2b435531b59b0a79750df2e2449f4b1a91",
+      "status": 200,
+      "live_sha256": "3ed855a854d67cb08cc1729d7871ac2b435531b59b0a79750df2e2449f4b1a91",
+      "matches": true
+    },
+    {
+      "path": "js/branch-config.js",
+      "local_sha256": "c91c7f44fc333bfadd5fdef255db3d1af26d7c4065c1f3adb538665904235000",
+      "status": 200,
+      "live_sha256": "c91c7f44fc333bfadd5fdef255db3d1af26d7c4065c1f3adb538665904235000",
+      "matches": true
+    },
+    {
+      "path": "js/cart.js",
+      "local_sha256": "5da57f788ae0e4ceb21dd717d1922ed82f016333a2eda50de07ff938c6e94579",
+      "status": 200,
+      "live_sha256": "5da57f788ae0e4ceb21dd717d1922ed82f016333a2eda50de07ff938c6e94579",
+      "matches": true
+    },
+    {
+      "path": "js/errors.js",
+      "local_sha256": "b101ba578aca14d5dfa475be051a2bf895e8d1824d5e2dd4cc84fed62d9a4b8b",
+      "status": 200,
+      "live_sha256": "b101ba578aca14d5dfa475be051a2bf895e8d1824d5e2dd4cc84fed62d9a4b8b",
+      "matches": true
+    },
+    {
+      "path": "js/firebase-init.js",
+      "local_sha256": "58f03e889186b32c2da4dec9c698bb3a790b15ec72b2385d8f88b5cb14642eb5",
+      "status": 200,
+      "live_sha256": "58f03e889186b32c2da4dec9c698bb3a790b15ec72b2385d8f88b5cb14642eb5",
+      "matches": true
+    },
+    {
+      "path": "js/footer.js",
+      "local_sha256": "c9449b5357709bc86014e14b614cee885f967dfc05631edc7d972c1511e2c3f9",
+      "status": 200,
+      "live_sha256": "c9449b5357709bc86014e14b614cee885f967dfc05631edc7d972c1511e2c3f9",
+      "matches": true
+    },
+    {
+      "path": "js/home.js",
+      "local_sha256": "3dd71c7268600ba62ecda5dae60869e9ddf4392928f77e01be34325528905acc",
+      "status": 200,
+      "live_sha256": "3dd71c7268600ba62ecda5dae60869e9ddf4392928f77e01be34325528905acc",
+      "matches": true
+    },
+    {
+      "path": "js/navbar.js",
+      "local_sha256": "e4f84f6fbba6d174505a4a1178b7857e65b9da5f574e4dc7fcbfbb11227d24b0",
+      "status": 200,
+      "live_sha256": "e4f84f6fbba6d174505a4a1178b7857e65b9da5f574e4dc7fcbfbb11227d24b0",
+      "matches": true
+    },
+    {
+      "path": "js/rewards-config.js",
+      "local_sha256": "9e8413a73ccdfbbfe2c48a97f8b8a388a1895fcf69043719be4d78090ac396a4",
+      "status": 200,
+      "live_sha256": "9e8413a73ccdfbbfe2c48a97f8b8a388a1895fcf69043719be4d78090ac396a4",
+      "matches": true
+    },
+    {
+      "path": "js/rewards-ui.js",
+      "local_sha256": "30a5e4312676955e671802fa1f0c4ed45f5e070738b0c2234086bdd75e83fda8",
+      "status": 200,
+      "live_sha256": "30a5e4312676955e671802fa1f0c4ed45f5e070738b0c2234086bdd75e83fda8",
+      "matches": true
+    },
+    {
+      "path": "js/sq-payment.js",
+      "local_sha256": "044c4552c8d998143a67973883143af9a590380dda201f42e41741ee795557cd",
+      "status": 200,
+      "live_sha256": "044c4552c8d998143a67973883143af9a590380dda201f42e41741ee795557cd",
+      "matches": true
+    },
+    {
+      "path": "js/store-hours.js",
+      "local_sha256": "3ab477a42716e8e8432b84698ea7caab9781e6f7391ae144ef6d78be9414ea84",
+      "status": 200,
+      "live_sha256": "3ab477a42716e8e8432b84698ea7caab9781e6f7391ae144ef6d78be9414ea84",
+      "matches": true
+    },
+    {
+      "path": "menu.html",
+      "local_sha256": "0281c9be9db5ee08ac0c538077c256b6cf7203d455543438b025ef0f8ae888a5",
+      "status": 200,
+      "live_sha256": "0281c9be9db5ee08ac0c538077c256b6cf7203d455543438b025ef0f8ae888a5",
+      "matches": true
+    },
+    {
+      "path": "myaccount.html",
+      "local_sha256": "c954a8cce0bc14d4a734e38dcfe9c622d116ae76348b36405c591190216299d6",
+      "status": 200,
+      "live_sha256": "c954a8cce0bc14d4a734e38dcfe9c622d116ae76348b36405c591190216299d6",
+      "matches": true
+    },
+    {
+      "path": "our-story.html",
+      "local_sha256": "4dd185f1f3da11ee7592d557d1c7bf579a1570a97c38bc3d1b0d8d0f75022f42",
+      "status": 200,
+      "live_sha256": "4dd185f1f3da11ee7592d557d1c7bf579a1570a97c38bc3d1b0d8d0f75022f42",
+      "matches": true
+    },
+    {
+      "path": "privacy-policy.html",
+      "local_sha256": "eaed03755faa80ee6ba1537abc05197a5e2366fe05f8ef2c4a9de684ec8c1d91",
+      "status": 200,
+      "live_sha256": "eaed03755faa80ee6ba1537abc05197a5e2366fe05f8ef2c4a9de684ec8c1d91",
+      "matches": true
+    },
+    {
+      "path": "rewards-signup.html",
+      "local_sha256": "6e69ec7db69a0fd9d5cb1a26c649c2f89afd8746ad3a90a385e3dd8066e4edc2",
+      "status": 200,
+      "live_sha256": "6e69ec7db69a0fd9d5cb1a26c649c2f89afd8746ad3a90a385e3dd8066e4edc2",
+      "matches": true
+    },
+    {
+      "path": "rewards.html",
+      "local_sha256": "d799922242e5fd8412344589442b261635728d368580988616d79395847d3864",
+      "status": 200,
+      "live_sha256": "d799922242e5fd8412344589442b261635728d368580988616d79395847d3864",
+      "matches": true
+    },
+    {
+      "path": "robots.txt",
+      "local_sha256": "9e53134a152882475b5a79b4970d777f54bd040d25cadca3af848f87c03ae9f2",
+      "status": 200,
+      "live_sha256": "9e53134a152882475b5a79b4970d777f54bd040d25cadca3af848f87c03ae9f2",
+      "matches": true
+    },
+    {
+      "path": "sitemap.xml",
+      "local_sha256": "35a240bf1966c8b8e93c0247e1be546aa5fac10cc0dac618ebd8c53aea47e518",
+      "status": 200,
+      "live_sha256": "35a240bf1966c8b8e93c0247e1be546aa5fac10cc0dac618ebd8c53aea47e518",
+      "matches": true
+    }
+  ],
+  "preview_url": "http://127.0.0.1:4173/index.html",
+  "branch": "codex/live-website-baseline",
+  "preview_html_matches_live": true
+}

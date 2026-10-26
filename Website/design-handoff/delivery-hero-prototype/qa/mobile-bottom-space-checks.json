@@ -1,0 +1,48 @@
+{
+  "before": {
+    "bottomSpace": 162.01788787608362,
+    "graphicHeight": 178.93523712391638,
+    "graphicTop": 331.046875,
+    "headingTop": 119,
+    "heroHeight": 672,
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  "after": {
+    "bottomSpace": 32,
+    "graphicHeight": 178.921875,
+    "graphicTop": 331.046875,
+    "headingTop": 119,
+    "heroHeight": 541.96875,
+    "nextTop": 553.96875,
+    "overflow": false,
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  "additionalChecks": [
+    {
+      "bottomSpace": 32,
+      "graphicFits": true,
+      "heroHeight": 567.234375,
+      "overflow": false,
+      "viewport": [
+        320,
+        568
+      ]
+    },
+    {
+      "bottomSpace": 15,
+      "graphicFits": true,
+      "heroHeight": 728,
+      "overflow": false,
+      "viewport": [
+        1440,
+        900
+      ]
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "commit": "fe8b70c852c43ccea7a2c55237425b8eb8c3a7f5",
+  "checks": [
+    {
+      "label": "desktop-overview",
+      "button": "See inside",
+      "caption": "Select + for a closer look.",
+      "closeup": "",
+      "detailOpen": "false",
+      "focusPart": null,
+      "hotspotsInert": false,
+      "overflow": false,
+      "parts": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "spread": "0",
+      "url": "https://samosamanvt.com/#samosas-and-salsa",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "label": "desktop-fold",
+      "button": "Back to full view",
+      "caption": "A personal touch.\n                    Folded by hand. One samosa at a time.",
+      "closeup": "fold",
+      "detailOpen": "true",
+      "focusPart": null,
+      "hotspotsInert": true,
+      "overflow": false,
+      "parts": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "spread": "0",
+      "url": "https://samosamanvt.com/#samosas-and-salsa",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "label": "desktop-fold-return",
+      "button": "See inside",
+      "caption": "Select + for a closer look.",
+      "closeup": "",
+      "detailOpen": "false",
+      "focusPart": "fold",
+      "hotspotsInert": false,
+      "overflow": false,
+      "parts": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "spread": "0",
+      "url": "https://samosamanvt.com/#samosas-and-salsa",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "label": "desktop-filling",
+      "button": "Back to full view",
+      "caption": "Goodness inside.\n                    Our Punjabi filling: spiced potatoes, green peas, and herbs.",
+      "closeup": "",
+      "detailOpen": "true",
+      "focusPart": null,
+      "hotspotsInert": true,
+      "overflow": false,
+      "parts": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "spread": "1",
+      "url": "https://samosamanvt.com/#samosas-and-salsa",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "label": "desktop-salsa",
+      "button": "Back to full view",
+      "caption": "Better together.\n                    Garlic Tomato Salsa. A little tang for all that crunch.",
+      "closeup": "salsa",
+      "detailOpen": "true",
+      "focusPart": null,
+      "hotspotsInert": true,
+      "overflow": false,
+      "parts": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "spread": "0",
+      "url": "https://samosamanvt.com/#samosas-and-salsa",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "label": "mobile-salsa",
+      "button": "Back to full view",
+      "caption": "Better together.\n                    Garlic Tomato Salsa. A little tang for all that crunch.",
+      "closeup": "salsa",
+      "detailOpen": "true",
+      "focusPart": null,
+      "hotspotsInert": true,
+      "overflow": false,
+      "parts": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "spread": "0",
+      "url": "https://samosamanvt.com/#samosas-and-salsa",
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "label": "mobile-see-inside",
+      "button": "Back to full view",
+      "caption": "Goodness inside.\n                    Our Punjabi filling: spiced potatoes, green peas, and herbs.",
+      "closeup": "",
+      "detailOpen": "true",
+      "focusPart": null,
+      "hotspotsInert": true,
+      "overflow": false,
+      "parts": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "spread": "1",
+      "url": "https://samosamanvt.com/#samosas-and-salsa",
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "label": "mobile-overview-restored",
+      "button": "See inside",
+      "caption": "Select + for a closer look.",
+      "closeup": "",
+      "detailOpen": "false",
+      "focusPart": null,
+      "hotspotsInert": false,
+      "overflow": false,
+      "parts": [
+        "fold",
+        "filling",
+        "salsa"
+      ],
+      "spread": "0",
+      "url": "https://samosamanvt.com/#samosas-and-salsa",
+      "viewport": [
+        390,
+        844
+      ]
+    }
+  ],
+  "errors": []
+}

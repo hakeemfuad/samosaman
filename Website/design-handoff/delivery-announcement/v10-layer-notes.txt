@@ -1,0 +1,24 @@
+Version 10 repairs the bag surface and edges from version 9.
+
+The old extraction retained cutouts from the generated hand and head.
+The bag is now a complete shape with a smooth outer boundary. Its red front,
+dark-red side, white DoorDash symbol, navy straps and leftward samosa spill remain.
+The original figure is placed over the complete bag, with the right hand tip
+partly covered by the bag. Stray outlines from the original samosa are removed.
+
+Final transparent image: samosaman-doordash-logo-v10-repaired-bag.png
+Layered master: samosaman-doordash-logo-v10-layered.svg
+Editable bag and spill: delivery-artwork-layer-v10.svg
+Fixed source logo layer: original-logo-fixed-layer-v10.png
+White preview: samosaman-doordash-logo-v10-white-preview.png
+Enlarged bag inspection: v10-bag-detail.png
+
+Validation: v10-validation.json
+- Zero holes within the bag surface. Version 9 had 30 interior pixels below
+  the alpha threshold, plus the visible old cutout along the left edge.
+- All 1,173,120 pixels in the protected source lettering region match exactly.
+- The original SamosaMan lettering, trademark and Exotic Food text are copied
+  without scaling or recoloring. Keep this source layer fixed for future edits.
+
+Rebuild and validate with repair-bag-layer.cjs using Node.js and sharp.
+This repair used deterministic layer composition, without image generation.

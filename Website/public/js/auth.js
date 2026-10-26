@@ -454,43 +454,45 @@ async function handleGoogleLogin() {
 
 // Auth State Listener
 auth.onAuthStateChanged((user) => {
+    const firstName = user?.displayName?.trim().split(/\s+/)[0] || 'Me';
+    const initial = Array.from(firstName.toLocaleUpperCase())[0];
+    // This hint controls the next page's appearance only, never its auth state.
+    try {
+        sessionStorage.setItem('samosaman_nav_account', JSON.stringify(
+            user ? { signedIn: true, initial } : { signedIn: false }
+        ));
+    } catch (_) { /* Account access must work when session storage is unavailable. */ }
     const userBtn = document.getElementById('nav-user-btn');
 
     if (user) {
         if (userBtn) {
-            // 1. Get First Name (or default to 'Me')
-            const firstName = user.displayName ? user.displayName.split(' ')[0] : 'Me';
-
-            // 2. Adjust Layout for Vertical Stacking
+            // CSS selects the initial on desktop and the account label on mobile.
             userBtn.classList.remove('text-slate-500');
-            userBtn.classList.add('text-slate-900', 'flex', 'flex-col', 'items-center', 'justify-center', 'gap-0.5', 'leading-none');
-
-            // 3. Render Icon + Name
-            userBtn.innerHTML = `
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                <span class="text-[10px] font-bold uppercase tracking-wide">${firstName}</span>
-            `;
+            userBtn.classList.add('is-signed-in');
+            userBtn.querySelector('.nav-user-initial').textContent = initial;
+            userBtn.setAttribute('aria-label', `${firstName}, My account`);
+            userBtn.title = `${firstName} · My account`;
 
             // Redirect to rewards on click
             userBtn.onclick = () => window.location.href = 'myaccount.html';
         }
     } else {
         if (userBtn) {
-            // 4. Reset Layout for Guest (Icon Only)
-            userBtn.classList.remove('text-slate-900', 'flex', 'flex-col', 'items-center', 'justify-center', 'gap-0.5', 'leading-none');
+            // Restore the guest icon and sign-in action.
+            userBtn.classList.remove('is-signed-in');
             userBtn.classList.add('text-slate-500');
+            userBtn.setAttribute('aria-label', 'My account');
+            userBtn.removeAttribute('title');
 
-            userBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-6 h-6"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`;
+            userBtn.querySelector('.nav-user-initial').textContent = '';
 
             // Open Login Modal on click
             userBtn.onclick = () => toggleAuthModal(true);
         }
     }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const userBtn = document.getElementById('nav-user-btn');
-    if (userBtn && !auth.currentUser) {
-        userBtn.onclick = (e) => { e.preventDefault(); toggleAuthModal(true); };
+    if (userBtn) {
+        userBtn.classList.remove('is-auth-pending', 'has-auth-preview');
+        userBtn.removeAttribute('aria-busy');
+        userBtn.disabled = false;
     }
 });

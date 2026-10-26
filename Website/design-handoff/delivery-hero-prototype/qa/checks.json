@@ -1,0 +1,80 @@
+{
+  "layouts": [
+    {
+      "clearOfNavigation": true,
+      "ctaInsideHero": true,
+      "height": 844,
+      "imageInsideHero": true,
+      "imageLoaded": true,
+      "overflow": false,
+      "variant": "C",
+      "width": 390
+    },
+    {
+      "clearOfNavigation": true,
+      "ctaInsideHero": true,
+      "height": 844,
+      "imageInsideHero": true,
+      "imageLoaded": true,
+      "overflow": false,
+      "variant": "A",
+      "width": 390
+    },
+    {
+      "clearOfNavigation": true,
+      "ctaInsideHero": true,
+      "height": 844,
+      "imageInsideHero": true,
+      "imageLoaded": true,
+      "overflow": false,
+      "variant": "B",
+      "width": 390
+    },
+    {
+      "actionsHeight": 50,
+      "artTop": 167.609375,
+      "navBottom": 72,
+      "overflow": false,
+      "scrollY": 0,
+      "variant": "A",
+      "width": 320
+    },
+    {
+      "ctaInsideHero": true,
+      "height": 900,
+      "imageInsideHero": true,
+      "imageLoaded": true,
+      "overflow": false,
+      "variant": "A",
+      "width": 1440
+    },
+    {
+      "ctaInsideHero": true,
+      "height": 900,
+      "imageInsideHero": true,
+      "imageLoaded": true,
+      "overflow": false,
+      "variant": "B",
+      "width": 1440
+    },
+    {
+      "ctaInsideHero": true,
+      "height": 900,
+      "imageInsideHero": true,
+      "imageLoaded": true,
+      "overflow": false,
+      "variant": "C",
+      "width": 1440
+    },
+    {
+      "height": 1180,
+      "imageLoaded": true,
+      "overflow": false,
+      "variant": "B",
+      "width": 820
+    }
+  ],
+  "orderSelector": "Opened and closed from hero Order Now button",
+  "narrowPhoneButtons": "Both on one row at 320px",
+  "scope": "Local preview; no production page edit or deployment"
+}

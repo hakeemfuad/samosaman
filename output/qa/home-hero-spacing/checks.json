@@ -1,0 +1,117 @@
+{
+  "beforeDesktop": {
+    "elements": [
+      {
+        "height": 588,
+        "objectPosition": "50% 50%",
+        "selector": ".home-fresh",
+        "width": 1272,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "height": 588,
+        "objectPosition": "50% 40%",
+        "selector": ".home-fresh-photo",
+        "width": 1272,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "height": 335.59375,
+        "objectPosition": "50% 50%",
+        "selector": ".home-fresh-copy",
+        "width": 1272,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "height": 78.328125,
+        "objectPosition": "50% 50%",
+        "selector": ".home-fresh h1",
+        "width": 419.96875,
+        "x": 426.015625,
+        "y": 136
+      },
+      {
+        "height": 48,
+        "objectPosition": "50% 50%",
+        "selector": ".home-fresh .btn-order",
+        "width": 121.125,
+        "x": 516.453125,
+        "y": 287.59375
+      }
+    ],
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  "afterDesktop": {
+    "button": {
+      "height": 48,
+      "objectPosition": "50% 50%",
+      "transform": "none",
+      "width": 121.125,
+      "x": 516.453125,
+      "y": 287.59375
+    },
+    "heading": {
+      "height": 78.328125,
+      "objectPosition": "50% 50%",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "width": 419.96875,
+      "x": 426.015625,
+      "y": 136
+    },
+    "overflow": false,
+    "photo": {
+      "height": 588,
+      "objectPosition": "50% 40%",
+      "transform": "none",
+      "width": 1272,
+      "x": 0,
+      "y": 120
+    },
+    "scrollX": 0,
+    "scrollY": 0,
+    "viewport": {
+      "height": 720,
+      "width": 1280
+    }
+  },
+  "afterMobile": {
+    "button": {
+      "height": 50,
+      "objectPosition": "50% 50%",
+      "width": 125.6875,
+      "x": 68.359375,
+      "y": 213.5625
+    },
+    "heading": {
+      "height": 44.875,
+      "objectPosition": "50% 50%",
+      "width": 244.96875,
+      "x": 68.515625,
+      "y": 112
+    },
+    "overflow": false,
+    "photo": {
+      "height": 640,
+      "objectPosition": "44% 50%",
+      "width": 382,
+      "x": 0,
+      "y": 144
+    },
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  },
+  "visualChecks": {
+    "desktop1280x720": "Space between the button and samosa; top edge blends into background",
+    "narrowDesktop1024x768": "No overlap between controls and samosa",
+    "phone390x844": "Photo lower; controls remain above the samosa"
+  },
+  "scope": "Local preview only"
+}

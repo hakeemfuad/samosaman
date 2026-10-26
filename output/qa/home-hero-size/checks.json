@@ -1,0 +1,127 @@
+{
+  "date": "2026-10-18",
+  "reference": {
+    "page": "https://www.apple.com/",
+    "stylesheet": "https://www.apple.com/v/homepage/a/styles/homepage.built.css",
+    "browserMeasurements": [
+      {
+        "width": 1280,
+        "height": 720,
+        "tileHeight": 580
+      },
+      {
+        "width": 1440,
+        "height": 900,
+        "tileHeight": 692
+      }
+    ],
+    "heroHeights": {
+      "default": 580,
+      "upTo1068": 570,
+      "upTo734": 500,
+      "widthAtLeast1069AndHeightAtLeast776": 692,
+      "width735To1068AndHeightAtLeast734": 650
+    }
+  },
+  "before": {
+    "desktop": {
+      "heroHeight": 768,
+      "nextHeadingTop": 864,
+      "photoHeight": 768,
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    "mobile": {
+      "heroHeight": 760,
+      "nextHeadingTop": 816,
+      "photoHeight": 640,
+      "viewport": [
+        390,
+        844
+      ]
+    }
+  },
+  "after": [
+    {
+      "heroHeight": 500,
+      "horizontalOverflow": false,
+      "nextHeadingBottom": 591.6875,
+      "nextHeadingTop": 556,
+      "nextSectionVisible": 344,
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "heroHeight": 580,
+      "horizontalOverflow": false,
+      "nextHeadingBottom": 697.8125,
+      "nextHeadingTop": 636,
+      "nextSectionVisible": 140,
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "heroHeight": 692,
+      "horizontalOverflow": false,
+      "nextHeadingBottom": 815.1875,
+      "nextHeadingTop": 748,
+      "nextSectionVisible": 208,
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    {
+      "heroHeight": 500,
+      "horizontalOverflow": false,
+      "nextHeadingBottom": 593.796875,
+      "nextHeadingTop": 556,
+      "nextSectionVisible": 400,
+      "scrollY": 0,
+      "viewport": [
+        734,
+        900
+      ]
+    },
+    {
+      "heroHeight": 650,
+      "horizontalOverflow": false,
+      "nextHeadingBottom": 755.453125,
+      "nextHeadingTop": 706,
+      "nextSectionVisible": 118,
+      "scrollY": 0,
+      "viewport": [
+        1024,
+        768
+      ]
+    },
+    {
+      "heroHeight": 570,
+      "horizontalOverflow": false,
+      "nextHeadingBottom": 669.46875,
+      "nextHeadingTop": 626,
+      "nextSectionVisible": 130,
+      "scrollY": 0,
+      "viewport": [
+        900,
+        700
+      ]
+    }
+  ],
+  "nextSectionTopPadding": {
+    "before": 96,
+    "after": 56
+  },
+  "scope": "Local only; hero height and the space above the next heading",
+  "validation": {
+    "fullNextHeadingVisible": true,
+    "noHorizontalOverflow": true,
+    "diffCheck": "passed"
+  }
+}

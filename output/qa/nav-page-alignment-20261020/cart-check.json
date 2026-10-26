@@ -1,0 +1,32 @@
+{
+  "page": "/burlington.html",
+  "before": {
+    "font": "600 15px / 15px -apple-system, \"system-ui\", \"SF Pro Text\", Inter, \"Helvetica Neue\", sans-serif",
+    "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", Inter, \"Helvetica Neue\", sans-serif",
+    "fontWeight": "600",
+    "height": 44,
+    "letterSpacing": "-0.2px",
+    "lineHeight": "15px",
+    "margin": "0px",
+    "padding": "0px",
+    "transform": "none",
+    "width": 44,
+    "x": 1035.703125,
+    "y": 26
+  },
+  "closed": {
+    "font": "600 15px / 15px -apple-system, \"system-ui\", \"SF Pro Text\", Inter, \"Helvetica Neue\", sans-serif",
+    "fontFamily": "-apple-system, \"system-ui\", \"SF Pro Text\", Inter, \"Helvetica Neue\", sans-serif",
+    "fontWeight": "600",
+    "height": 44,
+    "letterSpacing": "-0.2px",
+    "lineHeight": "15px",
+    "margin": "0px",
+    "padding": "0px",
+    "transform": "none",
+    "width": 44,
+    "x": 1035.703125,
+    "y": 26
+  },
+  "pass": true
+}

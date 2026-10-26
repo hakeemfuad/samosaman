@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Selected account navbar</title><link rel="icon" href="data:,"><link rel="stylesheet" href="css/home.css"><link rel="stylesheet" href="css/navbar.css?v=20261020-responsive-account"><style>
+.hidden { display:none!important; } #cart-sidebar, #cart-overlay { display:none; }
+.home-page .home-team { max-width:1280px; margin:0 auto; padding:0 64px 40px; border:0; font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif; }
+.home-page .home-section-heading { display:none; } .home-page .home-team-grid { margin-top:-24px; }
+#auth-modal:not(.hidden) { position:fixed; inset:0; z-index:100; overflow:auto; background:#fff; padding:24px; }
+#preview-feedback { position:fixed; bottom:12px; left:50%; transform:translateX(-50%); margin:0; padding:10px 18px; background:#22211f; color:white; border-radius:20px; font-size:12px; z-index:110; }
+@media(max-width:640px) { .home-page .home-team{padding:0 24px 40px;} .home-page .home-team-grid{margin-top:-48px;} }
+</style></head><body class="home-page"><div id="navbar-placeholder"></div><main><section class="home-section home-team" aria-labelledby="team-heading">
+            <div class="home-section-heading">
+                <h2 id="team-heading">Meet the crew.</h2>
+                <p class="home-team-intro">Good food starts with good people. These are ours.</p>
+            </div>
+            <ul class="home-team-grid">
+                <li>
+                    <figure>
+                        <img src="assets/headshots/karim_headshot.webp"
+                            width="800" height="1200" alt="Portrait of Karim" loading="lazy" decoding="async">
+                        <figcaption>
+                            Karim
+                            <span class="home-team-role">President</span>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="assets/headshots/hakeem_headshot.webp"
+                            width="800" height="1200" alt="Portrait of Hakeem" loading="lazy" decoding="async">
+                        <figcaption>
+                            Hakeem
+                            <span class="home-team-role">Growth and Strategy Development</span>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="assets/headshots/Will_headshot.webp"
+                            width="800" height="1200" alt="Portrait of Will" loading="lazy" decoding="async">
+                        <figcaption>
+                            Will
+                            <span class="home-team-role">Market Operations Lead</span>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="assets/headshots/hope_headshot.webp"
+                            width="800" height="1200" alt="Portrait of Hope" loading="lazy" decoding="async">
+                        <figcaption>
+                            Hope
+                            <span class="home-team-role">Brand &amp; Marketing Development</span>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="assets/headshots/Rishi_headshot.webp"
+                            width="800" height="1200" alt="Portrait of Rishi" loading="lazy" decoding="async">
+                        <figcaption>
+                            Rishi
+                            <span class="home-team-role">Market Operations</span>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="assets/headshots/jordain_headshot.webp"
+                            width="800" height="1200" alt="Portrait of Jordain" loading="lazy" decoding="async">
+                        <figcaption>
+                            Jordain
+                            <span class="home-team-role">Market Operations</span>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </section></main><p id="preview-feedback" hidden role="status"></p>
+<script>
+// Local-only authentication fixture. The production navbar and auth files render the control.
+const callbacks = [];
+const auth = { currentUser: {displayName:'Hakeem'}, onAuthStateChanged(callback) { callbacks.push(callback); callback(this.currentUser); } };
+const firebase = { auth: () => auth };
+window.addEventListener('message', event => {
+ if(event.origin !== location.origin || event.source !== parent || event.data?.type !== 'selected-preview') return;
+ auth.currentUser = event.data.signedIn ? {displayName:String(event.data.name || '')} : null;
+ callbacks.forEach(callback => callback(auth.currentUser));
+ document.querySelector('#glass-nav').classList.toggle('is-compact', Boolean(event.data.compact));
+ document.querySelector('#auth-modal')?.classList.add('hidden');
+ document.querySelector('#preview-feedback').hidden = true;
+});
+</script><script src="js/navbar.js?v=20261020-responsive-account"></script><script src="js/auth.js?v=20261020-responsive-account"></script>
+<script>
+document.querySelector('#glass-nav').classList.add('is-compact');
+// Keep this sample account inside the local preview. Production handlers remain in the loaded files.
+document.querySelector('#nav-user-btn').addEventListener('click', event => {
+ if(!auth.currentUser) return;
+ event.stopImmediatePropagation(); event.preventDefault();
+ const feedback = document.querySelector('#preview-feedback'); feedback.textContent='Preview: open My account'; feedback.hidden=false;
+}, true);
+</script></body></html>

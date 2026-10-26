@@ -1,0 +1,68 @@
+[
+  {
+    "mode": "classic",
+    "path": "burlington.html",
+    "width": 375,
+    "gutter": 8,
+    "cycles": 3,
+    "unchangedLayout": true,
+    "existingPaddingRestored": true,
+    "scrollLock": true,
+    "scrollResumes": true
+  },
+  {
+    "mode": "classic",
+    "path": "burlington.html",
+    "width": 900,
+    "gutter": 8,
+    "cycles": 3,
+    "unchangedLayout": true,
+    "existingPaddingRestored": true,
+    "scrollLock": true,
+    "scrollResumes": true
+  },
+  {
+    "mode": "classic",
+    "path": "index.html",
+    "width": 375,
+    "gutter": 8,
+    "cycles": 3,
+    "unchangedLayout": true,
+    "existingPaddingRestored": true,
+    "scrollLock": true,
+    "scrollResumes": true
+  },
+  {
+    "mode": "overlay",
+    "path": "burlington.html",
+    "width": 375,
+    "gutter": 0,
+    "cycles": 3,
+    "unchangedLayout": true,
+    "existingPaddingRestored": true,
+    "scrollLock": true,
+    "scrollResumes": true
+  },
+  {
+    "mode": "overlay",
+    "path": "burlington.html",
+    "width": 900,
+    "gutter": 0,
+    "cycles": 3,
+    "unchangedLayout": true,
+    "existingPaddingRestored": true,
+    "scrollLock": true,
+    "scrollResumes": true
+  },
+  {
+    "mode": "overlay",
+    "path": "index.html",
+    "width": 375,
+    "gutter": 0,
+    "cycles": 3,
+    "unchangedLayout": true,
+    "existingPaddingRestored": true,
+    "scrollLock": true,
+    "scrollResumes": true
+  }
+]

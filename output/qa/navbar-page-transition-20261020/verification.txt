@@ -1,0 +1,18 @@
+Local only. Not committed, pushed, or deployed.
+
+Cause: the next document always created an expanded navbar, so the existing CSS resize transition had no compact starting frame.
+Change: consume the outgoing compact state once in the same tab, paint it, then use the existing 460 ms CSS transition. Reduced motion skips the animation. Reload and Back do not replay this handoff. All ten navbar script references use the new asset version.
+
+Flutter reference checked: samosaman_app/lib/main.dart uses a standard AppBar, without a matching cross-page size transition.
+
+Validation:
+- before-chromium.json: original symptom reproduced at 390 and 1440 px (no transition).
+- complete-chromium.json: 12 checks pass, including 390/820/1440 px, reverse navigation to home, menu page, already-expanded state, reduced motion, blocked session storage, Back scroll direction, and reload.
+- Back result compared against the original navbar script: prior scroll offset is retained and the navbar starts expanded on the non-cached path in both versions.
+- node --check Website/public/js/navbar.js: pass.
+- git diff --check: pass.
+- Existing avatar-load verification: pass.
+
+Limitation: WebKit could not reach the local page (commit/DOMContentLoaded timed out before script execution). Safari and physical iPhone behavior are not verified.
+
+Repeat: node output/qa/navbar-page-transition-20261020/verify.cjs complete chromium

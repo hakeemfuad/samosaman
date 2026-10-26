@@ -1,0 +1,65 @@
+{
+  "commit": "ebeabcf667c443d723f4a4a272d2848363910417",
+  "checks": [
+    {
+      "label": "live-chutney-copy",
+      "button": "Back to full view",
+      "caption": "Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.",
+      "closeup": "salsa",
+      "detailOpen": "true",
+      "hotspotsInert": true,
+      "overflow": false,
+      "script": "js/samosa-diagram.js?v=20261014-chutney-copy",
+      "spread": "0",
+      "url": "https://samosamanvt.com/#samosas-and-salsa"
+    },
+    {
+      "label": "caption-click-restores-overview",
+      "button": "See inside",
+      "caption": "Select + for a closer look.",
+      "closeup": "",
+      "detailOpen": "false",
+      "hotspotsInert": false,
+      "overflow": false,
+      "script": "js/samosa-diagram.js?v=20261014-chutney-copy",
+      "spread": "0",
+      "url": "https://samosamanvt.com/#samosas-and-salsa"
+    },
+    {
+      "label": "see-inside-stays-open",
+      "button": "Back to full view",
+      "caption": "Our Punjabi filling: spiced potatoes, green peas, and herbs.",
+      "closeup": "",
+      "detailOpen": "true",
+      "hotspotsInert": true,
+      "overflow": false,
+      "script": "js/samosa-diagram.js?v=20261014-chutney-copy",
+      "spread": "1",
+      "url": "https://samosamanvt.com/#samosas-and-salsa"
+    },
+    {
+      "label": "page-click-restores-overview",
+      "button": "See inside",
+      "caption": "Select + for a closer look.",
+      "closeup": "",
+      "detailOpen": "false",
+      "hotspotsInert": false,
+      "overflow": false,
+      "script": "js/samosa-diagram.js?v=20261014-chutney-copy",
+      "spread": "0",
+      "url": "https://samosamanvt.com/#samosas-and-salsa"
+    },
+    {
+      "label": "photo-click-restores-overview",
+      "button": "See inside",
+      "caption": "Select + for a closer look.",
+      "closeup": "",
+      "detailOpen": "false",
+      "hotspotsInert": false,
+      "overflow": false,
+      "script": "js/samosa-diagram.js?v=20261014-chutney-copy",
+      "spread": "0",
+      "url": "https://samosamanvt.com/#samosas-and-salsa"
+    }
+  ]
+}

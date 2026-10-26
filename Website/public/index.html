@@ -12,7 +12,7 @@
       gtag('config', 'G-PB6QFY8Z8D');
     </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
     <!-- Primary Meta Tags -->
     <title>SamosaMan - Authentic exotic Samosas | Burlington VT</title>
@@ -39,13 +39,17 @@
     <meta property="twitter:image" content="https://samosamanvt.com/assets/home/samosa_hero.webp?v=e7ad12fd">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/m_logo.svg">
-    <link rel="apple-touch-icon" href="assets/m_logo.svg">
+    <link rel="icon" href="/assets/icons/favicon-8c5fc881c5e8.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16-f350dc6fd625.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32-883d9d601287.png">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/icons/favicon-6e320b5d1a02.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-a9b0ba2e5de8.png">
+    <link rel="manifest" href="/site.webmanifest?v=20261018">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="assets/home/holding_samosa.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/home/samosaman-doordash.png" fetchpriority="high">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -57,9 +61,10 @@
             }
         };
     </script>
-    <link rel="stylesheet" href="css/home.css?v=20261013-fresh-actions">
-    <link rel="stylesheet" href="css/samosa-diagram.css?v=20261014-salsa-closeup">
-    <script src="js/samosa-diagram.js?v=20261014-chutney-copy" defer></script>
+    <link rel="stylesheet" href="css/home.css?v=20261025-fresh-photo-up48">
+    <link rel="stylesheet" href="css/samosa-diagram.css?v=20261021-salsa-ingredients-subtext">
+    <link rel="stylesheet" href="css/home-spotlight.css?v=20261025-dynamic-details">
+    <script src="js/samosa-diagram.js?v=20261025-dynamic-details" defer></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
     <script src="https://unpkg.com/lucide@latest" defer></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
@@ -67,7 +72,10 @@
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
     <script src="js/firebase-init.js"></script>
     <script src="js/errors.js"></script>
-    <script src="js/cart.js"></script>
+    <script src="js/cart.js?v=20261021-count-change-only"></script>
+    <link rel="stylesheet" href="css/navbar.css?v=20261021-account-loading">
+    <link rel="stylesheet" href="css/home-delivery.css?v=20261025-doordash-launch">
+    <link rel="stylesheet" href="css/home-mobile.css?v=20261025-mobile-diagram">
 </head>
 
 <body class="home-page">
@@ -75,32 +83,62 @@
     <div id="navbar-placeholder"></div>
 
     <main id="main" class="home-frame" tabindex="-1">
-        <section class="home-fresh" aria-labelledby="fresh-heading">
-            <img class="home-fresh-photo" src="assets/home/holding_samosa.webp"
-                width="1536" height="1024" alt="A freshly cooked golden samosa held in serving tongs"
-                loading="eager" fetchpriority="high" decoding="async">
-            <div class="home-fresh-copy">
-                <h1 id="fresh-heading">Served Fresh.</h1>
-                <p class="home-hero-copy">There's a science behind this crunch.</p>
-                <div class="home-actions">
-                    <a class="home-button" href="burlington.html">Order Now</a>
-                    <a class="home-button home-button-secondary" href="catering.html">Catering</a>
+        <section class="delivery-hero" aria-labelledby="delivery-heading">
+            <div class="delivery-hero__inner">
+                <div class="delivery-hero__copy">
+                    <h1 id="delivery-heading">Now on DoorDash.</h1>
+                    <p class="delivery-hero__description">Your favorite samosas. Right to your door.</p>
+                    <div class="home-actions">
+                        <button class="btn btn-order" type="button" data-open-order>Order Now</button>
+                        <a class="btn btn-glass" href="burlington.html">View menu <span aria-hidden="true">→</span></a>
+                    </div>
+                </div>
+                <div class="delivery-hero__art">
+                    <img src="assets/home/samosaman-doordash.png" width="1961" height="1026"
+                        alt="The SamosaMan logo holds a red DoorDash bag with navy straps and orange samosas spilling to the left"
+                        fetchpriority="high" loading="eager" decoding="async">
                 </div>
             </div>
         </section>
 
-        <section class="home-hero" id="samosas-and-salsa" aria-labelledby="hero-heading">
-            <h2 id="hero-heading">Samosas and Salsa</h2>
-            <p class="home-hero-copy">The combo of dreams.</p>
-            <div class="home-actions">
-                <a class="home-button" href="burlington.html">Order Now</a>
-                <a class="home-button home-button-secondary" href="catering.html">Catering</a>
+        <section class="home-fresh" aria-labelledby="fresh-heading">
+            <img class="home-fresh-photo" src="assets/home/holding_samosa.webp"
+                width="1536" height="1024" alt="A freshly cooked golden samosa held in serving tongs"
+                loading="eager" fetchpriority="high" decoding="async">
+            <div class="home-fresh-fade" aria-hidden="true"></div>
+            <div class="home-fresh-shade" aria-hidden="true"></div>
+            <div class="home-fresh-copy">
+                <h2 id="fresh-heading" class="home-rise">Served Fresh.</h2>
+                <p class="home-hero-copy home-rise home-rise-2">There's a science behind our crunch.</p>
+                <div class="home-actions home-rise home-rise-3">
+                    <button class="btn btn-order" type="button" data-open-order>Order Now</button>
+                    <a class="btn btn-glass" href="catering.html">Catering</a>
+                </div>
             </div>
+        </section>
+
+        <section class="home-spotlight" id="samosas-and-salsa" aria-labelledby="hero-heading">
+            <header class="home-spotlight__heading">
+                <h2 id="hero-heading">What is a samosa?</h2>
+                <p class="home-spotlight__hint" data-diagram-hint aria-live="polite" hidden>Select + for a closer look.</p>
+            </header>
             <img class="home-hero-art" data-diagram-fallback src="assets/home/samosa_hero.webp?v=e7ad12fd"
-                width="1254" height="1254" alt="A golden, crispy samosa with a bowl of Garlic Tomato Salsa"
+                width="1254" height="1254" alt="A golden, crispy Steak and Cheese samosa with a bowl of Tomato Garlic Chutney"
                 loading="lazy" decoding="async">
             <div class="samosa-diagram" data-samosa-diagram hidden>
-                <div class="samosa-diagram__stage" id="samosa-layers" role="group" aria-label="Explore the parts of a samosa">
+                <div class="home-spotlight__copy">
+                    <div class="home-spotlight__actions">
+                        <button class="btn btn-order" type="button" data-open-order>Order Now</button>
+                        <a class="home-spotlight__menu" href="burlington.html">View menu <span aria-hidden="true">→</span></a>
+                    </div>
+                    <div class="samosa-diagram__caption" id="samosa-part-details" data-diagram-caption aria-live="polite" aria-atomic="true">
+                        <h3 hidden></h3>
+                        <p>Steak &amp; Cheese Samosa: Minced beef, Cabot<sup>™</sup> sharp white cheddar, onion, and spices.</p>
+                        <p class="samosa-diagram__ingredients" data-diagram-ingredients hidden></p>
+                    </div>
+                </div>
+                <div class="home-spotlight__visual">
+                    <div class="samosa-diagram__stage" id="samosa-layers" role="group" aria-label="Explore the parts of a samosa">
                     <svg class="samosa-diagram__art" viewBox="100 0 800 650" aria-hidden="true" focusable="false">
                     <defs>
                     <path id="diagram-samosa-outline" d="M156 42 C143 45 137 61 132 88 C122 102 115 117 111 130 C110 146 123 165 136 181 C140 210 149 249 152 279 C150 344 143 401 144 456 C142 486 128 520 123 558 C115 582 111 617 115 652 C115 680 117 703 114 730 C99 740 93 763 91 789 C74 811 62 838 52 861 C44 878 49 893 65 900 C100 913 145 907 177 899 C227 887 272 868 317 846 C390 814 448 783 509 748 C584 709 646 673 705 641 C727 630 739 632 758 644 C789 653 801 670 836 680 C868 689 902 684 916 668 C932 649 925 622 909 608 C881 589 851 577 823 561 C786 538 751 514 719 486 C682 461 658 432 624 413 C595 391 571 367 537 350 C503 332 476 309 447 292 C421 275 395 254 369 240 C347 221 333 217 310 211 C288 193 270 164 251 143 C232 118 217 90 201 67 C188 46 172 41 156 42 Z"></path>
@@ -130,7 +168,7 @@
                     </svg>
                     </g>
                     <g class="samosa-diagram__piece samosa-diagram__filling" data-art-part="filling">
-                    <image href="assets/home/samosa-filling-v1.webp" x="205" y="90" width="425" height="425"></image>
+                    <image href="assets/home/steak-cheese-filling-v3.webp" x="205" y="90" width="425" height="425"></image>
                     </g>
                     <g class="samosa-diagram__piece samosa-diagram__shell" data-art-part="crust">
                     <svg x="170" y="45" width="530" height="530" viewBox="0 0 960 960">
@@ -154,44 +192,42 @@
                         <span aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" focusable="false"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
                     </button>
                     <button class="samosa-diagram__point" type="button" data-diagram-part="filling"
-                        aria-label="Explore the Punjabi filling" aria-pressed="false" aria-controls="samosa-part-details"
+                        aria-label="Explore the Steak and Cheese filling" aria-pressed="false" aria-controls="samosa-part-details"
                         style="--point-x: 47.5%; --point-y: 55%; --point-dx: 17.5%; --point-dy: -9%">
                         <span aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" focusable="false"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
                     </button>
                     <button class="samosa-diagram__point" type="button" data-diagram-part="salsa"
-                        aria-label="Explore the Garlic Tomato Salsa" aria-pressed="false" aria-controls="samosa-part-details"
+                        aria-label="Explore the Tomato Garlic Chutney" aria-pressed="false" aria-controls="samosa-part-details"
                         style="--point-x: 75%; --point-y: 72%; --point-dx: 10%; --point-dy: 7%">
                         <span aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" focusable="false"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
                     </button>
                     </div>
                 </div>
-                <div class="samosa-diagram__caption is-idle" id="samosa-part-details" data-diagram-caption aria-live="polite" aria-atomic="true">
-                    <h3 hidden></h3>
-                    <p>Select + for a closer look.</p>
+                <div class="samosa-diagram__toggle" role="group" aria-label="Samosa view" data-diagram-controls data-state="whole">
+                    <span class="samosa-diagram__lens" aria-hidden="true"></span>
+                    <button type="button" data-diagram-whole aria-pressed="true" aria-controls="samosa-layers">Whole</button>
+                    <button type="button" data-diagram-toggle aria-pressed="false" aria-controls="samosa-layers">
+                        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+                            <path d="m3 7 7-4 7 4-7 4-7-4Zm0 4 7 4 7-4M3 15l7 4 7-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span data-toggle-label>See inside</span>
+                    </button>
                 </div>
-                <button class="samosa-diagram__toggle" type="button" data-diagram-toggle aria-controls="samosa-layers">
-                    <span data-toggle-label>See inside</span>
-                    <svg class="samosa-diagram__toggle-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
-                        <path d="m3 7 7-4 7 4-7 4-7-4Zm0 4 7 4 7-4M3 15l7 4 7-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <svg class="samosa-diagram__back-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
-                        <path d="m9 5-5 5 5 5M4 10h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
+
+                </div>
             </div>
         </section>
 
-        <section class="home-section home-catering" aria-labelledby="catering-heading">
-            <div class="home-catering-copy">
-                <h2 id="catering-heading">Samosas are best shared.</h2>
-                <p>Bring the crunch. Feed the crowd.</p>
-                <a class="home-button" href="catering.html">Plan your catering</a>
-            </div>
-            <figure class="home-catering-media">
-                <img src="assets/home/tray_of_samosas.webp"
-                    width="1536" height="1024" alt="A tray filled with golden, crispy samosas" loading="lazy" decoding="async">
-            </figure>
-        </section>
+  <section class="home-catering" id="catering" aria-labelledby="catering-heading">
+    <img src="assets/home/tray_of_samosas.webp" width="1536" height="1024" alt="A tray filled with golden, crispy samosas" loading="lazy">
+    <div class="shelf home-cater-shelf">
+      <div class="home-catering-copy">
+        <h2 id="catering-heading">Samosas are best shared.</h2>
+        <p>Bring the crunch. Feed the crowd.</p>
+      </div>
+      <a class="btn btn-order home-catering-cta" href="catering.html">Plan your catering</a>
+    </div>
+  </section>
 
         <section class="home-section home-team" aria-labelledby="team-heading">
             <div class="home-section-heading">
@@ -203,47 +239,187 @@
                     <figure>
                         <img src="assets/headshots/karim_headshot.webp"
                             width="800" height="1200" alt="Portrait of Karim" loading="lazy" decoding="async">
-                        <figcaption>Karim</figcaption>
+                        <figcaption>
+                            Karim
+                            <span class="home-team-role">President</span>
+                        </figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
                         <img src="assets/headshots/hakeem_headshot.webp"
                             width="800" height="1200" alt="Portrait of Hakeem" loading="lazy" decoding="async">
-                        <figcaption>Hakeem</figcaption>
+                        <figcaption>
+                            Hakeem
+                            <span class="home-team-role">Growth and Strategy Development</span>
+                        </figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
                         <img src="assets/headshots/Will_headshot.webp"
                             width="800" height="1200" alt="Portrait of Will" loading="lazy" decoding="async">
-                        <figcaption>Will</figcaption>
+                        <figcaption>
+                            Will
+                            <span class="home-team-role">Market Operations Lead</span>
+                        </figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
                         <img src="assets/headshots/hope_headshot.webp"
                             width="800" height="1200" alt="Portrait of Hope" loading="lazy" decoding="async">
-                        <figcaption>Hope</figcaption>
+                        <figcaption>
+                            Hope
+                            <span class="home-team-role">Brand &amp; Marketing Development</span>
+                        </figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
                         <img src="assets/headshots/Rishi_headshot.webp"
                             width="800" height="1200" alt="Portrait of Rishi" loading="lazy" decoding="async">
-                        <figcaption>Rishi</figcaption>
+                        <figcaption>
+                            Rishi
+                            <span class="home-team-role">Market Operations</span>
+                        </figcaption>
                     </figure>
                 </li>
                 <li>
                     <figure>
                         <img src="assets/headshots/jordain_headshot.webp"
                             width="800" height="1200" alt="Portrait of Jordain" loading="lazy" decoding="async">
-                        <figcaption>Jordain</figcaption>
+                        <figcaption>
+                            Jordain
+                            <span class="home-team-role">Market Operations</span>
+                        </figcaption>
                     </figure>
                 </li>
             </ul>
         </section>
+
+        <section class="home-section home-faq" id="faq" aria-labelledby="faq-heading">
+            <div class="home-faq-heading">
+                <p class="home-faq-label" id="faq-heading">Frequently asked questions</p>
+            </div>
+            <div class="home-faq-list">
+                <div class="home-faq-item">
+                    <h3>
+                        <button class="home-faq-toggle" type="button" id="faq-samosa-question"
+                            aria-expanded="false" aria-controls="faq-samosa-answer" data-faq-toggle>
+                            <span>What is a samosa?</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                                <path d="M5 12h14"/><path class="home-faq-plus" d="M12 5v14"/>
+                            </svg>
+                        </button>
+                    </h3>
+                    <div class="home-faq-answer" id="faq-samosa-answer" role="region"
+                        aria-labelledby="faq-samosa-question" aria-hidden="true" inert>
+                        <div class="home-faq-answer-inner">
+                            <p>A samosa is a filled pastry. Explore the fillings in our menu to find your favorite.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-faq-item">
+                    <h3>
+                        <button class="home-faq-toggle" type="button" id="faq-order-question"
+                            aria-expanded="false" aria-controls="faq-order-answer" data-faq-toggle>
+                            <span>Can I order pickup or delivery?</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                                <path d="M5 12h14"/><path class="home-faq-plus" d="M12 5v14"/>
+                            </svg>
+                        </button>
+                    </h3>
+                    <div class="home-faq-answer" id="faq-order-answer" role="region"
+                        aria-labelledby="faq-order-question" aria-hidden="true" inert>
+                        <div class="home-faq-answer-inner">
+                            <p>Select “Order now,” then choose pickup or delivery to start your order.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-faq-item">
+                    <h3>
+                        <button class="home-faq-toggle" type="button" id="faq-vegetarian-question"
+                            aria-expanded="false" aria-controls="faq-vegetarian-answer" data-faq-toggle>
+                            <span>Do you have vegetarian/vegan options?</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                                <path d="M5 12h14"/><path class="home-faq-plus" d="M12 5v14"/>
+                            </svg>
+                        </button>
+                    </h3>
+                    <div class="home-faq-answer" id="faq-vegetarian-answer" role="region"
+                        aria-labelledby="faq-vegetarian-question" aria-hidden="true" inert>
+                        <div class="home-faq-answer-inner">
+                            <p>Yes. All of our non-meat samosas are vegan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-faq-item">
+                    <h3>
+                        <button class="home-faq-toggle" type="button" id="faq-catering-question"
+                            aria-expanded="false" aria-controls="faq-catering-answer" data-faq-toggle>
+                            <span>Can you cater my event?</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                                <path d="M5 12h14"/><path class="home-faq-plus" d="M12 5v14"/>
+                            </svg>
+                        </button>
+                    </h3>
+                    <div class="home-faq-answer" id="faq-catering-answer" role="region"
+                        aria-labelledby="faq-catering-question" aria-hidden="true" inert>
+                        <div class="home-faq-answer-inner">
+                            <p>Use the catering form to send us your event details and request a quote.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-faq-item">
+                    <h3>
+                        <button class="home-faq-toggle" type="button" id="faq-rewards-question"
+                            aria-expanded="false" aria-controls="faq-rewards-answer" data-faq-toggle>
+                            <span>How do rewards work?</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                                <path d="M5 12h14"/><path class="home-faq-plus" d="M12 5v14"/>
+                            </svg>
+                        </button>
+                    </h3>
+                    <div class="home-faq-answer" id="faq-rewards-answer" role="region"
+                        aria-labelledby="faq-rewards-question" aria-hidden="true" inert>
+                        <div class="home-faq-answer-inner">
+                            <p>Join SamosaMan rewards to earn points on qualifying food purchases. Use your points for available rewards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <!-- Homepage order entry; separate from cart.js checkout-time picker. -->
+<div id="order-layer" hidden>
+  <div class="home-order-scrim" data-close-order aria-hidden="true"></div>
+  <div class="home-order-sheet" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="order-sheet-title">
+    <div class="home-sheet-head">
+      <h2 id="order-sheet-title">How are you getting it?</h2>
+      <button class="btn btn-glass circle" type="button" data-close-order aria-label="Close order options"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="shelf">
+      <button class="well" type="button" data-mode="pickup" aria-pressed="true">
+        <span class="glyph" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 8h13l-1 12.5h-11L5.5 8Z"/><path d="M9 8V6.8a3 3 0 0 1 6 0V8"/></svg></span>
+        <span class="well-text"><span class="well-title">Pickup</span></span>
+        <svg class="well-check" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+      </button>
+      <button class="well" type="button" data-mode="delivery" aria-pressed="false">
+        <span class="glyph" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6.5h11v10H3zM14 10h4l3 3.5v3h-7"/><circle cx="7" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg></span>
+        <span class="well-text"><span class="well-title">Delivery</span></span>
+        <svg class="well-check" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+      </button>
+    </div>
+    <button class="btn btn-ink btn-wide" type="button" id="start-order">Start order</button>
+  </div>
+</div>
 
     <div id="auth-modal" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
         <div id="auth-backdrop"
@@ -446,12 +622,12 @@
         }
     </style>
 
-    <script src="js/navbar.js?v=20261005-cream-header"></script>
-    <script src="js/auth.js?v=20261005-icon-strokes-1-2"></script>
-    <script src="js/home.js"></script>
+    <script src="js/navbar.js?v=20261024-remove-our-story"></script>
+    <script src="js/auth.js?v=20261021-account-loading"></script>
+    <script src="js/home.js?v=20261021-home-faq"></script>
 
     <div id="footer-placeholder"></div>
-    <script src="js/footer.js"></script>
+    <script src="js/footer.js?v=20261024-remove-our-story"></script>
 
     <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">

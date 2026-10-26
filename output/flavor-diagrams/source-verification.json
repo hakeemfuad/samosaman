@@ -1,0 +1,19 @@
+{
+  "existingSourcesUnchanged": false,
+  "files": {
+    "Website/public/index.html": false,
+    "Website/public/css/home.css": true,
+    "Website/public/css/samosa-diagram.css": true,
+    "Website/public/js/samosa-diagram.js": false,
+    "Website/public/burlington.html": false,
+    "Website/archive/hanover.html": true,
+    "Samosaman-App/lib/main.dart": true
+  },
+  "note": "The website index, diagram script, and Burlington menu changed during this task through separate work. The observed changes add Cabot trademark superscripts and update the script URL. This task wrote only output/flavor-diagrams. The previews use the saved starting snapshot.",
+  "changedSinceSnapshot": [
+    "Website/public/index.html",
+    "Website/public/js/samosa-diagram.js",
+    "Website/public/burlington.html"
+  ],
+  "taskWriteScope": "output/flavor-diagrams/"
+}

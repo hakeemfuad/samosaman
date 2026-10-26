@@ -1,0 +1,780 @@
+{
+  "checkedOn": "2026-10-25",
+  "source": "https://www.apple.com/",
+  "stylesheet": "https://www.apple.com/v/homepage/a/styles/homepage.built.css",
+  "apple": [
+    {
+      "gap": "12px",
+      "nav": 44,
+      "promo": [
+        580,
+        580
+      ],
+      "tiles": [
+        {
+          "height": 692,
+          "padding": "56px 0px 63px",
+          "top": 44
+        },
+        {
+          "height": 692,
+          "padding": "56px 0px 63px",
+          "top": 748
+        },
+        {
+          "height": 692,
+          "padding": "56px 0px 63px",
+          "top": 1452
+        }
+      ],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    {
+      "gap": "12px",
+      "nav": 44,
+      "promo": [
+        580,
+        580
+      ],
+      "tiles": [
+        {
+          "height": 580,
+          "padding": "48px 0px 56px",
+          "top": 44
+        },
+        {
+          "height": 580,
+          "padding": "48px 0px 56px",
+          "top": 636
+        },
+        {
+          "height": 580,
+          "padding": "48px 0px 56px",
+          "top": 1228
+        }
+      ],
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "gap": "12px",
+      "nav": 48,
+      "promo": [
+        490,
+        490
+      ],
+      "tiles": [
+        {
+          "height": 650,
+          "padding": "61px 0px 69px",
+          "top": 48
+        },
+        {
+          "height": 650,
+          "padding": "61px 0px 69px",
+          "top": 710
+        },
+        {
+          "height": 650,
+          "padding": "61px 0px 69px",
+          "top": 1372
+        }
+      ],
+      "viewport": [
+        820,
+        1180
+      ]
+    },
+    {
+      "gap": "12px",
+      "nav": 48,
+      "promo": [
+        490,
+        490
+      ],
+      "tiles": [
+        {
+          "height": 570,
+          "padding": "54px 0px 61px",
+          "top": 48
+        },
+        {
+          "height": 570,
+          "padding": "54px 0px 61px",
+          "top": 630
+        },
+        {
+          "height": 570,
+          "padding": "54px 0px 61px",
+          "top": 1212
+        }
+      ],
+      "viewport": [
+        820,
+        720
+      ]
+    },
+    {
+      "gap": "12px",
+      "nav": 48,
+      "promo": [
+        500,
+        500
+      ],
+      "tiles": [
+        {
+          "height": 500,
+          "padding": "39px 0px 43px",
+          "top": 48
+        },
+        {
+          "height": 500,
+          "padding": "39px 0px 43px",
+          "top": 560
+        },
+        {
+          "height": 500,
+          "padding": "39px 0px 43px",
+          "top": 1072
+        }
+      ],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "gap": "12px",
+      "nav": 48,
+      "promo": [
+        500,
+        500
+      ],
+      "tiles": [
+        {
+          "height": 500,
+          "padding": "39px 0px 43px",
+          "top": 48
+        },
+        {
+          "height": 500,
+          "padding": "39px 0px 43px",
+          "top": 560
+        },
+        {
+          "height": 500,
+          "padding": "39px 0px 43px",
+          "top": 1072
+        }
+      ],
+      "viewport": [
+        320,
+        568
+      ]
+    }
+  ],
+  "local": [
+    {
+      "heroButtons": {
+        "bottom": 292.796875,
+        "height": 50,
+        "top": 242.796875
+      },
+      "heroImage": {
+        "bottom": 673,
+        "height": 368.203125,
+        "top": 304.796875
+      },
+      "overflow": false,
+      "sections": [
+        {
+          "bottom": 736,
+          "height": 692,
+          "name": "Now on DoorDash.",
+          "top": 44
+        },
+        {
+          "bottom": 1440,
+          "height": 692,
+          "name": "Served Fresh.",
+          "top": 748
+        },
+        {
+          "bottom": 2144,
+          "height": 692,
+          "name": "What is a samosa?",
+          "top": 1452
+        },
+        {
+          "bottom": 2848,
+          "height": 692,
+          "name": "Samosas are best shared.",
+          "top": 2156
+        },
+        {
+          "bottom": 3969.546875,
+          "height": 1109.546875,
+          "name": "Meet the crew.",
+          "top": 2860
+        },
+        {
+          "bottom": 4538.453125,
+          "height": 556.90625,
+          "name": "Got questions?",
+          "top": 3981.546875
+        }
+      ],
+      "spotlight": [
+        {
+          "bottom": 1595.15625,
+          "class": "home-spotlight__heading",
+          "height": 87.15625,
+          "top": 1508
+        },
+        {
+          "bottom": 1833.078125,
+          "class": "home-spotlight__actions",
+          "height": 48,
+          "top": 1785.078125
+        },
+        {
+          "bottom": 1913.078125,
+          "class": "samosa-diagram__caption",
+          "height": 62,
+          "top": 1851.078125
+        },
+        {
+          "bottom": 2016.984375,
+          "class": "samosa-diagram__stage",
+          "height": 399.828125,
+          "top": 1617.15625
+        },
+        {
+          "bottom": 2080.984375,
+          "class": "samosa-diagram__toggle",
+          "height": 52,
+          "top": 2028.984375
+        }
+      ],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    {
+      "heroButtons": {
+        "bottom": 277.21875,
+        "height": 50,
+        "top": 227.21875
+      },
+      "heroImage": {
+        "bottom": 568,
+        "height": 278.78125,
+        "top": 289.21875
+      },
+      "overflow": false,
+      "sections": [
+        {
+          "bottom": 624,
+          "height": 580,
+          "name": "Now on DoorDash.",
+          "top": 44
+        },
+        {
+          "bottom": 1216,
+          "height": 580,
+          "name": "Served Fresh.",
+          "top": 636
+        },
+        {
+          "bottom": 1808,
+          "height": 580,
+          "name": "What is a samosa?",
+          "top": 1228
+        },
+        {
+          "bottom": 2400,
+          "height": 580,
+          "name": "Samosas are best shared.",
+          "top": 1820
+        },
+        {
+          "bottom": 3516.546875,
+          "height": 1104.546875,
+          "name": "Meet the crew.",
+          "top": 2412
+        },
+        {
+          "bottom": 4085.453125,
+          "height": 556.90625,
+          "name": "Got questions?",
+          "top": 3528.546875
+        }
+      ],
+      "spotlight": [
+        {
+          "bottom": 1358.75,
+          "class": "home-spotlight__heading",
+          "height": 82.75,
+          "top": 1276
+        },
+        {
+          "bottom": 1550.375,
+          "class": "home-spotlight__actions",
+          "height": 48,
+          "top": 1502.375
+        },
+        {
+          "bottom": 1630.375,
+          "class": "samosa-diagram__caption",
+          "height": 62,
+          "top": 1568.375
+        },
+        {
+          "bottom": 1687.984375,
+          "class": "samosa-diagram__stage",
+          "height": 307.234375,
+          "top": 1380.75
+        },
+        {
+          "bottom": 1751.984375,
+          "class": "samosa-diagram__toggle",
+          "height": 52,
+          "top": 1699.984375
+        }
+      ],
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "heroButtons": {
+        "bottom": 274.75,
+        "height": 50,
+        "top": 224.75
+      },
+      "heroImage": {
+        "bottom": 629,
+        "height": 342.25,
+        "top": 286.75
+      },
+      "overflow": false,
+      "sections": [
+        {
+          "bottom": 698,
+          "height": 650,
+          "name": "Now on DoorDash.",
+          "top": 48
+        },
+        {
+          "bottom": 1360,
+          "height": 650,
+          "name": "Served Fresh.",
+          "top": 710
+        },
+        {
+          "bottom": 2022,
+          "height": 650,
+          "name": "What is a samosa?",
+          "top": 1372
+        },
+        {
+          "bottom": 2684,
+          "height": 650,
+          "name": "Samosas are best shared.",
+          "top": 2034
+        },
+        {
+          "bottom": 3674.453125,
+          "height": 978.453125,
+          "name": "Meet the crew.",
+          "top": 2696
+        },
+        {
+          "bottom": 4215.6875,
+          "height": 529.234375,
+          "name": "Got questions?",
+          "top": 3686.453125
+        }
+      ],
+      "spotlight": [
+        {
+          "bottom": 1499.359375,
+          "class": "home-spotlight__heading",
+          "height": 66.359375,
+          "top": 1433
+        },
+        {
+          "bottom": 1719.546875,
+          "class": "home-spotlight__actions",
+          "height": 48,
+          "top": 1671.546875
+        },
+        {
+          "bottom": 1802.796875,
+          "class": "samosa-diagram__caption",
+          "height": 65.25,
+          "top": 1737.546875
+        },
+        {
+          "bottom": 1888.984375,
+          "class": "samosa-diagram__stage",
+          "height": 367.625,
+          "top": 1521.359375
+        },
+        {
+          "bottom": 1952.984375,
+          "class": "samosa-diagram__toggle",
+          "height": 52,
+          "top": 1900.984375
+        }
+      ],
+      "viewport": [
+        820,
+        1180
+      ]
+    },
+    {
+      "heroButtons": {
+        "bottom": 267.75,
+        "height": 50,
+        "top": 217.75
+      },
+      "heroImage": {
+        "bottom": 557,
+        "height": 277.25,
+        "top": 279.75
+      },
+      "overflow": false,
+      "sections": [
+        {
+          "bottom": 618,
+          "height": 570,
+          "name": "Now on DoorDash.",
+          "top": 48
+        },
+        {
+          "bottom": 1200,
+          "height": 570,
+          "name": "Served Fresh.",
+          "top": 630
+        },
+        {
+          "bottom": 1782,
+          "height": 570,
+          "name": "What is a samosa?",
+          "top": 1212
+        },
+        {
+          "bottom": 2364,
+          "height": 570,
+          "name": "Samosas are best shared.",
+          "top": 1794
+        },
+        {
+          "bottom": 3354.453125,
+          "height": 978.453125,
+          "name": "Meet the crew.",
+          "top": 2376
+        },
+        {
+          "bottom": 3895.6875,
+          "height": 529.234375,
+          "name": "Got questions?",
+          "top": 3366.453125
+        }
+      ],
+      "spotlight": [
+        {
+          "bottom": 1332.359375,
+          "class": "home-spotlight__heading",
+          "height": 66.359375,
+          "top": 1266
+        },
+        {
+          "bottom": 1520.046875,
+          "class": "home-spotlight__actions",
+          "height": 48,
+          "top": 1472.046875
+        },
+        {
+          "bottom": 1603.296875,
+          "class": "samosa-diagram__caption",
+          "height": 65.25,
+          "top": 1538.046875
+        },
+        {
+          "bottom": 1656.984375,
+          "class": "samosa-diagram__stage",
+          "height": 302.625,
+          "top": 1354.359375
+        },
+        {
+          "bottom": 1720.984375,
+          "class": "samosa-diagram__toggle",
+          "height": 52,
+          "top": 1668.984375
+        }
+      ],
+      "viewport": [
+        820,
+        720
+      ]
+    },
+    {
+      "heroButtons": {
+        "bottom": 239.046875,
+        "height": 50,
+        "top": 189.046875
+      },
+      "heroImage": {
+        "bottom": 505,
+        "height": 253.953125,
+        "top": 251.046875
+      },
+      "overflow": false,
+      "sections": [
+        {
+          "bottom": 548,
+          "height": 500,
+          "name": "Now on DoorDash.",
+          "top": 48
+        },
+        {
+          "bottom": 1060,
+          "height": 500,
+          "name": "Served Fresh.",
+          "top": 560
+        },
+        {
+          "bottom": 1572,
+          "height": 500,
+          "name": "What is a samosa?",
+          "top": 1072
+        },
+        {
+          "bottom": 2084,
+          "height": 500,
+          "name": "Samosas are best shared.",
+          "top": 1584
+        },
+        {
+          "bottom": 3118.03125,
+          "height": 1022.03125,
+          "name": "Meet the crew.",
+          "top": 2096
+        },
+        {
+          "bottom": 3651.34375,
+          "height": 521.3125,
+          "name": "Got questions?",
+          "top": 3130.03125
+        }
+      ],
+      "spotlight": [
+        {
+          "bottom": 1177.359375,
+          "class": "home-spotlight__heading",
+          "height": 66.359375,
+          "top": 1111
+        },
+        {
+          "bottom": 1243.359375,
+          "class": "home-spotlight__actions",
+          "height": 48,
+          "top": 1195.359375
+        },
+        {
+          "bottom": 1529,
+          "class": "samosa-diagram__caption",
+          "height": 44.59375,
+          "top": 1484.40625
+        },
+        {
+          "bottom": 1402.390625,
+          "class": "samosa-diagram__stage",
+          "height": 147.03125,
+          "top": 1255.359375
+        },
+        {
+          "bottom": 1466.390625,
+          "class": "samosa-diagram__toggle",
+          "height": 52,
+          "top": 1414.390625
+        }
+      ],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "heroButtons": {
+        "bottom": 300.9375,
+        "height": 50,
+        "top": 250.9375
+      },
+      "heroImage": {
+        "bottom": 505,
+        "height": 192.0625,
+        "top": 312.9375
+      },
+      "overflow": false,
+      "sections": [
+        {
+          "bottom": 548,
+          "height": 500,
+          "name": "Now on DoorDash.",
+          "top": 48
+        },
+        {
+          "bottom": 1060,
+          "height": 500,
+          "name": "Served Fresh.",
+          "top": 560
+        },
+        {
+          "bottom": 1572,
+          "height": 500,
+          "name": "What is a samosa?",
+          "top": 1072
+        },
+        {
+          "bottom": 2084,
+          "height": 500,
+          "name": "Samosas are best shared.",
+          "top": 1584
+        },
+        {
+          "bottom": 3098.0625,
+          "height": 1002.0625,
+          "name": "Meet the crew.",
+          "top": 2096
+        },
+        {
+          "bottom": 3652.75,
+          "height": 542.6875,
+          "name": "Got questions?",
+          "top": 3110.0625
+        }
+      ],
+      "spotlight": [
+        {
+          "bottom": 1216.875,
+          "class": "home-spotlight__heading",
+          "height": 105.875,
+          "top": 1111
+        },
+        {
+          "bottom": 1282.875,
+          "class": "home-spotlight__actions",
+          "height": 48,
+          "top": 1234.875
+        },
+        {
+          "bottom": 1529,
+          "class": "samosa-diagram__caption",
+          "height": 64.890625,
+          "top": 1464.109375
+        },
+        {
+          "bottom": 1382.09375,
+          "class": "samosa-diagram__stage",
+          "height": 87.21875,
+          "top": 1294.875
+        },
+        {
+          "bottom": 1446.09375,
+          "class": "samosa-diagram__toggle",
+          "height": 52,
+          "top": 1394.09375
+        }
+      ],
+      "viewport": [
+        320,
+        568
+      ]
+    }
+  ],
+  "comparison": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "sectionHeight": 692,
+      "nextSectionTop": 748,
+      "peek": 152,
+      "matchesApple": true,
+      "controlsFit": true,
+      "overflow": false
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "sectionHeight": 580,
+      "nextSectionTop": 636,
+      "peek": 84,
+      "matchesApple": true,
+      "controlsFit": true,
+      "overflow": false
+    },
+    {
+      "viewport": [
+        820,
+        1180
+      ],
+      "sectionHeight": 650,
+      "nextSectionTop": 710,
+      "peek": 470,
+      "matchesApple": true,
+      "controlsFit": true,
+      "overflow": false
+    },
+    {
+      "viewport": [
+        820,
+        720
+      ],
+      "sectionHeight": 570,
+      "nextSectionTop": 630,
+      "peek": 90,
+      "matchesApple": true,
+      "controlsFit": true,
+      "overflow": false
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "sectionHeight": 500,
+      "nextSectionTop": 560,
+      "peek": 284,
+      "matchesApple": true,
+      "controlsFit": true,
+      "overflow": false
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "sectionHeight": 500,
+      "nextSectionTop": 560,
+      "peek": 8,
+      "matchesApple": true,
+      "controlsFit": true,
+      "overflow": false
+    }
+  ],
+  "expandedDiagramFitsAt390": true
+}

@@ -1,0 +1,12 @@
+Mode: built-in image_gen image edit.
+Source: user-supplied original PNG of tray_of_samosas.webp.
+Style reference: Website/public/assets/home/holding_samosa.webp.
+
+Use case: precise-object-edit
+Asset type: photorealistic catering photograph for the SamosaMan homepage.
+Input images: Image 1 is the edit target, tray_of_samosas (the supplied original PNG). Image 2, holding_samosa.webp, is ONLY a reference for the strong natural shallow depth of field and soft background blur. Do not bring the person, hand, tongs, or held samosa from Image 2 into the result.
+Primary request: Extend/outpaint the tray photo's background so the main tray has comfortable breathing room, and blur the background with the same soft photographic depth of field as the hero image. This is an edit of the existing photograph.
+Composition/framing: Output a wide 16:9 landscape photograph. Pull the framing back by extending the existing scene above and to both sides, with a little extra foreground, rather than cropping the tray. Keep the original camera angle and diagonal orientation. The entire main foil tray should be visible and remain the focal point, roughly 70 percent of the image width, centered horizontally in the lower two thirds. Keep soft, uncluttered negative space above.
+Scene/backdrop: Seamlessly extend the existing dark charcoal/black fabric-covered catering table and the softly lit gray background already implied by the target image. Use natural optical defocus and smooth bokeh like the hero reference. Existing distant peripheral serving items should dissolve into indistinct blurred background shapes. The extended edges must look like a real continuous photograph, without mirrored repeats or visible seams.
+Constraints: Keep the main aluminum tray, its reflective rim, and the individual samosas faithful to Image 1: the same arrangement, broad triangular shapes, folded seams, irregular corners, golden blistered crust, darker toasted patches, highlights, and original proportions. Keep the samosas and main tray sharply focused. Change the background and framing only; do not restyle, reshape, replace, add, or remove samosas. Preserve the target's natural golden food color and believable diffuse daylight. Background blur must fall behind the main tray without smearing its silhouette or creating halos.
+Avoid: No new people, hands, tongs, props, garnish, plates, bowls, text, logo, watermark, dramatic colored lights, fake blur bands, illustrated or glossy CGI food.

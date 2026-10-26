@@ -1,0 +1,98 @@
+{
+  "links": {
+    "/favicon.ico?v=20261018": "/assets/icons/favicon-0d48bb6c2af6.ico",
+    "/favicon-16x16.png?v=20261018": "/assets/icons/favicon-16x16-ab0b4b0d3f6c.png",
+    "/favicon-32x32.png?v=20261018": "/assets/icons/favicon-32x32-0d540592e98e.png",
+    "/assets/m_logo.svg": "/assets/icons/favicon-6e320b5d1a02.svg",
+    "/apple-touch-icon.png?v=20261018": "/assets/icons/apple-touch-icon-a9b0ba2e5de8.png"
+  },
+  "pages": [
+    {
+      "page": "burlington.html",
+      "localOnlyIconLinksChanged": true,
+      "candidateOnlyIconLinksChanged": true,
+      "localMatchesLiveBefore": true
+    },
+    {
+      "page": "catering.html",
+      "localOnlyIconLinksChanged": true,
+      "candidateOnlyIconLinksChanged": true,
+      "localMatchesLiveBefore": true
+    },
+    {
+      "page": "checkout-options.html",
+      "localOnlyIconLinksChanged": true,
+      "candidateOnlyIconLinksChanged": true,
+      "localMatchesLiveBefore": true
+    },
+    {
+      "page": "checkout.html",
+      "localOnlyIconLinksChanged": true,
+      "candidateOnlyIconLinksChanged": true,
+      "localMatchesLiveBefore": true
+    },
+    {
+      "page": "delivery.html",
+      "localOnlyIconLinksChanged": true,
+      "candidateOnlyIconLinksChanged": true,
+      "localMatchesLiveBefore": true
+    },
+    {
+      "page": "guest-checkout.html",
+      "localOnlyIconLinksChanged": true,
+      "candidateOnlyIconLinksChanged": true,
+      "localMatchesLiveBefore": true
+    },
+    {
+      "page": "index.html",
+      "localOnlyIconLinksChanged": true,
+      "candidateOnlyIconLinksChanged": true,
+      "localMatchesLiveBefore": true
+    },
+    {
+      "page": "menu.html",
+      "localOnlyIconLinksChanged": true,
+      "candidateOnlyIconLinksChanged": true,
+      "localMatchesLiveBefore": true
+    },
+    {
+      "page": "myaccount.html",
+      "localOnlyIconLinksChanged": true,
+      "candidateOnlyIconLinksChanged": true,
+      "localMatchesLiveBefore": true
+    },
+    {
+      "page": "our-story.html",
+      "localOnlyIconLinksChanged": true,
+      "candidateOnlyIconLinksChanged": true,
+      "localMatchesLiveBefore": true
+    },
+    {
+      "page": "privacy-policy.html",
+      "localOnlyIconLinksChanged": true,
+      "candidateOnlyIconLinksChanged": true,
+      "localMatchesLiveBefore": true
+    },
+    {
+      "page": "rewards-signup.html",
+      "localOnlyIconLinksChanged": true,
+      "candidateOnlyIconLinksChanged": true,
+      "localMatchesLiveBefore": true
+    },
+    {
+      "page": "rewards.html",
+      "localOnlyIconLinksChanged": true,
+      "candidateOnlyIconLinksChanged": true,
+      "localMatchesLiveBefore": true
+    }
+  ],
+  "assets": [
+    "/assets/icons/favicon-0d48bb6c2af6.ico",
+    "/assets/icons/favicon-16x16-ab0b4b0d3f6c.png",
+    "/assets/icons/favicon-32x32-0d540592e98e.png",
+    "/assets/icons/favicon-6e320b5d1a02.svg",
+    "/assets/icons/apple-touch-icon-a9b0ba2e5de8.png"
+  ],
+  "candidate": "/private/tmp/samosaman-iphone-favicon-20261018/public",
+  "state": "local candidate only; not deployed; iPhone result unverified"
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "width": 1440,
+    "height": 900,
+    "whole": 768,
+    "inside": 768
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "whole": 588,
+    "inside": 588
+  },
+  {
+    "width": 820,
+    "height": 1180,
+    "whole": 1018.984375,
+    "inside": 1018.984375
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "whole": 667.453125,
+    "inside": 680.203125
+  },
+  {
+    "width": 320,
+    "height": 760,
+    "whole": 610.578125,
+    "inside": 623.328125
+  }
+]

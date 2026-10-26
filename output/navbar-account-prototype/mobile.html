@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mobile account navbar · Interactive preview</title>
+  <link rel="icon" href="data:,">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100dvh; background: #e9e5dc; color: #27261f; font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
+    main { padding: 18px 12px 20px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    header { width: min(390px,100%); display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+    h1 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: -.2px; }
+    header span { font-size: 12px; color: #68645b; }
+    .phone { width: min(390px,100%); height: min(844px,calc(100dvh - 80px)); min-height: 480px; overflow: hidden; border-radius: 26px; box-shadow: 0 0 0 1px #27261f25, 0 15px 48px #27261f20; background: #f7f3ea; }
+    iframe { width: 100%; height: 100%; border: 0; display: block; }
+  </style>
+</head>
+<body>
+<main>
+  <header><h1>Interactive mobile preview</h1><span id="width-label">390 px</span></header>
+  <div class="phone"><iframe id="mobile-preview" title="Interactive mobile navbar options"></iframe></div>
+</main>
+<script>
+  const params = new URLSearchParams(location.search);
+  const frame = document.querySelector('#mobile-preview');
+  const source = new URL('/', location.origin);
+  source.searchParams.set('variant', ['1','2','3'].includes(params.get('variant')) ? params.get('variant') : '2');
+  source.searchParams.set('embed', 'mobile');
+  source.searchParams.set('compact', params.get('compact') === '0' ? '0' : '1');
+  if (params.has('name')) source.searchParams.set('name', params.get('name').slice(0,60));
+  frame.src = source.href;
+  new ResizeObserver(() => { document.querySelector('#width-label').textContent = `${Math.round(frame.getBoundingClientRect().width)} px`; }).observe(frame);
+  window.addEventListener('message', event => {
+    if (event.origin !== location.origin || event.source !== frame.contentWindow || event.data?.type !== 'navbar-preview') return;
+    if (![1,2,3].includes(event.data.variant)) return;
+    const url = new URL(location.href);
+    url.searchParams.set('variant', String(event.data.variant));
+    url.searchParams.set('compact', event.data.compact ? '1' : '0');
+    if (event.data.name && event.data.name !== 'Hakeem') url.searchParams.set('name', String(event.data.name).slice(0,60));
+    else url.searchParams.delete('name');
+    history.replaceState(null, '', url);
+  });
+</script>
+</body>
+</html>
