@@ -168,9 +168,9 @@
     }
 }
 
-/* Move the opening photo down and blend its top edge into the background. */
+/* Position the photo within the section and blend its top edge into the background. */
 .home-page .home-frame > .home-fresh {
-    --home-photo-offset: 120px;
+    --home-photo-offset: 72px;
     grid-column: 1 / -1;
     position: relative;
     height: 860px;
@@ -192,7 +192,7 @@
 @keyframes home-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @media (max-width: 640px) {
     /* Keep the samosa below the buttons and the next heading visible on landing. */
-    .home-page .home-frame > .home-fresh { --home-photo-offset: 64px; height: min(616px, calc(100svh - 112px)); }
+    .home-page .home-frame > .home-fresh { --home-photo-offset: 16px; height: min(616px, calc(100svh - 112px)); }
     .home-page .home-fresh-photo { height: 640px; object-position: 44% 50%; }
     .home-page .home-fresh-fade { height: 45px; }
     .home-page .home-fresh-shade { background: linear-gradient(to bottom,rgba(0,0,0,.52),rgba(0,0,0,0) 50%); }
@@ -384,7 +384,7 @@
     .home-page { --home-panel-height: max(540px, calc(100svh - 132px)); }
     .home-page .home-frame > :is(.home-fresh, .home-hero, .home-catering) { height: var(--home-panel-height); }
     /* Keep more of the desktop photo visible below a shorter top fade. */
-    .home-page .home-frame > .home-fresh { --home-photo-offset: 48px; }
+    .home-page .home-frame > .home-fresh { --home-photo-offset: 0px; }
     .home-page .home-fresh-photo { object-position: center 30%; }
     .home-page .home-fresh-fade { height: 40px; }
     .home-page .home-fresh-copy { padding-top: 96px; }
