@@ -17,6 +17,11 @@
                             <iconify-icon icon="mdi:instagram" class="text-base" aria-hidden="true"></iconify-icon>
                             Instagram
                         </a>
+                        <a href="https://www.tiktok.com/@samosamanvt" target="_blank" rel="noopener noreferrer"
+                            class="flex min-h-[34px] items-center gap-2 hover:underline" aria-label="TikTok">
+                            <iconify-icon icon="simple-icons:tiktok" class="text-base" aria-hidden="true"></iconify-icon>
+                            TikTok
+                        </a>
                     </div>
 
                     <div class="col-span-2 flex flex-col items-center text-xs md:col-span-1">

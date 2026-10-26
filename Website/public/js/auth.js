@@ -452,29 +452,24 @@ async function handleGoogleLogin() {
     }
 }
 
-// Keep the navbar's guest artwork for sign-out without changing it during startup.
-const guestAccountIcon = document.getElementById('nav-user-btn')?.querySelector('svg')?.cloneNode(true);
-
 // Auth State Listener
 auth.onAuthStateChanged((user) => {
+    const firstName = user?.displayName?.trim().split(/\s+/)[0] || 'Me';
+    const initial = Array.from(firstName.toLocaleUpperCase())[0];
+    // This hint controls the next page's appearance only, never its auth state.
+    try {
+        sessionStorage.setItem('samosaman_nav_account', JSON.stringify(
+            user ? { signedIn: true, initial } : { signedIn: false }
+        ));
+    } catch (_) { /* Account access must work when session storage is unavailable. */ }
     const userBtn = document.getElementById('nav-user-btn');
 
     if (user) {
         if (userBtn) {
-            const firstName = user.displayName?.trim().split(/\s+/)[0] || 'Me';
-
             // CSS selects the initial on desktop and the account label on mobile.
             userBtn.classList.remove('text-slate-500');
             userBtn.classList.add('is-signed-in');
-            const initial = document.createElement('span');
-            initial.className = 'nav-user-initial';
-            initial.setAttribute('aria-hidden', 'true');
-            initial.textContent = Array.from(firstName.toLocaleUpperCase())[0];
-            const label = document.createElement('span');
-            label.className = 'nav-user-label';
-            label.setAttribute('aria-hidden', 'true');
-            label.textContent = 'My account';
-            userBtn.replaceChildren(initial, label);
+            userBtn.querySelector('.nav-user-initial').textContent = initial;
             userBtn.setAttribute('aria-label', `${firstName}, My account`);
             userBtn.title = `${firstName} · My account`;
 
@@ -489,19 +484,15 @@ auth.onAuthStateChanged((user) => {
             userBtn.setAttribute('aria-label', 'My account');
             userBtn.removeAttribute('title');
 
-            if (guestAccountIcon && !userBtn.querySelector('svg')) {
-                userBtn.replaceChildren(guestAccountIcon.cloneNode(true));
-            }
+            userBtn.querySelector('.nav-user-initial').textContent = '';
 
             // Open Login Modal on click
             userBtn.onclick = () => toggleAuthModal(true);
         }
     }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const userBtn = document.getElementById('nav-user-btn');
-    if (userBtn && !auth.currentUser) {
-        userBtn.onclick = (e) => { e.preventDefault(); toggleAuthModal(true); };
+    if (userBtn) {
+        userBtn.classList.remove('is-auth-pending', 'has-auth-preview');
+        userBtn.removeAttribute('aria-busy');
+        userBtn.disabled = false;
     }
 });

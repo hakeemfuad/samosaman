@@ -36,8 +36,10 @@
         <a class="nav-link" href="catering.html">Catering</a>
       </div>
       <span class="nav-spacer"></span>
-      <button class="btn btn-glass circle circle-quiet" id="nav-user-btn" type="button" aria-label="My account">
+      <button class="btn btn-glass circle circle-quiet is-auth-pending" id="nav-user-btn" type="button" aria-label="My account" aria-busy="true" disabled>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span class="nav-user-initial" aria-hidden="true"></span>
+        <span class="nav-user-label" aria-hidden="true">My account</span>
       </button>
       <button class="btn btn-glass circle circle-quiet" id="open-cart-btn" type="button" aria-label="Open shopping bag">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.75 3.5h5c.65 2.4 3.85 2.4 4.5 0h3v16.25L8.5 21l-2.75-2Z"/><path d="M8.5 3.5V21"/></svg>
@@ -203,6 +205,23 @@
     // Inject Nav
     const placeholder = document.getElementById('navbar-placeholder');
     if (placeholder) placeholder.innerHTML = navbarHTML;
+
+    // Restore appearance before the first paint. Firebase still owns account access.
+    const accountButton = document.getElementById('nav-user-btn');
+    if (accountButton) {
+        try {
+            const appearance = JSON.parse(sessionStorage.getItem('samosaman_nav_account') || 'null');
+            const signedIn = appearance?.signedIn === true &&
+                typeof appearance.initial === 'string' && Array.from(appearance.initial).length === 1;
+            if (signedIn || appearance?.signedIn === false) {
+                accountButton.classList.add('has-auth-preview');
+                if (signedIn) {
+                    accountButton.querySelector('.nav-user-initial').textContent = appearance.initial;
+                    accountButton.classList.add('is-signed-in');
+                }
+            }
+        } catch (_) { /* Wait for Firebase when session storage is unavailable or invalid. */ }
+    }
 
     // Inject Auth Modal (if not present)
     if (!document.getElementById('auth-modal')) {

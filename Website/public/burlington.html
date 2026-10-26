@@ -17,8 +17,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16-f350dc6fd625.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32-883d9d601287.png">
     <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/icons/favicon-6e320b5d1a02.svg">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-a9b0ba2e5de8.png">
-    <link rel="manifest" href="/site.webmanifest?v=20261018">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-ad9cd478669f.png">
+    <link rel="manifest" href="/site.webmanifest?v=20261022">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,14 +55,14 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="css/navbar.css?v=20261020-stable-page-scrollbar">
+    <link rel="stylesheet" href="css/navbar.css?v=20261021-account-loading">
     <link rel="stylesheet" href="css/menu-details.css?v=20261025-menu-details">
 </head>
 <body class="menu-page">
     <a class="menu-skip-link" href="#best-sellers">Skip to menu</a>
 
     <div id="navbar-placeholder"></div>
-    <script src="js/navbar.js?v=20261024-remove-our-story"></script>
+    <script src="js/navbar.js?v=20261026-account-loading"></script>
 
     <main id="menu-main" class="menu-main pt-20">
         <section class="menu-hero" aria-labelledby="menu-title">
@@ -88,10 +88,9 @@
             <aside class="menu-sidebar">
                 <nav aria-label="Menu categories">
                     <ul class="menu-categories">
-                            <li><a class="menu-category" href="#best-sellers" aria-current="true">Best Sellers <small>5</small></a></li>
+                            <li><a class="menu-category" href="#best-sellers" aria-current="true">Best Sellers <small>4</small></a></li>
                             <li><a class="menu-category" href="#meat-samosas">Meat Samosas <small>3</small></a></li>
                             <li><a class="menu-category" href="#vegetarian-samosas">Vegetarian Samosas <small>2</small></a></li>
-                            <li><a class="menu-category" href="#meals">Meals <small>2</small></a></li>
                     </ul>
                 </nav>
                 <div class="menu-info">
@@ -105,20 +104,6 @@
                 <section class="menu-section" id="best-sellers" aria-labelledby="best-sellers-heading" tabindex="-1">
                     <div class="menu-section-heading"><h2 id="best-sellers-heading">Best Sellers</h2></div>
                     <ul class="menu-carousel" tabindex="0" aria-label="Best sellers, scroll for more">
-                        <li class="menu-card group">
-                            <div class="menu-image">
-                                <img src="assets/chicken_curry.webp" alt="Chicken Curry Meal" width="800" height="600" loading="lazy" decoding="async">
-                            </div>
-                            <h3>Chicken Curry</h3>
-                            <p class="menu-description">Tender aromatic golden Chicken pieces cooked in exotic creamy curry sauce.</p>
-                            <div class="menu-card-footer">
-                                <span class="menu-price">$13.95</span>
-                                <button type="button" class="add-to-bag-btn menu-add" data-id="chicken-curry-meal" data-name="Chicken Curry Meal" data-price="13.95" aria-label="Add Chicken Curry Meal to bag">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-                                    <span>Add</span>
-                                </button>
-                            </div>
-                        </li>
                         <li class="menu-card group">
                             <div class="menu-image">
                                 <img src="assets/samosas/traditional_punjabi_samosa.webp" alt="Traditional Punjabi Samosa" width="800" height="600" loading="lazy" decoding="async">
@@ -257,39 +242,6 @@
                         </li>
                     </ul>
                 </section>
-                <section class="menu-section" id="meals" aria-labelledby="meals-heading" tabindex="-1">
-                    <div class="menu-section-heading"><h2 id="meals-heading">Meals</h2></div>
-                    <ul class="menu-grid">
-                        <li class="menu-card group">
-                            <div class="menu-image">
-                                <img src="assets/chicken_curry.webp" alt="Chicken Curry Meal" width="800" height="600" loading="lazy" decoding="async">
-                            </div>
-                            <h3>Chicken Curry</h3>
-                            <p class="menu-description">Tender aromatic golden Chicken pieces cooked in exotic creamy curry sauce.</p>
-                            <div class="menu-card-footer">
-                                <span class="menu-price">$13.95</span>
-                                <button type="button" class="add-to-bag-btn menu-add" data-id="chicken-curry-meal" data-name="Chicken Curry Meal" data-price="13.95" aria-label="Add Chicken Curry Meal to bag">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-                                    <span>Add</span>
-                                </button>
-                            </div>
-                        </li>
-                        <li class="menu-card group">
-                            <div class="menu-image">
-                                <img src="assets/chickpea_masala.webp" alt="Chickpea Masala" width="800" height="600" loading="lazy" decoding="async">
-                            </div>
-                            <h3>Chickpea Masala</h3>
-                            <p class="menu-description">A hearty and flavorful chickpea masala, slow cooked with a blend of spices.</p>
-                            <div class="menu-card-footer">
-                                <span class="menu-price">$12.95</span>
-                                <button type="button" class="add-to-bag-btn menu-add" data-id="chickpea-masala" data-name="Chickpea Masala" data-price="12.95" aria-label="Add Chickpea Masala to bag">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-                                    <span>Add</span>
-                                </button>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
             </div>
         </div>
 
@@ -312,7 +264,7 @@
     </button>
     
     <script src="js/cart.js?v=20261025-menu-details"></script>
-    <script src="js/auth.js?v=20261020-stable-avatar"></script>
+    <script src="js/auth.js?v=20261021-account-loading"></script>
 
 
 <div id="hours-modal" aria-labelledby="hours-title" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true">
@@ -347,7 +299,7 @@
 <script src="js/menu.js?v=20261014-crew"></script>
 
     <div id="footer-placeholder"></div>
-    <script src="js/footer.js?v=20261024-remove-our-story"></script>
+    <script src="js/footer.js?v=20261025-tiktok"></script>
 
 <dialog class="product-dialog" id="flavor-dialog" aria-labelledby="product-title">
   <div class="product-dialog-header">

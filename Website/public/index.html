@@ -12,7 +12,7 @@
       gtag('config', 'G-PB6QFY8Z8D');
     </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
     <!-- Primary Meta Tags -->
     <title>SamosaMan - Authentic exotic Samosas | Burlington VT</title>
@@ -43,13 +43,13 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16-f350dc6fd625.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32-883d9d601287.png">
     <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/icons/favicon-6e320b5d1a02.svg">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-a9b0ba2e5de8.png">
-    <link rel="manifest" href="/site.webmanifest?v=20261018">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-ad9cd478669f.png">
+    <link rel="manifest" href="/site.webmanifest?v=20261022">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="assets/home/holding_samosa.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/home/samosaman-doordash.webp" type="image/webp" fetchpriority="high">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -61,7 +61,7 @@
             }
         };
     </script>
-    <link rel="stylesheet" href="css/home.css?v=20261025-fresh-photo-up48">
+    <link rel="stylesheet" href="css/home.css?v=20261026-catering-header">
     <link rel="stylesheet" href="css/samosa-diagram.css?v=20261021-salsa-ingredients-subtext">
     <link rel="stylesheet" href="css/home-spotlight.css?v=20261025-dynamic-details">
     <script src="js/samosa-diagram.js?v=20261025-dynamic-details" defer></script>
@@ -73,7 +73,8 @@
     <script src="js/firebase-init.js"></script>
     <script src="js/errors.js"></script>
     <script src="js/cart.js?v=20261021-count-change-only"></script>
-    <link rel="stylesheet" href="css/navbar.css?v=20261020-stable-page-scrollbar">
+    <link rel="stylesheet" href="css/navbar.css?v=20261021-account-loading">
+    <link rel="stylesheet" href="css/home-delivery.css?v=20261026-order-shadow">
     <link rel="stylesheet" href="css/home-mobile.css?v=20261025-mobile-diagram">
 </head>
 
@@ -82,6 +83,24 @@
     <div id="navbar-placeholder"></div>
 
     <main id="main" class="home-frame" tabindex="-1">
+        <section class="delivery-hero" aria-labelledby="delivery-heading">
+            <div class="delivery-hero__inner">
+                <div class="delivery-hero__copy">
+                    <h1 id="delivery-heading">Now on DoorDash.</h1>
+                    <p class="delivery-hero__description">Your favorite Samosas, right to your door.</p>
+                    <div class="home-actions">
+                        <a class="btn btn-order" href="https://doordash.com/store/52752762?event_type=autocomplete&amp;pickup=false">Order Now</a>
+                        <a class="btn btn-glass" href="burlington.html">View menu <span aria-hidden="true">→</span></a>
+                    </div>
+                </div>
+                <div class="delivery-hero__art">
+                    <img src="assets/home/samosaman-doordash.webp" width="1961" height="1026"
+                        alt="The SamosaMan logo holds a red DoorDash bag with navy straps and orange samosas spilling to the left"
+                        fetchpriority="high" loading="eager" decoding="async">
+                </div>
+            </div>
+        </section>
+
         <section class="home-fresh" aria-labelledby="fresh-heading">
             <img class="home-fresh-photo" src="assets/home/holding_samosa.webp"
                 width="1536" height="1024" alt="A freshly cooked golden samosa held in serving tongs"
@@ -89,7 +108,7 @@
             <div class="home-fresh-fade" aria-hidden="true"></div>
             <div class="home-fresh-shade" aria-hidden="true"></div>
             <div class="home-fresh-copy">
-                <h1 id="fresh-heading" class="home-rise">Served Fresh.</h1>
+                <h2 id="fresh-heading" class="home-rise">Served Fresh.</h2>
                 <p class="home-hero-copy home-rise home-rise-2">There's a science behind our crunch.</p>
                 <div class="home-actions home-rise home-rise-3">
                     <button class="btn btn-order" type="button" data-open-order>Order Now</button>
@@ -199,16 +218,18 @@
             </div>
         </section>
 
-  <section class="home-catering" id="catering" aria-labelledby="catering-heading">
-    <img src="assets/home/tray_of_samosas.webp" width="1536" height="1024" alt="A tray filled with golden, crispy samosas" loading="lazy">
-    <div class="shelf home-cater-shelf">
-      <div class="home-catering-copy">
-        <h2 id="catering-heading">Samosas are best shared.</h2>
-        <p>Bring the crunch. Feed the crowd.</p>
-      </div>
-      <a class="btn btn-order home-catering-cta" href="catering.html">Plan your catering</a>
-    </div>
-  </section>
+        <section class="home-catering" id="catering" aria-labelledby="catering-heading">
+            <img src="assets/home/tray_of_samosas.webp" width="1536" height="1024"
+                alt="A tray filled with golden, crispy samosas" loading="lazy" decoding="async">
+            <div class="home-catering-shade" aria-hidden="true"></div>
+            <header class="home-catering-copy">
+                <h2 id="catering-heading">Samosas are best shared.</h2>
+                <p>Endless samosas for you and yours.</p>
+                <div class="home-actions">
+                    <a class="btn btn-order" href="catering.html">Catering</a>
+                </div>
+            </header>
+        </section>
 
         <section class="home-section home-team" aria-labelledby="team-heading">
             <div class="home-section-heading">
@@ -281,8 +302,7 @@
 
         <section class="home-section home-faq" id="faq" aria-labelledby="faq-heading">
             <div class="home-faq-heading">
-                <p class="home-faq-label">Frequently asked questions</p>
-                <h2 id="faq-heading">Got questions?</h2>
+                <p class="home-faq-label" id="faq-heading">Frequently asked questions</p>
             </div>
             <div class="home-faq-list">
                 <div class="home-faq-item">
@@ -604,12 +624,12 @@
         }
     </style>
 
-    <script src="js/navbar.js?v=20261024-remove-our-story"></script>
-    <script src="js/auth.js?v=20261020-stable-avatar"></script>
+    <script src="js/navbar.js?v=20261026-account-loading"></script>
+    <script src="js/auth.js?v=20261021-account-loading"></script>
     <script src="js/home.js?v=20261021-home-faq"></script>
 
     <div id="footer-placeholder"></div>
-    <script src="js/footer.js?v=20261024-remove-our-story"></script>
+    <script src="js/footer.js?v=20261025-tiktok"></script>
 
     <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">

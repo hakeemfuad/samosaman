@@ -129,6 +129,9 @@ body::-webkit-scrollbar-thumb:hover { background: #a1a1aa; }
 #navbar-placeholder .nav-spacer { flex-grow: 1; }
 #navbar-placeholder .nav-cta { flex: none; min-height: 44px; padding: 0 20px; font-size: 14px; }
 #navbar-placeholder #nav-user-btn > svg { width: 20px; height: 20px; }
+#navbar-placeholder #nav-user-btn.is-auth-pending:not(.has-auth-preview) { visibility: hidden; }
+#navbar-placeholder #nav-user-btn:disabled { cursor: default; }
+#navbar-placeholder #nav-user-btn.is-signed-in > svg { display: none; }
 #navbar-placeholder #nav-user-btn.is-signed-in {
     background: rgba(247,243,234,.8);
     border-color: rgba(255,255,255,.8);
@@ -136,7 +139,8 @@ body::-webkit-scrollbar-thumb:hover { background: #a1a1aa; }
     font-weight: 600;
     letter-spacing: 0;
 }
-#navbar-placeholder .nav-user-label { display: none; }
+#navbar-placeholder .nav-user-initial, #navbar-placeholder .nav-user-label { display: none; }
+#navbar-placeholder #nav-user-btn.is-signed-in .nav-user-initial { display: block; }
 #navbar-placeholder .menu-btn { display: none; }
 #navbar-placeholder .badge {
     position: absolute;
@@ -225,8 +229,8 @@ body::-webkit-scrollbar-thumb:hover { background: #a1a1aa; }
     }
     #navbar-placeholder #nav-user-btn.is-signed-in:hover { background: rgba(255,255,255,.5); }
     #navbar-placeholder #nav-user-btn.is-signed-in:active { transform: scale(.96); }
-    #navbar-placeholder .nav-user-initial { display: none; }
-    #navbar-placeholder .nav-user-label { display: block; }
+    #navbar-placeholder #nav-user-btn.is-signed-in .nav-user-initial { display: none; }
+    #navbar-placeholder #nav-user-btn.is-signed-in .nav-user-label { display: block; }
 }
 @media (max-width: 640px) {
     #navbar-placeholder .nav-pad { padding: 0 12px; }

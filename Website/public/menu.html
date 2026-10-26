@@ -40,8 +40,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16-f350dc6fd625.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32-883d9d601287.png">
     <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/icons/favicon-6e320b5d1a02.svg">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-a9b0ba2e5de8.png">
-    <link rel="manifest" href="/site.webmanifest?v=20261018">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-ad9cd478669f.png">
+    <link rel="manifest" href="/site.webmanifest?v=20261022">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,13 +82,13 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="css/navbar.css?v=20261020-stable-page-scrollbar">
+    <link rel="stylesheet" href="css/navbar.css?v=20261021-account-loading">
 </head>
 
 <body class="font-sans antialiased text-slate-800 bg-slate-50">
 
     <div id="navbar-placeholder"></div>
-    <script src="js/navbar.js?v=20261024-remove-our-story"></script>
+    <script src="js/navbar.js?v=20261026-account-loading"></script>
 
     <main class="w-full min-h-screen flex flex-col items-center justify-start pt-14 md:pt-20 px-4 pb-12 relative">
 
@@ -101,10 +101,10 @@
             </h1>
             <p class="mt-2 text-slate-500 font-medium text-base">Select a location to order.</p>
 
-            <a href="#" id="find-closest-btn"
+            <button type="button" id="find-closest-btn"
                 class="inline-block mt-2 text-brand-600 font-bold underline hover:text-brand-700 transition-colors text-sm">
                 Find your closest Samosaman
-            </a>
+            </button>
         </div>
 
         <div id="locations" class="relative z-10 w-full max-w-xl space-y-8 pb-10 scroll-mt-24">
@@ -364,8 +364,7 @@
             }
         });
 
-        document.getElementById('find-closest-btn').addEventListener('click', (e) => {
-            e.preventDefault();
+        document.getElementById('find-closest-btn').addEventListener('click', () => {
             localStorage.setItem('samosaman_last_geo_trigger', Date.now());
             initiateGeolocation();
         });
@@ -415,10 +414,10 @@
         closeLocationBtn.addEventListener('click', () => toggleModalClasses('location-modal', false));
     </script>
 
-    <script src="js/auth.js?v=20261020-stable-avatar"></script>
+    <script src="js/auth.js?v=20261021-account-loading"></script>
 
     <div id="footer-placeholder"></div>
-    <script src="js/footer.js?v=20261024-remove-our-story"></script>
+    <script src="js/footer.js?v=20261025-tiktok"></script>
 
 </body>
 
