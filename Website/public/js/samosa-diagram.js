@@ -117,9 +117,15 @@
         const start = detailTouch;
         detailTouch = null;
         if (selected && !isControl(event.target) && Math.hypot(start.x - event.clientX, start.y - event.clientY) <= 10) {
-            leaveDetail({ restoreFocus: false });
+            detailTouch = { ...start, ready: true };
         }
     }, { passive: true });
+    document.addEventListener('click', (event) => {
+        if (!detailTouch?.ready) return;
+        detailTouch = null;
+        // Keep hotspots inactive until the browser has chosen this touch's click target.
+        if (selected && !isControl(event.target)) leaveDetail({ restoreFocus: false });
+    });
     document.addEventListener('pointercancel', () => { detailTouch = null; }, { passive: true });
 
     const fallback = document.querySelector('[data-diagram-fallback]');
