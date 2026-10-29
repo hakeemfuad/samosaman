@@ -77,7 +77,11 @@
 
         <div id="cart-empty-state" class="absolute inset-0 flex flex-col items-center justify-center p-8 text-center hidden z-10 bg-[#fdfbf7] mt-20">
 
-            <img src="assets/cart_empty.svg" alt="Your bag is empty" class="w-300 h-auto mb-8">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='9'/%3E"
+                data-src="assets/shared/cart-empty-480-703edcd884ff.webp"
+                data-srcset="assets/shared/cart-empty-480-703edcd884ff.webp 480w, assets/shared/cart-empty-960-56ca5b90ada7.webp 960w, assets/shared/cart-empty-1440-6bd233eeedef.webp 1440w"
+                sizes="(min-width: 640px) 436px, calc(100vw - 64px)" width="480" height="270"
+                alt="Your bag is empty" class="w-full h-auto mb-8" decoding="async">
 
             <a href="burlington.html" class="w-full bg-[#3f2a1d] hover:bg-[#2a1c13] text-white font-oswald text-xl font-bold py-4 rounded-md uppercase tracking-wider shadow-md transition-all duration-200 active:scale-95 flex items-center justify-center">
                 Order Now

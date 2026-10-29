@@ -26,7 +26,8 @@
 
                     <div class="col-span-2 flex flex-col items-center text-xs md:col-span-1">
                         <h3 class="flex min-h-[34px] items-center justify-center gap-2 font-semibold">
-                            <img src="assets/rewards.svg" alt="" class="w-7 h-auto" aria-hidden="true">
+                            <img src="assets/shared/rewards-96-937c3ca42340.webp" width="96" height="54"
+                                alt="" class="w-7 h-auto" aria-hidden="true" loading="lazy" decoding="async">
                             Join Rewards
                         </h3>
                         <p class="mt-1 text-[#6e6e73]">Earn points towards free food</p>
