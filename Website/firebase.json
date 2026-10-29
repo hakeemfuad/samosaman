@@ -18,6 +18,7 @@
   ],
   "hosting": {
     "public": "public",
+    "predeploy": ["node scripts/build-catering-menu.cjs"],
     "ignore": [
       "firebase.json",
       "**/.*",

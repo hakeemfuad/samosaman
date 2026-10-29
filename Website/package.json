@@ -4,7 +4,9 @@
   "private": true,
   "description": "SamosaMan Website and Cloud Functions",
   "scripts": {
-    "dev": "python3 -m http.server 4173 --bind 127.0.0.1 --directory public",
+    "dev": "npm run build:catering-menu && python3 -m http.server 4173 --bind 127.0.0.1 --directory public",
+    "build:catering-menu": "node scripts/build-catering-menu.cjs",
+    "check:catering-menu": "node scripts/build-catering-menu.cjs --check",
     "test:diagram": "node --test test/samosa-diagram-touch.browser.cjs"
   },
   "engines": {

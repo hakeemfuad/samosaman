@@ -4,6 +4,7 @@ const { defineSecret } = require("firebase-functions/params");
 const logger = require("firebase-functions/logger");
 const crypto = require("crypto");
 const cors = require("cors")({ origin: true });
+const { normalizeOrderItems, orderItemsText, orderItemsHtml } = require('./catering-order');
 
 let dbInstance;
 let fieldValueInstance;
@@ -1498,9 +1499,10 @@ exports.submitCateringInquiry = onRequest({
       return res.status(405).send('Method Not Allowed');
     }
 
-    const { location, fullName, phone, email, eventDate, eventTime, guests, serviceType, address, city, state, comments, uid } = req.body;
+    const { location, fullName, phone, email, eventDate, eventTime, guests, serviceType, address, city, state, comments, orderItems, uid } = req.body || {};
 
     try {
+      const requestedItems = normalizeOrderItems(orderItems);
       // Generate unique inquiry ID
       const inquiryId = crypto.randomUUID();
       const submittedAt = FieldValue.serverTimestamp();
@@ -1520,6 +1522,7 @@ exports.submitCateringInquiry = onRequest({
         eventCity: city || '',
         eventState: state || '',
         comments: comments || '',
+        orderItems: requestedItems,
         uid: uid || null,
         status: 'pending',
         submittedAt: submittedAt,
@@ -1542,7 +1545,7 @@ exports.submitCateringInquiry = onRequest({
 
     } catch (error) {
       logger.error("Catering inquiry error:", error);
-      res.status(500).json({ success: false, error: error.message || "Internal Server Error", code: error.code || 'INTERNAL' });
+      res.status(error.code === 'INVALID_ORDER_ITEMS' ? 400 : 500).json({ success: false, error: error.message || "Internal Server Error", code: error.code || 'INTERNAL' });
     }
   });
 });
@@ -1569,6 +1572,7 @@ Email: ${inquiry.customerEmail}
 Date: ${inquiry.eventDate}
 Time: ${inquiry.eventTime}
 Guests: ${inquiry.numberOfGuests}
+${orderItemsText(inquiry.orderItems)}
 ${inquiry.eventAddress ? `
 --- EVENT LOCATION ---
 ${inquiry.eventAddress}
@@ -1686,6 +1690,8 @@ function getCateringCustomerEmailTemplate(inquiry) {
       </table>
     </td></tr>
   </table>
+
+  ${orderItemsHtml(inquiry.orderItems)}
 
   <!-- NEXT STEPS -->
   <table width="100%" cellpadding="0" cellspacing="0" border="0">

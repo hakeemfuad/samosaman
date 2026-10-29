@@ -14,6 +14,7 @@ function loadFunctions(secretValue) {
     exports: {},
     console: { log() {}, error() {} },
     require(name) {
+      if (name === './catering-order') return require('../functions/catering-order');
       if (name === 'firebase-functions/v2/https') return { onRequest: register };
       if (name === 'firebase-functions/v2/firestore') return { onDocumentCreated: register };
       if (name === 'firebase-functions/params') {

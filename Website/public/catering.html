@@ -48,7 +48,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="css/global.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -100,87 +99,73 @@
         }
     </style>
     <link rel="stylesheet" href="css/navbar.css?v=20261021-account-loading">
+    <link rel="stylesheet" href="css/catering.css?v=20261028-gray-borders">
 </head>
 
-<body class="font-sans antialiased text-slate-800 bg-slate-50">
+<body class="catering-page font-sans antialiased">
+
+    <a class="catering-skip-link" href="#catering-main">Skip to inquiry form</a>
 
     <div id="navbar-placeholder"></div>
     <script src="js/navbar.js?v=20261026-account-loading"></script>
 
-    <main class="w-full max-w-[1400px] mx-auto px-4 md:px-6 pt-28 pb-20">
+    <main id="catering-main" class="catering-main">
+        <header class="catering-intro">
+            <p class="catering-eyebrow">Made to share.</p>
+            <h1>Catering inquiry</h1>
+            <p>Bring the crunch to your next event.<br>Tell us your plans. We will take it from there.</p>
+        </header>
 
-        <div class="max-w-3xl mx-auto">
-            <div class="text-center mb-12">
-                <h1 class="font-oswald text-4xl md:text-5xl font-bold uppercase text-slate-900 tracking-tight mb-4">
-                    Catering Inquiry</h1>
-                <p class="text-slate-500 text-lg">Bring the crunch to your next event. Fill out the form below and we'll
-                    get back to you shortly.</p>
-            </div>
+        <div class="catering-panel">
+            <form id="catering-form" aria-describedby="catering-required-note">
+                <p id="catering-required-note" class="catering-required-note">All fields are required unless marked optional.</p>
 
-            <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 md:p-10">
-                <form id="catering-form" class="space-y-8">
-
-                    <div>
-                        <h3 class="font-oswald text-xl font-bold text-slate-900 uppercase mb-4 flex items-center gap-2">
-                            <span
-                                class="bg-brand-100 text-brand-600 w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
-                            Contact Information
-                        </h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="md:col-span-2">
-                                <label for="location" class="block text-sm font-medium text-slate-700 mb-1">Select
-                                    Location <span class="text-red-500">*</span></label>
-                                <select id="location" name="location" required
-                                    class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 border bg-white">
-                                    <option value="" disabled selected>Select a Samosaman location</option>
-                                    <option value="Burlington">Burlington, VT</option>
-                                </select>
+                <section class="catering-section" aria-labelledby="contact-heading">
+                    <div class="catering-section-heading">
+                        <span class="catering-step" aria-hidden="true">1</span>
+                        <h2 id="contact-heading">Contact details</h2>
+                    </div>
+                    <div class="catering-field-grid">
+                        <div class="catering-field">
+                            <div class="catering-field-control">
+                                <input type="text" id="full-name" name="full-name" placeholder=" " autocomplete="name" required aria-describedby="full-name-error">
+                                <label for="full-name">Full name</label>
                             </div>
-
-                            <div>
-                                <label for="full-name" class="block text-sm font-medium text-slate-700 mb-1">Full Name
-                                    <span class="text-red-500">*</span></label>
-                                <input type="text" id="full-name" name="full-name" required
-                                    class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 border">
+                            <p id="full-name-error" class="catering-field-error" hidden></p>
+                        </div>
+                        <div class="catering-field">
+                            <div class="catering-field-control">
+                                <input type="tel" id="phone" name="phone" placeholder=" " autocomplete="tel" required aria-describedby="phone-error">
+                                <label for="phone">Phone number</label>
                             </div>
-
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">Phone Number
-                                    <span class="text-red-500">*</span></label>
-                                <input type="tel" id="phone" name="phone" required
-                                    class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 border">
+                            <p id="phone-error" class="catering-field-error" hidden></p>
+                        </div>
+                        <div class="catering-field catering-field--wide">
+                            <div class="catering-field-control">
+                                <input type="email" id="email" name="email" placeholder=" " autocomplete="email" autocapitalize="none" spellcheck="false" required aria-describedby="email-error">
+                                <label for="email">Email address</label>
                             </div>
-
-                            <div class="md:col-span-2">
-                                <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email Address
-                                    <span class="text-red-500">*</span></label>
-                                <input type="email" id="email" name="email" required
-                                    class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 border">
-                            </div>
+                            <p id="email-error" class="catering-field-error" hidden></p>
                         </div>
                     </div>
+                </section>
 
-                    <hr class="border-slate-100">
-
-                    <div>
-                        <h3 class="font-oswald text-xl font-bold text-slate-900 uppercase mb-4 flex items-center gap-2">
-                            <span
-                                class="bg-brand-100 text-brand-600 w-8 h-8 rounded-full flex items-center justify-center text-sm">2</span>
-                            Event Details
-                        </h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="event-date" class="block text-sm font-medium text-slate-700 mb-1">Date of
-                                    Event <span class="text-red-500">*</span></label>
-                                <input type="date" id="event-date" name="event-date" required
-                                    class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 border text-slate-500">
+                <section class="catering-section" aria-labelledby="event-heading">
+                    <div class="catering-section-heading">
+                        <span class="catering-step" aria-hidden="true">2</span>
+                        <h2 id="event-heading">Your event</h2>
+                    </div>
+                    <div class="catering-field-grid">
+                        <div class="catering-field catering-field--fixed">
+                            <div class="catering-field-control">
+                                <input type="date" id="event-date" name="event-date" placeholder=" " required aria-describedby="event-date-error">
+                                <label for="event-date">Event date</label>
                             </div>
-
-                            <div>
-                                <label for="event-time" class="block text-sm font-medium text-slate-700 mb-1">Time of
-                                    Event <span class="text-red-500">*</span></label>
-                                <select id="event-time" name="event-time" required
-                                    class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 border bg-white">
+                            <p id="event-date-error" class="catering-field-error" hidden></p>
+                        </div>
+                        <div class="catering-field catering-field--fixed">
+                            <div class="catering-field-control">
+                                <select id="event-time" name="event-time" required aria-describedby="event-time-error">
                                     <option value="" disabled selected>Select a time</option>
                                     <option value="10:00 AM">10:00 AM</option>
                                     <option value="10:30 AM">10:30 AM</option>
@@ -206,233 +191,146 @@
                                     <option value="8:30 PM">08:30 PM</option>
                                     <option value="9:00 PM">09:00 PM</option>
                                 </select>
+                                <label for="event-time">Event time</label>
+                                <i data-lucide="chevron-down" aria-hidden="true" class="catering-select-chevron"></i>
                             </div>
-
-                            <div>
-                                <label for="guests" class="block text-sm font-medium text-slate-700 mb-1">Number of
-                                    Guests <span class="text-red-500">*</span></label>
-                                <input type="number" id="guests" name="guests" min="1" required
-                                    class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 border">
+                            <p id="event-time-error" class="catering-field-error" hidden></p>
+                        </div>
+                        <div class="catering-field catering-field--wide">
+                            <div class="catering-field-control">
+                                <input type="number" id="guests" name="guests" placeholder=" " min="1" step="1" inputmode="numeric" required aria-describedby="guests-error">
+                                <label for="guests">Number of guests</label>
                             </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-3">Service Type <span
-                                        class="text-red-500">*</span></label>
-                                <div class="flex items-center gap-6">
-                                    <label class="flex items-center gap-2 cursor-pointer group">
-                                        <input type="radio" name="service-type" value="pickup" checked
-                                            class="w-4 h-4 text-brand-600 border-slate-300 focus:ring-brand-500">
-                                        <span
-                                            class="text-slate-700 group-hover:text-brand-600 transition-colors">Pick-up</span>
-                                    </label>
-                                    <label class="flex items-center gap-2 cursor-pointer group">
-                                        <input type="radio" name="service-type" value="delivery"
-                                            class="w-4 h-4 text-brand-600 border-slate-300 focus:ring-brand-500">
-                                        <span
-                                            class="text-slate-700 group-hover:text-brand-600 transition-colors">Delivery</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="md:col-span-2">
-                                <label for="address" class="block text-sm font-medium text-slate-700 mb-1">Event
-                                    Address</label>
-                                <input type="text" id="address" name="address"
-                                    class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 border"
-                                    placeholder="Street address, suite, floor, etc.">
-                            </div>
-
-                            <div>
-                                <label for="city"
-                                    class="block text-sm font-medium text-slate-700 mb-1">City/Town</label>
-                                <input type="text" id="city" name="city"
-                                    class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 border">
-                            </div>
-
-                            <div>
-                                <label for="state" class="block text-sm font-medium text-slate-700 mb-1">State</label>
-                                <input type="text" id="state" name="state"
-                                    class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 border">
-                            </div>
+                            <p id="guests-error" class="catering-field-error" hidden></p>
                         </div>
                     </div>
-
-                    <hr class="border-slate-100">
-
-                    <div>
-                        <h3 class="font-oswald text-xl font-bold text-slate-900 uppercase mb-4 flex items-center gap-2">
-                            <span
-                                class="bg-brand-100 text-brand-600 w-8 h-8 rounded-full flex items-center justify-center text-sm">3</span>
-                            ORDER DETAILS
-                        </h3>
-                        <div>
-                            <label for="comments" class="block text-sm font-medium text-slate-700 mb-1">Comments,
-                                details, or special instructions (Optional)</label>
-                            <textarea id="comments" name="comments" rows="4"
-                                class="w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 py-3 px-4 border"
-                                placeholder="Tell us about any dietary restrictions or specific menu requests..."></textarea>
+                    <fieldset class="catering-service">
+                        <legend>How would you like your order?</legend>
+                        <div class="catering-service-options">
+                            <label class="catering-service-option">
+                                <input type="radio" name="service-type" value="pickup" checked required>
+                                <span class="catering-service-content">
+                                    <i data-lucide="store" aria-hidden="true"></i>
+                                    <span>Pick-up</span>
+                                    <span class="catering-service-check" aria-hidden="true"></span>
+                                </span>
+                            </label>
+                            <label class="catering-service-option">
+                                <input type="radio" name="service-type" value="delivery" required>
+                                <span class="catering-service-content">
+                                    <i data-lucide="truck" aria-hidden="true"></i>
+                                    <span>Delivery</span>
+                                    <span class="catering-service-check" aria-hidden="true"></span>
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
+                    <div class="catering-address-heading">
+                        <h3>Event address</h3>
+                        <p>Add the venue if you know it.</p>
+                    </div>
+                    <div class="catering-field-grid">
+                        <div class="catering-field catering-field--wide">
+                            <div class="catering-field-control">
+                                <input type="text" id="address" name="address" placeholder=" " autocomplete="street-address" aria-describedby="address-error">
+                                <label for="address">Street address (optional)</label>
+                            </div>
+                            <p id="address-error" class="catering-field-error" hidden></p>
+                        </div>
+                        <div class="catering-field">
+                            <div class="catering-field-control">
+                                <input type="text" id="city" name="city" placeholder=" " autocomplete="address-level2" aria-describedby="city-error">
+                                <label for="city">City or town (optional)</label>
+                            </div>
+                            <p id="city-error" class="catering-field-error" hidden></p>
+                        </div>
+                        <div class="catering-field">
+                            <div class="catering-field-control">
+                                <input type="text" id="state" name="state" placeholder=" " autocomplete="address-level1" aria-describedby="state-error">
+                                <label for="state">State (optional)</label>
+                            </div>
+                            <p id="state-error" class="catering-field-error" hidden></p>
                         </div>
                     </div>
+                </section>
 
-                    <div class="pt-4">
-                        <button type="submit"
-                            class="w-full bg-brand-600 hover:bg-brand-700 text-white font-oswald text-lg font-bold uppercase tracking-wide py-4 px-8 rounded-md shadow-md transition-all duration-200 transform active:scale-95">
-                            Submit Inquiry
-                        </button>
-                        <p class="text-xs text-center text-slate-400 mt-4">This form is for inquiry purposes only. An
-                            order is not confirmed until you hear from our team.</p>
+                <section id="menu-selection" class="catering-section" aria-labelledby="order-heading">
+                    <div class="catering-section-heading">
+                        <span class="catering-step" aria-hidden="true">3</span>
+                        <h2 id="order-heading">Choose your menu</h2>
                     </div>
+                    <p id="catering-order-help" class="catering-order-help">Select the items you want, then enter a quantity for each. You can select more than one item.</p>
+                    <fieldset id="catering-order" class="catering-order" data-catering-order aria-describedby="catering-order-help">
+                        <legend class="catering-sr-only">Menu items and quantities (optional)</legend>
+                        <div data-order-products></div>
+                    </fieldset>
+                    <p id="catering-order-count" class="catering-order-count" role="status">No items selected</p>
+                    <noscript><p class="catering-field-help">Include your menu choices and quantities in Special requests.</p></noscript>
+                </section>
 
-                </form>
-            </div>
+                <section class="catering-section" aria-labelledby="details-heading">
+                    <div class="catering-section-heading">
+                        <span class="catering-step" aria-hidden="true">4</span>
+                        <h2 id="details-heading">A few more details</h2>
+                    </div>
+                    <div class="catering-field catering-field--fixed">
+                        <div class="catering-field-control">
+                            <textarea id="comments" name="comments" rows="4" aria-describedby="comments-help"></textarea>
+                            <label for="comments">Special requests (optional)</label>
+                        </div>
+                        <p id="comments-help" class="catering-field-help">Include any dietary needs, menu requests, or instructions.</p>
+                    </div>
+                </section>
+
+                <div class="catering-submit-area">
+                    <p id="catering-submit-error" class="catering-submit-error" role="alert" hidden></p>
+                    <button type="submit" class="catering-submit">
+                        <span class="catering-submit-label">Send inquiry</span>
+                        <i data-lucide="arrow-right" class="catering-submit-arrow" aria-hidden="true"></i>
+                        <span class="catering-spinner" aria-hidden="true" hidden></span>
+                    </button>
+                    <p id="catering-status" class="catering-sr-only" role="status"></p>
+                </div>
+            </form>
         </div>
-
     </main>
 
     <div id="footer-placeholder"></div>
     <script src="js/footer.js?v=20261025-tiktok"></script>
 
-    <!-- Loading Overlay -->
-    <div id="loading-overlay"
-        class="hidden fixed inset-0 z-[300] bg-slate-900/90 backdrop-blur-sm flex items-center justify-center">
-        <div class="text-center">
-            <div class="inline-block animate-spin rounded-full h-16 w-16 border-4 border-white border-t-transparent">
+    <dialog id="success-modal" class="catering-success" aria-labelledby="success-title" aria-describedby="success-description">
+        <button type="button" id="dismiss-success" class="catering-success-close" aria-label="Close confirmation" autofocus>
+            <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+        <div class="catering-success-icon" aria-hidden="true"><i data-lucide="check"></i></div>
+        <p class="catering-eyebrow">Inquiry received</p>
+        <h2 id="success-title">Thank you, <span id="success-customer-name"></span>.</h2>
+        <p id="success-description">Our team will review your request and contact you within 24 hours. Check your email for confirmation details.</p>
+        <a href="index.html" class="catering-submit">Back to home</a>
+    </dialog>
+
+    <template id="catering-item-template">
+        <div class="catering-product" data-selected="false">
+            <input class="catering-product-select" type="checkbox" data-item-select>
+            <label class="catering-product-label" data-item-label>
+                <span class="catering-product-check" aria-hidden="true"></span>
+                <img alt="" width="80" height="80" loading="lazy" decoding="async">
+                <span class="catering-product-copy">
+                    <span class="catering-product-name" data-item-name></span>
+                    <span class="catering-product-unit" data-item-unit></span>
+                    <span class="catering-product-ingredients" data-item-ingredients hidden></span>
+                </span>
+            </label>
+            <div class="catering-product-quantity">
+                <label data-quantity-label>Quantity</label>
+                <input type="number" min="1" step="1" inputmode="numeric" autocomplete="off" data-item-quantity disabled>
             </div>
-            <p class="text-white mt-4 font-medium">Submitting your inquiry...</p>
+            <p class="catering-field-error" data-item-error hidden></p>
         </div>
-    </div>
-
-    <!-- Success Modal -->
-    <div id="success-modal" class="fixed inset-0 z-[200] hidden">
-        <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity" id="modal-backdrop"></div>
-        <div class="relative flex min-h-full items-center justify-center p-4">
-            <div class="relative w-full max-w-md bg-white rounded-2xl p-8 shadow-2xl transform transition-all text-center">
-                <button type="button" onclick="window.location.href='index.html'"
-                    class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors"
-                    aria-label="Close success modal">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
-
-                <div class="mx-auto w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                    <svg class="w-10 h-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                        stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                </div>
-
-                <h3 class="font-oswald text-3xl font-bold text-slate-900 mb-4">
-                    We Can't Wait to Cater Your Event, <span id="success-customer-name" class="text-brand-600"></span>!
-                </h3>
-                <p class="text-slate-600 text-lg mb-6">
-                    Our team will review your request and get back to you within <strong>24 hours</strong>. Check your email for confirmation details.
-                </p>
-
-                <button id="close-modal-btn"
-                    class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 rounded-full transition-all">
-                    Back to Home
-                </button>
-
-            </div>
-        </div>
-    </div>
-
-    <script>
-        lucide.createIcons();
-
-        // Simple script to ensure future dates only in the date picker
-        const dateInput = document.getElementById('event-date');
-        const today = new Date().toISOString().split('T')[0];
-
-        if (dateInput) {
-            dateInput.setAttribute('min', today);
-            dateInput.setAttribute('max', '9999-12-31');
-        }
-
-        // --- FORM HANDLING & MODAL LOGIC ---
-        const form = document.getElementById('catering-form');
-        const modal = document.getElementById('success-modal');
-        const loadingOverlay = document.getElementById('loading-overlay');
-        const closeBtn = document.getElementById('close-modal-btn');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const btn = form.querySelector('button[type="submit"]');
-            const originalText = btn.innerText;
-            btn.innerText = "Sending...";
-            btn.disabled = true;
-
-            // Gather form data
-            const formData = {
-                location: document.getElementById('location').value,
-                fullName: document.getElementById('full-name').value,
-                phone: document.getElementById('phone').value,
-                email: document.getElementById('email').value,
-                eventDate: document.getElementById('event-date').value,
-                eventTime: document.getElementById('event-time').value,
-                guests: document.getElementById('guests').value,
-                serviceType: document.querySelector('input[name="service-type"]:checked').value,
-                address: document.getElementById('address').value || '',
-                city: document.getElementById('city').value || '',
-                state: document.getElementById('state').value || '',
-                comments: document.getElementById('comments').value || '',
-                uid: firebase.auth().currentUser ? firebase.auth().currentUser.uid : null
-            };
-
-            try {
-                // Show loading overlay
-                loadingOverlay.classList.remove('hidden');
-
-                // Submit to backend
-                const response = await fetch('https://us-central1-samosaman-6895e.cloudfunctions.net/submitCateringInquiry', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
-                });
-
-                const result = await response.json();
-
-                if (result.success) {
-                    // Hide loading and show success modal
-                    setTimeout(() => {
-                        loadingOverlay.classList.add('hidden');
-
-                        // Set customer name in modal
-                        const customerFirstName = formData.fullName.split(' ')[0] || 'there';
-                        const successNameEl = document.getElementById('success-customer-name');
-                        if (successNameEl) successNameEl.textContent = customerFirstName;
-
-                        modal.classList.remove('hidden');
-
-                        // Reset form
-                        form.reset();
-                        btn.innerText = originalText;
-                        btn.disabled = false;
-                    }, 1500);
-                } else {
-                    throw new Error(result.error || 'Failed to submit inquiry');
-                }
-            } catch (error) {
-                console.error('Error submitting catering inquiry:', error);
-                loadingOverlay.classList.add('hidden');
-                alert('There was an error submitting your inquiry. Please try again or contact us directly.');
-                btn.innerText = originalText;
-                btn.disabled = false;
-            }
-        });
-
-        closeBtn.addEventListener('click', () => {
-            modal.classList.add('hidden');
-            window.location.href = 'index.html';
-        });
-
-    </script>
+    </template>
+    <script src="js/catering-menu.js?v=20261028-meal-ingredients"></script>
+    <script src="js/catering-order.js?v=20261028-empty-quantity"></script>
+    <script src="js/catering.js?v=20261028-location-default"></script>
 
     <script src="js/auth.js?v=20261021-account-loading"></script>
 

@@ -1,0 +1,62 @@
+// Generated from functions/catering-menu.json. Run npm run build:catering-menu.
+window.SamosamanCateringMenu = {
+  "maxQuantity": 9999,
+  "groups": [
+    {
+      "id": "samosas",
+      "label": "Samosas",
+      "unit": "samosa",
+      "items": [
+        {
+          "id": "steak-cheese",
+          "name": "Steak & Cheese",
+          "image": "assets/samosas/steakandcheese.webp",
+          "ingredients": "Minced beef, Cabot sharp white cheddar, onion, and spices."
+        },
+        {
+          "id": "punjabi-samosa",
+          "name": "Traditional Punjabi",
+          "image": "assets/samosas/traditional_punjabi_samosa.webp",
+          "ingredients": "Spiced potatoes, green peas, and herbs."
+        },
+        {
+          "id": "chicken-cheese",
+          "name": "Chicken & Cheese",
+          "image": "assets/samosas/chicken_cheese3.webp",
+          "ingredients": "Minced chicken, Cabot sharp cheddar, spices, and herbs."
+        },
+        {
+          "id": "spicy-chicken",
+          "name": "Spicy Chicken",
+          "image": "assets/samosas/spicy_chicken2.webp",
+          "ingredients": "Ground chicken with chili seasoning."
+        },
+        {
+          "id": "apple-samosa",
+          "name": "Apple Pie",
+          "image": "assets/samosas/apple_samosa3.webp",
+          "ingredients": "Apples, nutmeg, brown sugar, and cinnamon."
+        }
+      ]
+    },
+    {
+      "id": "meals",
+      "label": "Meals",
+      "unit": "meal",
+      "items": [
+        {
+          "id": "chicken-curry-meal",
+          "name": "Chicken Curry",
+          "image": "assets/chicken_curry.webp",
+          "ingredients": "Chicken in a creamy curry sauce."
+        },
+        {
+          "id": "chickpea-masala",
+          "name": "Chickpea Masala",
+          "image": "assets/chickpea_masala.webp",
+          "ingredients": "Chickpeas cooked with a blend of spices."
+        }
+      ]
+    }
+  ]
+};
