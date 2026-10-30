@@ -11,7 +11,7 @@ window.SamosamanCateringMenu = {
           "id": "steak-cheese",
           "name": "Steak & Cheese",
           "image": "assets/samosas/steakandcheese.webp",
-          "ingredients": "Minced beef, Cabot sharp white cheddar, onion, and spices."
+          "ingredients": "Minced beef, Cabot® sharp white cheddar, onion, and spices."
         },
         {
           "id": "punjabi-samosa",
@@ -23,7 +23,7 @@ window.SamosamanCateringMenu = {
           "id": "chicken-cheese",
           "name": "Chicken & Cheese",
           "image": "assets/samosas/chicken_cheese3.webp",
-          "ingredients": "Minced chicken, Cabot sharp cheddar, spices, and herbs."
+          "ingredients": "Minced chicken, Cabot® sharp cheddar, spices, and herbs."
         },
         {
           "id": "spicy-chicken",

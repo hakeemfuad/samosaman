@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "name": "Steak & Cheese",
     "cartName": "Steak & Cheese Samosa",
     "price": 4.75,
-    "description": "Minced beef, Cabot\u2122 sharp white cheddar, onion, and spices.",
+    "description": "Minced beef, Cabot\u00ae sharp white cheddar, onion, and spices.",
     "filling": "assets/menu-diagrams/steak-cheese-85d0c2a3b408.webp",
     "chutney": true
   },
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "name": "Chicken & Cheese",
     "cartName": "Chicken & Cheese Samosa",
     "price": 4.75,
-    "description": "Minced chicken, Cabot sharp cheddar, spices, and herbs.",
+    "description": "Minced chicken, Cabot\u00ae sharp cheddar, spices, and herbs.",
     "filling": "assets/menu-diagrams/chicken-cheese-750318de9c65.webp",
     "chutney": true
   },

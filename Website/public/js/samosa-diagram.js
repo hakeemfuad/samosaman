@@ -4,7 +4,7 @@
 
     // Product language follows the Burlington menu. The Flutter app still has
     // its starter screen and has no product-detail component to share here.
-    const fillingCopy = 'Steak & Cheese Samosa: Minced beef, Cabot™ sharp white cheddar, onion, and spices.';
+    const fillingCopy = 'Steak & Cheese Samosa: Minced beef, Cabot® sharp white cheddar, onion, and spices.';
     const parts = [
         { id: 'fold', title: 'A personal touch.', description: 'Made with love. One samosa at a time.' },
         { id: 'filling', title: '', description: fillingCopy },
@@ -58,8 +58,8 @@
         title.hidden = !part?.title;
         title.textContent = part?.title || '';
         const copy = part?.description || fillingCopy;
-        description.replaceChildren(...copy.split(/(™)/).map((text) => {
-            if (text !== '™') return text;
+        description.replaceChildren(...copy.split(/(®)/).map((text) => {
+            if (text !== '®') return text;
             const trademark = document.createElement('sup');
             trademark.textContent = text;
             return trademark;
