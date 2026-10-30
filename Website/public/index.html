@@ -111,7 +111,7 @@
                 <h2 id="fresh-heading" class="home-rise">Served Fresh.</h2>
                 <p class="home-hero-copy home-rise home-rise-2">There's a science behind our crunch.</p>
                 <div class="home-actions home-rise home-rise-3">
-                    <button class="btn btn-order" type="button" data-open-order>Order Now</button>
+                    <a class="btn btn-order" href="https://order.online/business/25346139">Order Now</a>
                     <a class="btn btn-glass" href="catering.html">Catering</a>
                 </div>
             </div>
@@ -128,7 +128,7 @@
             <div class="samosa-diagram" data-samosa-diagram hidden>
                 <div class="home-spotlight__copy">
                     <div class="home-spotlight__actions">
-                        <button class="btn btn-order" type="button" data-open-order>Order Now</button>
+                        <a class="btn btn-order" href="https://order.online/business/25346139">Order Now</a>
                         <a class="home-spotlight__menu" href="burlington.html">View menu <span aria-hidden="true">→</span></a>
                     </div>
                     <div class="samosa-diagram__caption" id="samosa-part-details" data-diagram-caption aria-live="polite" aria-atomic="true">
@@ -399,30 +399,6 @@
         </section>
     </main>
 
-    <!-- Homepage order entry; separate from cart.js checkout-time picker. -->
-<div id="order-layer" hidden>
-  <div class="home-order-scrim" data-close-order aria-hidden="true"></div>
-  <div class="home-order-sheet" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="order-sheet-title">
-    <div class="home-sheet-head">
-      <h2 id="order-sheet-title">How are you getting it?</h2>
-      <button class="btn btn-glass circle" type="button" data-close-order aria-label="Close order options"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-    </div>
-    <div class="shelf">
-      <button class="well" type="button" data-mode="pickup" aria-pressed="true">
-        <span class="glyph" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 8h13l-1 12.5h-11L5.5 8Z"/><path d="M9 8V6.8a3 3 0 0 1 6 0V8"/></svg></span>
-        <span class="well-text"><span class="well-title">Pickup</span></span>
-        <svg class="well-check" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
-      </button>
-      <button class="well" type="button" data-mode="delivery" aria-pressed="false">
-        <span class="glyph" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6.5h11v10H3zM14 10h4l3 3.5v3h-7"/><circle cx="7" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg></span>
-        <span class="well-text"><span class="well-title">Delivery</span></span>
-        <svg class="well-check" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
-      </button>
-    </div>
-    <button class="btn btn-ink btn-wide" type="button" id="start-order">Start order</button>
-  </div>
-</div>
-
     <div id="auth-modal" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
         <div id="auth-backdrop"
             class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity opacity-0 duration-300"
@@ -624,9 +600,9 @@
         }
     </style>
 
-    <script src="js/navbar.js?v=20261026-shared-graphics"></script>
+    <script src="js/navbar.js?v=20261030-order-links"></script>
     <script src="js/auth.js?v=20261021-account-loading"></script>
-    <script src="js/home.js?v=20261021-home-faq"></script>
+    <script src="js/home.js?v=20261029-order-links"></script>
 
     <div id="footer-placeholder"></div>
     <script src="js/footer.js?v=20261026-shared-graphics"></script>
