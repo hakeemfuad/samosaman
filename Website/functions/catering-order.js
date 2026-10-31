@@ -5,16 +5,19 @@ function invalidItems() {
     return Object.assign(new Error('Select valid menu items and whole-number quantities.'), { code: 'INVALID_ORDER_ITEMS' });
 }
 
-// Older clients can omit the optional menu selection. Names and units always
-// come from our catalog, never from client-supplied display text or prices.
+// Names and units come from our catalog, never from client-supplied display
+// text or prices. Request validation requires at least one normalized item.
 function normalizeOrderItems(items = []) {
     if (!Array.isArray(items) || items.length > products.size) throw invalidItems();
     const seen = new Set();
     return items.map(item => {
-        if (!item || !products.has(item.id) || seen.has(item.id) ||
-            !Number.isSafeInteger(item.quantity) || item.quantity < 1 || item.quantity > catalog.maxQuantity) throw invalidItems();
+        if (!item || !products.has(item.id) || seen.has(item.id)) throw invalidItems();
+        const product = products.get(item.id);
+        const hasQuantity = item.quantity !== undefined;
+        if ((product.unit !== 'meal' || hasQuantity) &&
+            (!Number.isSafeInteger(item.quantity) || item.quantity < 1 || item.quantity > catalog.maxQuantity)) throw invalidItems();
         seen.add(item.id);
-        return { id: item.id, ...products.get(item.id), quantity: item.quantity };
+        return { id: item.id, ...product, ...(hasQuantity ? { quantity: item.quantity } : {}) };
     });
 }
 
@@ -23,6 +26,7 @@ function escapeHtml(value) {
 }
 
 function itemText(item) {
+    if (item.quantity === undefined) return `${item.name} (${item.unit})`;
     return `${item.quantity} × ${item.name} (${item.unit}${item.quantity === 1 ? '' : 's'})`;
 }
 

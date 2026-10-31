@@ -12,7 +12,7 @@
     const arrow = button.querySelector('.catering-submit-arrow');
     const status = document.getElementById('catering-status');
     const submitError = document.getElementById('catering-submit-error');
-    const fields = [...form.querySelectorAll('.catering-field input, .catering-field select')];
+    const fields = [...form.querySelectorAll('.catering-field input, .catering-field select, .catering-field textarea')];
     const orderFieldset = document.getElementById('catering-order');
     const orderSelector = window.SamosamanCateringOrder.create(orderFieldset, window.SamosamanCateringMenu);
 
@@ -27,16 +27,17 @@
         email: 'Enter your email address.',
         'event-date': 'Select the date of your event.',
         'event-time': 'Select the time of your event.',
-        guests: 'Enter the number of guests.'
+        address: 'Enter the street address of your event.',
+        city: 'Enter the city or town of your event.',
+        state: 'Enter the state of your event.'
     };
 
     function showFieldError(field) {
         const error = document.getElementById(`${field.id}-error`);
         let message = '';
-        if (field.validity.valueMissing) message = requiredMessages[field.id] || 'Complete this field.';
+        if (field.validity.valueMissing || (field.required && !field.value.trim())) message = requiredMessages[field.id] || 'Complete this field.';
         else if (field.validity.typeMismatch) message = 'Enter a valid email address.';
         else if (field.validity.rangeUnderflow && field === dateInput) message = 'Select today or a later date.';
-        else if (field.id === 'guests' && !field.validity.valid) message = 'Enter a whole number of 1 or more.';
         else if (!field.validity.valid) message = field.validationMessage;
         error.textContent = message;
         error.hidden = !message;
@@ -79,6 +80,7 @@
         if (selection.invalidField) invalidFields.push(selection.invalidField);
         if (invalidFields.length) {
             status.textContent = 'Check the marked fields before you send your inquiry.';
+            invalidFields.sort((first, second) => first.compareDocumentPosition(second) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1);
             invalidFields[0].focus();
             return;
         }
@@ -92,7 +94,6 @@
             email: values.get('email'),
             eventDate: values.get('event-date'),
             eventTime: values.get('event-time'),
-            guests: values.get('guests'),
             serviceType: values.get('service-type'),
             address: values.get('address') || '',
             city: values.get('city') || '',

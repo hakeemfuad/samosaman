@@ -42,18 +42,19 @@ window.SamosamanCateringMenu = {
     {
       "id": "meals",
       "label": "Meals",
+      "description": "All meals are served with an accompanying tray of organic coconut rice.",
       "unit": "meal",
       "items": [
         {
           "id": "chicken-curry-meal",
           "name": "Chicken Curry",
-          "image": "assets/chicken_curry.webp",
+          "image": "assets/chicken_curry_tray.webp",
           "ingredients": "Chicken in a creamy curry sauce."
         },
         {
           "id": "chickpea-masala",
           "name": "Chickpea Masala",
-          "image": "assets/chickpea_masala.webp",
+          "image": "assets/chickpea_masala_tray.webp",
           "ingredients": "Chickpeas cooked with a blend of spices."
         }
       ]

@@ -49,8 +49,10 @@ function setup() {
 
 const inquiry = {
     location: 'Burlington', fullName: 'Test Guest', phone: '8025550100', email: 'test@example.invalid',
-    eventDate: '2026-12-01', eventTime: '12:30 PM', guests: '45', serviceType: 'pickup',
-    comments: 'Please discuss the menu with us.'
+    eventDate: '2026-12-01', eventTime: '12:30 PM', serviceType: 'pickup',
+    address: '100 Church St', city: 'Burlington', state: 'VT',
+    comments: 'Please discuss the menu with us.',
+    orderItems: [{id:'steak-cheese',quantity:50}]
 };
 
 test('the browser catalog matches the server catalog and all image files exist', () => {
@@ -71,6 +73,7 @@ test('submitted names and prices cannot replace catalog data', () => {
 test('invalid, duplicate, or unknown items are rejected', () => {
     const invalid = [null, {}, 'chicken-curry-meal', [null], [{id:'unknown', quantity:1}],
         [{id:'__proto__', quantity:1}], [{id:'steak-cheese', quantity:1}, {id:'steak-cheese', quantity:2}],
+        [{id:'steak-cheese'}],
         ...[0, -1, 1.5, '2', null, NaN, Infinity, 10000].map(quantity => [{id:'chickpea-masala', quantity}])];
     for (const items of invalid) assert.throws(() => order.normalizeOrderItems(items), {code:'INVALID_ORDER_ITEMS'});
     assert.equal(order.normalizeOrderItems([{id:'chickpea-masala', quantity:9999}])[0].quantity, 9999);
@@ -107,12 +110,100 @@ test('invalid selection returns 400 before any write or email', async () => {
     assert.equal(app.messages.length, 0);
 });
 
-test('inquiries from older clients can omit menu selections', async () => {
+test('meal selections without quantities reach Firestore and both emails', async () => {
+    const app = setup();
+    const result = await app.submit({...inquiry, orderItems:[{id:'chicken-curry-meal'}, {id:'chickpea-masala'}]});
+    assert.equal(result.status, 200);
+    assert.deepEqual(app.saved[0].data.orderItems, [
+        {id:'chicken-curry-meal',name:'Chicken Curry',unit:'meal'},
+        {id:'chickpea-masala',name:'Chickpea Masala',unit:'meal'}
+    ]);
+    assert.equal(app.messages.length, 2);
+    for (const message of app.messages) {
+        assert.match(message.html, /Chicken Curry \(meal\)/);
+        assert.match(message.html, /Chickpea Masala \(meal\)/);
+        assert.doesNotMatch(message.html, /(?:undefined|NaN|1) × (?:Chicken Curry|Chickpea Masala)/);
+    }
+});
+
+test('an inquiry requires at least one menu item before any write or email', async () => {
+    for (const orderItems of [undefined, []]) {
+        const app = setup();
+        const result = await app.submit({...inquiry, orderItems});
+        assert.equal(result.status, 400);
+        assert.equal(result.data.code, 'INVALID_ORDER_ITEMS');
+        assert.equal(app.saved.length, 0);
+        assert.equal(app.messages.length, 0);
+    }
+});
+
+test('missing or blank required fields are rejected before any write or email', async () => {
+    for (const field of ['fullName', 'phone', 'email', 'eventDate', 'eventTime', 'serviceType', 'address', 'city', 'state']) {
+        for (const value of [undefined, '', '   ']) {
+            const app = setup();
+            const result = await app.submit({...inquiry, [field]: value});
+            assert.equal(result.status, 400, field);
+            assert.equal(result.data.code, 'MISSING_REQUIRED_FIELDS', field);
+            assert(result.data.fields.includes(field), field);
+            assert.equal(app.saved.length, 0);
+            assert.equal(app.messages.length, 0);
+        }
+    }
+});
+
+test('special requests can be omitted, empty, or blank', async () => {
+    for (const comments of [undefined, '', '   ']) {
+        const app = setup();
+        const body = { ...inquiry, comments };
+        if (comments === undefined) delete body.comments;
+        const result = await app.submit(body);
+        assert.equal(result.status, 200);
+        assert.equal(app.saved.length, 1);
+        assert.equal(app.saved[0].data.comments, '');
+        assert.equal(app.messages.length, 2);
+        assert.doesNotMatch(app.messages[1].html, /--- COMMENTS ---/);
+    }
+});
+
+test('non-text special requests are rejected before any write or email', async () => {
+    for (const comments of [null, false, 0, [], {}]) {
+        const app = setup();
+        const result = await app.submit({ ...inquiry, comments });
+        assert.equal(result.status, 400);
+        assert.equal(result.data.code, 'INVALID_COMMENTS');
+        assert.equal(app.saved.length, 0);
+        assert.equal(app.messages.length, 0);
+    }
+});
+
+test('an unknown service type is rejected before any write or email', async () => {
+    const app = setup();
+    const result = await app.submit({...inquiry, serviceType:'other'});
+    assert.equal(result.status, 400);
+    assert.equal(result.data.code, 'INVALID_SERVICE_TYPE');
+    assert.equal(app.saved.length, 0);
+    assert.equal(app.messages.length, 0);
+});
+
+test('an inquiry without a guest count is saved and emails do not show a missing count', async () => {
     const app = setup();
     const result = await app.submit(inquiry);
     assert.equal(result.status, 200);
-    assert.deepEqual(app.saved[0].data.orderItems, []);
-    for (const message of app.messages) assert.doesNotMatch(message.html, /Requested menu|REQUESTED MENU/);
+    assert.equal(app.saved[0].data.numberOfGuests, undefined);
+    assert.equal(app.saved[0].data.eventAddress, inquiry.address);
+    assert.equal(app.messages.length, 2);
+    for (const message of app.messages) {
+        assert.doesNotMatch(message.subject, /guests/i);
+        assert.doesNotMatch(message.html, /Guests:|Guests &amp; Service|(?:0|TBD|undefined) guests/);
+    }
+});
+
+test('guest counts supplied by older clients are retained', async () => {
+    const app = setup();
+    const result = await app.submit({...inquiry, guests:'45'});
+    assert.equal(result.status, 200);
+    assert.equal(app.saved[0].data.numberOfGuests, 45);
+    assert.match(app.messages[1].subject, /45 guests/);
 });
 
 test('order email fragments escape HTML in display values', () => {

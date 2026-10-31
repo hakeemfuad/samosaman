@@ -1502,7 +1502,23 @@ exports.submitCateringInquiry = onRequest({
     const { location, fullName, phone, email, eventDate, eventTime, guests, serviceType, address, city, state, comments, orderItems, uid } = req.body || {};
 
     try {
+      const requiredFields = { fullName, phone, email, eventDate, eventTime, serviceType, address, city, state };
+      const missingFields = Object.keys(requiredFields).filter(field => typeof requiredFields[field] !== 'string' || !requiredFields[field].trim());
+      if (missingFields.length) {
+        return res.status(400).json({ success: false, error: 'Complete all required fields.', code: 'MISSING_REQUIRED_FIELDS', fields: missingFields });
+      }
+      if (!['pickup', 'delivery'].includes(serviceType)) {
+        return res.status(400).json({ success: false, error: 'Select pick-up or delivery.', code: 'INVALID_SERVICE_TYPE' });
+      }
+      if (comments !== undefined && typeof comments !== 'string') {
+        return res.status(400).json({ success: false, error: 'Special requests must be text.', code: 'INVALID_COMMENTS' });
+      }
       const requestedItems = normalizeOrderItems(orderItems);
+      if (!requestedItems.length) {
+        return res.status(400).json({ success: false, error: 'Select at least one menu item.', code: 'INVALID_ORDER_ITEMS' });
+      }
+      // Keep guest counts from older clients without adding a count to new inquiries.
+      const numberOfGuests = Number(guests);
       // Generate unique inquiry ID
       const inquiryId = crypto.randomUUID();
       const submittedAt = FieldValue.serverTimestamp();
@@ -1516,12 +1532,12 @@ exports.submitCateringInquiry = onRequest({
         customerEmail: email,
         eventDate: eventDate,
         eventTime: eventTime,
-        numberOfGuests: parseInt(guests) || 0,
+        ...(Number.isSafeInteger(numberOfGuests) && numberOfGuests > 0 ? { numberOfGuests } : {}),
         serviceType: serviceType || 'pickup',
         eventAddress: address || '',
         eventCity: city || '',
         eventState: state || '',
-        comments: comments || '',
+        comments: comments?.trim() || '',
         orderItems: requestedItems,
         uid: uid || null,
         status: 'pending',
@@ -1571,8 +1587,7 @@ Email: ${inquiry.customerEmail}
 --- EVENT DETAILS ---
 Date: ${inquiry.eventDate}
 Time: ${inquiry.eventTime}
-Guests: ${inquiry.numberOfGuests}
-${orderItemsText(inquiry.orderItems)}
+${inquiry.numberOfGuests ? `Guests: ${inquiry.numberOfGuests}\n` : ''}${orderItemsText(inquiry.orderItems)}
 ${inquiry.eventAddress ? `
 --- EVENT LOCATION ---
 ${inquiry.eventAddress}
@@ -1603,7 +1618,7 @@ async function sendCateringConfirmationEmails(inquiry) {
   await getTransporter().sendMail({
     from: '"SamosaMan Catering" <no_reply@samosamanvt.com>',
     to: ['no_reply@samosamanvt.com', 'kfuad3@gmail.com'],
-    subject: `NEW CATERING INQUIRY - ${inquiry.location} - ${inquiry.eventDate} - ${inquiry.numberOfGuests} guests`,
+    subject: `NEW CATERING INQUIRY - ${inquiry.location} - ${inquiry.eventDate}${inquiry.numberOfGuests ? ` - ${inquiry.numberOfGuests} guests` : ''}`,
     html: getCateringRestaurantEmailTemplate(inquiry)
   });
 }
@@ -1683,8 +1698,8 @@ function getCateringCustomerEmailTemplate(inquiry) {
             <div style="font-size:13px;font-weight:500;color:#1a1a1a;font-family:Helvetica,Arial,sans-serif;">${eventLocation}</div>
           </td>
           <td style="padding:14px 18px;width:50%;">
-            <div style="font-size:10px;font-weight:600;color:#94a3b8;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;font-family:Helvetica,Arial,sans-serif;">Guests &amp; Service</div>
-            <div style="font-size:13px;font-weight:500;color:#1a1a1a;font-family:Helvetica,Arial,sans-serif;">${inquiry.numberOfGuests || 'TBD'} guests · ${serviceTypeText}</div>
+            <div style="font-size:10px;font-weight:600;color:#94a3b8;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;font-family:Helvetica,Arial,sans-serif;">${inquiry.numberOfGuests ? 'Guests &amp; Service' : 'Service'}</div>
+            <div style="font-size:13px;font-weight:500;color:#1a1a1a;font-family:Helvetica,Arial,sans-serif;">${inquiry.numberOfGuests ? `${inquiry.numberOfGuests} guests · ` : ''}${serviceTypeText}</div>
           </td>
         </tr>
       </table>

@@ -57,7 +57,8 @@
 .catering-select-chevron { position: absolute; top: 21px; right: 16px; width: 16px; height: 16px; color: var(--catering-muted); pointer-events: none; }
 .catering-field-control input[type="date"] { -webkit-appearance: none; appearance: none; text-align: left; }
 .catering-field-control input[type="date"]::-webkit-date-and-time-value { text-align: left; }
-.catering-field-control textarea { min-height: 132px; height: auto; padding-top: 30px; resize: vertical; }
+.catering-field-control textarea { min-height: 132px; height: auto; padding-top: 16px; resize: vertical; }
+#comments::placeholder { font-size: 14px; }
 .catering-field-help, .catering-field-error { margin: 8px 0 0; font-size: 13px; line-height: 1.45; }
 .catering-field-help { color: var(--catering-muted); }
 .catering-field-error { color: var(--catering-error); }
@@ -82,19 +83,23 @@
 .catering-order, .catering-product-group { min-width: 0; margin: 0; padding: 0; border: 0; }
 .catering-product-group + .catering-product-group { margin-top: 24px; }
 .catering-product-group > legend { margin-bottom: 12px; padding: 0; font-size: 15px; font-weight: 500; }
+.catering-product-group-description { margin: -6px 0 12px; color: var(--catering-muted); font-size: 13px; line-height: 1.5; }
 .catering-product-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-.catering-product { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 68px; column-gap: 10px; align-items: center; min-width: 0; padding: 10px; border: 1px solid var(--catering-border); border-radius: 16px; background: #fff; box-shadow: inset 0 1px 0 #fff; transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease; }
+.catering-product { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 68px; column-gap: 10px; align-items: center; min-width: 0; padding: 10px 40px 10px 10px; border: 1px solid var(--catering-border); border-radius: 16px; background: #fff; box-shadow: inset 0 1px 0 #fff; transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease; }
+.catering-product[data-quantity-required="false"] { grid-template-columns: minmax(0, 1fr); }
 .catering-product:hover { border-color: var(--catering-control-border); }
 .catering-product[data-selected="true"] { border-color: var(--catering-accent); background: #fff; box-shadow: inset 0 0 0 1px var(--catering-accent), inset 0 1px 0 #fff; }
-.catering-product-select { position: absolute; top: 10px; left: 10px; width: 1px; height: 1px; margin: 0; opacity: 0; }
-.catering-product-label { display: grid; grid-template-columns: 20px 40px minmax(0, 1fr); align-items: center; gap: 8px; min-height: 48px; cursor: pointer; }
+.catering-product-select { position: absolute; top: 50%; right: 10px; width: 1px; height: 1px; margin: 0; opacity: 0; }
+.catering-product-label { display: grid; grid-template-columns: 40px minmax(0, 1fr); align-items: center; gap: 8px; min-height: 48px; cursor: pointer; }
 .catering-product-select:focus-visible + .catering-product-label { outline: 3px solid var(--catering-focus); outline-offset: 4px; border-radius: 10px; }
 .catering-product-label img { display: block; width: 40px; height: 40px; border-radius: 10px; background: var(--catering-paper); object-fit: cover; }
+.catering-product[data-product-id="chicken-curry-meal"] img,
+.catering-product[data-product-id="chickpea-masala"] img { object-fit: contain; }
 .catering-product-copy { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
 .catering-product-name { font-size: 14px; font-weight: 600; line-height: 1.3; letter-spacing: -.02em; }
 .catering-product-unit { color: var(--catering-muted); font-size: 12px; line-height: 1.4; }
 .catering-product-ingredients { margin-top: 3px; color: var(--catering-muted); font-size: 12px; line-height: 1.45; }
-.catering-product-check { display: grid; place-items: center; width: 20px; height: 20px; border: 1px solid var(--catering-control-border); border-radius: 50%; background: #fff; }
+.catering-product-check { position: absolute; top: 50%; right: 10px; transform: translateY(-50%); display: grid; place-items: center; width: 20px; height: 20px; border: 1px solid var(--catering-control-border); border-radius: 50%; background: #fff; }
 .catering-product-select:checked + .catering-product-label .catering-product-check { border-color: var(--catering-accent); background: var(--catering-accent); }
 .catering-product-select:checked + .catering-product-label .catering-product-check::after { content: ""; width: 9px; height: 5px; margin-top: -2px; border-left: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(-45deg); }
 .catering-product-quantity { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
@@ -144,10 +149,10 @@
 @media (max-width: 359px) {
     .catering-main { padding-inline: 12px; }
     .catering-panel { padding-inline: 16px; }
-    .catering-product { grid-template-columns: minmax(0, 1fr) 64px; column-gap: 8px; padding: 8px; }
-    .catering-product-label { grid-template-columns: 16px 28px minmax(0, 1fr); gap: 6px; }
+    .catering-product { grid-template-columns: minmax(0, 1fr) 64px; column-gap: 8px; padding: 8px 32px 8px 8px; }
+    .catering-product-label { grid-template-columns: 28px minmax(0, 1fr); gap: 6px; }
     .catering-product-label img { width: 28px; height: 28px; border-radius: 7px; }
-    .catering-product-check { width: 16px; height: 16px; }
+    .catering-product-check { right: 8px; width: 16px; height: 16px; }
     .catering-product-quantity input { padding-inline: 2px; }
     .catering-service-content { gap: 6px; padding-inline: 8px; font-size: 14px; }
     .catering-service-content > svg { width: 18px; height: 18px; }
