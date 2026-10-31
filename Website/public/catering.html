@@ -99,7 +99,7 @@
         }
     </style>
     <link rel="stylesheet" href="css/navbar.css?v=20261021-account-loading">
-    <link rel="stylesheet" href="css/catering.css?v=20261028-gray-borders">
+    <link rel="stylesheet" href="css/catering.css?v=20261031-smaller-request-hint">
 </head>
 
 <body class="catering-page font-sans antialiased">
@@ -111,14 +111,13 @@
 
     <main id="catering-main" class="catering-main">
         <header class="catering-intro">
-            <p class="catering-eyebrow">Made to share.</p>
-            <h1>Catering inquiry</h1>
-            <p>Bring the crunch to your next event.<br>Tell us your plans. We will take it from there.</p>
+            <h1>Catering Inquiry</h1>
+            <p>Employee lunches, corporate retreats, dinner parties; we do it all.</p>
         </header>
 
         <div class="catering-panel">
             <form id="catering-form" aria-describedby="catering-required-note">
-                <p id="catering-required-note" class="catering-required-note">All fields are required unless marked optional.</p>
+                <p id="catering-required-note" class="catering-required-note">All fields are required except Special Requests.</p>
 
                 <section class="catering-section" aria-labelledby="contact-heading">
                     <div class="catering-section-heading">
@@ -196,12 +195,31 @@
                             </div>
                             <p id="event-time-error" class="catering-field-error" hidden></p>
                         </div>
+                    </div>
+                    <div class="catering-address-heading">
+                        <h3>Event address</h3>
+                    </div>
+                    <div class="catering-field-grid">
                         <div class="catering-field catering-field--wide">
                             <div class="catering-field-control">
-                                <input type="number" id="guests" name="guests" placeholder=" " min="1" step="1" inputmode="numeric" required aria-describedby="guests-error">
-                                <label for="guests">Number of guests</label>
+                                <input type="text" id="address" name="address" placeholder=" " autocomplete="street-address" required aria-describedby="address-error">
+                                <label for="address">Street address</label>
                             </div>
-                            <p id="guests-error" class="catering-field-error" hidden></p>
+                            <p id="address-error" class="catering-field-error" hidden></p>
+                        </div>
+                        <div class="catering-field">
+                            <div class="catering-field-control">
+                                <input type="text" id="city" name="city" placeholder=" " autocomplete="address-level2" required aria-describedby="city-error">
+                                <label for="city">City or town</label>
+                            </div>
+                            <p id="city-error" class="catering-field-error" hidden></p>
+                        </div>
+                        <div class="catering-field">
+                            <div class="catering-field-control">
+                                <input type="text" id="state" name="state" placeholder=" " autocomplete="address-level1" required aria-describedby="state-error">
+                                <label for="state">State</label>
+                            </div>
+                            <p id="state-error" class="catering-field-error" hidden></p>
                         </div>
                     </div>
                     <fieldset class="catering-service">
@@ -225,33 +243,6 @@
                             </label>
                         </div>
                     </fieldset>
-                    <div class="catering-address-heading">
-                        <h3>Event address</h3>
-                        <p>Add the venue if you know it.</p>
-                    </div>
-                    <div class="catering-field-grid">
-                        <div class="catering-field catering-field--wide">
-                            <div class="catering-field-control">
-                                <input type="text" id="address" name="address" placeholder=" " autocomplete="street-address" aria-describedby="address-error">
-                                <label for="address">Street address (optional)</label>
-                            </div>
-                            <p id="address-error" class="catering-field-error" hidden></p>
-                        </div>
-                        <div class="catering-field">
-                            <div class="catering-field-control">
-                                <input type="text" id="city" name="city" placeholder=" " autocomplete="address-level2" aria-describedby="city-error">
-                                <label for="city">City or town (optional)</label>
-                            </div>
-                            <p id="city-error" class="catering-field-error" hidden></p>
-                        </div>
-                        <div class="catering-field">
-                            <div class="catering-field-control">
-                                <input type="text" id="state" name="state" placeholder=" " autocomplete="address-level1" aria-describedby="state-error">
-                                <label for="state">State (optional)</label>
-                            </div>
-                            <p id="state-error" class="catering-field-error" hidden></p>
-                        </div>
-                    </div>
                 </section>
 
                 <section id="menu-selection" class="catering-section" aria-labelledby="order-heading">
@@ -259,11 +250,12 @@
                         <span class="catering-step" aria-hidden="true">3</span>
                         <h2 id="order-heading">Choose your menu</h2>
                     </div>
-                    <p id="catering-order-help" class="catering-order-help">Select the items you want, then enter a quantity for each. You can select more than one item.</p>
-                    <fieldset id="catering-order" class="catering-order" data-catering-order aria-describedby="catering-order-help">
-                        <legend class="catering-sr-only">Menu items and quantities (optional)</legend>
+                    <p id="catering-order-help" class="catering-order-help">Select at least one item. Enter a quantity for each selected samosa.</p>
+                    <fieldset id="catering-order" class="catering-order" data-catering-order aria-describedby="catering-order-help catering-order-error">
+                        <legend class="catering-sr-only">Menu items and samosa quantities</legend>
                         <div data-order-products></div>
                     </fieldset>
+                    <p id="catering-order-error" class="catering-field-error" hidden></p>
                     <p id="catering-order-count" class="catering-order-count" role="status">No items selected</p>
                     <noscript><p class="catering-field-help">Include your menu choices and quantities in Special requests.</p></noscript>
                 </section>
@@ -271,14 +263,14 @@
                 <section class="catering-section" aria-labelledby="details-heading">
                     <div class="catering-section-heading">
                         <span class="catering-step" aria-hidden="true">4</span>
-                        <h2 id="details-heading">A few more details</h2>
+                        <h2 id="details-heading">Special Requests?</h2>
+                        <span class="catering-optional">Optional</span>
                     </div>
                     <div class="catering-field catering-field--fixed">
                         <div class="catering-field-control">
-                            <textarea id="comments" name="comments" rows="4" aria-describedby="comments-help"></textarea>
-                            <label for="comments">Special requests (optional)</label>
+                            <textarea id="comments" name="comments" rows="4" placeholder="Include any dietary needs, menu requests, or instructions." aria-labelledby="details-heading" aria-describedby="comments-error"></textarea>
                         </div>
-                        <p id="comments-help" class="catering-field-help">Include any dietary needs, menu requests, or instructions.</p>
+                        <p id="comments-error" class="catering-field-error" hidden></p>
                     </div>
                 </section>
 
@@ -317,7 +309,6 @@
                 <img alt="" width="80" height="80" loading="lazy" decoding="async">
                 <span class="catering-product-copy">
                     <span class="catering-product-name" data-item-name></span>
-                    <span class="catering-product-unit" data-item-unit></span>
                     <span class="catering-product-ingredients" data-item-ingredients hidden></span>
                 </span>
             </label>
@@ -328,9 +319,9 @@
             <p class="catering-field-error" data-item-error hidden></p>
         </div>
     </template>
-    <script src="js/catering-menu.js?v=20261029-cabot-mark"></script>
-    <script src="js/catering-order.js?v=20261028-empty-quantity"></script>
-    <script src="js/catering.js?v=20261028-location-default"></script>
+    <script src="js/catering-menu.js?v=20261031-meals-rice-tray"></script>
+    <script src="js/catering-order.js?v=20261031-meals-rice"></script>
+    <script src="js/catering.js?v=20261031-optional-requests"></script>
 
     <script src="js/auth.js?v=20261021-account-loading"></script>
 
