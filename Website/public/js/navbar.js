@@ -29,7 +29,7 @@
       <a class="nav-logo" href="index.html" aria-label="SamosaMan home"><img src="assets/samosaman-wordmark.webp?v=20261015-liquid-glass" alt="SamosaMan" width="960" height="423"></a>
       <div class="nav-links">
         <a class="nav-link" href="https://order.online/business/25346139">Menu</a>
-        <a class="nav-link" href="delivery.html">Delivery</a>
+        <a class="nav-link" href="https://order.online/business/25346139?delivery=true">Delivery</a>
         <a class="nav-link" href="rewards-signup.html">Rewards</a>
         <a class="nav-link" href="catering.html">Catering</a>
       </div>
@@ -50,7 +50,7 @@
       </button>
       <div class="dropdown shelf" id="mobile-menu-overlay" hidden>
         <a href="https://order.online/business/25346139">Menu</a>
-        <a href="delivery.html">Delivery</a>
+        <a href="https://order.online/business/25346139?delivery=true">Delivery</a>
         <a href="rewards-signup.html">Rewards</a>
         <a href="catering.html">Catering</a>
         ${orderControl('btn btn-tint')}
