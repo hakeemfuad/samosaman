@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="flex flex-col items-center justify-center gap-1 border-t border-[#d2d2d7] py-4 text-center text-[11px] text-[#6e6e73] md:flex-row md:gap-6">
-                    <p>© 2026 Samosaman. All rights reserved.</p>
+                    <p>© 2026 SamosaMan. All rights reserved.</p>
                     <nav aria-label="Legal" class="flex flex-wrap items-center justify-center gap-x-3">
                         <a href="privacy-policy.html" class="flex min-h-[34px] items-center hover:underline">Privacy Policy</a>
                         <span aria-hidden="true" class="h-3 border-l border-[#d2d2d7]"></span>

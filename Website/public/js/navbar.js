@@ -116,7 +116,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
                 </button>
                 <div class="text-center mb-6">
-                    <img src="assets/m_logo.svg" alt="Samosaman" class="h-12 w-auto mx-auto mb-4">
+                    <img src="assets/m_logo.svg" alt="SamosaMan" class="h-12 w-auto mx-auto mb-4">
                     <h2 id="auth-modal-title" class="font-oswald text-3xl font-bold text-slate-900 uppercase tracking-wide">Welcome Back</h2>
                     <p class="text-slate-500 text-sm mt-2">Sign in to your SamosaMan Clan® account so you can get rewards and order your favorites even faster.</p>
                 </div>
