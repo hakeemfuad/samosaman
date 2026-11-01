@@ -26,7 +26,7 @@
     const navbarHTML = `
 <div class="nav-pad">
     <nav class="nav${restoreCompactNav ? ' is-compact' : ''}" id="glass-nav" aria-label="Main">
-      <a class="nav-logo" href="index.html" aria-label="SamosaMan home"><img src="assets/samosaman-wordmark.webp?v=20261015-liquid-glass" alt="SamosaMan" width="960" height="423"></a>
+      <a class="nav-logo" href="/" aria-label="SamosaMan home"><img src="assets/samosaman-wordmark.webp?v=20261015-liquid-glass" alt="SamosaMan" width="960" height="423"></a>
       <div class="nav-links">
         <a class="nav-link" href="https://order.online/business/25346139">Menu</a>
         <a class="nav-link" href="https://order.online/business/25346139?delivery=true">Delivery</a>
