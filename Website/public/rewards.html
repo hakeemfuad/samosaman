@@ -12,13 +12,13 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samosaman - My Rewards</title>
+    <title>My Rewards - SamosaMan VT</title>
     <link rel="icon" href="/assets/icons/favicon-8c5fc881c5e8.ico" sizes="16x16 32x32 48x48">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16-f350dc6fd625.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32-883d9d601287.png">
     <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/icons/favicon-6e320b5d1a02.svg">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-a9b0ba2e5de8.png">
-    <link rel="manifest" href="/site.webmanifest?v=20261018">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-ad9cd478669f.png">
+    <link rel="manifest" href="/site.webmanifest?v=20261022">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,8 +35,8 @@
     <script src="js/firebase-init.js"></script>
 
     <script src="js/errors.js"></script>
-    <script src="js/cart.js?v=20261021-count-change-only"></script>
-    <script src="js/rewards-config.js"></script>
+    <script src="js/cart.js?v=20261026-shared-graphics"></script>
+    <script src="js/rewards-config.js?v=20261031-samosa-capitalization"></script>
     <script src="js/rewards-ui.js"></script>
 
     <script>
@@ -69,7 +69,7 @@
 <body class="font-sans antialiased text-slate-800 bg-white min-h-screen flex flex-col">
 
     <div id="navbar-placeholder"></div>
-    <script src="js/navbar.js?v=20261024-remove-our-story"></script>
+    <script src="js/navbar.js?v=20261031-home-root"></script>
 
     <main class="flex-grow pt-20 bg-slate-50">
         
@@ -79,7 +79,9 @@
                     
                     <div class="flex items-start gap-4 max-w-2xl">
                         <img 
-                            src="assets/rewards.svg" 
+                            src="assets/shared/rewards-384-4dfe535dfac1.webp"
+                            srcset="assets/shared/rewards-384-4dfe535dfac1.webp 384w, assets/shared/rewards-768-de2e48a457c0.webp 768w, assets/shared/rewards-1152-1df2890a3780.webp 1152w"
+                            sizes="171px" width="384" height="216" decoding="async"
                             alt="Rewards Logo" 
                             class="h-24 w-auto flex-shrink-0 -mt-2 drop-shadow-md">
                         <div>
@@ -144,7 +146,7 @@
                 <div class="flex justify-center text-center">
                     
                     <div class="flex flex-col items-center">
-                        <h3 class="font-oswald text-xl font-bold uppercase text-slate-900 mb-4">Need help with Samosaman Rewards?</h3>
+                        <h3 class="font-oswald text-xl font-bold uppercase text-slate-900 mb-4">Need help with SamosaMan Rewards?</h3>
                         <button id="how-it-works-btn" class="bg-brand-700 text-white font-oswald font-bold uppercase tracking-wide py-2.5 px-8 text-sm hover:bg-brand-800 transition-colors shadow-sm">
                             How Rewards Works
                         </button>
@@ -225,7 +227,7 @@
                         <div>
                             <h4 class="font-oswald text-xl font-bold text-slate-900 uppercase">2. The Crunch Cycle</h4>
                             <p class="text-slate-600 text-sm mt-1 leading-relaxed">
-                                Every cent you spend on qualifying food becomes <span class="font-bold text-brand-600">1 point</span>. Save up for free samosas, curry bowls, and future snack-powered victories. It’s the circle of life, but crunchier.
+                                Every cent you spend on qualifying food becomes <span class="font-bold text-brand-600">1 point</span>. Save up for free Samosas, curry bowls, and future snack-powered victories. It’s the circle of life, but crunchier.
                             </p>
                         </div>
                     </div>
@@ -235,7 +237,7 @@
                         <div>
                             <h4 class="font-oswald text-xl font-bold text-slate-900 uppercase">3. The Infinite Glitch</h4>
                             <p class="text-slate-600 text-sm mt-1 leading-relaxed">
-                                Redeem your points from the Rewards Exchange, add the reward to your order, and keep rolling. Basically, if you try hard enough, you can unlock an infinite samosa glitch.
+                                Redeem your points from the Rewards Exchange, add the reward to your order, and keep rolling. Basically, if you try hard enough, you can unlock an infinite Samosa glitch.
                             </p>
                         </div>
                     </div>
@@ -326,7 +328,7 @@
     <script src="js/auth.js?v=20261021-account-loading"></script>
 
     <div id="footer-placeholder"></div>
-    <script src="js/footer.js?v=20261024-remove-our-story"></script>
+    <script src="js/footer.js?v=20261031-brand-capitalization"></script>
 
 </body>
 

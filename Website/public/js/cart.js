@@ -193,6 +193,16 @@ function renderCartDrawer() {
     if (cart.length === 0) {
         emptyMsg.classList.remove('hidden');
         footer.classList.add('hidden');
+        // Fetch the artwork only when the drawer is open, including after its last item is removed.
+        if (cartScrollState) {
+            const graphic = emptyMsg.querySelector('img[data-src]');
+            if (graphic) {
+                graphic.srcset = graphic.dataset.srcset;
+                graphic.src = graphic.dataset.src;
+                graphic.removeAttribute('data-src');
+                graphic.removeAttribute('data-srcset');
+            }
+        }
         return;
     } else {
         emptyMsg.classList.add('hidden');

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "name": "Steak & Cheese",
     "cartName": "Steak & Cheese Samosa",
     "price": 4.75,
-    "description": "Minced beef, Cabot\u2122 sharp white cheddar, onion, and spices.",
+    "description": "Minced beef, Cabot\u00ae sharp white cheddar, onion, and spices.",
     "filling": "assets/menu-diagrams/steak-cheese-85d0c2a3b408.webp",
     "chutney": true
   },
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "name": "Chicken & Cheese",
     "cartName": "Chicken & Cheese Samosa",
     "price": 4.75,
-    "description": "Minced chicken, Cabot sharp cheddar, spices, and herbs.",
+    "description": "Minced chicken, Cabot\u00ae sharp cheddar, spices, and herbs.",
     "filling": "assets/menu-diagrams/chicken-cheese-750318de9c65.webp",
     "chutney": true
   },
@@ -195,9 +195,9 @@ document.addEventListener('DOMContentLoaded', () => {
     whole.setAttribute('aria-pressed', String(!part));
     inside.setAttribute('aria-pressed', String(Boolean(part)));
     dialog.querySelector('[data-diagram-controls]').dataset.state = part ? 'inside' : 'whole';
-    dialog.querySelector('[data-diagram-hint]').textContent = part ? 'Tap the samosa to return to the whole view.' : 'Select + for a closer look.';
-    const copy = part === 'fold' ? ['A personal touch.', 'Made with love. One samosa at a time.']
-      : part === 'salsa' ? ['Better together.', 'Tomato Garlic Chutney, made to bring out the flavor of the samosa.']
+    dialog.querySelector('[data-diagram-hint]').textContent = part ? 'Tap the Samosa to return to the whole view.' : 'Select + for a closer look.';
+    const copy = part === 'fold' ? ['A personal touch.', 'Made with love. One Samosa at a time.']
+      : part === 'salsa' ? ['Better together.', 'Tomato Garlic Chutney, made to bring out the flavor of the Samosa.']
       : ['', product.description];
     const partTitle = dialog.querySelector('[data-part-title]');
     partTitle.textContent = copy[0];
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ingredients = dialog.querySelector('[data-part-ingredients]');
     ingredients.hidden = part !== 'salsa';
     ingredients.textContent = part === 'salsa' ? 'Ingredients: Tomato, green pepper, yellow onion, peeled garlic, cilantro, ginger, habanero peppers, lemon juice, and a dash of salt.' : '';
-    stage.setAttribute('aria-label', `${product.name}: ${part === 'filling' ? 'filling visible' : part === 'fold' ? 'hand-folded edge close-up' : part === 'salsa' ? 'chutney close-up' : 'whole samosa'}`);
+    stage.setAttribute('aria-label', `${product.name}: ${part === 'filling' ? 'filling visible' : part === 'fold' ? 'hand-folded edge close-up' : part === 'salsa' ? 'chutney close-up' : 'whole Samosa'}`);
     if (moveFocus) whole.focus({preventScroll:true});
   }
 

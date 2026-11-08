@@ -4,14 +4,14 @@
 
     // Product language follows the Burlington menu. The Flutter app still has
     // its starter screen and has no product-detail component to share here.
-    const fillingCopy = 'Steak & Cheese Samosa: Minced beef, Cabot™ sharp white cheddar, onion, and spices.';
+    const fillingCopy = 'Steak & Cheese Samosa: Minced beef, Cabot® sharp white cheddar, onion, and spices.';
     const parts = [
-        { id: 'fold', title: 'A personal touch.', description: 'Made with love. One samosa at a time.' },
+        { id: 'fold', title: 'A personal touch.', description: 'Made with love. One Samosa at a time.' },
         { id: 'filling', title: '', description: fillingCopy },
         {
             id: 'salsa',
             title: '',
-            description: 'Tomato Garlic Chutney, made to bring out the boldness of flavor in the samosa.',
+            description: 'Tomato Garlic Chutney, made to bring out the boldness of flavor in the Samosa.',
         },
     ];
     const stage = diagram.querySelector('.samosa-diagram__stage');
@@ -42,7 +42,7 @@
         hotspots.inert = detailOpen;
         hotspots.setAttribute('aria-hidden', String(detailOpen));
         stage.setAttribute('aria-label', id === 'fold'
-            ? 'A closer look at the samosa’s hand-folded edge'
+            ? 'A closer look at the Samosa’s hand-folded edge'
             : id === 'salsa'
                 ? 'A closer look at Tomato Garlic Chutney'
                 : expanded ? 'Steak and Cheese, with the filling exposed' : 'Steak and Cheese, whole');
@@ -58,8 +58,8 @@
         title.hidden = !part?.title;
         title.textContent = part?.title || '';
         const copy = part?.description || fillingCopy;
-        description.replaceChildren(...copy.split(/(™)/).map((text) => {
-            if (text !== '™') return text;
+        description.replaceChildren(...copy.split(/(®)/).map((text) => {
+            if (text !== '®') return text;
             const trademark = document.createElement('sup');
             trademark.textContent = text;
             return trademark;
@@ -117,9 +117,15 @@
         const start = detailTouch;
         detailTouch = null;
         if (selected && !isControl(event.target) && Math.hypot(start.x - event.clientX, start.y - event.clientY) <= 10) {
-            leaveDetail({ restoreFocus: false });
+            detailTouch = { ...start, ready: true };
         }
     }, { passive: true });
+    document.addEventListener('click', (event) => {
+        if (!detailTouch?.ready) return;
+        detailTouch = null;
+        // Keep hotspots inactive until the browser has chosen this touch's click target.
+        if (selected && !isControl(event.target)) leaveDetail({ restoreFocus: false });
+    });
     document.addEventListener('pointercancel', () => { detailTouch = null; }, { passive: true });
 
     const fallback = document.querySelector('[data-diagram-fallback]');

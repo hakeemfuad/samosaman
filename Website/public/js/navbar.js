@@ -21,17 +21,15 @@
             !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     } catch (_) { /* Navigation still works when session storage is unavailable. */ }
 
-    const isHome = document.body.classList.contains('home-page');
-    const orderControl = (classes) => isHome
-        ? `<button class="${classes}" type="button" data-open-order>Start your order</button>`
-        : `<a class="${classes}" href="burlington.html">Start your order</a>`;
+    const orderControl = (classes) =>
+        `<a class="${classes}" href="https://order.online/business/25346139">Start your order</a>`;
     const navbarHTML = `
 <div class="nav-pad">
     <nav class="nav${restoreCompactNav ? ' is-compact' : ''}" id="glass-nav" aria-label="Main">
-      <a class="nav-logo" href="index.html" aria-label="SamosaMan home"><img src="assets/samosaman-wordmark.webp?v=20261015-liquid-glass" alt="SamosaMan" width="960" height="423"></a>
+      <a class="nav-logo" href="/" aria-label="SamosaMan home"><img src="assets/samosaman-wordmark.webp?v=20261015-liquid-glass" alt="SamosaMan" width="960" height="423"></a>
       <div class="nav-links">
-        <a class="nav-link" href="burlington.html">Menu</a>
-        <a class="nav-link" href="delivery.html">Delivery</a>
+        <a class="nav-link" href="https://order.online/business/25346139">Menu</a>
+        <a class="nav-link" href="https://order.online/business/25346139?delivery=true">Delivery</a>
         <a class="nav-link" href="rewards-signup.html">Rewards</a>
         <a class="nav-link" href="catering.html">Catering</a>
       </div>
@@ -51,8 +49,8 @@
         <svg class="i-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" hidden><path d="M6 6l12 12M18 6 6 18"/></svg>
       </button>
       <div class="dropdown shelf" id="mobile-menu-overlay" hidden>
-        <a href="burlington.html">Menu</a>
-        <a href="delivery.html">Delivery</a>
+        <a href="https://order.online/business/25346139">Menu</a>
+        <a href="https://order.online/business/25346139?delivery=true">Delivery</a>
         <a href="rewards-signup.html">Rewards</a>
         <a href="catering.html">Catering</a>
         ${orderControl('btn btn-tint')}
@@ -77,9 +75,13 @@
 
         <div id="cart-empty-state" class="absolute inset-0 flex flex-col items-center justify-center p-8 text-center hidden z-10 bg-[#fdfbf7] mt-20">
 
-            <img src="assets/cart_empty.svg" alt="Your bag is empty" class="w-300 h-auto mb-8">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='9'/%3E"
+                data-src="assets/shared/cart-empty-480-703edcd884ff.webp"
+                data-srcset="assets/shared/cart-empty-480-703edcd884ff.webp 480w, assets/shared/cart-empty-960-56ca5b90ada7.webp 960w, assets/shared/cart-empty-1440-6bd233eeedef.webp 1440w"
+                sizes="(min-width: 640px) 436px, calc(100vw - 64px)" width="480" height="270"
+                alt="Your bag is empty" class="w-full h-auto mb-8" decoding="async">
 
-            <a href="burlington.html" class="w-full bg-[#3f2a1d] hover:bg-[#2a1c13] text-white font-oswald text-xl font-bold py-4 rounded-md uppercase tracking-wider shadow-md transition-all duration-200 active:scale-95 flex items-center justify-center">
+            <a href="https://order.online/business/25346139" class="w-full bg-[#3f2a1d] hover:bg-[#2a1c13] text-white font-oswald text-xl font-bold py-4 rounded-md uppercase tracking-wider shadow-md transition-all duration-200 active:scale-95 flex items-center justify-center">
                 Order Now
             </a>
         </div>
@@ -114,7 +116,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
                 </button>
                 <div class="text-center mb-6">
-                    <img src="assets/m_logo.svg" alt="Samosaman" class="h-12 w-auto mx-auto mb-4">
+                    <img src="assets/m_logo.svg" alt="SamosaMan" class="h-12 w-auto mx-auto mb-4">
                     <h2 id="auth-modal-title" class="font-oswald text-3xl font-bold text-slate-900 uppercase tracking-wide">Welcome Back</h2>
                     <p class="text-slate-500 text-sm mt-2">Sign in to your SamosaMan Clan® account so you can get rewards and order your favorites even faster.</p>
                 </div>
@@ -236,7 +238,7 @@
     // Keep the same active section on the location and signed-in rewards pages.
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
     const currentSection = {
-        'menu.html': 'burlington.html',
+        'menu.html': 'https://order.online/business/25346139',
         'rewards.html': 'rewards-signup.html',
         'myaccount.html': 'rewards-signup.html',
     }[currentPath] || currentPath;

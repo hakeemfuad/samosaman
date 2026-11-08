@@ -106,7 +106,7 @@
       selectionLimit: 3,
       itemType: 'samosa',
       allowedItemIds: ALL_SAMOSA_IDS,
-      description: 'Choose any three samosas.'
+      description: 'Choose any three Samosas.'
     },
     {
       id: 'small-curry-meal',
