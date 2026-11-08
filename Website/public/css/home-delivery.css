@@ -42,10 +42,29 @@
 .home-spotlight__heading { flex-shrink: 0; }
 .home-page .home-spotlight .samosa-diagram { flex: 1; min-height: 0; }
 .home-page .home-spotlight__visual { height: 100%; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; container-type: size; }
-.home-page .home-spotlight .samosa-diagram__stage { width: min(100%, calc((100cqh - 64px) * 800 / 650)); flex: none; }
+.home-page .home-spotlight .samosa-diagram__stage { flex: none; }
 .home-page .home-spotlight .samosa-diagram__toggle { flex-shrink: 0; }
 .home-page .home-spotlight > .home-hero-art { min-height: 0; flex: 1; object-fit: contain; }
 .home-page .home-team, .home-page .home-faq { height: auto; min-height: 0; }
+
+@media (width > 700px) {
+  .home-page .home-frame > .home-spotlight { padding-block: 26px 18px; }
+  .home-spotlight__heading { margin-bottom: 10px; }
+  .home-page .home-spotlight .samosa-diagram__stage {
+    --spotlight-stage-ratio: 800 / 570;
+    width: min(100%, calc((100cqh - 64px) * var(--spotlight-stage-ratio)));
+    aspect-ratio: var(--spotlight-stage-ratio);
+  }
+  /* Trim the vertical margins while keeping the artwork and hotspots on the same grid. */
+  .home-page .home-spotlight :is(.samosa-diagram__art, .samosa-diagram__hotspots) {
+    position: absolute;
+    inset: 50% 0 auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 800 / 650;
+    transform: translateY(-50%);
+  }
+}
 
 @media (max-width: 1068px) {
   .home-page { --apple-panel-height: 570px; --apple-panel-top: 54px; --apple-panel-bottom: 61px; }
